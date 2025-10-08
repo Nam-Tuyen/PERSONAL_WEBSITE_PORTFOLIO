@@ -449,46 +449,22 @@ export default function Portfolio() {
                       <div className="absolute top-[20%] left-[15%] w-36 h-px bg-gradient-to-r from-transparent via-[#00ffaa]/60 to-transparent transform rotate-45 animate-line-glow"></div>
                       <div className="absolute bottom-[25%] left-[20%] w-28 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/60 to-transparent transform -rotate-30 animate-line-glow" style={{animationDelay: '1s'}}></div>
                       
-                      {/* Enhanced Tech Text Overlay */}
-                      <div className="absolute top-[10%] left-[8%] text-xs font-mono text-[#00ffaa] opacity-50 text-shadow-lg animate-text-flicker">
-                        &lt;/&gt; DEV_MODE
-                      </div>
-                      <div className="absolute bottom-[12%] right-[10%] text-xs font-mono text-[#00d4ff] opacity-50 text-shadow-lg animate-text-flicker">
-                        ONLINE
-                      </div>
-                      <div className="absolute top-[45%] left-[5%] text-xs font-mono text-[#aa00ff] opacity-50 text-shadow-lg animate-text-flicker">
-                        { }
-                      </div>
                       
-                      {/* Enhanced HUD Elements */}
-                      <div className="absolute top-[8%] right-[8%] px-3 py-2 border border-[#00ffaa]/30 bg-black/50 backdrop-blur-sm text-xs font-mono text-[#00ffaa] animate-hud-pulse">
-                        SYS_ID: 2025
-                      </div>
-                      <div className="absolute bottom-[10%] left-[8%] px-3 py-2 border border-[#00d4ff]/30 bg-black/50 backdrop-blur-sm text-xs font-mono text-[#00d4ff] animate-hud-pulse">
-                        STATUS: ACTIVE
-                      </div>
-                      
-                      {/* Main Avatar Frame */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] aspect-[3/4] rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl group-hover:shadow-[#00ffaa]/20">
+                      {/* Main Avatar Frame - Larger Size */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
                         
-                        {/* Enhanced Animated Border */}
-                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00ffaa] via-[#00d4ff] via-[#aa00ff] via-[#ff00aa] to-[#00ffaa] opacity-0 group-hover:opacity-80 transition-opacity duration-500 animate-gradient-shift" style={{backgroundSize: '400% 400%'}}></div>
+                        {/* Static Animated Border */}
+                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00ffaa] via-[#00d4ff] via-[#aa00ff] via-[#ff00aa] to-[#00ffaa] opacity-60 animate-gradient-shift" style={{backgroundSize: '400% 400%'}}></div>
                         
                         {/* Inner Frame */}
                         <div className="relative w-full h-full rounded-xl overflow-hidden bg-black">
                           
-                          {/* Enhanced Scan Line Effect */}
-                          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#00ffaa] to-transparent opacity-0 group-hover:opacity-100 animate-scan-line"></div>
-                          
-                          {/* Profile Image */}
+                          {/* Profile Image - No Hover Effects */}
                           <img 
                             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
                             alt="LE NAM TUYEN" 
-                            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+                            className="w-full h-full object-cover"
                           />
-                          
-                          {/* Inner Glow Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#00ffaa]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         </div>
                       </div>
                     </div>
