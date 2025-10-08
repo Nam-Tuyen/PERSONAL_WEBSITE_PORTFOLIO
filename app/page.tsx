@@ -386,9 +386,10 @@ export default function Portfolio() {
                 {/* Right Column - Profile Image */}
                 <div className="flex justify-center lg:justify-end animate-scale-in">
                   <div className="relative group">
-                    {/* Decorative Circles */}
-                    <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-                    <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+                    {/* Background Decorative Circles - Subtle */}
+                    <div className="absolute -top-16 -left-16 w-96 h-96 border border-[#00ff88]/5 rounded-full animate-spin" style={{animationDuration: '25s'}}></div>
+                    <div className="absolute -bottom-16 -right-16 w-80 h-80 border border-[#00d4ff]/5 rounded-full animate-spin" style={{animationDuration: '20s', animationDirection: 'reverse'}}></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-[#7c3aed]/3 rounded-full animate-spin" style={{animationDuration: '30s'}}></div>
                     
                     {/* Image Container with Modern Tech LED Border */}
                     <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">

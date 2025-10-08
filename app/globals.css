@@ -51,16 +51,6 @@ body {
   outline-offset: 2px;
 }
 
-/* LED Flow Animation */
-@keyframes ledFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
 /* Modern gradient buttons */
 @layer components {
   .btn-gradient-primary {
@@ -258,6 +248,29 @@ body {
   50% {
     background-position: 100% 50%;
   }
+}
+
+@keyframes ledFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes techPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes cornerGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes scanLine {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
 }
 
 /* Responsive typography */
