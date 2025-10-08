@@ -51,9 +51,11 @@ export default function Portfolio() {
         location: "HỒ CHÍ MINH, VIỆT NAM",
       },
       hero: {
-        greeting: "XIN CHÀO, TÔI LÀ TUYÊN!",
-        title: "TẠO RA CÁC SẢN PHẨM<br/>DỮ LIỆU VÀ<br/>FINTECH ĐÁNG NHỚ",
-        subtitle: "Tôi là một Data Analyst & FinTech Specialist với sứ mệnh tạo ra những giải pháp dữ liệu đầy cảm hứng và thu hút người dùng.",
+        greeting: "HI, I AM",
+        name: "LE NAM TUYEN.",
+        title: "DATA ANALYST & FINTECH SPECIALIST",
+        subtitle: "A Ho Chi Minh based data analyst passionate about building scalable and data-driven solutions for FinTech products.",
+        cta: "CONTACT ME",
       },
       about: {
         label: "ABOUT ME",
@@ -163,9 +165,11 @@ export default function Portfolio() {
         location: "HO CHI MINH, VIETNAM",
       },
       hero: {
-        greeting: "HELLO, I'M TUYEN!",
-        title: "CREATING MEMORABLE<br/>DATA &<br/>FINTECH PRODUCTS",
-        subtitle: "I am a Data Analyst & FinTech Specialist with a mission to create inspiring and engaging data solutions.",
+        greeting: "HI, I AM",
+        name: "LE NAM TUYEN.",
+        title: "DATA ANALYST & FINTECH SPECIALIST",
+        subtitle: "A Ho Chi Minh based data analyst passionate about building scalable and data-driven solutions for FinTech products.",
+        cta: "CONTACT ME",
       },
       about: {
         label: "ABOUT ME",
@@ -319,51 +323,90 @@ export default function Portfolio() {
       {/* Professional Section */}
       {activeSection === "professional" && (
         <>
-          {/* Hero Section */}
-          <section className="min-h-screen flex items-center pt-20 sm:pt-24 relative matrix-rain">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
-              <div className="animate-fade-in text-center sm:text-left">
-                <div className="text-gradient-primary text-lg sm:text-xl font-bold mb-5 animate-fade-in">
-                  {t.hero.greeting}
+          {/* Hero Section - Modern 2 Column Layout */}
+          <section className="min-h-screen flex items-center pt-20 sm:pt-24 relative overflow-hidden">
+            {/* Floating Decorative Elements */}
+            <div className="absolute top-20 left-10 text-6xl opacity-5 animate-float">
+              &lt;/&gt;
+            </div>
+            <div className="absolute bottom-20 right-10 text-6xl opacity-5 animate-float" style={{animationDelay: '2s'}}>
+              { }
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                
+                {/* Left Column - Content */}
+                <div className="space-y-8 animate-fade-in">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight uppercase tracking-tight">
+                    <span className="block">{t.hero.greeting}</span>
+                    <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
+                      {t.hero.name}
+                    </span>
+                  </h1>
+                  
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300 uppercase tracking-wider">
+                    {t.hero.title}
+                  </h2>
+                  
+                  <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-lg">
+                    {t.hero.subtitle}
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <a 
+                      href="#contact" 
+                      className="group relative inline-flex items-center px-8 py-4 bg-[#00ff88] text-black text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 hover:bg-[#00d4ff] hover:scale-105 hover:shadow-lg hover:shadow-[#00ff88]/30"
+                    >
+                      <span>{t.hero.cta}</span>
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    
+                    <div className="flex gap-4">
+                      <a 
+                        href="https://linkedin.com/in/nam-tuyen" 
+                        className="w-12 h-12 border-2 border-gray-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:border-[#00ff88] hover:text-[#00ff88] hover:scale-110 hover:shadow-lg hover:shadow-[#00ff88]/20"
+                        aria-label="LinkedIn"
+                      >
+                        <span className="text-sm font-semibold">in</span>
+                      </a>
+                      <a 
+                        href="https://github.com/Nam-Tuyen" 
+                        className="w-12 h-12 border-2 border-gray-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:border-[#00ff88] hover:text-[#00ff88] hover:scale-110 hover:shadow-lg hover:shadow-[#00ff88]/20"
+                        aria-label="GitHub"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <h1 
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 sm:mb-8 uppercase animate-fade-in-delay"
-                  dangerouslySetInnerHTML={{ __html: t.hero.title }}
-                />
-                <p className="text-base sm:text-lg text-gray-300 max-w-2xl mb-8 sm:mb-12 leading-relaxed animate-fade-in-delay-2 mx-auto sm:mx-0">
-                  {t.hero.subtitle}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2 justify-center sm:justify-start">
-                  <button className="btn-gradient-primary text-sm sm:text-base">
-                    <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    TẢI CV
-                  </button>
-                  <button className="btn-gradient-tech text-sm sm:text-base">
-                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    LINKEDIN
-                  </button>
+
+                {/* Right Column - Profile Image */}
+                <div className="flex justify-center lg:justify-end animate-scale-in">
+                  <div className="relative group">
+                    {/* Decorative Circles */}
+                    <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+                    <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+                    
+                    {/* Image Container */}
+                    <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl shadow-black/50 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl group-hover:shadow-black/70">
+                      {/* Gradient Border Effect */}
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
+                      
+                      <img 
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                        alt="LE NAM TUYEN" 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-        {/* Tech Decorative Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-tech rounded-full opacity-20 float-element animate-pulse-glow"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-cyber rounded-full opacity-20 float-element"></div>
-        <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-primary rounded-full opacity-20 float-element"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-tech rounded-full opacity-20 float-element"></div>
-        
-        {/* Cyber Grid Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#00ff88" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
-          </svg>
-              </div>
-      </section>
+          </section>
 
           {/* About Section - Modern Harmonious Layout */}
           <section className="min-h-screen flex items-center py-16 md:py-24 relative overflow-hidden">
@@ -371,8 +414,8 @@ export default function Portfolio() {
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-primary rounded-full blur-3xl"></div>
               <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-tech rounded-full blur-3xl"></div>
-            </div>
-            
+              </div>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                 
@@ -386,8 +429,8 @@ export default function Portfolio() {
                         {t.about.label}
                       </span>
                       <div className="w-12 h-px bg-gradient-primary"></div>
-                    </div>
-                  </div>
+              </div>
+            </div>
 
                   {/* Main Quote with Enhanced Typography */}
                   <div className="animate-slide-up">
@@ -405,17 +448,17 @@ export default function Portfolio() {
                     <h2 
                       className="text-4xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight"
                       dangerouslySetInnerHTML={{ __html: t.about.name }}
-                    />
-                  </div>
-                  
+                  />
+                </div>
+
                   {/* Description with Better Typography */}
                   <div className="animate-slide-up">
                     <div className="prose prose-lg prose-invert max-w-none">
                       <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 font-light">
                         {t.about.description}
                       </p>
-                    </div>
-                  </div>
+                </div>
+                </div>
 
                   {/* CTA and Social in Modern Layout */}
                   <div className="animate-slide-up">
@@ -444,11 +487,11 @@ export default function Portfolio() {
                               </span>
                             </a>
                           ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+              </div>
+          </div>
+        </div>
+              </div>
 
                 {/* Right Image - 5 columns */}
                 <div className="lg:col-span-5 animate-scale-in">
@@ -463,22 +506,22 @@ export default function Portfolio() {
                         />
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </div>
-                      
+                        </div>
+
                       {/* Modern Decorative Elements */}
                       <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-primary rounded-2xl opacity-80 animate-pulse shadow-lg shadow-[#00ff88]/30"></div>
                       <div className="absolute -bottom-6 -right-6 w-8 h-8 bg-gradient-tech rounded-xl opacity-80 animate-pulse shadow-lg shadow-[#00d4ff]/30" style={{animationDelay: '0.5s'}}></div>
                       <div className="absolute top-1/2 -left-4 w-6 h-6 bg-gradient-cyber rounded-full opacity-60 animate-pulse shadow-lg shadow-[#7c3aed]/30" style={{animationDelay: '1s'}}></div>
                       <div className="absolute top-1/3 -right-4 w-4 h-4 bg-gradient-primary rounded-full opacity-60 animate-pulse shadow-lg shadow-[#00ff88]/30" style={{animationDelay: '1.5s'}}></div>
-                    </div>
-                    
+                        </div>
+
                     {/* Floating Tech Elements */}
                     <div className="absolute -z-10 top-10 -right-10 w-20 h-20 border border-gradient-primary/20 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
                     <div className="absolute -z-10 bottom-10 -left-10 w-16 h-16 border border-gradient-tech/20 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
-                  </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-              </div>
-            </div>
           </section>
 
       {/* Services Section */}
