@@ -569,7 +569,7 @@ export default function Portfolio() {
                     {/* Quote Section - Enhanced */}
                     <div className="text-center mb-12 sm:mb-14 md:mb-16">
                       <div className="relative inline-block">
-                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
+                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
                           <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
                             "Transforming vision into reality and turning intent into results"
                           </span>
