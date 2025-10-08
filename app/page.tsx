@@ -65,7 +65,7 @@ export default function Portfolio() {
           "KHÁC NHAU."
         ],
         name: "LÊ NAM <span>TUYÊN</span>",
-        description: "Sinh viên năm cuối tại Đại học Kinh tế - Luật, chuyên về phát triển sản phẩm, phân tích dữ liệu và nghiên cứu kinh doanh. Có kinh nghiệm thiết kế và tổ chức các workshop về product discovery, user research, phân tích SQL và Python, dashboarding, đánh giá thí nghiệm và product analytics.",
+        description: "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research. I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes. Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
         background: "Nền tảng bao gồm nghiên cứu thị trường, phân tích tài chính và cố vấn các nhóm thông qua việc xây dựng giả thuyết, lựa chọn metrics và đánh giá post-mortem để cải thiện trải nghiệm người dùng và kết quả kinh doanh.",
         recognition: "Được công nhận vì thiết lập các template và quy trình nâng cao chất lượng delivery trên các cohort và liên kết chiến lược kinh doanh với việc ra quyết định dựa trên dữ liệu.",
         objective: "Mục tiêu nghề nghiệp là phát triển thành Product Manager hoặc Product Owner, áp dụng nghiên cứu, phân tích và tư duy chiến lược để xây dựng các sản phẩm FinTech có thể mở rộng giải quyết các vấn đề có ý nghĩa.",
