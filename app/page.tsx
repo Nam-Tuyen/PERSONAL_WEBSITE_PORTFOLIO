@@ -81,15 +81,6 @@ export default function Portfolio() {
           { name: "Portfolio", icon: "Po", url: "#" },
         ],
       },
-      services: {
-        label: "DỊCH VỤ CỦA TÔI",
-        items: [
-          "PHÂN TÍCH DỮ LIỆU",
-          "FINTECH SOLUTIONS",
-          "DASHBOARD DESIGN",
-          "BUSINESS INTELLIGENCE",
-        ],
-      },
       projects: {
         label: "DỰ ÁN CỦA TÔI",
         intro: "Đây là một số dự án yêu thích của tôi, nơi tôi đã ưu tiên trải nghiệm người dùng và tính thẩm mỹ trực quan. Mỗi dự án phản ánh sự cống hiến của tôi trong việc tạo ra những trải nghiệm số liền mạch và thú vị.",
@@ -227,15 +218,6 @@ export default function Portfolio() {
           { name: "GitHub", icon: "Gh", url: "https://github.com/Nam-Tuyen" },
           { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
           { name: "Portfolio", icon: "Po", url: "#" },
-        ],
-      },
-      services: {
-        label: "MY SERVICES",
-        items: [
-          "DATA ANALYTICS",
-          "FINTECH SOLUTIONS",
-          "DASHBOARD DESIGN",
-          "BUSINESS INTELLIGENCE",
         ],
       },
       projects: {
@@ -621,10 +603,10 @@ export default function Portfolio() {
                               </span>
                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                            </div>
+                </div>
                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                          </div>
-                        </div>
+              </div>
+          </div>
 
                 {/* Ultra Modern Content Container */}
                 <div className="relative">
@@ -640,7 +622,7 @@ export default function Portfolio() {
                         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
                           <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
                             "Transforming vision into reality and turning intent into results"
-                          </span>
+                              </span>
                         </p>
                         
                         {/* Quote Glow Effect */}
@@ -650,8 +632,8 @@ export default function Portfolio() {
                         <div className="absolute -top-4 sm:-top-6 md:-top-8 -left-4 sm:-left-6 md:-left-8 w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
                         <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -right-4 sm:-right-6 md:-right-8 w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
                         <div className="absolute top-1/2 -left-6 sm:-left-8 md:-left-12 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '2s'}}></div>
-                          </div>
-                        </div>
+                            </div>
+                            </div>
 
                     {/* Description Section - Enhanced */}
                     <div className="max-w-3xl sm:max-w-4xl mx-auto">
@@ -664,9 +646,9 @@ export default function Portfolio() {
                         
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-sm"></div>
+                          </div>
                         </div>
-                      </div>
-                    
+
                     {/* Decorative Corner Elements */}
                     <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
                     <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
@@ -677,9 +659,9 @@ export default function Portfolio() {
                     <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
                     <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                    </div>
-                </div>
-              </div>
+                              </div>
+                          </div>
+                        </div>
             </div>
           </section>
 
@@ -706,14 +688,14 @@ export default function Portfolio() {
                     <div className="relative">
                       <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
                         {t.education.title}
-                      </span>
+                            </span>
                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                    </div>
+                        </div>
                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                  </div>
                 </div>
-                
+              </div>
+
                 {/* Education Content Container */}
                 <div className="relative">
                   {/* Glowing Background Container */}
@@ -726,7 +708,7 @@ export default function Portfolio() {
                     <div className="mb-8 sm:mb-10 md:mb-12">
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
                         {t.education.university}
-                      </h3>
+                  </h3>
                       
                       {/* Relevant Coursework */}
                       <div className="mb-6 sm:mb-8">
@@ -750,9 +732,9 @@ export default function Portfolio() {
                             {t.education.ielts}
                           </p>
                         </div>
-                      </div>
-                    </div>
-                    
+                  </div>
+                </div>
+
                     {/* Certifications Section */}
                     <div>
                       <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#7c3aed] mb-6 sm:mb-8 text-center">
@@ -764,14 +746,14 @@ export default function Portfolio() {
                           <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
                             {t.education.cert1}
                           </p>
-                        </div>
+                          </div>
                         <div className="bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300">
                           <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
                             {t.education.cert2}
                           </p>
+                          </div>
                         </div>
-                      </div>
-                    </div>
+                        </div>
                     
                     {/* Decorative Corner Elements */}
                     <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
@@ -783,10 +765,10 @@ export default function Portfolio() {
                     <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
                     <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                  </div>
+                      </div>
+                    </div>
                 </div>
               </div>
-            </div>
           </section>
 
           {/* Work Experience Section - Modern Galaxy Design */}
@@ -815,9 +797,9 @@ export default function Portfolio() {
                       </span>
                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                    </div>
+                        </div>
                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                  </div>
+                      </div>
                 </div>
                 
                 {/* Work Experience Content Container */}
@@ -840,11 +822,11 @@ export default function Portfolio() {
                           <div className="flex flex-col sm:items-end gap-2">
                             <span className="text-[#00ff88] font-semibold text-lg sm:text-xl">
                               {t.workExperience.agribank.position}
-                            </span>
+                          </span>
                             <span className="text-[#00d4ff] text-sm sm:text-base">
                               {t.workExperience.agribank.period}
                             </span>
-                          </div>
+                      </div>
                         </div>
                       </div>
                       
@@ -856,17 +838,17 @@ export default function Portfolio() {
                             <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                               {achievement}
                             </p>
-                          </div>
-                        ))}
-                      </div>
+                    </div>
+                  ))}
+                </div>
                       
                       {/* Decorative Corner Elements */}
                       <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
                       <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
                       <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
                       <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
-                    </div>
-                  </div>
+              </div>
+            </div>
                   
                   {/* Maybank Experience */}
                   <div className="relative">
@@ -891,8 +873,8 @@ export default function Portfolio() {
                             </span>
                           </div>
                         </div>
-                      </div>
-                      
+            </div>
+
                       {/* Achievements */}
                       <div className="space-y-4 sm:space-y-6">
                         {t.workExperience.maybank.achievements.map((achievement, index) => (
@@ -902,19 +884,19 @@ export default function Portfolio() {
                               {achievement}
                             </p>
                           </div>
-                        ))}
-                      </div>
-                      
+                ))}
+              </div>
+
                       {/* Decorative Corner Elements */}
                       <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00d4ff] opacity-60"></div>
                       <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#7c3aed] opacity-60"></div>
                       <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#00ff88] opacity-60"></div>
                       <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00d4ff] opacity-60"></div>
                     </div>
-                  </div>
-                  
                 </div>
+                  
               </div>
+            </div>
             </div>
           </section>
 
@@ -924,7 +906,7 @@ export default function Portfolio() {
           <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <h3 className="text-gradient-cyber text-sm tracking-widest mb-5">
               {t.projects.label}
-                </h3>
+              </h3>
             <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto text-sm sm:text-base">
               {t.projects.intro}
             </p>
@@ -946,8 +928,8 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                        </div>
-                      </div>
+                          </div>
+                          </div>
                 <div className="p-4 sm:p-6">
                   <h4 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-gradient-primary transition-all">
                     {project.title}
@@ -955,11 +937,11 @@ export default function Portfolio() {
                   <p className="text-gradient-tech font-semibold text-base sm:text-lg mb-3">
                     {project.year}
                   </p>
+                        </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-              </div>
-            </div>
           </section>
 
       {/* Testimonial Section */}
@@ -969,7 +951,7 @@ export default function Portfolio() {
             <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
               {t.testimonial.label}
               </h3>
-            </div>
+                      </div>
 
           <div className="max-w-4xl mx-auto card-tech text-center animate-scale-in">
             <p 
@@ -989,10 +971,10 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
-              </div>
                     </div>
-                </div>
               </div>
+            </div>
+          </div>
         </section>
 
       {/* Contact Section */}
