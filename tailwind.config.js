@@ -22,6 +22,7 @@ module.exports = {
       },
       fontFamily: {
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        'amsterdam-four': ['var(--font-amsterdam-four)', 'serif'],
         sans: ['var(--font-montserrat)', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },

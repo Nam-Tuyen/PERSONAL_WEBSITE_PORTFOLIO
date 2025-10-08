@@ -2,12 +2,24 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Montserrat } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
+})
+
+const amsterdamFour = localFont({
+  src: [
+    {
+      path: "./fonts/AmsterdamFour.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-amsterdam-four",
 })
 
 export const metadata: Metadata = {
@@ -23,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-montserrat antialiased`}>
+            <body className={`${montserrat.variable} ${amsterdamFour.variable} font-montserrat antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>

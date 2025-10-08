@@ -336,8 +336,8 @@ export default function Portfolio() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 
-                {/* Left Column - Content */}
-                <div className="space-y-8 animate-fade-in">
+                {/* Left Column - Content - Centered */}
+                <div className="space-y-8 animate-fade-in text-center lg:text-left">
                   <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight uppercase tracking-tight">
                     <span className="block">{t.hero.greeting}</span>
                     <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
@@ -349,11 +349,11 @@ export default function Portfolio() {
                     {t.hero.title}
                   </h2>
                   
-                  <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-lg">
+                  <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0 font-amsterdam-four italic">
                     {t.hero.subtitle}
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 justify-center lg:justify-start">
                     <a 
                       href="#contact" 
                       className="group relative inline-flex items-center px-8 py-4 bg-[#00ff88] text-black text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 hover:bg-[#00d4ff] hover:scale-105 hover:shadow-lg hover:shadow-[#00ff88]/30"
