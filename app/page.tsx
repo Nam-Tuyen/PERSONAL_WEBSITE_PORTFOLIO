@@ -522,47 +522,96 @@ export default function Portfolio() {
 
       </section>
 
-          {/* About Section - Enhanced with Galaxy Background */}
-          <section className="py-16 md:py-24 relative galaxy-bg">
-            {/* Galaxy Background Elements */}
+          {/* About Section - Ultra Modern Galaxy Design */}
+          <section className="py-20 md:py-32 relative galaxy-bg overflow-hidden">
+            {/* Enhanced Galaxy Background Elements */}
             <div className="nebula-effect nebula-purple"></div>
             <div className="nebula-effect nebula-blue"></div>
             <div className="nebula-effect nebula-green"></div>
             <div className="galaxy-center"></div>
             
+            {/* Additional Cosmic Elements */}
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-[#00ff88] rounded-full opacity-80 animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-70 animate-pulse" style={{animationDelay: '2s'}}></div>
+            
             {/* Shooting Stars */}
             <div className="shooting-star" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
             <div className="shooting-star" style={{top: '60%', left: '80%', animationDelay: '1.5s'}}></div>
             <div className="shooting-star" style={{top: '80%', left: '30%', animationDelay: '3s'}}></div>
+            <div className="shooting-star" style={{top: '40%', left: '90%', animationDelay: '4.5s'}}></div>
             
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 text-center relative z-10">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
               <div className="animate-fade-in">
-                {/* About Me Label */}
-                <div className="mb-12">
-                  <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-12 h-px bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
-                    <span className="text-gray-400 text-xs tracking-[4px] font-medium uppercase">
-                      ABOUT ME
-                              </span>
-                    <div className="w-12 h-px bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
-                          </div>
-                        </div>
-
-                {/* About Me Content with Special Background */}
-                <div className="about-section-bg p-8 md:p-12 relative z-20">
-                  <div className="prose prose-lg prose-invert max-w-none">
-                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-300 leading-relaxed font-amsterdam-four italic mb-12">
-                      <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
-                        "Transforming vision into reality and turning intent into results"
-                            </span>
-                    </p>
-                    <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-light text-justify">
-                      {t.about.description}
-                    </p>
-                        </div>
+                {/* Ultra Modern About Me Label */}
+                <div className="mb-16 text-center">
+                  <div className="inline-flex items-center gap-4 mb-8 relative">
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
+                    <div className="relative">
+                      <span className="text-[#00ff88] text-sm tracking-[6px] font-bold uppercase relative z-10">
+                        ABOUT ME
+                      </span>
+                      <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-lg rounded-full"></div>
+                    </div>
+                    <div className="w-16 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
+                  </div>
+                </div>
+                
+                {/* Ultra Modern Content Container */}
+                <div className="relative">
+                  {/* Glowing Background Container */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-3xl blur-2xl"></div>
+                  
+                  {/* Main Content Card */}
+                  <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-16 shadow-2xl">
+                    
+                    {/* Quote Section - Enhanced */}
+                    <div className="text-center mb-16">
+                      <div className="relative inline-block">
+                        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight font-amsterdam-four italic relative z-10">
+                          <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
+                            "Transforming vision into reality and turning intent into results"
+                          </span>
+                        </p>
+                        
+                        {/* Quote Glow Effect */}
+                        <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-2xl rounded-2xl opacity-60"></div>
+                        
+                        {/* Decorative Elements */}
+                        <div className="absolute -top-8 -left-8 w-4 h-4 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
+                        <div className="absolute -bottom-8 -right-8 w-3 h-3 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <div className="absolute top-1/2 -left-12 w-2 h-2 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '2s'}}></div>
                       </div>
                     </div>
+                    
+                    {/* Description Section - Enhanced */}
+                    <div className="max-w-4xl mx-auto">
+                      <div className="relative">
+                        <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-center relative z-10">
+                          <span className="relative">
+                            {t.about.description}
+                          </span>
+                        </p>
+                        
+                        {/* Text Glow Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-sm"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Decorative Corner Elements */}
+                    <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
+                    <div className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
+                    <div className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
+                    <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
+                    
+                    {/* Floating Tech Elements */}
+                    <div className="absolute top-1/4 left-8 w-2 h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
+                    <div className="absolute top-3/4 right-8 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    <div className="absolute bottom-1/4 left-12 w-1 h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
+                  </div>
                 </div>
+              </div>
+            </div>
           </section>
 
       {/* Services Section */}
