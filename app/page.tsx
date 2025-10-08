@@ -52,9 +52,9 @@ export default function Portfolio() {
       },
       hero: {
         greeting: "HI, I AM",
-        name: "LE NAM TUYEN.",
-        title: "DATA ANALYST & FINTECH SPECIALIST",
-        subtitle: "A Ho Chi Minh based data analyst passionate about building scalable and data-driven solutions for FinTech products.",
+        name: "LE NAM TUYEN",
+        title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH",
+        subtitle: "Transforming vision into reality and turning intent into results",
         cta: "CONTACT ME",
       },
       about: {
@@ -166,9 +166,9 @@ export default function Portfolio() {
       },
       hero: {
         greeting: "HI, I AM",
-        name: "LE NAM TUYEN.",
-        title: "DATA ANALYST & FINTECH SPECIALIST",
-        subtitle: "A Ho Chi Minh based data analyst passionate about building scalable and data-driven solutions for FinTech products.",
+        name: "LE NAM TUYEN",
+        title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH",
+        subtitle: "Transforming vision into reality and turning intent into results",
         cta: "CONTACT ME",
       },
       about: {
