@@ -66,6 +66,7 @@ export default function Portfolio() {
         ],
         name: "LE NAM <span>TUYEN</span>",
         description: "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research. I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes. Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
+        mainQuote: "Transforming vision into reality and turning intent into results",
         background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes.",
         recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
         objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
@@ -176,7 +177,8 @@ export default function Portfolio() {
           "PLATFORMS."
         ],
         name: "LE NAM <span>TUYEN</span>",
-        description: "A Senior at the University of Economics and Law, specializing in product development, data analytics, and business research. Experienced in designing and delivering workshops on product discovery, user research, SQL and Python analytics, dashboarding, experiment evaluation, and product analytics.",
+        description: "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research. I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes. Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
+        mainQuote: "Transforming vision into reality and turning intent into results",
         background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes.",
         recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
         objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
@@ -363,86 +365,87 @@ export default function Portfolio() {
               </div>
       </section>
 
-          {/* About Section - Centered Layout */}
+          {/* About Section - 2 Column Layout */}
           <section className="min-h-screen flex items-center py-12 md:py-24 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
-                {/* About Label */}
-                <div className="animate-slide-up mb-8">
-                  <div className="text-gray-400 text-xs tracking-[3px] font-semibold">
-                    {t.about.label}
-              </div>
-            </div>
+                {/* Left Column - Content */}
+                <div className="flex-1 space-y-8">
+                  {/* About Label */}
+                  <div className="animate-slide-up">
+                    <div className="text-gray-400 text-xs tracking-[3px] font-semibold mb-6">
+                      {t.about.label}
+                    </div>
+                  </div>
 
-                {/* Headline */}
-                <div className="animate-slide-up mb-12">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl">
-                    {t.about.headline.map((line, index) => (
-                      <span key={index} className="block">
-                        {line}
-                      </span>
+                  {/* Main Quote */}
+                  <div className="animate-slide-up">
+                    <blockquote className="text-2xl sm:text-3xl md:text-4xl font-light italic text-gradient-primary leading-relaxed mb-8">
+                      "{t.about.mainQuote}"
+                    </blockquote>
+                  </div>
+
+                  {/* Name */}
+                  <div className="animate-slide-up">
+                    <h2 
+                      className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+                      dangerouslySetInnerHTML={{ __html: t.about.name }}
+                    />
+                  </div>
+                  
+                  {/* Description */}
+                  <div className="animate-slide-up">
+                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+                      {t.about.description}
+                    </p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="animate-slide-up mb-8">
+                    <a 
+                      href="#contact" 
+                      className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white text-xs tracking-[2px] font-semibold rounded-full transition-all hover:bg-[#00ff88] hover:border-[#00ff88] hover:text-black uppercase"
+                    >
+                      {t.about.button}
+                    </a>
+                  </div>
+                  
+                  {/* Social Icons */}
+                  <div className="flex gap-6 animate-fade-in">
+                    {t.about.social.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.url}
+                        className="text-white text-lg sm:text-xl transition-colors hover:text-[#00ff88]"
+                        aria-label={social.name}
+                      >
+                        {social.icon}
+                      </a>
                     ))}
-                  </h1>
+                  </div>
                 </div>
 
-                {/* Profile Image */}
-                <div className="animate-scale-in mb-12">
+                {/* Right Column - Profile Image */}
+                <div className="flex-shrink-0 animate-scale-in">
                   <div className="relative group">
-                    <div className="w-[280px] h-[360px] sm:w-[320px] sm:h-[410px] md:w-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-2xl shadow-black/50">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
+                    <div className="w-[300px] h-[400px] sm:w-[350px] sm:h-[450px] md:w-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl shadow-black/50">
+                      <img 
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
                         alt="Profile" 
                         className="w-full h-full object-cover grayscale-[20%] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-                  />
-                </div>
-
+                      />
+                    </div>
+                    
                     {/* Decorative elements */}
                     <div className="absolute -top-4 -left-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
                     <div className="absolute -bottom-4 -right-4 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute top-1/2 -left-3 w-3 h-3 bg-gradient-cyber rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute top-1/2 -right-3 w-3 h-3 bg-gradient-primary rounded-full opacity-60 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                  </div>
                 </div>
-                </div>
-
-                {/* Name */}
-                <div className="animate-slide-up mb-8">
-                  <h2 
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold"
-                    dangerouslySetInnerHTML={{ __html: t.about.name }}
-                  />
-                </div>
-                
-                {/* Description */}
-                <div className="animate-slide-up mb-12 max-w-4xl">
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    {t.about.description}
-                  </p>
-          </div>
-
-                {/* CTA Button */}
-                <div className="animate-slide-up mb-12">
-                  <a 
-                    href="#contact" 
-                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white text-xs tracking-[2px] font-semibold rounded-full transition-all hover:bg-[#00ff88] hover:border-[#00ff88] hover:text-black uppercase"
-                  >
-                    {t.about.button}
-                  </a>
-                </div>
-                
-                {/* Social Icons */}
-                <div className="flex gap-6 animate-fade-in">
-                  {t.about.social.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.url}
-                      className="text-white text-lg sm:text-xl transition-colors hover:text-[#00ff88]"
-                      aria-label={social.name}
-                    >
-                      {social.icon}
-                    </a>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+              </div>
+            </div>
           </section>
 
       {/* Services Section */}
