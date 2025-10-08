@@ -383,7 +383,7 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* Right Column - Profile Image with Modern Frame */}
+                {/* Right Column - Profile Image */}
                 <div className="flex justify-center lg:justify-end animate-scale-in">
                   <div className="relative group">
                     {/* Background Decorative Elements */}
