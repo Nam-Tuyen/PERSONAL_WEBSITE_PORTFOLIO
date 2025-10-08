@@ -345,17 +345,22 @@ export default function Portfolio() {
                     </span>
                 </h1>
                   
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300 uppercase tracking-wider text-center lg:text-left relative group">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-400 uppercase tracking-wider text-center lg:text-left relative group">
                     <span className="relative inline-block">
-                      <span className="bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
+                      <span className="text-gray-400">
                         {t.hero.title}
                       </span>
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-60"></span>
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-30"></span>
                     </span>
                   </h2>
                   
-                  <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0 font-amsterdam-four italic">
-                    {t.hero.subtitle}
+                  <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0 font-great-vibes italic relative group">
+                    <span className="relative inline-block">
+                      <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
+                        {t.hero.subtitle}
+                      </span>
+                      <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-40 animate-pulse"></span>
+                    </span>
                   </p>
                   
                   <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 justify-center lg:justify-start">
