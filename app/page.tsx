@@ -148,40 +148,6 @@ export default function Portfolio() {
         goals: {
           title: "MỤC TIÊU",
           description: "Phát triển bản thân và đóng góp tích cực cho cộng đồng công nghệ"
-        },
-        education: {
-          title: "HỌC VẤN",
-          university: "Đại học Kinh tế - Luật (VNU-HCM)",
-          relevantCoursework: "Các môn học liên quan:",
-          courses: "Cơ sở dữ liệu, Khai thác dữ liệu, Phân tích dữ liệu lớn trong Tài chính, Công nghệ Blockchain, Phần mềm ứng dụng cho tài chính, Hệ thống thông tin kinh doanh dữ liệu lớn, Quản lý tài chính, Quản lý rủi ro tài chính,...",
-          gpa: "GPA: 3.0/4.0",
-          ielts: "IELTS: 6.0",
-          certifications: "CHỨNG CHỈ & GIẢI THƯỞNG",
-          cert1: "Chứng chỉ Coursera: Ask Questions to Make Data-Driven Decisions",
-          cert2: "Chứng chỉ NVIDIA: Accelerating End-to-End Data Science Workflows"
-        },
-        workExperience: {
-          title: "KINH NGHIỆM LÀM VIỆC VÀ THỰC TẬP",
-          agribank: {
-            company: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam (Chi nhánh Bình Triệu)",
-            position: "Thực tập sinh",
-            period: "03/2025 - 06/2025",
-            achievements: [
-              "Sản xuất báo cáo thị trường vĩ mô và ngành kịp thời để thông báo cho các nhóm quan hệ và ủy ban tín dụng.",
-              "Xây dựng mô hình dòng tiền và phân tích kịch bản, phát triển các đề xuất sử dụng vốn bao gồm vốn lưu động, chi phí vốn và cơ cấu cơ sở để đánh giá khả năng trả nợ và rủi ro thanh khoản.",
-              "Thực hiện đánh giá rủi ro tín dụng và soạn thảo khuyến nghị cho vay, bao gồm phân tích báo cáo tài chính đầy đủ qua báo cáo lãi lỗ, bảng cân đối kế toán và dòng tiền với đánh giá tỷ lệ và xu hướng."
-            ]
-          },
-          maybank: {
-            company: "Ngân hàng Đầu tư Maybank Việt Nam (Chi nhánh Phú Nhuận)",
-            position: "Thực tập sinh",
-            period: "06/2024 - 12/2024",
-            achievements: [
-              "Ứng dụng Python để làm sạch, trực quan hóa và giải thích hơn 100.000 dòng giao dịch và viết báo cáo thị trường hàng ngày và hàng tuần, giảm thời gian phân tích thủ công khoảng 30%.",
-              "Thực hiện phân tích tài chính và định giá vốn chủ sở hữu của các công ty niêm yết, chuẩn bị báo cáo đầu tư, giám sát danh mục đầu tư và hỗ trợ phát triển khách hàng thông qua sàng lọc triển vọng và tài liệu pitch.",
-              "Thiết kế và triển khai pipeline end-to-end để thu thập, xử lý và sản xuất báo cáo phân tích mã chứng khoán, cung cấp thông tin chi tiết hàng ngày và cải thiện khả năng phản hồi của nhóm khoảng 25%."
-            ]
-          }
         }
       },
     },
