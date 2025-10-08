@@ -81,6 +81,40 @@ export default function Portfolio() {
           { name: "Portfolio", icon: "Po", url: "#" },
         ],
       },
+      education: {
+        title: "HỌC VẤN",
+        university: "University of Economics and Law (VNU-HCM)",
+        relevantCoursework: "Relevant Coursework:",
+        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management,...",
+        gpa: "GPA: 3.0/4.0",
+        ielts: "IELTS: 6.0",
+        certifications: "CERTIFICATIONS & AWARDS",
+        cert1: "Coursera certificate: Ask Questions to Make Data-Driven Decisions",
+        cert2: "NVIDIA certificate: Accelerating End-to-End Data Science Workflows"
+      },
+        workExperience: {
+          label: "KINH NGHIỆM LÀM VIỆC VÀ THỰC TẬP",
+          agribank: {
+            company: "Vietnam Bank for Agriculture and Rural Development (Binh Trieu Branch)",
+            position: "Intern",
+            period: "03/2025 - 06/2025",
+            achievements: [
+              "Produced timely sector and macro market reports to inform relationship teams and credit committees.",
+              "Built cash-flow models and scenario analyses and developed capital-utilization proposals covering working capital, capital expenditure, and facility mix to assess repayment capacity and liquidity risk.",
+              "Performed credit risk assessments and drafted loan recommendations, including full financial statement analysis across profit and loss, balance sheet, and cash flow with ratio and trend reviews."
+            ]
+          },
+          maybank: {
+            company: "Maybank Investment Bank Vietnam (Phu Nhuan Branch)",
+            position: "Intern",
+            period: "06/2024 - 12/2024",
+            achievements: [
+              "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent.",
+              "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials.",
+              "Designed and deployed an end to end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent."
+            ]
+          }
+        },
       projects: {
         label: "DỰ ÁN CỦA TÔI",
         intro: "Đây là một số dự án yêu thích của tôi, nơi tôi đã ưu tiên trải nghiệm người dùng và tính thẩm mỹ trực quan. Mỗi dự án phản ánh sự cống hiến của tôi trong việc tạo ra những trải nghiệm số liền mạch và thú vị.",
@@ -186,6 +220,40 @@ export default function Portfolio() {
           { name: "Portfolio", icon: "Po", url: "#" },
         ],
       },
+      education: {
+        title: "EDUCATION",
+        university: "University of Economics and Law (VNU-HCM)",
+        relevantCoursework: "Relevant Coursework:",
+        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management,...",
+        gpa: "GPA: 3.0/4.0",
+        ielts: "IELTS: 6.0",
+        certifications: "CERTIFICATIONS & AWARDS",
+        cert1: "Coursera certificate: Ask Questions to Make Data-Driven Decisions",
+        cert2: "NVIDIA certificate: Accelerating End-to-End Data Science Workflows"
+      },
+        workExperience: {
+          label: "WORK EXPERIENCE AND INTERNSHIP",
+          agribank: {
+            company: "Vietnam Bank for Agriculture and Rural Development (Binh Trieu Branch)",
+            position: "Intern",
+            period: "03/2025 - 06/2025",
+            achievements: [
+              "Produced timely sector and macro market reports to inform relationship teams and credit committees.",
+              "Built cash-flow models and scenario analyses and developed capital-utilization proposals covering working capital, capital expenditure, and facility mix to assess repayment capacity and liquidity risk.",
+              "Performed credit risk assessments and drafted loan recommendations, including full financial statement analysis across profit and loss, balance sheet, and cash flow with ratio and trend reviews."
+            ]
+          },
+          maybank: {
+            company: "Maybank Investment Bank Vietnam (Phu Nhuan Branch)",
+            position: "Intern",
+            period: "06/2024 - 12/2024",
+            achievements: [
+              "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent.",
+              "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials.",
+              "Designed and deployed an end to end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent."
+            ]
+          }
+        },
       projects: {
         label: "MY PROJECTS",
         intro: "Here are some of my favorite projects where I prioritized user experience and visual aesthetics. Each project reflects my dedication to creating seamless and engaging digital experiences.",
@@ -253,40 +321,6 @@ export default function Portfolio() {
         goals: {
           title: "GOALS",
           description: "Personal development and positive contribution to the tech community"
-        },
-        education: {
-          title: "EDUCATION",
-          university: "University of Economics and Law (VNU-HCM)",
-          relevantCoursework: "Relevant Coursework:",
-          courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management,...",
-          gpa: "GPA: 3.0/4.0",
-          ielts: "IELTS: 6.0",
-          certifications: "CERTIFICATIONS & AWARDS",
-          cert1: "Coursera certificate: Ask Questions to Make Data-Driven Decisions",
-          cert2: "NVIDIA certificate: Accelerating End-to-End Data Science Workflows"
-        },
-        workExperience: {
-          title: "WORK EXPERIENCE AND INTERNSHIP",
-          agribank: {
-            company: "Vietnam Bank for Agriculture and Rural Development (Binh Trieu Branch)",
-            position: "Intern",
-            period: "03/2025 - 06/2025",
-            achievements: [
-              "Produced timely sector and macro market reports to inform relationship teams and credit committees.",
-              "Built cash-flow models and scenario analyses and developed capital-utilization proposals covering working capital, capital expenditure, and facility mix to assess repayment capacity and liquidity risk.",
-              "Performed credit risk assessments and drafted loan recommendations, including full financial statement analysis across profit and loss, balance sheet, and cash flow with ratio and trend reviews."
-            ]
-          },
-          maybank: {
-            company: "Maybank Investment Bank Vietnam (Phu Nhuan Branch)",
-            position: "Intern",
-            period: "06/2024 - 12/2024",
-            achievements: [
-              "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent.",
-              "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials.",
-              "Designed and deployed an end to end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent."
-            ]
-          }
         }
       },
     },
@@ -569,10 +603,10 @@ export default function Portfolio() {
                               </span>
                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                </div>
+                            </div>
                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-              </div>
-          </div>
+                          </div>
+                        </div>
 
                 {/* Ultra Modern Content Container */}
                 <div className="relative">
@@ -588,7 +622,7 @@ export default function Portfolio() {
                         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
                           <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
                             "Transforming vision into reality and turning intent into results"
-                              </span>
+                            </span>
                         </p>
                         
                         {/* Quote Glow Effect */}
@@ -598,8 +632,8 @@ export default function Portfolio() {
                         <div className="absolute -top-4 sm:-top-6 md:-top-8 -left-4 sm:-left-6 md:-left-8 w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
                         <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -right-4 sm:-right-6 md:-right-8 w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
                         <div className="absolute top-1/2 -left-6 sm:-left-8 md:-left-12 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '2s'}}></div>
-                            </div>
-                            </div>
+                </div>
+              </div>
 
                     {/* Description Section - Enhanced */}
                     <div className="max-w-3xl sm:max-w-4xl mx-auto">
@@ -612,115 +646,9 @@ export default function Portfolio() {
                         
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-sm"></div>
-                          </div>
-                        </div>
-
-                    {/* Decorative Corner Elements */}
-                    <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
-                    <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
-                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
-                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
-                    
-                    {/* Floating Tech Elements */}
-                    <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
-                    <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                    <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                              </div>
-                          </div>
-                        </div>
-            </div>
-          </section>
-
-          {/* Education Section - Modern Galaxy Design */}
-          <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
-            {/* Enhanced Galaxy Background Elements */}
-            <div className="nebula-effect nebula-purple"></div>
-            <div className="nebula-effect nebula-blue"></div>
-            <div className="nebula-effect nebula-green"></div>
-            <div className="galaxy-center"></div>
-
-            {/* Shooting Stars */}
-            <div className="shooting-star" style={{top: '15%', left: '20%', animationDelay: '0.5s'}}></div>
-            <div className="shooting-star" style={{top: '70%', left: '70%', animationDelay: '2s'}}></div>
-            <div className="shooting-star" style={{top: '85%', left: '25%', animationDelay: '3.5s'}}></div>
-            <div className="shooting-star" style={{top: '35%', left: '85%', animationDelay: '5s'}}></div>
-            
-            <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
-              <div className="animate-fade-in">
-                {/* Education Label */}
-                <div className="mb-12 sm:mb-16 md:mb-20 text-center">
-                  <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
-                    <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
-                    <div className="relative">
-                      <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
-                        {t.education.title}
-                            </span>
-                      <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
-                      <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                        </div>
-                    <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                </div>
-              </div>
-
-                {/* Education Content Container */}
-                <div className="relative">
-                  {/* Glowing Background Container */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-3xl blur-2xl"></div>
-                  
-                  {/* Main Content Card */}
-                  <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
-                    
-                    {/* University Section */}
-                    <div className="mb-8 sm:mb-10 md:mb-12">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
-                        {t.education.university}
-                  </h3>
-                      
-                      {/* Relevant Coursework */}
-                      <div className="mb-6 sm:mb-8">
-                        <h4 className="text-lg sm:text-xl font-semibold text-[#00ff88] mb-3 sm:mb-4">
-                          {t.education.relevantCoursework}
-                        </h4>
-                        <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                          {t.education.courses}
-                        </p>
-                      </div>
-                      
-                      {/* GPA and IELTS */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20">
-                          <p className="text-[#00ff88] font-semibold text-lg sm:text-xl">
-                            {t.education.gpa}
-                          </p>
-                        </div>
-                        <div className="bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20">
-                          <p className="text-[#00d4ff] font-semibold text-lg sm:text-xl">
-                            {t.education.ielts}
-                          </p>
-                        </div>
                   </div>
                 </div>
 
-                    {/* Certifications Section */}
-                    <div>
-                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#7c3aed] mb-6 sm:mb-8 text-center">
-                        {t.education.certifications}
-                      </h4>
-                      
-                      <div className="space-y-4 sm:space-y-6">
-                        <div className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300">
-                          <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                            {t.education.cert1}
-                          </p>
-                          </div>
-                        <div className="bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300">
-                          <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                            {t.education.cert2}
-                          </p>
-                          </div>
-                        </div>
-                        </div>
-                    
                     {/* Decorative Corner Elements */}
                     <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
                     <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
@@ -731,140 +659,246 @@ export default function Portfolio() {
                     <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
                     <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
+                     </div>
+                 </div>
+               </div>
+             </div>
+           </section>
+
+           {/* Education Section - Modern Galaxy Design */}
+           <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
+             {/* Enhanced Galaxy Background Elements */}
+             <div className="nebula-effect nebula-purple"></div>
+             <div className="nebula-effect nebula-blue"></div>
+             <div className="nebula-effect nebula-green"></div>
+             <div className="galaxy-center"></div>
+
+             {/* Shooting Stars */}
+             <div className="shooting-star" style={{top: '15%', left: '20%', animationDelay: '0.5s'}}></div>
+             <div className="shooting-star" style={{top: '70%', left: '70%', animationDelay: '2s'}}></div>
+             <div className="shooting-star" style={{top: '85%', left: '25%', animationDelay: '3.5s'}}></div>
+             <div className="shooting-star" style={{top: '35%', left: '85%', animationDelay: '5s'}}></div>
+             
+             <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
+               <div className="animate-fade-in">
+                 {/* Education Label */}
+                 <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+                   <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
+                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
+                     <div className="relative">
+                       <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
+                         {t.education.title}
+                       </span>
+                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
+                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
+                     </div>
+                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
+                   </div>
+                 </div>
+
+                 {/* Education Content Container */}
+                 <div className="relative">
+                   {/* Glowing Background Container */}
+                   <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-3xl blur-2xl"></div>
+                   
+                   {/* Main Content Card */}
+                   <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
+                     
+                     {/* University Section */}
+                     <div className="mb-8 sm:mb-10 md:mb-12">
+                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
+                         {t.education.university}
+                       </h3>
+                       
+                       {/* Relevant Coursework */}
+                       <div className="mb-6 sm:mb-8">
+                         <h4 className="text-lg sm:text-xl font-semibold text-[#00ff88] mb-3 sm:mb-4">
+                           {t.education.relevantCoursework}
+                         </h4>
+                         <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                           {t.education.courses}
+                         </p>
+                       </div>
+                       
+                       {/* GPA and IELTS */}
+                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                         <div className="bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20">
+                           <p className="text-[#00ff88] font-semibold text-lg sm:text-xl">
+                             {t.education.gpa}
+                           </p>
+                         </div>
+                         <div className="bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20">
+                           <p className="text-[#00d4ff] font-semibold text-lg sm:text-xl">
+                             {t.education.ielts}
+                           </p>
+                         </div>
+                       </div>
+                     </div>
+
+                     {/* Certifications Section */}
+                     <div>
+                       <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#7c3aed] mb-6 sm:mb-8 text-center">
+                         {t.education.certifications}
+                       </h4>
+                       
+                       <div className="space-y-4 sm:space-y-6">
+                         <div className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300">
+                           <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
+                             {t.education.cert1}
+                           </p>
+                         </div>
+                         <div className="bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300">
+                           <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
+                             {t.education.cert2}
+                           </p>
+                         </div>
+                       </div>
+                     </div>
+                     
+                     {/* Decorative Corner Elements */}
+                     <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
+                     <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
+                     <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
+                     <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
+                     
+                     {/* Floating Tech Elements */}
+                     <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
+                     <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                     <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </section>
+
+       {/* Work Experience Section - Modern Galaxy Design */}
+       <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
+         {/* Enhanced Galaxy Background Elements */}
+         <div className="nebula-effect nebula-purple"></div>
+         <div className="nebula-effect nebula-blue"></div>
+         <div className="nebula-effect nebula-green"></div>
+         <div className="galaxy-center"></div>
+
+         {/* Shooting Stars */}
+         <div className="shooting-star" style={{top: '10%', left: '15%', animationDelay: '1s'}}></div>
+         <div className="shooting-star" style={{top: '75%', left: '75%', animationDelay: '2.5s'}}></div>
+         <div className="shooting-star" style={{top: '90%', left: '20%', animationDelay: '4s'}}></div>
+         <div className="shooting-star" style={{top: '30%', left: '90%', animationDelay: '5.5s'}}></div>
+         
+         <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
+           <div className="animate-fade-in">
+             {/* Work Experience Label */}
+             <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+               <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
+                 <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
+                 <div className="relative">
+                   <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
+                     {t.workExperience.label}
+                   </span>
+                   <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
+                   <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
                       </div>
-                    </div>
+                 <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
                 </div>
               </div>
-          </section>
 
-          {/* Work Experience Section - Modern Galaxy Design */}
-          <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
-            {/* Enhanced Galaxy Background Elements */}
-            <div className="nebula-effect nebula-purple"></div>
-            <div className="nebula-effect nebula-blue"></div>
-            <div className="nebula-effect nebula-green"></div>
-            <div className="galaxy-center"></div>
-
-            {/* Shooting Stars */}
-            <div className="shooting-star" style={{top: '10%', left: '15%', animationDelay: '1s'}}></div>
-            <div className="shooting-star" style={{top: '75%', left: '75%', animationDelay: '2.5s'}}></div>
-            <div className="shooting-star" style={{top: '90%', left: '20%', animationDelay: '4s'}}></div>
-            <div className="shooting-star" style={{top: '30%', left: '90%', animationDelay: '5.5s'}}></div>
-            
-            <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
-              <div className="animate-fade-in">
-                {/* Work Experience Label */}
-                <div className="mb-12 sm:mb-16 md:mb-20 text-center">
-                  <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
-                    <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
-                    <div className="relative">
-                      <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
-                        {t.workExperience.title}
-                      </span>
-                      <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
-                      <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                        </div>
-                    <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                      </div>
-                </div>
-                
-                {/* Work Experience Content Container */}
-                <div className="space-y-8 sm:space-y-12 md:space-y-16">
-                  
-                  {/* Agribank Experience */}
-                  <div className="relative">
-                    {/* Glowing Background Container */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-3xl blur-2xl"></div>
-                    
-                    {/* Main Content Card */}
-                    <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
-                      
-                      {/* Company Header */}
-                      <div className="mb-6 sm:mb-8">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                            {t.workExperience.agribank.company}
-                          </h3>
-                          <div className="flex flex-col sm:items-end gap-2">
-                            <span className="text-[#00ff88] font-semibold text-lg sm:text-xl">
-                              {t.workExperience.agribank.position}
-                          </span>
-                            <span className="text-[#00d4ff] text-sm sm:text-base">
-                              {t.workExperience.agribank.period}
-                            </span>
-                      </div>
+             {/* Work Experience Content Container */}
+             <div className="space-y-8 sm:space-y-12 md:space-y-16">
+               
+               {/* Agribank Experience */}
+               <div className="relative">
+                 {/* Glowing Background Container */}
+                 <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-3xl blur-2xl"></div>
+                 
+                 {/* Main Content Card */}
+                 <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
+                   
+                   {/* Company Header */}
+                   <div className="mb-6 sm:mb-8">
+                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                         {t.workExperience.agribank.company}
+                </h3>
+                       <div className="flex flex-col sm:items-end gap-2">
+                         <span className="text-[#00ff88] font-semibold text-lg sm:text-xl">
+                           {t.workExperience.agribank.position}
+                         </span>
+                         <span className="text-[#00d4ff] text-sm sm:text-base">
+                           {t.workExperience.agribank.period}
+                         </span>
                         </div>
                       </div>
-                      
-                      {/* Achievements */}
-                      <div className="space-y-4 sm:space-y-6">
-                        {t.workExperience.agribank.achievements.map((achievement, index) => (
-                          <div key={index} className="flex items-start gap-3 sm:gap-4">
-                            <div className="flex-shrink-0 w-2 h-2 bg-[#00ff88] rounded-full mt-2 sm:mt-3"></div>
-                            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                              {achievement}
-                            </p>
+                      </div>
+                   
+                   {/* Achievements */}
+                   <div className="space-y-4 sm:space-y-6">
+                     {t.workExperience.agribank.achievements.map((achievement, index) => (
+                       <div key={index} className="flex items-start gap-3 sm:gap-4">
+                         <div className="flex-shrink-0 w-2 h-2 bg-[#00ff88] rounded-full mt-2 sm:mt-3"></div>
+                         <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                           {achievement}
+                         </p>
                     </div>
                   ))}
                 </div>
-                      
-                      {/* Decorative Corner Elements */}
-                      <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
-                      <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
-                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
-                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
+                   
+                   {/* Decorative Corner Elements */}
+                   <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
+                   <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
+                   <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
+                   <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
               </div>
             </div>
-                  
-                  {/* Maybank Experience */}
-                  <div className="relative">
-                    {/* Glowing Background Container */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-[#00d4ff]/10 via-[#7c3aed]/10 to-[#00ff88]/10 rounded-3xl blur-2xl"></div>
-                    
-                    {/* Main Content Card */}
-                    <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
-                      
-                      {/* Company Header */}
-                      <div className="mb-6 sm:mb-8">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                            {t.workExperience.maybank.company}
-                          </h3>
-                          <div className="flex flex-col sm:items-end gap-2">
-                            <span className="text-[#00d4ff] font-semibold text-lg sm:text-xl">
-                              {t.workExperience.maybank.position}
-                            </span>
-                            <span className="text-[#7c3aed] text-sm sm:text-base">
-                              {t.workExperience.maybank.period}
-                            </span>
-                          </div>
-                        </div>
+               
+               {/* Maybank Experience */}
+               <div className="relative">
+                 {/* Glowing Background Container */}
+                 <div className="absolute -inset-4 bg-gradient-to-r from-[#00d4ff]/10 via-[#7c3aed]/10 to-[#00ff88]/10 rounded-3xl blur-2xl"></div>
+                 
+                 {/* Main Content Card */}
+                 <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
+                   
+                   {/* Company Header */}
+                   <div className="mb-6 sm:mb-8">
+                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                         {t.workExperience.maybank.company}
+                       </h3>
+                       <div className="flex flex-col sm:items-end gap-2">
+                         <span className="text-[#00d4ff] font-semibold text-lg sm:text-xl">
+                           {t.workExperience.maybank.position}
+                         </span>
+                         <span className="text-[#7c3aed] text-sm sm:text-base">
+                           {t.workExperience.maybank.period}
+                         </span>
+                       </div>
+                     </div>
             </div>
 
-                      {/* Achievements */}
-                      <div className="space-y-4 sm:space-y-6">
-                        {t.workExperience.maybank.achievements.map((achievement, index) => (
-                          <div key={index} className="flex items-start gap-3 sm:gap-4">
-                            <div className="flex-shrink-0 w-2 h-2 bg-[#00d4ff] rounded-full mt-2 sm:mt-3"></div>
-                            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                              {achievement}
-                            </p>
-                          </div>
+                   {/* Achievements */}
+                   <div className="space-y-4 sm:space-y-6">
+                     {t.workExperience.maybank.achievements.map((achievement, index) => (
+                       <div key={index} className="flex items-start gap-3 sm:gap-4">
+                         <div className="flex-shrink-0 w-2 h-2 bg-[#00d4ff] rounded-full mt-2 sm:mt-3"></div>
+                         <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                           {achievement}
+                         </p>
+                       </div>
                 ))}
               </div>
 
-                      {/* Decorative Corner Elements */}
-                      <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00d4ff] opacity-60"></div>
-                      <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#7c3aed] opacity-60"></div>
-                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#00ff88] opacity-60"></div>
-                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00d4ff] opacity-60"></div>
+                   {/* Decorative Corner Elements */}
+                   <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00d4ff] opacity-60"></div>
+                   <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#7c3aed] opacity-60"></div>
+                   <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#00ff88] opacity-60"></div>
+                   <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00d4ff] opacity-60"></div>
                     </div>
                 </div>
-                  
+               
               </div>
             </div>
-            </div>
-          </section>
+         </div>
+       </section>
 
       {/* Projects Section */}
       <section className="py-12 md:py-24 relative galaxy-section">
