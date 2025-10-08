@@ -543,17 +543,18 @@ export default function Portfolio() {
             
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
               <div className="animate-fade-in">
-                {/* Ultra Modern About Me Label */}
-                <div className="mb-16 text-center">
-                  <div className="inline-flex items-center gap-4 mb-8 relative">
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
+                {/* Ultra Modern About Me Label - Enhanced */}
+                <div className="mb-20 text-center">
+                  <div className="inline-flex items-center gap-6 mb-12 relative">
+                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
                     <div className="relative">
-                      <span className="text-[#00ff88] text-sm tracking-[6px] font-bold uppercase relative z-10">
+                      <span className="text-[#00ff88] text-xl sm:text-2xl md:text-3xl tracking-[8px] font-black uppercase relative z-10">
                         ABOUT ME
                       </span>
+                      <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-xl rounded-full"></div>
                       <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-lg rounded-full"></div>
                     </div>
-                    <div className="w-16 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
+                    <div className="w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
                   </div>
                 </div>
                 
