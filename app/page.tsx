@@ -300,7 +300,7 @@ export default function Portfolio() {
           <div className="flex justify-between items-center py-4 sm:py-6">
             <div className="text-xs sm:text-sm font-bold tracking-widest text-gradient-primary">
               {t.header.location}
-      </div>
+            </div>
 
             {/* Navigation */}
             <nav className="flex items-center gap-2 sm:gap-4 lg:gap-8">
@@ -335,7 +335,7 @@ export default function Portfolio() {
       {activeSection === "professional" && (
         <>
           {/* Hero Section - Modern 2 Column Layout */}
-          <section className="min-h-screen flex items-center pt-20 sm:pt-24 relative overflow-hidden">
+          <section className="min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24 relative overflow-hidden">
             {/* Floating Decorative Elements */}
             <div className="absolute top-20 left-10 text-6xl opacity-5 animate-float">
               &lt;/&gt;
@@ -344,19 +344,19 @@ export default function Portfolio() {
               { }
         </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full relative z-10">
+            <div className="max-w-6xl sm:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 w-full relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 
                 {/* Left Column - Content - Centered */}
                 <div className="space-y-8 animate-fade-in text-center lg:text-left">
-                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight uppercase tracking-tight text-center lg:text-left">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight uppercase tracking-tight text-center lg:text-left">
                     <span className="block">{t.hero.greeting}</span>
                     <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
                       {t.hero.name}
                     </span>
                 </h1>
                   
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white uppercase tracking-wider text-center lg:text-left relative group">
+                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white uppercase tracking-wider text-center lg:text-left relative group">
                     <span className="relative inline-block">
                       <span className="text-white">
                         {t.hero.title}
@@ -523,7 +523,7 @@ export default function Portfolio() {
       </section>
 
           {/* About Section - Ultra Modern Galaxy Design */}
-          <section className="py-20 md:py-32 relative galaxy-bg overflow-hidden">
+          <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
             {/* Enhanced Galaxy Background Elements */}
             <div className="nebula-effect nebula-purple"></div>
             <div className="nebula-effect nebula-blue"></div>
@@ -541,75 +541,75 @@ export default function Portfolio() {
             <div className="shooting-star" style={{top: '80%', left: '30%', animationDelay: '3s'}}></div>
             <div className="shooting-star" style={{top: '40%', left: '90%', animationDelay: '4.5s'}}></div>
             
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+            <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
               <div className="animate-fade-in">
                 {/* Ultra Modern About Me Label - Enhanced */}
-                <div className="mb-20 text-center">
-                  <div className="inline-flex items-center gap-6 mb-12 relative">
-                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
+                <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+                  <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
+                    <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
                     <div className="relative">
-                      <span className="text-[#00ff88] text-xl sm:text-2xl md:text-3xl tracking-[8px] font-black uppercase relative z-10">
+                      <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
                         ABOUT ME
-                      </span>
-                      <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-xl rounded-full"></div>
-                      <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-lg rounded-full"></div>
-                    </div>
-                    <div className="w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                  </div>
-                </div>
-                
+                              </span>
+                      <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
+                      <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
+                            </div>
+                    <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
+                          </div>
+                        </div>
+
                 {/* Ultra Modern Content Container */}
                 <div className="relative">
                   {/* Glowing Background Container */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-3xl blur-2xl"></div>
                   
                   {/* Main Content Card */}
-                  <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-16 shadow-2xl">
+                  <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
                     
                     {/* Quote Section - Enhanced */}
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-12 sm:mb-14 md:mb-16">
                       <div className="relative inline-block">
-                        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight font-amsterdam-four italic relative z-10">
+                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
                           <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
                             "Transforming vision into reality and turning intent into results"
                           </span>
                         </p>
                         
                         {/* Quote Glow Effect */}
-                        <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-2xl rounded-2xl opacity-60"></div>
+                        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-xl sm:blur-2xl rounded-xl sm:rounded-2xl opacity-60"></div>
                         
                         {/* Decorative Elements */}
-                        <div className="absolute -top-8 -left-8 w-4 h-4 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
-                        <div className="absolute -bottom-8 -right-8 w-3 h-3 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-                        <div className="absolute top-1/2 -left-12 w-2 h-2 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '2s'}}></div>
-                      </div>
-                    </div>
-                    
+                        <div className="absolute -top-4 sm:-top-6 md:-top-8 -left-4 sm:-left-6 md:-left-8 w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
+                        <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -right-4 sm:-right-6 md:-right-8 w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <div className="absolute top-1/2 -left-6 sm:-left-8 md:-left-12 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '2s'}}></div>
+                          </div>
+                        </div>
+
                     {/* Description Section - Enhanced */}
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-3xl sm:max-w-4xl mx-auto">
                       <div className="relative">
-                        <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-justify relative z-10">
+                        <p className="text-gray-200 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed font-light text-justify relative z-10 px-2 sm:px-4">
                           <span className="relative">
                             {t.about.description}
-                          </span>
+                            </span>
                         </p>
                         
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-sm"></div>
+                        </div>
                       </div>
-                    </div>
                     
                     {/* Decorative Corner Elements */}
-                    <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
-                    <div className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
-                    <div className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
-                    <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
+                    <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
+                    <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
+                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
+                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
                     
                     {/* Floating Tech Elements */}
-                    <div className="absolute top-1/4 left-8 w-2 h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
-                    <div className="absolute top-3/4 right-8 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                    <div className="absolute bottom-1/4 left-12 w-1 h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                  </div>
+                    <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
+                    <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
+                    </div>
                 </div>
               </div>
             </div>
