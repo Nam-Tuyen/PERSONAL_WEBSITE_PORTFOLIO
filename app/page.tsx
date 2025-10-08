@@ -331,21 +331,21 @@ export default function Portfolio() {
             </div>
             <div className="absolute bottom-20 right-10 text-6xl opacity-5 animate-float" style={{animationDelay: '2s'}}>
               { }
-            </div>
+        </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 
                 {/* Left Column - Content - Centered */}
                 <div className="space-y-8 animate-fade-in text-center lg:text-left">
-                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight uppercase tracking-tight">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight uppercase tracking-tight text-center lg:text-left">
                     <span className="block">{t.hero.greeting}</span>
                     <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
                       {t.hero.name}
                     </span>
-                  </h1>
+                </h1>
                   
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300 uppercase tracking-wider">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300 uppercase tracking-wider text-center lg:text-left">
                     {t.hero.title}
                   </h2>
                   
@@ -381,7 +381,7 @@ export default function Portfolio() {
                       </a>
                     </div>
                   </div>
-                </div>
+              </div>
 
                 {/* Right Column - Profile Image */}
                 <div className="flex justify-center lg:justify-end animate-scale-in">
@@ -403,7 +403,7 @@ export default function Portfolio() {
                           backgroundSize: '40px 40px',
                           animation: 'gridMove 15s linear infinite'
                         }}></div>
-                      </div>
+              </div>
                       
                       {/* Additional Grid Layer */}
                       <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -415,8 +415,8 @@ export default function Portfolio() {
                           backgroundSize: '80px 80px',
                           animation: 'gridMove 25s linear infinite reverse'
                         }}></div>
-                      </div>
-                      
+            </div>
+
                       {/* Enhanced Glowing Orbs - More and Larger */}
                       <div className="absolute -top-24 -left-24 w-56 h-56 bg-gradient-radial from-[#00ffaa] to-transparent rounded-full blur-3xl opacity-50 animate-float"></div>
                       <div className="absolute -bottom-24 -right-24 w-52 h-52 bg-gradient-radial from-[#00d4ff] to-transparent rounded-full blur-3xl opacity-50 animate-float" style={{animationDelay: '2s'}}></div>
@@ -501,20 +501,20 @@ export default function Portfolio() {
                         <div className="relative w-full h-full rounded-xl overflow-hidden bg-black">
                           
                           {/* Profile Image - No Hover Effects */}
-                          <img 
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
                             alt="LE NAM TUYEN" 
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                </div>
+                </div>
                 </div>
               </div>
             </div>
+          </div>
 
-          </section>
+      </section>
 
           {/* About Section - Modern Harmonious Layout */}
           <section className="min-h-screen flex items-center py-16 md:py-24 relative overflow-hidden">
@@ -535,10 +535,10 @@ export default function Portfolio() {
                       <div className="w-12 h-px bg-gradient-primary"></div>
                       <span className="text-gray-400 text-xs tracking-[4px] font-medium uppercase">
                         {t.about.label}
-                      </span>
+                              </span>
                       <div className="w-12 h-px bg-gradient-primary"></div>
-              </div>
-            </div>
+                            </div>
+                            </div>
 
                   {/* Main Quote with Enhanced Typography */}
                   <div className="animate-slide-up">
@@ -549,7 +549,7 @@ export default function Portfolio() {
                       </p>
                       <div className="absolute -right-4 -bottom-4 text-6xl text-gradient-primary opacity-20 font-serif">"</div>
                     </blockquote>
-                  </div>
+                          </div>
 
                   {/* Name with Modern Typography */}
                   <div className="animate-slide-up">
@@ -557,7 +557,7 @@ export default function Portfolio() {
                       className="text-4xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight"
                       dangerouslySetInnerHTML={{ __html: t.about.name }}
                   />
-                </div>
+                        </div>
 
                   {/* Description with Better Typography */}
                   <div className="animate-slide-up">
@@ -565,8 +565,8 @@ export default function Portfolio() {
                       <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 font-light">
                         {t.about.description}
                       </p>
-                </div>
-                </div>
+                          </div>
+                        </div>
 
                   {/* CTA and Social in Modern Layout */}
                   <div className="animate-slide-up">
@@ -592,13 +592,13 @@ export default function Portfolio() {
                             >
                               <span className="text-sm font-semibold group-hover:scale-110 transition-transform">
                                 {social.icon}
-                              </span>
+                            </span>
                             </a>
                           ))}
+                        </div>
+                      </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-        </div>
               </div>
 
                 {/* Right Image - 5 columns */}
@@ -614,22 +614,22 @@ export default function Portfolio() {
                         />
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </div>
+                  </div>
 
                       {/* Modern Decorative Elements */}
                       <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-primary rounded-2xl opacity-80 animate-pulse shadow-lg shadow-[#00ff88]/30"></div>
                       <div className="absolute -bottom-6 -right-6 w-8 h-8 bg-gradient-tech rounded-xl opacity-80 animate-pulse shadow-lg shadow-[#00d4ff]/30" style={{animationDelay: '0.5s'}}></div>
                       <div className="absolute top-1/2 -left-4 w-6 h-6 bg-gradient-cyber rounded-full opacity-60 animate-pulse shadow-lg shadow-[#7c3aed]/30" style={{animationDelay: '1s'}}></div>
                       <div className="absolute top-1/3 -right-4 w-4 h-4 bg-gradient-primary rounded-full opacity-60 animate-pulse shadow-lg shadow-[#00ff88]/30" style={{animationDelay: '1.5s'}}></div>
-                        </div>
+                </div>
 
                     {/* Floating Tech Elements */}
                     <div className="absolute -z-10 top-10 -right-10 w-20 h-20 border border-gradient-primary/20 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
                     <div className="absolute -z-10 bottom-10 -left-10 w-16 h-16 border border-gradient-tech/20 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+                          </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                </div>
+                        </div>
           </section>
 
       {/* Services Section */}
@@ -638,7 +638,7 @@ export default function Portfolio() {
           <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <h3 className="text-gradient-tech text-sm tracking-widest mb-5">
               {t.services.label}
-                  </h3>
+                </h3>
                 </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -653,15 +653,15 @@ export default function Portfolio() {
                   {index === 1 && <Code className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
                   {index === 2 && <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
                   {index === 3 && <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
-                          </div>
+                        </div>
                 <h4 className="text-lg sm:text-xl font-bold group-hover:text-gradient-tech transition-all">
                   {service}
                             </h4>
-                    </div>
+                      </div>
                   ))}
-                </div>
               </div>
-      </section>
+            </div>
+          </section>
 
       {/* Projects Section */}
       <section className="py-12 md:py-24 relative">
@@ -673,7 +673,7 @@ export default function Portfolio() {
             <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto text-sm sm:text-base">
               {t.projects.intro}
             </p>
-          </div>
+            </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {t.projects.items.map((project, index) => (
@@ -700,11 +700,11 @@ export default function Portfolio() {
                   <p className="text-gradient-tech font-semibold text-base sm:text-lg mb-3">
                     {project.year}
                   </p>
-                      </div>
+              </div>
                     </div>
                   ))}
+                </div>
               </div>
-            </div>
           </section>
 
       {/* Testimonial Section */}
@@ -713,8 +713,8 @@ export default function Portfolio() {
           <div className="mb-16 animate-fade-in">
             <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
               {t.testimonial.label}
-                </h3>
-            </div>
+              </h3>
+                      </div>
 
           <div className="max-w-4xl mx-auto card-tech text-center animate-scale-in">
             <p 
@@ -734,10 +734,10 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
+                            </div>
               </div>
-                    </div>
-                </div>
-              </div>
+            </div>
+          </div>
         </section>
 
       {/* Contact Section */}
