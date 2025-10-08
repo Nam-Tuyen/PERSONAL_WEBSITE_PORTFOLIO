@@ -139,6 +139,49 @@
   }
 }
 
+/* Grid movement animation */
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glow pulse animation */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(8, 203, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(8, 203, 0, 0.6);
+  }
+}
+
+/* Gradient shift animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Hide scrollbar for project carousel */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -147,4 +190,30 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(45deg, #08CB00, #253900, #08CB00);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(8, 203, 0, 0.2);
+}
+
+/* Neon glow effect */
+.neon-glow {
+  box-shadow: 
+    0 0 5px #08CB00,
+    0 0 10px #08CB00,
+    0 0 15px #08CB00,
+    0 0 20px #08CB00;
 }

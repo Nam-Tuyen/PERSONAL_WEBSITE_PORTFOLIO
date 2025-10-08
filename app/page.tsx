@@ -609,35 +609,58 @@ export default function Portfolio() {
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none opacity-20">
+    <div className="min-h-screen bg-gradient-to-br from-black via-[#253900] to-black text-[#EEEEEE] relative overflow-hidden">
+      {/* Animated Grid Background */}
+      <div className="fixed inset-0 pointer-events-none opacity-10">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(#00FF99 1px, transparent 1px), linear-gradient(90deg, #00FF99 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
+              "linear-gradient(#08CB00 1px, transparent 1px), linear-gradient(90deg, #08CB00 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            animation: "grid-move 20s linear infinite",
           }}
         ></div>
       </div>
 
+      {/* Gradient Orbs */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00FF99] rounded-full blur-[120px] opacity-20"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00FF99] rounded-full blur-[120px] opacity-20"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-full blur-[120px] opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-[#08CB00] to-[#253900] rounded-full blur-[120px] opacity-30 animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#08CB00]/20 to-transparent rounded-full blur-[100px] opacity-40"></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="fixed inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-[#08CB00] rounded-full opacity-60 animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+            }}
+          ></div>
+        ))}
       </div>
 
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/90 backdrop-blur-xl border-b border-[#00FF99]/20" : "bg-transparent"}`}
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-black/95 backdrop-blur-xl border-b border-[#08CB00]/30 shadow-lg shadow-[#08CB00]/10" : "bg-transparent"}`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="relative w-12 h-12 bg-black border-2 border-[#00FF99] flex items-center justify-center font-bold text-[#00FF99] text-xl">
-                TL
+            <div className="flex items-center gap-4">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative w-14 h-14 bg-gradient-to-br from-[#08CB00] to-[#253900] border-2 border-[#08CB00] rounded-lg flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-[#08CB00]/30">
+                  TL
+                </div>
               </div>
               <div>
-                <h1 className="text-xl font-bold tracking-wider">LE NAM TUYEN</h1>
-                <p className="text-xs text-[#00FF99] font-mono">{t.hero.role}</p>
+                <h1 className="text-xl font-bold tracking-wider text-[#EEEEEE]">LE NAM TUYEN</h1>
+                <p className="text-xs text-[#08CB00] font-mono bg-[#08CB00]/10 px-2 py-1 rounded border border-[#08CB00]/30">{t.hero.role}</p>
               </div>
             </div>
 
@@ -650,13 +673,15 @@ export default function Portfolio() {
                 <button
                   key={item.key}
                   onClick={() => setActiveSection(item.key)}
-                  className={`transition-all font-mono text-sm tracking-wider relative group active:scale-95 ${
-                    activeSection === item.key ? "text-white" : "text-gray-400 hover:text-white"
+                  className={`transition-all font-mono text-sm tracking-wider relative group active:scale-95 px-4 py-2 rounded-lg ${
+                    activeSection === item.key 
+                      ? "text-[#EEEEEE] bg-gradient-to-r from-[#08CB00]/20 to-[#253900]/20 border border-[#08CB00]/50" 
+                      : "text-[#EEEEEE]/70 hover:text-[#EEEEEE] hover:bg-[#08CB00]/10 border border-transparent hover:border-[#08CB00]/30"
                   }`}
                 >
                   {item.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-[#00FF99] transition-all ${
+                    className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-[#08CB00] to-[#253900] transition-all ${
                       activeSection === item.key ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   ></span>
@@ -664,7 +689,7 @@ export default function Portfolio() {
               ))}
               <button
                 onClick={() => setLanguage(language === "en" ? "vi" : "en")}
-                className="flex items-center gap-2 px-4 py-2 border border-[#00FF99]/30 text-[#00FF99] hover:border-[#00FF99] transition-all active:scale-95"
+                className="flex items-center gap-2 px-4 py-2 border border-[#08CB00]/30 text-[#08CB00] hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-95 rounded-lg backdrop-blur-sm"
               >
                 <Globe className="w-4 h-4" />
                 <span className="font-mono text-xs">{language === "en" ? "VI" : "EN"}</span>
@@ -673,19 +698,19 @@ export default function Portfolio() {
                 href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-[#00FF99] text-black font-bold tracking-wider hover:bg-[#00FF99]/80 transition-all active:scale-95"
+                className="px-6 py-2 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all active:scale-95 rounded-lg shadow-lg shadow-[#08CB00]/30"
               >
                 {t.nav.hireMe}
               </a>
             </div>
 
-            <button className="md:hidden text-[#00FF99]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X /> : <Menu />}
+            <button className="md:hidden text-[#08CB00] hover:text-[#EEEEEE] transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
           {mobileMenuOpen && (
-            <div className="md:hidden mt-6 pb-4 space-y-4 bg-black/95 border border-[#00FF99]/20 p-6">
+            <div className="md:hidden mt-6 pb-4 space-y-4 bg-black/95 backdrop-blur-xl border border-[#08CB00]/30 p-6 rounded-lg shadow-lg shadow-[#08CB00]/10">
               {[
                 { key: "professional", label: t.nav.professional },
                 { key: "personal", label: t.nav.personal },
@@ -693,7 +718,11 @@ export default function Portfolio() {
               ].map((item) => (
                 <button
                   key={item.key}
-                  className="block w-full text-left py-3 font-mono text-sm tracking-wider hover:text-[#00FF99]"
+                  className={`block w-full text-left py-3 font-mono text-sm tracking-wider transition-all rounded-lg px-4 ${
+                    activeSection === item.key 
+                      ? "text-[#EEEEEE] bg-gradient-to-r from-[#08CB00]/20 to-[#253900]/20 border border-[#08CB00]/50" 
+                      : "text-[#EEEEEE]/70 hover:text-[#EEEEEE] hover:bg-[#08CB00]/10"
+                  }`}
                   onClick={() => {
                     setActiveSection(item.key)
                     setMobileMenuOpen(false)
@@ -704,7 +733,7 @@ export default function Portfolio() {
               ))}
               <button
                 onClick={() => setLanguage(language === "en" ? "vi" : "en")}
-                className="flex items-center gap-2 px-4 py-2 border border-[#00FF99]/30 text-[#00FF99] hover:border-[#00FF99] transition-all w-full justify-center"
+                className="flex items-center gap-2 px-4 py-2 border border-[#08CB00]/30 text-[#08CB00] hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all w-full justify-center rounded-lg"
               >
                 <Globe className="w-4 h-4" />
                 <span className="font-mono text-xs">{language === "en" ? "TIẾNG VIỆT" : "ENGLISH"}</span>
@@ -717,28 +746,28 @@ export default function Portfolio() {
       <section className="relative pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 relative z-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 border border-[#00FF99] text-[#00FF99] font-mono text-xs">
-                <Terminal className="w-4 h-4" />
-                <span className="animate-pulse">●</span>
+            <div className="space-y-8 relative z-10">
+              <div className="inline-flex items-center gap-3 px-6 py-3 border border-[#08CB00]/50 text-[#08CB00] font-mono text-sm bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 rounded-lg backdrop-blur-sm">
+                <Terminal className="w-5 h-5" />
+                <span className="animate-pulse text-[#08CB00]">●</span>
                 {t.hero.available}
               </div>
 
-              <div className="space-y-2">
-                <p className="text-[#00FF99] font-mono text-sm tracking-widest">{t.hero.hello}</p>
+              <div className="space-y-4">
+                <p className="text-[#08CB00] font-mono text-sm tracking-widest bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30 inline-block">{t.hero.hello}</p>
                 <h1 className="text-6xl md:text-8xl font-bold leading-none tracking-tighter">
-                  LE NAM
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">LE NAM</span>
                   <br />
-                  <span className="text-[#00FF99]">TUYEN</span>
+                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">TUYEN</span>
                 </h1>
-                <div className="flex items-center gap-2 pt-2">
-                  <div className="w-12 h-0.5 bg-[#00FF99]"></div>
-                  <p className="font-mono text-sm text-gray-400">{t.hero.role}</p>
+                <div className="flex items-center gap-3 pt-4">
+                  <div className="w-16 h-1 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-full"></div>
+                  <p className="font-mono text-sm text-[#EEEEEE]/70 bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30">{t.hero.role}</p>
                 </div>
               </div>
 
-              <div className="space-y-3 border-l-2 border-[#00FF99] pl-6">
-                <p className="text-gray-400 font-mono text-sm">
+              <div className="space-y-4 border-l-2 border-gradient-to-b from-[#08CB00] to-[#253900] pl-8 bg-gradient-to-r from-[#08CB00]/5 to-transparent p-6 rounded-r-lg">
+                <p className="text-[#EEEEEE]/80 font-mono text-sm leading-relaxed">
                   {t.hero.roleDetails}
                   <br />
                   {t.hero.status}
@@ -747,64 +776,80 @@ export default function Portfolio() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-6">
-                <button className="px-8 py-4 bg-[#00FF99] text-black font-bold tracking-wider hover:bg-[#00FF99]/80 transition-all flex items-center gap-3 active:scale-95">
-                  <Download className="w-5 h-5" />
+              <div className="flex flex-wrap gap-4 pt-8">
+                <button className="px-8 py-4 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all flex items-center gap-3 active:scale-95 rounded-lg shadow-lg shadow-[#08CB00]/30 group">
+                  <Download className="w-5 h-5 group-hover:animate-bounce" />
                   {t.hero.downloadCV}
                 </button>
                 <a
                   href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#00FF99] text-[#00FF99] font-bold tracking-wider hover:bg-[#00FF99]/10 transition-all flex items-center gap-3 active:scale-95"
+                  className="px-8 py-4 border-2 border-[#08CB00] text-[#08CB00] font-bold tracking-wider hover:bg-[#08CB00]/10 hover:border-[#08CB00]/80 transition-all flex items-center gap-3 active:scale-95 rounded-lg backdrop-blur-sm group"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   {t.hero.linkedin}
                 </a>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 text-sm text-gray-400 font-mono">
-                <MapPin className="w-4 h-4 text-[#00FF99]" />
+              <div className="flex items-center gap-3 pt-6 text-sm text-[#EEEEEE]/70 font-mono bg-[#08CB00]/5 px-4 py-2 rounded-lg border border-[#08CB00]/20">
+                <MapPin className="w-4 h-4 text-[#08CB00]" />
                 {t.hero.location}
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative w-96 h-96 mx-auto">
+              <div className="relative w-96 h-96 mx-auto group">
                 {/* Outer glow effect */}
-                <div className="absolute inset-0 bg-[#00FF99] blur-xl opacity-30 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#08CB00] to-[#253900] blur-xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity"></div>
 
-                {/* Main border frame */}
-                <div className="absolute inset-0 border-4 border-[#00FF99] shadow-[0_0_30px_rgba(0,255,153,0.5)]"></div>
-                <div className="absolute inset-3 border-2 border-[#00FF99]/60"></div>
-                <div className="absolute inset-6 border border-[#00FF99]/30"></div>
+                {/* Main border frame with gradient */}
+                <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-lg p-1">
+                  <div className="w-full h-full bg-black rounded-lg"></div>
+                </div>
+                <div className="absolute inset-4 border-2 border-[#08CB00]/60 rounded-lg"></div>
+                <div className="absolute inset-8 border border-[#08CB00]/30 rounded-lg"></div>
 
-                {/* Image container - no overlay for maximum sharpness */}
-                <div className="absolute inset-10 overflow-hidden bg-black">
+                {/* Image container */}
+                <div className="absolute inset-12 overflow-hidden bg-black rounded-lg">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
                     alt="Tuyen Le Nam"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 
-                {/* Corner accents - larger and more prominent */}
-                <div className="absolute -top-3 -left-3 w-12 h-12 border-t-4 border-l-4 border-[#00FF99]"></div>
-                <div className="absolute -top-3 -right-3 w-12 h-12 border-t-4 border-r-4 border-[#00FF99]"></div>
-                <div className="absolute -bottom-3 -left-3 w-12 h-12 border-b-4 border-l-4 border-[#00FF99]"></div>
-                <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-4 border-r-4 border-[#00FF99]"></div>
+                {/* Corner accents with gradient */}
+                <div className="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-transparent bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-tl-lg"></div>
+                <div className="absolute -top-4 -right-4 w-16 h-16 border-t-4 border-r-4 border-transparent bg-gradient-to-bl from-[#08CB00] to-[#253900] rounded-tr-lg"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-4 border-l-4 border-transparent bg-gradient-to-tr from-[#08CB00] to-[#253900] rounded-bl-lg"></div>
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-transparent bg-gradient-to-tl from-[#08CB00] to-[#253900] rounded-br-lg"></div>
 
-                {/* Badge elements - enhanced */}
-                <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#00FF99] flex items-center justify-center shadow-[0_0_20px_rgba(0,255,153,0.6)]">
-                  <Award className="w-10 h-10 text-black" />
+                {/* Badge elements - enhanced with gradients */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-[#08CB00] to-[#253900] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
+                  <Award className="w-12 h-12 text-white" />
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-black border-4 border-[#00FF99] flex items-center justify-center shadow-[0_0_20px_rgba(0,255,153,0.6)]">
-                  <Target className="w-10 h-10 text-[#00FF99]" />
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-black border-4 border-[#08CB00] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
+                  <Target className="w-12 h-12 text-[#08CB00]" />
                 </div>
 
                 {/* Animated scan line effect */}
-                <div className="absolute inset-10 overflow-hidden pointer-events-none">
-                  <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#00FF99] to-transparent opacity-50 animate-[scan_3s_ease-in-out_infinite]"></div>
+                <div className="absolute inset-12 overflow-hidden pointer-events-none rounded-lg">
+                  <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#08CB00] to-transparent opacity-60 animate-[scan_3s_ease-in-out_infinite]"></div>
+                </div>
+
+                {/* Floating icons around avatar */}
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce">
+                  <Sparkles className="w-4 h-4 text-[#08CB00]" />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '0.5s'}}>
+                  <Brain className="w-4 h-4 text-[#08CB00]" />
+                </div>
+                <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1s'}}>
+                  <Lightbulb className="w-4 h-4 text-[#08CB00]" />
+                </div>
+                <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1.5s'}}>
+                  <Shield className="w-4 h-4 text-[#08CB00]" />
                 </div>
               </div>
             </div>
@@ -812,20 +857,25 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
             {[
-              { value: "02", label: t.stats.internships, icon: <Briefcase className="w-6 h-6" /> },
-              { value: "02", label: t.stats.leadership, icon: <Users className="w-6 h-6" /> },
-              { value: "13", label: t.stats.monthsExp, icon: <TrendingUp className="w-6 h-6" /> },
-              { value: "2026", label: t.stats.graduation, icon: <GraduationCap className="w-6 h-6" /> },
+              { value: "02", label: t.stats.internships, icon: <Briefcase className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
+              { value: "02", label: t.stats.leadership, icon: <Users className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
+              { value: "13", label: t.stats.monthsExp, icon: <TrendingUp className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
+              { value: "2026", label: t.stats.graduation, icon: <GraduationCap className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
             ].map((stat, i) => (
               <div
                 key={i}
-                className="group relative bg-black border border-[#00FF99]/30 p-6 hover:border-[#00FF99] transition-all"
+                className="group relative bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm hover:scale-105"
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="text-[#00FF99]">{stat.icon}</div>
-                  <h3 className="text-4xl font-bold text-[#00FF99] font-mono">{stat.value}</h3>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${stat.gradient} rounded-lg flex items-center justify-center text-white shadow-lg`}>
+                      {stat.icon}
+                    </div>
+                    <h3 className="text-4xl font-bold bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent font-mono">{stat.value}</h3>
+                  </div>
+                  <p className="text-[#EEEEEE]/70 text-xs font-mono tracking-wider">{stat.label}</p>
                 </div>
-                <p className="text-gray-400 text-xs font-mono tracking-wider">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -834,64 +884,82 @@ export default function Portfolio() {
 
       {activeSection === "professional" && (
         <>
-          <section className="relative py-20 px-6 border-t border-[#00FF99]/20">
+          <section className="relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20">
             <div className="max-w-7xl mx-auto">
-              <div className="flex items-center gap-4 mb-12">
-                <Zap className="w-8 h-8 text-[#00FF99]" />
-                <h2 className="text-4xl font-bold tracking-wider">
-                  {t.professional.title}
-                  <span className="text-[#00FF99]">{t.professional.subtitle}</span>
-                </h2>
-                <div className="flex-1 h-0.5 bg-gradient-to-r from-[#00FF99] to-transparent"></div>
+              <div className="flex items-center gap-6 mb-16">
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-5xl font-bold tracking-wider">
+                    <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.professional.title}</span>
+                    <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">{t.professional.subtitle}</span>
+                  </h2>
+                </div>
+                <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
               </div>
 
               <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <Briefcase className="w-6 h-6 text-[#00FF99]" />
-                  {t.professional.experience}
+                <h3 className="text-3xl font-bold mb-12 flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
+                    <Briefcase className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.professional.experience}</span>
                 </h3>
-                <div className="space-y-8">
+                <div className="space-y-12">
                   {t.experiences.map((exp, i) => (
                     <div key={i} className="relative group">
-                      <div className="absolute left-0 top-0 w-1 h-full bg-[#00FF99]/30"></div>
+                      <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-[#08CB00] to-[#253900] rounded-full"></div>
 
-                      <div className="ml-8 bg-black border border-[#00FF99]/30 p-8 hover:border-[#00FF99] transition-all">
-                        <div className="flex flex-wrap justify-between gap-4 mb-6">
-                          <div>
-                            <div className="flex items-center gap-3 mb-2">
-                              <h3 className="text-2xl font-bold text-[#00FF99]">{exp.role}</h3>
-                              <span className="px-3 py-1 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-xs font-mono">
-                                {exp.type}
-                              </span>
-                            </div>
-                            <p className="text-xl text-white font-semibold mb-1">{exp.company}</p>
-                            <div className="flex gap-4 text-sm text-gray-400 font-mono">
-                              <span>{exp.period}</span>
-                              <span>{exp.location}</span>
+                      <div className="ml-12 bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-8 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm group-hover:scale-[1.02]">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="relative z-10">
+                          <div className="flex flex-wrap justify-between gap-4 mb-8">
+                            <div>
+                              <div className="flex items-center gap-4 mb-3">
+                                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">{exp.role}</h3>
+                                <span className="px-4 py-2 bg-gradient-to-r from-[#08CB00]/20 to-[#253900]/20 border border-[#08CB00]/50 text-[#08CB00] text-xs font-mono rounded-lg">
+                                  {exp.type}
+                                </span>
+                              </div>
+                              <p className="text-xl text-[#EEEEEE] font-semibold mb-2">{exp.company}</p>
+                              <div className="flex gap-6 text-sm text-[#EEEEEE]/70 font-mono">
+                                <span className="flex items-center gap-2">
+                                  <Calendar className="w-4 h-4 text-[#08CB00]" />
+                                  {exp.period}
+                                </span>
+                                <span className="flex items-center gap-2">
+                                  <MapPin className="w-4 h-4 text-[#08CB00]" />
+                                  {exp.location}
+                                </span>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
-                        <div className="mb-6">
-                          <div className="grid md:grid-cols-2 gap-3">
-                            {exp.highlights.map((h, j) => (
-                              <div key={j} className="flex items-start gap-2 text-gray-300">
-                                <ChevronRight className="w-4 h-4 text-[#00FF99] mt-1" />
-                                <span className="text-sm">{h}</span>
-                              </div>
+                          <div className="mb-8">
+                            <div className="grid md:grid-cols-2 gap-4">
+                              {exp.highlights.map((h, j) => (
+                                <div key={j} className="flex items-start gap-3 text-[#EEEEEE]/80 bg-[#08CB00]/5 p-3 rounded-lg border border-[#08CB00]/20">
+                                  <ChevronRight className="w-4 h-4 text-[#08CB00] mt-1 flex-shrink-0" />
+                                  <span className="text-sm leading-relaxed">{h}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2">
+                            {exp.skills.map((s) => (
+                              <span
+                                key={s}
+                                className="px-3 py-1 bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 border border-[#08CB00]/30 text-[#08CB00] text-xs font-mono rounded-lg hover:bg-gradient-to-r hover:from-[#08CB00]/20 hover:to-[#253900]/20 transition-all"
+                              >
+                                {s}
+                              </span>
                             ))}
                           </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {exp.skills.map((s) => (
-                            <span
-                              key={s}
-                              className="px-3 py-1 bg-[#00FF99]/5 border border-[#00FF99]/30 text-[#00FF99] text-xs font-mono"
-                            >
-                              {s}
-                            </span>
-                          ))}
                         </div>
                       </div>
                     </div>
