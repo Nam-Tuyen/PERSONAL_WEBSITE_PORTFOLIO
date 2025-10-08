@@ -53,7 +53,7 @@ export default function Portfolio() {
       hero: {
         greeting: "HI, I AM",
         name: "LE NAM TUYEN",
-        title: "PRODUCT MANAGER & DATA ANALYST",
+        title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH",
         subtitle: "Transforming vision into reality and turning intent into results",
         cta: "CONTACT ME",
       },
@@ -167,7 +167,7 @@ export default function Portfolio() {
       hero: {
         greeting: "HI, I AM",
         name: "LE NAM TUYEN",
-        title: "PRODUCT MANAGER & DATA ANALYST",
+        title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH",
         subtitle: "Transforming vision into reality and turning intent into results",
         cta: "CONTACT ME",
       },
