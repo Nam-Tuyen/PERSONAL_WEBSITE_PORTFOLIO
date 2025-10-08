@@ -28,6 +28,20 @@ import {
   ChevronLeft,
   ExternalLink,
   Calendar,
+  Star,
+  ArrowRight,
+  Sparkles,
+  Brain,
+  Lightbulb,
+  Shield,
+  Layers,
+  Activity,
+  Eye,
+  MousePointer,
+  Palette,
+  Monitor,
+  Smartphone,
+  Tablet,
 } from "lucide-react"
 
 export default function Portfolio() {
