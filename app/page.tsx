@@ -365,83 +365,116 @@ export default function Portfolio() {
               </div>
       </section>
 
-          {/* About Section - 2 Column Layout */}
-          <section className="min-h-screen flex items-center py-12 md:py-24 relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
-              <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* About Section - Modern Harmonious Layout */}
+          <section className="min-h-screen flex items-center py-16 md:py-24 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-primary rounded-full blur-3xl"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-tech rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                 
-                {/* Left Column - Content */}
-                <div className="flex-1 space-y-8">
-                  {/* About Label */}
+                {/* Left Content - 7 columns */}
+                <div className="lg:col-span-7 space-y-10">
+                  {/* About Label with Modern Styling */}
                   <div className="animate-slide-up">
-                    <div className="text-gray-400 text-xs tracking-[3px] font-semibold mb-6">
-                      {t.about.label}
+                    <div className="inline-flex items-center gap-3 mb-8">
+                      <div className="w-12 h-px bg-gradient-primary"></div>
+                      <span className="text-gray-400 text-xs tracking-[4px] font-medium uppercase">
+                        {t.about.label}
+                      </span>
+                      <div className="w-12 h-px bg-gradient-primary"></div>
                     </div>
                   </div>
 
-                  {/* Main Quote */}
+                  {/* Main Quote with Enhanced Typography */}
                   <div className="animate-slide-up">
-                    <blockquote className="text-2xl sm:text-3xl md:text-4xl font-light italic text-gradient-primary leading-relaxed mb-8">
-                      "{t.about.mainQuote}"
+                    <blockquote className="relative">
+                      <div className="absolute -left-6 -top-2 text-6xl text-gradient-primary opacity-20 font-serif">"</div>
+                      <p className="text-3xl sm:text-4xl md:text-5xl font-light italic text-gradient-primary leading-tight pl-8 mb-8">
+                        {t.about.mainQuote}
+                      </p>
+                      <div className="absolute -right-4 -bottom-4 text-6xl text-gradient-primary opacity-20 font-serif">"</div>
                     </blockquote>
                   </div>
 
-                  {/* Name */}
+                  {/* Name with Modern Typography */}
                   <div className="animate-slide-up">
                     <h2 
-                      className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+                      className="text-4xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight"
                       dangerouslySetInnerHTML={{ __html: t.about.name }}
                     />
                   </div>
                   
-                  {/* Description */}
+                  {/* Description with Better Typography */}
                   <div className="animate-slide-up">
-                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
-                      {t.about.description}
-                    </p>
+                    <div className="prose prose-lg prose-invert max-w-none">
+                      <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 font-light">
+                        {t.about.description}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <div className="animate-slide-up mb-8">
-                    <a 
-                      href="#contact" 
-                      className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white text-xs tracking-[2px] font-semibold rounded-full transition-all hover:bg-[#00ff88] hover:border-[#00ff88] hover:text-black uppercase"
-                    >
-                      {t.about.button}
-                    </a>
-                  </div>
-                  
-                  {/* Social Icons */}
-                  <div className="flex gap-6 animate-fade-in">
-                    {t.about.social.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.url}
-                        className="text-white text-lg sm:text-xl transition-colors hover:text-[#00ff88]"
-                        aria-label={social.name}
+                  {/* CTA and Social in Modern Layout */}
+                  <div className="animate-slide-up">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                      <a 
+                        href="#contact" 
+                        className="group relative inline-flex items-center px-8 py-4 bg-transparent border-2 border-gradient-primary text-white text-sm tracking-[2px] font-semibold rounded-full transition-all duration-300 hover:bg-gradient-primary hover:text-black hover:scale-105 hover:shadow-lg hover:shadow-[#00ff88]/30"
                       >
-                        {social.icon}
+                        <span className="relative z-10">{t.about.button}</span>
+                        <div className="absolute inset-0 bg-gradient-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </a>
-                    ))}
+                      
+                      {/* Social Icons with Modern Styling */}
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-500 text-xs tracking-widest uppercase mr-4">Connect</span>
+                        <div className="flex gap-4">
+                          {t.about.social.map((social, index) => (
+                            <a
+                              key={index}
+                              href={social.url}
+                              className="group relative w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 transition-all duration-300 hover:border-[#00ff88] hover:text-[#00ff88] hover:scale-110 hover:shadow-lg hover:shadow-[#00ff88]/20"
+                              aria-label={social.name}
+                            >
+                              <span className="text-sm font-semibold group-hover:scale-110 transition-transform">
+                                {social.icon}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Right Column - Profile Image */}
-                <div className="flex-shrink-0 animate-scale-in">
+                {/* Right Image - 5 columns */}
+                <div className="lg:col-span-5 animate-scale-in">
                   <div className="relative group">
-                    <div className="w-[300px] h-[400px] sm:w-[350px] sm:h-[450px] md:w-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl shadow-black/50">
-                      <img 
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
-                        alt="Profile" 
-                        className="w-full h-full object-cover grayscale-[20%] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-                      />
+                    {/* Main Image Container */}
+                    <div className="relative">
+                      <div className="w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-black/30 bg-gradient-to-br from-gray-800 to-gray-900">
+                        <img 
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                          alt="Profile" 
+                          className="w-full h-full object-cover grayscale-[30%] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                        />
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                      
+                      {/* Modern Decorative Elements */}
+                      <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-primary rounded-2xl opacity-80 animate-pulse shadow-lg shadow-[#00ff88]/30"></div>
+                      <div className="absolute -bottom-6 -right-6 w-8 h-8 bg-gradient-tech rounded-xl opacity-80 animate-pulse shadow-lg shadow-[#00d4ff]/30" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute top-1/2 -left-4 w-6 h-6 bg-gradient-cyber rounded-full opacity-60 animate-pulse shadow-lg shadow-[#7c3aed]/30" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute top-1/3 -right-4 w-4 h-4 bg-gradient-primary rounded-full opacity-60 animate-pulse shadow-lg shadow-[#00ff88]/30" style={{animationDelay: '1.5s'}}></div>
                     </div>
                     
-                    {/* Decorative elements */}
-                    <div className="absolute -top-4 -left-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
-                    <div className="absolute -bottom-4 -right-4 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                    <div className="absolute top-1/2 -left-3 w-3 h-3 bg-gradient-cyber rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute top-1/2 -right-3 w-3 h-3 bg-gradient-primary rounded-full opacity-60 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    {/* Floating Tech Elements */}
+                    <div className="absolute -z-10 top-10 -right-10 w-20 h-20 border border-gradient-primary/20 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+                    <div className="absolute -z-10 bottom-10 -left-10 w-16 h-16 border border-gradient-tech/20 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
                   </div>
                 </div>
               </div>
