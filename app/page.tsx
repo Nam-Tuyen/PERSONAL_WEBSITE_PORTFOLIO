@@ -42,6 +42,7 @@ import {
   Monitor,
   Smartphone,
   Tablet,
+  User,
 } from "lucide-react"
 
 export default function Portfolio() {
@@ -1134,164 +1135,221 @@ export default function Portfolio() {
         </>
       )}
 
-      {activeSection === "personal" && (
-        <section className="relative py-20 px-6 border-t border-[#00FF99]/20">
+
+      {/*==================== INFO ====================*/}
+      {activeSection === "info" && (
+        <section className="info section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="info">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-4 mb-12">
-              <Terminal className="w-8 h-8 text-[#00FF99]" />
-              <h2 className="text-4xl font-bold tracking-wider">
-                {t.personal.title}
-                <span className="text-[#00FF99]">{t.personal.subtitle}</span>
-              </h2>
-              <div className="flex-1 h-0.5 bg-gradient-to-r from-[#00FF99] to-transparent"></div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div className="border-l-2 border-[#00FF99] pl-6 space-y-4">
-                <h3 className="text-2xl font-bold mb-6 text-[#00FF99]">{t.personal.aboutMe}</h3>
-                {t.about.paragraphs.map((para, i) => (
-                  <p key={i} className="text-gray-300 leading-relaxed">
-                    {para}
-                  </p>
-                ))}
-              </div>
-
-              <div className="bg-black border border-[#00FF99]/30 p-8">
-                <h3 className="text-sm font-mono text-[#00FF99] mb-6 tracking-wider flex items-center gap-2">
-                  <Cpu className="w-5 h-5" />
-                  {t.personal.competencies}
-                </h3>
-                <div className="space-y-3">
-                  {t.about.competencies.map((comp, i) => (
-                    <div key={i} className="flex items-start gap-3 text-gray-300">
-                      <ChevronRight className="w-4 h-4 text-[#00FF99] mt-1" />
-                      <span className="text-sm">{comp}</span>
-                    </div>
-                  ))}
+            <div className="flex items-center gap-6 mb-16">
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
+                  <Users className="w-8 h-8 text-white" />
                 </div>
+                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
+              </div>
+              <div className="flex-1">
+                <h2 className="section__title text-5xl font-bold tracking-wider">
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">MY</span>
+                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent"> INFO</span>
+                </h2>
+              </div>
+              <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
+            </div>
+
+            {/* About Me */}
+            <div className="mb-16">
+              <h3 className="info__title text-3xl font-bold mb-8 flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
+                  <User className="w-6 h-6 text-white" />
+                </div>
+                <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">About Me</span>
+              </h3>
+              <div className="bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-8 rounded-lg backdrop-blur-sm">
+                <p className="about__description text-[#EEEEEE]/80 leading-relaxed mb-6">
+                  Passionate about creating <b className="text-[#08CB00]">websites with beautiful interfaces</b>.
+                  I have years of experience in <b className="text-[#08CB00]">Web Development</b> with several 
+                  projects completed.
+                </p>
+                <button className="about__button px-6 py-3 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all rounded-lg shadow-lg shadow-[#08CB00]/30">
+                  Download CV
+                </button>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <Users className="w-6 h-6 text-[#00FF99]" />
-                {t.personal.clubActivities}
+            {/* Experience */}
+            <div className="mb-16">
+              <h3 className="info__title text-3xl font-bold mb-8 flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-white" />
+                </div>
+                <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">Experience</span>
               </h3>
-              <div className="space-y-8">
-                {t.clubActivities.map((activity, i) => (
-                  <div key={i} className="relative group">
-                    <div className="absolute left-0 top-0 w-1 h-full bg-[#00FF99]/30"></div>
-
-                    <div className="ml-8 bg-black border border-[#00FF99]/30 p-8 hover:border-[#00FF99] transition-all">
-                      <div className="flex flex-wrap justify-between gap-4 mb-6">
-                        <div>
-                          <div className="flex items-center gap-3 mb-2">
-                            <h3 className="text-2xl font-bold text-[#00FF99]">{activity.role}</h3>
-                            <span className="px-3 py-1 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-xs font-mono">
-                              {activity.type}
-                            </span>
-                          </div>
-                          <p className="text-xl text-white font-semibold mb-1">{activity.company}</p>
-                          <div className="flex gap-4 text-sm text-gray-400 font-mono">
-                            <span>{activity.period}</span>
-                            <span>{activity.location}</span>
-                          </div>
-                        </div>
+              <div className="space-y-6">
+                {t.experiences.map((exp, i) => (
+                  <div key={i} className="bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] transition-all">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
+                        <Briefcase className="w-6 h-6 text-white" />
                       </div>
-
-                      <div className="mb-6">
-                        <div className="grid md:grid-cols-2 gap-3">
-                          {activity.highlights.map((h, j) => (
-                            <div key={j} className="flex items-start gap-2 text-gray-300">
-                              <ChevronRight className="w-4 h-4 text-[#00FF99] mt-1" />
-                              <span className="text-sm">{h}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        {activity.skills.map((s) => (
-                          <span
-                            key={s}
-                            className="px-3 py-1 bg-[#00FF99]/5 border border-[#00FF99]/30 text-[#00FF99] text-xs font-mono"
-                          >
-                            {s}
-                          </span>
-                        ))}
+                      <div>
+                        <h4 className="experience__profession text-xl font-bold text-[#08CB00]">{exp.role}</h4>
+                        <p className="experience__company text-[#EEEEEE] font-semibold">{exp.company}</p>
+                        <p className="experience__date text-[#EEEEEE]/70 text-sm font-mono">{exp.period}</p>
                       </div>
                     </div>
+                    <p className="experience__description text-[#EEEEEE]/80 text-sm">
+                      Short description of the work you do or did in the company.
+                    </p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Skills */}
+            <div>
+              <h3 className="info__title text-3xl font-bold mb-8 flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
+                  <Code className="w-6 h-6 text-white" />
+                </div>
+                <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">Skills</span>
+              </h3>
+              <div className="bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-8 rounded-lg backdrop-blur-sm">
+                <div className="flex flex-wrap gap-3">
+                  {Object.values(t.skills).flat().map((skill, i) => (
+                    <span
+                      key={i}
+                      className="skills__name px-4 py-2 bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 border border-[#08CB00]/30 text-[#08CB00] text-sm font-mono rounded-lg hover:bg-gradient-to-r hover:from-[#08CB00]/20 hover:to-[#253900]/20 transition-all"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {activeSection === "contact" && (
-        <section className="relative py-20 px-6 border-t border-[#00FF99]/20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-6">
-              <span className="text-[#00FF99]">{t.contact.title}</span>
-            </h2>
-            <p className="text-xl text-gray-300 mb-12">{t.contact.subtitle}</p>
+      {/*==================== SERVICES ====================*/}
+      {activeSection === "services" && (
+        <section className="services section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="services">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-6 mb-16">
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
+                  <Layers className="w-8 h-8 text-white" />
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
+              </div>
+              <div className="flex-1">
+                <h2 className="section__title text-5xl font-bold tracking-wider">
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">SERVICES</span>
+                </h2>
+              </div>
+              <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
+            </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { title: "Web Development", icon: <Code className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
+                { title: "Web Design", icon: <Palette className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
+                { title: "Responsive Web Design", icon: <Monitor className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
+                { title: "Seo (Web Pages)", icon: <TrendingUp className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
+              ].map((service, i) => (
+                <div key={i} className="services__card group bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
+                      {service.icon}
+                    </div>
+                    <h3 className="services__title text-xl font-bold text-[#EEEEEE] mb-3 group-hover:text-[#08CB00] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="services__description text-[#EEEEEE]/70 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/*==================== CONTACT ====================*/}
+      {activeSection === "contact" && (
+        <section className="contact section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="contact">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-6 mb-16">
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
+              </div>
+              <div>
+                <h2 className="section__title text-5xl font-bold tracking-wider">
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">CONTACT</span>
+                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent"> ME</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
               <a
                 href="mailto:bingo.namtuyen@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-black border border-[#00FF99]/30 p-6 hover:border-[#00FF99] transition-all active:scale-95"
+                className="contact__social-link bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 hover:scale-105"
               >
-                <Mail className="w-8 h-8 text-[#00FF99] mx-auto mb-3" />
-                <h3 className="font-semibold mb-2 text-white">{t.contact.email}</h3>
-                <p className="text-gray-400 text-sm">bingo.namtuyen@gmail.com</p>
+                <Mail className="w-8 h-8 text-[#08CB00] mx-auto mb-3" />
+                <h3 className="font-semibold mb-2 text-[#EEEEEE]">EMAIL</h3>
+                <p className="text-[#EEEEEE]/70 text-sm">bingo.namtuyen@gmail.com</p>
               </a>
               <a
                 href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-black border border-[#00FF99]/30 p-6 hover:border-[#00FF99] transition-all active:scale-95"
+                className="contact__social-link bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 hover:scale-105"
               >
-                <Linkedin className="w-8 h-8 text-[#00FF99] mx-auto mb-3" />
-                <h3 className="font-semibold mb-2 text-white">{t.contact.linkedin}</h3>
-                <p className="text-gray-400 text-sm">{t.contact.connectWithMe}</p>
+                <Linkedin className="w-8 h-8 text-[#08CB00] mx-auto mb-3" />
+                <h3 className="font-semibold mb-2 text-[#EEEEEE]">LINKEDIN</h3>
+                <p className="text-[#EEEEEE]/70 text-sm">Connect with me</p>
               </a>
-              <div className="bg-black border border-[#00FF99]/30 p-6">
-                <MapPin className="w-8 h-8 text-[#00FF99] mx-auto mb-3" />
-                <h3 className="font-semibold mb-2 text-white">{t.contact.location}</h3>
-                <p className="text-gray-400 text-sm">{t.contact.locationCity}</p>
-                <p className="text-gray-400 text-sm mt-1">Phone: 0921270404</p>
+              <div className="contact__social-link bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm">
+                <MapPin className="w-8 h-8 text-[#08CB00] mx-auto mb-3" />
+                <h3 className="font-semibold mb-2 text-[#EEEEEE]">LOCATION</h3>
+                <p className="text-[#EEEEEE]/70 text-sm">Ho Chi Minh City</p>
+                <p className="text-[#EEEEEE]/70 text-sm mt-1">Phone: 0921270404</p>
               </div>
             </div>
 
-            <button className="px-8 py-4 bg-[#00FF99] text-black font-bold tracking-wider hover:bg-[#00FF99]/80 transition-all active:scale-95">
-              {t.contact.sendMessage}
+            <button className="contact__button px-8 py-4 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all rounded-lg shadow-lg shadow-[#08CB00]/30">
+              Send Message
             </button>
           </div>
         </section>
       )}
 
-      <footer className="py-8 px-6 border-t border-[#00FF99]/20">
+      <footer className="footer py-8 px-6 border-t border-[#08CB00]/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <p className="text-gray-400 text-sm font-mono">{t.footer.copyright}</p>
+          <p className="text-[#EEEEEE]/70 text-sm font-mono">{t.footer.copyright}</p>
           <div className="flex gap-4">
             <a
               href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 border border-[#00FF99]/30 flex items-center justify-center hover:border-[#00FF99] transition-all active:scale-90"
+              className="w-10 h-10 border border-[#08CB00]/30 flex items-center justify-center hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-90 rounded-lg"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 text-[#08CB00]" />
             </a>
             <a
               href="mailto:bingo.namtuyen@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 border border-[#00FF99]/30 flex items-center justify-center hover:border-[#00FF99] transition-all active:scale-90"
+              className="w-10 h-10 border border-[#08CB00]/30 flex items-center justify-center hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-90 rounded-lg"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5 text-[#08CB00]" />
             </a>
           </div>
         </div>
@@ -1303,35 +1361,35 @@ export default function Portfolio() {
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-black border-2 border-[#00FF99] max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-in zoom-in-95 duration-300"
+            className="bg-gradient-to-br from-black/95 to-[#253900]/20 border-2 border-[#08CB00] max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-in zoom-in-95 duration-300 rounded-lg backdrop-blur-sm"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 w-10 h-10 border border-[#00FF99]/30 flex items-center justify-center hover:border-[#00FF99] hover:bg-[#00FF99]/10 transition-all active:scale-90 z-10"
+              className="absolute top-4 right-4 w-10 h-10 border border-[#08CB00]/30 flex items-center justify-center hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-90 z-10 rounded-lg"
             >
-              <X className="w-5 h-5 text-[#00FF99]" />
+              <X className="w-5 h-5 text-[#08CB00]" />
             </button>
 
             {/* Modal content */}
             <div className="p-8">
               {/* Header */}
-              <div className="flex items-start gap-6 mb-8 pb-8 border-b border-[#00FF99]/20">
+              <div className="flex items-start gap-6 mb-8 pb-8 border-b border-[#08CB00]/20">
                 <div
-                  className={`w-24 h-24 bg-gradient-to-br ${t.projects[selectedProject].gradient} flex items-center justify-center text-white flex-shrink-0`}
+                  className={`w-24 h-24 bg-gradient-to-br ${t.projects[selectedProject].gradient} flex items-center justify-center text-white flex-shrink-0 rounded-lg`}
                 >
                   {t.projects[selectedProject].icon}
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-[#00FF99] mb-3">{t.projects[selectedProject].title}</h2>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-400 font-mono">
+                  <h2 className="text-3xl font-bold text-[#08CB00] mb-3">{t.projects[selectedProject].title}</h2>
+                  <div className="flex flex-wrap gap-4 text-sm text-[#EEEEEE]/70 font-mono">
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-[#00FF99]" />
+                      <Calendar className="w-4 h-4 text-[#08CB00]" />
                       <span>{t.projects[selectedProject].details.timeline}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Briefcase className="w-4 h-4 text-[#00FF99]" />
+                      <Briefcase className="w-4 h-4 text-[#08CB00]" />
                       <span>{t.projects[selectedProject].details.role}</span>
                     </div>
                   </div>
@@ -1340,24 +1398,24 @@ export default function Portfolio() {
 
               {/* Overview */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#00FF99]"></div>
+                <h3 className="text-xl font-bold text-[#EEEEEE] mb-4 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-[#08CB00]"></div>
                   {language === "en" ? "Overview" : "Tổng quan"}
                 </h3>
-                <p className="text-gray-300 leading-relaxed">{t.projects[selectedProject].details.overview}</p>
+                <p className="text-[#EEEEEE]/80 leading-relaxed">{t.projects[selectedProject].details.overview}</p>
               </div>
 
               {/* Technologies */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#00FF99]"></div>
+                <h3 className="text-xl font-bold text-[#EEEEEE] mb-4 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-[#08CB00]"></div>
                   {language === "en" ? "Technologies" : "Công nghệ"}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {t.projects[selectedProject].details.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-sm font-mono"
+                      className="px-4 py-2 bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 border border-[#08CB00] text-[#08CB00] text-sm font-mono rounded-lg"
                     >
                       {tech}
                     </span>
@@ -1367,14 +1425,14 @@ export default function Portfolio() {
 
               {/* Key Features */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#00FF99]"></div>
+                <h3 className="text-xl font-bold text-[#EEEEEE] mb-4 flex items-center gap-2">
+                  <div className="w-1 h-6 bg-[#08CB00]"></div>
                   {language === "en" ? "Key Features" : "Tính năng chính"}
                 </h3>
                 <div className="space-y-3">
                   {t.projects[selectedProject].details.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3 text-gray-300">
-                      <ChevronRight className="w-5 h-5 text-[#00FF99] mt-0.5 flex-shrink-0" />
+                    <div key={i} className="flex items-start gap-3 text-[#EEEEEE]/80">
+                      <ChevronRight className="w-5 h-5 text-[#08CB00] mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </div>
                   ))}
