@@ -279,9 +279,20 @@ export default function Portfolio() {
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white overflow-x-hidden relative">
+    <div className="min-h-screen galaxy-bg text-white overflow-x-hidden relative">
       {/* Tech Grid Background */}
       <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none"></div>
+      
+      {/* Cosmic Dust */}
+      <div className="cosmic-dust" style={{top: '10%', left: '20%', animationDelay: '0s'}}></div>
+      <div className="cosmic-dust" style={{top: '30%', left: '70%', animationDelay: '5s'}}></div>
+      <div className="cosmic-dust" style={{top: '60%', left: '15%', animationDelay: '10s'}}></div>
+      <div className="cosmic-dust" style={{top: '80%', left: '85%', animationDelay: '15s'}}></div>
+      
+      {/* Planets */}
+      <div className="planet planet-small" style={{top: '15%', left: '80%', animationDelay: '0s'}}></div>
+      <div className="planet planet-medium" style={{top: '70%', left: '10%', animationDelay: '10s'}}></div>
+      <div className="planet planet-large" style={{top: '40%', left: '90%', animationDelay: '20s'}}></div>
       
       {/* Header */}
       <header className="fixed top-0 w-full z-50 glass-tech">
@@ -355,10 +366,10 @@ export default function Portfolio() {
                   </h2>
                   
                   <div className="flex items-center gap-6 justify-center lg:justify-start">
-                    <a 
-                      href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                <a
+                  href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                       className="w-12 h-12 border-2 border-gray-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:border-[#00ff88] hover:text-[#00ff88] hover:scale-110 hover:shadow-lg hover:shadow-[#00ff88]/20"
                       aria-label="LinkedIn"
                     >
@@ -532,35 +543,35 @@ export default function Portfolio() {
                     <div className="w-12 h-px bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
                     <span className="text-gray-400 text-xs tracking-[4px] font-medium uppercase">
                       ABOUT ME
-                    </span>
+                              </span>
                     <div className="w-12 h-px bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
-                  </div>
-                </div>
-                
+                          </div>
+                        </div>
+
                 {/* About Me Content with Special Background */}
                 <div className="about-section-bg p-8 md:p-12 relative z-20">
                   <div className="prose prose-lg prose-invert max-w-none">
                     <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-300 leading-relaxed font-amsterdam-four italic mb-12">
                       <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
                         "Transforming vision into reality and turning intent into results"
-                      </span>
+                            </span>
                     </p>
                     <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-light text-justify">
                       {t.about.description}
                     </p>
-                  </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-              </div>
-            </div>
           </section>
 
       {/* Services Section */}
-      <section className="py-12 md:py-24 relative">
+      <section className="py-12 md:py-24 relative galaxy-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <h3 className="text-gradient-tech text-sm tracking-widest mb-5">
               {t.services.label}
-                </h3>
+                  </h3>
                 </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -575,18 +586,18 @@ export default function Portfolio() {
                   {index === 1 && <Code className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
                   {index === 2 && <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
                   {index === 3 && <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
-                        </div>
+                          </div>
                 <h4 className="text-lg sm:text-xl font-bold group-hover:text-gradient-tech transition-all">
                   {service}
                             </h4>
-                      </div>
+                    </div>
                   ))}
+                </div>
               </div>
-            </div>
           </section>
 
       {/* Projects Section */}
-      <section className="py-12 md:py-24 relative">
+      <section className="py-12 md:py-24 relative galaxy-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <h3 className="text-gradient-cyber text-sm tracking-widest mb-5">
@@ -622,11 +633,11 @@ export default function Portfolio() {
                   <p className="text-gradient-tech font-semibold text-base sm:text-lg mb-3">
                     {project.year}
                   </p>
-              </div>
+                      </div>
                     </div>
                   ))}
-                </div>
               </div>
+            </div>
           </section>
 
       {/* Testimonial Section */}
@@ -636,7 +647,7 @@ export default function Portfolio() {
             <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
               {t.testimonial.label}
               </h3>
-                      </div>
+            </div>
 
           <div className="max-w-4xl mx-auto card-tech text-center animate-scale-in">
             <p 
@@ -656,10 +667,10 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
-                            </div>
               </div>
-            </div>
-          </div>
+                    </div>
+                </div>
+              </div>
         </section>
 
       {/* Contact Section */}
