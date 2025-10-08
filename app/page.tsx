@@ -390,47 +390,81 @@ export default function Portfolio() {
                     <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
                     <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
                     
-                    {/* Advanced Futuristic Tech Avatar Container */}
+                    {/* Ultra Modern Futuristic Tech Avatar Container */}
                     <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">
                       
-                      {/* Animated Grid Background */}
-                      <div className="absolute inset-0 opacity-5 pointer-events-none">
+                      {/* Enhanced Animated Grid Background */}
+                      <div className="absolute inset-0 opacity-10 pointer-events-none">
                         <div className="w-full h-full" style={{
                           backgroundImage: `
-                            linear-gradient(rgba(0, 255, 170, 0.03) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(0, 255, 170, 0.03) 1px, transparent 1px)
+                            linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(0, 255, 170, 0.05) 1px, transparent 1px)
                           `,
-                          backgroundSize: '50px 50px',
-                          animation: 'gridMove 20s linear infinite'
+                          backgroundSize: '40px 40px',
+                          animation: 'gridMove 15s linear infinite'
                         }}></div>
                       </div>
                       
-                      {/* Enhanced Glowing Orbs */}
-                      <div className="absolute -top-20 -left-20 w-48 h-48 bg-gradient-radial from-[#00ffaa] to-transparent rounded-full blur-3xl opacity-40 animate-float"></div>
-                      <div className="absolute -bottom-20 -right-20 w-44 h-44 bg-gradient-radial from-[#00d4ff] to-transparent rounded-full blur-3xl opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
-                      <div className="absolute top-1/2 -right-16 w-36 h-36 bg-gradient-radial from-[#aa00ff] to-transparent rounded-full blur-3xl opacity-40 animate-float" style={{animationDelay: '4s'}}></div>
+                      {/* Additional Grid Layer */}
+                      <div className="absolute inset-0 opacity-5 pointer-events-none">
+                        <div className="w-full h-full" style={{
+                          backgroundImage: `
+                            linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px)
+                          `,
+                          backgroundSize: '80px 80px',
+                          animation: 'gridMove 25s linear infinite reverse'
+                        }}></div>
+                      </div>
                       
-                      {/* Hexagon Decorations */}
-                      <div className="absolute top-[15%] left-[10%] w-20 h-12 bg-gradient-to-br from-[#00ffaa]/20 to-[#00d4ff]/20 border border-[#00ffaa]/30 animate-hex-float" style={{
+                      {/* Enhanced Glowing Orbs - More and Larger */}
+                      <div className="absolute -top-24 -left-24 w-56 h-56 bg-gradient-radial from-[#00ffaa] to-transparent rounded-full blur-3xl opacity-50 animate-float"></div>
+                      <div className="absolute -bottom-24 -right-24 w-52 h-52 bg-gradient-radial from-[#00d4ff] to-transparent rounded-full blur-3xl opacity-50 animate-float" style={{animationDelay: '2s'}}></div>
+                      <div className="absolute top-1/2 -right-20 w-44 h-44 bg-gradient-radial from-[#aa00ff] to-transparent rounded-full blur-3xl opacity-50 animate-float" style={{animationDelay: '4s'}}></div>
+                      <div className="absolute top-1/4 -left-16 w-32 h-32 bg-gradient-radial from-[#ff00aa] to-transparent rounded-full blur-3xl opacity-40 animate-float" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute bottom-1/4 -right-12 w-28 h-28 bg-gradient-radial from-[#00ff88] to-transparent rounded-full blur-3xl opacity-40 animate-float" style={{animationDelay: '3s'}}></div>
+                      
+                      {/* Enhanced Hexagon Decorations - More Hexagons */}
+                      <div className="absolute top-[15%] left-[10%] w-24 h-14 bg-gradient-to-br from-[#00ffaa]/25 to-[#00d4ff]/25 border border-[#00ffaa]/40 animate-hex-float" style={{
                         clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'
                       }}></div>
-                      <div className="absolute bottom-[20%] right-[12%] w-20 h-12 bg-gradient-to-br from-[#00d4ff]/20 to-[#aa00ff]/20 border border-[#00d4ff]/30 animate-hex-float" style={{
+                      <div className="absolute bottom-[20%] right-[12%] w-24 h-14 bg-gradient-to-br from-[#00d4ff]/25 to-[#aa00ff]/25 border border-[#00d4ff]/40 animate-hex-float" style={{
                         clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
                         animationDelay: '1.5s'
                       }}></div>
+                      <div className="absolute top-[8%] right-[15%] w-16 h-10 bg-gradient-to-br from-[#aa00ff]/20 to-[#ff00aa]/20 border border-[#aa00ff]/30 animate-hex-float" style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        animationDelay: '0.8s'
+                      }}></div>
+                      <div className="absolute bottom-[8%] left-[15%] w-16 h-10 bg-gradient-to-br from-[#ff00aa]/20 to-[#00ff88]/20 border border-[#ff00aa]/30 animate-hex-float" style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        animationDelay: '2.2s'
+                      }}></div>
+                      <div className="absolute top-[35%] left-[5%] w-12 h-8 bg-gradient-to-br from-[#00ff88]/20 to-[#00ffaa]/20 border border-[#00ff88]/30 animate-hex-float" style={{
+                        clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                        animationDelay: '3s'
+                      }}></div>
                       
-                      {/* Enhanced Tech Circles with Scanning Effect */}
-                      <div className="absolute -top-10 -left-10 w-64 h-64 border-2 border-transparent rounded-full" style={{
-                        borderImage: 'linear-gradient(45deg, rgba(0, 255, 170, 0.3), transparent, rgba(0, 212, 255, 0.3), transparent) 1',
+                      {/* Enhanced Tech Circles with Scanning Effect - More Circles */}
+                      <div className="absolute -top-12 -left-12 w-72 h-72 border-2 border-transparent rounded-full" style={{
+                        borderImage: 'linear-gradient(45deg, rgba(0, 255, 170, 0.4), transparent, rgba(0, 212, 255, 0.4), transparent) 1',
                         animation: 'techScan 4s linear infinite'
                       }}></div>
-                      <div className="absolute -bottom-10 -right-10 w-48 h-48 border-2 border-transparent rounded-full" style={{
-                        borderImage: 'linear-gradient(45deg, rgba(0, 212, 255, 0.3), transparent, rgba(170, 0, 255, 0.3), transparent) 1',
+                      <div className="absolute -bottom-12 -right-12 w-56 h-56 border-2 border-transparent rounded-full" style={{
+                        borderImage: 'linear-gradient(45deg, rgba(0, 212, 255, 0.4), transparent, rgba(170, 0, 255, 0.4), transparent) 1',
                         animation: 'techScan 3s linear infinite reverse'
                       }}></div>
-                      <div className="absolute top-1/2 left-1/2 w-40 h-40 border-2 border-transparent rounded-full transform -translate-x-1/2 -translate-y-1/2" style={{
-                        borderImage: 'linear-gradient(45deg, rgba(170, 0, 255, 0.3), transparent, rgba(0, 255, 170, 0.3), transparent) 1',
+                      <div className="absolute top-1/2 left-1/2 w-48 h-48 border-2 border-transparent rounded-full transform -translate-x-1/2 -translate-y-1/2" style={{
+                        borderImage: 'linear-gradient(45deg, rgba(170, 0, 255, 0.4), transparent, rgba(0, 255, 170, 0.4), transparent) 1',
                         animation: 'techScan 5s linear infinite'
+                      }}></div>
+                      <div className="absolute top-[20%] right-[5%] w-32 h-32 border-2 border-transparent rounded-full" style={{
+                        borderImage: 'linear-gradient(45deg, rgba(255, 0, 170, 0.3), transparent, rgba(0, 255, 136, 0.3), transparent) 1',
+                        animation: 'techScan 6s linear infinite'
+                      }}></div>
+                      <div className="absolute bottom-[20%] left-[5%] w-28 h-28 border-2 border-transparent rounded-full" style={{
+                        borderImage: 'linear-gradient(45deg, rgba(0, 255, 136, 0.3), transparent, rgba(0, 212, 255, 0.3), transparent) 1',
+                        animation: 'techScan 7s linear infinite reverse'
                       }}></div>
                       
                       {/* Enhanced Corner Brackets */}
@@ -439,19 +473,26 @@ export default function Portfolio() {
                       <div className="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-[#aa00ff] opacity-60 animate-bracket-pulse" style={{animationDelay: '1s'}}></div>
                       <div className="absolute -bottom-3 -right-3 w-16 h-16 border-r-2 border-b-2 border-[#00ffaa] opacity-60 animate-bracket-pulse" style={{animationDelay: '1.5s'}}></div>
                       
-                      {/* Enhanced Data Points */}
-                      <div className="absolute top-[20%] left-[15%] w-2 h-2 bg-[#00ffaa] rounded-full shadow-lg shadow-[#00ffaa]/50 animate-data-pulse"></div>
-                      <div className="absolute top-[35%] right-[18%] w-2 h-2 bg-[#00d4ff] rounded-full shadow-lg shadow-[#00d4ff]/50 animate-data-pulse" style={{animationDelay: '0.5s'}}></div>
-                      <div className="absolute bottom-[25%] left-[20%] w-2 h-2 bg-[#aa00ff] rounded-full shadow-lg shadow-[#aa00ff]/50 animate-data-pulse" style={{animationDelay: '1s'}}></div>
-                      <div className="absolute bottom-[15%] right-[15%] w-2 h-2 bg-[#00ffaa] rounded-full shadow-lg shadow-[#00ffaa]/50 animate-data-pulse" style={{animationDelay: '1.5s'}}></div>
+                      {/* Enhanced Data Points - More Points */}
+                      <div className="absolute top-[20%] left-[15%] w-3 h-3 bg-[#00ffaa] rounded-full shadow-lg shadow-[#00ffaa]/60 animate-data-pulse"></div>
+                      <div className="absolute top-[35%] right-[18%] w-3 h-3 bg-[#00d4ff] rounded-full shadow-lg shadow-[#00d4ff]/60 animate-data-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute bottom-[25%] left-[20%] w-3 h-3 bg-[#aa00ff] rounded-full shadow-lg shadow-[#aa00ff]/60 animate-data-pulse" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute bottom-[15%] right-[15%] w-3 h-3 bg-[#00ffaa] rounded-full shadow-lg shadow-[#00ffaa]/60 animate-data-pulse" style={{animationDelay: '1.5s'}}></div>
+                      <div className="absolute top-[10%] right-[25%] w-2 h-2 bg-[#ff00aa] rounded-full shadow-lg shadow-[#ff00aa]/50 animate-data-pulse" style={{animationDelay: '0.3s'}}></div>
+                      <div className="absolute bottom-[35%] right-[8%] w-2 h-2 bg-[#00ff88] rounded-full shadow-lg shadow-[#00ff88]/50 animate-data-pulse" style={{animationDelay: '0.8s'}}></div>
+                      <div className="absolute top-[45%] left-[8%] w-2 h-2 bg-[#00d4ff] rounded-full shadow-lg shadow-[#00d4ff]/50 animate-data-pulse" style={{animationDelay: '1.2s'}}></div>
+                      <div className="absolute bottom-[8%] left-[30%] w-2 h-2 bg-[#aa00ff] rounded-full shadow-lg shadow-[#aa00ff]/50 animate-data-pulse" style={{animationDelay: '1.8s'}}></div>
                       
-                      {/* Enhanced Connection Lines */}
-                      <div className="absolute top-[20%] left-[15%] w-36 h-px bg-gradient-to-r from-transparent via-[#00ffaa]/60 to-transparent transform rotate-45 animate-line-glow"></div>
-                      <div className="absolute bottom-[25%] left-[20%] w-28 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/60 to-transparent transform -rotate-30 animate-line-glow" style={{animationDelay: '1s'}}></div>
+                      {/* Enhanced Connection Lines - More Lines */}
+                      <div className="absolute top-[20%] left-[15%] w-40 h-px bg-gradient-to-r from-transparent via-[#00ffaa]/70 to-transparent transform rotate-45 animate-line-glow"></div>
+                      <div className="absolute bottom-[25%] left-[20%] w-32 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/70 to-transparent transform -rotate-30 animate-line-glow" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute top-[10%] right-[25%] w-24 h-px bg-gradient-to-r from-transparent via-[#ff00aa]/60 to-transparent transform rotate-60 animate-line-glow" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute bottom-[35%] right-[8%] w-20 h-px bg-gradient-to-r from-transparent via-[#00ff88]/60 to-transparent transform -rotate-45 animate-line-glow" style={{animationDelay: '1.5s'}}></div>
+                      <div className="absolute top-[45%] left-[8%] w-28 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/60 to-transparent transform rotate-15 animate-line-glow" style={{animationDelay: '0.8s'}}></div>
                       
                       
-                      {/* Main Avatar Frame - Larger Size */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+                      {/* Main Avatar Frame - Ultra Large Size */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
                         
                         {/* Static Animated Border */}
                         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00ffaa] via-[#00d4ff] via-[#aa00ff] via-[#ff00aa] to-[#00ffaa] opacity-60 animate-gradient-shift" style={{backgroundSize: '400% 400%'}}></div>
