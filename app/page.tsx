@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import {
   Linkedin,
   Mail,
@@ -8,26 +8,22 @@ import {
   Download,
   Menu,
   X,
-  GraduationCap,
+  Code,
+  Database,
+  BarChart3,
+  Bot,
+  Globe,
+  Zap,
+  ChevronRight,
+  ExternalLink,
+  Calendar,
   Briefcase,
-  TrendingUp,
   Users,
   Award,
   Target,
-  Database,
-  Code,
-  ChevronRight,
   Terminal,
   Cpu,
-  Zap,
-  Globe,
   Rocket,
-  BarChart3,
-  Bot,
-  Layout,
-  ChevronLeft,
-  ExternalLink,
-  Calendar,
   Star,
   ArrowRight,
   Sparkles,
@@ -46,567 +42,161 @@ import {
 } from "lucide-react"
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("home")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [language, setLanguage] = useState<"vi" | "en">("en")
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const [currentTime, setCurrentTime] = useState("--:--:--")
+  const [language, setLanguage] = useState("vi")
 
+  // Update time every second
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const updateTime = () => {
+      const now = new Date()
+      const hours = String(now.getHours()).padStart(2, '0')
+      const minutes = String(now.getMinutes()).padStart(2, '0')
+      const seconds = String(now.getSeconds()).padStart(2, '0')
+      setCurrentTime(`${hours} : ${minutes} : ${seconds}`)
+    }
+    
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+    return () => clearInterval(interval)
   }, [])
 
-  const scrollCarousel = (direction: "left" | "right") => {
-    if (carouselRef.current) {
-      const scrollAmount = 400
-      const newScrollLeft = carouselRef.current.scrollLeft + (direction === "right" ? scrollAmount : -scrollAmount)
-      carouselRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      })
-    }
-  }
-
   const translations = {
-    en: {
-      nav: {
-        home: "HOME",
-        work: "WORK",
-        info: "MY INFO",
-        services: "SERVICES",
-        contact: "CONTACT ME",
-        hireMe: "HIRE_ME",
+    vi: {
+      header: {
+        location: "HỒ CHÍ MINH, VIỆT NAM",
       },
       hero: {
-        available: "AVAILABLE_FOR_OPPORTUNITIES",
-        hello: "HELLO_WORLD",
-        role: "DATA_ANALYST_&_FINTECH_SPECIALIST",
-        roleDetails: "role: Data Analyst | Financial Technology",
-        status: "status: Vice President @ FTC",
-        education: "education: Senior @ UEL",
-        downloadCV: "DOWNLOAD_CV",
-        linkedin: "LINKEDIN",
-        location: "VIETNAM",
-      },
-      stats: {
-        internships: "INTERNSHIPS",
-        leadership: "LEADERSHIP",
-        monthsExp: "MONTHS_EXP",
-        graduation: "GRADUATION",
-      },
-      professional: {
-        title: "PROFESSIONAL",
-        subtitle: "_EXPERIENCE",
-        experience: "EXPERIENCE",
-        projects: "PROJECTS",
-        skills: "SKILLS",
-        education: "EDUCATION",
-        certifications: "CERTIFICATIONS",
-      },
-      personal: {
-        title: "PERSONAL",
-        subtitle: "_INFO",
-        aboutMe: "ABOUT_ME",
-        competencies: "CORE_COMPETENCIES",
-        clubActivities: "CLUB_ACTIVITIES",
-      },
-      contact: {
-        title: "LET'S_CONNECT",
-        subtitle: "Open to Data Analyst, Financial Analyst, and FinTech roles",
-        email: "EMAIL",
-        linkedin: "LINKEDIN",
-        location: "LOCATION",
-        locationCity: "Ho Chi Minh City",
-        sendMessage: "SEND_MESSAGE",
-        connectWithMe: "Connect with me",
-      },
-      footer: {
-        copyright: "© 2025 LE NAM TUYEN",
-      },
-      experiences: [
-        {
-          role: "Data Analyst Intern",
-          company: "Vietnam Bank for Agriculture and Rural Development (Binh Trieu Branch)",
-          period: "Mar 2025 - Jun 2025",
-          location: "Ho Chi Minh City",
-          type: "INTERNSHIP",
-          highlights: [
-            "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent",
-            "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials",
-            "Designed and deployed an end-to-end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent",
-            "Produced timely sector and macro market reports to inform relationship teams and credit committees",
-            "Built cash-flow models and scenario analyses and developed capital-utilization proposals covering working capital, capital expenditure, and facility mix to assess repayment capacity and liquidity risk",
-            "Performed credit risk assessments and drafted loan recommendations, including full financial statement analysis across profit and loss, balance sheet, and cash flow with ratio and trend reviews",
-          ],
-          skills: ["Python", "Data Analysis", "Financial Analysis", "Credit Risk Assessment", "Portfolio Management", "Market Research"],
-        },
-        {
-          role: "Data Analyst Intern",
-          company: "Maybank Investment Bank Vietnam (Phu Nhuan Branch)",
-          period: "Jun 2024 - Dec 2024",
-          location: "Ho Chi Minh City",
-          type: "INTERNSHIP",
-          highlights: [
-            "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent",
-            "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials",
-            "Designed and deployed an end-to-end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent",
-          ],
-          skills: ["Python", "Data Analysis", "Financial Analysis", "Equity Valuation", "Portfolio Management", "Investment Briefs"],
-        },
-      ],
-      projects: [
-        {
-          title: "Automated Financial Report Export",
-          description:
-            "Built an end-to-end pipeline using requests, pandas and python dotenv to collect, process and export stock ticker analytics, modularized into fetch, process and report export scripts.",
-          icon: <Bot className="w-12 h-12" />,
-          gradient: "from-pink-500 to-purple-600",
-          details: {
-            overview:
-              "An automated financial reporting system that collects, processes, and exports stock ticker analytics with modularized components for data fetching, processing, and report generation.",
-            technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
-            features: [
-              "Environment-based configuration and reusable helpers for path management",
-              "API key loading, validation and date handling",
-              "Standardized outputs to Excel, CSV and PDF formats",
-              "Scheduled daily reports reducing manual preparation time by 90%",
-              "Improved team responsiveness by 25%",
-            ],
-            timeline: "Aug 2024 - Oct 2024",
-            role: "Developer & Data Analyst",
-          },
-        },
-        {
-          title: "Airbnb Rental Pricing Predictor",
-          description:
-            "Cleaned and engineered a 26,000-row Airbnb dataset, converted currency fields to numeric, parsed dates, trimmed outliers at the 99.5th percentile, and created features such as days since hosted, bedrooms per person, and bathrooms per person.",
-          icon: <BarChart3 className="w-12 h-12" />,
-          gradient: "from-purple-500 to-orange-500",
-          details: {
-            overview:
-              "A comprehensive machine learning pipeline for predicting Airbnb rental prices using advanced feature engineering and multiple regression models with hyperparameter tuning.",
-            technologies: ["Python", "Pandas", "Scikit-learn", "ColumnTransformer", "StandardScaler", "OneHotEncoder", "Linear Regression", "Random Forest", "GridSearchCV"],
-            features: [
-              "Full preprocessing and modeling pipeline with advanced feature engineering",
-              "Stratified sampling by city and hyperparameter tuning with GridSearchCV",
-              "Feature importance analysis showing key pricing drivers",
-              "Achieved test RMSE 95.84 and MAE 57.98 with tuned Random Forest",
-              "Improved error over linear baseline by 4%",
-            ],
-            timeline: "Apr 2024 - Jun 2024",
-            role: "Data Scientist & ML Engineer",
-          },
-        },
-        {
-          title: "Workforce Insight Hub: Retention and Compensation",
-          description:
-            "Built an end-to-end HR analytics workflow to clean and encode Human_Resources.csv and ran EDA with histograms, KDE, boxplots, and a correlation heatmap to surface retention risks.",
-          icon: <Layout className="w-12 h-12" />,
-          gradient: "from-pink-400 to-orange-400",
-          details: {
-            overview:
-              "A comprehensive HR analytics platform designed to analyze workforce retention patterns and compensation structures using advanced statistical modeling and clustering techniques.",
-            technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "Random Forest", "Logistic Regression", "K-means Clustering"],
-            features: [
-              "End-to-end HR analytics workflow with comprehensive EDA",
-              "Random Forest attrition model achieving 85% accuracy",
-              "Employee segmentation into three clusters using key metrics",
-              "Salary and overtime policy recommendations based on 16.1% attrition rate",
-              "Key drivers identified: MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate",
-            ],
-            timeline: "Jan 2024 - Sep 2024",
-            role: "Data Analyst & HR Analytics Specialist",
-          },
-        },
-        {
-          title: "Public Debt and Economic Stability Research",
-          description:
-            "Compiled a World Bank panel from 1960 to 2023 and refined 728 raw records to 640 qualified observations using Z-score outlier removal and standardized scaling.",
-          icon: <Rocket className="w-12 h-12" />,
-          gradient: "from-orange-500 to-pink-500",
-          details: {
-            overview:
-              "A comprehensive research project analyzing the moderating effect of governance on public debt's impact on economic stability across Southeast Asian countries using advanced econometric methods.",
-            technologies: ["R", "Stata", "System GMM", "World Bank Data", "Statistical Analysis", "Econometric Modeling"],
-            features: [
-              "World Bank panel data compilation from 1960-2023 with 640 qualified observations",
-              "System GMM analysis testing governance moderation effects",
-              "Comprehensive macro controls and interaction terms",
-              "Key findings: strong governance turns public debt into growth enhancer",
-              "Published in Global Economic Perspectives, Vol 3 Issue 3, 2025",
-            ],
-            timeline: "Aug 2023 - Feb 2024",
-            role: "Research Analyst & Economist",
-          },
-        },
-      ],
-      clubActivities: [
-        {
-          role: "Vice President",
-          company: "Financial Technology Club",
-          period: "Aug 2024 - Present",
-          location: "University of Economics and Law",
-          type: "LEADERSHIP",
-          highlights: [
-            "Directed strategic planning, cross-functional coordination, and partner relations. Oversaw flagship programs and career events",
-            "Mentored team leads and implemented templates and standard operating procedures to scale execution quality and accountability",
-            "Managed stakeholder communication and program reporting for sponsors and university units",
-            "Achievements: Organized ATTACKER with more than 1,000 registered contestants and built a bridge to Ho Chi Minh City's innovation ecosystem in fintech",
-            "Elevated recognition to Top 10 at the I-Star awards. Received a Certificate of Merit from the VNU HCM Youth Union for 2024 to 2025 and was commended for outstanding completion of 2025 objectives",
-          ],
-          skills: ["Strategic Planning", "Team Leadership", "Event Management", "Stakeholder Management"],
-        },
-        {
-          role: "Head of Academics",
-          company: "Financial Technology Club",
-          period: "Aug 2023 - Aug 2024",
-          location: "University of Economics and Law",
-          type: "LEADERSHIP",
-          highlights: [
-            "Led curriculum design for workshops, talkshows, and the ATTACKER competition. Built question banks, scoring rubrics, and evaluation frameworks",
-            "Developed training tracks in product analytics, SQL and Python, and dashboarding. Set up KPI dashboards and post-event reporting for continuous improvement",
-            "Coordinated lecturers and industry speakers. Managed cross-functional teams to deliver high-quality learning outcomes",
-          ],
-          skills: ["Curriculum Design", "Training Development", "Academic Coordination", "Content Development"],
-        },
-      ],
-      skills: {
-        "PROGRAMMING LANGUAGES": [
-          "Python",
-          "SQL", 
-          "R",
-        ],
-        "DATA TOOLS": [
-          "Power BI", 
-          "Excel", 
-          "Plotly", 
-          "Streamlit", 
-          "Jupyter Notebook", 
-          "Tableau", 
-          "Looker Studio", 
-          "Google Sheets", 
-          "Google Apps Script"
-        ],
-        "DATA SYSTEMS & AUTOMATION": [
-          "MySQL", 
-          "SAP", 
-          "UiPath"
-        ],
-        "DATA SCIENCE": [
-          "Regression Analysis", 
-          "Classification", 
-          "Clustering", 
-          "Time Series Forecasting", 
-          "A/B Testing", 
-          "Feature Engineering", 
-          "Model Evaluation"
-        ],
-        "FINANCE & DOMAIN": [
-          "Financial Analysis", 
-          "Credit Analysis", 
-          "Commercial Banking", 
-          "Portfolio Management", 
-          "Investment Valuation", 
-          "Market Research"
-        ],
-        "OTHER SKILLS": [
-          "Business Insights", 
-          "Team Leadership", 
-          "Team Collaboration", 
-          "Public Speaking", 
-          "Problem Solving"
-        ],
+        greeting: "XIN CHÀO, TÔI LÀ TUYÊN!",
+        title: "TẠO RA CÁC SẢN PHẨM<br/>DỮ LIỆU VÀ<br/>FINTECH ĐÁNG NHỚ",
+        subtitle: "Tôi là một Data Analyst & FinTech Specialist với sứ mệnh tạo ra những giải pháp dữ liệu đầy cảm hứng và thu hút người dùng.",
       },
       about: {
-        paragraphs: [
-          "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research.",
-          "I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes.",
-          "Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
-          "Relevant Coursework: Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management, and more.",
-          "GPA: 3.0/4.0 with IELTS: 6.0, demonstrating strong academic foundation and international communication skills.",
+        label: "VỀ TÔI",
+        title: "TÔI MANG ĐẾN TRẢI NGHIỆM DỮ LIỆU XUẤT SẮC TRÊN NHIỀU NỀN TẢNG.",
+        name: "LÊ NAM <span>TUYÊN</span>",
+        description: "Là một Data Analyst & FinTech Specialist với 2 năm kinh nghiệm, tôi luôn đặt trái tim và tâm hồn vào việc tạo ra những sản phẩm không chỉ đẹp mắt mà còn mang lại trải nghiệm tuyệt vời. Hiện tại, tôi đang là sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế - Luật.",
+        button: "TÌM HIỂU THÊM",
+      },
+      services: {
+        label: "DỊCH VỤ CỦA TÔI",
+        items: [
+          "PHÂN TÍCH DỮ LIỆU",
+          "FINTECH SOLUTIONS",
+          "DASHBOARD DESIGN",
+          "BUSINESS INTELLIGENCE",
         ],
-        competencies: [
-          "Data Analytics & Visualization (Python, SQL, R)",
-          "Financial Analysis & Risk Assessment",
-          "Machine Learning & Statistical Modeling",
-          "Team Leadership & Cross-functional Coordination",
-          "Workshop Design & Training Delivery",
-          "Research & Academic Writing",
-          "Stakeholder Management & Communication",
-          "Process Automation & Optimization",
+      },
+      projects: {
+        label: "DỰ ÁN CỦA TÔI",
+        intro: "Đây là một số dự án yêu thích của tôi, nơi tôi đã ưu tiên trải nghiệm người dùng và tính thẩm mỹ trực quan. Mỗi dự án phản ánh sự cống hiến của tôi trong việc tạo ra những trải nghiệm số liền mạch và thú vị.",
+        items: [
+          {
+            title: "FINTECH DASHBOARD",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+          },
+          {
+            title: "DATA ANALYTICS PLATFORM",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          },
+          {
+            title: "BUSINESS INTELLIGENCE",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+          },
         ],
+      },
+      testimonial: {
+        label: "ĐÁNH GIÁ",
+        quote: "Tuyên đã làm một công việc tuyệt vời trong việc phân tích dữ liệu và thiết kế dashboard của chúng tôi. <span>Nó trông thật tuyệt vời!</span>",
+        author: "Nguyễn Văn A",
+        position: "CEO of FinTech Startup",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      },
+      contact: {
+        label: "BẠN CÓ DỰ ÁN TRONG ĐẦU?",
+        title: "HÃY <span>KẾT NỐI</span>",
+        button: "GỬI TIN NHẮN",
+        social: [
+          { name: "LinkedIn", icon: "Li", url: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/" },
+          { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
+          { name: "GitHub", icon: "Gh", url: "#" },
+          { name: "Portfolio", icon: "Po", url: "#" },
+        ],
+      },
+      footer: {
+        copyright: "© 2024 LÊ NAM TUYÊN. DATA ANALYST & FINTECH SPECIALIST TẠI HỒ CHÍ MINH",
+        nav: ["VỀ TÔI", "DỊCH VỤ", "DỰ ÁN", "LIÊN HỆ"],
       },
     },
-    vi: {
-      nav: {
-        home: "TRANG_CHỦ",
-        work: "DỰ_ÁN",
-        info: "THÔNG_TIN",
-        services: "DỊCH_VỤ",
-        contact: "LIÊN_HỆ",
-        hireMe: "TUYỂN_DỤNG",
+    en: {
+      header: {
+        location: "HO CHI MINH, VIETNAM",
       },
       hero: {
-        available: "SẴN_SÀNG_CHO_CƠ_HỘI",
-        hello: "XIN_CHÀO",
-        role: "CHUYÊN_GIA_PHÂN_TÍCH_DỮ_LIỆU_&_FINTECH",
-        roleDetails: "vai trò: Phân tích Dữ liệu | Công nghệ Tài chính",
-        status: "chức vụ: Phó Chủ tịch @ FTC",
-        education: "học vấn: Sinh viên năm cuối @ UEL",
-        downloadCV: "TẢI_CV",
-        linkedin: "LINKEDIN",
-        location: "VIỆT_NAM",
-      },
-      stats: {
-        internships: "THỰC_TẬP",
-        leadership: "LÃNH_ĐẠO",
-        monthsExp: "THÁNG_KINH_NGHIỆM",
-        graduation: "TỐT_NGHIỆP",
-      },
-      professional: {
-        title: "CHUYÊN_MÔN",
-        subtitle: "_KINH_NGHIỆM",
-        experience: "KINH_NGHIỆM",
-        projects: "DỰ_ÁN",
-        skills: "KỸ_NĂNG",
-        education: "HỌC_VẤN",
-        certifications: "CHỨNG_CHỈ",
-      },
-      personal: {
-        title: "CÁ_NHÂN",
-        subtitle: "_THÔNG_TIN",
-        aboutMe: "VỀ_TÔI",
-        competencies: "NĂNG_LỰC_CỐT_LÕI",
-        clubActivities: "HOẠT_ĐỘNG_CÂU_LẠC_BỘ",
-      },
-      contact: {
-        title: "KẾT_NỐI",
-        subtitle: "Mở cho các vị trí Phân tích Dữ liệu, Phân tích Tài chính và FinTech",
-        email: "EMAIL",
-        linkedin: "LINKEDIN",
-        location: "VỊ_TRÍ",
-        locationCity: "Thành phố Hồ Chí Minh",
-        sendMessage: "GỬI_TIN_NHẮN",
-        connectWithMe: "Kết nối với tôi",
-      },
-      footer: {
-        copyright: "© 2025 LÊ NAM TUYỂN",
-      },
-      experiences: [
-        {
-          role: "Thực tập sinh Phân tích Dữ liệu",
-          company: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam (Chi nhánh Bình Triệu)",
-          period: "Tháng 3/2025 - Tháng 6/2025",
-          location: "Thành phố Hồ Chí Minh",
-          type: "THỰC_TẬP",
-          highlights: [
-            "Áp dụng Python để làm sạch, trực quan hóa và diễn giải hơn 100,000 dòng dữ liệu giao dịch và viết báo cáo thị trường hàng ngày và hàng tuần, giảm thời gian phân tích thủ công khoảng 30%",
-            "Thực hiện phân tích tài chính và định giá cổ phiếu của các công ty niêm yết, chuẩn bị báo cáo đầu tư, giám sát danh mục đầu tư và hỗ trợ phát triển khách hàng thông qua sàng lọc triển vọng và tài liệu thuyết trình",
-            "Thiết kế và triển khai pipeline đầu cuối để thu thập, xử lý và tạo báo cáo phân tích mã cổ phiếu, cung cấp thông tin chi tiết hàng ngày và cải thiện khả năng phản hồi của nhóm khoảng 25%",
-            "Tạo báo cáo thị trường ngành và vĩ mô kịp thời để thông báo cho các nhóm quan hệ và ủy ban tín dụng",
-            "Xây dựng mô hình dòng tiền và phân tích kịch bản và phát triển đề xuất sử dụng vốn bao gồm vốn lưu động, chi phí vốn và cơ cấu cơ sở vật chất để đánh giá khả năng trả nợ và rủi ro thanh khoản",
-            "Thực hiện đánh giá rủi ro tín dụng và soạn thảo khuyến nghị cho vay, bao gồm phân tích báo cáo tài chính đầy đủ trên lợi nhuận và lỗ, bảng cân đối kế toán và dòng tiền với đánh giá tỷ lệ và xu hướng",
-          ],
-          skills: ["Python", "Phân tích Dữ liệu", "Phân tích Tài chính", "Đánh giá Rủi ro Tín dụng", "Quản lý Danh mục", "Nghiên cứu Thị trường"],
-        },
-        {
-          role: "Thực tập sinh Phân tích Dữ liệu",
-          company: "Maybank Investment Bank Việt Nam (Chi nhánh Phú Nhuận)",
-          period: "Tháng 6/2024 - Tháng 12/2024",
-          location: "Thành phố Hồ Chí Minh",
-          type: "THỰC_TẬP",
-          highlights: [
-            "Áp dụng Python để làm sạch, trực quan hóa và diễn giải hơn 100,000 dòng dữ liệu giao dịch và viết báo cáo thị trường hàng ngày và hàng tuần, giảm thời gian phân tích thủ công khoảng 30%",
-            "Thực hiện phân tích tài chính và định giá cổ phiếu của các công ty niêm yết, chuẩn bị báo cáo đầu tư, giám sát danh mục đầu tư và hỗ trợ phát triển khách hàng thông qua sàng lọc triển vọng và tài liệu thuyết trình",
-            "Thiết kế và triển khai pipeline đầu cuối để thu thập, xử lý và tạo báo cáo phân tích mã cổ phiếu, cung cấp thông tin chi tiết hàng ngày và cải thiện khả năng phản hồi của nhóm khoảng 25%",
-          ],
-          skills: ["Python", "Phân tích Dữ liệu", "Phân tích Tài chính", "Định giá Cổ phiếu", "Quản lý Danh mục", "Báo cáo Đầu tư"],
-        },
-      ],
-      projects: [
-        {
-          title: "Xuất Báo Cáo Tài Chính Tự Động",
-          description:
-            "Xây dựng pipeline đầu cuối sử dụng requests, pandas và python dotenv để thu thập, xử lý và xuất phân tích mã cổ phiếu, được mô-đun hóa thành các script fetch, process và export báo cáo.",
-          icon: <Bot className="w-12 h-12" />,
-          gradient: "from-pink-500 to-purple-600",
-          details: {
-            overview:
-              "Hệ thống báo cáo tài chính tự động thu thập, xử lý và xuất phân tích mã cổ phiếu với các thành phần mô-đun hóa để lấy dữ liệu, xử lý và tạo báo cáo.",
-            technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
-            features: [
-              "Cấu hình dựa trên môi trường và các helper có thể tái sử dụng cho quản lý đường dẫn",
-              "Tải, xác thực khóa API và xử lý ngày tháng",
-              "Đầu ra chuẩn hóa sang định dạng Excel, CSV và PDF",
-              "Báo cáo hàng ngày theo lịch trình giảm 90% thời gian chuẩn bị thủ công",
-              "Cải thiện khả năng phản hồi của nhóm 25%",
-            ],
-            timeline: "Tháng 8/2024 - Tháng 10/2024",
-            role: "Nhà phát triển & Phân tích Dữ liệu",
-          },
-        },
-        {
-          title: "Dự Đoán Giá Thuê Airbnb",
-          description:
-            "Làm sạch và kỹ thuật hóa bộ dữ liệu Airbnb 26,000 dòng, chuyển đổi các trường tiền tệ sang số, phân tích ngày tháng, cắt bỏ ngoại lệ ở phân vị thứ 99.5, và tạo các tính năng như ngày kể từ khi được lưu trú, phòng ngủ trên mỗi người, và phòng tắm trên mỗi người.",
-          icon: <BarChart3 className="w-12 h-12" />,
-          gradient: "from-purple-500 to-orange-500",
-          details: {
-            overview:
-              "Pipeline machine learning toàn diện để dự đoán giá thuê Airbnb sử dụng kỹ thuật tính năng tiên tiến và nhiều mô hình hồi quy với tinh chỉnh siêu tham số.",
-            technologies: ["Python", "Pandas", "Scikit-learn", "ColumnTransformer", "StandardScaler", "OneHotEncoder", "Linear Regression", "Random Forest", "GridSearchCV"],
-            features: [
-              "Pipeline tiền xử lý và mô hình hóa đầy đủ với kỹ thuật tính năng tiên tiến",
-              "Lấy mẫu phân tầng theo thành phố và tinh chỉnh siêu tham số với GridSearchCV",
-              "Phân tích tầm quan trọng của tính năng cho thấy các yếu tố chính định giá",
-              "Đạt được RMSE 95.84 và MAE 57.98 với Random Forest được tinh chỉnh",
-              "Cải thiện lỗi so với baseline tuyến tính 4%",
-            ],
-            timeline: "Tháng 4/2024 - Tháng 6/2024",
-            role: "Nhà khoa học Dữ liệu & Kỹ sư ML",
-          },
-        },
-        {
-          title: "Trung Tâm Thông Tin Lực Lượng Lao Động: Duy Trì và Bồi Thường",
-          description:
-            "Xây dựng quy trình phân tích HR đầu cuối để làm sạch và mã hóa Human_Resources.csv và chạy EDA với biểu đồ, KDE, boxplot và bản đồ nhiệt tương quan để phát hiện rủi ro duy trì.",
-          icon: <Layout className="w-12 h-12" />,
-          gradient: "from-pink-400 to-orange-400",
-          details: {
-            overview:
-              "Nền tảng phân tích HR toàn diện được thiết kế để phân tích mẫu duy trì lực lượng lao động và cấu trúc bồi thường sử dụng mô hình thống kê tiên tiến và kỹ thuật clustering.",
-            technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "Random Forest", "Logistic Regression", "K-means Clustering"],
-            features: [
-              "Quy trình phân tích HR đầu cuối với EDA toàn diện",
-              "Mô hình rời bỏ Random Forest đạt 85% độ chính xác",
-              "Phân đoạn nhân viên thành ba cluster sử dụng các chỉ số chính",
-              "Khuyến nghị chính sách lương và làm thêm giờ dựa trên tỷ lệ rời bỏ 16.1%",
-              "Các yếu tố chính được xác định: Thu nhập hàng tháng, Tuổi, Làm thêm giờ, Tổng số năm làm việc, Tỷ lệ hàng ngày",
-            ],
-            timeline: "Tháng 1/2024 - Tháng 9/2024",
-            role: "Phân tích Dữ liệu & Chuyên gia Phân tích HR",
-          },
-        },
-        {
-          title: "Nghiên Cứu Nợ Công và Ổn Định Kinh Tế",
-          description:
-            "Biên soạn bảng dữ liệu Ngân hàng Thế giới từ 1960 đến 2023 và tinh chỉnh 728 bản ghi thô thành 640 quan sát đủ điều kiện sử dụng loại bỏ ngoại lệ Z-score và chuẩn hóa scaling.",
-          icon: <Rocket className="w-12 h-12" />,
-          gradient: "from-orange-500 to-pink-500",
-          details: {
-            overview:
-              "Dự án nghiên cứu toàn diện phân tích tác động điều tiết của quản trị đối với tác động của nợ công lên ổn định kinh tế ở các nước Đông Nam Á sử dụng phương pháp kinh tế lượng tiên tiến.",
-            technologies: ["R", "Stata", "System GMM", "Dữ liệu Ngân hàng Thế giới", "Phân tích Thống kê", "Mô hình Kinh tế lượng"],
-            features: [
-              "Biên soạn dữ liệu bảng Ngân hàng Thế giới 1960-2023 với 640 quan sát đủ điều kiện",
-              "Phân tích System GMM kiểm tra tác động điều tiết của quản trị",
-              "Kiểm soát vĩ mô toàn diện và các thuật ngữ tương tác",
-              "Phát hiện chính: quản trị mạnh biến nợ công thành chất tăng cường tăng trưởng",
-              "Được xuất bản trong Global Economic Perspectives, Vol 3 Issue 3, 2025",
-            ],
-            timeline: "Tháng 8/2023 - Tháng 2/2024",
-            role: "Phân tích Nghiên cứu & Nhà kinh tế",
-          },
-        },
-      ],
-      clubActivities: [
-        {
-          role: "Phó Chủ tịch",
-          company: "Câu lạc bộ Công nghệ Tài chính",
-          period: "Tháng 8/2024 - Hiện tại",
-          location: "Đại học Kinh tế - Luật",
-          type: "LÃNH_ĐẠO",
-          highlights: [
-            "Chỉ đạo lập kế hoạch chiến lược, phối hợp liên chức năng và quan hệ đối tác. Giám sát các chương trình hàng đầu và sự kiện nghề nghiệp",
-            "Cố vấn trưởng nhóm và triển khai các mẫu và quy trình hoạt động tiêu chuẩn để mở rộng chất lượng thực hiện và trách nhiệm",
-            "Quản lý giao tiếp bên liên quan và báo cáo chương trình cho nhà tài trợ và đơn vị đại học",
-            "Thành tích: Tổ chức ATTACKER với hơn 1,000 thí sinh đăng ký và xây dựng cầu nối với hệ sinh thái đổi mới của Thành phố Hồ Chí Minh trong fintech",
-            "Nâng cao sự công nhận lên Top 10 tại giải thưởng I-Star. Nhận được Giấy khen từ Đoàn Thanh niên VNU HCM cho 2024 đến 2025 và được khen ngợi vì hoàn thành xuất sắc các mục tiêu 2025",
-          ],
-          skills: ["Lập kế hoạch Chiến lược", "Lãnh đạo Nhóm", "Quản lý Sự kiện", "Quản lý Bên liên quan"],
-        },
-        {
-          role: "Trưởng ban Học thuật",
-          company: "Câu lạc bộ Công nghệ Tài chính",
-          period: "Tháng 8/2023 - Tháng 8/2024",
-          location: "Đại học Kinh tế - Luật",
-          type: "LÃNH_ĐẠO",
-          highlights: [
-            "Dẫn dắt thiết kế chương trình giảng dạy cho hội thảo, talkshow và cuộc thi ATTACKER. Xây dựng ngân hàng câu hỏi, thang điểm và khung đánh giá",
-            "Phát triển các track đào tạo trong phân tích sản phẩm, SQL và Python, và thiết kế dashboard. Thiết lập dashboard KPI và báo cáo sau sự kiện để cải thiện liên tục",
-            "Phối hợp giảng viên và diễn giả ngành. Quản lý các nhóm liên chức năng để cung cấp kết quả học tập chất lượng cao",
-          ],
-          skills: ["Thiết kế Chương trình", "Phát triển Đào tạo", "Phối hợp Học thuật", "Phát triển Nội dung"],
-        },
-      ],
-      skills: {
-        "NGÔN NGỮ LẬP TRÌNH": [
-          "Python",
-          "SQL", 
-          "R",
-        ],
-        "CÔNG CỤ DỮ LIỆU": [
-          "Power BI", 
-          "Excel", 
-          "Plotly", 
-          "Streamlit", 
-          "Jupyter Notebook", 
-          "Tableau", 
-          "Looker Studio", 
-          "Google Sheets", 
-          "Google Apps Script"
-        ],
-        "HỆ THỐNG DỮ LIỆU & TỰ ĐỘNG HÓA": [
-          "MySQL", 
-          "SAP", 
-          "UiPath"
-        ],
-        "KHOA HỌC DỮ LIỆU": [
-          "Phân tích Hồi quy", 
-          "Phân loại", 
-          "Clustering", 
-          "Dự báo Chuỗi Thời gian", 
-          "Kiểm thử A/B", 
-          "Kỹ thuật Tính năng", 
-          "Đánh giá Mô hình"
-        ],
-        "TÀI CHÍNH & LĨNH VỰC": [
-          "Phân tích Tài chính", 
-          "Phân tích Tín dụng", 
-          "Ngân hàng Thương mại", 
-          "Quản lý Danh mục", 
-          "Định giá Đầu tư", 
-          "Nghiên cứu Thị trường"
-        ],
-        "KỸ NĂNG KHÁC": [
-          "Thông tin Kinh doanh", 
-          "Lãnh đạo Nhóm", 
-          "Hợp tác Nhóm", 
-          "Nói trước Công chúng", 
-          "Giải quyết Vấn đề"
-        ],
+        greeting: "HELLO, I'M TUYEN!",
+        title: "CREATING MEMORABLE<br/>DATA &<br/>FINTECH PRODUCTS",
+        subtitle: "I am a Data Analyst & FinTech Specialist with a mission to create inspiring and engaging data solutions.",
       },
       about: {
-        paragraphs: [
-          "Là sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế - Luật, tôi chuyên về phát triển sản phẩm, phân tích dữ liệu và nghiên cứu kinh doanh.",
-          "Tôi thiết kế và tổ chức các hội thảo về khám phá sản phẩm, nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Tôi lãnh đạo các nhóm liên chức năng để chuyển đổi thông tin chi tiết thành yêu cầu sản phẩm, xác định chỉ số thành công và chạy các thí nghiệm tinh gọn thúc đẩy trải nghiệm người dùng và kết quả kinh doanh.",
-          "Thành thạo Python, SQL và các công cụ trực quan hóa hiện đại, tôi xây dựng các mẫu và hệ thống báo cáo có khả năng mở rộng chất lượng. Mục tiêu của tôi là phát triển với vai trò Phân tích Dữ liệu trong FinTech.",
-          "Môn học liên quan: Cơ sở dữ liệu, Khai thác dữ liệu, Phân tích Dữ liệu Lớn trong Tài chính, Công nghệ Blockchain, Gói phần mềm ứng dụng cho tài chính, Hệ thống thông tin kinh doanh dữ liệu lớn, Quản lý Tài chính, Quản lý rủi ro tài chính, và nhiều hơn nữa.",
-          "GPA: 3.0/4.0 với IELTS: 6.0, thể hiện nền tảng học thuật vững chắc và kỹ năng giao tiếp quốc tế.",
+        label: "ABOUT ME",
+        title: "I DELIVER EXCELLENT DATA EXPERIENCES ACROSS MULTIPLE PLATFORMS.",
+        name: "LE NAM <span>TUYEN</span>",
+        description: "As a Data Analyst & FinTech Specialist with 2 years of experience, I always put my heart and soul into creating products that are not only beautiful but also provide excellent experiences. Currently, I am a final-year student majoring in Financial Technology at University of Economics and Law.",
+        button: "LEARN MORE",
+      },
+      services: {
+        label: "MY SERVICES",
+        items: [
+          "DATA ANALYTICS",
+          "FINTECH SOLUTIONS",
+          "DASHBOARD DESIGN",
+          "BUSINESS INTELLIGENCE",
         ],
-        competencies: [
-          "Phân tích Dữ liệu & Trực quan hóa (Python, SQL, R)",
-          "Phân tích Tài chính & Đánh giá Rủi ro",
-          "Machine Learning & Mô hình Thống kê",
-          "Lãnh đạo Nhóm & Phối hợp Liên chức năng",
-          "Thiết kế Hội thảo & Tổ chức Đào tạo",
-          "Nghiên cứu & Viết Học thuật",
-          "Quản lý Bên liên quan & Giao tiếp",
-          "Tự động hóa Quy trình & Tối ưu hóa",
+      },
+      projects: {
+        label: "MY PROJECTS",
+        intro: "Here are some of my favorite projects where I prioritized user experience and visual aesthetics. Each project reflects my dedication to creating seamless and engaging digital experiences.",
+        items: [
+          {
+            title: "FINTECH DASHBOARD",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+          },
+          {
+            title: "DATA ANALYTICS PLATFORM",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          },
+          {
+            title: "BUSINESS INTELLIGENCE",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+          },
         ],
+      },
+      testimonial: {
+        label: "TESTIMONIAL",
+        quote: "Tuyen did an amazing job analyzing our data and designing our dashboard. <span>It looks absolutely fantastic!</span>",
+        author: "Nguyen Van A",
+        position: "CEO of FinTech Startup",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      },
+      contact: {
+        label: "HAVE A PROJECT IN MIND?",
+        title: "LET'S <span>CONNECT</span>",
+        button: "SEND MESSAGE",
+        social: [
+          { name: "LinkedIn", icon: "Li", url: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/" },
+          { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
+          { name: "GitHub", icon: "Gh", url: "#" },
+          { name: "Portfolio", icon: "Po", url: "#" },
+        ],
+      },
+      footer: {
+        copyright: "© 2024 LE NAM TUYEN. DATA ANALYST & FINTECH SPECIALIST IN HO CHI MINH",
+        nav: ["ABOUT", "SERVICES", "PROJECTS", "CONTACT"],
       },
     },
   }
@@ -614,833 +204,245 @@ export default function Portfolio() {
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-[#253900] to-black text-[#EEEEEE] relative overflow-hidden">
-      {/* Animated Grid Background */}
-      <div className="fixed inset-0 pointer-events-none opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(#08CB00 1px, transparent 1px), linear-gradient(90deg, #08CB00 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-            animation: "grid-move 20s linear infinite",
-          }}
-        ></div>
-      </div>
-
-      {/* Gradient Orbs */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-full blur-[120px] opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-[#08CB00] to-[#253900] rounded-full blur-[120px] opacity-30 animate-pulse"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#08CB00]/20 to-transparent rounded-full blur-[100px] opacity-40"></div>
-      </div>
-
-      {/* Floating Particles */}
-      <div className="fixed inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-[#08CB00] rounded-full opacity-60 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-black/95 backdrop-blur-xl border-b border-[#08CB00]/30 shadow-lg shadow-[#08CB00]/10" : "bg-transparent"}`}
-      >
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-4">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative w-14 h-14 bg-gradient-to-br from-[#08CB00] to-[#253900] border-2 border-[#08CB00] rounded-lg flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-[#08CB00]/30">
-                  TL
-                </div>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold tracking-wider text-[#EEEEEE]">LE NAM TUYEN</h1>
-                <p className="text-xs text-[#08CB00] font-mono bg-[#08CB00]/10 px-2 py-1 rounded border border-[#08CB00]/30">{t.hero.role}</p>
-              </div>
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white overflow-x-hidden">
+      {/* Header */}
+      <header className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="flex justify-between items-center py-8">
+            <div className="text-sm font-bold tracking-widest text-[#00ff88]">
+              {t.header.location}
             </div>
+            <div className="text-sm font-mono text-gray-400">
+              {currentTime}
+            </div>
+          </div>
+        </div>
+      </header>
 
-            <div className="hidden md:flex items-center gap-8">
-              {[
-                { key: "home", label: t.nav.home },
-                { key: "work", label: t.nav.work },
-                { key: "info", label: t.nav.info },
-                { key: "services", label: t.nav.services },
-                { key: "contact", label: t.nav.contact },
-              ].map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => setActiveSection(item.key)}
-                  className={`transition-all font-mono text-sm tracking-wider relative group active:scale-95 px-4 py-2 rounded-lg ${
-                    activeSection === item.key 
-                      ? "text-[#EEEEEE] bg-gradient-to-r from-[#08CB00]/20 to-[#253900]/20 border border-[#08CB00]/50" 
-                      : "text-[#EEEEEE]/70 hover:text-[#EEEEEE] hover:bg-[#08CB00]/10 border border-transparent hover:border-[#08CB00]/30"
-                  }`}
-                >
-                  {item.label}
-                  <span
-                    className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-[#08CB00] to-[#253900] transition-all ${
-                      activeSection === item.key ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  ></span>
-                </button>
-              ))}
-              <button
-                onClick={() => setLanguage(language === "en" ? "vi" : "en")}
-                className="flex items-center gap-2 px-4 py-2 border border-[#08CB00]/30 text-[#08CB00] hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-95 rounded-lg backdrop-blur-sm"
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center pt-24 relative">
+        <div className="max-w-7xl mx-auto px-10 relative z-10">
+          <div className="animate-fade-in">
+            <div className="text-[#00ff88] text-xl font-bold mb-5 animate-fade-in">
+              {t.hero.greeting}
+            </div>
+            <h1 
+              className="text-6xl md:text-8xl font-black leading-tight mb-8 uppercase animate-fade-in-delay"
+              dangerouslySetInnerHTML={{ __html: t.hero.title }}
+            />
+            <p className="text-lg text-gray-300 max-w-2xl mb-12 leading-relaxed animate-fade-in-delay-2">
+              {t.hero.subtitle}
+            </p>
+          </div>
+        </div>
+        
+        {/* Decorative Elements */}
+        <svg className="absolute top-10 left-5 w-80 h-80 opacity-80 animate-rotate-3d" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="80" stroke="#00ff88" strokeWidth="2" opacity="0.3"/>
+          <circle cx="100" cy="100" r="60" stroke="#00ff88" strokeWidth="2" opacity="0.5"/>
+          <circle cx="100" cy="100" r="40" fill="#00ff88" opacity="0.2"/>
+        </svg>
+        
+        <svg className="absolute bottom-10 right-5 w-80 h-80 opacity-80 animate-rotate-3d-reverse" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="80" stroke="#00ff88" strokeWidth="2" opacity="0.3"/>
+          <circle cx="100" cy="100" r="60" stroke="#00ff88" strokeWidth="2" opacity="0.5"/>
+          <circle cx="100" cy="100" r="40" fill="#00ff88" opacity="0.2"/>
+        </svg>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+              {t.about.label}
+            </h3>
+            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-10">
+              {t.about.title}
+            </h2>
+          </div>
+          
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-3xl overflow-hidden shadow-2xl shadow-[#00ff88]/10 transition-transform hover:-translate-y-3">
+            <img 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+              alt="Profile" 
+              className="w-full h-[500px] object-cover grayscale transition-all duration-300 hover:grayscale-0"
+            />
+            <div className="p-8 border-t-4 border-[#00ff88]">
+              <h2 
+                className="text-3xl font-black mb-3"
+                dangerouslySetInnerHTML={{ __html: t.about.name }}
+              />
+              <p className="text-gray-300 leading-relaxed mb-5">
+                {t.about.description}
+              </p>
+              <a 
+                href="#contact" 
+                className="inline-block px-10 py-4 bg-transparent border-2 border-[#00ff88] text-[#00ff88] rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00ff88]/30"
               >
-                <Globe className="w-4 h-4" />
-                <span className="font-mono text-xs">{language === "en" ? "VI" : "EN"}</span>
-              </button>
-              <a
-                href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all active:scale-95 rounded-lg shadow-lg shadow-[#08CB00]/30"
-              >
-                {t.nav.hireMe}
+                {t.about.button}
               </a>
             </div>
-
-            <button className="md:hidden text-[#08CB00] hover:text-[#EEEEEE] transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
-
-          {mobileMenuOpen && (
-            <div className="md:hidden mt-6 pb-4 space-y-4 bg-black/95 backdrop-blur-xl border border-[#08CB00]/30 p-6 rounded-lg shadow-lg shadow-[#08CB00]/10">
-              {[
-                { key: "home", label: t.nav.home },
-                { key: "work", label: t.nav.work },
-                { key: "info", label: t.nav.info },
-                { key: "services", label: t.nav.services },
-                { key: "contact", label: t.nav.contact },
-              ].map((item) => (
-                <button
-                  key={item.key}
-                  className={`block w-full text-left py-3 font-mono text-sm tracking-wider transition-all rounded-lg px-4 ${
-                    activeSection === item.key 
-                      ? "text-[#EEEEEE] bg-gradient-to-r from-[#08CB00]/20 to-[#253900]/20 border border-[#08CB00]/50" 
-                      : "text-[#EEEEEE]/70 hover:text-[#EEEEEE] hover:bg-[#08CB00]/10"
-                  }`}
-                  onClick={() => {
-                    setActiveSection(item.key)
-                    setMobileMenuOpen(false)
-                  }}
-                >
-                  {item.label}
-                </button>
-              ))}
-              <button
-                onClick={() => setLanguage(language === "en" ? "vi" : "en")}
-                className="flex items-center gap-2 px-4 py-2 border border-[#08CB00]/30 text-[#08CB00] hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all w-full justify-center rounded-lg"
-              >
-                <Globe className="w-4 h-4" />
-                <span className="font-mono text-xs">{language === "en" ? "TIẾNG VIỆT" : "ENGLISH"}</span>
-              </button>
-            </div>
-          )}
         </div>
-      </nav>
+      </section>
 
-      {/*==================== HOME ====================*/}
-      {activeSection === "home" && (
-        <section className="home section relative pt-32 pb-20 px-6" id="home">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8 relative z-10">
-                <div className="inline-flex items-center gap-3 px-6 py-3 border border-[#08CB00]/50 text-[#08CB00] font-mono text-sm bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 rounded-lg backdrop-blur-sm">
-                  <Terminal className="w-5 h-5" />
-                  <span className="animate-pulse text-[#08CB00]">●</span>
-                  {t.hero.available}
-                </div>
+      {/* Services Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="mb-16">
+            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+              {t.services.label}
+            </h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-[#00ff88] p-0.5">
+            {t.services.items.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-[#1a1a1a] p-12 transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:scale-105"
+              >
+                <h4 className="text-2xl font-black uppercase">
+                  {service}
+                </h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <div className="space-y-4">
-                  <p className="text-[#08CB00] font-mono text-sm tracking-widest bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30 inline-block">{t.hero.hello}</p>
-                  <h1 className="home__name text-6xl md:text-8xl font-bold leading-none tracking-tighter">
-                    <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">LE NAM</span>
-                    <br />
-                    <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">TUYEN</span>
-                  </h1>
-                  <div className="flex items-center gap-3 pt-4">
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-full"></div>
-                    <p className="home__profession font-mono text-sm text-[#EEEEEE]/70 bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30">{t.hero.role}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-4 border-l-2 border-gradient-to-b from-[#08CB00] to-[#253900] pl-8 bg-gradient-to-r from-[#08CB00]/5 to-transparent p-6 rounded-r-lg">
-                  <p className="text-[#EEEEEE]/80 font-mono text-sm leading-relaxed">
-                    {t.hero.roleDetails}
-                    <br />
-                    {t.hero.status}
-                    <br />
-                    {t.hero.education}
+      {/* Projects Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="mb-16">
+            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+              {t.projects.label}
+            </h3>
+          </div>
+          
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <p className="text-gray-300 leading-relaxed text-base">
+              {t.projects.intro}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {t.projects.items.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-[#1a1a1a] rounded-3xl overflow-hidden transition-all hover:border-2 hover:border-[#00ff88] hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#00ff88]/20"
+              >
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-80 object-cover"
+                />
+                <div className="p-8">
+                  <h4 className="text-2xl font-black mb-4">
+                    {project.title}
+                  </h4>
+                  <p className="text-[#00ff88] font-bold text-lg">
+                    {project.year}
                   </p>
                 </div>
-
-                <div className="flex flex-wrap gap-4 pt-8">
-                  <button className="px-8 py-4 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all flex items-center gap-3 active:scale-95 rounded-lg shadow-lg shadow-[#08CB00]/30 group">
-                    <Download className="w-5 h-5 group-hover:animate-bounce" />
-                    {t.hero.downloadCV}
-                  </button>
-                  <a
-                    href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-4 border-2 border-[#08CB00] text-[#08CB00] font-bold tracking-wider hover:bg-[#08CB00]/10 hover:border-[#08CB00]/80 transition-all flex items-center gap-3 active:scale-95 rounded-lg backdrop-blur-sm group"
-                  >
-                    <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    {t.hero.linkedin}
-                  </a>
-                </div>
-
-                <div className="flex items-center gap-3 pt-6 text-sm text-[#EEEEEE]/70 font-mono bg-[#08CB00]/5 px-4 py-2 rounded-lg border border-[#08CB00]/20">
-                  <MapPin className="w-4 h-4 text-[#08CB00]" />
-                  {t.hero.location}
-                </div>
               </div>
-
-              <div className="relative">
-                <div className="relative w-96 h-96 mx-auto group">
-                  {/* Outer glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#08CB00] to-[#253900] blur-xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity"></div>
-
-                  {/* Main border frame with gradient */}
-                  <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-lg p-1">
-                    <div className="w-full h-full bg-black rounded-lg"></div>
-                  </div>
-                  <div className="absolute inset-4 border-2 border-[#08CB00]/60 rounded-lg"></div>
-                  <div className="absolute inset-8 border border-[#08CB00]/30 rounded-lg"></div>
-
-                  {/* Image container */}
-                  <div className="absolute inset-12 overflow-hidden bg-black rounded-lg">
-                    <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
-                      alt="Tuyen Le Nam"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-
-                  {/* Corner accents with gradient */}
-                  <div className="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-transparent bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-tl-lg"></div>
-                  <div className="absolute -top-4 -right-4 w-16 h-16 border-t-4 border-r-4 border-transparent bg-gradient-to-bl from-[#08CB00] to-[#253900] rounded-tr-lg"></div>
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-4 border-l-4 border-transparent bg-gradient-to-tr from-[#08CB00] to-[#253900] rounded-bl-lg"></div>
-                  <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-transparent bg-gradient-to-tl from-[#08CB00] to-[#253900] rounded-br-lg"></div>
-
-                  {/* Badge elements - enhanced with gradients */}
-                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-[#08CB00] to-[#253900] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
-                    <Award className="w-12 h-12 text-white" />
-                  </div>
-                  <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-black border-4 border-[#08CB00] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
-                    <Target className="w-12 h-12 text-[#08CB00]" />
-                  </div>
-
-                  {/* Animated scan line effect */}
-                  <div className="absolute inset-12 overflow-hidden pointer-events-none rounded-lg">
-                    <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#08CB00] to-transparent opacity-60 animate-[scan_3s_ease-in-out_infinite]"></div>
-                  </div>
-
-                  {/* Floating icons around avatar */}
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce">
-                    <Sparkles className="w-4 h-4 text-[#08CB00]" />
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '0.5s'}}>
-                    <Brain className="w-4 h-4 text-[#08CB00]" />
-                  </div>
-                  <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1s'}}>
-                    <Lightbulb className="w-4 h-4 text-[#08CB00]" />
-                  </div>
-                  <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1.5s'}}>
-                    <Shield className="w-4 h-4 text-[#08CB00]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
-              {[
-                { value: "02", label: t.stats.internships, icon: <Briefcase className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
-                { value: "02", label: t.stats.leadership, icon: <Users className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
-                { value: "13", label: t.stats.monthsExp, icon: <TrendingUp className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
-                { value: "2026", label: t.stats.graduation, icon: <GraduationCap className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
-              ].map((stat, i) => (
-                <div
-                  key={i}
-                  className="group relative bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm hover:scale-105"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-12 h-12 bg-gradient-to-br ${stat.gradient} rounded-lg flex items-center justify-center text-white shadow-lg`}>
-                        {stat.icon}
-                      </div>
-                      <h3 className="text-4xl font-bold bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent font-mono">{stat.value}</h3>
-                    </div>
-                    <p className="text-[#EEEEEE]/70 text-xs font-mono tracking-wider">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/*==================== WORK ====================*/}
-      {activeSection === "work" && (
-        <section className="work section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="work">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-6 mb-16">
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
-                  <Rocket className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
-              </div>
-              <div className="flex-1">
-                <h2 className="section__title text-5xl font-bold tracking-wider">
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">RECENT</span>
-                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent"> WORKS</span>
-                </h2>
-              </div>
-              <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
-            </div>
-
-            {/* Projects Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {t.projects.map((project, i) => (
-                <div
-                  key={i}
-                  className="work__card group relative bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm hover:scale-105 cursor-pointer"
-                  onClick={() => setSelectedProject(i)}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        {project.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="work__title text-xl font-bold text-[#EEEEEE] mb-2 group-hover:text-[#08CB00] transition-colors">
-                          {project.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <p className="work__description text-[#EEEEEE]/70 text-sm leading-relaxed mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-[#08CB00] text-sm font-mono">
-                      <span>View Details</span>
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-              <div className="mb-16">
-                <div className="flex items-center justify-between mb-8">
-                  <h3 className="text-2xl font-bold flex items-center gap-3">
-                    <Rocket className="w-6 h-6 text-[#00FF99]" />
-                    {t.professional.projects}
-                  </h3>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => scrollCarousel("left")}
-                      className="w-10 h-10 border border-[#00FF99]/30 flex items-center justify-center hover:border-[#00FF99] hover:bg-[#00FF99]/10 transition-all active:scale-90"
-                      aria-label="Scroll left"
-                    >
-                      <ChevronLeft className="w-5 h-5 text-[#00FF99]" />
-                    </button>
-                    <button
-                      onClick={() => scrollCarousel("right")}
-                      className="w-10 h-10 border border-[#00FF99]/30 flex items-center justify-center hover:border-[#00FF99] hover:bg-[#00FF99]/10 transition-all active:scale-90"
-                      aria-label="Scroll right"
-                    >
-                      <ChevronRight className="w-5 h-5 text-[#00FF99]" />
-                    </button>
-                  </div>
-                </div>
-
-                <div
-                  ref={carouselRef}
-                  className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
-                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                >
-                  {t.projects.map((project, i) => (
-                    <div
-                      key={i}
-                      onClick={() => setSelectedProject(i)}
-                      className="relative group bg-black border border-[#00FF99]/30 p-8 hover:border-[#00FF99] transition-all overflow-hidden flex-shrink-0 w-[400px] cursor-pointer transform hover:scale-105 hover:-translate-y-2 duration-300"
-                    >
-                      {/* Corner glow effects */}
-                      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#00FF99]/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-[#00FF99]/20 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-                      <div className="relative z-10">
-                        <div className="flex items-start gap-6 mb-4">
-                          <div
-                            className={`w-20 h-20 bg-gradient-to-br ${project.gradient} flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            {project.icon}
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#00FF99] transition-colors">
-                              {project.title}
-                            </h4>
-                          </div>
-                        </div>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-4">{project.description}</p>
-                        <div className="flex items-center gap-2 text-[#00FF99] text-sm font-mono">
-                          <span>View Details</span>
-                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <Code className="w-6 h-6 text-[#00FF99]" />
-                  {t.professional.skills}
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {Object.entries(t.skills).map(([cat, list], i) => (
-                    <div
-                      key={i}
-                      className="bg-black border border-[#00FF99]/30 p-6 hover:border-[#00FF99] transition-all"
-                    >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-[#00FF99] flex items-center justify-center">
-                          {i === 0 && <Code className="w-5 h-5 text-black" />}
-                          {i === 1 && <Database className="w-5 h-5 text-black" />}
-                          {i === 2 && <Cpu className="w-5 h-5 text-black" />}
-                          {i === 3 && <BarChart3 className="w-5 h-5 text-black" />}
-                          {i === 4 && <TrendingUp className="w-5 h-5 text-black" />}
-                          {i === 5 && <Users className="w-5 h-5 text-black" />}
-                        </div>
-                        <h3 className="text-lg font-bold font-mono">{cat}</h3>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {list.map((s) => (
-                          <span
-                            key={s}
-                            className="px-2 py-1 border border-[#00FF99]/50 text-gray-300 text-xs hover:text-[#00FF99] transition-all"
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <GraduationCap className="w-6 h-6 text-[#00FF99]" />
-                  {t.professional.education}
-                </h3>
-                <div className="bg-black border border-[#00FF99]/30 p-8 hover:border-[#00FF99] transition-all">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-[#00FF99] flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="w-8 h-8 text-black" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-[#00FF99] mb-2">Bachelor of Financial Technology (Fintech)</h4>
-                      <p className="text-xl text-white font-semibold mb-2">University of Economics and Law (VNU-HCM)</p>
-                      <div className="flex gap-6 text-sm text-gray-400 font-mono mb-4">
-                        <span>2021 - 2026</span>
-                        <span>Ho Chi Minh City</span>
-                        <span>GPA: 3.0/4.0</span>
-                      </div>
-                      <div className="mb-4">
-                        <h5 className="text-lg font-semibold text-white mb-3">Relevant Coursework:</h5>
-                        <div className="grid md:grid-cols-2 gap-2">
-                          {[
-                            "Database", "Data mining", "Big Data Analytics in Finance", "Blockchain Technology",
-                            "Application software package for finance", "Big data Business information systems",
-                            "Financial Management", "Financial risk management"
-                          ].map((course, i) => (
-                            <div key={i} className="flex items-start gap-2 text-gray-300">
-                              <ChevronRight className="w-4 h-4 text-[#00FF99] mt-1" />
-                              <span className="text-sm">{course}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-xs font-mono">
-                          Financial Technology
-                        </span>
-                        <span className="px-3 py-1 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-xs font-mono">
-                          Data Analytics
-                        </span>
-                        <span className="px-3 py-1 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-xs font-mono">
-                          Business Information Systems
-                        </span>
-                        <span className="px-3 py-1 bg-[#00FF99]/10 border border-[#00FF99] text-[#00FF99] text-xs font-mono">
-                          Risk Management
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <Award className="w-6 h-6 text-[#00FF99]" />
-                  {t.professional.certifications}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-black border border-[#00FF99]/30 p-6 hover:border-[#00FF99] transition-all">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-[#00FF99] flex items-center justify-center">
-                        <Award className="w-6 h-6 text-black" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-white">Ask Questions to Make Data-Driven Decisions</h4>
-                        <p className="text-sm text-gray-400 font-mono">Coursera Certificate</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-300 text-sm">Professional certificate in data-driven decision making and analytical thinking.</p>
-                  </div>
-                  <div className="bg-black border border-[#00FF99]/30 p-6 hover:border-[#00FF99] transition-all">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-[#00FF99] flex items-center justify-center">
-                        <Cpu className="w-6 h-6 text-black" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-white">Accelerating End-to-End Data Science Workflows</h4>
-                        <p className="text-sm text-gray-400 font-mono">NVIDIA Certificate</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-300 text-sm">Advanced certification in data science workflow optimization and GPU acceleration.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-      )}
-
-
-      {/*==================== INFO ====================*/}
-      {activeSection === "info" && (
-        <section className="info section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="info">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-6 mb-16">
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
-              </div>
-              <div className="flex-1">
-                <h2 className="section__title text-5xl font-bold tracking-wider">
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">MY</span>
-                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent"> INFO</span>
-                </h2>
-              </div>
-              <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
-            </div>
-
-            {/* About Me */}
-            <div className="mb-16">
-              <h3 className="info__title text-3xl font-bold mb-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
-                  <User className="w-6 h-6 text-white" />
-                </div>
-                <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">About Me</span>
-              </h3>
-              <div className="bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-8 rounded-lg backdrop-blur-sm">
-                <p className="about__description text-[#EEEEEE]/80 leading-relaxed mb-6">
-                  Passionate about creating <b className="text-[#08CB00]">websites with beautiful interfaces</b>.
-                  I have years of experience in <b className="text-[#08CB00]">Web Development</b> with several 
-                  projects completed.
+      {/* Testimonial Section */}
+      <section className="py-24 text-center">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="mb-16">
+            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+              {t.testimonial.label}
+            </h3>
+          </div>
+          
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#1a1a1a] to-[#252525] p-16 rounded-3xl border-l-4 border-[#00ff88]">
+            <p 
+              className="text-3xl leading-relaxed mb-8 font-light"
+              dangerouslySetInnerHTML={{ __html: t.testimonial.quote }}
+            />
+            <div className="flex items-center justify-center gap-5">
+              <img 
+                src={t.testimonial.image} 
+                alt="Author" 
+                className="w-16 h-16 rounded-full border-4 border-[#00ff88]"
+              />
+              <div className="text-left">
+                <h5 className="text-lg font-bold mb-1">
+                  {t.testimonial.author}
+                </h5>
+                <p className="text-gray-400 text-sm">
+                  {t.testimonial.position}
                 </p>
-                <button className="about__button px-6 py-3 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all rounded-lg shadow-lg shadow-[#08CB00]/30">
-                  Download CV
-                </button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Experience */}
-            <div className="mb-16">
-              <h3 className="info__title text-3xl font-bold mb-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-white" />
-                </div>
-                <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">Experience</span>
-              </h3>
-              <div className="space-y-6">
-                {t.experiences.map((exp, i) => (
-                  <div key={i} className="bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] transition-all">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
-                        <Briefcase className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="experience__profession text-xl font-bold text-[#08CB00]">{exp.role}</h4>
-                        <p className="experience__company text-[#EEEEEE] font-semibold">{exp.company}</p>
-                        <p className="experience__date text-[#EEEEEE]/70 text-sm font-mono">{exp.period}</p>
-                      </div>
-                    </div>
-                    <p className="experience__description text-[#EEEEEE]/80 text-sm">
-                      Short description of the work you do or did in the company.
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Contact Section */}
+      <section className="py-24 text-center">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="mb-16">
+            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+              {t.contact.label}
+            </h3>
+          </div>
+          <h2 
+            className="text-6xl md:text-8xl font-black mb-8"
+            dangerouslySetInnerHTML={{ __html: t.contact.title }}
+          />
+          <a 
+            href="mailto:bingo.namtuyen@gmail.com" 
+            className="inline-block px-10 py-4 bg-transparent border-2 border-[#00ff88] text-[#00ff88] rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00ff88]/30 mb-12"
+          >
+            {t.contact.button}
+          </a>
+          
+          <div className="flex justify-center gap-8">
+            {t.contact.social.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 border-2 border-[#00ff88] rounded-full flex items-center justify-center text-[#00ff88] transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:-translate-y-1"
+                title={social.name}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Skills */}
+      {/* Footer */}
+      <footer className="py-10 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-5">
             <div>
-              <h3 className="info__title text-3xl font-bold mb-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
-                  <Code className="w-6 h-6 text-white" />
-                </div>
-                <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">Skills</span>
-              </h3>
-              <div className="bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-8 rounded-lg backdrop-blur-sm">
-                <div className="flex flex-wrap gap-3">
-                  {Object.values(t.skills).flat().map((skill, i) => (
-                    <span
-                      key={i}
-                      className="skills__name px-4 py-2 bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 border border-[#08CB00]/30 text-[#08CB00] text-sm font-mono rounded-lg hover:bg-gradient-to-r hover:from-[#08CB00]/20 hover:to-[#253900]/20 transition-all"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <p className="text-gray-400 text-sm">
+                {t.footer.copyright}
+              </p>
             </div>
-          </div>
-        </section>
-      )}
-
-      {/*==================== SERVICES ====================*/}
-      {activeSection === "services" && (
-        <section className="services section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="services">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-6 mb-16">
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
-                  <Layers className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
-              </div>
-              <div className="flex-1">
-                <h2 className="section__title text-5xl font-bold tracking-wider">
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">SERVICES</span>
-                </h2>
-              </div>
-              <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { title: "Web Development", icon: <Code className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
-                { title: "Web Design", icon: <Palette className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
-                { title: "Responsive Web Design", icon: <Monitor className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
-                { title: "Seo (Web Pages)", icon: <TrendingUp className="w-8 h-8" />, description: "Short description of the service offered to users to obtain a personalized project." },
-              ].map((service, i) => (
-                <div key={i} className="services__card group bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
-                      {service.icon}
-                    </div>
-                    <h3 className="services__title text-xl font-bold text-[#EEEEEE] mb-3 group-hover:text-[#08CB00] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="services__description text-[#EEEEEE]/70 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
+            <nav className="flex gap-8">
+              {t.footer.nav.map((item, index) => (
+                <a 
+                  key={index}
+                  href={`#${item.toLowerCase().replace(' ', '-')}`}
+                  className="text-gray-400 text-sm uppercase tracking-widest transition-colors hover:text-[#00ff88]"
+                >
+                  {item}
+                </a>
               ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/*==================== CONTACT ====================*/}
-      {activeSection === "contact" && (
-        <section className="contact section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="contact">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-6 mb-16">
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
-              </div>
-              <div>
-                <h2 className="section__title text-5xl font-bold tracking-wider">
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">CONTACT</span>
-                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent"> ME</span>
-                </h2>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <a
-                href="mailto:bingo.namtuyen@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact__social-link bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 hover:scale-105"
-              >
-                <Mail className="w-8 h-8 text-[#08CB00] mx-auto mb-3" />
-                <h3 className="font-semibold mb-2 text-[#EEEEEE]">EMAIL</h3>
-                <p className="text-[#EEEEEE]/70 text-sm">bingo.namtuyen@gmail.com</p>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact__social-link bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 hover:scale-105"
-              >
-                <Linkedin className="w-8 h-8 text-[#08CB00] mx-auto mb-3" />
-                <h3 className="font-semibold mb-2 text-[#EEEEEE]">LINKEDIN</h3>
-                <p className="text-[#EEEEEE]/70 text-sm">Connect with me</p>
-              </a>
-              <div className="contact__social-link bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 rounded-lg backdrop-blur-sm">
-                <MapPin className="w-8 h-8 text-[#08CB00] mx-auto mb-3" />
-                <h3 className="font-semibold mb-2 text-[#EEEEEE]">LOCATION</h3>
-                <p className="text-[#EEEEEE]/70 text-sm">Ho Chi Minh City</p>
-                <p className="text-[#EEEEEE]/70 text-sm mt-1">Phone: 0921270404</p>
-              </div>
-            </div>
-
-            <button className="contact__button px-8 py-4 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all rounded-lg shadow-lg shadow-[#08CB00]/30">
-              Send Message
-            </button>
-          </div>
-        </section>
-      )}
-
-      <footer className="footer py-8 px-6 border-t border-[#08CB00]/20">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <p className="text-[#EEEEEE]/70 text-sm font-mono">{t.footer.copyright}</p>
-          <div className="flex gap-4">
-            <a
-              href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 border border-[#08CB00]/30 flex items-center justify-center hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-90 rounded-lg"
-            >
-              <Linkedin className="w-5 h-5 text-[#08CB00]" />
-            </a>
-            <a
-              href="mailto:bingo.namtuyen@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 border border-[#08CB00]/30 flex items-center justify-center hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-90 rounded-lg"
-            >
-              <Mail className="w-5 h-5 text-[#08CB00]" />
-            </a>
+            </nav>
           </div>
         </div>
       </footer>
-
-      {selectedProject !== null && (
-        <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-6 animate-in fade-in duration-300"
-          onClick={() => setSelectedProject(null)}
-        >
-          <div
-            className="bg-gradient-to-br from-black/95 to-[#253900]/20 border-2 border-[#08CB00] max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-in zoom-in-95 duration-300 rounded-lg backdrop-blur-sm"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 w-10 h-10 border border-[#08CB00]/30 flex items-center justify-center hover:border-[#08CB00] hover:bg-[#08CB00]/10 transition-all active:scale-90 z-10 rounded-lg"
-            >
-              <X className="w-5 h-5 text-[#08CB00]" />
-            </button>
-
-            {/* Modal content */}
-            <div className="p-8">
-              {/* Header */}
-              <div className="flex items-start gap-6 mb-8 pb-8 border-b border-[#08CB00]/20">
-                <div
-                  className={`w-24 h-24 bg-gradient-to-br ${t.projects[selectedProject].gradient} flex items-center justify-center text-white flex-shrink-0 rounded-lg`}
-                >
-                  {t.projects[selectedProject].icon}
-                </div>
-                <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-[#08CB00] mb-3">{t.projects[selectedProject].title}</h2>
-                  <div className="flex flex-wrap gap-4 text-sm text-[#EEEEEE]/70 font-mono">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-[#08CB00]" />
-                      <span>{t.projects[selectedProject].details.timeline}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Briefcase className="w-4 h-4 text-[#08CB00]" />
-                      <span>{t.projects[selectedProject].details.role}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Overview */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#EEEEEE] mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#08CB00]"></div>
-                  {language === "en" ? "Overview" : "Tổng quan"}
-                </h3>
-                <p className="text-[#EEEEEE]/80 leading-relaxed">{t.projects[selectedProject].details.overview}</p>
-              </div>
-
-              {/* Technologies */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#EEEEEE] mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#08CB00]"></div>
-                  {language === "en" ? "Technologies" : "Công nghệ"}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {t.projects[selectedProject].details.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-4 py-2 bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 border border-[#08CB00] text-[#08CB00] text-sm font-mono rounded-lg"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Key Features */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#EEEEEE] mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#08CB00]"></div>
-                  {language === "en" ? "Key Features" : "Tính năng chính"}
-                </h3>
-                <div className="space-y-3">
-                  {t.projects[selectedProject].details.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3 text-[#EEEEEE]/80">
-                      <ChevronRight className="w-5 h-5 text-[#08CB00] mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

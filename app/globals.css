@@ -2,96 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Added scan line animation for avatar */
-@keyframes scan {
-  0% {
-    top: 0;
+/* Fade in animations */
+@keyframes fadeIn {
+  from {
     opacity: 0;
+    transform: translateY(30px);
   }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Grid movement animation */
-@keyframes grid-move {
-  0% {
-    transform: translate(0, 0);
+/* 3D rotation animations */
+@keyframes rotate3d {
+  0% { 
+    transform: rotate(0deg) scale(1); 
   }
-  100% {
-    transform: translate(60px, 60px);
+  50% { 
+    transform: rotate(180deg) scale(1.1); 
   }
-}
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
+  100% { 
+    transform: rotate(360deg) scale(1); 
   }
 }
 
-/* Glow pulse animation */
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(8, 203, 0, 0.3);
+@keyframes rotate3d-reverse {
+  0% { 
+    transform: rotate(0deg) scale(1); 
   }
-  50% {
-    box-shadow: 0 0 40px rgba(8, 203, 0, 0.6);
+  50% { 
+    transform: rotate(-180deg) scale(1.1); 
   }
-}
-
-/* Gradient shift animation */
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  100% { 
+    transform: rotate(-360deg) scale(1); 
   }
 }
 
-/* Hide scrollbar for project carousel */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-out 0.2s both;
 }
 
-/* Custom gradient text */
-.gradient-text {
-  background: linear-gradient(45deg, #08CB00, #253900, #08CB00);
-  background-size: 200% 200%;
+.animate-fade-in-delay-2 {
+  animation: fadeIn 1.2s ease-out 0.4s both;
+}
+
+.animate-rotate-3d {
+  animation: rotate3d 20s linear infinite;
+}
+
+.animate-rotate-3d-reverse {
+  animation: rotate3d-reverse 25s linear infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc6a;
+}
+
+/* Selection color */
+::selection {
+  background: #00ff88;
+  color: #0a0a0a;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #00ff88;
+  outline-offset: 2px;
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(45deg, #00ff88, #00cc6a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 3s ease infinite;
 }
 
-/* Glass morphism effect */
-.glass {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(8, 203, 0, 0.2);
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
-/* Neon glow effect */
-.neon-glow {
-  box-shadow: 
-    0 0 5px #08CB00,
-    0 0 10px #08CB00,
-    0 0 15px #08CB00,
-    0 0 20px #08CB00;
+.glow:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
 }
