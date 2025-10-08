@@ -345,21 +345,13 @@ export default function Portfolio() {
                     </span>
                 </h1>
                   
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300 uppercase tracking-wider text-center lg:text-left relative group">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300 uppercase tracking-wider text-center lg:text-left relative group">
                     <span className="relative inline-block">
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-20 blur-sm animate-pulse"></span>
-                      <span className="relative bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift drop-shadow-lg" style={{
-                        textShadow: '0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 212, 255, 0.3), 0 0 60px rgba(124, 58, 237, 0.2)'
-                      }}>
+                      <span className="bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
                         {t.hero.title}
                       </span>
-                      <span className="inline-block w-0.5 h-8 bg-gradient-to-b from-[#00ff88] to-[#7c3aed] ml-1 animate-pulse shadow-lg shadow-[#00ff88]/50"></span>
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-60"></span>
                     </span>
-                    <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-60 animate-pulse shadow-lg shadow-[#00ff88]/30"></div>
-                    <div className="absolute -top-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-40 animate-pulse shadow-lg shadow-[#00d4ff]/30" style={{animationDelay: '0.5s'}}></div>
-                    
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/10 via-[#00d4ff]/10 to-[#7c3aed]/10 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </h2>
                   
                   <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0 font-amsterdam-four italic">
