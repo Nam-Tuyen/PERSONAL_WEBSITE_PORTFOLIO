@@ -84,34 +84,37 @@ export default function Portfolio() {
       education: {
         title: "HỌC VẤN",
         university: "University of Economics and Law (VNU-HCM)",
-        relevantCoursework: "Relevant Coursework:",
-        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management,...",
-        gpa: "GPA: 3.0/4.0",
-        ielts: "IELTS: 6.0",
-        certifications: "CERTIFICATIONS & AWARDS",
-        cert1: "Coursera certificate: Ask Questions to Make Data-Driven Decisions",
-        cert2: "NVIDIA certificate: Accelerating End-to-End Data Science Workflows"
+        degree: "Bachelor of Financial Technology",
+        relevantCoursework: "Chuyên ngành học tập:",
+        courses: "Hệ thống Cơ sở dữ liệu Nâng cao, Khai thác & Phân tích Dữ liệu, Phân tích Dữ liệu Lớn trong Tài chính, Công nghệ Blockchain & Tiền điện tử, Ứng dụng Phần mềm Tài chính, Hệ thống Thông tin Kinh doanh, Quản lý Tài chính & Đánh giá Rủi ro, Tài chính Định lượng & Mô hình hóa",
+        gpa: "3.0/4.0",
+        ielts: "6.0",
+        certifications: "CHỨNG CHỈ CHUYÊN NGHIỆP & THÀNH TỰU",
+        cert1: "Chứng chỉ Chuyên nghiệp Coursera: Ask Questions to Make Data-Driven Decisions",
+        cert2: "Viện Deep Learning NVIDIA: Accelerating End-to-End Data Science Workflows"
       },
         workExperience: {
-          label: "KINH NGHIỆM LÀM VIỆC VÀ THỰC TẬP",
+          label: "KINH NGHIỆM CHUYÊN NGHIỆP",
           agribank: {
-            company: "Vietnam Bank for Agriculture and Rural Development (Binh Trieu Branch)",
-            position: "Intern",
-            period: "03/2025 - 06/2025",
+            company: "Vietnam Bank for Agriculture and Rural Development",
+            department: "Chi nhánh Bình Triệu - Phòng Phân tích Tín dụng",
+            position: "Thực tập sinh Phân tích Tài chính",
+            period: "Tháng 3/2025 - Tháng 6/2025",
             achievements: [
-              "Produced timely sector and macro market reports to inform relationship teams and credit committees.",
-              "Built cash-flow models and scenario analyses and developed capital-utilization proposals covering working capital, capital expenditure, and facility mix to assess repayment capacity and liquidity risk.",
-              "Performed credit risk assessments and drafted loan recommendations, including full financial statement analysis across profit and loss, balance sheet, and cash flow with ratio and trend reviews."
+              "Cung cấp báo cáo thông tin thị trường ngành và vĩ mô toàn diện cho các giám đốc quan hệ khách hàng và ủy ban tín dụng, hỗ trợ quyết định cho vay dựa trên dữ liệu.",
+              "Phát triển các khung mô hình dòng tiền tinh vi và công cụ phân tích kịch bản, tạo ra các chiến lược tối ưu hóa vốn cho vốn lưu động, CAPEX và cơ sở vật chất để nâng cao khả năng đánh giá rủi ro.",
+              "Thực hiện đánh giá rủi ro tín dụng nghiêm ngặt và soạn thảo khuyến nghị cho vay chi tiết thông qua phân tích báo cáo tài chính toàn diện, bao gồm P&L, bảng cân đối kế toán và đánh giá dòng tiền với phân tích tỷ lệ và xu hướng nâng cao."
             ]
           },
           maybank: {
-            company: "Maybank Investment Bank Vietnam (Phu Nhuan Branch)",
-            position: "Intern",
-            period: "06/2024 - 12/2024",
+            company: "Maybank Investment Bank Vietnam",
+            department: "Chi nhánh Phú Nhuận - Nghiên cứu & Phân tích Đầu tư",
+            position: "Thực tập sinh Phân tích Dữ liệu & Nghiên cứu",
+            period: "Tháng 6/2024 - Tháng 12/2024",
             achievements: [
-              "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent.",
-              "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials.",
-              "Designed and deployed an end to end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent."
+              "Thiết kế các pipeline xử lý dữ liệu dựa trên Python để làm sạch, trực quan hóa và phân tích 100,000+ bản ghi giao dịch, tạo ra các báo cáo thông tin thị trường hàng ngày và hàng tuần giảm 30% thời gian phân tích thủ công.",
+              "Thực hiện phân tích tài chính toàn diện và định giá vốn chủ sở hữu cho các công ty niêm yết công khai, phát triển báo cáo đầu tư, giám sát hiệu suất danh mục và hỗ trợ thu hút khách hàng thông qua sàng lọc triển vọng và tài liệu trình bày nâng cao.",
+              "Thiết kế và triển khai cơ sở hạ tầng pipeline dữ liệu end-to-end cho phân tích ticker cổ phiếu thời gian thực, cung cấp thông tin thị trường có thể hành động và cải thiện hiệu quả hoạt động của nhóm 25%."
             ]
           }
         },
@@ -223,34 +226,37 @@ export default function Portfolio() {
       education: {
         title: "EDUCATION",
         university: "University of Economics and Law (VNU-HCM)",
-        relevantCoursework: "Relevant Coursework:",
-        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management,...",
-        gpa: "GPA: 3.0/4.0",
-        ielts: "IELTS: 6.0",
-        certifications: "CERTIFICATIONS & AWARDS",
-        cert1: "Coursera certificate: Ask Questions to Make Data-Driven Decisions",
-        cert2: "NVIDIA certificate: Accelerating End-to-End Data Science Workflows"
+        degree: "Bachelor of Financial Technology",
+        relevantCoursework: "Core Academic Focus:",
+        courses: "Advanced Database Systems, Data Mining & Analytics, Big Data Analytics in Finance, Blockchain Technology & Cryptocurrency, Financial Software Applications, Business Intelligence Systems, Financial Management & Risk Assessment, Quantitative Finance & Modeling",
+        gpa: "3.0/4.0",
+        ielts: "6.0",
+        certifications: "PROFESSIONAL CERTIFICATIONS & ACHIEVEMENTS",
+        cert1: "Coursera Professional Certificate: Ask Questions to Make Data-Driven Decisions",
+        cert2: "NVIDIA Deep Learning Institute: Accelerating End-to-End Data Science Workflows"
       },
         workExperience: {
-          label: "WORK EXPERIENCE AND INTERNSHIP",
+          label: "PROFESSIONAL EXPERIENCE",
           agribank: {
-            company: "Vietnam Bank for Agriculture and Rural Development (Binh Trieu Branch)",
-            position: "Intern",
-            period: "03/2025 - 06/2025",
+            company: "Vietnam Bank for Agriculture and Rural Development",
+            department: "Binh Trieu Branch - Credit Analysis Division",
+            position: "Financial Analysis Intern",
+            period: "March 2025 - June 2025",
             achievements: [
-              "Produced timely sector and macro market reports to inform relationship teams and credit committees.",
-              "Built cash-flow models and scenario analyses and developed capital-utilization proposals covering working capital, capital expenditure, and facility mix to assess repayment capacity and liquidity risk.",
-              "Performed credit risk assessments and drafted loan recommendations, including full financial statement analysis across profit and loss, balance sheet, and cash flow with ratio and trend reviews."
+              "Delivered comprehensive sector and macroeconomic market intelligence reports to senior relationship managers and credit committees, enabling data-driven lending decisions.",
+              "Developed sophisticated cash-flow modeling frameworks and scenario analysis tools, creating capital-utilization strategies for working capital, CAPEX, and facility optimization to enhance risk assessment capabilities.",
+              "Conducted rigorous credit risk evaluations and authored detailed loan recommendations through comprehensive financial statement analysis, including P&L, balance sheet, and cash flow assessments with advanced ratio and trend analysis."
             ]
           },
           maybank: {
-            company: "Maybank Investment Bank Vietnam (Phu Nhuan Branch)",
-            position: "Intern",
-            period: "06/2024 - 12/2024",
+            company: "Maybank Investment Bank Vietnam",
+            department: "Phu Nhuan Branch - Investment Research & Analytics",
+            position: "Data Analytics & Research Intern",
+            period: "June 2024 - December 2024",
             achievements: [
-              "Applied Python to clean, visualize, and interpret 100,000+ trading rows and authored daily and weekly market reports, reducing manual analysis time by about 30 percent.",
-              "Executed financial analysis and equity valuation of listed companies, prepared investment briefs, monitored portfolios, and supported client development through prospect screening and pitch materials.",
-              "Designed and deployed an end to end pipeline to collect, process, and produce stock ticker analysis reports, delivering daily insights and improving team responsiveness by about 25 percent."
+              "Engineered Python-based data processing pipelines to clean, visualize, and analyze 100,000+ trading records, producing daily and weekly market intelligence reports that reduced manual analysis time by 30%.",
+              "Executed comprehensive financial analysis and equity valuation for publicly traded companies, developed investment briefs, monitored portfolio performance, and supported client acquisition through advanced prospect screening and presentation materials.",
+              "Architected and deployed end-to-end data pipeline infrastructure for real-time stock ticker analysis, delivering actionable market insights and improving team operational efficiency by 25%."
             ]
           }
         },
@@ -568,7 +574,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-          </div>
+                </div>
 
       </section>
 
@@ -603,10 +609,10 @@ export default function Portfolio() {
                               </span>
                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                            </div>
+                </div>
                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                          </div>
-                        </div>
+              </div>
+                </div>
 
                 {/* Ultra Modern Content Container */}
                 <div className="relative">
@@ -622,7 +628,7 @@ export default function Portfolio() {
                         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
                           <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
                             "Transforming vision into reality and turning intent into results"
-                            </span>
+                              </span>
                         </p>
                         
                         {/* Quote Glow Effect */}
@@ -646,8 +652,8 @@ export default function Portfolio() {
                         
                         {/* Text Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-sm"></div>
-                  </div>
-                </div>
+            </div>
+          </div>
 
                     {/* Decorative Corner Elements */}
                     <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
@@ -659,11 +665,11 @@ export default function Portfolio() {
                     <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
                     <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                     </div>
-                 </div>
-               </div>
-             </div>
-           </section>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
 
            {/* Education Section - Modern Galaxy Design */}
            <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
@@ -688,13 +694,13 @@ export default function Portfolio() {
                      <div className="relative">
                        <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
                          {t.education.title}
-                       </span>
+                              </span>
                        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                        <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                     </div>
+                            </div>
                      <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                   </div>
-                 </div>
+                          </div>
+                        </div>
 
                  {/* Education Content Container */}
                  <div className="relative">
@@ -704,55 +710,112 @@ export default function Portfolio() {
                    {/* Main Content Card */}
                    <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
                      
-                     {/* University Section */}
+                     {/* University Section - Modern Card Design */}
                      <div className="mb-8 sm:mb-10 md:mb-12">
-                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">
-                         {t.education.university}
-                       </h3>
-                       
-                       {/* Relevant Coursework */}
-                       <div className="mb-6 sm:mb-8">
-                         <h4 className="text-lg sm:text-xl font-semibold text-[#00ff88] mb-3 sm:mb-4">
-                           {t.education.relevantCoursework}
-                         </h4>
+                       {/* University Header Card */}
+                       <div className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 mb-6 sm:mb-8 hover:border-[#00ff88]/40 transition-all duration-300">
+                         <div className="flex items-center gap-4 mb-4">
+                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
+                             <span className="text-white font-bold text-lg sm:text-xl">🎓</span>
+                              </div>
+                           <div>
+                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                               {t.education.university}
+                             </h3>
+                             <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
+                               {t.education.degree}
+                             </p>
+                           </div>
+                          </div>
+                        </div>
+
+                       {/* Academic Performance Cards */}
+                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                         <div className="bg-gradient-to-br from-[#00ff88]/10 via-[#00ff88]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300 group">
+                           <div className="flex items-center gap-3 mb-3">
+                             <div className="w-8 h-8 bg-[#00ff88] rounded-lg flex items-center justify-center">
+                               <span className="text-white font-bold text-sm">📊</span>
+                        </div>
+                             <h4 className="text-[#00ff88] font-semibold text-sm sm:text-base uppercase tracking-wider">GPA</h4>
+                      </div>
+                           <p className="text-white font-bold text-2xl sm:text-3xl">
+                             {t.education.gpa}
+                           </p>
+                           <p className="text-gray-400 text-xs sm:text-sm mt-1">Out of 4.0 Scale</p>
+                    </div>
+                         
+                         <div className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group">
+                           <div className="flex items-center gap-3 mb-3">
+                             <div className="w-8 h-8 bg-[#00d4ff] rounded-lg flex items-center justify-center">
+                               <span className="text-white font-bold text-sm">🌍</span>
+                </div>
+                             <h4 className="text-[#00d4ff] font-semibold text-sm sm:text-base uppercase tracking-wider">IELTS</h4>
+              </div>
+                           <p className="text-white font-bold text-2xl sm:text-3xl">
+                             {t.education.ielts}
+                           </p>
+                           <p className="text-gray-400 text-xs sm:text-sm mt-1">English Proficiency</p>
+                  </div>
+                </div>
+
+                       {/* Coursework Section */}
+                       <div className="bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl p-6 sm:p-8 border border-[#7c3aed]/20 hover:border-[#7c3aed]/40 transition-all duration-300">
+                         <div className="flex items-center gap-3 mb-4">
+                           <div className="w-8 h-8 bg-[#7c3aed] rounded-lg flex items-center justify-center">
+                             <span className="text-white font-bold text-sm">📚</span>
+                          </div>
+                           <h4 className="text-[#7c3aed] font-semibold text-lg sm:text-xl">
+                             {t.education.relevantCoursework}
+                            </h4>
+                          </div>
                          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                            {t.education.courses}
                          </p>
-                       </div>
-                       
-                       {/* GPA and IELTS */}
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                         <div className="bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20">
-                           <p className="text-[#00ff88] font-semibold text-lg sm:text-xl">
-                             {t.education.gpa}
-                           </p>
-                         </div>
-                         <div className="bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20">
-                           <p className="text-[#00d4ff] font-semibold text-lg sm:text-xl">
-                             {t.education.ielts}
-                           </p>
-                         </div>
-                       </div>
-                     </div>
+                        </div>
+                        </div>
 
-                     {/* Certifications Section */}
+                     {/* Certifications Section - Modern Design */}
                      <div>
-                       <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#7c3aed] mb-6 sm:mb-8 text-center">
-                         {t.education.certifications}
-                       </h4>
-                       
-                       <div className="space-y-4 sm:space-y-6">
-                         <div className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300">
-                           <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                             {t.education.cert1}
-                           </p>
-                         </div>
-                         <div className="bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300">
-                           <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
-                             {t.education.cert2}
-                           </p>
-                         </div>
+                       <div className="text-center mb-6 sm:mb-8">
+                         <div className="inline-flex items-center gap-3 mb-4">
+                           <div className="w-8 h-8 bg-[#7c3aed] rounded-lg flex items-center justify-center">
+                             <span className="text-white font-bold text-sm">🏆</span>
+                      </div>
+                           <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#7c3aed]">
+                             {t.education.certifications}
+                           </h4>
+                    </div>
                        </div>
+                       
+                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                         <div className="bg-gradient-to-br from-[#00ff88]/10 via-[#00ff88]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300 group hover:scale-105">
+                           <div className="flex items-start gap-4">
+                             <div className="w-12 h-12 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center flex-shrink-0">
+                               <span className="text-white font-bold text-lg">📈</span>
+                             </div>
+                             <div>
+                               <h5 className="text-[#00ff88] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">Coursera</h5>
+                               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+                                 {t.education.cert1}
+                               </p>
+                             </div>
+                </div>
+              </div>
+
+                         <div className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group hover:scale-105">
+                           <div className="flex items-start gap-4">
+                             <div className="w-12 h-12 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center flex-shrink-0">
+                               <span className="text-white font-bold text-lg">🚀</span>
+                             </div>
+              <div>
+                               <h5 className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">NVIDIA</h5>
+                               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+                                 {t.education.cert2}
+                               </p>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
                      </div>
                      
                      {/* Decorative Corner Elements */}
@@ -765,11 +828,11 @@ export default function Portfolio() {
                      <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
                      <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                      <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </section>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
        {/* Work Experience Section - Modern Galaxy Design */}
        <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
@@ -797,10 +860,10 @@ export default function Portfolio() {
                    </span>
                    <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                    <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                      </div>
+                        </div>
                  <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                </div>
-              </div>
+                      </div>
+            </div>
 
              {/* Work Experience Content Container */}
              <div className="space-y-8 sm:space-y-12 md:space-y-16">
@@ -813,31 +876,47 @@ export default function Portfolio() {
                  {/* Main Content Card */}
                  <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
                    
-                   {/* Company Header */}
+                   {/* Company Header - Modern Design */}
                    <div className="mb-6 sm:mb-8">
-                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                         {t.workExperience.agribank.company}
-                </h3>
-                       <div className="flex flex-col sm:items-end gap-2">
-                         <span className="text-[#00ff88] font-semibold text-lg sm:text-xl">
-                           {t.workExperience.agribank.position}
-                         </span>
-                         <span className="text-[#00d4ff] text-sm sm:text-base">
-                           {t.workExperience.agribank.period}
-                         </span>
-                        </div>
-                      </div>
-                      </div>
-                   
-                   {/* Achievements */}
+                     <div className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 mb-6 hover:border-[#00ff88]/40 transition-all duration-300">
+                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                         <div className="flex items-center gap-4">
+                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
+                             <span className="text-white font-bold text-lg sm:text-xl">🏦</span>
+                           </div>
+                           <div>
+                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                               {t.workExperience.agribank.company}
+                             </h3>
+                             <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
+                               {t.workExperience.agribank.department}
+                             </p>
+                           </div>
+                         </div>
+                         <div className="flex flex-col sm:items-end gap-2">
+                           <span className="text-[#00ff88] font-semibold text-lg sm:text-xl bg-[#00ff88]/10 px-4 py-2 rounded-lg">
+                             {t.workExperience.agribank.position}
+                           </span>
+                           <span className="text-[#00d4ff] text-sm sm:text-base bg-[#00d4ff]/10 px-3 py-1 rounded-lg">
+                             {t.workExperience.agribank.period}
+                           </span>
+                         </div>
+                       </div>
+                     </div>
+              </div>
+
+                   {/* Achievements - Modern Card Design */}
                    <div className="space-y-4 sm:space-y-6">
                      {t.workExperience.agribank.achievements.map((achievement, index) => (
-                       <div key={index} className="flex items-start gap-3 sm:gap-4">
-                         <div className="flex-shrink-0 w-2 h-2 bg-[#00ff88] rounded-full mt-2 sm:mt-3"></div>
-                         <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                           {achievement}
-                         </p>
+                       <div key={index} className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-xl p-4 sm:p-6 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300 group">
+                         <div className="flex items-start gap-4">
+                           <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center mt-1">
+                             <span className="text-white font-bold text-sm">{index + 1}</span>
+                           </div>
+                           <p className="text-gray-300 text-base sm:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
+                             {achievement}
+                           </p>
+                         </div>
                     </div>
                   ))}
                 </div>
@@ -849,7 +928,7 @@ export default function Portfolio() {
                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
               </div>
             </div>
-               
+
                {/* Maybank Experience */}
                <div className="relative">
                  {/* Glowing Background Container */}
@@ -858,43 +937,59 @@ export default function Portfolio() {
                  {/* Main Content Card */}
                  <div className="relative bg-gradient-to-br from-black/80 via-gray-900/60 to-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl">
                    
-                   {/* Company Header */}
+                   {/* Company Header - Modern Design */}
                    <div className="mb-6 sm:mb-8">
-                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                         {t.workExperience.maybank.company}
-                       </h3>
-                       <div className="flex flex-col sm:items-end gap-2">
-                         <span className="text-[#00d4ff] font-semibold text-lg sm:text-xl">
-                           {t.workExperience.maybank.position}
-                         </span>
-                         <span className="text-[#7c3aed] text-sm sm:text-base">
-                           {t.workExperience.maybank.period}
-                         </span>
+                     <div className="bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 mb-6 hover:border-[#00d4ff]/40 transition-all duration-300">
+                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                         <div className="flex items-center gap-4">
+                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center">
+                             <span className="text-white font-bold text-lg sm:text-xl">💼</span>
+                           </div>
+                           <div>
+                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                               {t.workExperience.maybank.company}
+                             </h3>
+                             <p className="text-[#00d4ff] font-semibold text-sm sm:text-base">
+                               {t.workExperience.maybank.department}
+                             </p>
+                           </div>
+                         </div>
+                         <div className="flex flex-col sm:items-end gap-2">
+                           <span className="text-[#00d4ff] font-semibold text-lg sm:text-xl bg-[#00d4ff]/10 px-4 py-2 rounded-lg">
+                             {t.workExperience.maybank.position}
+                           </span>
+                           <span className="text-[#7c3aed] text-sm sm:text-base bg-[#7c3aed]/10 px-3 py-1 rounded-lg">
+                             {t.workExperience.maybank.period}
+                           </span>
+                         </div>
                        </div>
                      </div>
-            </div>
+                   </div>
 
-                   {/* Achievements */}
+                   {/* Achievements - Modern Card Design */}
                    <div className="space-y-4 sm:space-y-6">
                      {t.workExperience.maybank.achievements.map((achievement, index) => (
-                       <div key={index} className="flex items-start gap-3 sm:gap-4">
-                         <div className="flex-shrink-0 w-2 h-2 bg-[#00d4ff] rounded-full mt-2 sm:mt-3"></div>
-                         <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                           {achievement}
-                         </p>
+                       <div key={index} className="bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-xl p-4 sm:p-6 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group">
+                         <div className="flex items-start gap-4">
+                           <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-lg flex items-center justify-center mt-1">
+                             <span className="text-white font-bold text-sm">{index + 1}</span>
+                           </div>
+                           <p className="text-gray-300 text-base sm:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
+                             {achievement}
+                           </p>
+                         </div>
                        </div>
-                ))}
-              </div>
+                     ))}
+                   </div>
 
                    {/* Decorative Corner Elements */}
                    <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00d4ff] opacity-60"></div>
                    <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-t-2 border-[#7c3aed] opacity-60"></div>
                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-b-2 border-[#00ff88] opacity-60"></div>
                    <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-r-2 border-b-2 border-[#00d4ff] opacity-60"></div>
-                    </div>
-                </div>
-               
+                        </div>
+                      </div>
+
               </div>
             </div>
          </div>
@@ -928,7 +1023,7 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                          </div>
+                      </div>
                           </div>
                 <div className="p-4 sm:p-6">
                   <h4 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-gradient-primary transition-all">
@@ -937,9 +1032,9 @@ export default function Portfolio() {
                   <p className="text-gradient-tech font-semibold text-base sm:text-lg mb-3">
                     {project.year}
                   </p>
-                        </div>
-                            </div>
-                          ))}
+                    </div>
+                  </div>
+                ))}
                         </div>
                       </div>
           </section>
