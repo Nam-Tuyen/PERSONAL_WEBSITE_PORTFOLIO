@@ -56,21 +56,21 @@ export default function Portfolio() {
         subtitle: "Tôi là một Data Analyst & FinTech Specialist với sứ mệnh tạo ra những giải pháp dữ liệu đầy cảm hứng và thu hút người dùng.",
       },
       about: {
-        label: "VỀ TÔI",
-        title: "TÔI MANG ĐẾN TRẢI NGHIỆM DỮ LIỆU XUẤT SẮC TRÊN NHIỀU NỀN TẢNG.",
+        label: "ABOUT ME",
+        title: "I DELIVER EXCELLENT DATA EXPERIENCES ACROSS MULTIPLE PLATFORMS.",
         headline: [
-          "TÔI TẠO RA TRẢI NGHIỆM",
-          "DỮ LIỆU XUẤT SẮC",
-          "TRÊN CÁC NỀN TẢNG",
-          "KHÁC NHAU."
+          "I DELIVER EXCEPTIONAL",
+          "DATA EXPERIENCES",
+          "ACROSS VARIOUS",
+          "PLATFORMS."
         ],
-        name: "LÊ NAM <span>TUYÊN</span>",
+        name: "LE NAM <span>TUYEN</span>",
         description: "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research. I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes. Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
-        background: "Nền tảng bao gồm nghiên cứu thị trường, phân tích tài chính và cố vấn các nhóm thông qua việc xây dựng giả thuyết, lựa chọn metrics và đánh giá post-mortem để cải thiện trải nghiệm người dùng và kết quả kinh doanh.",
-        recognition: "Được công nhận vì thiết lập các template và quy trình nâng cao chất lượng delivery trên các cohort và liên kết chiến lược kinh doanh với việc ra quyết định dựa trên dữ liệu.",
-        objective: "Mục tiêu nghề nghiệp là phát triển thành Product Manager hoặc Product Owner, áp dụng nghiên cứu, phân tích và tư duy chiến lược để xây dựng các sản phẩm FinTech có thể mở rộng giải quyết các vấn đề có ý nghĩa.",
-        quote: "Biến tầm nhìn thành hiện thực và chuyển đổi ý định thành kết quả",
-        button: "TÌM HIỂU THÊM",
+        background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes.",
+        recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
+        objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
+        quote: "Transforming vision into reality and turning intent into results",
+        button: "LEARN MORE",
         social: [
           { name: "LinkedIn", icon: "Li", url: "https://linkedin.com/in/nam-tuyen" },
           { name: "GitHub", icon: "Gh", url: "https://github.com/Nam-Tuyen" },
@@ -279,33 +279,35 @@ export default function Portfolio() {
       
       {/* Header */}
       <header className="fixed top-0 w-full z-50 glass-tech">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="flex justify-between items-center py-6">
-            <div className="text-sm font-bold tracking-widest text-gradient-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="flex justify-between items-center py-4 sm:py-6">
+            <div className="text-xs sm:text-sm font-bold tracking-widest text-gradient-primary">
               {t.header.location}
       </div>
 
             {/* Navigation */}
-            <nav className="flex items-center gap-8">
+            <nav className="flex items-center gap-2 sm:gap-4 lg:gap-8">
                 <button
                 onClick={() => setActiveSection("professional")}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm ${
                   activeSection === "professional"
                     ? "bg-gradient-primary text-white shadow-lg shadow-[#00ff88]/30"
                     : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
                 }`}
               >
-                PROFESSIONAL
+                <span className="hidden sm:inline">PROFESSIONAL</span>
+                <span className="sm:hidden">PRO</span>
                 </button>
               <button
                 onClick={() => setActiveSection("personal")}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm ${
                   activeSection === "personal"
                     ? "bg-gradient-tech text-white shadow-lg shadow-[#00d4ff]/30"
                     : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
                 }`}
               >
-                PERSONAL
+                <span className="hidden sm:inline">PERSONAL</span>
+                <span className="sm:hidden">PER</span>
               </button>
             </nav>
             </div>
@@ -316,31 +318,31 @@ export default function Portfolio() {
       {activeSection === "professional" && (
         <>
           {/* Hero Section */}
-          <section className="min-h-screen flex items-center pt-24 relative matrix-rain">
-        <div className="max-w-7xl mx-auto px-10 relative z-10">
-          <div className="animate-fade-in">
-            <div className="text-gradient-primary text-xl font-bold mb-5 animate-fade-in">
-              {t.hero.greeting}
-            </div>
-            <h1 
-              className="text-responsive-xl font-black leading-tight mb-8 uppercase animate-fade-in-delay"
-              dangerouslySetInnerHTML={{ __html: t.hero.title }}
-            />
-            <p className="text-lg text-gray-300 max-w-2xl mb-12 leading-relaxed animate-fade-in-delay-2">
-              {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2">
-              <button className="btn-gradient-primary">
-                <Download className="w-5 h-5 mr-2" />
-                TẢI CV
-                </button>
-              <button className="btn-gradient-tech">
-                <Linkedin className="w-5 h-5 mr-2" />
-                LINKEDIN
-              </button>
-            </div>
-        </div>
+          <section className="min-h-screen flex items-center pt-20 sm:pt-24 relative matrix-rain">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+              <div className="animate-fade-in text-center sm:text-left">
+                <div className="text-gradient-primary text-lg sm:text-xl font-bold mb-5 animate-fade-in">
+                  {t.hero.greeting}
+                </div>
+                <h1 
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 sm:mb-8 uppercase animate-fade-in-delay"
+                  dangerouslySetInnerHTML={{ __html: t.hero.title }}
+                />
+                <p className="text-base sm:text-lg text-gray-300 max-w-2xl mb-8 sm:mb-12 leading-relaxed animate-fade-in-delay-2 mx-auto sm:mx-0">
+                  {t.hero.subtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2 justify-center sm:justify-start">
+                  <button className="btn-gradient-primary text-sm sm:text-base">
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    TẢI CV
+                  </button>
+                  <button className="btn-gradient-tech text-sm sm:text-base">
+                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    LINKEDIN
+                  </button>
+                </div>
               </div>
+            </div>
 
         {/* Tech Decorative Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-tech rounded-full opacity-20 float-element animate-pulse-glow"></div>
@@ -361,45 +363,33 @@ export default function Portfolio() {
               </div>
       </section>
 
-          {/* About Section - 3 Column Layout */}
-          <section className="min-h-screen flex items-center py-24 relative">
-            <div className="max-w-7xl mx-auto px-10 w-full">
-              <div className="flex flex-col lg:flex-row min-h-[80vh]">
+          {/* About Section - Centered Layout */}
+          <section className="min-h-screen flex items-center py-12 md:py-24 relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
+              <div className="flex flex-col items-center text-center">
                 
-                {/* Left Section */}
-                <div className="flex-1 flex flex-col justify-between py-20 lg:py-0">
-                  <div className="animate-slide-up">
-                    <div className="text-gray-400 text-xs tracking-[3px] mb-10 font-semibold">
-                      {t.about.label}
-                    </div>
-                    <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-16 max-w-lg">
-                      {t.about.headline.map((line, index) => (
-                        <span key={index} className="block">
-                          {line}
-                        </span>
-                      ))}
-                </h1>
-              </div>
-
-                  {/* Social Icons */}
-                  <div className="flex gap-6 animate-fade-in">
-                    {t.about.social.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.url}
-                        className="text-white text-xl transition-colors hover:text-[#00ff88]"
-                        aria-label={social.name}
-                      >
-                        {social.icon}
-                      </a>
-                    ))}
+                {/* About Label */}
+                <div className="animate-slide-up mb-8">
+                  <div className="text-gray-400 text-xs tracking-[3px] font-semibold">
+                    {t.about.label}
               </div>
             </div>
 
-                {/* Center Section - Profile Image */}
-                <div className="flex-shrink-0 w-full lg:w-[400px] flex items-center justify-center py-12 lg:py-0">
-                  <div className="relative group animate-scale-in">
-                    <div className="w-[350px] h-[450px] rounded-lg overflow-hidden shadow-2xl shadow-black/50">
+                {/* Headline */}
+                <div className="animate-slide-up mb-12">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl">
+                    {t.about.headline.map((line, index) => (
+                      <span key={index} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </h1>
+                </div>
+
+                {/* Profile Image */}
+                <div className="animate-scale-in mb-12">
+                  <div className="relative group">
+                    <div className="w-[280px] h-[360px] sm:w-[320px] sm:h-[410px] md:w-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-2xl shadow-black/50">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
                         alt="Profile" 
@@ -408,58 +398,76 @@ export default function Portfolio() {
                 </div>
 
                     {/* Decorative elements */}
-                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
-                    <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute -top-4 -left-4 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
+                    <div className="absolute -bottom-4 -right-4 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 </div>
                 </div>
 
-                {/* Right Section */}
-                <div className="flex-1 flex flex-col justify-center py-20 lg:py-0">
-                  <div className="animate-slide-up">
-                    <h2 
-                      className="text-4xl font-bold mb-8"
-                      dangerouslySetInnerHTML={{ __html: t.about.name }}
-                    />
-                    
-                    <p className="text-gray-300 text-sm leading-relaxed mb-10 max-w-lg">
-                      {t.about.description}
-                    </p>
-                    
-                    <a 
-                      href="#contact" 
-                      className="inline-block px-8 py-4 border-2 border-white text-white text-xs tracking-[2px] font-semibold rounded-full transition-all hover:bg-[#00ff88] hover:border-[#00ff88] hover:text-black uppercase"
-                    >
-                      {t.about.button}
-                    </a>
+                {/* Name */}
+                <div className="animate-slide-up mb-8">
+                  <h2 
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                    dangerouslySetInnerHTML={{ __html: t.about.name }}
+                  />
                 </div>
-              </div>
+                
+                {/* Description */}
+                <div className="animate-slide-up mb-12 max-w-4xl">
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    {t.about.description}
+                  </p>
           </div>
-        </div>
-      </section>
+
+                {/* CTA Button */}
+                <div className="animate-slide-up mb-12">
+                  <a 
+                    href="#contact" 
+                    className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white text-xs tracking-[2px] font-semibold rounded-full transition-all hover:bg-[#00ff88] hover:border-[#00ff88] hover:text-black uppercase"
+                  >
+                    {t.about.button}
+                  </a>
+                </div>
+                
+                {/* Social Icons */}
+                <div className="flex gap-6 animate-fade-in">
+                  {t.about.social.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      className="text-white text-lg sm:text-xl transition-colors hover:text-[#00ff88]"
+                      aria-label={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+          </section>
 
       {/* Services Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="text-center mb-16 animate-fade-in">
+      <section className="py-12 md:py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <h3 className="text-gradient-tech text-sm tracking-widest mb-5">
               {t.services.label}
-                </h3>
-                        </div>
+                  </h3>
+                </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {t.services.items.map((service, index) => (
               <div 
                 key={index}
-                className="card-cyber text-center group hover:scale-105 transition-all duration-300 animate-scale-in"
+                className="card-cyber text-center group hover:scale-105 transition-all duration-300 animate-scale-in p-6 sm:p-8"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-gradient-tech rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  {index === 0 && <Database className="w-8 h-8 text-white" />}
-                  {index === 1 && <Code className="w-8 h-8 text-white" />}
-                  {index === 2 && <BarChart3 className="w-8 h-8 text-white" />}
-                  {index === 3 && <Brain className="w-8 h-8 text-white" />}
-                        </div>
-                <h4 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-tech rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  {index === 0 && <Database className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
+                  {index === 1 && <Code className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
+                  {index === 2 && <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
+                  {index === 3 && <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-white" />}
+                          </div>
+                <h4 className="text-lg sm:text-xl font-bold group-hover:text-gradient-tech transition-all">
                   {service}
                             </h4>
                     </div>
@@ -469,47 +477,47 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="text-center mb-16 animate-fade-in">
+      <section className="py-12 md:py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <h3 className="text-gradient-cyber text-sm tracking-widest mb-5">
               {t.projects.label}
-                  </h3>
-            <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                </h3>
+            <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto text-sm sm:text-base">
               {t.projects.intro}
             </p>
-                </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {t.projects.items.map((project, index) => (
               <div 
                 key={index}
                 className="card-tech group hover:scale-105 transition-all duration-300 animate-slide-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="relative overflow-hidden rounded-2xl mb-6">
+                <div className="relative overflow-hidden rounded-2xl mb-4 sm:mb-6">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink className="w-5 h-5 text-white" />
-                          </div>
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                        </div>
                       </div>
-                <div>
-                  <h4 className="text-2xl font-bold mb-2 group-hover:text-gradient-primary transition-all">
-                              {project.title}
-                            </h4>
-                  <p className="text-gradient-tech font-semibold text-lg mb-3">
+                <div className="p-4 sm:p-6">
+                  <h4 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-gradient-primary transition-all">
+                    {project.title}
+                  </h4>
+                  <p className="text-gradient-tech font-semibold text-base sm:text-lg mb-3">
                     {project.year}
                   </p>
                       </div>
                     </div>
                   ))}
-                </div>
               </div>
+            </div>
           </section>
 
       {/* Testimonial Section */}
@@ -519,7 +527,7 @@ export default function Portfolio() {
             <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
               {t.testimonial.label}
                 </h3>
-                        </div>
+            </div>
 
           <div className="max-w-4xl mx-auto card-tech text-center animate-scale-in">
             <p 
@@ -539,10 +547,10 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
-                      </div>
-                      </div>
+              </div>
                     </div>
                 </div>
+              </div>
         </section>
 
       {/* Contact Section */}
@@ -576,8 +584,8 @@ export default function Portfolio() {
               </a>
             ))}
               </div>
-            </div>
-          </section>
+          </div>
+        </section>
         </>
       )}
 
@@ -594,7 +602,7 @@ export default function Portfolio() {
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
                   {t.personal.subtitle}
                 </p>
-            </div>
+          </div>
         </div>
           </section>
 
@@ -625,8 +633,8 @@ export default function Portfolio() {
                     </p>
                     </div>
                   ))}
-                </div>
-              </div>
+                    </div>
+                  </div>
           </section>
 
           {/* Values Section */}
@@ -636,7 +644,7 @@ export default function Portfolio() {
                 <h2 className="text-gradient-cyber text-4xl font-black mb-5">
                   {t.personal.values.title}
                 </h2>
-                      </div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {t.personal.values.items.map((value, index) => (
@@ -648,15 +656,15 @@ export default function Portfolio() {
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-tech rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                         <span className="text-white font-bold">{index + 1}</span>
-                      </div>
+                </div>
                       <h3 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
                         {value}
                 </h3>
                     </div>
-                  </div>
-                ))}
-            </div>
-          </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
         </section>
 
           {/* Goals Section */}
@@ -670,9 +678,9 @@ export default function Portfolio() {
                   <p className="text-xl text-gray-300 leading-relaxed">
                     {t.personal.goals.description}
                   </p>
-              </div>
             </div>
           </div>
+        </div>
         </section>
         </>
       )}
