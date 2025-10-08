@@ -235,60 +235,24 @@ body {
   }
 }
 
-@keyframes ledFlow {
-  0% { 
-    background-position: 0% 50%; 
-  }
-  50% { 
-    background-position: 100% 50%; 
-  }
-  100% { 
-    background-position: 0% 50%; 
-  }
-}
-
-@keyframes ledPulse {
-  0%, 100% { 
-    opacity: 0.6; 
-    transform: scale(1); 
-  }
-  50% { 
-    opacity: 1; 
-    transform: scale(1.1); 
-  }
-}
-
-@keyframes techScan {
-  0% { 
-    transform: translateX(-100%); 
-    opacity: 0; 
-  }
-  50% { 
-    opacity: 1; 
-  }
-  100% { 
-    transform: translateX(100%); 
-    opacity: 0;
-  }
-}
-
 /* Utility classes */
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientShift 3s ease infinite;
 }
 
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
 .animate-led-flow {
   background-size: 200% 100%;
-  animation: ledFlow 3s linear infinite;
+  animation: ledFlow 2s linear infinite;
 }
 
 .animate-led-pulse {
   animation: ledPulse 2s ease-in-out infinite;
-}
-
-.animate-tech-scan {
-  animation: techScan 4s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
@@ -297,6 +261,25 @@ body {
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes ledFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes ledPulse {
+  0%, 100% { 
+    opacity: 0.6; 
+    transform: scale(1);
+    box-shadow: 0 0 10px currentColor;
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2);
+    box-shadow: 0 0 20px currentColor;
   }
 }
 
