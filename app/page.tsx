@@ -74,7 +74,11 @@ export default function Portfolio() {
         label: "VỀ TÔI",
         title: "TÔI MANG ĐẾN TRẢI NGHIỆM DỮ LIỆU XUẤT SẮC TRÊN NHIỀU NỀN TẢNG.",
         name: "LÊ NAM <span>TUYÊN</span>",
-        description: "Là một Data Analyst & FinTech Specialist với 2 năm kinh nghiệm, tôi luôn đặt trái tim và tâm hồn vào việc tạo ra những sản phẩm không chỉ đẹp mắt mà còn mang lại trải nghiệm tuyệt vời. Hiện tại, tôi đang là sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế - Luật.",
+        description: "Sinh viên năm cuối tại Đại học Kinh tế - Luật, chuyên về phát triển sản phẩm, phân tích dữ liệu và nghiên cứu kinh doanh. Có kinh nghiệm thiết kế và tổ chức các workshop về product discovery, user research, phân tích SQL và Python, dashboarding, đánh giá thí nghiệm và product analytics. Đã chứng minh khả năng dẫn dắt các nhóm sinh viên đa chức năng để chuyển đổi nghiên cứu thành yêu cầu sản phẩm, định nghĩa các chỉ số thành công và thực hiện các thí nghiệm nhẹ tạo ra insights có thể hành động cho các sản phẩm số.",
+        background: "Nền tảng bao gồm nghiên cứu thị trường, phân tích tài chính và cố vấn các nhóm thông qua việc xây dựng giả thuyết, lựa chọn metrics và đánh giá post-mortem để cải thiện trải nghiệm người dùng và kết quả kinh doanh. Chịu trách nhiệm thiết kế chương trình, điều phối sự kiện với các diễn giả ngành và vận hành cuộc thi, bao gồm ngân hàng câu hỏi, khung chấm điểm và báo cáo.",
+        recognition: "Được công nhận vì thiết lập các template và quy trình nâng cao chất lượng delivery trên các cohort và liên kết chiến lược kinh doanh với việc ra quyết định dựa trên dữ liệu.",
+        objective: "Mục tiêu nghề nghiệp là phát triển thành Product Manager hoặc Product Owner, áp dụng nghiên cứu, phân tích và tư duy chiến lược để xây dựng các sản phẩm FinTech có thể mở rộng giải quyết các vấn đề có ý nghĩa.",
+        quote: "Biến tầm nhìn thành hiện thực và chuyển đổi ý định thành kết quả",
         button: "TÌM HIỂU THÊM",
       },
       services: {
@@ -143,7 +147,11 @@ export default function Portfolio() {
         label: "ABOUT ME",
         title: "I DELIVER EXCELLENT DATA EXPERIENCES ACROSS MULTIPLE PLATFORMS.",
         name: "LE NAM <span>TUYEN</span>",
-        description: "As a Data Analyst & FinTech Specialist with 2 years of experience, I always put my heart and soul into creating products that are not only beautiful but also provide excellent experiences. Currently, I am a final-year student majoring in Financial Technology at University of Economics and Law.",
+        description: "A Senior at the University of Economics and Law, specializing in product development, data analytics, and business research. Experienced in designing and delivering workshops on product discovery, user research, SQL and Python analytics, dashboarding, experiment evaluation, and product analytics. Proven track record leading cross-functional student teams to translate research into product requirements, define success metrics, and run lightweight experiments that generate actionable insight for digital products.",
+        background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes. Responsible for program design, event coordination with industry speakers, and competition operations, including question banks, scoring frameworks, and reporting.",
+        recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
+        objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
+        quote: "Transforming vision into reality and turning intent into results",
         button: "LEARN MORE",
       },
       services: {
@@ -297,15 +305,40 @@ export default function Portfolio() {
                 className="text-3xl font-black mb-4"
                 dangerouslySetInnerHTML={{ __html: t.about.name }}
               />
-              <p className="text-gray-300 leading-relaxed mb-8">
+              
+              {/* Main Description */}
+              <p className="text-gray-300 leading-relaxed mb-6">
                 {t.about.description}
               </p>
+              
+              {/* Background */}
+              <p className="text-gray-300 leading-relaxed mb-6">
+                {t.about.background}
+              </p>
+              
+              {/* Recognition */}
+              <p className="text-gray-300 leading-relaxed mb-6">
+                {t.about.recognition}
+              </p>
+              
+              {/* Career Objective */}
+              <p className="text-gray-300 leading-relaxed mb-6">
+                {t.about.objective}
+              </p>
+              
+              {/* Quote */}
+              <div className="bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border-l-4 border-gradient-primary p-6 mb-8 rounded-r-lg">
+                <blockquote className="text-lg font-medium text-gradient-primary italic">
+                  "{t.about.quote}"
+                </blockquote>
+              </div>
+              
               <button className="btn-gradient-cyber">
                 {t.about.button}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
-                </div>
-              </div>
+            </div>
+          </div>
             </div>
       </section>
 
@@ -411,7 +444,7 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
-              </div>
+                  </div>
               </div>
             </div>
           </div>
