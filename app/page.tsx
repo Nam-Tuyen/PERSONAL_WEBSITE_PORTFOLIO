@@ -45,7 +45,7 @@ import {
 } from "lucide-react"
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("professional")
+  const [activeSection, setActiveSection] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [language, setLanguage] = useState<"vi" | "en">("en")
@@ -72,9 +72,11 @@ export default function Portfolio() {
   const translations = {
     en: {
       nav: {
-        professional: "PROFESSIONAL",
-        personal: "PERSONAL",
-        contact: "CONTACT",
+        home: "HOME",
+        work: "WORK",
+        info: "MY INFO",
+        services: "SERVICES",
+        contact: "CONTACT ME",
         hireMe: "HIRE_ME",
       },
       hero: {
@@ -339,8 +341,10 @@ export default function Portfolio() {
     },
     vi: {
       nav: {
-        professional: "CHUYÊN_MÔN",
-        personal: "CÁ_NHÂN",
+        home: "TRANG_CHỦ",
+        work: "DỰ_ÁN",
+        info: "THÔNG_TIN",
+        services: "DỊCH_VỤ",
         contact: "LIÊN_HỆ",
         hireMe: "TUYỂN_DỤNG",
       },
@@ -666,8 +670,10 @@ export default function Portfolio() {
 
             <div className="hidden md:flex items-center gap-8">
               {[
-                { key: "professional", label: t.nav.professional },
-                { key: "personal", label: t.nav.personal },
+                { key: "home", label: t.nav.home },
+                { key: "work", label: t.nav.work },
+                { key: "info", label: t.nav.info },
+                { key: "services", label: t.nav.services },
                 { key: "contact", label: t.nav.contact },
               ].map((item) => (
                 <button
@@ -712,8 +718,10 @@ export default function Portfolio() {
           {mobileMenuOpen && (
             <div className="md:hidden mt-6 pb-4 space-y-4 bg-black/95 backdrop-blur-xl border border-[#08CB00]/30 p-6 rounded-lg shadow-lg shadow-[#08CB00]/10">
               {[
-                { key: "professional", label: t.nav.professional },
-                { key: "personal", label: t.nav.personal },
+                { key: "home", label: t.nav.home },
+                { key: "work", label: t.nav.work },
+                { key: "info", label: t.nav.info },
+                { key: "services", label: t.nav.services },
                 { key: "contact", label: t.nav.contact },
               ].map((item) => (
                 <button
@@ -743,229 +751,199 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      <section className="relative pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 relative z-10">
-              <div className="inline-flex items-center gap-3 px-6 py-3 border border-[#08CB00]/50 text-[#08CB00] font-mono text-sm bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 rounded-lg backdrop-blur-sm">
-                <Terminal className="w-5 h-5" />
-                <span className="animate-pulse text-[#08CB00]">●</span>
-                {t.hero.available}
-              </div>
+      {/*==================== HOME ====================*/}
+      {activeSection === "home" && (
+        <section className="home section relative pt-32 pb-20 px-6" id="home">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8 relative z-10">
+                <div className="inline-flex items-center gap-3 px-6 py-3 border border-[#08CB00]/50 text-[#08CB00] font-mono text-sm bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 rounded-lg backdrop-blur-sm">
+                  <Terminal className="w-5 h-5" />
+                  <span className="animate-pulse text-[#08CB00]">●</span>
+                  {t.hero.available}
+                </div>
 
-              <div className="space-y-4">
-                <p className="text-[#08CB00] font-mono text-sm tracking-widest bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30 inline-block">{t.hero.hello}</p>
-                <h1 className="text-6xl md:text-8xl font-bold leading-none tracking-tighter">
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">LE NAM</span>
-                  <br />
-                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">TUYEN</span>
-                </h1>
-                <div className="flex items-center gap-3 pt-4">
-                  <div className="w-16 h-1 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-full"></div>
-                  <p className="font-mono text-sm text-[#EEEEEE]/70 bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30">{t.hero.role}</p>
+                <div className="space-y-4">
+                  <p className="text-[#08CB00] font-mono text-sm tracking-widest bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30 inline-block">{t.hero.hello}</p>
+                  <h1 className="home__name text-6xl md:text-8xl font-bold leading-none tracking-tighter">
+                    <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">LE NAM</span>
+                    <br />
+                    <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">TUYEN</span>
+                  </h1>
+                  <div className="flex items-center gap-3 pt-4">
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-full"></div>
+                    <p className="home__profession font-mono text-sm text-[#EEEEEE]/70 bg-[#08CB00]/10 px-3 py-1 rounded border border-[#08CB00]/30">{t.hero.role}</p>
+                  </div>
+                </div>
+
+                <div className="space-y-4 border-l-2 border-gradient-to-b from-[#08CB00] to-[#253900] pl-8 bg-gradient-to-r from-[#08CB00]/5 to-transparent p-6 rounded-r-lg">
+                  <p className="text-[#EEEEEE]/80 font-mono text-sm leading-relaxed">
+                    {t.hero.roleDetails}
+                    <br />
+                    {t.hero.status}
+                    <br />
+                    {t.hero.education}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-8">
+                  <button className="px-8 py-4 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all flex items-center gap-3 active:scale-95 rounded-lg shadow-lg shadow-[#08CB00]/30 group">
+                    <Download className="w-5 h-5 group-hover:animate-bounce" />
+                    {t.hero.downloadCV}
+                  </button>
+                  <a
+                    href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-4 border-2 border-[#08CB00] text-[#08CB00] font-bold tracking-wider hover:bg-[#08CB00]/10 hover:border-[#08CB00]/80 transition-all flex items-center gap-3 active:scale-95 rounded-lg backdrop-blur-sm group"
+                  >
+                    <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    {t.hero.linkedin}
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-3 pt-6 text-sm text-[#EEEEEE]/70 font-mono bg-[#08CB00]/5 px-4 py-2 rounded-lg border border-[#08CB00]/20">
+                  <MapPin className="w-4 h-4 text-[#08CB00]" />
+                  {t.hero.location}
                 </div>
               </div>
 
-              <div className="space-y-4 border-l-2 border-gradient-to-b from-[#08CB00] to-[#253900] pl-8 bg-gradient-to-r from-[#08CB00]/5 to-transparent p-6 rounded-r-lg">
-                <p className="text-[#EEEEEE]/80 font-mono text-sm leading-relaxed">
-                  {t.hero.roleDetails}
-                  <br />
-                  {t.hero.status}
-                  <br />
-                  {t.hero.education}
-                </p>
-              </div>
+              <div className="relative">
+                <div className="relative w-96 h-96 mx-auto group">
+                  {/* Outer glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#08CB00] to-[#253900] blur-xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity"></div>
 
-              <div className="flex flex-wrap gap-4 pt-8">
-                <button className="px-8 py-4 bg-gradient-to-r from-[#08CB00] to-[#253900] text-white font-bold tracking-wider hover:from-[#08CB00]/90 hover:to-[#253900]/90 transition-all flex items-center gap-3 active:scale-95 rounded-lg shadow-lg shadow-[#08CB00]/30 group">
-                  <Download className="w-5 h-5 group-hover:animate-bounce" />
-                  {t.hero.downloadCV}
-                </button>
-                <a
-                  href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-[#08CB00] text-[#08CB00] font-bold tracking-wider hover:bg-[#08CB00]/10 hover:border-[#08CB00]/80 transition-all flex items-center gap-3 active:scale-95 rounded-lg backdrop-blur-sm group"
+                  {/* Main border frame with gradient */}
+                  <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-lg p-1">
+                    <div className="w-full h-full bg-black rounded-lg"></div>
+                  </div>
+                  <div className="absolute inset-4 border-2 border-[#08CB00]/60 rounded-lg"></div>
+                  <div className="absolute inset-8 border border-[#08CB00]/30 rounded-lg"></div>
+
+                  {/* Image container */}
+                  <div className="absolute inset-12 overflow-hidden bg-black rounded-lg">
+                    <img
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
+                      alt="Tuyen Le Nam"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Corner accents with gradient */}
+                  <div className="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-transparent bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-tl-lg"></div>
+                  <div className="absolute -top-4 -right-4 w-16 h-16 border-t-4 border-r-4 border-transparent bg-gradient-to-bl from-[#08CB00] to-[#253900] rounded-tr-lg"></div>
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-4 border-l-4 border-transparent bg-gradient-to-tr from-[#08CB00] to-[#253900] rounded-bl-lg"></div>
+                  <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-transparent bg-gradient-to-tl from-[#08CB00] to-[#253900] rounded-br-lg"></div>
+
+                  {/* Badge elements - enhanced with gradients */}
+                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-[#08CB00] to-[#253900] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
+                    <Award className="w-12 h-12 text-white" />
+                  </div>
+                  <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-black border-4 border-[#08CB00] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
+                    <Target className="w-12 h-12 text-[#08CB00]" />
+                  </div>
+
+                  {/* Animated scan line effect */}
+                  <div className="absolute inset-12 overflow-hidden pointer-events-none rounded-lg">
+                    <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#08CB00] to-transparent opacity-60 animate-[scan_3s_ease-in-out_infinite]"></div>
+                  </div>
+
+                  {/* Floating icons around avatar */}
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce">
+                    <Sparkles className="w-4 h-4 text-[#08CB00]" />
+                  </div>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '0.5s'}}>
+                    <Brain className="w-4 h-4 text-[#08CB00]" />
+                  </div>
+                  <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1s'}}>
+                    <Lightbulb className="w-4 h-4 text-[#08CB00]" />
+                  </div>
+                  <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1.5s'}}>
+                    <Shield className="w-4 h-4 text-[#08CB00]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+              {[
+                { value: "02", label: t.stats.internships, icon: <Briefcase className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
+                { value: "02", label: t.stats.leadership, icon: <Users className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
+                { value: "13", label: t.stats.monthsExp, icon: <TrendingUp className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
+                { value: "2026", label: t.stats.graduation, icon: <GraduationCap className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
+              ].map((stat, i) => (
+                <div
+                  key={i}
+                  className="group relative bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm hover:scale-105"
                 >
-                  <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  {t.hero.linkedin}
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3 pt-6 text-sm text-[#EEEEEE]/70 font-mono bg-[#08CB00]/5 px-4 py-2 rounded-lg border border-[#08CB00]/20">
-                <MapPin className="w-4 h-4 text-[#08CB00]" />
-                {t.hero.location}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative w-96 h-96 mx-auto group">
-                {/* Outer glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#08CB00] to-[#253900] blur-xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity"></div>
-
-                {/* Main border frame with gradient */}
-                <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-[#08CB00] to-[#253900] rounded-lg p-1">
-                  <div className="w-full h-full bg-black rounded-lg"></div>
-                </div>
-                <div className="absolute inset-4 border-2 border-[#08CB00]/60 rounded-lg"></div>
-                <div className="absolute inset-8 border border-[#08CB00]/30 rounded-lg"></div>
-
-                {/* Image container */}
-                <div className="absolute inset-12 overflow-hidden bg-black rounded-lg">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
-                    alt="Tuyen Le Nam"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* Corner accents with gradient */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-transparent bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-tl-lg"></div>
-                <div className="absolute -top-4 -right-4 w-16 h-16 border-t-4 border-r-4 border-transparent bg-gradient-to-bl from-[#08CB00] to-[#253900] rounded-tr-lg"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-4 border-l-4 border-transparent bg-gradient-to-tr from-[#08CB00] to-[#253900] rounded-bl-lg"></div>
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-transparent bg-gradient-to-tl from-[#08CB00] to-[#253900] rounded-br-lg"></div>
-
-                {/* Badge elements - enhanced with gradients */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-[#08CB00] to-[#253900] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
-                  <Award className="w-12 h-12 text-white" />
-                </div>
-                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-black border-4 border-[#08CB00] flex items-center justify-center shadow-lg shadow-[#08CB00]/50 rounded-lg group-hover:scale-110 transition-transform">
-                  <Target className="w-12 h-12 text-[#08CB00]" />
-                </div>
-
-                {/* Animated scan line effect */}
-                <div className="absolute inset-12 overflow-hidden pointer-events-none rounded-lg">
-                  <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#08CB00] to-transparent opacity-60 animate-[scan_3s_ease-in-out_infinite]"></div>
-                </div>
-
-                {/* Floating icons around avatar */}
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce">
-                  <Sparkles className="w-4 h-4 text-[#08CB00]" />
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '0.5s'}}>
-                  <Brain className="w-4 h-4 text-[#08CB00]" />
-                </div>
-                <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1s'}}>
-                  <Lightbulb className="w-4 h-4 text-[#08CB00]" />
-                </div>
-                <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-8 h-8 bg-[#08CB00]/20 border border-[#08CB00]/50 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '1.5s'}}>
-                  <Shield className="w-4 h-4 text-[#08CB00]" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
-            {[
-              { value: "02", label: t.stats.internships, icon: <Briefcase className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
-              { value: "02", label: t.stats.leadership, icon: <Users className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
-              { value: "13", label: t.stats.monthsExp, icon: <TrendingUp className="w-6 h-6" />, gradient: "from-[#08CB00] to-[#253900]" },
-              { value: "2026", label: t.stats.graduation, icon: <GraduationCap className="w-6 h-6" />, gradient: "from-[#253900] to-[#08CB00]" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="group relative bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm hover:scale-105"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${stat.gradient} rounded-lg flex items-center justify-center text-white shadow-lg`}>
-                      {stat.icon}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${stat.gradient} rounded-lg flex items-center justify-center text-white shadow-lg`}>
+                        {stat.icon}
+                      </div>
+                      <h3 className="text-4xl font-bold bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent font-mono">{stat.value}</h3>
                     </div>
-                    <h3 className="text-4xl font-bold bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent font-mono">{stat.value}</h3>
+                    <p className="text-[#EEEEEE]/70 text-xs font-mono tracking-wider">{stat.label}</p>
                   </div>
-                  <p className="text-[#EEEEEE]/70 text-xs font-mono tracking-wider">{stat.label}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {activeSection === "professional" && (
-        <>
-          <section className="relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex items-center gap-6 mb-16">
-                <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
-                    <Zap className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
+      {/*==================== WORK ====================*/}
+      {activeSection === "work" && (
+        <section className="work section relative py-20 px-6 border-t border-[#08CB00]/20 bg-gradient-to-b from-transparent to-black/20" id="work">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-6 mb-16">
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center shadow-lg shadow-[#08CB00]/30">
+                  <Rocket className="w-8 h-8 text-white" />
                 </div>
-                <div className="flex-1">
-                  <h2 className="text-5xl font-bold tracking-wider">
-                    <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.professional.title}</span>
-                    <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">{t.professional.subtitle}</span>
-                  </h2>
-                </div>
-                <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
+                <div className="absolute -inset-2 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg blur opacity-30 animate-pulse"></div>
               </div>
+              <div className="flex-1">
+                <h2 className="section__title text-5xl font-bold tracking-wider">
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">RECENT</span>
+                  <span className="bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent"> WORKS</span>
+                </h2>
+              </div>
+              <div className="flex-1 h-1 bg-gradient-to-r from-[#08CB00] via-[#253900] to-transparent rounded-full"></div>
+            </div>
 
-              <div className="mb-16">
-                <h3 className="text-3xl font-bold mb-12 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#08CB00] to-[#253900] rounded-lg flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.professional.experience}</span>
-                </h3>
-                <div className="space-y-12">
-                  {t.experiences.map((exp, i) => (
-                    <div key={i} className="relative group">
-                      <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-[#08CB00] to-[#253900] rounded-full"></div>
-
-                      <div className="ml-12 bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-8 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm group-hover:scale-[1.02]">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="relative z-10">
-                          <div className="flex flex-wrap justify-between gap-4 mb-8">
-                            <div>
-                              <div className="flex items-center gap-4 mb-3">
-                                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#08CB00] to-[#253900] bg-clip-text text-transparent">{exp.role}</h3>
-                                <span className="px-4 py-2 bg-gradient-to-r from-[#08CB00]/20 to-[#253900]/20 border border-[#08CB00]/50 text-[#08CB00] text-xs font-mono rounded-lg">
-                                  {exp.type}
-                                </span>
-                              </div>
-                              <p className="text-xl text-[#EEEEEE] font-semibold mb-2">{exp.company}</p>
-                              <div className="flex gap-6 text-sm text-[#EEEEEE]/70 font-mono">
-                                <span className="flex items-center gap-2">
-                                  <Calendar className="w-4 h-4 text-[#08CB00]" />
-                                  {exp.period}
-                                </span>
-                                <span className="flex items-center gap-2">
-                                  <MapPin className="w-4 h-4 text-[#08CB00]" />
-                                  {exp.location}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="mb-8">
-                            <div className="grid md:grid-cols-2 gap-4">
-                              {exp.highlights.map((h, j) => (
-                                <div key={j} className="flex items-start gap-3 text-[#EEEEEE]/80 bg-[#08CB00]/5 p-3 rounded-lg border border-[#08CB00]/20">
-                                  <ChevronRight className="w-4 h-4 text-[#08CB00] mt-1 flex-shrink-0" />
-                                  <span className="text-sm leading-relaxed">{h}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div className="flex flex-wrap gap-2">
-                            {exp.skills.map((s) => (
-                              <span
-                                key={s}
-                                className="px-3 py-1 bg-gradient-to-r from-[#08CB00]/10 to-[#253900]/10 border border-[#08CB00]/30 text-[#08CB00] text-xs font-mono rounded-lg hover:bg-gradient-to-r hover:from-[#08CB00]/20 hover:to-[#253900]/20 transition-all"
-                              >
-                                {s}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
+            {/* Projects Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {t.projects.map((project, i) => (
+                <div
+                  key={i}
+                  className="work__card group relative bg-gradient-to-br from-black/80 to-[#253900]/20 border border-[#08CB00]/30 p-6 hover:border-[#08CB00] hover:shadow-lg hover:shadow-[#08CB00]/20 transition-all duration-300 rounded-lg backdrop-blur-sm hover:scale-105 cursor-pointer"
+                  onClick={() => setSelectedProject(i)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#08CB00]/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                        {project.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="work__title text-xl font-bold text-[#EEEEEE] mb-2 group-hover:text-[#08CB00] transition-colors">
+                          {project.title}
+                        </h3>
                       </div>
                     </div>
-                  ))}
+                    <p className="work__description text-[#EEEEEE]/70 text-sm leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-[#08CB00] text-sm font-mono">
+                      <span>View Details</span>
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
 
               <div className="mb-16">
                 <div className="flex items-center justify-between mb-8">
