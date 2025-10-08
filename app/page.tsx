@@ -390,52 +390,83 @@ export default function Portfolio() {
                     <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
                     <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
                     
-                    {/* Modern Professional Image Container */}
+                    {/* Futuristic Tech Avatar Container */}
                     <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">
-                      {/* Outer Glow Ring */}
-                      <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                       
-                      {/* Animated Border Ring */}
-                      <div className="absolute -inset-2 rounded-3xl overflow-hidden">
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] opacity-0 group-hover:opacity-80 transition-opacity duration-500 animate-gradient-shift"></div>
-                        <div className="absolute inset-1 rounded-2xl bg-gradient-to-br from-gray-900 to-black"></div>
+                      {/* Glowing Orbs Background */}
+                      <div className="absolute -top-16 -left-16 w-32 h-32 bg-gradient-radial from-[#00ff88]/20 to-transparent rounded-full blur-2xl animate-pulse opacity-60"></div>
+                      <div className="absolute -bottom-16 -right-16 w-28 h-28 bg-gradient-radial from-[#00d4ff]/20 to-transparent rounded-full blur-2xl animate-pulse opacity-60" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute top-1/2 -right-12 w-24 h-24 bg-gradient-radial from-[#7c3aed]/20 to-transparent rounded-full blur-2xl animate-pulse opacity-60" style={{animationDelay: '2s'}}></div>
+                      
+                      {/* Tech Circles with Scanning Effect */}
+                      <div className="absolute -top-8 -left-8 w-64 h-64 border border-[#00ff88]/20 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+                      <div className="absolute -bottom-8 -right-8 w-48 h-48 border border-[#00d4ff]/20 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+                      <div className="absolute top-1/2 left-1/2 w-36 h-36 border border-[#7c3aed]/20 rounded-full animate-spin transform -translate-x-1/2 -translate-y-1/2" style={{animationDuration: '25s'}}></div>
+                      
+                      {/* Corner Brackets */}
+                      <div className="absolute -top-2 -left-2 w-12 h-12 border-l-2 border-t-2 border-[#00ff88] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                      <div className="absolute -top-2 -right-2 w-12 h-12 border-r-2 border-t-2 border-[#00d4ff] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                      <div className="absolute -bottom-2 -left-2 w-12 h-12 border-l-2 border-b-2 border-[#7c3aed] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                      <div className="absolute -bottom-2 -right-2 w-12 h-12 border-r-2 border-b-2 border-[#00ff88] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                      
+                      {/* Data Points */}
+                      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
+                      <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '1.5s'}}></div>
+                      
+                      {/* Connection Lines */}
+                      <div className="absolute top-1/4 left-1/4 w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88]/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-45"></div>
+                      <div className="absolute bottom-1/4 left-1/4 w-20 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform -rotate-30" style={{transitionDelay: '0.2s'}}></div>
+                      
+                      {/* Tech Text Overlay */}
+                      <div className="absolute top-2 left-2 text-xs font-mono text-[#00ff88] opacity-50 group-hover:opacity-80 transition-all duration-300 text-shadow-lg">
+                        &lt;/&gt; DEV_MODE
+                      </div>
+                      <div className="absolute bottom-2 right-2 text-xs font-mono text-[#00d4ff] opacity-50 group-hover:opacity-80 transition-all duration-300 text-shadow-lg">
+                        ONLINE
+                      </div>
+                      <div className="absolute top-1/2 left-1 text-xs font-mono text-[#7c3aed] opacity-50 group-hover:opacity-80 transition-all duration-300 text-shadow-lg">
+                        { }
                       </div>
                       
-                      {/* Inner Image Container */}
-                      <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl shadow-black/50 transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-3xl group-hover:shadow-[#00ff88]/20">
+                      {/* HUD Elements */}
+                      <div className="absolute top-2 right-2 px-2 py-1 border border-[#00ff88]/30 bg-black/50 backdrop-blur-sm text-xs font-mono text-[#00ff88] opacity-60 group-hover:opacity-100 transition-all duration-300">
+                        SYS_ID: 2025
+                      </div>
+                      <div className="absolute bottom-2 left-2 px-2 py-1 border border-[#00d4ff]/30 bg-black/50 backdrop-blur-sm text-xs font-mono text-[#00d4ff] opacity-60 group-hover:opacity-100 transition-all duration-300">
+                        STATUS: ACTIVE
+                      </div>
+                      
+                      {/* Main Avatar Frame */}
+                      <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl shadow-black/50 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl group-hover:shadow-[#00ff88]/20">
                         
-                        {/* Corner Tech Elements */}
-                        <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-[#00ff88] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
-                        <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-[#00d4ff] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
-                        <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-[#7c3aed] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
-                        <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-[#00ff88] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                        {/* Animated Border */}
+                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] opacity-0 group-hover:opacity-80 transition-opacity duration-500 animate-gradient-shift" style={{backgroundSize: '400% 400%'}}></div>
                         
-                        {/* Center Cross Lines */}
-                        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00ff88]/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#00d4ff]/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                        
-                        {/* Floating Tech Dots */}
-                        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-[#00ff88] rounded-full opacity-50 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
-                        <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-[#00d4ff] rounded-full opacity-50 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
-                        <div className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-[#7c3aed] rounded-full opacity-50 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
-                        <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-[#00ff88] rounded-full opacity-50 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '1.5s'}}></div>
-                        
-                        {/* Inner Glow Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#00ff88]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        {/* Profile Image */}
-                        <img 
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
-                          alt="LE NAM TUYEN" 
-                          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
-                        />
+                        {/* Inner Frame */}
+                        <div className="relative w-full h-full rounded-xl overflow-hidden bg-black">
+                          
+                          {/* Scan Line Effect */}
+                          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-0 group-hover:opacity-100 animate-scan-line"></div>
+                          
+                          {/* Profile Image */}
+                          <img 
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                            alt="LE NAM TUYEN" 
+                            className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+                          />
+                          
+                          {/* Inner Glow Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#00ff88]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
                       </div>
                       
                       {/* Outer Floating Elements */}
-                      <div className="absolute -top-6 -left-6 w-4 h-4 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
-                      <div className="absolute -top-6 -right-6 w-4 h-4 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
-                      <div className="absolute -bottom-6 -left-6 w-4 h-4 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
-                      <div className="absolute -bottom-6 -right-6 w-4 h-4 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '1.5s'}}></div>
+                      <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
+                      <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '1.5s'}}></div>
                     </div>
                   </div>
                 </div>
