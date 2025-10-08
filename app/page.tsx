@@ -44,6 +44,7 @@ import {
 export default function Portfolio() {
   const [currentTime, setCurrentTime] = useState("--:--:--")
   const [language, setLanguage] = useState("vi")
+  const [isScrolled, setIsScrolled] = useState(false)
 
   // Update time every second
   useEffect(() => {
@@ -60,6 +61,15 @@ export default function Portfolio() {
     return () => clearInterval(interval)
   }, [])
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const translations = {
     vi: {
       header: {
@@ -73,7 +83,7 @@ export default function Portfolio() {
       about: {
         label: "VỀ TÔI",
         title: "TÔI MANG ĐẾN TRẢI NGHIỆM DỮ LIỆU XUẤT SẮC TRÊN NHIỀU NỀN TẢNG.",
-        name: "LÊ NAM <span>TUYÊN</span>",
+        name: "LÊ NAM <span>Tuyên</span>",
         description: "Là một Data Analyst & FinTech Specialist với 2 năm kinh nghiệm, tôi luôn đặt trái tim và tâm hồn vào việc tạo ra những sản phẩm không chỉ đẹp mắt mà còn mang lại trải nghiệm tuyệt vời. Hiện tại, tôi đang là sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế - Luật.",
         button: "TÌM HIỂU THÊM",
       },
@@ -94,16 +104,19 @@ export default function Portfolio() {
             title: "FINTECH DASHBOARD",
             year: "2024",
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+            description: "Dashboard phân tích tài chính với real-time data visualization",
           },
           {
             title: "DATA ANALYTICS PLATFORM",
             year: "2024",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+            description: "Nền tảng phân tích dữ liệu doanh nghiệp với AI insights",
           },
           {
             title: "BUSINESS INTELLIGENCE",
             year: "2024",
             image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+            description: "Hệ thống báo cáo và phân tích kinh doanh thông minh",
           },
         ],
       },
@@ -142,7 +155,7 @@ export default function Portfolio() {
       about: {
         label: "ABOUT ME",
         title: "I DELIVER EXCELLENT DATA EXPERIENCES ACROSS MULTIPLE PLATFORMS.",
-        name: "LE NAM <span>TUYEN</span>",
+        name: "LE NAM <span>Tuyen</span>",
         description: "As a Data Analyst & FinTech Specialist with 2 years of experience, I always put my heart and soul into creating products that are not only beautiful but also provide excellent experiences. Currently, I am a final-year student majoring in Financial Technology at University of Economics and Law.",
         button: "LEARN MORE",
       },
@@ -163,16 +176,19 @@ export default function Portfolio() {
             title: "FINTECH DASHBOARD",
             year: "2024",
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+            description: "Financial analytics dashboard with real-time data visualization",
           },
           {
             title: "DATA ANALYTICS PLATFORM",
             year: "2024",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+            description: "Enterprise data analytics platform with AI insights",
           },
           {
             title: "BUSINESS INTELLIGENCE",
             year: "2024",
             image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+            description: "Smart business reporting and analytics system",
           },
         ],
       },
@@ -204,15 +220,19 @@ export default function Portfolio() {
   const t = translations[language]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-primary-50 text-neutral-900 overflow-x-hidden">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="flex justify-between items-center py-8">
-            <div className="text-sm font-bold tracking-widest text-[#00ff88]">
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/80 backdrop-blur-xl border-b border-neutral-200/50 shadow-soft' 
+          : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center py-6">
+            <div className="text-sm font-semibold tracking-widest text-gradient-primary">
               {t.header.location}
             </div>
-            <div className="text-sm font-mono text-gray-400">
+            <div className="text-sm font-mono text-neutral-500">
               {currentTime}
             </div>
           </div>
@@ -221,67 +241,68 @@ export default function Portfolio() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center pt-24 relative">
-        <div className="max-w-7xl mx-auto px-10 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="animate-fade-in">
-            <div className="text-[#00ff88] text-xl font-bold mb-5 animate-fade-in">
+            <div className="text-gradient-primary text-lg font-semibold mb-6 animate-fade-in">
               {t.hero.greeting}
             </div>
             <h1 
-              className="text-6xl md:text-8xl font-black leading-tight mb-8 uppercase animate-fade-in-delay"
+              className="text-responsive-xl font-black leading-tight mb-8 text-neutral-900 animate-fade-in-delay"
               dangerouslySetInnerHTML={{ __html: t.hero.title }}
             />
-            <p className="text-lg text-gray-300 max-w-2xl mb-12 leading-relaxed animate-fade-in-delay-2">
+            <p className="text-lg text-neutral-600 max-w-2xl mb-12 leading-relaxed animate-fade-in-delay-2">
               {t.hero.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2">
+              <button className="btn-gradient-primary">
+                <Download className="w-5 h-5 mr-2" />
+                TẢI CV
+              </button>
+              <button className="btn-outline-gradient text-neutral-700">
+                <Linkedin className="w-5 h-5 mr-2" />
+                LINKEDIN
+              </button>
+            </div>
           </div>
         </div>
         
-        {/* Decorative Elements */}
-        <svg className="absolute top-10 left-5 w-80 h-80 opacity-80 animate-rotate-3d" viewBox="0 0 200 200" fill="none">
-          <circle cx="100" cy="100" r="80" stroke="#00ff88" strokeWidth="2" opacity="0.3"/>
-          <circle cx="100" cy="100" r="60" stroke="#00ff88" strokeWidth="2" opacity="0.5"/>
-          <circle cx="100" cy="100" r="40" fill="#00ff88" opacity="0.2"/>
-        </svg>
-        
-        <svg className="absolute bottom-10 right-5 w-80 h-80 opacity-80 animate-rotate-3d-reverse" viewBox="0 0 200 200" fill="none">
-          <circle cx="100" cy="100" r="80" stroke="#00ff88" strokeWidth="2" opacity="0.3"/>
-          <circle cx="100" cy="100" r="60" stroke="#00ff88" strokeWidth="2" opacity="0.5"/>
-          <circle cx="100" cy="100" r="40" fill="#00ff88" opacity="0.2"/>
-        </svg>
+        {/* Floating decorative elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 float-element"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-secondary rounded-full opacity-20 float-element"></div>
+        <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-accent rounded-full opacity-20 float-element"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-primary rounded-full opacity-20 float-element"></div>
       </section>
 
       {/* About Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+      <section className="py-24 bg-gradient-to-br from-neutral-50 to-primary-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="animate-slide-up">
+            <h3 className="text-gradient-primary text-sm font-semibold tracking-widest mb-6">
               {t.about.label}
             </h3>
-            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-10">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-10 text-neutral-900">
               {t.about.title}
             </h2>
           </div>
           
-          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-3xl overflow-hidden shadow-2xl shadow-[#00ff88]/10 transition-transform hover:-translate-y-3">
+          <div className="card-modern animate-slide-up">
             <img 
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
               alt="Profile" 
-              className="w-full h-[500px] object-cover grayscale transition-all duration-300 hover:grayscale-0"
+              className="w-full h-80 object-cover rounded-2xl mb-8 grayscale transition-all duration-500 hover:grayscale-0"
             />
-            <div className="p-8 border-t-4 border-[#00ff88]">
+            <div className="border-t-4 border-gradient-primary pt-8">
               <h2 
-                className="text-3xl font-black mb-3"
+                className="text-3xl font-black mb-4 text-neutral-900"
                 dangerouslySetInnerHTML={{ __html: t.about.name }}
               />
-              <p className="text-gray-300 leading-relaxed mb-5">
+              <p className="text-neutral-600 leading-relaxed mb-8">
                 {t.about.description}
               </p>
-              <a 
-                href="#contact" 
-                className="inline-block px-10 py-4 bg-transparent border-2 border-[#00ff88] text-[#00ff88] rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00ff88]/30"
-              >
+              <button className="btn-gradient-secondary">
                 {t.about.button}
-              </a>
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
             </div>
           </div>
         </div>
@@ -289,20 +310,27 @@ export default function Portfolio() {
 
       {/* Services Section */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="mb-16">
-            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h3 className="text-gradient-primary text-sm font-semibold tracking-widest mb-6">
               {t.services.label}
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-[#00ff88] p-0.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.services.items.map((service, index) => (
               <div 
                 key={index}
-                className="bg-[#1a1a1a] p-12 transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:scale-105"
+                className="card-modern text-center group hover:scale-105 transition-all duration-300 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h4 className="text-2xl font-black uppercase">
+                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  {index === 0 && <Database className="w-8 h-8 text-white" />}
+                  {index === 1 && <Code className="w-8 h-8 text-white" />}
+                  {index === 2 && <BarChart3 className="w-8 h-8 text-white" />}
+                  {index === 3 && <Brain className="w-8 h-8 text-white" />}
+                </div>
+                <h4 className="text-xl font-bold text-neutral-900 group-hover:text-gradient-primary transition-all">
                   {service}
                 </h4>
               </div>
@@ -312,37 +340,41 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="mb-16">
-            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+      <section className="py-24 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h3 className="text-gradient-primary text-sm font-semibold tracking-widest mb-6">
               {t.projects.label}
             </h3>
-          </div>
-          
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <p className="text-gray-300 leading-relaxed text-base">
+            <p className="text-neutral-600 leading-relaxed max-w-3xl mx-auto">
               {t.projects.intro}
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {t.projects.items.map((project, index) => (
               <div 
                 key={index}
-                className="bg-[#1a1a1a] rounded-3xl overflow-hidden transition-all hover:border-2 hover:border-[#00ff88] hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#00ff88]/20"
+                className="card-modern group hover:scale-105 transition-all duration-300 animate-slide-up"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-80 object-cover"
-                />
-                <div className="p-8">
-                  <h4 className="text-2xl font-black mb-4">
+                <div className="relative overflow-hidden rounded-2xl mb-6">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div>
+                  <h4 className="text-2xl font-bold text-neutral-900 mb-2 group-hover:text-gradient-primary transition-all">
                     {project.title}
                   </h4>
-                  <p className="text-[#00ff88] font-bold text-lg">
+                  <p className="text-gradient-secondary font-semibold text-lg mb-3">
                     {project.year}
+                  </p>
+                  <p className="text-neutral-600 text-sm leading-relaxed">
+                    {project.description}
                   </p>
                 </div>
               </div>
@@ -352,30 +384,30 @@ export default function Portfolio() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-24 text-center">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="mb-16">
-            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h3 className="text-gradient-primary text-sm font-semibold tracking-widest mb-6">
               {t.testimonial.label}
             </h3>
           </div>
           
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#1a1a1a] to-[#252525] p-16 rounded-3xl border-l-4 border-[#00ff88]">
+          <div className="max-w-4xl mx-auto card-modern text-center animate-scale-in">
             <p 
-              className="text-3xl leading-relaxed mb-8 font-light"
+              className="text-2xl md:text-3xl leading-relaxed mb-8 text-neutral-700 font-light"
               dangerouslySetInnerHTML={{ __html: t.testimonial.quote }}
             />
-            <div className="flex items-center justify-center gap-5">
+            <div className="flex items-center justify-center gap-6">
               <img 
                 src={t.testimonial.image} 
                 alt="Author" 
-                className="w-16 h-16 rounded-full border-4 border-[#00ff88]"
+                className="w-16 h-16 rounded-full border-4 border-gradient-primary"
               />
               <div className="text-left">
-                <h5 className="text-lg font-bold mb-1">
+                <h5 className="text-lg font-bold text-neutral-900 mb-1">
                   {t.testimonial.author}
                 </h5>
-                <p className="text-gray-400 text-sm">
+                <p className="text-neutral-500 text-sm">
                   {t.testimonial.position}
                 </p>
               </div>
@@ -385,32 +417,30 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 text-center">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="mb-16">
-            <h3 className="text-[#00ff88] text-sm tracking-widest mb-5">
+      <section className="py-24 bg-gradient-to-br from-neutral-900 via-neutral-800 to-primary-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <div className="mb-16 animate-fade-in">
+            <h3 className="text-gradient-accent text-sm font-semibold tracking-widest mb-6">
               {t.contact.label}
             </h3>
           </div>
           <h2 
-            className="text-6xl md:text-8xl font-black mb-8"
+            className="text-4xl md:text-6xl font-black mb-8 animate-fade-in-delay"
             dangerouslySetInnerHTML={{ __html: t.contact.title }}
           />
-          <a 
-            href="mailto:bingo.namtuyen@gmail.com" 
-            className="inline-block px-10 py-4 bg-transparent border-2 border-[#00ff88] text-[#00ff88] rounded-full font-bold uppercase text-xs tracking-widest transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00ff88]/30 mb-12"
-          >
+          <button className="btn-gradient-accent mb-12 animate-fade-in-delay-2">
             {t.contact.button}
-          </a>
+            <Mail className="w-5 h-5 ml-2" />
+          </button>
           
-          <div className="flex justify-center gap-8">
+          <div className="flex justify-center gap-6 animate-fade-in-delay-2">
             {t.contact.social.map((social, index) => (
               <a
                 key={index}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 border-2 border-[#00ff88] rounded-full flex items-center justify-center text-[#00ff88] transition-all hover:bg-[#00ff88] hover:text-[#0a0a0a] hover:-translate-y-1"
+                className="w-14 h-14 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center text-white transition-all hover:bg-white/20 hover:scale-110 hover:shadow-glow"
                 title={social.name}
               >
                 {social.icon}
@@ -421,11 +451,11 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-5">
+      <footer className="py-12 bg-neutral-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-neutral-400 text-sm">
                 {t.footer.copyright}
               </p>
             </div>
@@ -434,7 +464,7 @@ export default function Portfolio() {
                 <a 
                   key={index}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-gray-400 text-sm uppercase tracking-widest transition-colors hover:text-[#00ff88]"
+                  className="text-neutral-400 text-sm font-medium transition-colors hover:text-gradient-accent"
                 >
                   {item}
                 </a>
