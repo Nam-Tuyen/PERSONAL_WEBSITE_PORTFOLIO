@@ -511,17 +511,28 @@ export default function Portfolio() {
 
       </section>
 
-          {/* About Section - Simplified */}
+          {/* About Section - Enhanced */}
           <section className="py-16 md:py-24 relative">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
               <div className="animate-fade-in">
+                {/* About Me Label */}
+                <div className="mb-12">
+                  <div className="inline-flex items-center gap-3 mb-8">
+                    <div className="w-12 h-px bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
+                    <span className="text-gray-400 text-xs tracking-[4px] font-medium uppercase">
+                      ABOUT ME
+                    </span>
+                    <div className="w-12 h-px bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
+                  </div>
+                </div>
+                
                 <div className="prose prose-lg prose-invert max-w-none">
-                  <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 leading-relaxed font-great-vibes italic mb-8">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-300 leading-relaxed font-amsterdam-four italic mb-12">
                     <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
-                      Transforming vision into reality and turning intent into results
+                      "Transforming vision into reality and turning intent into results"
                     </span>
                   </p>
-                  <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-light">
+                  <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-light text-justify">
                     {t.about.description}
                   </p>
                 </div>
