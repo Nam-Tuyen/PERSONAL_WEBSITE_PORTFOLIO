@@ -241,45 +241,12 @@ body {
   animation: gradientShift 3s ease infinite;
 }
 
-.animate-gradient-shift {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
-}
-
-.animate-led-flow {
-  background-size: 200% 100%;
-  animation: ledFlow 2s linear infinite;
-}
-
-.animate-led-pulse {
-  animation: ledPulse 2s ease-in-out infinite;
-}
-
 @keyframes gradientShift {
   0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-}
-
-@keyframes ledFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes ledPulse {
-  0%, 100% { 
-    opacity: 0.6; 
-    transform: scale(1);
-    box-shadow: 0 0 10px currentColor;
-  }
-  50% { 
-    opacity: 1; 
-    transform: scale(1.2);
-    box-shadow: 0 0 20px currentColor;
   }
 }
 
@@ -303,4 +270,16 @@ body {
     font-size: 5rem;
     line-height: 1.1;
   }
+}
+
+/* Gradient shift animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
 }
