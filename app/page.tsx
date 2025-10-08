@@ -588,7 +588,7 @@ export default function Portfolio() {
                     {/* Description Section - Enhanced */}
                     <div className="max-w-4xl mx-auto">
                       <div className="relative">
-                        <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-center relative z-10">
+                        <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed font-light text-justify relative z-10">
                           <span className="relative">
                             {t.about.description}
                           </span>
