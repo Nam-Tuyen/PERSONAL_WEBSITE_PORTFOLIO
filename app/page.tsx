@@ -42,23 +42,8 @@ import {
 } from "lucide-react"
 
 export default function Portfolio() {
-  const [currentTime, setCurrentTime] = useState("--:--:--")
   const [language, setLanguage] = useState("vi")
-
-  // Update time every second
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date()
-      const hours = String(now.getHours()).padStart(2, '0')
-      const minutes = String(now.getMinutes()).padStart(2, '0')
-      const seconds = String(now.getSeconds()).padStart(2, '0')
-      setCurrentTime(`${hours} : ${minutes} : ${seconds}`)
-    }
-    
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
-    return () => clearInterval(interval)
-  }, [])
+  const [activeSection, setActiveSection] = useState("professional")
 
   const translations = {
     vi: {
@@ -133,6 +118,32 @@ export default function Portfolio() {
         copyright: "© 2024 LÊ NAM TUYÊN. DATA ANALYST & FINTECH SPECIALIST TẠI HỒ CHÍ MINH",
         nav: ["VỀ TÔI", "DỊCH VỤ", "DỰ ÁN", "LIÊN HỆ"],
       },
+      personal: {
+        title: "CUỘC SỐNG CÁ NHÂN",
+        subtitle: "Khám phá những điều thú vị về tôi",
+        hobbies: {
+          title: "SỞ THÍCH",
+          items: [
+            { name: "Đọc sách", description: "Yêu thích sách về công nghệ và kinh doanh", icon: "📚" },
+            { name: "Du lịch", description: "Khám phá những vùng đất mới", icon: "✈️" },
+            { name: "Nấu ăn", description: "Thử nghiệm các món ăn mới", icon: "🍳" },
+            { name: "Thể thao", description: "Chạy bộ và bơi lội", icon: "🏃‍♂️" },
+          ]
+        },
+        values: {
+          title: "GIÁ TRỊ CỐT LÕI",
+          items: [
+            "Sáng tạo và đổi mới",
+            "Học hỏi liên tục",
+            "Làm việc nhóm hiệu quả",
+            "Trách nhiệm và đáng tin cậy"
+          ]
+        },
+        goals: {
+          title: "MỤC TIÊU",
+          description: "Phát triển bản thân và đóng góp tích cực cho cộng đồng công nghệ"
+        }
+      },
     },
     en: {
       header: {
@@ -206,6 +217,32 @@ export default function Portfolio() {
         copyright: "© 2024 LE NAM TUYEN. DATA ANALYST & FINTECH SPECIALIST IN HO CHI MINH",
         nav: ["ABOUT", "SERVICES", "PROJECTS", "CONTACT"],
       },
+      personal: {
+        title: "PERSONAL LIFE",
+        subtitle: "Discover interesting things about me",
+        hobbies: {
+          title: "HOBBIES",
+          items: [
+            { name: "Reading", description: "Love books about technology and business", icon: "📚" },
+            { name: "Traveling", description: "Exploring new places", icon: "✈️" },
+            { name: "Cooking", description: "Experimenting with new recipes", icon: "🍳" },
+            { name: "Sports", description: "Running and swimming", icon: "🏃‍♂️" },
+          ]
+        },
+        values: {
+          title: "CORE VALUES",
+          items: [
+            "Creativity and innovation",
+            "Continuous learning",
+            "Effective teamwork",
+            "Responsibility and reliability"
+          ]
+        },
+        goals: {
+          title: "GOALS",
+          description: "Personal development and positive contribution to the tech community"
+        }
+      },
     },
   }
 
@@ -222,16 +259,40 @@ export default function Portfolio() {
           <div className="flex justify-between items-center py-6">
             <div className="text-sm font-bold tracking-widest text-gradient-primary">
               {t.header.location}
-            </div>
-            <div className="text-sm font-mono text-gray-400 bg-[#1a1a1a]/50 px-4 py-2 rounded-lg border border-[#00ff88]/20">
-              {currentTime}
+      </div>
+
+            {/* Navigation */}
+            <nav className="flex items-center gap-8">
+                <button
+                onClick={() => setActiveSection("professional")}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeSection === "professional"
+                    ? "bg-gradient-primary text-white shadow-lg shadow-[#00ff88]/30"
+                    : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
+                }`}
+              >
+                PROFESSIONAL
+                </button>
+              <button
+                onClick={() => setActiveSection("personal")}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeSection === "personal"
+                    ? "bg-gradient-tech text-white shadow-lg shadow-[#00d4ff]/30"
+                    : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
+                }`}
+              >
+                PERSONAL
+              </button>
+            </nav>
             </div>
           </div>
-        </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-24 relative matrix-rain">
+      {/* Professional Section */}
+      {activeSection === "professional" && (
+        <>
+          {/* Hero Section */}
+          <section className="min-h-screen flex items-center pt-24 relative matrix-rain">
         <div className="max-w-7xl mx-auto px-10 relative z-10">
           <div className="animate-fade-in">
             <div className="text-gradient-primary text-xl font-bold mb-5 animate-fade-in">
@@ -254,9 +315,9 @@ export default function Portfolio() {
                 LINKEDIN
               </button>
             </div>
-          </div>
         </div>
-        
+              </div>
+
         {/* Tech Decorative Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-tech rounded-full opacity-20 float-element animate-pulse-glow"></div>
         <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-cyber rounded-full opacity-20 float-element"></div>
@@ -273,7 +334,7 @@ export default function Portfolio() {
             </defs>
             <rect width="100" height="100" fill="url(#grid)" />
           </svg>
-                </div>
+              </div>
       </section>
 
       {/* About Section */}
@@ -289,17 +350,36 @@ export default function Portfolio() {
               </div>
 
           <div className="card-tech animate-scale-in">
-            <div className="relative overflow-hidden rounded-2xl mb-8">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
-                alt="Profile" 
-                className="w-full h-80 object-cover transition-all duration-500 hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <Code className="w-6 h-6 text-white" />
+            {/* Avatar Section - Centered and properly sized */}
+            <div className="flex justify-center mb-8">
+              <div className="relative group">
+                {/* Outer glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                
+                {/* Main avatar container */}
+                <div className="relative w-32 h-32 rounded-full overflow-hidden border-3 border-gradient-primary shadow-xl shadow-[#00ff88]/20">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
+                    alt="Profile" 
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                  />
+                  
+                  {/* Overlay effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Tech icon overlay */}
+                  <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                    <Code className="w-4 h-4 text-white" />
+                </div>
+                </div>
+
+                {/* Floating decorative elements */}
+                <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute top-1/2 -left-3 w-3 h-3 bg-gradient-cyber rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute top-1/2 -right-3 w-3 h-3 bg-gradient-primary rounded-full opacity-60 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                </div>
               </div>
-            </div>
             <div className="border-t-4 border-gradient-primary pt-8">
               <h2 
                 className="text-3xl font-black mb-4"
@@ -331,15 +411,15 @@ export default function Portfolio() {
                 <blockquote className="text-lg font-medium text-gradient-primary italic">
                   "{t.about.quote}"
                 </blockquote>
-              </div>
-              
+                        </div>
+
               <button className="btn-gradient-cyber">
                 {t.about.button}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
-            </div>
-          </div>
-            </div>
+                        </div>
+                      </div>
+                    </div>
       </section>
 
       {/* Services Section */}
@@ -348,8 +428,8 @@ export default function Portfolio() {
           <div className="text-center mb-16 animate-fade-in">
             <h3 className="text-gradient-tech text-sm tracking-widest mb-5">
               {t.services.label}
-            </h3>
-          </div>
+                  </h3>
+                </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.services.items.map((service, index) => (
@@ -363,14 +443,14 @@ export default function Portfolio() {
                   {index === 1 && <Code className="w-8 h-8 text-white" />}
                   {index === 2 && <BarChart3 className="w-8 h-8 text-white" />}
                   {index === 3 && <Brain className="w-8 h-8 text-white" />}
-                </div>
+                          </div>
                 <h4 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
                   {service}
-                </h4>
+                            </h4>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Projects Section */}
@@ -401,8 +481,8 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-5 h-5 text-white" />
-                  </div>
-                </div>
+                        </div>
+                      </div>
                 <div>
                   <h4 className="text-2xl font-bold mb-2 group-hover:text-gradient-primary transition-all">
                               {project.title}
@@ -410,12 +490,12 @@ export default function Portfolio() {
                   <p className="text-gradient-tech font-semibold text-lg mb-3">
                     {project.year}
                   </p>
-                </div>
-                            </div>
-                          ))}
-                        </div>
                       </div>
-      </section>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </section>
 
       {/* Testimonial Section */}
       <section className="py-24 text-center relative">
@@ -424,8 +504,8 @@ export default function Portfolio() {
             <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
               {t.testimonial.label}
             </h3>
-                      </div>
-          
+            </div>
+
           <div className="max-w-4xl mx-auto card-tech text-center animate-scale-in">
             <p 
               className="text-2xl md:text-3xl leading-relaxed mb-8 font-light"
@@ -444,10 +524,10 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
-                  </div>
               </div>
-            </div>
-          </div>
+                    </div>
+                </div>
+              </div>
         </section>
 
       {/* Contact Section */}
@@ -456,8 +536,8 @@ export default function Portfolio() {
           <div className="mb-16 animate-fade-in">
             <h3 className="text-gradient-tech text-sm tracking-widest mb-5">
               {t.contact.label}
-            </h3>
-          </div>
+              </h3>
+                          </div>
           <h2 
             className="text-responsive-xl font-black mb-8 animate-fade-in-delay"
             dangerouslySetInnerHTML={{ __html: t.contact.title }}
@@ -480,9 +560,107 @@ export default function Portfolio() {
                 {social.icon}
               </a>
             ))}
-          </div>
               </div>
+        </div>
       </section>
+        </>
+      )}
+
+      {/* Personal Section */}
+      {activeSection === "personal" && (
+        <>
+          {/* Personal Hero */}
+          <section className="min-h-screen flex items-center pt-24 relative">
+            <div className="max-w-7xl mx-auto px-10 relative z-10">
+              <div className="text-center animate-fade-in">
+                <h1 className="text-responsive-xl font-black leading-tight mb-8 uppercase">
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.personal.title}</span>
+                </h1>
+                <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+                  {t.personal.subtitle}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Hobbies Section */}
+          <section className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-10">
+              <div className="text-center mb-16 animate-fade-in">
+                <h2 className="text-gradient-tech text-4xl font-black mb-5">
+                  {t.personal.hobbies.title}
+                </h2>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {t.personal.hobbies.items.map((hobby, index) => (
+                  <div 
+                    key={index}
+                    className="card-tech text-center group hover:scale-105 transition-all duration-300 animate-scale-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
+                      {hobby.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-gradient-primary transition-all">
+                      {hobby.name}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {hobby.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Values Section */}
+          <section className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-10">
+              <div className="text-center mb-16 animate-fade-in">
+                <h2 className="text-gradient-cyber text-4xl font-black mb-5">
+                  {t.personal.values.title}
+                </h2>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {t.personal.values.items.map((value, index) => (
+                  <div 
+                    key={index}
+                    className="card-cyber p-8 group hover:scale-105 transition-all duration-300 animate-slide-up"
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gradient-tech rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span className="text-white font-bold">{index + 1}</span>
+                      </div>
+                      <h3 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
+                        {value}
+                      </h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Goals Section */}
+          <section className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-10">
+              <div className="text-center animate-fade-in">
+                <h2 className="text-gradient-primary text-4xl font-black mb-8">
+                  {t.personal.goals.title}
+                </h2>
+                <div className="max-w-4xl mx-auto card-tech p-12">
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    {t.personal.goals.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Footer */}
       <footer className="py-12 glass-tech border-t border-[#00ff88]/20">
