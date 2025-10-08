@@ -298,3 +298,95 @@ body {
   animation: gradientShift 3s linear infinite;
   background-size: 400% 400%;
 }
+
+/* Additional Futuristic Animations */
+@keyframes hexFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes bracketPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes dataPointPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes lineGlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes textFlicker {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes hudPulse {
+  0%, 100% {
+    border-color: rgba(0, 255, 170, 0.3);
+  }
+  50% {
+    border-color: rgba(0, 255, 170, 0.8);
+  }
+}
+
+.animate-hex-float {
+  animation: hexFloat 6s ease-in-out infinite;
+}
+
+.animate-bracket-pulse {
+  animation: bracketPulse 2s ease-in-out infinite;
+}
+
+.animate-data-pulse {
+  animation: dataPointPulse 2s ease-in-out infinite;
+}
+
+.animate-line-glow {
+  animation: lineGlow 3s ease-in-out infinite;
+}
+
+.animate-text-flicker {
+  animation: textFlicker 4s ease-in-out infinite;
+}
+
+.animate-hud-pulse {
+  animation: hudPulse 2s ease-in-out infinite;
+}
+
+@keyframes techScan {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
