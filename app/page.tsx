@@ -58,13 +58,25 @@ export default function Portfolio() {
       about: {
         label: "VỀ TÔI",
         title: "TÔI MANG ĐẾN TRẢI NGHIỆM DỮ LIỆU XUẤT SẮC TRÊN NHIỀU NỀN TẢNG.",
+        headline: [
+          "TÔI TẠO RA TRẢI NGHIỆM",
+          "DỮ LIỆU XUẤT SẮC",
+          "TRÊN CÁC NỀN TẢNG",
+          "KHÁC NHAU."
+        ],
         name: "LÊ NAM <span>TUYÊN</span>",
-        description: "Sinh viên năm cuối tại Đại học Kinh tế - Luật, chuyên về phát triển sản phẩm, phân tích dữ liệu và nghiên cứu kinh doanh. Có kinh nghiệm thiết kế và tổ chức các workshop về product discovery, user research, phân tích SQL và Python, dashboarding, đánh giá thí nghiệm và product analytics. Đã chứng minh khả năng dẫn dắt các nhóm sinh viên đa chức năng để chuyển đổi nghiên cứu thành yêu cầu sản phẩm, định nghĩa các chỉ số thành công và thực hiện các thí nghiệm nhẹ tạo ra insights có thể hành động cho các sản phẩm số.",
-        background: "Nền tảng bao gồm nghiên cứu thị trường, phân tích tài chính và cố vấn các nhóm thông qua việc xây dựng giả thuyết, lựa chọn metrics và đánh giá post-mortem để cải thiện trải nghiệm người dùng và kết quả kinh doanh. Chịu trách nhiệm thiết kế chương trình, điều phối sự kiện với các diễn giả ngành và vận hành cuộc thi, bao gồm ngân hàng câu hỏi, khung chấm điểm và báo cáo.",
+        description: "Sinh viên năm cuối tại Đại học Kinh tế - Luật, chuyên về phát triển sản phẩm, phân tích dữ liệu và nghiên cứu kinh doanh. Có kinh nghiệm thiết kế và tổ chức các workshop về product discovery, user research, phân tích SQL và Python, dashboarding, đánh giá thí nghiệm và product analytics.",
+        background: "Nền tảng bao gồm nghiên cứu thị trường, phân tích tài chính và cố vấn các nhóm thông qua việc xây dựng giả thuyết, lựa chọn metrics và đánh giá post-mortem để cải thiện trải nghiệm người dùng và kết quả kinh doanh.",
         recognition: "Được công nhận vì thiết lập các template và quy trình nâng cao chất lượng delivery trên các cohort và liên kết chiến lược kinh doanh với việc ra quyết định dựa trên dữ liệu.",
         objective: "Mục tiêu nghề nghiệp là phát triển thành Product Manager hoặc Product Owner, áp dụng nghiên cứu, phân tích và tư duy chiến lược để xây dựng các sản phẩm FinTech có thể mở rộng giải quyết các vấn đề có ý nghĩa.",
         quote: "Biến tầm nhìn thành hiện thực và chuyển đổi ý định thành kết quả",
         button: "TÌM HIỂU THÊM",
+        social: [
+          { name: "LinkedIn", icon: "Li", url: "https://linkedin.com/in/nam-tuyen" },
+          { name: "GitHub", icon: "Gh", url: "https://github.com/Nam-Tuyen" },
+          { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
+          { name: "Portfolio", icon: "Po", url: "#" },
+        ],
       },
       services: {
         label: "DỊCH VỤ CỦA TÔI",
@@ -157,13 +169,25 @@ export default function Portfolio() {
       about: {
         label: "ABOUT ME",
         title: "I DELIVER EXCELLENT DATA EXPERIENCES ACROSS MULTIPLE PLATFORMS.",
+        headline: [
+          "I DELIVER EXCEPTIONAL",
+          "DATA EXPERIENCES",
+          "ACROSS VARIOUS",
+          "PLATFORMS."
+        ],
         name: "LE NAM <span>TUYEN</span>",
-        description: "A Senior at the University of Economics and Law, specializing in product development, data analytics, and business research. Experienced in designing and delivering workshops on product discovery, user research, SQL and Python analytics, dashboarding, experiment evaluation, and product analytics. Proven track record leading cross-functional student teams to translate research into product requirements, define success metrics, and run lightweight experiments that generate actionable insight for digital products.",
-        background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes. Responsible for program design, event coordination with industry speakers, and competition operations, including question banks, scoring frameworks, and reporting.",
+        description: "A Senior at the University of Economics and Law, specializing in product development, data analytics, and business research. Experienced in designing and delivering workshops on product discovery, user research, SQL and Python analytics, dashboarding, experiment evaluation, and product analytics.",
+        background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes.",
         recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
         objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
         quote: "Transforming vision into reality and turning intent into results",
         button: "LEARN MORE",
+        social: [
+          { name: "LinkedIn", icon: "Li", url: "https://linkedin.com/in/nam-tuyen" },
+          { name: "GitHub", icon: "Gh", url: "https://github.com/Nam-Tuyen" },
+          { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
+          { name: "Portfolio", icon: "Po", url: "#" },
+        ],
       },
       services: {
         label: "MY SERVICES",
@@ -337,89 +361,80 @@ export default function Portfolio() {
               </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="animate-slide-up">
-            <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
-              {t.about.label}
-            </h3>
-            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-10">
-              {t.about.title}
-            </h2>
+          {/* About Section - 3 Column Layout */}
+          <section className="min-h-screen flex items-center py-24 relative">
+            <div className="max-w-7xl mx-auto px-10 w-full">
+              <div className="flex flex-col lg:flex-row min-h-[80vh]">
+                
+                {/* Left Section */}
+                <div className="flex-1 flex flex-col justify-between py-20 lg:py-0">
+                  <div className="animate-slide-up">
+                    <div className="text-gray-400 text-xs tracking-[3px] mb-10 font-semibold">
+                      {t.about.label}
+                    </div>
+                    <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-16 max-w-lg">
+                      {t.about.headline.map((line, index) => (
+                        <span key={index} className="block">
+                          {line}
+                        </span>
+                      ))}
+                </h1>
               </div>
 
-          <div className="card-tech animate-scale-in">
-            {/* Avatar Section - Centered and properly sized */}
-            <div className="flex justify-center mb-8">
-              <div className="relative group">
-                {/* Outer glow effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                
-                {/* Main avatar container */}
-                <div className="relative w-32 h-32 rounded-full overflow-hidden border-3 border-gradient-primary shadow-xl shadow-[#00ff88]/20">
+                  {/* Social Icons */}
+                  <div className="flex gap-6 animate-fade-in">
+                    {t.about.social.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.url}
+                        className="text-white text-xl transition-colors hover:text-[#00ff88]"
+                        aria-label={social.name}
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+              </div>
+            </div>
+
+                {/* Center Section - Profile Image */}
+                <div className="flex-shrink-0 w-full lg:w-[400px] flex items-center justify-center py-12 lg:py-0">
+                  <div className="relative group animate-scale-in">
+                    <div className="w-[350px] h-[450px] rounded-lg overflow-hidden shadow-2xl shadow-black/50">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
-                    alt="Profile" 
-                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                        alt="Profile" 
+                        className="w-full h-full object-cover grayscale-[20%] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
                   />
-                  
-                  {/* Overlay effect */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Tech icon overlay */}
-                  <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                    <Code className="w-4 h-4 text-white" />
+                </div>
+
+                    {/* Decorative elements */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
+                    <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 </div>
                 </div>
 
-                {/* Floating decorative elements */}
-                <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-primary rounded-full opacity-60 animate-pulse"></div>
-                <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-gradient-tech rounded-full opacity-60 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-1/2 -left-3 w-3 h-3 bg-gradient-cyber rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-1/2 -right-3 w-3 h-3 bg-gradient-primary rounded-full opacity-60 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                {/* Right Section */}
+                <div className="flex-1 flex flex-col justify-center py-20 lg:py-0">
+                  <div className="animate-slide-up">
+                    <h2 
+                      className="text-4xl font-bold mb-8"
+                      dangerouslySetInnerHTML={{ __html: t.about.name }}
+                    />
+                    
+                    <p className="text-gray-300 text-sm leading-relaxed mb-10 max-w-lg">
+                      {t.about.description}
+                    </p>
+                    
+                    <a 
+                      href="#contact" 
+                      className="inline-block px-8 py-4 border-2 border-white text-white text-xs tracking-[2px] font-semibold rounded-full transition-all hover:bg-[#00ff88] hover:border-[#00ff88] hover:text-black uppercase"
+                    >
+                      {t.about.button}
+                    </a>
                 </div>
               </div>
-            <div className="border-t-4 border-gradient-primary pt-8">
-              <h2 
-                className="text-3xl font-black mb-4"
-                dangerouslySetInnerHTML={{ __html: t.about.name }}
-              />
-              
-              {/* Main Description */}
-              <p className="text-gray-300 leading-relaxed mb-6">
-                {t.about.description}
-              </p>
-              
-              {/* Background */}
-              <p className="text-gray-300 leading-relaxed mb-6">
-                {t.about.background}
-              </p>
-              
-              {/* Recognition */}
-              <p className="text-gray-300 leading-relaxed mb-6">
-                {t.about.recognition}
-              </p>
-              
-              {/* Career Objective */}
-              <p className="text-gray-300 leading-relaxed mb-6">
-                {t.about.objective}
-              </p>
-              
-              {/* Quote */}
-              <div className="bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border-l-4 border-gradient-primary p-6 mb-8 rounded-r-lg">
-                <blockquote className="text-lg font-medium text-gradient-primary italic">
-                  "{t.about.quote}"
-                </blockquote>
-                        </div>
-
-              <button className="btn-gradient-cyber">
-                {t.about.button}
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-                        </div>
-                      </div>
-                    </div>
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}
@@ -428,8 +443,8 @@ export default function Portfolio() {
           <div className="text-center mb-16 animate-fade-in">
             <h3 className="text-gradient-tech text-sm tracking-widest mb-5">
               {t.services.label}
-                  </h3>
-                </div>
+                </h3>
+                        </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.services.items.map((service, index) => (
@@ -443,7 +458,7 @@ export default function Portfolio() {
                   {index === 1 && <Code className="w-8 h-8 text-white" />}
                   {index === 2 && <BarChart3 className="w-8 h-8 text-white" />}
                   {index === 3 && <Brain className="w-8 h-8 text-white" />}
-                          </div>
+                        </div>
                 <h4 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
                   {service}
                             </h4>
@@ -459,11 +474,11 @@ export default function Portfolio() {
           <div className="text-center mb-16 animate-fade-in">
             <h3 className="text-gradient-cyber text-sm tracking-widest mb-5">
               {t.projects.label}
-                </h3>
+                  </h3>
             <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
               {t.projects.intro}
             </p>
-                        </div>
+                </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {t.projects.items.map((project, index) => (
@@ -481,7 +496,7 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-tech rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-5 h-5 text-white" />
-                        </div>
+                          </div>
                       </div>
                 <div>
                   <h4 className="text-2xl font-bold mb-2 group-hover:text-gradient-primary transition-all">
@@ -493,8 +508,8 @@ export default function Portfolio() {
                       </div>
                     </div>
                   ))}
+                </div>
               </div>
-            </div>
           </section>
 
       {/* Testimonial Section */}
@@ -503,8 +518,8 @@ export default function Portfolio() {
           <div className="mb-16 animate-fade-in">
             <h3 className="text-gradient-primary text-sm tracking-widest mb-5">
               {t.testimonial.label}
-            </h3>
-            </div>
+                </h3>
+                        </div>
 
           <div className="max-w-4xl mx-auto card-tech text-center animate-scale-in">
             <p 
@@ -524,10 +539,10 @@ export default function Portfolio() {
                 <p className="text-gray-400 text-sm">
                   {t.testimonial.position}
                 </p>
-              </div>
+                      </div>
+                      </div>
                     </div>
                 </div>
-              </div>
         </section>
 
       {/* Contact Section */}
@@ -561,8 +576,8 @@ export default function Portfolio() {
               </a>
             ))}
               </div>
-        </div>
-      </section>
+            </div>
+          </section>
         </>
       )}
 
@@ -579,8 +594,8 @@ export default function Portfolio() {
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
                   {t.personal.subtitle}
                 </p>
-              </div>
             </div>
+        </div>
           </section>
 
           {/* Hobbies Section */}
@@ -591,7 +606,7 @@ export default function Portfolio() {
                   {t.personal.hobbies.title}
                 </h2>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {t.personal.hobbies.items.map((hobby, index) => (
                   <div 
@@ -601,17 +616,17 @@ export default function Portfolio() {
                   >
                     <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
                       {hobby.icon}
-                    </div>
+                </div>
                     <h3 className="text-xl font-bold mb-3 group-hover:text-gradient-primary transition-all">
                       {hobby.name}
-                    </h3>
+                </h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
                       {hobby.description}
                     </p>
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
           </section>
 
           {/* Values Section */}
@@ -621,8 +636,8 @@ export default function Portfolio() {
                 <h2 className="text-gradient-cyber text-4xl font-black mb-5">
                   {t.personal.values.title}
                 </h2>
-              </div>
-              
+                      </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {t.personal.values.items.map((value, index) => (
                   <div 
@@ -636,13 +651,13 @@ export default function Portfolio() {
                       </div>
                       <h3 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
                         {value}
-                      </h3>
+                </h3>
                     </div>
                   </div>
                 ))}
-              </div>
             </div>
-          </section>
+          </div>
+        </section>
 
           {/* Goals Section */}
           <section className="py-24 relative">
@@ -650,15 +665,15 @@ export default function Portfolio() {
               <div className="text-center animate-fade-in">
                 <h2 className="text-gradient-primary text-4xl font-black mb-8">
                   {t.personal.goals.title}
-                </h2>
+            </h2>
                 <div className="max-w-4xl mx-auto card-tech p-12">
                   <p className="text-xl text-gray-300 leading-relaxed">
                     {t.personal.goals.description}
                   </p>
-                </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
         </>
       )}
 
