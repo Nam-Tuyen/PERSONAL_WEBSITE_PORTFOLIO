@@ -390,3 +390,234 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Galaxy Background Animations */
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes nebulaFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(15px) translateX(5px) rotate(270deg);
+    opacity: 0.5;
+  }
+}
+
+@keyframes galaxyRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes cosmicPulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(-100px) translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Galaxy Background Classes */
+.galaxy-bg {
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.galaxy-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #00ff88, transparent),
+    radial-gradient(1px 1px at 90px 40px, #00d4ff, transparent),
+    radial-gradient(1px 1px at 130px 80px, #7c3aed, transparent),
+    radial-gradient(2px 2px at 160px 30px, #ffffff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: starTwinkle 4s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.galaxy-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 50px 50px, #ffffff, transparent),
+    radial-gradient(1px 1px at 100px 100px, #00ff88, transparent),
+    radial-gradient(1px 1px at 150px 25px, #00d4ff, transparent),
+    radial-gradient(2px 2px at 180px 75px, #7c3aed, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: starTwinkle 6s ease-in-out infinite reverse;
+  opacity: 0.4;
+}
+
+.nebula-effect {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: nebulaFloat 20s ease-in-out infinite;
+}
+
+.nebula-purple {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.nebula-blue {
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+  width: 400px;
+  height: 400px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.nebula-green {
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.25) 0%, transparent 70%);
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 10s;
+}
+
+.galaxy-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: galaxyRotate 60s linear infinite;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, #ffffff, #00ff88);
+  border-radius: 50%;
+  animation: shootingStar 3s linear infinite;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, #ffffff, transparent);
+  transform: translateX(-20px);
+}
+
+.about-section-bg {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(26, 26, 26, 0.9) 25%, 
+    rgba(0, 0, 0, 0.8) 50%, 
+    rgba(37, 37, 37, 0.9) 75%, 
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(0, 255, 136, 0.05) 0%, 
+    transparent 25%, 
+    rgba(0, 212, 255, 0.05) 50%, 
+    transparent 75%, 
+    rgba(124, 58, 237, 0.05) 100%
+  );
+  animation: cosmicPulse 8s ease-in-out infinite;
+}
+
+.about-section-bg::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    rgba(0, 255, 136, 0.3), 
+    rgba(0, 212, 255, 0.3), 
+    rgba(124, 58, 237, 0.3), 
+    rgba(0, 255, 136, 0.3)
+  );
+  border-radius: 22px;
+  z-index: -1;
+  animation: gradientShift 4s linear infinite;
+}

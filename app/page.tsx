@@ -511,9 +511,20 @@ export default function Portfolio() {
 
       </section>
 
-          {/* About Section - Enhanced */}
-          <section className="py-16 md:py-24 relative">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+          {/* About Section - Enhanced with Galaxy Background */}
+          <section className="py-16 md:py-24 relative galaxy-bg">
+            {/* Galaxy Background Elements */}
+            <div className="nebula-effect nebula-purple"></div>
+            <div className="nebula-effect nebula-blue"></div>
+            <div className="nebula-effect nebula-green"></div>
+            <div className="galaxy-center"></div>
+            
+            {/* Shooting Stars */}
+            <div className="shooting-star" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
+            <div className="shooting-star" style={{top: '60%', left: '80%', animationDelay: '1.5s'}}></div>
+            <div className="shooting-star" style={{top: '80%', left: '30%', animationDelay: '3s'}}></div>
+            
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 text-center relative z-10">
               <div className="animate-fade-in">
                 {/* About Me Label */}
                 <div className="mb-12">
@@ -526,15 +537,18 @@ export default function Portfolio() {
                   </div>
                 </div>
                 
-                <div className="prose prose-lg prose-invert max-w-none">
-                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-300 leading-relaxed font-amsterdam-four italic mb-12">
-                    <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
-                      "Transforming vision into reality and turning intent into results"
-                    </span>
-                  </p>
-                  <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-light text-justify">
-                    {t.about.description}
-                  </p>
+                {/* About Me Content with Special Background */}
+                <div className="about-section-bg p-8 md:p-12 relative z-20">
+                  <div className="prose prose-lg prose-invert max-w-none">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-300 leading-relaxed font-amsterdam-four italic mb-12">
+                      <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
+                        "Transforming vision into reality and turning intent into results"
+                      </span>
+                    </p>
+                    <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-light text-justify">
+                      {t.about.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
