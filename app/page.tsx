@@ -390,38 +390,54 @@ export default function Portfolio() {
                     <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
                     <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
                     
-                    {/* Image Container with Modern Tech Borders */}
+                    {/* Image Container with Modern Tech LED Border */}
                     <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">
-                      {/* Outer Tech Border */}
-                      <div className="absolute -inset-1 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#00ff88] rounded-2xl opacity-20 group-hover:opacity-40 transition-all duration-700 animate-pulse"></div>
+                      {/* Outer LED Border Ring */}
+                      <div className="absolute -inset-2 rounded-3xl">
+                        {/* Animated LED Border */}
+                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] opacity-60 animate-pulse" style={{
+                          background: 'linear-gradient(90deg, #00ff88 0%, #00d4ff 25%, #7c3aed 50%, #00d4ff 75%, #00ff88 100%)',
+                          backgroundSize: '200% 100%',
+                          animation: 'ledFlow 3s linear infinite'
+                        }}></div>
+                        
+                        {/* Inner Border Glow */}
+                        <div className="absolute inset-1 rounded-2xl bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-sm"></div>
+                      </div>
                       
-                      {/* Middle Border */}
-                      <div className="absolute -inset-0.5 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl shadow-black/50 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl group-hover:shadow-black/70">
+                      {/* Main Image Container */}
+                      <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl shadow-black/50 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl group-hover:shadow-black/70">
+                        {/* Tech Corner Elements */}
+                        <div className="absolute top-3 left-3 w-4 h-4 border-l-2 border-t-2 border-[#00ff88] opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute top-3 right-3 w-4 h-4 border-r-2 border-t-2 border-[#00d4ff] opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-3 left-3 w-4 h-4 border-l-2 border-b-2 border-[#7c3aed] opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-3 right-3 w-4 h-4 border-r-2 border-b-2 border-[#00ff88] opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Center Tech Cross Lines */}
+                        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00ff88]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#00d4ff]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Floating Tech Dots */}
+                        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse"></div>
+                        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                        <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                        
                         {/* Inner Glow Effect */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#00ff88]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        {/* Corner Tech Elements */}
-                        <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-[#00ff88] opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-[#00d4ff] opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-[#00ff88] opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-[#00d4ff] opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Center Tech Lines */}
-                        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00ff88]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#00d4ff]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#00ff88]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         
                         <img 
                           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
                           alt="LE NAM TUYEN" 
-                          className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
                       
-                      {/* Floating Tech Dots */}
-                      <div className="absolute -top-2 -left-2 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse"></div>
-                      <div className="absolute -top-2 -right-2 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                      <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1s'}}></div>
-                      <div className="absolute -bottom-2 -right-2 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                      {/* Outer Floating Tech Elements */}
+                      <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse"></div>
+                      <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     </div>
                   </div>
                 </div>

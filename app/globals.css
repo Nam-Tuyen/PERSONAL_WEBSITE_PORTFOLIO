@@ -51,6 +51,16 @@ body {
   outline-offset: 2px;
 }
 
+/* LED Flow Animation */
+@keyframes ledFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 /* Modern gradient buttons */
 @layer components {
   .btn-gradient-primary {
