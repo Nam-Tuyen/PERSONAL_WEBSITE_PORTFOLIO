@@ -383,7 +383,7 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* Right Column - Profile Image */}
+                {/* Right Column - Profile Image with LED Border */}
                 <div className="flex justify-center lg:justify-end animate-scale-in">
                   <div className="relative group">
                     {/* Background Decorative Circles - Subtle */}
@@ -396,10 +396,9 @@ export default function Portfolio() {
                       {/* Outer LED Border Ring */}
                       <div className="absolute -inset-2 rounded-3xl">
                         {/* Animated LED Border */}
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] opacity-60 animate-pulse" style={{
+                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] opacity-60 animate-led-flow" style={{
                           background: 'linear-gradient(90deg, #00ff88 0%, #00d4ff 25%, #7c3aed 50%, #00d4ff 75%, #00ff88 100%)',
-                          backgroundSize: '200% 100%',
-                          animation: 'ledFlow 3s linear infinite'
+                          backgroundSize: '200% 100%'
                         }}></div>
                         
                         {/* Inner Border Glow */}
@@ -419,10 +418,10 @@ export default function Portfolio() {
                         <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#00d4ff]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         
                         {/* Floating Tech Dots */}
-                        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse"></div>
-                        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                        <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1s'}}></div>
-                        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse"></div>
+                        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse" style={{animationDelay: '0.5s'}}></div>
+                        <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse" style={{animationDelay: '1s'}}></div>
+                        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse" style={{animationDelay: '1.5s'}}></div>
                         
                         {/* Inner Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#00ff88]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -435,10 +434,10 @@ export default function Portfolio() {
                       </div>
                       
                       {/* Outer Floating Tech Elements */}
-                      <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse"></div>
-                      <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                      <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1s'}}></div>
-                      <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                      <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse"></div>
+                      <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#00d4ff] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-[#7c3aed] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 animate-led-pulse" style={{animationDelay: '1.5s'}}></div>
                     </div>
                   </div>
                 </div>

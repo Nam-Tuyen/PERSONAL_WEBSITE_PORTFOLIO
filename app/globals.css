@@ -235,10 +235,60 @@ body {
   }
 }
 
+@keyframes ledFlow {
+  0% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+  100% { 
+    background-position: 0% 50%; 
+  }
+}
+
+@keyframes ledPulse {
+  0%, 100% { 
+    opacity: 0.6; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes techScan {
+  0% { 
+    transform: translateX(-100%); 
+    opacity: 0; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translateX(100%); 
+    opacity: 0;
+  }
+}
+
 /* Utility classes */
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientShift 3s ease infinite;
+}
+
+.animate-led-flow {
+  background-size: 200% 100%;
+  animation: ledFlow 3s linear infinite;
+}
+
+.animate-led-pulse {
+  animation: ledPulse 2s ease-in-out infinite;
+}
+
+.animate-tech-scan {
+  animation: techScan 4s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
@@ -248,29 +298,6 @@ body {
   50% {
     background-position: 100% 50%;
   }
-}
-
-@keyframes ledFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes techPulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.1); }
-}
-
-@keyframes cornerGlow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-@keyframes scanLine {
-  0% { transform: translateY(-100%); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(100%); opacity: 0; }
 }
 
 /* Responsive typography */
