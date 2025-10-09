@@ -7,64 +7,52 @@ export default function UniverseBackground() {
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
       {/* Main Galaxy Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        {/* Enhanced Animated Nebula Clouds */}
-        <div className="absolute inset-0 opacity-40">
-          {/* Large Nebula 1 */}
-          <div className="absolute top-0 left-0 w-[800px] h-[600px] bg-gradient-radial from-[#7B68EE]/50 via-[#4A90E2]/30 to-transparent rounded-full blur-3xl animate-nebula-float"></div>
+        {/* Enhanced Animated Nebula Clouds - Reduced for Mobile */}
+        <div className="absolute inset-0 opacity-20">
+          {/* Large Nebula 1 - Mobile Optimized */}
+          <div className="absolute top-0 left-0 w-[400px] h-[300px] sm:w-[600px] sm:h-[400px] lg:w-[800px] lg:h-[600px] bg-gradient-radial from-[#7B68EE]/30 via-[#4A90E2]/20 to-transparent rounded-full blur-3xl animate-nebula-float"></div>
           
-          {/* Large Nebula 2 */}
-          <div className="absolute bottom-0 right-0 w-[700px] h-[500px] bg-gradient-radial from-[#00CED1]/50 via-[#7B68EE]/30 to-transparent rounded-full blur-3xl animate-nebula-float" style={{animationDelay: '3s'}}></div>
+          {/* Large Nebula 2 - Mobile Optimized */}
+          <div className="absolute bottom-0 right-0 w-[350px] h-[250px] sm:w-[500px] sm:h-[350px] lg:w-[700px] lg:h-[500px] bg-gradient-radial from-[#00CED1]/30 via-[#7B68EE]/20 to-transparent rounded-full blur-3xl animate-nebula-float" style={{animationDelay: '3s'}}></div>
           
-          {/* Medium Nebula 3 */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] bg-gradient-radial from-[#8AB5FF]/40 via-[#00CED1]/25 to-transparent rounded-full blur-2xl animate-nebula-float" style={{animationDelay: '6s'}}></div>
-          
-          {/* Small Nebula 4 */}
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[250px] bg-gradient-radial from-[#FF6B9D]/35 via-[#8AB5FF]/20 to-transparent rounded-full blur-xl animate-nebula-float" style={{animationDelay: '9s'}}></div>
-          
-          {/* Small Nebula 5 */}
-          <div className="absolute bottom-1/3 left-1/3 w-[350px] h-[280px] bg-gradient-radial from-[#00ffaa]/30 via-[#4A90E2]/15 to-transparent rounded-full blur-xl animate-nebula-float" style={{animationDelay: '12s'}}></div>
-          
-          {/* Additional Nebula 6 */}
-          <div className="absolute top-1/3 left-1/3 w-[400px] h-[320px] bg-gradient-radial from-[#aa00ff]/25 via-[#00ff88]/15 to-transparent rounded-full blur-2xl animate-nebula-float" style={{animationDelay: '15s'}}></div>
-          
-          {/* Additional Nebula 7 */}
-          <div className="absolute bottom-1/4 right-1/4 w-[280px] h-[220px] bg-gradient-radial from-[#00d4ff]/30 via-[#7c3aed]/20 to-transparent rounded-full blur-xl animate-nebula-float" style={{animationDelay: '18s'}}></div>
+          {/* Medium Nebula 3 - Mobile Optimized */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[250px] h-[200px] sm:w-[400px] sm:h-[300px] lg:w-[500px] lg:h-[400px] bg-gradient-radial from-[#8AB5FF]/25 via-[#00CED1]/15 to-transparent rounded-full blur-2xl animate-nebula-float" style={{animationDelay: '6s'}}></div>
         </div>
 
-        {/* Enhanced Animated Star Field */}
-        <div className="absolute inset-0">
-          {/* Large Stars */}
-          {[...Array(80)].map((_, i) => (
+        {/* Enhanced Animated Star Field - Mobile Optimized */}
+        <div className="absolute inset-0 opacity-60">
+          {/* Large Stars - Reduced for Mobile */}
+          {[...Array(30)].map((_, i) => (
             <div
               key={`large-star-${i}`}
-              className="absolute w-2 h-2 bg-white rounded-full animate-twinkle"
+              className="absolute w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-white rounded-full animate-twinkle"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 5}s`,
                 animationDuration: `${3 + Math.random() * 4}s`,
-                opacity: 0.6 + Math.random() * 0.4
+                opacity: 0.4 + Math.random() * 0.3
               }}
             ></div>
           ))}
           
-          {/* Medium Stars */}
-          {[...Array(150)].map((_, i) => (
+          {/* Medium Stars - Reduced for Mobile */}
+          {[...Array(50)].map((_, i) => (
             <div
               key={`medium-star-${i}`}
-              className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
+              className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white rounded-full animate-twinkle"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 4}s`,
                 animationDuration: `${2 + Math.random() * 3}s`,
-                opacity: 0.4 + Math.random() * 0.6
+                opacity: 0.2 + Math.random() * 0.2
               }}
             ></div>
           ))}
           
-          {/* Small Stars */}
-          {[...Array(200)].map((_, i) => (
+          {/* Small Stars - Reduced for Mobile */}
+          {[...Array(80)].map((_, i) => (
             <div
               key={`small-star-${i}`}
               className="absolute w-0.5 h-0.5 bg-white rounded-full animate-twinkle"
@@ -73,7 +61,7 @@ export default function UniverseBackground() {
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 3}s`,
                 animationDuration: `${1 + Math.random() * 2}s`,
-                opacity: 0.3 + Math.random() * 0.7
+                opacity: 0.1 + Math.random() * 0.2
               }}
             ></div>
           ))}

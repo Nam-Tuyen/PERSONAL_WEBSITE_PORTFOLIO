@@ -10,7 +10,7 @@ interface AboutSectionProps {
 
 export default function AboutSection({ label, quote, description }: AboutSectionProps) {
   return (
-    <section className="py-20 sm:py-24 md:py-32 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
       {/* Space Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Nebula Clouds */}
@@ -51,12 +51,12 @@ export default function AboutSection({ label, quote, description }: AboutSection
         <div className="absolute bottom-1/4 left-1/4 w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1s'}}></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
         {/* About Me Label - Enhanced Space Style */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <div className="relative inline-block group">
             {/* Main Title */}
-            <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black uppercase tracking-wider bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent relative z-10 drop-shadow-2xl">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase tracking-wider bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent relative z-10 drop-shadow-2xl">
               {label}
             </h2>
             
@@ -118,10 +118,10 @@ export default function AboutSection({ label, quote, description }: AboutSection
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[#7B68EE]/15 rounded-full animate-orbit-rotate" style={{animationDuration: '35s', animationDirection: 'reverse'}}></div>
             </div>
 
-            {/* Quote Section - Enhanced */}
-            <div className="text-center mb-12 relative z-10">
+            {/* Quote Section - Enhanced - Mobile Optimized */}
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 relative z-10">
               <div className="relative inline-block group/quote">
-                <blockquote className="text-4xl sm:text-5xl lg:text-6xl font-great-vibes text-[#00ff88] italic leading-relaxed drop-shadow-2xl relative z-10">
+                <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-great-vibes text-[#00ff88] italic leading-relaxed drop-shadow-2xl relative z-10">
                   "{quote}"
                 </blockquote>
                 {/* Quote Glow Effect */}
@@ -137,7 +137,7 @@ export default function AboutSection({ label, quote, description }: AboutSection
             {/* Description Section - Enhanced */}
             <div className="text-center relative z-10">
               <div className="relative max-w-6xl mx-auto">
-                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-100 leading-relaxed text-justify drop-shadow-lg font-light">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-100 leading-relaxed text-justify drop-shadow-lg font-light">
                   {description}
                 </p>
                 {/* Description Border Effect */}
