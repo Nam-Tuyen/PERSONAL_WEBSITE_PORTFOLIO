@@ -779,3 +779,23 @@ body {
 .animate-twinkle {
   animation: twinkle 3s ease-in-out infinite;
 }
+
+/* Modern Tech Animations */
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-grid-move {
+  animation: grid-move 20s linear infinite;
+}
+
+.animate-scan {
+  animation: scan 8s ease-in-out infinite;
+}

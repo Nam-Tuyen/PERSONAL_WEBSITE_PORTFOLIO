@@ -1,154 +1,120 @@
 "use client"
 
 import React from "react"
-import { Linkedin, Github, Mail, MapPin, Phone } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Github, Code, Heart } from "lucide-react"
 
 interface FooterProps {
   contact: {
     email: string
     phone: string
     location: string
-    linkedin: string
-    github: string
   }
   copyright: string
 }
 
 export default function Footer({ contact, copyright }: FooterProps) {
   return (
-    <footer className="relative bg-gradient-to-t from-black via-gray-900 to-black border-t border-white/10">
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
-          
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
-              Get In Touch
-            </h3>
-            
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center shadow-lg shadow-[#00ff88]/25 group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">Email</p>
-                  <a 
-                    href={`mailto:${contact.email}`}
-                    className="text-white hover:text-[#00ff88] transition-colors duration-300"
-                  >
-                    {contact.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center shadow-lg shadow-[#00d4ff]/25 group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">Phone</p>
-                  <a 
-                    href={`tel:${contact.phone}`}
-                    className="text-white hover:text-[#00d4ff] transition-colors duration-300"
-                  >
-                    {contact.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-xl flex items-center justify-center shadow-lg shadow-[#7c3aed]/25 group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">Location</p>
-                  <p className="text-white">{contact.location}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent">
-              Follow Me
-            </h3>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={contact.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/20 rounded-xl hover:border-[#00ff88]/40 hover:bg-gradient-to-r hover:from-[#00ff88]/20 hover:to-[#00d4ff]/20 transition-all duration-300 hover:scale-105"
-              >
-                <Linkedin className="w-6 h-6 text-[#00ff88] group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-white font-medium group-hover:text-[#00ff88] transition-colors duration-300">
-                  LinkedIn
-                </span>
-              </a>
-
-              <a
-                href={contact.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 border border-[#00d4ff]/20 rounded-xl hover:border-[#00d4ff]/40 hover:bg-gradient-to-r hover:from-[#00d4ff]/20 hover:to-[#7c3aed]/20 transition-all duration-300 hover:scale-105"
-              >
-                <Github className="w-6 h-6 text-[#00d4ff] group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-white font-medium group-hover:text-[#00d4ff] transition-colors duration-300">
-                  GitHub
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent">
-              Quick Links
-            </h3>
-            
-            <div className="space-y-3">
-              <a 
-                href="#about" 
-                className="block text-gray-300 hover:text-[#00ff88] transition-colors duration-300 hover:translate-x-2 transform"
-              >
-                About Me
-              </a>
-              <a 
-                href="#education" 
-                className="block text-gray-300 hover:text-[#00d4ff] transition-colors duration-300 hover:translate-x-2 transform"
-              >
-                Education
-              </a>
-              <a 
-                href="#experience" 
-                className="block text-gray-300 hover:text-[#7c3aed] transition-colors duration-300 hover:translate-x-2 transform"
-              >
-                Experience
-              </a>
-              <a 
-                href="#contact" 
-                className="block text-gray-300 hover:text-[#00ff88] transition-colors duration-300 hover:translate-x-2 transform"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
+    <footer className="relative overflow-hidden">
+      {/* Tech Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full" style={{
+            backgroundImage: `
+              linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+            animation: 'grid-move 20s linear infinite'
+          }}></div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">
-              {copyright}
+      <div className="relative z-10 bg-gradient-to-t from-black via-gray-900 to-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Brand Section */}
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
+                  <Code className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">LE NAM TUYEN</h3>
+                  <p className="text-gray-400">Data Analyst & Product Manager</p>
+                </div>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                Transforming vision into reality and turning intent into results through data-driven insights and innovative product solutions.
+              </p>
+            </div>
+
+            {/* Contact Section */}
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold text-white">Get In Touch</h4>
+              <div className="space-y-4">
+                <a href={`mailto:${contact.email}`} className="flex items-center space-x-3 text-gray-400 hover:text-[#00ff88] transition-colors duration-300">
+                  <Mail className="w-5 h-5" />
+                  <span>{contact.email}</span>
+                </a>
+                <a href={`tel:${contact.phone}`} className="flex items-center space-x-3 text-gray-400 hover:text-[#00d4ff] transition-colors duration-300">
+                  <Phone className="w-5 h-5" />
+                  <span>{contact.phone}</span>
+                </a>
+                <div className="flex items-center space-x-3 text-gray-400">
+                  <MapPin className="w-5 h-5" />
+                  <span>{contact.location}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Section */}
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold text-white">Connect With Me</h4>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.linkedin.com/in/tuyen-le-nam-7614a1269/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#00ff88] hover:border-[#00ff88] hover:bg-[#00ff88]/10 transition-all duration-300 hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://github.com/Nam-Tuyen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#00d4ff] hover:border-[#00d4ff] hover:bg-[#00d4ff]/10 transition-all duration-300 hover:scale-110"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+              </div>
+              <div className="pt-4">
+                <button className="group relative px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-lg shadow-lg shadow-[#00ff88]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#00ff88]/40 hover:scale-105">
+                  <span className="relative z-10">Download Resume</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-lg opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/10 mb-8"></div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <p className="text-gray-400 text-sm flex items-center space-x-2">
+              <span>{copyright}</span>
+              <Heart className="w-4 h-4 text-red-500" />
+              <span>Made with modern tech</span>
             </p>
-            
-            <div className="flex items-center gap-2 text-sm text-gray-400">
-              <span>Made with</span>
-              <span className="text-red-500 animate-pulse">❤️</span>
-              <span>by LE NAM TUYEN</span>
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <span>© 2024 LE NAM TUYEN</span>
+              <span>•</span>
+              <span>All rights reserved</span>
             </div>
           </div>
         </div>
