@@ -95,27 +95,27 @@ export default function Portfolio() {
         cert2: "Accelerating End-to-End Data Science Workflows"
       },
         workExperience: {
-          label: "KINH NGHIỆM CHUYÊN NGHIỆP",
+          label: "PROFESSIONAL EXPERIENCE",
           agribank: {
             company: "Vietnam Bank for Agriculture and Rural Development",
-            department: "Chi nhánh Bình Triệu - Phòng Phân tích Tín dụng",
-            position: "Thực tập sinh Phân tích Tài chính",
-            period: "Tháng 3/2025 - Tháng 6/2025",
+            department: "Binh Trieu Branch - Credit Analysis Department",
+            position: "Financial Analysis Intern",
+            period: "March 2025 - June 2025",
             achievements: [
-              "Cung cấp báo cáo thông tin thị trường ngành và vĩ mô toàn diện cho các giám đốc quan hệ khách hàng và ủy ban tín dụng, hỗ trợ quyết định cho vay dựa trên dữ liệu.",
-              "Phát triển các khung mô hình dòng tiền tinh vi và công cụ phân tích kịch bản, tạo ra các chiến lược tối ưu hóa vốn cho vốn lưu động, CAPEX và cơ sở vật chất để nâng cao khả năng đánh giá rủi ro.",
-              "Thực hiện đánh giá rủi ro tín dụng nghiêm ngặt và soạn thảo khuyến nghị cho vay chi tiết thông qua phân tích báo cáo tài chính toàn diện, bao gồm P&L, bảng cân đối kế toán và đánh giá dòng tiền với phân tích tỷ lệ và xu hướng nâng cao."
+              "Provided comprehensive industry and macroeconomic market intelligence reports to relationship managers and credit committees, supporting data-driven lending decisions.",
+              "Developed sophisticated cash flow modeling frameworks and scenario analysis tools, creating capital optimization strategies for working capital, CAPEX, and infrastructure to enhance risk assessment capabilities.",
+              "Conducted rigorous credit risk assessments and drafted detailed lending recommendations through comprehensive financial statement analysis, including P&L, balance sheet, and cash flow evaluation with advanced ratio and trend analysis."
             ]
           },
           maybank: {
             company: "Maybank Investment Bank Vietnam",
-            department: "Chi nhánh Phú Nhuận - Nghiên cứu & Phân tích Đầu tư",
-            position: "Thực tập sinh Phân tích Dữ liệu & Nghiên cứu",
-            period: "Tháng 6/2024 - Tháng 12/2024",
+            department: "Phu Nhuan Branch - Investment Research & Analysis",
+            position: "Data Analysis & Research Intern",
+            period: "June 2024 - December 2024",
             achievements: [
-              "Thiết kế các pipeline xử lý dữ liệu dựa trên Python để làm sạch, trực quan hóa và phân tích 100,000+ bản ghi giao dịch, tạo ra các báo cáo thông tin thị trường hàng ngày và hàng tuần giảm 30% thời gian phân tích thủ công.",
-              "Thực hiện phân tích tài chính toàn diện và định giá vốn chủ sở hữu cho các công ty niêm yết công khai, phát triển báo cáo đầu tư, giám sát hiệu suất danh mục và hỗ trợ thu hút khách hàng thông qua sàng lọc triển vọng và tài liệu trình bày nâng cao.",
-              "Thiết kế và triển khai cơ sở hạ tầng pipeline dữ liệu end-to-end cho phân tích ticker cổ phiếu thời gian thực, cung cấp thông tin thị trường có thể hành động và cải thiện hiệu quả hoạt động của nhóm 25%."
+              "Designed Python-based data processing pipelines to clean, visualize, and analyze 100,000+ transaction records, generating daily and weekly market intelligence reports that reduced manual analysis time by 30%.",
+              "Conducted comprehensive financial analysis and equity valuation for publicly listed companies, developed investment reports, monitored portfolio performance, and supported client acquisition through prospect screening and advanced presentation materials.",
+              "Designed and implemented end-to-end data pipeline infrastructure for real-time stock ticker analysis, providing actionable market insights and improving team operational efficiency by 25%."
             ]
           }
         },
