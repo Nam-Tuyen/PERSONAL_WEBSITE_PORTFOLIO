@@ -23,7 +23,6 @@ module.exports = {
       fontFamily: {
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
         'great-vibes': ['var(--font-great-vibes)', 'cursive'],
-        manchester: ['var(--font-manchester)', 'Manrope', 'sans-serif'],
         sans: ['var(--font-montserrat)', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },

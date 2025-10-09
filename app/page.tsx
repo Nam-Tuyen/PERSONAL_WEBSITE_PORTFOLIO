@@ -1,45 +1,55 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import {
-  Linkedin,
   Mail,
-  MapPin,
-  Download,
-  Menu,
   X,
-  Code,
-  Database,
-  BarChart3,
-  Bot,
-  Globe,
-  Zap,
-  ChevronRight,
   ExternalLink,
-  Calendar,
-  Briefcase,
-  Users,
-  Award,
-  Target,
-  Terminal,
-  Cpu,
-  Rocket,
-  Star,
   ArrowRight,
-  Sparkles,
-  Brain,
-  Lightbulb,
-  Shield,
-  Layers,
-  Activity,
-  Eye,
-  MousePointer,
-  Palette,
-  Monitor,
-  Smartphone,
-  Tablet,
-  User,
 } from "lucide-react"
+
+// Reusable Galaxy Background Component
+const GalaxyBackground = ({ shootingStars = true }: { shootingStars?: boolean }) => (
+  <>
+    {/* Enhanced Galaxy Background Elements */}
+    <div className="nebula-effect nebula-purple"></div>
+    <div className="nebula-effect nebula-blue"></div>
+    <div className="nebula-effect nebula-green"></div>
+    <div className="galaxy-center"></div>
+    
+    {/* Additional Cosmic Elements */}
+    <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
+    <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-[#00ff88] rounded-full opacity-80 animate-pulse" style={{animationDelay: '1s'}}></div>
+    <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-70 animate-pulse" style={{animationDelay: '2s'}}></div>
+    
+    {/* Shooting Stars */}
+    {shootingStars && (
+      <>
+        <div className="shooting-star" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
+        <div className="shooting-star" style={{top: '60%', left: '80%', animationDelay: '1.5s'}}></div>
+        <div className="shooting-star" style={{top: '80%', left: '30%', animationDelay: '3s'}}></div>
+        <div className="shooting-star" style={{top: '40%', left: '90%', animationDelay: '4.5s'}}></div>
+      </>
+    )}
+  </>
+)
+
+// Reusable Section Label Component
+const SectionLabel = ({ title, className = "" }: { title: string, className?: string }) => (
+  <div className={`mb-12 sm:mb-16 md:mb-20 text-center ${className}`}>
+    <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
+      <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
+      <div className="relative">
+        <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
+          {title}
+        </span>
+        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
+        <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
+      </div>
+      <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
+    </div>
+  </div>
+)
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("vi")
@@ -581,179 +591,144 @@ export default function Portfolio() {
 
            {/* About Section - Enhanced Layout Design */}
            <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
-             {/* Enhanced Galaxy Background Elements */}
-             <div className="nebula-effect nebula-purple"></div>
-             <div className="nebula-effect nebula-blue"></div>
-             <div className="nebula-effect nebula-green"></div>
-             <div className="galaxy-center"></div>
-             
-             {/* Additional Cosmic Elements */}
-             <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
-             <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-[#00ff88] rounded-full opacity-80 animate-pulse" style={{animationDelay: '1s'}}></div>
-             <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-70 animate-pulse" style={{animationDelay: '2s'}}></div>
-             
-             {/* Shooting Stars */}
-             <div className="shooting-star" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
-             <div className="shooting-star" style={{top: '60%', left: '80%', animationDelay: '1.5s'}}></div>
-             <div className="shooting-star" style={{top: '80%', left: '30%', animationDelay: '3s'}}></div>
-             <div className="shooting-star" style={{top: '40%', left: '90%', animationDelay: '4.5s'}}></div>
+             <GalaxyBackground />
              
              <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
                <div className="animate-fade-in">
-                 {/* Hero Slogan - Manchester Font */}
-                 <div className="text-center mb-16 sm:mb-20 md:mb-24 lg:mb-32">
-                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight tracking-wide mb-8" style={{fontFamily: 'var(--font-manchester), Manrope, sans-serif'}}>
-                     <span className="block">
-                       "Transforming vision into reality,
-                     </span>
-                     <span className="block">
-                       turning intent into results"
-                     </span>
+                 {/* Header Section */}
+                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
+                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-[#00ff88] mb-5 relative">
+                     ABOUT ME
+                     <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 md:w-64 lg:w-80 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
                    </h1>
-                   <div className="w-32 sm:w-48 md:w-64 lg:w-80 xl:w-96 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent mx-auto"></div>
                 </div>
 
-                 {/* Two-Column Content Layout */}
-                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                 {/* Quote Section with Bolt Effect */}
+                 <div className="text-center mb-12 sm:mb-16 md:mb-20 relative">
+                   <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#00ff88] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1s'}}></div>
+                   <div className="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#00ff88] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                    
-                   {/* Column 1: Professional Introduction */}
-                   <div className="space-y-6">
-                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
-                       About Me
-                     </h2>
-                     <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-8 sm:p-10 md:p-12 backdrop-blur-lg shadow-2xl">
-                       <p className="text-[#d1d5db] text-lg sm:text-xl leading-relaxed text-justify">
-                         {t.about.description}
-                       </p>
-                     </div>
+                   <div className="relative inline-block px-8 sm:px-12">
+                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-great-vibes italic text-[#e0e0e0] leading-relaxed">
+                       <span className="text-[#00ff88] text-3xl sm:text-4xl md:text-5xl">"</span>
+                       Transforming vision into reality<br className="hidden sm:block" />
+                       <span className="sm:hidden"> </span>turning intent into results
+                       <span className="text-[#00ff88] text-3xl sm:text-4xl md:text-5xl">"</span>
+                     </p>
+                   </div>
                 </div>
 
-                   {/* Column 2: Skills Section */}
-                   <div className="space-y-6">
-                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
-                       Core Skills
-                     </h2>
+                 {/* Content Grid */}
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                   
+                   {/* Column 1: About Content */}
+                   <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 md:p-10 backdrop-blur-lg shadow-2xl">
+                     <p className="text-[#d1d5db] text-sm sm:text-base md:text-lg leading-relaxed text-justify">
+                       {t.about.description}
+                     </p>
+                   </div>
+
+                   {/* Column 2: Skills Section - Modern Design */}
+                   <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
+                     <h3 className="text-lg sm:text-xl font-bold text-white mb-6 tracking-wider text-center">SKILLS</h3>
                      
-                     {/* Modern Skills Grid */}
-                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                       {/* Product Management */}
-                       <div className="group relative">
-                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#00ff88]/40 transition-all duration-300 group-hover:scale-105">
-                           <div className="flex items-center gap-4 mb-4">
-                             <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                               📊
-                </div>
-                             <h3 className="text-lg font-bold text-white">Product Management</h3>
-              </div>
-                           <p className="text-[#d1d5db] text-sm leading-relaxed">
-                             Strategic planning, user research, and product development lifecycle management.
-                           </p>
-            </div>
-          </div>
-
-                       {/* Data Analytics */}
-                       <div className="group relative">
-                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00d4ff]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105">
-                           <div className="flex items-center gap-4 mb-4">
-                             <div className="w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                               📈
-                </div>
-                             <h3 className="text-lg font-bold text-white">Data Analytics</h3>
-              </div>
-                           <p className="text-[#d1d5db] text-sm leading-relaxed">
-                             Advanced data analysis, visualization, and insights generation for business decisions.
-                           </p>
-          </div>
-        </div>
-
-                       {/* Python & SQL */}
-                       <div className="group relative">
-                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#7c3aed]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105">
-                           <div className="flex items-center gap-4 mb-4">
-                             <div className="w-12 h-12 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                               🐍
-                             </div>
-                             <h3 className="text-lg font-bold text-white">Python & SQL</h3>
-                           </div>
-                           <p className="text-[#d1d5db] text-sm leading-relaxed">
-                             Programming expertise in Python and SQL for data processing and analysis.
-                           </p>
+                     {/* Modern Skill Tags/Badges */}
+                     <div className="space-y-4">
+                       {/* Technical Skills */}
+                       <div>
+                         <h4 className="text-sm font-semibold text-[#00ff88] mb-3 uppercase tracking-wider">Technical Skills</h4>
+                         <div className="flex flex-wrap gap-2 sm:gap-3">
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00ff88]/10 border border-[#00ff88]/30 rounded-full text-[#00ff88] text-xs sm:text-sm font-medium hover:bg-[#00ff88]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Python
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#00d4ff]/20 to-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-full text-[#00d4ff] text-xs sm:text-sm font-medium hover:bg-[#00d4ff]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             SQL
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#7c3aed]/20 to-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-full text-[#7c3aed] text-xs sm:text-sm font-medium hover:bg-[#7c3aed]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Data Analytics
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#ff6b6b]/20 to-[#ff6b6b]/10 border border-[#ff6b6b]/30 rounded-full text-[#ff6b6b] text-xs sm:text-sm font-medium hover:bg-[#ff6b6b]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Machine Learning
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#4ecdc4]/20 to-[#4ecdc4]/10 border border-[#4ecdc4]/30 rounded-full text-[#4ecdc4] text-xs sm:text-sm font-medium hover:bg-[#4ecdc4]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Tableau
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#45b7d1]/20 to-[#45b7d1]/10 border border-[#45b7d1]/30 rounded-full text-[#45b7d1] text-xs sm:text-sm font-medium hover:bg-[#45b7d1]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Power BI
+                           </span>
                          </div>
-              </div>
+                       </div>
 
-                       {/* Business Research */}
-                       <div className="group relative">
-                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#00ff88]/40 transition-all duration-300 group-hover:scale-105">
-                           <div className="flex items-center gap-4 mb-4">
-                             <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                               🔍
-                             </div>
-                             <h3 className="text-lg font-bold text-white">Business Research</h3>
-                           </div>
-                           <p className="text-[#d1d5db] text-sm leading-relaxed">
-                             Market research, competitive analysis, and strategic business insights.
-                           </p>
+                       {/* Business Skills */}
+                       <div>
+                         <h4 className="text-sm font-semibold text-[#00ff88] mb-3 uppercase tracking-wider">Business Skills</h4>
+                         <div className="flex flex-wrap gap-2 sm:gap-3">
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#ffa726]/20 to-[#ffa726]/10 border border-[#ffa726]/30 rounded-full text-[#ffa726] text-xs sm:text-sm font-medium hover:bg-[#ffa726]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Product Management
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#ab47bc]/20 to-[#ab47bc]/10 border border-[#ab47bc]/30 rounded-full text-[#ab47bc] text-xs sm:text-sm font-medium hover:bg-[#ab47bc]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Business Research
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#66bb6a]/20 to-[#66bb6a]/10 border border-[#66bb6a]/30 rounded-full text-[#66bb6a] text-xs sm:text-sm font-medium hover:bg-[#66bb6a]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Financial Analysis
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#ef5350]/20 to-[#ef5350]/10 border border-[#ef5350]/30 rounded-full text-[#ef5350] text-xs sm:text-sm font-medium hover:bg-[#ef5350]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Risk Assessment
+                           </span>
+                         </div>
+                       </div>
+
+                       {/* Tools & Technologies */}
+                       <div>
+                         <h4 className="text-sm font-semibold text-[#00ff88] mb-3 uppercase tracking-wider">Tools & Technologies</h4>
+                         <div className="flex flex-wrap gap-2 sm:gap-3">
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#8e24aa]/20 to-[#8e24aa]/10 border border-[#8e24aa]/30 rounded-full text-[#8e24aa] text-xs sm:text-sm font-medium hover:bg-[#8e24aa]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Jupyter Notebook
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#26a69a]/20 to-[#26a69a]/10 border border-[#26a69a]/30 rounded-full text-[#26a69a] text-xs sm:text-sm font-medium hover:bg-[#26a69a]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Git & GitHub
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#ff7043]/20 to-[#ff7043]/10 border border-[#ff7043]/30 rounded-full text-[#ff7043] text-xs sm:text-sm font-medium hover:bg-[#ff7043]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Excel Advanced
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#5c6bc0]/20 to-[#5c6bc0]/10 border border-[#5c6bc0]/30 rounded-full text-[#5c6bc0] text-xs sm:text-sm font-medium hover:bg-[#5c6bc0]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Blockchain
+                           </span>
+                         </div>
+                       </div>
+
+                       {/* Soft Skills */}
+                       <div>
+                         <h4 className="text-sm font-semibold text-[#00ff88] mb-3 uppercase tracking-wider">Soft Skills</h4>
+                         <div className="flex flex-wrap gap-2 sm:gap-3">
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#42a5f5]/20 to-[#42a5f5]/10 border border-[#42a5f5]/30 rounded-full text-[#42a5f5] text-xs sm:text-sm font-medium hover:bg-[#42a5f5]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Team Leadership
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#26c6da]/20 to-[#26c6da]/10 border border-[#26c6da]/30 rounded-full text-[#26c6da] text-xs sm:text-sm font-medium hover:bg-[#26c6da]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Problem Solving
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#d4e157]/20 to-[#d4e157]/10 border border-[#d4e157]/30 rounded-full text-[#d4e157] text-xs sm:text-sm font-medium hover:bg-[#d4e157]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Communication
+                           </span>
+                           <span className="px-3 py-2 bg-gradient-to-r from-[#ffca28]/20 to-[#ffca28]/10 border border-[#ffca28]/30 rounded-full text-[#ffca28] text-xs sm:text-sm font-medium hover:bg-[#ffca28]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
+                             Critical Thinking
+                           </span>
                          </div>
                        </div>
                      </div>
-
-                     {/* Additional Skills Tags */}
-                     <div className="mt-8">
-                       <h3 className="text-lg font-semibold text-white mb-4">Additional Expertise</h3>
-                       <div className="flex flex-wrap gap-3">
-                         <span className="px-4 py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 rounded-full text-[#00ff88] font-medium text-sm">
-                           Workshop Design
-                         </span>
-                         <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 rounded-full text-[#00d4ff] font-medium text-sm">
-                           Experiment Evaluation
-                         </span>
-                         <span className="px-4 py-2 bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 rounded-full text-[#7c3aed] font-medium text-sm">
-                           Dashboard Creation
-                         </span>
-                         <span className="px-4 py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 rounded-full text-[#00ff88] font-medium text-sm">
-                           Team Leadership
-                         </span>
-                         <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 rounded-full text-[#00d4ff] font-medium text-sm">
-                           FinTech Solutions
-                              </span>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                        </div>
+                   </div>
+                 </div>
              </div>
            </section>
 
            {/* Education Section - Modern Galaxy Design */}
            <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
-             {/* Enhanced Galaxy Background Elements */}
-             <div className="nebula-effect nebula-purple"></div>
-             <div className="nebula-effect nebula-blue"></div>
-             <div className="nebula-effect nebula-green"></div>
-             <div className="galaxy-center"></div>
-
-             {/* Shooting Stars */}
-             <div className="shooting-star" style={{top: '15%', left: '20%', animationDelay: '0.5s'}}></div>
-             <div className="shooting-star" style={{top: '70%', left: '70%', animationDelay: '2s'}}></div>
-             <div className="shooting-star" style={{top: '85%', left: '25%', animationDelay: '3.5s'}}></div>
-             <div className="shooting-star" style={{top: '35%', left: '85%', animationDelay: '5s'}}></div>
+             <GalaxyBackground />
              
              <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
                <div className="animate-fade-in">
                  {/* Education Label */}
-                 <div className="mb-12 sm:mb-16 md:mb-20 text-center">
-                   <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
-                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
-                     <div className="relative">
-                       <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
-                         {t.education.title}
-                            </span>
-                       <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
-                       <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                              </div>
-                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                          </div>
-                        </div>
+                 <SectionLabel title={t.education.title} />
 
                  {/* Education Content Container */}
                  <div className="relative">
@@ -771,7 +746,7 @@ export default function Portfolio() {
                            <div className="flex items-center gap-4 flex-1">
                              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
                                <span className="text-white font-bold text-lg sm:text-xl">🎓</span>
-                        </div>
+                             </div>
                              <div className="flex-1">
                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
                                  {t.education.university}
@@ -779,8 +754,8 @@ export default function Portfolio() {
                                <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
                                  {t.education.degree}
                                </p>
-                      </div>
-                    </div>
+                             </div>
+                           </div>
                            <div className="flex-shrink-0 sm:ml-4">
                              <a
                                href="https://www.uel.edu.vn/"
@@ -792,8 +767,8 @@ export default function Portfolio() {
                                <ArrowRight className="w-4 h-4" />
                              </a>
                             </div>
+                  </div>
                 </div>
-              </div>
 
                        {/* Academic Performance Cards */}
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -801,14 +776,14 @@ export default function Portfolio() {
                            <div className="flex items-center gap-3 mb-3">
                              <div className="w-8 h-8 bg-[#00ff88] rounded-lg flex items-center justify-center">
                                <span className="text-white font-bold text-sm">📊</span>
-                  </div>
+                              </div>
                              <h4 className="text-[#00ff88] font-semibold text-sm sm:text-base uppercase tracking-wider">GPA</h4>
                           </div>
                            <p className="text-white font-bold text-2xl sm:text-3xl">
                              {t.education.gpa}
                            </p>
                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Out of 4.0 Scale</p>
-                </div>
+                        </div>
 
                          <div className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group">
                            <div className="flex items-center gap-3 mb-3">
@@ -914,34 +889,12 @@ export default function Portfolio() {
 
        {/* Work Experience Section - Modern Galaxy Design */}
        <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
-         {/* Enhanced Galaxy Background Elements */}
-         <div className="nebula-effect nebula-purple"></div>
-         <div className="nebula-effect nebula-blue"></div>
-         <div className="nebula-effect nebula-green"></div>
-         <div className="galaxy-center"></div>
-
-         {/* Shooting Stars */}
-         <div className="shooting-star" style={{top: '10%', left: '15%', animationDelay: '1s'}}></div>
-         <div className="shooting-star" style={{top: '75%', left: '75%', animationDelay: '2.5s'}}></div>
-         <div className="shooting-star" style={{top: '90%', left: '20%', animationDelay: '4s'}}></div>
-         <div className="shooting-star" style={{top: '30%', left: '90%', animationDelay: '5.5s'}}></div>
+         <GalaxyBackground />
          
          <div className="max-w-4xl sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
            <div className="animate-fade-in">
              {/* Work Experience Label */}
-             <div className="mb-12 sm:mb-16 md:mb-20 text-center">
-               <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 relative">
-                 <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-[#00d4ff]"></div>
-                 <div className="relative">
-                   <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
-                     {t.workExperience.label}
-                   </span>
-                   <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
-                   <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                        </div>
-                 <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                      </div>
-            </div>
+             <SectionLabel title={t.workExperience.label} />
 
              {/* Work Experience Content Container - Enhanced Responsive Grid */}
              <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
