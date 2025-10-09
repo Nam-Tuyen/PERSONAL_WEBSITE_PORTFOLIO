@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Montserrat, Great_Vibes } from "next/font/google"
-import localFont from "next/font/local"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -15,13 +14,6 @@ const greatVibes = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-great-vibes",
-})
-
-const amsterdamFour = localFont({
-  src: "./fonts/AmsterdamFour.ttf",
-  weight: "400",
-  style: "normal",
-  variable: "--font-amsterdam-four",
 })
 
 export const metadata: Metadata = {
@@ -37,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <body className={`${montserrat.variable} ${greatVibes.variable} ${amsterdamFour.variable} font-montserrat antialiased`}>
+            <body className={`${montserrat.variable} ${greatVibes.variable} font-montserrat antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>

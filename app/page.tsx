@@ -626,7 +626,7 @@ export default function Portfolio() {
                     {/* Quote Section - Enhanced */}
                     <div className="text-center mb-12 sm:mb-14 md:mb-16">
                       <div className="relative inline-block">
-                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-amsterdam-four italic relative z-10 px-2 sm:px-4">
+                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-great-vibes italic relative z-10 px-2 sm:px-4">
                           <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
                             "Transforming vision into reality and turning intent into results"
                               </span>
@@ -739,9 +739,9 @@ export default function Portfolio() {
                                <span>Learn More</span>
                                <ArrowRight className="w-4 h-4" />
                              </a>
-                           </div>
-                         </div>
-                       </div>
+                            </div>
+                          </div>
+                        </div>
 
                        {/* Academic Performance Cards */}
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -1261,14 +1261,14 @@ export default function Portfolio() {
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="text-lg font-semibold text-gray-900">
                 {selectedPdf === 'coursera' ? 'Coursera Certificate' : 'NVIDIA Certificate'}
-              </h3>
+                </h3>
               <button
                 onClick={() => setSelectedPdf(null)}
                 className="text-gray-500 hover:text-gray-700 transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
-            </div>
+                    </div>
             <div className="h-[70vh] overflow-auto">
               {selectedPdf === 'coursera' ? (
                 <iframe
@@ -1278,11 +1278,11 @@ export default function Portfolio() {
                 />
               ) : (
                 <div className="flex items-center justify-center h-full p-4">
-                  <img
-                    src="/Certificate NVIDIA.PNG"
-                    alt="NVIDIA Certificate"
-                    className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
-                  />
+                    <img
+                      src="/Certificate%20NVIDIA.PNG"
+                      alt="NVIDIA Certificate"
+                      className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                    />
                 </div>
               )}
             </div>
