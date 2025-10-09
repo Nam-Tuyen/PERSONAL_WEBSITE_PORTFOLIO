@@ -87,34 +87,70 @@ export default function AboutSection({ label, quote, description }: AboutSection
           </div>
         </div>
 
-        {/* Main Content Container */}
+        {/* Main Content Container - Enhanced Space Design */}
         <div className="relative">
-          {/* Glass Morphism Container */}
-          <div className="relative bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/20 shadow-2xl overflow-hidden">
-            {/* Inner Space Effects */}
+          {/* Enhanced Space Container */}
+          <div className="relative bg-gradient-to-br from-black/40 via-gray-900/30 to-black/40 backdrop-blur-3xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-[#4A90E2]/30 shadow-2xl overflow-hidden group">
+            {/* Enhanced Space Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
-              {/* Constellation Lines */}
-              <div className="absolute top-1/4 left-1/4 w-px h-16 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-45 animate-constellation-glow"></div>
-              <div className="absolute bottom-1/4 right-1/4 w-px h-12 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform -rotate-30 animate-constellation-glow" style={{animationDelay: '1s'}}></div>
+              {/* Constellation Network */}
+              <div className="absolute top-1/4 left-1/4 w-px h-20 bg-gradient-to-b from-[#8AB5FF]/80 to-transparent transform rotate-45 animate-constellation-glow"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-px h-16 bg-gradient-to-b from-[#8AB5FF]/80 to-transparent transform -rotate-30 animate-constellation-glow" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 left-1/6 w-px h-14 bg-gradient-to-b from-[#00ff88]/60 to-transparent transform rotate-60 animate-constellation-glow" style={{animationDelay: '2s'}}></div>
+              <div className="absolute bottom-1/3 left-1/2 w-px h-12 bg-gradient-to-b from-[#00d4ff]/60 to-transparent transform -rotate-45 animate-constellation-glow" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-1/3 right-1/6 w-px h-18 bg-gradient-to-b from-[#7c3aed]/60 to-transparent transform rotate-30 animate-constellation-glow" style={{animationDelay: '0.5s'}}></div>
               
-              {/* Cosmic Dots */}
-              <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse"></div>
-              <div className="absolute bottom-1/3 right-1/3 w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1s'}}></div>
-            </div>
-            
-            {/* Quote */}
-            <div className="text-center mb-10">
-              <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-great-vibes text-[#00ff88] italic leading-relaxed drop-shadow-lg">
-                "{quote}"
-              </blockquote>
+              {/* Floating Stars */}
+              <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse"></div>
+              <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-[#00ff88] rounded-full shadow-lg shadow-[#00ff88]/80 animate-cosmic-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 right-1/4 w-2.5 h-2.5 bg-[#00d4ff] rounded-full shadow-lg shadow-[#00d4ff]/80 animate-cosmic-pulse" style={{animationDelay: '2s'}}></div>
+              <div className="absolute bottom-1/4 left-1/4 w-1.5 h-1.5 bg-[#7c3aed] rounded-full shadow-lg shadow-[#7c3aed]/80 animate-cosmic-pulse" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-1/4 right-1/3 w-2 h-2 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '0.5s'}}></div>
+              
+              {/* Energy Grid */}
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#4A90E2]/40 to-transparent animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7B68EE]/40 to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-[#00ff88]/30 to-transparent animate-pulse" style={{animationDelay: '2s'}}></div>
+              <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-[#00d4ff]/30 to-transparent animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              
+              {/* Orbital Rings */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-[#4A90E2]/20 rounded-full animate-orbit-rotate" style={{animationDuration: '25s'}}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[#7B68EE]/15 rounded-full animate-orbit-rotate" style={{animationDuration: '35s', animationDirection: 'reverse'}}></div>
             </div>
 
-            {/* Description */}
-            <div className="text-center">
-              <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed text-justify max-w-5xl mx-auto drop-shadow-md">
-                {description}
-              </p>
+            {/* Quote Section - Enhanced */}
+            <div className="text-center mb-12 relative z-10">
+              <div className="relative inline-block group/quote">
+                <blockquote className="text-4xl sm:text-5xl lg:text-6xl font-great-vibes text-[#00ff88] italic leading-relaxed drop-shadow-2xl relative z-10">
+                  "{quote}"
+                </blockquote>
+                {/* Quote Glow Effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-2xl rounded-2xl opacity-60 group-hover/quote:opacity-80 transition-opacity duration-500"></div>
+                {/* Quote Decorative Elements */}
+                <div className="absolute -top-2 -left-2 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
+                <div className="absolute -top-1 -right-3 w-1.5 h-1.5 bg-[#00d4ff] rounded-full animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute -bottom-2 -left-4 w-1.5 h-1.5 bg-[#7c3aed] rounded-full animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
+                <div className="absolute -bottom-1 -right-2 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '1.5s'}}></div>
+              </div>
             </div>
+
+            {/* Description Section - Enhanced */}
+            <div className="text-center relative z-10">
+              <div className="relative max-w-6xl mx-auto">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-100 leading-relaxed text-justify drop-shadow-lg font-light">
+                  {description}
+                </p>
+                {/* Description Border Effect */}
+                <div className="absolute -inset-2 border border-[#4A90E2]/20 rounded-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+                <div className="absolute -inset-4 border border-[#7B68EE]/10 rounded-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              </div>
+            </div>
+
+            {/* Corner Decorative Elements */}
+            <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#4A90E2]/40 rounded-tl-lg"></div>
+            <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#7B68EE]/40 rounded-tr-lg"></div>
+            <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#00ff88]/40 rounded-bl-lg"></div>
+            <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#00d4ff]/40 rounded-br-lg"></div>
           </div>
         </div>
       </div>
