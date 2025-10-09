@@ -600,89 +600,126 @@ export default function Portfolio() {
              
              <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
                <div className="animate-fade-in">
-                 {/* Header Section */}
-                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-[#00ff88] mb-5 relative">
-                     ABOUT ME
-                     <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 md:w-64 lg:w-80 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
+                 {/* Hero Slogan - Ultra Prominent */}
+                 <div className="text-center mb-16 sm:mb-20 md:mb-24 lg:mb-32">
+                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white leading-tight tracking-tight mb-8">
+                     <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
+                       "Transforming vision into reality,
+                     </span>
+                     <span className="block bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent">
+                       turning intent into results"
+                     </span>
                    </h1>
-                </div>
+                   <div className="w-32 sm:w-48 md:w-64 lg:w-80 xl:w-96 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent mx-auto"></div>
+                 </div>
 
-                 {/* Quote Section with Bolt Effect */}
-                 <div className="text-center mb-12 sm:mb-16 md:mb-20 relative">
-                   <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#00ff88] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1s'}}></div>
-                   <div className="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#00ff88] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                 {/* Two-Column Content Layout */}
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                    
-                   <div className="relative inline-block px-8 sm:px-12">
-                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-great-vibes italic text-[#e0e0e0] leading-relaxed">
-                       <span className="text-[#00ff88] text-3xl sm:text-4xl md:text-5xl">"</span>
-                       Transforming vision into reality<br className="hidden sm:block" />
-                       <span className="sm:hidden"> </span>turning intent into results
-                       <span className="text-[#00ff88] text-3xl sm:text-4xl md:text-5xl">"</span>
-                     </p>
-                   </div>
-                </div>
-
-                 {/* Content Grid */}
-                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                   
-                   {/* About Content */}
-                   <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 md:p-10 backdrop-blur-lg shadow-2xl">
-                     <p className="text-[#d1d5db] text-sm sm:text-base md:text-lg leading-relaxed text-justify">
-                       {t.about.description}
-                     </p>
-                </div>
-
-                   {/* Skills & Profile Card */}
+                   {/* Column 1: Professional Introduction */}
                    <div className="space-y-6">
-                     {/* Profile Card */}
-                     <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
-                       <div className="flex items-center gap-4 sm:gap-6 mb-6">
-                         <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-2xl flex items-center justify-center text-2xl sm:text-3xl">
-                           👨‍💼
-                         </div>
-                         <div>
-                           <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">LE NAM TUYEN</h2>
-                           <p className="text-[#00ff88] text-sm sm:text-base">Data Analyst & FinTech Specialist</p>
-              </div>
-            </div>
-          </div>
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
+                       About Me
+                     </h2>
+                     <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-8 sm:p-10 md:p-12 backdrop-blur-lg shadow-2xl">
+                       <p className="text-[#d1d5db] text-lg sm:text-xl leading-relaxed text-justify">
+                         {t.about.description}
+                       </p>
+                     </div>
+                   </div>
 
-                     {/* Skills Section */}
-                     <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
-                       <h3 className="text-lg sm:text-xl font-bold text-white mb-6 tracking-wider">SKILLS</h3>
-                       <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
-                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                             📊
-                </div>
-                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Product<br />Management</span>
-              </div>
-                         
-                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
-                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                             📈
-          </div>
-                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Data<br />Analytics</span>
-        </div>
-                         
-                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
-                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                             🐍
+                   {/* Column 2: Skills Section */}
+                   <div className="space-y-6">
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
+                       Core Skills
+                     </h2>
+                     
+                     {/* Modern Skills Grid */}
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       {/* Product Management */}
+                       <div className="group relative">
+                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#00ff88]/40 transition-all duration-300 group-hover:scale-105">
+                           <div className="flex items-center gap-4 mb-4">
+                             <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                               📊
+                             </div>
+                             <h3 className="text-lg font-bold text-white">Product Management</h3>
                            </div>
-                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Python<br />& SQL</span>
-              </div>
+                           <p className="text-[#d1d5db] text-sm leading-relaxed">
+                             Strategic planning, user research, and product development lifecycle management.
+                           </p>
+                         </div>
+                       </div>
 
-                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
-                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                             🔍
-                            </div>
-                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Business<br />Research</span>
-                            </div>
-                          </div>
-                        </div>
-                              </div>
-                          </div>
+                       {/* Data Analytics */}
+                       <div className="group relative">
+                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00d4ff]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105">
+                           <div className="flex items-center gap-4 mb-4">
+                             <div className="w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                               📈
+                             </div>
+                             <h3 className="text-lg font-bold text-white">Data Analytics</h3>
+                           </div>
+                           <p className="text-[#d1d5db] text-sm leading-relaxed">
+                             Advanced data analysis, visualization, and insights generation for business decisions.
+                           </p>
+                         </div>
+                       </div>
+
+                       {/* Python & SQL */}
+                       <div className="group relative">
+                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#7c3aed]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105">
+                           <div className="flex items-center gap-4 mb-4">
+                             <div className="w-12 h-12 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                               🐍
+                             </div>
+                             <h3 className="text-lg font-bold text-white">Python & SQL</h3>
+                           </div>
+                           <p className="text-[#d1d5db] text-sm leading-relaxed">
+                             Programming expertise in Python and SQL for data processing and analysis.
+                           </p>
+                         </div>
+                       </div>
+
+                       {/* Business Research */}
+                       <div className="group relative">
+                         <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 backdrop-blur-lg shadow-2xl hover:border-[#00ff88]/40 transition-all duration-300 group-hover:scale-105">
+                           <div className="flex items-center gap-4 mb-4">
+                             <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                               🔍
+                             </div>
+                             <h3 className="text-lg font-bold text-white">Business Research</h3>
+                           </div>
+                           <p className="text-[#d1d5db] text-sm leading-relaxed">
+                             Market research, competitive analysis, and strategic business insights.
+                           </p>
+                         </div>
+                       </div>
+                     </div>
+
+                     {/* Additional Skills Tags */}
+                     <div className="mt-8">
+                       <h3 className="text-lg font-semibold text-white mb-4">Additional Expertise</h3>
+                       <div className="flex flex-wrap gap-3">
+                         <span className="px-4 py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 rounded-full text-[#00ff88] font-medium text-sm">
+                           Workshop Design
+                         </span>
+                         <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 rounded-full text-[#00d4ff] font-medium text-sm">
+                           Experiment Evaluation
+                         </span>
+                         <span className="px-4 py-2 bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 rounded-full text-[#7c3aed] font-medium text-sm">
+                           Dashboard Creation
+                         </span>
+                         <span className="px-4 py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 rounded-full text-[#00ff88] font-medium text-sm">
+                           Team Leadership
+                         </span>
+                         <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 rounded-full text-[#00d4ff] font-medium text-sm">
+                           FinTech Solutions
+                         </span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
                         </div>
              </div>
            </section>
