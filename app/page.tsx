@@ -191,7 +191,6 @@ export default function Portfolio() {
       </header>
 
       {/* Main Content */}
-        <>
           {/* Hero Section - Enhanced Responsive Layout */}
           <section className="min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24 lg:pt-32 relative overflow-hidden">
             {/* Floating Decorative Elements - Hidden on mobile */}
@@ -989,7 +988,6 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      )}
     </div>
   )
 }
