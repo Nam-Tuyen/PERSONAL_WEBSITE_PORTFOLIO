@@ -52,11 +52,39 @@ export default function AboutSection({ label, quote, description }: AboutSection
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
-        {/* About Me Label */}
+        {/* About Me Label - Enhanced Space Style */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
-            {label}
-          </h2>
+          <div className="relative inline-block group">
+            {/* Main Title */}
+            <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black uppercase tracking-wider bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent relative z-10 drop-shadow-2xl">
+              {label}
+            </h2>
+            
+            {/* Space Glow Effects */}
+            <div className="absolute -inset-6 sm:-inset-8 lg:-inset-10 bg-gradient-to-r from-[#00ff88]/30 via-[#00d4ff]/30 to-[#7c3aed]/30 blur-3xl sm:blur-4xl rounded-3xl opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+            <div className="absolute -inset-3 sm:-inset-4 lg:-inset-5 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-2xl sm:blur-3xl rounded-2xl opacity-50"></div>
+            
+            {/* Space Decorative Elements */}
+            <div className="absolute -top-6 -left-6 w-4 h-4 bg-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
+            <div className="absolute -top-4 -right-8 w-3 h-3 bg-[#00d4ff] rounded-full animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
+            <div className="absolute -bottom-5 -left-10 w-3.5 h-3.5 bg-[#7c3aed] rounded-full animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
+            <div className="absolute -bottom-3 -right-6 w-2.5 h-2.5 bg-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '1.5s'}}></div>
+            
+            {/* Constellation Lines */}
+            <div className="absolute -top-2 -left-12 w-px h-8 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-45 animate-constellation-glow"></div>
+            <div className="absolute -top-1 -right-10 w-px h-6 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform -rotate-30 animate-constellation-glow" style={{animationDelay: '1s'}}></div>
+            <div className="absolute -bottom-2 -left-8 w-px h-7 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-60 animate-constellation-glow" style={{animationDelay: '2s'}}></div>
+            <div className="absolute -bottom-1 -right-12 w-px h-5 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform -rotate-45 animate-constellation-glow" style={{animationDelay: '1.5s'}}></div>
+            
+            {/* Orbital Ring */}
+            <div className="absolute -inset-8 sm:-inset-10 lg:-inset-12 border border-[#4A90E2]/20 rounded-full animate-orbit-rotate" style={{animationDuration: '20s'}}></div>
+            <div className="absolute -inset-12 sm:-inset-16 lg:-inset-20 border border-[#7B68EE]/15 rounded-full animate-orbit-rotate" style={{animationDuration: '30s', animationDirection: 'reverse'}}></div>
+            
+            {/* Energy Waves */}
+            <div className="absolute -inset-4 sm:-inset-6 lg:-inset-8 border border-[#00ff88]/25 rounded-full animate-pulse" style={{animationDuration: '3s'}}></div>
+            <div className="absolute -inset-6 sm:-inset-8 lg:-inset-10 border border-[#00d4ff]/20 rounded-full animate-pulse" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
+            <div className="absolute -inset-8 sm:-inset-10 lg:-inset-12 border border-[#7c3aed]/15 rounded-full animate-pulse" style={{animationDuration: '5s', animationDelay: '2s'}}></div>
+          </div>
         </div>
 
         {/* Main Content Container */}
