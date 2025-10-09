@@ -626,19 +626,33 @@ export default function Portfolio() {
                     {/* Quote Section - Enhanced */}
                     <div className="text-center mb-12 sm:mb-14 md:mb-16">
                       <div className="relative inline-block">
-                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight font-great-vibes italic relative z-10 px-2 sm:px-4">
-                          <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift relative">
-                            "Transforming vision into reality and turning intent into results"
-                              </span>
+                        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-tight font-great-vibes italic relative z-20 px-4 sm:px-6 md:px-8">
+                          <span className="relative inline-block">
+                            {/* Primary Text with Strong Gradient */}
+                            <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent font-bold drop-shadow-2xl">
+                              "Transforming vision into reality and turning intent into results"
+                            </span>
+                            
+                            {/* Text Shadow for Depth */}
+                            <span className="absolute inset-0 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent blur-sm opacity-30 -z-10">
+                              "Transforming vision into reality and turning intent into results"
+                            </span>
+                          </span>
                         </p>
                         
-                        {/* Quote Glow Effect */}
-                        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-xl sm:blur-2xl rounded-xl sm:rounded-2xl opacity-60"></div>
+                        {/* Enhanced Glow Effects - Multiple Layers */}
+                        <div className="absolute -inset-4 sm:-inset-6 md:-inset-8 bg-gradient-to-r from-[#00ff88]/30 via-[#00d4ff]/30 to-[#7c3aed]/30 blur-2xl sm:blur-3xl rounded-2xl sm:rounded-3xl opacity-70"></div>
+                        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-xl sm:blur-2xl rounded-xl sm:rounded-2xl opacity-50"></div>
                         
-                        {/* Decorative Elements */}
-                        <div className="absolute -top-4 sm:-top-6 md:-top-8 -left-4 sm:-left-6 md:-left-8 w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
-                        <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -right-4 sm:-right-6 md:-right-8 w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-                        <div className="absolute top-1/2 -left-6 sm:-left-8 md:-left-12 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '2s'}}></div>
+                        {/* Enhanced Decorative Corner Elements */}
+                        <div className="absolute -top-6 sm:-top-8 md:-top-10 -left-6 sm:-left-8 md:-left-10 w-3 sm:w-4 md:w-6 h-3 sm:h-4 md:h-6 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg shadow-[#00ff88]/50"></div>
+                        <div className="absolute -top-6 sm:-top-8 md:-top-10 -right-6 sm:-right-8 md:-right-10 w-3 sm:w-4 md:w-6 h-3 sm:h-4 md:h-6 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full shadow-lg shadow-[#00d4ff]/50"></div>
+                        <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 -left-6 sm:-left-8 md:-left-10 w-3 sm:w-4 md:w-6 h-3 sm:h-4 md:h-6 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full shadow-lg shadow-[#7c3aed]/50"></div>
+                        <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 -right-6 sm:-right-8 md:-right-10 w-3 sm:w-4 md:w-6 h-3 sm:h-4 md:h-6 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg shadow-[#00ff88]/50"></div>
+                        
+                        {/* Additional Decorative Lines */}
+                        <div className="absolute top-1/2 -left-8 sm:-left-12 md:-left-16 w-6 sm:w-8 md:w-12 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
+                        <div className="absolute top-1/2 -right-8 sm:-right-12 md:-right-16 w-6 sm:w-8 md:w-12 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent"></div>
                 </div>
               </div>
 
