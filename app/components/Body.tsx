@@ -150,9 +150,6 @@ export default function Body({ activeSection, translations }: BodyProps) {
                     <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                       Download CV
                     </button>
-                    <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#00d4ff] text-[#00d4ff] font-semibold rounded-xl hover:bg-[#00d4ff] hover:text-white transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
-                      View Portfolio
-                    </button>
                   </div>
                   
                   {/* Social Links */}
@@ -344,38 +341,6 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </a>
                 </div>
 
-                {/* Certifications */}
-                <div>
-                  <h4 className="text-2xl font-bold text-white mb-8 flex items-center space-x-2">
-                    <Award className="w-6 h-6 text-[#00d4ff]" />
-                    <span>Professional Certifications</span>
-                  </h4>
-
-                  {/* Certificates */}
-                  {translations.education.certifications && translations.education.certifications.length > 0 ? translations.education.certifications.map((cert: any, index: number) => (
-                    <div key={index} className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300 cursor-pointer group mb-4"
-                         onClick={() => setSelectedCertificate(cert.title)}>
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${index === 0 ? 'from-[#00ff88] to-[#00d4ff]' : 'from-[#00d4ff] to-[#7c3aed]'} rounded-lg flex items-center justify-center shadow-lg ${index === 0 ? 'shadow-[#00ff88]/25' : 'shadow-[#00d4ff]/25'}`}>
-                          <Award className="w-8 h-8 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h5 className={`text-lg font-bold text-white mb-2 group-hover:${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} transition-colors duration-300`}>
-                            {cert.title}
-                          </h5>
-                          <p className="text-sm text-gray-400">{cert.issuer} Professional Certificate</p>
-                        </div>
-                        <div className={`${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} group-hover:translate-x-1 transition-transform duration-300`}>
-                          <ExternalLink className="w-5 h-5" />
-                        </div>
-                      </div>
-                    </div>
-                  )) : (
-                    <div className="text-center py-12">
-                      <p className="text-gray-400 text-lg">No certifications available.</p>
-                    </div>
-                  )}
-                </div>
               </div>
 
               {/* Coursework */}
@@ -415,7 +380,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                   <div className="text-center">
                     <img
-                      src={translations.education.certifications?.find((cert: any) => cert.title === selectedCertificate)?.image || ''}
+                      src={translations.certifications.items?.find((cert: any) => cert.title === selectedCertificate)?.image || ''}
                       alt={selectedCertificate}
                       className="w-full h-auto rounded-lg shadow-lg"
                     />
@@ -423,6 +388,132 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 </div>
               </div>
             )}
+          </section>
+
+          {/* Certifications Section */}
+          <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
+            {/* Tech Background Effects */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-0 opacity-5">
+                <div className="w-full h-full" style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '60px 60px',
+                  animation: 'grid-move 25s linear infinite'
+                }}></div>
+              </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              {/* Section Title with Tech Design */}
+              <div className="text-center mb-16 sm:mb-20 relative">
+                {/* Background Tech Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Circuit Pattern */}
+                  <div className="absolute top-1/2 left-1/4 w-16 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 right-1/4 w-16 h-px bg-gradient-to-l from-transparent via-[#00d4ff] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-b from-[#7c3aed] to-transparent opacity-40"></div>
+                  
+                  {/* Floating Tech Elements */}
+                  <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
+                  <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse opacity-60" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                {/* Main Title */}
+                <div className="relative">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift tracking-wider">
+                    {translations.certifications.title}
+                  </h2>
+                  
+                  {/* Tech Frame */}
+                  <div className="absolute -inset-4 pointer-events-none">
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60"></div>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 left-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 right-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                  </div>
+                  
+                  {/* Section Number */}
+                  <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
+                    <span className="text-white font-bold text-lg">03</span>
+                  </div>
+                </div>
+                
+                {/* Subtitle */}
+                <p className="mt-6 text-[#00d4ff] font-mono text-sm tracking-wider opacity-80">
+                  {translations.certifications.subtitle}
+                </p>
+              </div>
+
+              {/* Horizontal Scrolling Certificates */}
+              <div className="relative">
+                {/* Scroll Container */}
+                <div className="overflow-x-auto scrollbar-hide">
+                  <div className="flex space-x-6 pb-4" style={{width: 'max-content'}}>
+                    {translations.certifications.items && translations.certifications.items.length > 0 ? translations.certifications.items.map((cert: any, index: number) => (
+                      <div key={index} className="flex-shrink-0 w-80 sm:w-96">
+                        <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300 cursor-pointer group"
+                             onClick={() => setSelectedCertificate(cert.title)}>
+                          {/* Certificate Image */}
+                          <div className="relative mb-4 rounded-xl overflow-hidden">
+                            <img 
+                              src={cert.image} 
+                              alt={cert.title}
+                              className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <ExternalLink className="w-4 h-4 text-white" />
+                            </div>
+                          </div>
+                          
+                          {/* Certificate Info */}
+                          <div className="space-y-3">
+                            <div className="flex items-center space-x-3">
+                              <div className={`w-12 h-12 bg-gradient-to-br ${index === 0 ? 'from-[#00ff88] to-[#00d4ff]' : 'from-[#00d4ff] to-[#7c3aed]'} rounded-lg flex items-center justify-center shadow-lg ${index === 0 ? 'shadow-[#00ff88]/25' : 'shadow-[#00d4ff]/25'}`}>
+                                <Award className="w-6 h-6 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <h5 className={`text-lg font-bold text-white group-hover:${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} transition-colors duration-300`}>
+                                  {cert.title}
+                                </h5>
+                                <p className="text-sm text-gray-400">{cert.description}</p>
+                              </div>
+                            </div>
+                            
+                            {/* Issuer Badge */}
+                            <div className="flex items-center justify-between">
+                              <span className="px-3 py-1 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-full text-[#00ff88] text-sm font-medium">
+                                {cert.issuer}
+                              </span>
+                              <div className={`${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} group-hover:translate-x-1 transition-transform duration-300`}>
+                                <ExternalLink className="w-5 h-5" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )) : (
+                      <div className="text-center py-12 w-full">
+                        <p className="text-gray-400 text-lg">No certifications available.</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Scroll Indicators */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {translations.certifications.items && translations.certifications.items.length > 1 && (
+                    <>
+                      <div className="w-2 h-2 bg-[#00ff88] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#00d4ff] rounded-full"></div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Work Experience Section */}

@@ -43,17 +43,23 @@ export const translations = {
         "Financial Management & Risk Assessment",
         "Quantitative Finance & Modeling"
       ],
-      learnMoreUrl: "https://www.uel.edu.vn/",
-      certifications: [
+      learnMoreUrl: "https://www.uel.edu.vn/"
+    },
+    certifications: {
+      title: "CHỨNG CHỈ CHUYÊN NGHIỆP",
+      subtitle: "PROFESSIONAL_CERTIFICATIONS",
+      items: [
         {
           title: "Ask Questions to Make Data-Driven Decisions",
           issuer: "Coursera",
-          image: "/ask-question-to-make-data-driven.PNG"
+          image: "/ask-question-to-make-data-driven.PNG",
+          description: "Coursera Professional Certificate"
         },
         {
           title: "Accelerating End-to-End Data Science Workflows",
           issuer: "NVIDIA",
-          image: "/Certificate%20NVIDIA.PNG"
+          image: "/Certificate%20NVIDIA.PNG",
+          description: "NVIDIA Professional Certificate"
         }
       ]
     },
@@ -131,17 +137,23 @@ export const translations = {
         "Financial Management & Risk Assessment",
         "Quantitative Finance & Modeling"
       ],
-      learnMoreUrl: "https://www.uel.edu.vn/",
-      certifications: [
+      learnMoreUrl: "https://www.uel.edu.vn/"
+    },
+    certifications: {
+      title: "PROFESSIONAL CERTIFICATIONS",
+      subtitle: "PROFESSIONAL_CERTIFICATIONS",
+      items: [
         {
           title: "Ask Questions to Make Data-Driven Decisions",
           issuer: "Coursera",
-          image: "/ask-question-to-make-data-driven.PNG"
+          image: "/ask-question-to-make-data-driven.PNG",
+          description: "Coursera Professional Certificate"
         },
         {
           title: "Accelerating End-to-End Data Science Workflows",
           issuer: "NVIDIA",
-          image: "/Certificate%20NVIDIA.PNG"
+          image: "/Certificate%20NVIDIA.PNG",
+          description: "NVIDIA Professional Certificate"
         }
       ]
     },
