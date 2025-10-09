@@ -192,11 +192,44 @@ export default function Body({ activeSection, translations }: BodyProps) {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              {/* Section Title */}
-              <div className="text-center mb-16 sm:mb-20">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
-                  {translations.about.label}
-                </h2>
+              {/* Section Title with Tech Design */}
+              <div className="text-center mb-16 sm:mb-20 relative">
+                {/* Background Tech Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Circuit Pattern */}
+                  <div className="absolute top-1/2 left-1/4 w-16 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 right-1/4 w-16 h-px bg-gradient-to-l from-transparent via-[#00d4ff] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-b from-[#7c3aed] to-transparent opacity-40"></div>
+                  
+                  {/* Floating Tech Elements */}
+                  <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
+                  <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse opacity-60" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                {/* Main Title */}
+                <div className="relative">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift tracking-wider">
+                    {translations.about.label}
+                  </h2>
+                  
+                  {/* Tech Frame */}
+                  <div className="absolute -inset-4 pointer-events-none">
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60"></div>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 left-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 right-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                  </div>
+                  
+                  {/* Section Number */}
+                  <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
+                    <span className="text-white font-bold text-lg">01</span>
+                  </div>
+                </div>
+                
+                {/* Subtitle */}
+                <p className="mt-6 text-[#00d4ff] font-mono text-sm tracking-wider opacity-80">
+                  PERSONAL_PROFILE
+                </p>
               </div>
 
               {/* About Content */}
@@ -237,11 +270,47 @@ export default function Body({ activeSection, translations }: BodyProps) {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              {/* Section Title */}
-              <div className="text-center mb-16 sm:mb-20">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
-                  {translations.education.title}
-                </h2>
+              {/* Section Title with Tech Design */}
+              <div className="text-center mb-16 sm:mb-20 relative">
+                {/* Background Tech Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Hexagon Pattern */}
+                  <div className="absolute top-1/2 left-1/4 w-8 h-8 border border-[#00d4ff] opacity-30 transform rotate-45"></div>
+                  <div className="absolute top-1/2 right-1/4 w-8 h-8 border border-[#7c3aed] opacity-30 transform rotate-45"></div>
+                  
+                  {/* Data Flow Lines */}
+                  <div className="absolute top-1/2 left-1/3 w-12 h-px bg-gradient-to-r from-[#00d4ff] to-transparent opacity-50"></div>
+                  <div className="absolute top-1/2 right-1/3 w-12 h-px bg-gradient-to-l from-[#7c3aed] to-transparent opacity-50"></div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute top-1/2 left-1/5 w-1 h-1 bg-[#00d4ff] rounded-full animate-pulse opacity-70"></div>
+                  <div className="absolute top-1/2 right-1/5 w-1 h-1 bg-[#7c3aed] rounded-full animate-pulse opacity-70" style={{animationDelay: '1.5s'}}></div>
+                </div>
+                
+                {/* Main Title */}
+                <div className="relative">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent animate-gradient-shift tracking-wider">
+                    {translations.education.title}
+                  </h2>
+                  
+                  {/* Tech Frame */}
+                  <div className="absolute -inset-4 pointer-events-none">
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 left-0 w-1 h-10 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 right-0 w-1 h-10 bg-gradient-to-b from-transparent via-[#7c3aed] to-transparent opacity-60"></div>
+                  </div>
+                  
+                  {/* Section Number */}
+                  <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full flex items-center justify-center shadow-lg shadow-[#00d4ff]/25">
+                    <span className="text-white font-bold text-lg">02</span>
+                  </div>
+                </div>
+                
+                {/* Subtitle */}
+                <p className="mt-6 text-[#7c3aed] font-mono text-sm tracking-wider opacity-80">
+                  ACADEMIC_CREDENTIALS
+                </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
