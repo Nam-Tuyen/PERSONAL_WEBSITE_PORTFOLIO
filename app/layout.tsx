@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Suspense } from "react"
-import { Montserrat, Great_Vibes } from "next/font/google"
+import { Montserrat, Great_Vibes, Manrope } from "next/font/google"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -16,6 +16,11 @@ const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
 })
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-manchester",
+})
 
 export const metadata: Metadata = {
   title: "Tuyen Le Nam - FinTech Portfolio",
@@ -30,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <body className={`${montserrat.variable} ${greatVibes.variable} font-montserrat antialiased`}>
+            <body className={`${montserrat.variable} ${greatVibes.variable} ${manrope.variable} font-montserrat antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>

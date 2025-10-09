@@ -20,13 +20,13 @@ module.exports = {
         'tech-cyan': '#06b6d4',
         'tech-emerald': '#10b981',
       },
-             fontFamily: {
-               montserrat: ['var(--font-montserrat)', 'sans-serif'],
-               'great-vibes': ['var(--font-great-vibes)', 'cursive'],
-               'amsterdam-four': ['Amsterdam Four', 'cursive'],
-               sans: ['var(--font-montserrat)', 'sans-serif'],
-               mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
-             },
+      fontFamily: {
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        'great-vibes': ['var(--font-great-vibes)', 'cursive'],
+        manchester: ['var(--font-manchester)', 'sans-serif'],
+        sans: ['var(--font-montserrat)', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
+      },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #00ff88 0%, #00cc6a 100%)',
         'gradient-tech': 'linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)',
