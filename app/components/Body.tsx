@@ -42,8 +42,8 @@ export default function Body({ activeSection, translations }: BodyProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Profile Image */}
-                <div className="relative order-2 lg:order-1">
-                  <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px] group">
+                <div className="relative order-2 lg:order-1 flex justify-center lg:justify-start">
+                  <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[500px] lg:w-[450px] lg:h-[550px] group">
                     {/* Advanced Tech Frame Effects */}
                     <div className="absolute inset-0 pointer-events-none">
                       {/* Multi-layer Corner Brackets */}
@@ -129,34 +129,34 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 </div>
 
                 {/* Right Column - Content */}
-                <div className="order-1 lg:order-2 text-center lg:text-left">
+                <div className="order-1 lg:order-2 text-center lg:text-left px-4 sm:px-6 lg:px-0">
                   {/* Greeting */}
-                  <div className="text-lg sm:text-xl text-[#00ff88] font-medium mb-4 tracking-wider">
+                  <div className="text-base sm:text-lg md:text-xl text-[#00ff88] font-medium mb-3 sm:mb-4 tracking-wider">
                     {translations.hero.greeting}
                   </div>
                   
                   {/* Name */}
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 tracking-tight leading-tight">
                     {translations.hero.name}
                   </h1>
                   
                   {/* Title */}
-                  <h2 className="text-xl sm:text-2xl md:text-3xl text-white mb-8 font-medium">
+                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 sm:mb-8 font-medium leading-relaxed">
                     {translations.hero.title}
                   </h2>
                   
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                    <button className="px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
+                    <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                       Download CV
                     </button>
-                    <button className="px-8 py-4 border-2 border-[#00d4ff] text-[#00d4ff] font-semibold rounded-xl hover:bg-[#00d4ff] hover:text-white transition-all duration-300 transform hover:scale-105">
+                    <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#00d4ff] text-[#00d4ff] font-semibold rounded-xl hover:bg-[#00d4ff] hover:text-white transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                       View Portfolio
                     </button>
                   </div>
                   
                   {/* Social Links */}
-                  <div className="flex justify-center lg:justify-start space-x-6">
+                  <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-6">
                     <a href={translations.footer.contact.linkedin} target="_blank" rel="noopener noreferrer" 
                        className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-110">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -233,18 +233,18 @@ export default function Body({ activeSection, translations }: BodyProps) {
               </div>
 
               {/* About Content */}
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/20 shadow-2xl">
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-white/20 shadow-2xl">
                   {/* Quote */}
-                  <div className="text-center mb-12">
-                    <blockquote className="text-2xl sm:text-3xl md:text-4xl font-great-vibes italic text-white leading-relaxed">
+                  <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                    <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-great-vibes italic text-white leading-relaxed px-2 sm:px-4">
                       "{translations.about.quote}"
                     </blockquote>
                   </div>
                   
                   {/* Description */}
                   <div className="text-center">
-                    <p className="text-lg text-gray-300 leading-relaxed text-justify">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed sm:leading-relaxed md:leading-relaxed text-justify px-2 sm:px-4 space-y-3 sm:space-y-4">
                       {translations.about.description}
                     </p>
                   </div>
@@ -338,8 +338,8 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                   
                   <a href={translations.education.learnMoreUrl} target="_blank" rel="noopener noreferrer"
-                     className="inline-flex items-center space-x-2 text-[#00ff88] hover:text-[#00d4ff] transition-colors duration-300">
-                    <span>Learn More</span>
+                     className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105">
+                    <span>Nhấp vào để xem thêm thông tin</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
