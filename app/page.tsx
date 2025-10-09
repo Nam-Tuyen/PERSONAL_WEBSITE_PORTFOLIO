@@ -91,8 +91,8 @@ export default function Portfolio() {
         gpa: "3.0/4.0",
         ielts: "6.0",
         certifications: "CERTIFICATIONS & AWARDS",
-        cert1: "Coursera Professional Certificate: Ask Questions to Make Data-Driven Decisions",
-        cert2: "NVIDIA Deep Learning Institute: Accelerating End-to-End Data Science Workflows"
+        cert1: "Ask Questions to Make Data-Driven Decisions",
+        cert2: "Accelerating End-to-End Data Science Workflows"
       },
         workExperience: {
           label: "KINH NGHIỆM CHUYÊN NGHIỆP",
@@ -233,8 +233,8 @@ export default function Portfolio() {
         gpa: "3.0/4.0",
         ielts: "6.0",
         certifications: "CERTIFICATIONS & AWARDS",
-        cert1: "Coursera Professional Certificate: Ask Questions to Make Data-Driven Decisions",
-        cert2: "NVIDIA Deep Learning Institute: Accelerating End-to-End Data Science Workflows"
+        cert1: "Ask Questions to Make Data-Driven Decisions",
+        cert2: "Accelerating End-to-End Data Science Workflows"
       },
         workExperience: {
           label: "PROFESSIONAL EXPERIENCE",
@@ -1271,11 +1271,13 @@ export default function Portfolio() {
                     </div>
             <div className="h-[70vh] overflow-auto">
               {selectedPdf === 'coursera' ? (
-                <iframe
-                  src="/AskQuestiontoMakeData-DrivenDecisions.pdf"
-                  className="w-full h-full"
-                  title="Coursera Certificate PDF"
-                />
+                <div className="flex items-center justify-center h-full p-4">
+                  <img
+                    src="/ask%20question%20to%20make%20data%20driven.PNG"
+                    alt="Coursera Certificate"
+                    className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                  />
+                </div>
               ) : (
                 <div className="flex items-center justify-center h-full p-4">
                     <img
