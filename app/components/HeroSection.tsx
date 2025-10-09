@@ -27,17 +27,17 @@ export default function HeroSection({ greeting, name, title }: HeroSectionProps)
           <div className="flex justify-center lg:justify-start animate-scale-in order-1 lg:order-1">
             <div className="relative group">
               {/* Decorative Circles */}
-              <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-              <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+              <div className="absolute -top-16 -left-16 w-96 h-96 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+              <div className="absolute -bottom-16 -right-16 w-80 h-80 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
               
               {/* Space Avatar Frame Container */}
-              <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">
+              <div className="relative w-96 h-[600px] sm:w-[500px] sm:h-[650px] lg:w-[550px] lg:h-[700px]">
                 
                 {/* Nebula Effects */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-radial from-[#7B68EE]/20 to-transparent rounded-full blur-3xl animate-nebula-move opacity-30"></div>
-                  <div className="absolute -bottom-10 -right-10 w-70 h-70 bg-gradient-radial from-[#4A90E2]/20 to-transparent rounded-full blur-3xl animate-nebula-move opacity-30" style={{animationDelay: '5s'}}></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-radial from-[#00CED1]/15 to-transparent rounded-full blur-2xl animate-nebula-move opacity-25" style={{animationDelay: '10s'}}></div>
+                  <div className="absolute -top-12 -left-12 w-96 h-96 bg-gradient-radial from-[#7B68EE]/20 to-transparent rounded-full blur-3xl animate-nebula-move opacity-30"></div>
+                  <div className="absolute -bottom-12 -right-12 w-80 h-80 bg-gradient-radial from-[#4A90E2]/20 to-transparent rounded-full blur-3xl animate-nebula-move opacity-30" style={{animationDelay: '5s'}}></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-radial from-[#00CED1]/15 to-transparent rounded-full blur-2xl animate-nebula-move opacity-25" style={{animationDelay: '10s'}}></div>
                 </div>
 
                 {/* Orbital Rings */}
@@ -49,24 +49,24 @@ export default function HeroSection({ greeting, name, title }: HeroSectionProps)
 
                 {/* Floating Planets */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-[8%] left-[12%] w-15 h-15 bg-gradient-radial from-[#7B68EE] to-[#483D8B] rounded-full shadow-lg shadow-[#7B68EE]/50 animate-planet-float"></div>
-                  <div className="absolute bottom-[15%] right-[10%] w-12 h-12 bg-gradient-radial from-[#4A90E2] to-[#1E3A8A] rounded-full shadow-lg shadow-[#4A90E2]/50 animate-planet-float" style={{animationDelay: '2s'}}></div>
-                  <div className="absolute top-[45%] right-[8%] w-9 h-9 bg-gradient-radial from-[#00CED1] to-[#008B8B] rounded-full shadow-lg shadow-[#00CED1]/50 animate-planet-float" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute top-[8%] left-[12%] w-20 h-20 bg-gradient-radial from-[#7B68EE] to-[#483D8B] rounded-full shadow-lg shadow-[#7B68EE]/50 animate-planet-float"></div>
+                  <div className="absolute bottom-[15%] right-[10%] w-16 h-16 bg-gradient-radial from-[#4A90E2] to-[#1E3A8A] rounded-full shadow-lg shadow-[#4A90E2]/50 animate-planet-float" style={{animationDelay: '2s'}}></div>
+                  <div className="absolute top-[45%] right-[8%] w-12 h-12 bg-gradient-radial from-[#00CED1] to-[#008B8B] rounded-full shadow-lg shadow-[#00CED1]/50 animate-planet-float" style={{animationDelay: '1s'}}></div>
                 </div>
 
                 {/* Constellation Lines */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-[12%] left-[18%] w-px h-24 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-45 animate-constellation-glow"></div>
-                  <div className="absolute bottom-[20%] right-[15%] w-px h-20 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform -rotate-30 animate-constellation-glow" style={{animationDelay: '1s'}}></div>
-                  <div className="absolute top-[50%] left-[10%] w-px h-22 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-60 animate-constellation-glow" style={{animationDelay: '2s'}}></div>
+                  <div className="absolute top-[12%] left-[18%] w-px h-32 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-45 animate-constellation-glow"></div>
+                  <div className="absolute bottom-[20%] right-[15%] w-px h-28 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform -rotate-30 animate-constellation-glow" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute top-[50%] left-[10%] w-px h-30 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-60 animate-constellation-glow" style={{animationDelay: '2s'}}></div>
                 </div>
 
                 {/* Cosmic Dots */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-[15%] left-[15%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse"></div>
-                  <div className="absolute top-[48%] left-[8%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1s'}}></div>
-                  <div className="absolute bottom-[18%] right-[12%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '2s'}}></div>
-                  <div className="absolute top-[52%] right-[6%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1.5s'}}></div>
+                  <div className="absolute top-[15%] left-[15%] w-2 h-2 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse"></div>
+                  <div className="absolute top-[48%] left-[8%] w-2 h-2 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute bottom-[18%] right-[12%] w-2 h-2 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '2s'}}></div>
+                  <div className="absolute top-[52%] right-[6%] w-2 h-2 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1.5s'}}></div>
                 </div>
 
                 {/* Avatar Frame */}
