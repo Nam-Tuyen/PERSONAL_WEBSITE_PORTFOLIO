@@ -26,7 +26,29 @@ export default function Header({
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10 relative overflow-hidden">
+      {/* Header Universe Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Subtle Stars in Header */}
+        <div className="absolute inset-0">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-0.5 h-0.5 bg-white rounded-full animate-twinkle opacity-60"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            ></div>
+          ))}
+        </div>
+        
+        {/* Subtle Nebula in Header */}
+        <div className="absolute top-0 left-0 w-32 h-16 bg-gradient-radial from-[#00ff88]/20 to-transparent rounded-full blur-xl animate-nebula-float"></div>
+        <div className="absolute top-0 right-0 w-24 h-12 bg-gradient-radial from-[#00d4ff]/15 to-transparent rounded-full blur-lg animate-nebula-float" style={{animationDelay: '2s'}}></div>
+      </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
