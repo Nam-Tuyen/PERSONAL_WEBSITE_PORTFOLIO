@@ -16,55 +16,7 @@ interface FooterProps {
 
 export default function Footer({ contact, copyright }: FooterProps) {
   return (
-    <footer className="relative bg-gradient-to-t from-black via-gray-900 to-black border-t border-white/10 overflow-hidden">
-      {/* Footer Universe Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Stars in Footer */}
-        <div className="absolute inset-0">
-          {[...Array(25)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-0.5 h-0.5 bg-white rounded-full animate-twinkle opacity-70"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            ></div>
-          ))}
-        </div>
-        
-        {/* Nebula Effects in Footer */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-radial from-[#00ff88]/20 to-transparent rounded-full blur-2xl animate-nebula-float"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-radial from-[#00d4ff]/20 to-transparent rounded-full blur-2xl animate-nebula-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-radial from-[#7c3aed]/15 to-transparent rounded-full blur-xl animate-nebula-float" style={{animationDelay: '4s'}}></div>
-          <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-radial from-[#ff6b6b]/10 to-transparent rounded-full blur-lg animate-nebula-float" style={{animationDelay: '6s'}}></div>
-        </div>
-        
-        {/* Shooting Stars in Footer */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-2 h-1 bg-gradient-to-r from-white to-transparent rounded-full animate-shooting-star" style={{animationDelay: '8s'}}></div>
-          <div className="absolute top-2/3 right-0 w-1.5 h-1 bg-gradient-to-l from-cyan-400 to-transparent rounded-full animate-shooting-star" style={{animationDelay: '12s'}}></div>
-        </div>
-        
-        {/* Cosmic Dust in Footer */}
-        <div className="absolute inset-0">
-          {[...Array(10)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-gray-400 rounded-full animate-dust-float opacity-50"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${8 + Math.random() * 4}s`
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
+    <footer className="relative bg-gradient-to-t from-black via-gray-900 to-black border-t border-white/10">
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">

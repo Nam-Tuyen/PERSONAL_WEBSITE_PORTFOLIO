@@ -14,55 +14,6 @@ interface BodyProps {
 export default function Body({ activeSection, translations }: BodyProps) {
   return (
     <main className="relative z-10">
-      {/* Body Universe Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Additional Stars for Body */}
-        <div className="absolute inset-0">
-          {[...Array(30)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-0.5 h-0.5 bg-white rounded-full animate-twinkle opacity-50"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`
-              }}
-            ></div>
-          ))}
-        </div>
-        
-        {/* Floating Constellations */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 flex space-x-2 animate-constellation-float">
-            <div className="w-1 h-1 bg-[#00ff88] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00ff88] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00ff88] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00ff88] rounded-full"></div>
-          </div>
-          
-          <div className="absolute bottom-1/4 right-1/4 flex space-x-3 animate-constellation-float" style={{animationDelay: '3s'}}>
-            <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
-          </div>
-          
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex space-x-2 animate-constellation-float" style={{animationDelay: '6s'}}>
-            <div className="w-1 h-1 bg-[#7c3aed] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#7c3aed] rounded-full"></div>
-            <div className="w-1 h-1 bg-[#7c3aed] rounded-full"></div>
-          </div>
-        </div>
-        
-        {/* Energy Waves */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/3 w-16 h-16 border border-[#00ff88]/20 rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
-          <div className="absolute bottom-1/3 right-1/3 w-20 h-20 border border-[#00d4ff]/15 rounded-full animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
-          <div className="absolute top-2/3 left-2/3 w-12 h-12 border border-[#7c3aed]/10 rounded-full animate-pulse" style={{animationDuration: '8s', animationDelay: '4s'}}></div>
-        </div>
-      </div>
       {/* Professional Section */}
       {activeSection === "professional" && (
         <>

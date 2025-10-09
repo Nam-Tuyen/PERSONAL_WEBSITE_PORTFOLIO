@@ -30,115 +30,58 @@ export default function HeroSection({ greeting, name, title }: HeroSectionProps)
               <div className="absolute -top-12 -left-12 w-80 h-80 border border-[#00ff88]/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
               <div className="absolute -bottom-12 -right-12 w-64 h-64 border border-[#00d4ff]/10 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
               
-              {/* Ultra Modern Futuristic Tech Avatar Container */}
+              {/* Space Avatar Frame Container */}
               <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">
                 
-                {/* Enhanced Animated Grid Background */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                  <div className="w-full h-full" style={{
-                    backgroundImage: `
-                      linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 255, 170, 0.05) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '40px 40px',
-                    animation: 'gridMove 15s linear infinite'
-                  }}></div>
-                </div>
-                
-                {/* Additional Grid Layer */}
-                <div className="absolute inset-0 opacity-5 pointer-events-none">
-                  <div className="w-full h-full" style={{
-                    backgroundImage: `
-                      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '80px 80px',
-                    animation: 'gridMove 25s linear infinite reverse'
-                  }}></div>
+                {/* Nebula Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute -top-10 -left-10 w-80 h-80 bg-gradient-radial from-[#7B68EE]/20 to-transparent rounded-full blur-3xl animate-nebula-move opacity-30"></div>
+                  <div className="absolute -bottom-10 -right-10 w-70 h-70 bg-gradient-radial from-[#4A90E2]/20 to-transparent rounded-full blur-3xl animate-nebula-move opacity-30" style={{animationDelay: '5s'}}></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-radial from-[#00CED1]/15 to-transparent rounded-full blur-2xl animate-nebula-move opacity-25" style={{animationDelay: '10s'}}></div>
                 </div>
 
-                {/* Enhanced Glowing Orbs */}
-                <div className="absolute -top-24 -left-24 w-56 h-56 bg-gradient-radial from-[#00ffaa] to-transparent rounded-full blur-3xl opacity-50 animate-float"></div>
-                <div className="absolute -bottom-24 -right-24 w-52 h-52 bg-gradient-radial from-[#00d4ff] to-transparent rounded-full blur-3xl opacity-50 animate-float" style={{animationDelay: '2s'}}></div>
-                <div className="absolute top-1/2 -right-20 w-44 h-44 bg-gradient-radial from-[#aa00ff] to-transparent rounded-full blur-3xl opacity-50 animate-float" style={{animationDelay: '4s'}}></div>
-                <div className="absolute top-1/4 -left-16 w-32 h-32 bg-gradient-radial from-[#ff00aa] to-transparent rounded-full blur-3xl opacity-40 animate-float" style={{animationDelay: '1s'}}></div>
-                <div className="absolute bottom-1/4 -right-12 w-28 h-28 bg-gradient-radial from-[#00ff88] to-transparent rounded-full blur-3xl opacity-40 animate-float" style={{animationDelay: '3s'}}></div>
-                
-                {/* Enhanced Hexagon Decorations */}
-                <div className="absolute top-[15%] left-[10%] w-24 h-14 bg-gradient-to-br from-[#00ffaa]/25 to-[#00d4ff]/25 border border-[#00ffaa]/40 animate-hex-float" style={{
-                  clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'
-                }}></div>
-                <div className="absolute bottom-[20%] right-[12%] w-24 h-14 bg-gradient-to-br from-[#00d4ff]/25 to-[#aa00ff]/25 border border-[#00d4ff]/40 animate-hex-float" style={{
-                  clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
-                  animationDelay: '1.5s'
-                }}></div>
-                <div className="absolute top-[8%] right-[15%] w-16 h-10 bg-gradient-to-br from-[#aa00ff]/20 to-[#ff00aa]/20 border border-[#aa00ff]/30 animate-hex-float" style={{
-                  clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
-                  animationDelay: '2.5s'
-                }}></div>
-                <div className="absolute bottom-[35%] left-[8%] w-20 h-12 bg-gradient-to-br from-[#ff00aa]/20 to-[#00ff88]/20 border border-[#ff00aa]/30 animate-hex-float" style={{
-                  clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
-                  animationDelay: '3.5s'
-                }}></div>
-                
-                {/* Enhanced Tech Circles */}
-                <div className="absolute top-[25%] left-[5%] w-16 h-16 border-2 border-[#00ffaa]/30 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-[30%] right-[8%] w-20 h-20 border-2 border-[#00d4ff]/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-[60%] left-[3%] w-12 h-12 border-2 border-[#aa00ff]/30 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                <div className="absolute bottom-[15%] left-[15%] w-14 h-14 border-2 border-[#ff00aa]/30 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-[40%] right-[5%] w-18 h-18 border-2 border-[#00ff88]/30 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                
-                {/* Enhanced Corner Brackets */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#00ffaa]/60"></div>
-                <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-[#00d4ff]/60"></div>
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-[#aa00ff]/60"></div>
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#ff00aa]/60"></div>
-                
-                {/* Additional Corner Brackets */}
-                <div className="absolute top-8 left-8 w-6 h-6 border-l border-t border-[#00ff88]/40"></div>
-                <div className="absolute top-8 right-8 w-6 h-6 border-r border-t border-[#00d4ff]/40"></div>
-                <div className="absolute bottom-8 left-8 w-6 h-6 border-l border-b border-[#7c3aed]/40"></div>
-                <div className="absolute bottom-8 right-8 w-6 h-6 border-r border-b border-[#00ff88]/40"></div>
-                
-                {/* Enhanced Data Points */}
-                <div className="absolute top-[20%] left-[20%] w-2 h-2 bg-[#00ffaa] rounded-full animate-pulse"></div>
-                <div className="absolute top-[35%] right-[25%] w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute bottom-[25%] left-[30%] w-2 h-2 bg-[#aa00ff] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute bottom-[40%] right-[20%] w-2 h-2 bg-[#ff00aa] rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                <div className="absolute top-[50%] left-[15%] w-1.5 h-1.5 bg-[#00ff88] rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                <div className="absolute top-[70%] right-[15%] w-1.5 h-1.5 bg-[#7c3aed] rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
-                
-                {/* Enhanced Connection Lines */}
-                <div className="absolute top-1/2 left-0 w-12 h-px bg-gradient-to-r from-[#00ffaa]/60 to-transparent"></div>
-                <div className="absolute top-1/2 right-0 w-12 h-px bg-gradient-to-l from-[#00d4ff]/60 to-transparent"></div>
-                <div className="absolute left-1/2 top-0 w-px h-12 bg-gradient-to-b from-[#aa00ff]/60 to-transparent"></div>
-                <div className="absolute left-1/2 bottom-0 w-px h-12 bg-gradient-to-t from-[#ff00aa]/60 to-transparent"></div>
-                
-                {/* Additional Connection Lines */}
-                <div className="absolute top-1/3 left-0 w-8 h-px bg-gradient-to-r from-[#00ff88]/40 to-transparent"></div>
-                <div className="absolute top-2/3 right-0 w-8 h-px bg-gradient-to-l from-[#7c3aed]/40 to-transparent"></div>
-                <div className="absolute left-1/3 top-0 w-px h-8 bg-gradient-to-b from-[#00d4ff]/40 to-transparent"></div>
-                <div className="absolute right-1/3 bottom-0 w-px h-8 bg-gradient-to-t from-[#aa00ff]/40 to-transparent"></div>
-                
-                {/* Enhanced Tech Text Elements */}
-                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 text-[#00ffaa]/40 text-xs font-mono animate-pulse">DEV_MODE</div>
-                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-[#00d4ff]/40 text-xs font-mono animate-pulse" style={{animationDelay: '1s'}}>SYS_ID: 2025</div>
-                <div className="absolute top-1/2 left-2 text-[#aa00ff]/30 text-xs font-mono animate-pulse" style={{writingMode: 'vertical-rl'}}>ACTIVE</div>
-                <div className="absolute top-1/2 right-2 text-[#ff00aa]/30 text-xs font-mono animate-pulse" style={{writingMode: 'vertical-rl', animationDelay: '0.5s'}}>ONLINE</div>
-                
-                {/* Enhanced HUD Elements */}
-                <div className="absolute top-1/2 left-6 w-3 h-3 border border-[#00ffaa]/50 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/2 right-6 w-3 h-3 border border-[#00d4ff]/50 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-2 h-2 border border-[#aa00ff]/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-2 h-2 border border-[#ff00aa]/50 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                
-                {/* Profile Image Container */}
-                <div className="relative w-full h-full rounded-xl overflow-hidden bg-black">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
-                    alt="LE NAM TUYEN"
-                    className="w-full h-full object-cover"
-                  />
+                {/* Orbital Rings */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-[7.5%] left-[7.5%] w-[85%] h-[85%] border border-[#4A90E2]/30 rounded-full animate-orbit-rotate" style={{animationDuration: '40s'}}></div>
+                  <div className="absolute top-[2.5%] left-[2.5%] w-[95%] h-[95%] border border-[#7B68EE]/25 rounded-full animate-orbit-rotate" style={{animationDuration: '60s', animationDirection: 'reverse'}}></div>
+                  <div className="absolute top-[12.5%] left-[12.5%] w-[75%] h-[75%] border border-[#00CED1]/20 rounded-full animate-orbit-rotate" style={{animationDuration: '50s'}}></div>
+                </div>
+
+                {/* Floating Planets */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-[8%] left-[12%] w-15 h-15 bg-gradient-radial from-[#7B68EE] to-[#483D8B] rounded-full shadow-lg shadow-[#7B68EE]/50 animate-planet-float"></div>
+                  <div className="absolute bottom-[15%] right-[10%] w-12 h-12 bg-gradient-radial from-[#4A90E2] to-[#1E3A8A] rounded-full shadow-lg shadow-[#4A90E2]/50 animate-planet-float" style={{animationDelay: '2s'}}></div>
+                  <div className="absolute top-[45%] right-[8%] w-9 h-9 bg-gradient-radial from-[#00CED1] to-[#008B8B] rounded-full shadow-lg shadow-[#00CED1]/50 animate-planet-float" style={{animationDelay: '1s'}}></div>
+                </div>
+
+                {/* Constellation Lines */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-[12%] left-[18%] w-px h-24 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-45 animate-constellation-glow"></div>
+                  <div className="absolute bottom-[20%] right-[15%] w-px h-20 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform -rotate-30 animate-constellation-glow" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute top-[50%] left-[10%] w-px h-22 bg-gradient-to-b from-[#8AB5FF]/60 to-transparent transform rotate-60 animate-constellation-glow" style={{animationDelay: '2s'}}></div>
+                </div>
+
+                {/* Cosmic Dots */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-[15%] left-[15%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse"></div>
+                  <div className="absolute top-[48%] left-[8%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute bottom-[18%] right-[12%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '2s'}}></div>
+                  <div className="absolute top-[52%] right-[6%] w-1.5 h-1.5 bg-[#8AB5FF] rounded-full shadow-lg shadow-[#8AB5FF]/80 animate-cosmic-pulse" style={{animationDelay: '1.5s'}}></div>
+                </div>
+
+                {/* Avatar Frame */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[55%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 transition-all duration-600 hover:scale-105 group">
+                  {/* Cosmic Glow Border */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#4A90E2] via-[#7B68EE] to-[#00CED1] rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-600 animate-cosmic-glow"></div>
+                  
+                  {/* Inner Frame */}
+                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-black border border-[#8AB5FF]/20 group-hover:border-[#8AB5FF]/40 transition-colors duration-600">
+                    <img
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg"
+                      alt="LE NAM TUYEN"
+                      className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
