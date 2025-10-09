@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { User, GraduationCap, Briefcase, Code, Award, ExternalLink, X, Building2, Calendar, MapPin, Users, TrendingUp, Database } from "lucide-react"
+import { User, GraduationCap, Briefcase, Code, Award, ExternalLink, X, Building2, Calendar, MapPin } from "lucide-react"
 
 interface BodyProps {
   activeSection: string
@@ -372,7 +372,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                   <div className="text-center">
                     <img
-                      src={translations.certifications.items?.find((cert: any) => cert.title === selectedCertificate)?.image || ''}
+                      src={translations.certifications?.items?.find((cert: any) => cert.title === selectedCertificate)?.image || ''}
                       alt={selectedCertificate}
                       className="w-full h-auto rounded-lg shadow-lg"
                     />
@@ -380,6 +380,81 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 </div>
               </div>
             )}
+          </section>
+
+          {/* Skills Section */}
+          <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
+            {/* Tech Background Effects */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-0 opacity-5">
+                <div className="w-full h-full" style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '60px 60px',
+                  animation: 'grid-move 25s linear infinite'
+                }}></div>
+              </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              {/* Section Title with Tech Design */}
+              <div className="text-center mb-16 sm:mb-20 relative">
+                {/* Background Tech Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Circuit Pattern */}
+                  <div className="absolute top-1/2 left-1/4 w-16 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 right-1/4 w-16 h-px bg-gradient-to-l from-transparent via-[#00d4ff] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-b from-[#7c3aed] to-transparent opacity-40"></div>
+                  
+                  {/* Floating Tech Elements */}
+                  <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
+                  <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse opacity-60" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                {/* Main Title */}
+                <div className="relative">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift tracking-wider">
+                    {translations.skills?.title || "SKILLS"}
+                  </h2>
+                  
+                  {/* Tech Frame */}
+                  <div className="absolute -inset-4 pointer-events-none">
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60"></div>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 left-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 right-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                  </div>
+                  
+                  {/* Section Number */}
+                  <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
+                    <span className="text-white font-bold text-lg">03</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Skills Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {translations.skills?.categories && translations.skills.categories.map((category: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-8 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300">
+                    <h3 className="text-xl font-bold text-white mb-6 flex items-center space-x-3">
+                      <div className={`w-8 h-8 bg-gradient-to-br ${index % 2 === 0 ? 'from-[#00ff88] to-[#00d4ff]' : 'from-[#00d4ff] to-[#7c3aed]'} rounded-lg flex items-center justify-center`}>
+                        <Code className="w-4 h-4 text-white" />
+                      </div>
+                      <span>{category.name}</span>
+                    </h3>
+                    <div className="flex flex-wrap gap-3">
+                      {category.items.map((skill: string, skillIndex: number) => (
+                        <span key={skillIndex} className={`px-4 py-2 bg-gradient-to-r ${index % 2 === 0 ? 'from-[#00ff88]/10 to-[#00d4ff]/10 border-[#00ff88]/30' : 'from-[#00d4ff]/10 to-[#7c3aed]/10 border-[#00d4ff]/30'} border rounded-full text-sm font-medium ${index % 2 === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} hover:scale-105 transition-transform duration-300`}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </section>
 
           {/* Certifications Section */}
@@ -416,7 +491,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 {/* Main Title */}
                 <div className="relative">
                   <h2 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift tracking-wider">
-                    {translations.certifications.title}
+                    {translations.certifications?.title || "CERTIFICATIONS & AWARDS"}
                   </h2>
                   
                   {/* Tech Frame */}
@@ -429,7 +504,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   
                   {/* Section Number */}
                   <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
-                    <span className="text-white font-bold text-lg">03</span>
+                    <span className="text-white font-bold text-lg">04</span>
                   </div>
                 </div>
                 
@@ -440,7 +515,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 {/* Scroll Container */}
                 <div className="overflow-x-auto scrollbar-hide">
                   <div className="flex space-x-6 pb-4" style={{width: 'max-content'}}>
-                    {translations.certifications.items && translations.certifications.items.length > 0 ? translations.certifications.items.map((cert: any, index: number) => (
+                    {translations.certifications?.items && translations.certifications.items.length > 0 ? translations.certifications.items.map((cert: any, index: number) => (
                       <div key={index} className="flex-shrink-0 w-80 sm:w-96">
                         <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300 cursor-pointer group"
                              onClick={() => setSelectedCertificate(cert.title)}>
@@ -493,7 +568,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 
                 {/* Scroll Indicators */}
                 <div className="flex justify-center mt-6 space-x-2">
-                  {translations.certifications.items && translations.certifications.items.length > 1 && (
+                  {translations.certifications?.items && translations.certifications.items.length > 1 && (
                     <>
                       <div className="w-2 h-2 bg-[#00ff88] rounded-full"></div>
                       <div className="w-2 h-2 bg-[#00d4ff] rounded-full"></div>
@@ -522,10 +597,15 @@ export default function Body({ activeSection, translations }: BodyProps) {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               {/* Section Title */}
-              <div className="text-center mb-16 sm:mb-20">
+              <div className="text-center mb-16 sm:mb-20 relative">
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift">
                   {translations.workExperience.title}
                 </h2>
+                
+                {/* Section Number */}
+                <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
+                  <span className="text-white font-bold text-lg">05</span>
+                </div>
               </div>
 
               {/* Experience Timeline */}
@@ -608,23 +688,103 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 ))}
               </div>
 
-              {/* Stats Section */}
-              <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-8 border border-white/20 shadow-2xl text-center">
-                  <TrendingUp className="w-12 h-12 text-[#00ff88] mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-white mb-2">2+</div>
-                  <div className="text-gray-400">Years Experience</div>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
+            {/* Tech Background Effects */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-0 opacity-5">
+                <div className="w-full h-full" style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '60px 60px',
+                  animation: 'grid-move 25s linear infinite'
+                }}></div>
+              </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              {/* Section Title with Tech Design */}
+              <div className="text-center mb-16 sm:mb-20 relative">
+                {/* Background Tech Effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Circuit Pattern */}
+                  <div className="absolute top-1/2 left-1/4 w-16 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 right-1/4 w-16 h-px bg-gradient-to-l from-transparent via-[#00d4ff] to-transparent opacity-40"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-b from-[#7c3aed] to-transparent opacity-40"></div>
+                  
+                  {/* Floating Tech Elements */}
+                  <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
+                  <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse opacity-60" style={{animationDelay: '1s'}}></div>
                 </div>
-                <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-8 border border-white/20 shadow-2xl text-center">
-                  <Database className="w-12 h-12 text-[#00d4ff] mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-white mb-2">100+</div>
-                  <div className="text-gray-400">Projects Analyzed</div>
+                
+                {/* Main Title */}
+                <div className="relative">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-shift tracking-wider">
+                    {translations.projects?.title || "PROJECTS"}
+                  </h2>
+                  
+                  {/* Tech Frame */}
+                  <div className="absolute -inset-4 pointer-events-none">
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60"></div>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 left-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                    <div className="absolute top-1/2 right-0 w-1 h-8 bg-gradient-to-b from-transparent via-[#00d4ff] to-transparent opacity-60"></div>
+                  </div>
+                  
+                  {/* Section Number */}
+                  <div className="absolute -top-8 -right-8 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
+                    <span className="text-white font-bold text-lg">06</span>
+                  </div>
                 </div>
-                <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-8 border border-white/20 shadow-2xl text-center">
-                  <Users className="w-12 h-12 text-[#7c3aed] mx-auto mb-4" />
-                  <div className="text-3xl font-bold text-white mb-2">50+</div>
-                  <div className="text-gray-400">Clients Served</div>
-                </div>
+              </div>
+
+              {/* Projects Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {translations.projects?.items && translations.projects.items.map((project: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300 group">
+                    {/* Project Image */}
+                    <div className="relative mb-6 rounded-xl overflow-hidden">
+                      <div className="w-full h-48 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 flex items-center justify-center">
+                        <Code className="w-16 h-16 text-[#00ff88] opacity-50" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ExternalLink className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+                    
+                    {/* Project Info */}
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-bold text-white group-hover:text-[#00ff88] transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {project.description}
+                      </p>
+                      
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech: string, techIndex: number) => (
+                          <span key={techIndex} className="px-3 py-1 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-full text-[#00ff88] text-xs font-medium">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      {/* View Project Button */}
+                      <a href={project.link} className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105">
+                        <span>View Project</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

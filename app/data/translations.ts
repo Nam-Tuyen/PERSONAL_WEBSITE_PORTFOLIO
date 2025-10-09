@@ -45,9 +45,29 @@ export const translations = {
       ],
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
+    skills: {
+      title: "KỸ NĂNG",
+      categories: [
+        {
+          name: "Programming Languages",
+          items: ["Python", "SQL", "JavaScript", "HTML/CSS", "R"]
+        },
+        {
+          name: "Data Analysis & Visualization",
+          items: ["Power BI", "Tableau", "Excel", "Pandas", "NumPy", "Matplotlib"]
+        },
+        {
+          name: "Product Management",
+          items: ["User Research", "Product Discovery", "A/B Testing", "Analytics", "Figma"]
+        },
+        {
+          name: "Database & Cloud",
+          items: ["MySQL", "PostgreSQL", "AWS", "Google Cloud", "MongoDB"]
+        }
+      ]
+    },
     certifications: {
-      title: "CHỨNG CHỈ CHUYÊN NGHIỆP",
-      subtitle: "PROFESSIONAL_CERTIFICATIONS",
+      title: "CHỨNG CHỈ & GIẢI THƯỞNG",
       items: [
         {
           title: "Ask Questions to Make Data-Driven Decisions",
@@ -64,7 +84,7 @@ export const translations = {
       ]
     },
     workExperience: {
-      title: "KINH NGHIỆM LÀM VIỆC",
+      title: "KINH NGHIỆM LÀM VIỆC & THỰC TẬP",
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
         department: "Binh Trieu Branch - Credit Analysis Department",
@@ -91,6 +111,32 @@ export const translations = {
         ],
         icon: "🏢"
       }
+    },
+    projects: {
+      title: "DỰ ÁN",
+      items: [
+        {
+          name: "Financial Data Analysis Dashboard",
+          description: "Built an interactive dashboard using Power BI to analyze financial market trends and investment opportunities",
+          technologies: ["Power BI", "SQL", "Python", "Excel"],
+          image: "/project1.jpg",
+          link: "#"
+        },
+        {
+          name: "Product Analytics Platform",
+          description: "Developed a comprehensive analytics platform for tracking user behavior and product performance metrics",
+          technologies: ["Python", "Pandas", "Matplotlib", "SQL", "Figma"],
+          image: "/project2.jpg",
+          link: "#"
+        },
+        {
+          name: "Credit Risk Assessment Model",
+          description: "Created a machine learning model for assessing credit risk in agricultural loan applications",
+          technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter"],
+          image: "/project3.jpg",
+          link: "#"
+        }
+      ]
     }
   },
   en: {
@@ -139,9 +185,29 @@ export const translations = {
       ],
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
+    skills: {
+      title: "SKILLS",
+      categories: [
+        {
+          name: "Programming Languages",
+          items: ["Python", "SQL", "JavaScript", "HTML/CSS", "R"]
+        },
+        {
+          name: "Data Analysis & Visualization",
+          items: ["Power BI", "Tableau", "Excel", "Pandas", "NumPy", "Matplotlib"]
+        },
+        {
+          name: "Product Management",
+          items: ["User Research", "Product Discovery", "A/B Testing", "Analytics", "Figma"]
+        },
+        {
+          name: "Database & Cloud",
+          items: ["MySQL", "PostgreSQL", "AWS", "Google Cloud", "MongoDB"]
+        }
+      ]
+    },
     certifications: {
-      title: "PROFESSIONAL CERTIFICATIONS",
-      subtitle: "PROFESSIONAL_CERTIFICATIONS",
+      title: "CERTIFICATIONS & AWARDS",
       items: [
         {
           title: "Ask Questions to Make Data-Driven Decisions",
@@ -158,7 +224,7 @@ export const translations = {
       ]
     },
     workExperience: {
-      title: "WORK EXPERIENCE",
+      title: "WORK EXPERIENCE & INTERNSHIP",
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
         department: "Binh Trieu Branch - Credit Analysis Department",
@@ -185,6 +251,32 @@ export const translations = {
         ],
         icon: "🏢"
       }
+    },
+    projects: {
+      title: "PROJECTS",
+      items: [
+        {
+          name: "Financial Data Analysis Dashboard",
+          description: "Built an interactive dashboard using Power BI to analyze financial market trends and investment opportunities",
+          technologies: ["Power BI", "SQL", "Python", "Excel"],
+          image: "/project1.jpg",
+          link: "#"
+        },
+        {
+          name: "Product Analytics Platform",
+          description: "Developed a comprehensive analytics platform for tracking user behavior and product performance metrics",
+          technologies: ["Python", "Pandas", "Matplotlib", "SQL", "Figma"],
+          image: "/project2.jpg",
+          link: "#"
+        },
+        {
+          name: "Credit Risk Assessment Model",
+          description: "Created a machine learning model for assessing credit risk in agricultural loan applications",
+          technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter"],
+          image: "/project3.jpg",
+          link: "#"
+        }
+      ]
     }
   }
 }
