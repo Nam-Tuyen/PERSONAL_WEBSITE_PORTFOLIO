@@ -7,6 +7,16 @@ export const translations = {
         personal: "CÁ NHÂN"
       }
     },
+    footer: {
+      contact: {
+        email: "namtuyen.le@gmail.com",
+        phone: "+84 123 456 789",
+        location: "Ho Chi Minh City, Vietnam",
+        linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
+        github: "https://github.com/Nam-Tuyen"
+      },
+      copyright: "© 2024 LE NAM TUYEN. All rights reserved."
+    },
     hero: {
       greeting: "HI, I AM",
       name: "LE NAM TUYEN",
@@ -84,6 +94,16 @@ export const translations = {
         professional: "PROFESSIONAL",
         personal: "PERSONAL"
       }
+    },
+    footer: {
+      contact: {
+        email: "namtuyen.le@gmail.com",
+        phone: "+84 123 456 789",
+        location: "Ho Chi Minh City, Vietnam",
+        linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
+        github: "https://github.com/Nam-Tuyen"
+      },
+      copyright: "© 2024 LE NAM TUYEN. All rights reserved."
     },
     hero: {
       greeting: "HI, I AM",

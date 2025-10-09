@@ -3,10 +3,8 @@
 import React, { useState } from "react"
 import { translations } from "./data/translations"
 import Header from "./components/Header"
-import HeroSection from "./components/HeroSection"
-import AboutSection from "./components/AboutSection"
-import EducationSection from "./components/EducationSection"
-import WorkExperienceSection from "./components/WorkExperienceSection"
+import Body from "./components/Body"
+import Footer from "./components/Footer"
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
@@ -28,8 +26,8 @@ export default function Portfolio() {
         {/* Stars */}
         <div className="absolute inset-0">
           {[...Array(100)].map((_, i) => (
-              <div
-                key={i}
+            <div
+              key={i}
               className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
               style={{
                 left: `${Math.random() * 100}%`,
@@ -49,8 +47,8 @@ export default function Portfolio() {
         {/* Cosmic Dust */}
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
-                    <div
-                      key={i}
+            <div
+              key={i}
               className="absolute w-1 h-1 bg-gray-400 rounded-full animate-dust-float opacity-60"
               style={{
                 left: `${Math.random() * 100}%`,
@@ -59,9 +57,9 @@ export default function Portfolio() {
                 animationDuration: `${8 + Math.random() * 4}s`
               }}
             ></div>
-                  ))}
-                </div>
-              </div>
+          ))}
+        </div>
+      </div>
 
       {/* Header */}
       <Header
@@ -73,53 +71,17 @@ export default function Portfolio() {
         onLanguageChange={setLanguage}
       />
 
-      {/* Main Content */}
-      <main className="relative z-10">
-        {/* Professional Section */}
-        {activeSection === "professional" && (
-          <>
-            {/* Hero Section */}
-            <HeroSection
-              greeting={t.hero.greeting}
-              name={t.hero.name}
-              title={t.hero.title}
-            />
+      {/* Body - Main Content */}
+      <Body
+        activeSection={activeSection}
+        translations={t}
+      />
 
-            {/* About Section */}
-            <AboutSection
-              label={t.about.label}
-              quote={t.about.quote}
-              description={t.about.description}
-            />
-
-            {/* Education Section */}
-            <EducationSection
-              title={t.education.title}
-              data={t.education}
-            />
-
-            {/* Work Experience Section */}
-            <WorkExperienceSection
-              title={t.workExperience.title}
-              experiences={[t.workExperience.agribank, t.workExperience.maybank]}
-            />
-        </>
-      )}
-
-        {/* Personal Section */}
-      {activeSection === "personal" && (
-          <div className="min-h-screen flex items-center justify-center pt-20">
-            <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent mb-8">
-                Personal Section
-              </h1>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                This section will contain personal information, hobbies, and other non-professional content.
-              </p>
-            </div>
-          </div>
-        )}
-      </main>
+      {/* Footer */}
+      <Footer
+        contact={t.footer.contact}
+        copyright={t.footer.copyright}
+      />
     </div>
   )
 }
