@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { GraduationCap, ExternalLink, Award, Calendar, X } from "lucide-react"
+import { GraduationCap, ExternalLink, Award, Calendar, X, Code } from "lucide-react"
 
 interface EducationSectionProps {
   title: string

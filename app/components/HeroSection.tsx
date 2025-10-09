@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Linkedin, Github, Download, ArrowRight } from "lucide-react"
+import { Linkedin, Github, Download, ArrowRight, Code } from "lucide-react"
 
 interface HeroSectionProps {
   greeting: string
