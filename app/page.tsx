@@ -246,31 +246,31 @@ export default function Portfolio() {
         cert1: "Ask Questions to Make Data-Driven Decisions",
         cert2: "Accelerating End-to-End Data Science Workflows"
       },
-        workExperience: {
-          label: "PROFESSIONAL EXPERIENCE",
-          agribank: {
-            company: "Vietnam Bank for Agriculture and Rural Development",
-            department: "Binh Trieu Branch - Credit Analysis Division",
-            position: "Financial Analysis Intern",
-            period: "March 2025 - June 2025",
-            achievements: [
-              "Delivered comprehensive sector and macroeconomic market intelligence reports to senior relationship managers and credit committees, enabling data-driven lending decisions.",
-              "Developed sophisticated cash-flow modeling frameworks and scenario analysis tools, creating capital-utilization strategies for working capital, CAPEX, and facility optimization to enhance risk assessment capabilities.",
-              "Conducted rigorous credit risk evaluations and authored detailed loan recommendations through comprehensive financial statement analysis, including P&L, balance sheet, and cash flow assessments with advanced ratio and trend analysis."
-            ]
-          },
-          maybank: {
-            company: "Maybank Investment Bank Vietnam",
-            department: "Phu Nhuan Branch - Investment Research & Analytics",
-            position: "Data Analytics & Research Intern",
-            period: "June 2024 - December 2024",
-            achievements: [
-              "Engineered Python-based data processing pipelines to clean, visualize, and analyze 100,000+ trading records, producing daily and weekly market intelligence reports that reduced manual analysis time by 30%.",
-              "Executed comprehensive financial analysis and equity valuation for publicly traded companies, developed investment briefs, monitored portfolio performance, and supported client acquisition through advanced prospect screening and presentation materials.",
-              "Architected and deployed end-to-end data pipeline infrastructure for real-time stock ticker analysis, delivering actionable market insights and improving team operational efficiency by 25%."
-            ]
-          }
+      workExperience: {
+        label: "PROFESSIONAL EXPERIENCE",
+        agribank: {
+          company: "Vietnam Bank for Agriculture and Rural Development",
+          department: "Binh Trieu Branch - Credit Analysis Division",
+          position: "Financial Analysis Intern",
+          period: "March 2025 - June 2025",
+          achievements: [
+            "Delivered comprehensive sector and macroeconomic market intelligence reports to senior relationship managers and credit committees, enabling data-driven lending decisions.",
+            "Developed sophisticated cash-flow modeling frameworks and scenario analysis tools, creating capital-utilization strategies for working capital, CAPEX, and facility optimization to enhance risk assessment capabilities.",
+            "Conducted rigorous credit risk evaluations and authored detailed loan recommendations through comprehensive financial statement analysis, including P&L, balance sheet, and cash flow assessments with advanced ratio and trend analysis."
+          ]
         },
+        maybank: {
+          company: "Maybank Investment Bank Vietnam",
+          department: "Phu Nhuan Branch - Investment Research & Analytics",
+          position: "Data Analytics & Research Intern",
+          period: "June 2024 - December 2024",
+          achievements: [
+            "Engineered Python-based data processing pipelines to clean, visualize, and analyze 100,000+ trading records, producing daily and weekly market intelligence reports that reduced manual analysis time by 30%.",
+            "Executed comprehensive financial analysis and equity valuation for publicly traded companies, developed investment briefs, monitored portfolio performance, and supported client acquisition through advanced prospect screening and presentation materials.",
+            "Architected and deployed end-to-end data pipeline infrastructure for real-time stock ticker analysis, delivering actionable market insights and improving team operational efficiency by 25%."
+          ]
+        }
+      },
       projects: {
         label: "MY PROJECTS",
         intro: "Here are some of my favorite projects where I prioritized user experience and visual aesthetics. Each project reflects my dedication to creating seamless and engaging digital experiences.",
@@ -408,8 +408,8 @@ export default function Portfolio() {
               &lt;/&gt;
             </div>
             <div className="hidden sm:block absolute bottom-20 right-4 sm:right-10 text-4xl sm:text-6xl opacity-5 animate-float" style={{animationDelay: '2s'}}>
-              { }
-        </div>
+              &lt;/&gt;
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-full relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
