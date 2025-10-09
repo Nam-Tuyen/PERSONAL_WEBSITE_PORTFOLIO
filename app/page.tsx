@@ -1254,27 +1254,37 @@ export default function Portfolio() {
               </div>
       </footer>
 
-      {/* PDF Viewer Modal */}
+      {/* Certificate Viewer Modal */}
       {selectedPdf && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="text-lg font-semibold text-gray-900">
                 {selectedPdf === 'coursera' ? 'Coursera Certificate' : 'NVIDIA Certificate'}
-                </h3>
+              </h3>
               <button
                 onClick={() => setSelectedPdf(null)}
                 className="text-gray-500 hover:text-gray-700 transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
-                    </div>
-            <div className="h-[70vh]">
-              <iframe
-                src={`/${selectedPdf === 'coursera' ? 'AskQuestiontoMakeData-DrivenDecisions.pdf' : 'MylearningNVIDIA.pdf'}`}
-                className="w-full h-full"
-                title="Certificate PDF"
-              />
+            </div>
+            <div className="h-[70vh] overflow-auto">
+              {selectedPdf === 'coursera' ? (
+                <iframe
+                  src="/AskQuestiontoMakeData-DrivenDecisions.pdf"
+                  className="w-full h-full"
+                  title="Coursera Certificate PDF"
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full p-4">
+                  <img
+                    src="/Certificate NVIDIA.PNG"
+                    alt="NVIDIA Certificate"
+                    className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
