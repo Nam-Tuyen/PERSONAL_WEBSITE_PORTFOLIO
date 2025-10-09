@@ -399,7 +399,7 @@ export default function Portfolio() {
             </div>
             <div className="hidden sm:block absolute bottom-20 right-4 sm:right-10 text-4xl sm:text-6xl opacity-5 animate-float" style={{animationDelay: '2s'}}>
               { }
-            </div>
+        </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-full relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
@@ -411,7 +411,7 @@ export default function Portfolio() {
                     <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
                       {t.hero.name}
                     </span>
-                  </h1>
+                </h1>
                   
                   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white uppercase tracking-wide sm:tracking-wider text-center lg:text-left relative group">
                     <span className="relative inline-block">
@@ -579,110 +579,113 @@ export default function Portfolio() {
 
       </section>
 
-          {/* About Me Section - Modern Starfield Design */}
-          <section className="py-24 relative overflow-hidden" style={{background: '#0a0e1a'}}>
-            {/* Starfield Background */}
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(200)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-0.5 h-0.5 bg-white rounded-full animate-pulse"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 3}s`,
-                    opacity: 0.3 + Math.random() * 0.7
-                  }}
-                />
-              ))}
-            </div>
-            
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
-              {/* Header */}
-              <div className="text-center mb-16 sm:mb-20">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-[#4ade80] mb-5 relative">
-                  ABOUT ME
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 md:w-64 lg:w-80 h-0.5 bg-gradient-to-r from-transparent via-[#4ade80] to-transparent"></div>
-                </h1>
-              </div>
-
-              {/* Quote Section with Bolt Effect */}
-              <div className="text-center mb-16 sm:mb-20 relative">
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#4ade80] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#4ade80] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                
-                <div className="relative inline-block px-8 sm:px-12">
-                  <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-great-vibes italic text-[#e0e0e0] leading-relaxed">
-                    <span className="text-[#4ade80] text-3xl sm:text-4xl md:text-5xl">"</span>
-                    Transforming vision into reality<br className="hidden sm:block" />
-                    <span className="sm:hidden"> </span>turning intent into results
-                    <span className="text-[#4ade80] text-3xl sm:text-4xl md:text-5xl">"</span>
-                  </p>
-                </div>
-              </div>
-
-              {/* Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                
-                {/* About Content */}
-                <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#4ade80]/20 rounded-2xl p-6 sm:p-8 md:p-10 backdrop-blur-lg shadow-2xl">
-                  <p className="text-[#d1d5db] text-sm sm:text-base md:text-lg leading-relaxed text-justify">
-                    {t.about.description}
-                  </p>
+           {/* About Section - Enhanced Layout Design */}
+           <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
+             {/* Enhanced Galaxy Background Elements */}
+             <div className="nebula-effect nebula-purple"></div>
+             <div className="nebula-effect nebula-blue"></div>
+             <div className="nebula-effect nebula-green"></div>
+             <div className="galaxy-center"></div>
+             
+             {/* Additional Cosmic Elements */}
+             <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
+             <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-[#00ff88] rounded-full opacity-80 animate-pulse" style={{animationDelay: '1s'}}></div>
+             <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-70 animate-pulse" style={{animationDelay: '2s'}}></div>
+             
+             {/* Shooting Stars */}
+             <div className="shooting-star" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
+             <div className="shooting-star" style={{top: '60%', left: '80%', animationDelay: '1.5s'}}></div>
+             <div className="shooting-star" style={{top: '80%', left: '30%', animationDelay: '3s'}}></div>
+             <div className="shooting-star" style={{top: '40%', left: '90%', animationDelay: '4.5s'}}></div>
+             
+             <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
+               <div className="animate-fade-in">
+                 {/* Header Section */}
+                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
+                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-[#00ff88] mb-5 relative">
+                     ABOUT ME
+                     <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 sm:w-48 md:w-64 lg:w-80 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
+                   </h1>
                 </div>
 
-                {/* Skills & Profile Card */}
-                <div className="space-y-6">
-                  {/* Profile Card */}
-                  <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#4ade80]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
-                    <div className="flex items-center gap-4 sm:gap-6 mb-6">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#4ade80] to-[#22c55e] rounded-2xl flex items-center justify-center text-2xl sm:text-3xl">
-                        👨‍💼
-                      </div>
-                      <div>
-                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">LE NAM TUYEN</h2>
-                        <p className="text-[#4ade80] text-sm sm:text-base">Data Analyst & FinTech Specialist</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Skills Section */}
-                  <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#4ade80]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-6 tracking-wider">SKILLS</h3>
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                      <div className="bg-slate-800/40 border border-[#4ade80]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#4ade80]/10 hover:border-[#4ade80] transition-all duration-300 group">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#4ade80] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                          📊
-                        </div>
-                        <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Product<br />Management</span>
-                      </div>
-                      
-                      <div className="bg-slate-800/40 border border-[#4ade80]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#4ade80]/10 hover:border-[#4ade80] transition-all duration-300 group">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#4ade80] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                          📈
-                        </div>
-                        <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Data<br />Analytics</span>
-                      </div>
-                      
-                      <div className="bg-slate-800/40 border border-[#4ade80]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#4ade80]/10 hover:border-[#4ade80] transition-all duration-300 group">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#4ade80] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                          🐍
-                        </div>
-                        <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Python<br />& SQL</span>
-                      </div>
-                      
-                      <div className="bg-slate-800/40 border border-[#4ade80]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#4ade80]/10 hover:border-[#4ade80] transition-all duration-300 group">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#4ade80] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                          🔍
-                        </div>
-                        <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Business<br />Research</span>
-                      </div>
-                    </div>
-                  </div>
+                 {/* Quote Section with Bolt Effect */}
+                 <div className="text-center mb-12 sm:mb-16 md:mb-20 relative">
+                   <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#00ff88] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1s'}}></div>
+                   <div className="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-gradient-to-b from-[#00ff88] to-transparent opacity-0 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                   
+                   <div className="relative inline-block px-8 sm:px-12">
+                     <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-great-vibes italic text-[#e0e0e0] leading-relaxed">
+                       <span className="text-[#00ff88] text-3xl sm:text-4xl md:text-5xl">"</span>
+                       Transforming vision into reality<br className="hidden sm:block" />
+                       <span className="sm:hidden"> </span>turning intent into results
+                       <span className="text-[#00ff88] text-3xl sm:text-4xl md:text-5xl">"</span>
+                     </p>
+                   </div>
                 </div>
+
+                 {/* Content Grid */}
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                   
+                   {/* About Content */}
+                   <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 md:p-10 backdrop-blur-lg shadow-2xl">
+                     <p className="text-[#d1d5db] text-sm sm:text-base md:text-lg leading-relaxed text-justify">
+                       {t.about.description}
+                     </p>
+                </div>
+
+                   {/* Skills & Profile Card */}
+                   <div className="space-y-6">
+                     {/* Profile Card */}
+                     <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
+                       <div className="flex items-center gap-4 sm:gap-6 mb-6">
+                         <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-2xl flex items-center justify-center text-2xl sm:text-3xl">
+                           👨‍💼
+                         </div>
+                         <div>
+                           <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">LE NAM TUYEN</h2>
+                           <p className="text-[#00ff88] text-sm sm:text-base">Data Analyst & FinTech Specialist</p>
               </div>
             </div>
-          </section>
+          </div>
+
+                     {/* Skills Section */}
+                     <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-[#00ff88]/20 rounded-2xl p-6 sm:p-8 backdrop-blur-lg shadow-2xl">
+                       <h3 className="text-lg sm:text-xl font-bold text-white mb-6 tracking-wider">SKILLS</h3>
+                       <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
+                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
+                             📊
+                </div>
+                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Product<br />Management</span>
+              </div>
+                         
+                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
+                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
+                             📈
+          </div>
+                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Data<br />Analytics</span>
+        </div>
+                         
+                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
+                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
+                             🐍
+                           </div>
+                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Python<br />& SQL</span>
+              </div>
+
+                         <div className="bg-slate-800/40 border border-[#00ff88]/20 rounded-xl p-4 flex items-center gap-3 hover:bg-[#00ff88]/10 hover:border-[#00ff88] transition-all duration-300 group">
+                           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-lg flex items-center justify-center text-lg sm:text-xl group-hover:scale-110 transition-transform">
+                             🔍
+                            </div>
+                           <span className="text-[#d1d5db] text-xs sm:text-sm font-medium">Business<br />Research</span>
+                            </div>
+                          </div>
+                        </div>
+                              </div>
+                          </div>
+                        </div>
+             </div>
+           </section>
 
            {/* Education Section - Modern Galaxy Design */}
            <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative galaxy-bg overflow-hidden">
@@ -707,13 +710,13 @@ export default function Portfolio() {
                      <div className="relative">
                        <span className="text-[#00ff88] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[4px] sm:tracking-[6px] md:tracking-[8px] font-black uppercase relative z-10">
                          {t.education.title}
-                              </span>
+                            </span>
                        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                        <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                            </div>
-                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                          </div>
                         </div>
+                     <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
+                </div>
+              </div>
 
                  {/* Education Content Container */}
                  <div className="relative">
@@ -735,7 +738,7 @@ export default function Portfolio() {
                              <div className="flex-1">
                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
                                  {t.education.university}
-                               </h3>
+                  </h3>
                                <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
                                  {t.education.degree}
                                </p>
@@ -752,8 +755,8 @@ export default function Portfolio() {
                                <ArrowRight className="w-4 h-4" />
                              </a>
                             </div>
-                          </div>
-                        </div>
+                  </div>
+                </div>
 
                        {/* Academic Performance Cards */}
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -774,26 +777,26 @@ export default function Portfolio() {
                            <div className="flex items-center gap-3 mb-3">
                              <div className="w-8 h-8 bg-[#00d4ff] rounded-lg flex items-center justify-center">
                                <span className="text-white font-bold text-sm">🌍</span>
-                        </div>
+                          </div>
                              <h4 className="text-[#00d4ff] font-semibold text-sm sm:text-base uppercase tracking-wider">IELTS</h4>
-                      </div>
+                          </div>
                            <p className="text-white font-bold text-2xl sm:text-3xl">
                              {t.education.ielts}
                            </p>
                            <p className="text-gray-400 text-xs sm:text-sm mt-1">English Proficiency</p>
-                    </div>
-                </div>
+                        </div>
+                        </div>
 
                        {/* Coursework Section */}
                        <div className="bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl p-6 sm:p-8 border border-[#7c3aed]/20 hover:border-[#7c3aed]/40 transition-all duration-300">
                          <div className="flex items-center gap-3 mb-4">
                            <div className="w-8 h-8 bg-[#7c3aed] rounded-lg flex items-center justify-center">
                              <span className="text-white font-bold text-sm">📚</span>
-                          </div>
+                      </div>
                            <h4 className="text-[#7c3aed] font-semibold text-lg sm:text-xl">
                              {t.education.relevantCoursework}
                             </h4>
-                          </div>
+                    </div>
                          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                            {t.education.courses}
                          </p>
@@ -801,7 +804,7 @@ export default function Portfolio() {
               </div>
 
                      {/* Certifications Section - Modern Design */}
-                     <div>
+              <div>
                        <div className="text-center mb-6 sm:mb-8">
                          <div className="inline-flex items-center gap-3 mb-4">
                            <div className="w-8 h-8 bg-[#7c3aed] rounded-lg flex items-center justify-center">
@@ -821,7 +824,7 @@ export default function Portfolio() {
                             <div className="flex items-start gap-4">
                               <div className="w-12 h-12 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white font-bold text-lg">📈</span>
-                              </div>
+                        </div>
                               <div>
                                 <h5 className="text-[#00ff88] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">Coursera</h5>
                                 <p className="text-gray-200 text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors">
@@ -830,7 +833,7 @@ export default function Portfolio() {
                                 <p className="text-[#00ff88] text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                   Click to view certificate →
                                 </p>
-                              </div>
+                      </div>
                             </div>
                           </div>
 
@@ -841,7 +844,7 @@ export default function Portfolio() {
                             <div className="flex items-start gap-4">
                               <div className="w-12 h-12 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white font-bold text-lg">🚀</span>
-                          </div>
+                      </div>
                               <div>
                                 <h5 className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">NVIDIA</h5>
                                 <p className="text-gray-200 text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors">
@@ -850,7 +853,7 @@ export default function Portfolio() {
                                 <p className="text-[#00d4ff] text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                   Click to view certificate →
                                 </p>
-                          </div>
+                    </div>
                         </div>
                         </div>
                       </div>
@@ -867,7 +870,7 @@ export default function Portfolio() {
                      <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                      <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
                 </div>
-              </div>
+                </div>
               </div>
             </div>
           </section>
@@ -928,8 +931,8 @@ export default function Portfolio() {
                            {t.workExperience.agribank.department}
                          </p>
                        </div>
-                     </div>
-                     
+              </div>
+
                      {/* Position & Period - Modern Tags */}
                      <div className="flex flex-wrap gap-2 sm:gap-3">
                        <span className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 rounded-full text-[#00ff88] font-semibold text-xs sm:text-sm">
@@ -953,15 +956,15 @@ export default function Portfolio() {
                              {achievement}
                            </p>
                          </div>
-                       </div>
-                     ))}
-                   </div>
+                    </div>
+                  ))}
+                </div>
                    
                    {/* Decorative Elements */}
                    <div className="absolute top-4 right-4 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 animate-pulse"></div>
                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-[#00d4ff] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-                 </div>
-               </div>
+              </div>
+            </div>
 
                {/* Maybank Experience - Modern Card */}
                <div className="group relative">
@@ -980,7 +983,7 @@ export default function Portfolio() {
                        <div className="flex-1">
                          <h3 className="text-lg sm:text-xl font-bold text-white mb-1 leading-tight">
                            {t.workExperience.maybank.company}
-                         </h3>
+              </h3>
                          <p className="text-[#00d4ff] font-medium text-sm">
                            {t.workExperience.maybank.department}
                          </p>
@@ -994,9 +997,9 @@ export default function Portfolio() {
                        </span>
                        <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 rounded-full text-[#7c3aed] font-medium text-sm">
                          {t.workExperience.maybank.period}
-                       </span>
-                     </div>
-                   </div>
+                            </span>
+                          </div>
+                          </div>
 
                    {/* Achievements - Modern List */}
                    <div className="space-y-4">
@@ -1005,20 +1008,20 @@ export default function Portfolio() {
                          <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-white/5 to-white/10 border border-white/10 hover:border-[#00d4ff]/30 transition-all duration-300">
                            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg flex items-center justify-center shadow-md">
                              <span className="text-white font-bold text-sm">{index + 1}</span>
-                           </div>
+                        </div>
                            <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover/achievement:text-gray-100 transition-colors">
                              {achievement}
                            </p>
-                         </div>
-                       </div>
-                     ))}
+                      </div>
+                            </div>
+                          ))}
                    </div>
                    
                    {/* Decorative Elements */}
                    <div className="absolute top-4 right-4 w-2 h-2 bg-[#00d4ff] rounded-full opacity-60 animate-pulse"></div>
                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-[#7c3aed] rounded-full opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
-                 </div>
-               </div>
+                        </div>
+                      </div>
 
               </div>
             </div>
