@@ -83,16 +83,16 @@ export default function Portfolio() {
         ],
       },
       education: {
-        title: "HỌC VẤN",
+        title: "EDUCATION",
         university: "University of Economics and Law (VNU-HCM)",
         degree: "Bachelor of Financial Technology",
-        relevantCoursework: "Chuyên ngành học tập:",
+        relevantCoursework: "Relevant Coursework:",
         courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management",
         gpa: "3.0/4.0",
         ielts: "6.0",
-        certifications: "CHỨNG CHỈ CHUYÊN NGHIỆP & THÀNH TỰU",
-        cert1: "Chứng chỉ Chuyên nghiệp Coursera: Ask Questions to Make Data-Driven Decisions",
-        cert2: "Viện Deep Learning NVIDIA: Accelerating End-to-End Data Science Workflows"
+        certifications: "CERTIFICATIONS & AWARDS",
+        cert1: "Coursera Professional Certificate: Ask Questions to Make Data-Driven Decisions",
+        cert2: "NVIDIA Deep Learning Institute: Accelerating End-to-End Data Science Workflows"
       },
         workExperience: {
           label: "KINH NGHIỆM CHUYÊN NGHIỆP",
@@ -228,11 +228,11 @@ export default function Portfolio() {
         title: "EDUCATION",
         university: "University of Economics and Law (VNU-HCM)",
         degree: "Bachelor of Financial Technology",
-        relevantCoursework: "Core Academic Focus:",
+        relevantCoursework: "Relevant Coursework:",
         courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management",
         gpa: "3.0/4.0",
         ielts: "6.0",
-        certifications: "PROFESSIONAL CERTIFICATIONS & ACHIEVEMENTS",
+        certifications: "CERTIFICATIONS & AWARDS",
         cert1: "Coursera Professional Certificate: Ask Questions to Make Data-Driven Decisions",
         cert2: "NVIDIA Deep Learning Institute: Accelerating End-to-End Data Science Workflows"
       },
@@ -726,7 +726,7 @@ export default function Portfolio() {
                              <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
                                {t.education.degree}
                              </p>
-                           </div>
+                            </div>
                           </div>
                         </div>
 
@@ -736,27 +736,27 @@ export default function Portfolio() {
                            <div className="flex items-center gap-3 mb-3">
                              <div className="w-8 h-8 bg-[#00ff88] rounded-lg flex items-center justify-center">
                                <span className="text-white font-bold text-sm">📊</span>
-                        </div>
+                              </div>
                              <h4 className="text-[#00ff88] font-semibold text-sm sm:text-base uppercase tracking-wider">GPA</h4>
-                      </div>
+                          </div>
                            <p className="text-white font-bold text-2xl sm:text-3xl">
                              {t.education.gpa}
                            </p>
                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Out of 4.0 Scale</p>
-                    </div>
-                         
+                        </div>
+
                          <div className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group">
                            <div className="flex items-center gap-3 mb-3">
                              <div className="w-8 h-8 bg-[#00d4ff] rounded-lg flex items-center justify-center">
                                <span className="text-white font-bold text-sm">🌍</span>
-                </div>
+                        </div>
                              <h4 className="text-[#00d4ff] font-semibold text-sm sm:text-base uppercase tracking-wider">IELTS</h4>
-              </div>
+                      </div>
                            <p className="text-white font-bold text-2xl sm:text-3xl">
                              {t.education.ielts}
                            </p>
                            <p className="text-gray-400 text-xs sm:text-sm mt-1">English Proficiency</p>
-                  </div>
+                    </div>
                 </div>
 
                        {/* Coursework Section */}
@@ -772,8 +772,8 @@ export default function Portfolio() {
                          <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                            {t.education.courses}
                          </p>
-                        </div>
-                        </div>
+                </div>
+              </div>
 
                      {/* Certifications Section - Modern Design */}
                      <div>
@@ -785,9 +785,9 @@ export default function Portfolio() {
                            <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-[#7c3aed]">
                              {t.education.certifications}
                            </h4>
-                    </div>
-                       </div>
-                       
+                  </div>
+                </div>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                           <div 
                             className="bg-gradient-to-br from-[#00ff88]/10 via-[#00ff88]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300 group hover:scale-105 cursor-pointer"
@@ -816,7 +816,7 @@ export default function Portfolio() {
                             <div className="flex items-start gap-4">
                               <div className="w-12 h-12 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center flex-shrink-0">
                                 <span className="text-white font-bold text-lg">🚀</span>
-                              </div>
+                          </div>
                               <div>
                                 <h5 className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">NVIDIA</h5>
                                 <p className="text-gray-200 text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors">
@@ -825,11 +825,11 @@ export default function Portfolio() {
                                 <p className="text-[#00d4ff] text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                   Click to view certificate →
                                 </p>
-                              </div>
-                            </div>
                           </div>
                         </div>
-                     </div>
+                        </div>
+                      </div>
+                    </div>
                      
                      {/* Decorative Corner Elements */}
                      <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
@@ -841,8 +841,8 @@ export default function Portfolio() {
                      <div className="absolute top-1/4 left-4 sm:left-6 md:left-8 w-1 sm:w-1.5 md:w-2 h-1 sm:h-1.5 md:h-2 bg-[#00ff88] rounded-full opacity-40 animate-pulse"></div>
                      <div className="absolute top-3/4 right-4 sm:right-6 md:right-8 w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#00d4ff] rounded-full opacity-40 animate-pulse" style={{animationDelay: '1.5s'}}></div>
                      <div className="absolute bottom-1/4 left-6 sm:left-8 md:left-12 w-0.5 sm:w-1 h-0.5 sm:h-1 bg-[#7c3aed] rounded-full opacity-40 animate-pulse" style={{animationDelay: '3s'}}></div>
-                      </div>
                 </div>
+              </div>
               </div>
             </div>
           </section>
@@ -897,25 +897,25 @@ export default function Portfolio() {
                            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
                              <span className="text-white font-bold text-lg sm:text-xl">🏦</span>
                            </div>
-                           <div>
+              <div>
                              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
                                {t.workExperience.agribank.company}
-                             </h3>
+                </h3>
                              <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
                                {t.workExperience.agribank.department}
                              </p>
-                           </div>
-                         </div>
+                        </div>
+                      </div>
                          <div className="flex flex-col sm:items-end gap-2">
                            <span className="text-[#00ff88] font-semibold text-lg sm:text-xl bg-[#00ff88]/10 px-4 py-2 rounded-lg">
                              {t.workExperience.agribank.position}
-                           </span>
+                          </span>
                            <span className="text-[#00d4ff] text-sm sm:text-base bg-[#00d4ff]/10 px-3 py-1 rounded-lg">
                              {t.workExperience.agribank.period}
                            </span>
-                         </div>
-                       </div>
-                     </div>
+                      </div>
+                    </div>
+                </div>
               </div>
 
                    {/* Achievements - Modern Card Design */}
@@ -925,11 +925,11 @@ export default function Portfolio() {
                          <div className="flex items-start gap-4">
                            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center mt-1">
                              <span className="text-white font-bold text-sm">{index + 1}</span>
-                           </div>
+            </div>
                            <p className="text-gray-300 text-base sm:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
                              {achievement}
                            </p>
-                         </div>
+              </div>
                     </div>
                   ))}
                 </div>
@@ -1195,8 +1195,8 @@ export default function Portfolio() {
                     </div>
                     </div>
                   ))}
+                  </div>
                 </div>
-              </div>
         </section>
 
           {/* Goals Section */}
@@ -1210,7 +1210,7 @@ export default function Portfolio() {
                   <p className="text-xl text-gray-300 leading-relaxed">
                     {t.personal.goals.description}
                   </p>
-            </div>
+              </div>
           </div>
         </div>
         </section>
@@ -1237,8 +1237,8 @@ export default function Portfolio() {
                 </a>
               ))}
             </nav>
-          </div>
-        </div>
+                </div>
+              </div>
       </footer>
 
       {/* PDF Viewer Modal */}
@@ -1248,17 +1248,17 @@ export default function Portfolio() {
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="text-lg font-semibold text-gray-900">
                 {selectedPdf === 'coursera' ? 'Coursera Certificate' : 'NVIDIA Certificate'}
-              </h3>
+                </h3>
               <button
                 onClick={() => setSelectedPdf(null)}
                 className="text-gray-500 hover:text-gray-700 transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
-            </div>
+                    </div>
             <div className="h-[70vh]">
               <iframe
-                src={`/${selectedPdf === 'coursera' ? 'Ask Questions to Make Data-Driven Decisions.pdf' : 'My Learning NVIDIA.pdf'}`}
+                src={`/${selectedPdf === 'coursera' ? 'AskQuestiontoMakeData-DrivenDecisions.pdf' : 'MylearningNVIDIA.pdf'}`}
                 className="w-full h-full"
                 title="Certificate PDF"
               />
