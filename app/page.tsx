@@ -602,7 +602,7 @@ export default function Portfolio() {
                <div className="animate-fade-in">
                  {/* Hero Slogan - Manchester Font */}
                  <div className="text-center mb-16 sm:mb-20 md:mb-24 lg:mb-32">
-                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-manchester text-white leading-tight tracking-wide mb-8">
+                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight tracking-wide mb-8" style={{fontFamily: 'var(--font-manchester), Manrope, sans-serif'}}>
                      <span className="block">
                        "Transforming vision into reality,
                      </span>
@@ -611,7 +611,7 @@ export default function Portfolio() {
                      </span>
                    </h1>
                    <div className="w-32 sm:w-48 md:w-64 lg:w-80 xl:w-96 h-1 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent mx-auto"></div>
-                 </div>
+                </div>
 
                  {/* Two-Column Content Layout */}
                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
@@ -626,7 +626,7 @@ export default function Portfolio() {
                          {t.about.description}
                        </p>
                      </div>
-                   </div>
+                </div>
 
                    {/* Column 2: Skills Section */}
                    <div className="space-y-6">
@@ -642,14 +642,14 @@ export default function Portfolio() {
                            <div className="flex items-center gap-4 mb-4">
                              <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#22c55e] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                📊
-                             </div>
+                </div>
                              <h3 className="text-lg font-bold text-white">Product Management</h3>
-                           </div>
+              </div>
                            <p className="text-[#d1d5db] text-sm leading-relaxed">
                              Strategic planning, user research, and product development lifecycle management.
                            </p>
-                         </div>
-                       </div>
+            </div>
+          </div>
 
                        {/* Data Analytics */}
                        <div className="group relative">
@@ -657,14 +657,14 @@ export default function Portfolio() {
                            <div className="flex items-center gap-4 mb-4">
                              <div className="w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                📈
-                             </div>
+                </div>
                              <h3 className="text-lg font-bold text-white">Data Analytics</h3>
-                           </div>
+              </div>
                            <p className="text-[#d1d5db] text-sm leading-relaxed">
                              Advanced data analysis, visualization, and insights generation for business decisions.
                            </p>
-                         </div>
-                       </div>
+          </div>
+        </div>
 
                        {/* Python & SQL */}
                        <div className="group relative">
@@ -679,7 +679,7 @@ export default function Portfolio() {
                              Programming expertise in Python and SQL for data processing and analysis.
                            </p>
                          </div>
-                       </div>
+              </div>
 
                        {/* Business Research */}
                        <div className="group relative">
@@ -715,11 +715,11 @@ export default function Portfolio() {
                          </span>
                          <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 rounded-full text-[#00d4ff] font-medium text-sm">
                            FinTech Solutions
-                         </span>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
+                              </span>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
                         </div>
              </div>
            </section>
@@ -750,10 +750,10 @@ export default function Portfolio() {
                             </span>
                        <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#00ff88]/30 to-[#00d4ff]/30 blur-lg sm:blur-xl rounded-full"></div>
                        <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 blur-md sm:blur-lg rounded-full"></div>
-                        </div>
+                              </div>
                      <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-transparent"></div>
-                </div>
-              </div>
+                          </div>
+                        </div>
 
                  {/* Education Content Container */}
                  <div className="relative">
@@ -771,7 +771,7 @@ export default function Portfolio() {
                            <div className="flex items-center gap-4 flex-1">
                              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
                                <span className="text-white font-bold text-lg sm:text-xl">🎓</span>
-                             </div>
+                        </div>
                              <div className="flex-1">
                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
                                  {t.education.university}
@@ -779,8 +779,8 @@ export default function Portfolio() {
                                <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
                                  {t.education.degree}
                                </p>
-                             </div>
-                           </div>
+                      </div>
+                    </div>
                            <div className="flex-shrink-0 sm:ml-4">
                              <a
                                href="https://www.uel.edu.vn/"
@@ -792,8 +792,8 @@ export default function Portfolio() {
                                <ArrowRight className="w-4 h-4" />
                              </a>
                             </div>
-                  </div>
                 </div>
+              </div>
 
                        {/* Academic Performance Cards */}
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -801,14 +801,14 @@ export default function Portfolio() {
                            <div className="flex items-center gap-3 mb-3">
                              <div className="w-8 h-8 bg-[#00ff88] rounded-lg flex items-center justify-center">
                                <span className="text-white font-bold text-sm">📊</span>
-                              </div>
+                  </div>
                              <h4 className="text-[#00ff88] font-semibold text-sm sm:text-base uppercase tracking-wider">GPA</h4>
                           </div>
                            <p className="text-white font-bold text-2xl sm:text-3xl">
                              {t.education.gpa}
                            </p>
                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Out of 4.0 Scale</p>
-                        </div>
+                </div>
 
                          <div className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group">
                            <div className="flex items-center gap-3 mb-3">
