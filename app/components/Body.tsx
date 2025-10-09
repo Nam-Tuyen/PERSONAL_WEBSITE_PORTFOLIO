@@ -43,28 +43,87 @@ export default function Body({ activeSection, translations }: BodyProps) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Profile Image */}
                 <div className="relative order-2 lg:order-1">
-                  <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px]">
-                    {/* Tech Frame Effects */}
+                  <div className="relative w-80 h-96 sm:w-96 sm:h-[500px] lg:w-[450px] lg:h-[550px] group">
+                    {/* Advanced Tech Frame Effects */}
                     <div className="absolute inset-0 pointer-events-none">
-                      {/* Corner Brackets */}
-                      <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-[#00ff88] opacity-60"></div>
-                      <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-[#00d4ff] opacity-60"></div>
-                      <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-[#7c3aed] opacity-60"></div>
-                      <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-[#00ff88] opacity-60"></div>
+                      {/* Multi-layer Corner Brackets */}
+                      <div className="absolute top-0 left-0 w-20 h-20">
+                        <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-[#00ff88] opacity-80"></div>
+                        <div className="absolute top-2 left-2 w-12 h-12 border-l border-t border-[#00ff88] opacity-40"></div>
+                        <div className="absolute top-4 left-4 w-8 h-8 border-l border-t border-[#00ff88] opacity-20"></div>
+                      </div>
+                      <div className="absolute top-0 right-0 w-20 h-20">
+                        <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-[#00d4ff] opacity-80"></div>
+                        <div className="absolute top-2 right-2 w-12 h-12 border-r border-t border-[#00d4ff] opacity-40"></div>
+                        <div className="absolute top-4 right-4 w-8 h-8 border-r border-t border-[#00d4ff] opacity-20"></div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 w-20 h-20">
+                        <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-[#7c3aed] opacity-80"></div>
+                        <div className="absolute bottom-2 left-2 w-12 h-12 border-l border-b border-[#7c3aed] opacity-40"></div>
+                        <div className="absolute bottom-4 left-4 w-8 h-8 border-l border-b border-[#7c3aed] opacity-20"></div>
+                      </div>
+                      <div className="absolute bottom-0 right-0 w-20 h-20">
+                        <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-[#00ff88] opacity-80"></div>
+                        <div className="absolute bottom-2 right-2 w-12 h-12 border-r border-b border-[#00ff88] opacity-40"></div>
+                        <div className="absolute bottom-4 right-4 w-8 h-8 border-r border-b border-[#00ff88] opacity-20"></div>
+                      </div>
                       
-                      {/* Floating Data Points */}
-                      <div className="absolute top-8 right-8 w-3 h-3 bg-[#00ff88] rounded-full animate-pulse"></div>
-                      <div className="absolute bottom-12 left-8 w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                      <div className="absolute top-1/2 right-4 w-2 h-2 bg-[#7c3aed] rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                      {/* Enhanced Floating Data Points */}
+                      <div className="absolute top-8 right-8 w-4 h-4 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
+                      <div className="absolute bottom-12 left-8 w-3 h-3 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '1s'}}></div>
+                      <div className="absolute top-1/2 right-4 w-2 h-2 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '2s'}}></div>
+                      <div className="absolute top-1/4 left-4 w-2 h-2 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50" style={{animationDelay: '0.5s'}}></div>
+                      <div className="absolute bottom-1/4 right-8 w-3 h-3 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '1.5s'}}></div>
+                      
+                      {/* Circuit Lines */}
+                      <div className="absolute top-12 left-12 w-16 h-px bg-gradient-to-r from-[#00ff88] to-transparent opacity-60"></div>
+                      <div className="absolute bottom-12 right-12 w-16 h-px bg-gradient-to-l from-[#00d4ff] to-transparent opacity-60"></div>
+                      <div className="absolute top-1/2 left-8 w-px h-12 bg-gradient-to-b from-[#7c3aed] to-transparent opacity-60"></div>
+                      <div className="absolute top-1/3 right-8 w-px h-8 bg-gradient-to-b from-[#00ff88] to-transparent opacity-60"></div>
                     </div>
                     
-                    {/* Profile Image */}
-                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
-                      <img 
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
-                        alt="LE NAM TUYEN" 
-                        className="w-full h-full object-cover"
-                      />
+                    {/* Enhanced Profile Image Container */}
+                    <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl shadow-black/50 group-hover:shadow-[#00ff88]/20 transition-all duration-500">
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/10 via-transparent to-[#7c3aed]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                      
+                      {/* Animated Border */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-sm"></div>
+                      <div className="absolute inset-[2px] rounded-3xl bg-black"></div>
+                      
+                      {/* Main Image */}
+                      <div className="relative w-full h-full rounded-3xl overflow-hidden">
+                        <img 
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                          alt="LE NAM TUYEN" 
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        
+                        {/* Scan Line Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff88]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-scan"></div>
+                        
+                        {/* Glitch Effect Overlay */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                          <div className="absolute top-0 left-0 w-full h-1 bg-[#00ff88] animate-pulse"></div>
+                          <div className="absolute top-1/3 left-0 w-full h-1 bg-[#00d4ff] animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                          <div className="absolute top-2/3 left-0 w-full h-1 bg-[#7c3aed] animate-pulse" style={{animationDelay: '1s'}}></div>
+                        </div>
+                      </div>
+                      
+                      {/* Status Indicators */}
+                      <div className="absolute top-4 left-4 flex space-x-2 z-20">
+                        <div className="w-3 h-3 bg-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
+                        <div className="w-2 h-2 bg-[#00d4ff] rounded-full animate-pulse shadow-lg shadow-[#00d4ff]/50" style={{animationDelay: '0.5s'}}></div>
+                        <div className="w-2 h-2 bg-[#7c3aed] rounded-full animate-pulse shadow-lg shadow-[#7c3aed]/50" style={{animationDelay: '1s'}}></div>
+                      </div>
+                      
+                      {/* Tech Text Overlay */}
+                      <div className="absolute bottom-4 right-4 text-[#00ff88] text-xs font-mono opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-20">
+                        <div className="flex items-center space-x-1">
+                          <div className="w-1 h-1 bg-[#00ff88] rounded-full animate-pulse"></div>
+                          <span>ONLINE</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

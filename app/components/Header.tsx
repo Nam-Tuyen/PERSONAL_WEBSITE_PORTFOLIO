@@ -56,24 +56,16 @@ export default function Header({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-20">
-          {/* Logo with Enhanced Tech Effects */}
+          {/* CPU Icon Only */}
           <div className="flex-shrink-0 relative group">
             <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-            <div className="relative flex items-center space-x-3 px-4 py-2 bg-black/60 backdrop-blur-xl rounded-xl border border-[#00ff88]/40 shadow-lg shadow-[#00ff88]/20">
+            <div className="relative flex items-center justify-center w-12 h-12 bg-black/60 backdrop-blur-xl rounded-xl border border-[#00ff88]/40 shadow-lg shadow-[#00ff88]/20">
               {/* Animated CPU Icon */}
               <div className="relative">
                 <div className="w-10 h-10 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00ff88]/30">
                   <Cpu className="w-5 h-5 text-white animate-pulse" />
                 </div>
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg opacity-30 blur-sm animate-pulse"></div>
-              </div>
-              
-              {/* Logo Text with Tech Style */}
-              <div className="hidden sm:block">
-                <div className="text-2xl font-black bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent tracking-wider">
-                  {logo}
-                </div>
-                <div className="text-xs text-[#00ff88] font-mono opacity-70">SYSTEM_ACTIVE</div>
               </div>
             </div>
           </div>
