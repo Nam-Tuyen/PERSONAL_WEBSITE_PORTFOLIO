@@ -600,13 +600,13 @@ export default function Portfolio() {
              
              <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
                <div className="animate-fade-in">
-                 {/* Hero Slogan - Ultra Prominent */}
+                 {/* Hero Slogan - Amsterdam Four Font */}
                  <div className="text-center mb-16 sm:mb-20 md:mb-24 lg:mb-32">
-                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white leading-tight tracking-tight mb-8">
-                     <span className="block bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-text text-transparent">
+                   <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-amsterdam-four text-white leading-tight tracking-wide mb-8">
+                     <span className="block">
                        "Transforming vision into reality,
                      </span>
-                     <span className="block bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent">
+                     <span className="block">
                        turning intent into results"
                      </span>
                    </h1>

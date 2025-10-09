@@ -16,6 +16,7 @@ const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
 })
 
+
 export const metadata: Metadata = {
   title: "Tuyen Le Nam - FinTech Portfolio",
   description: "Personal portfolio of Tuyen Le Nam - Product Manager, Data Analyst, and FinTech Enthusiast",
