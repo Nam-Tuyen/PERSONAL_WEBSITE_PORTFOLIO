@@ -1273,7 +1273,7 @@ export default function Portfolio() {
               {selectedPdf === 'coursera' ? (
                 <div className="flex items-center justify-center h-full p-4">
                   <img
-                    src="/ask question to make data driven.PNG"
+                    src="/ask-question-to-make-data-driven.PNG"
                     alt="Coursera Certificate"
                     className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
                   />
