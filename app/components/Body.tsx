@@ -24,13 +24,6 @@ export default function Body({ activeSection, translations }: BodyProps) {
             title={translations.hero.title}
           />
 
-          {/* About Section */}
-          <AboutSection
-            label={translations.about.label}
-            quote={translations.about.quote}
-            description={translations.about.description}
-          />
-
           {/* Education Section */}
           <EducationSection
             title={translations.education.title}
@@ -41,6 +34,13 @@ export default function Body({ activeSection, translations }: BodyProps) {
           <WorkExperienceSection
             title={translations.workExperience.title}
             experiences={[translations.workExperience.agribank, translations.workExperience.maybank]}
+          />
+
+          {/* About Section */}
+          <AboutSection
+            label={translations.about.label}
+            quote={translations.about.quote}
+            description={translations.about.description}
           />
         </>
       )}
