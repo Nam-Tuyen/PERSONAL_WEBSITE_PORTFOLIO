@@ -715,20 +715,33 @@ export default function Portfolio() {
                      <div className="mb-8 sm:mb-10 md:mb-12">
                        {/* University Header Card */}
                        <div className="bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 mb-6 sm:mb-8 hover:border-[#00ff88]/40 transition-all duration-300">
-                         <div className="flex items-center gap-4 mb-4">
-                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
-                             <span className="text-white font-bold text-lg sm:text-xl">🎓</span>
-                              </div>
-                           <div>
-                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
-                               {t.education.university}
-                             </h3>
-                             <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
-                               {t.education.degree}
-                             </p>
-                            </div>
-                          </div>
-                        </div>
+                         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+                           <div className="flex items-center gap-4 flex-1">
+                             <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center">
+                               <span className="text-white font-bold text-lg sm:text-xl">🎓</span>
+                             </div>
+                             <div className="flex-1">
+                               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                                 {t.education.university}
+                               </h3>
+                               <p className="text-[#00ff88] font-semibold text-sm sm:text-base">
+                                 {t.education.degree}
+                               </p>
+                             </div>
+                           </div>
+                           <div className="flex-shrink-0 sm:ml-4">
+                             <a
+                               href="https://www.uel.edu.vn/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:from-[#00ff88]/80 hover:to-[#00d4ff]/80 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00ff88]/25 w-full sm:w-auto justify-center"
+                             >
+                               <span>Learn More</span>
+                               <ArrowRight className="w-4 h-4" />
+                             </a>
+                           </div>
+                         </div>
+                       </div>
 
                        {/* Academic Performance Cards */}
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
