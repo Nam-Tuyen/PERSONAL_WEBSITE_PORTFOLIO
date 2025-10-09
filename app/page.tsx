@@ -44,6 +44,7 @@ import {
 export default function Portfolio() {
   const [language, setLanguage] = useState("vi")
   const [activeSection, setActiveSection] = useState("professional")
+  const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
 
   const translations = {
     vi: {
@@ -86,7 +87,7 @@ export default function Portfolio() {
         university: "University of Economics and Law (VNU-HCM)",
         degree: "Bachelor of Financial Technology",
         relevantCoursework: "Chuyên ngành học tập:",
-        courses: "Hệ thống Cơ sở dữ liệu Nâng cao, Khai thác & Phân tích Dữ liệu, Phân tích Dữ liệu Lớn trong Tài chính, Công nghệ Blockchain & Tiền điện tử, Ứng dụng Phần mềm Tài chính, Hệ thống Thông tin Kinh doanh, Quản lý Tài chính & Đánh giá Rủi ro, Tài chính Định lượng & Mô hình hóa",
+        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management",
         gpa: "3.0/4.0",
         ielts: "6.0",
         certifications: "CHỨNG CHỈ CHUYÊN NGHIỆP & THÀNH TỰU",
@@ -228,7 +229,7 @@ export default function Portfolio() {
         university: "University of Economics and Law (VNU-HCM)",
         degree: "Bachelor of Financial Technology",
         relevantCoursework: "Core Academic Focus:",
-        courses: "Advanced Database Systems, Data Mining & Analytics, Big Data Analytics in Finance, Blockchain Technology & Cryptocurrency, Financial Software Applications, Business Intelligence Systems, Financial Management & Risk Assessment, Quantitative Finance & Modeling",
+        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management",
         gpa: "3.0/4.0",
         ielts: "6.0",
         certifications: "PROFESSIONAL CERTIFICATIONS & ACHIEVEMENTS",
@@ -787,35 +788,47 @@ export default function Portfolio() {
                     </div>
                        </div>
                        
-                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                         <div className="bg-gradient-to-br from-[#00ff88]/10 via-[#00ff88]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300 group hover:scale-105">
-                           <div className="flex items-start gap-4">
-                             <div className="w-12 h-12 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center flex-shrink-0">
-                               <span className="text-white font-bold text-lg">📈</span>
-                             </div>
-                             <div>
-                               <h5 className="text-[#00ff88] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">Coursera</h5>
-                               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-                                 {t.education.cert1}
-                               </p>
-                             </div>
-                </div>
-              </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                          <div 
+                            className="bg-gradient-to-br from-[#00ff88]/10 via-[#00ff88]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300 group hover:scale-105 cursor-pointer"
+                            onClick={() => setSelectedPdf('coursera')}
+                          >
+                            <div className="flex items-start gap-4">
+                              <div className="w-12 h-12 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-lg">📈</span>
+                              </div>
+                              <div>
+                                <h5 className="text-[#00ff88] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">Coursera</h5>
+                                <p className="text-gray-200 text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors">
+                                  {t.education.cert1}
+                                </p>
+                                <p className="text-[#00ff88] text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                  Click to view certificate →
+                                </p>
+                              </div>
+                            </div>
+                          </div>
 
-                         <div className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group hover:scale-105">
-                           <div className="flex items-start gap-4">
-                             <div className="w-12 h-12 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center flex-shrink-0">
-                               <span className="text-white font-bold text-lg">🚀</span>
-                             </div>
-              <div>
-                               <h5 className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">NVIDIA</h5>
-                               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-                                 {t.education.cert2}
-                               </p>
+                          <div 
+                            className="bg-gradient-to-br from-[#00d4ff]/10 via-[#00d4ff]/5 to-transparent rounded-2xl p-6 sm:p-8 border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 transition-all duration-300 group hover:scale-105 cursor-pointer"
+                            onClick={() => setSelectedPdf('nvidia')}
+                          >
+                            <div className="flex items-start gap-4">
+                              <div className="w-12 h-12 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-lg">🚀</span>
+                              </div>
+                              <div>
+                                <h5 className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 uppercase tracking-wider">NVIDIA</h5>
+                                <p className="text-gray-200 text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors">
+                                  {t.education.cert2}
+                                </p>
+                                <p className="text-[#00d4ff] text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                  Click to view certificate →
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      </div>
-                    </div>
                      </div>
                      
                      {/* Decorative Corner Elements */}
@@ -945,7 +958,7 @@ export default function Portfolio() {
                            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center">
                              <span className="text-white font-bold text-lg sm:text-xl">💼</span>
                            </div>
-                           <div>
+                        <div>
                              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
                                {t.workExperience.maybank.company}
                              </h3>
@@ -960,11 +973,11 @@ export default function Portfolio() {
                            </span>
                            <span className="text-[#7c3aed] text-sm sm:text-base bg-[#7c3aed]/10 px-3 py-1 rounded-lg">
                              {t.workExperience.maybank.period}
-                           </span>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                            </span>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
 
                    {/* Achievements - Modern Card Design */}
                    <div className="space-y-4 sm:space-y-6">
@@ -978,8 +991,8 @@ export default function Portfolio() {
                              {achievement}
                            </p>
                          </div>
-                       </div>
-                     ))}
+                            </div>
+                          ))}
                    </div>
 
                    {/* Decorative Corner Elements */}
@@ -1227,6 +1240,32 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+
+      {/* PDF Viewer Modal */}
+      {selectedPdf && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-4 border-b">
+              <h3 className="text-lg font-semibold text-gray-900">
+                {selectedPdf === 'coursera' ? 'Coursera Certificate' : 'NVIDIA Certificate'}
+              </h3>
+              <button
+                onClick={() => setSelectedPdf(null)}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="h-[70vh]">
+              <iframe
+                src={`/${selectedPdf === 'coursera' ? 'Ask Questions to Make Data-Driven Decisions.pdf' : 'My Learning NVIDIA.pdf'}`}
+                className="w-full h-full"
+                title="Certificate PDF"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
