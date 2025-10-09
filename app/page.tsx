@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import {
   Linkedin,
   Mail,
@@ -43,6 +43,7 @@ import {
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("vi")
+  const [activeSection, setActiveSection] = useState("professional")
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
 
   const translations = {
@@ -68,6 +69,10 @@ export default function Portfolio() {
         ],
         name: "LE NAM <span>TUYEN</span>",
         description: "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research. I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes. Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
+        mainQuote: "Transforming vision into reality and turning intent into results",
+        background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes.",
+        recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
+        objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
         quote: "Transforming vision into reality turning intent into results",
         button: "LEARN MORE",
         social: [
@@ -157,6 +162,174 @@ export default function Portfolio() {
         copyright: "© 2024 LÊ NAM TUYÊN. DATA ANALYST & FINTECH SPECIALIST TẠI HỒ CHÍ MINH",
         nav: ["VỀ TÔI", "DỊCH VỤ", "DỰ ÁN", "LIÊN HỆ"],
       },
+      personal: {
+        title: "CUỘC SỐNG CÁ NHÂN",
+        subtitle: "Khám phá những điều thú vị về tôi",
+        hobbies: {
+          title: "SỞ THÍCH",
+          items: [
+            { name: "Đọc sách", description: "Yêu thích sách về công nghệ và kinh doanh", icon: "📚" },
+            { name: "Du lịch", description: "Khám phá những vùng đất mới", icon: "✈️" },
+            { name: "Nấu ăn", description: "Thử nghiệm các món ăn mới", icon: "🍳" },
+            { name: "Thể thao", description: "Chạy bộ và bơi lội", icon: "🏃‍♂️" },
+          ]
+        },
+        values: {
+          title: "GIÁ TRỊ CỐT LÕI",
+          items: [
+            "Sáng tạo và đổi mới",
+            "Học hỏi liên tục",
+            "Làm việc nhóm hiệu quả",
+            "Trách nhiệm và đáng tin cậy"
+          ]
+        },
+        goals: {
+          title: "MỤC TIÊU",
+          description: "Phát triển bản thân và đóng góp tích cực cho cộng đồng công nghệ"
+        }
+      },
+    },
+    en: {
+      header: {
+        location: "HO CHI MINH, VIETNAM",
+      },
+      hero: {
+        greeting: "HI, I AM",
+        name: "LE NAM TUYEN",
+        title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH",
+        subtitle: "Transforming vision into reality turning intent into results",
+        cta: "CONTACT ME",
+      },
+      about: {
+        label: "ABOUT ME",
+        title: "I DELIVER EXCELLENT DATA EXPERIENCES ACROSS MULTIPLE PLATFORMS.",
+        headline: [
+          "I DELIVER EXCEPTIONAL",
+          "DATA EXPERIENCES",
+          "ACROSS VARIOUS",
+          "PLATFORMS."
+        ],
+        name: "LE NAM <span>TUYEN</span>",
+        description: "As a final-year Financial Technology student at the University of Economics and Law, I specialize in product development, data analytics, and business research. I design and deliver workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. I lead cross-functional teams to convert insights into product requirements, define success metrics, and run lean experiments that drive user experience and business outcomes. Proficient in Python, SQL, and modern visualization tools, I build templates and reporting systems that scale quality. My goal is to grow as a Data analyst in FinTech.",
+        mainQuote: "Transforming vision into reality and turning intent into results",
+        background: "Background includes market research, financial analysis, and mentoring teams through hypothesis formulation, metric selection, and post-mortem review to improve user experience and business outcomes.",
+        recognition: "Recognized for establishing templates and processes that scale delivery quality across cohorts and for aligning business strategy with data-driven decision making.",
+        objective: "Career objective is to grow as a Product Manager or Product Owner, applying research, analytics, and strategic thinking to build scalable FinTech products that solve meaningful problems.",
+        quote: "Transforming vision into reality and turning intent into results",
+        button: "LEARN MORE",
+        social: [
+          { name: "LinkedIn", icon: "Li", url: "https://linkedin.com/in/nam-tuyen" },
+          { name: "GitHub", icon: "Gh", url: "https://github.com/Nam-Tuyen" },
+          { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
+          { name: "Portfolio", icon: "Po", url: "#" },
+        ],
+      },
+      education: {
+        title: "EDUCATION",
+        university: "University of Economics and Law (VNU-HCM)",
+        degree: "Bachelor of Financial Technology",
+        relevantCoursework: "Relevant Coursework:",
+        courses: "Database, Data mining, Big Data Analytics in Finance, Blockchain Technology, Application software package for finance, Big data Business information systems, Financial Management, Financial risk management",
+        gpa: "3.0/4.0",
+        ielts: "6.0",
+        certifications: "CERTIFICATIONS & AWARDS",
+        cert1: "Ask Questions to Make Data-Driven Decisions",
+        cert2: "Accelerating End-to-End Data Science Workflows"
+      },
+        workExperience: {
+          label: "PROFESSIONAL EXPERIENCE",
+          agribank: {
+            company: "Vietnam Bank for Agriculture and Rural Development",
+            department: "Binh Trieu Branch - Credit Analysis Division",
+            position: "Financial Analysis Intern",
+            period: "March 2025 - June 2025",
+            achievements: [
+              "Delivered comprehensive sector and macroeconomic market intelligence reports to senior relationship managers and credit committees, enabling data-driven lending decisions.",
+              "Developed sophisticated cash-flow modeling frameworks and scenario analysis tools, creating capital-utilization strategies for working capital, CAPEX, and facility optimization to enhance risk assessment capabilities.",
+              "Conducted rigorous credit risk evaluations and authored detailed loan recommendations through comprehensive financial statement analysis, including P&L, balance sheet, and cash flow assessments with advanced ratio and trend analysis."
+            ]
+          },
+          maybank: {
+            company: "Maybank Investment Bank Vietnam",
+            department: "Phu Nhuan Branch - Investment Research & Analytics",
+            position: "Data Analytics & Research Intern",
+            period: "June 2024 - December 2024",
+            achievements: [
+              "Engineered Python-based data processing pipelines to clean, visualize, and analyze 100,000+ trading records, producing daily and weekly market intelligence reports that reduced manual analysis time by 30%.",
+              "Executed comprehensive financial analysis and equity valuation for publicly traded companies, developed investment briefs, monitored portfolio performance, and supported client acquisition through advanced prospect screening and presentation materials.",
+              "Architected and deployed end-to-end data pipeline infrastructure for real-time stock ticker analysis, delivering actionable market insights and improving team operational efficiency by 25%."
+            ]
+          }
+        },
+      projects: {
+        label: "MY PROJECTS",
+        intro: "Here are some of my favorite projects where I prioritized user experience and visual aesthetics. Each project reflects my dedication to creating seamless and engaging digital experiences.",
+        items: [
+          {
+            title: "FINTECH DASHBOARD",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+          },
+          {
+            title: "DATA ANALYTICS PLATFORM",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          },
+          {
+            title: "BUSINESS INTELLIGENCE",
+            year: "2024",
+            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+          },
+        ],
+      },
+      testimonial: {
+        label: "TESTIMONIAL",
+        quote: "Tuyen did an amazing job analyzing our data and designing our dashboard. <span>It looks absolutely fantastic!</span>",
+        author: "Nguyen Van A",
+        position: "CEO of FinTech Startup",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      },
+      contact: {
+        label: "HAVE A PROJECT IN MIND?",
+        title: "LET'S <span>CONNECT</span>",
+        button: "SEND MESSAGE",
+        social: [
+          { name: "LinkedIn", icon: "Li", url: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/" },
+          { name: "Email", icon: "Em", url: "mailto:bingo.namtuyen@gmail.com" },
+          { name: "GitHub", icon: "Gh", url: "#" },
+          { name: "Portfolio", icon: "Po", url: "#" },
+        ],
+      },
+      footer: {
+        copyright: "© 2024 LE NAM TUYEN. DATA ANALYST & FINTECH SPECIALIST IN HO CHI MINH",
+        nav: ["ABOUT", "SERVICES", "PROJECTS", "CONTACT"],
+      },
+      personal: {
+        title: "PERSONAL LIFE",
+        subtitle: "Discover interesting things about me",
+        hobbies: {
+          title: "HOBBIES",
+          items: [
+            { name: "Reading", description: "Love books about technology and business", icon: "📚" },
+            { name: "Traveling", description: "Exploring new places", icon: "✈️" },
+            { name: "Cooking", description: "Experimenting with new recipes", icon: "🍳" },
+            { name: "Sports", description: "Running and swimming", icon: "🏃‍♂️" },
+          ]
+        },
+        values: {
+          title: "CORE VALUES",
+          items: [
+            "Creativity and innovation",
+            "Continuous learning",
+            "Effective teamwork",
+            "Responsibility and reliability"
+          ]
+        },
+        goals: {
+          title: "GOALS",
+          description: "Personal development and positive contribution to the tech community"
+        }
+      },
     },
   }
 
@@ -186,11 +359,38 @@ export default function Portfolio() {
               {t.header.location}
             </div>
 
+            {/* Navigation */}
+            <nav className="flex items-center gap-2 sm:gap-4 lg:gap-8">
+                <button
+                onClick={() => setActiveSection("professional")}
+                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm ${
+                  activeSection === "professional"
+                    ? "bg-gradient-primary text-white shadow-lg shadow-[#00ff88]/30"
+                    : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
+                }`}
+              >
+                <span className="hidden sm:inline">PROFESSIONAL</span>
+                <span className="sm:hidden">PRO</span>
+                </button>
+              <button
+                onClick={() => setActiveSection("personal")}
+                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm ${
+                  activeSection === "personal"
+                    ? "bg-gradient-tech text-white shadow-lg shadow-[#00d4ff]/30"
+                    : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
+                }`}
+              >
+                <span className="hidden sm:inline">PERSONAL</span>
+                <span className="sm:hidden">PER</span>
+              </button>
+            </nav>
             </div>
           </div>
       </header>
 
-      {/* Main Content */}
+      {/* Professional Section */}
+      {activeSection === "professional" && (
+        <>
           {/* Hero Section - Enhanced Responsive Layout */}
           <section className="min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24 lg:pt-32 relative overflow-hidden">
             {/* Floating Decorative Elements - Hidden on mobile */}
@@ -695,16 +895,16 @@ export default function Portfolio() {
                       </div>
             </div>
 
-             {/* Work Experience Content Container - Enhanced Responsive Grid */}
-             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+             {/* Work Experience Content Container - Enhanced Responsive Grid with Equal Heights */}
+             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-stretch">
                
                {/* Agribank Experience - Modern Card */}
-               <div className="group relative">
+               <div className="group relative flex flex-col h-full">
                  {/* Animated Background Glow */}
                  <div className="absolute -inset-1 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
                  
-                 {/* Main Card - Enhanced Responsive */}
-                 <div className="relative bg-gradient-to-br from-gray-900/90 via-black/80 to-gray-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#00ff88]/30 transition-all duration-500 hover:scale-[1.02]">
+                 {/* Main Card - Enhanced Responsive with Equal Height */}
+                 <div className="relative bg-gradient-to-br from-gray-900/90 via-black/80 to-gray-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#00ff88]/30 transition-all duration-500 hover:scale-[1.02] flex flex-col h-full">
                    
                    {/* Company Header - Sleek Design */}
                    <div className="mb-6">
@@ -734,7 +934,7 @@ export default function Portfolio() {
                    </div>
 
                    {/* Achievements - Modern List */}
-                   <div className="space-y-4">
+                   <div className="space-y-4 flex-1">
                      {t.workExperience.agribank.achievements.map((achievement, index) => (
                        <div key={index} className="relative group/achievement">
                          <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-white/5 to-white/10 border border-white/10 hover:border-[#00ff88]/30 transition-all duration-300">
@@ -756,12 +956,12 @@ export default function Portfolio() {
                </div>
 
                {/* Maybank Experience - Modern Card */}
-               <div className="group relative">
+               <div className="group relative flex flex-col h-full">
                  {/* Animated Background Glow */}
                  <div className="absolute -inset-1 bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#00ff88] rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
                  
-                 {/* Main Card - Enhanced Responsive */}
-                 <div className="relative bg-gradient-to-br from-gray-900/90 via-black/80 to-gray-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#00d4ff]/30 transition-all duration-500 hover:scale-[1.02]">
+                 {/* Main Card - Enhanced Responsive with Equal Height */}
+                 <div className="relative bg-gradient-to-br from-gray-900/90 via-black/80 to-gray-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#00d4ff]/30 transition-all duration-500 hover:scale-[1.02] flex flex-col h-full">
                    
                    {/* Company Header - Sleek Design */}
                    <div className="mb-6">
@@ -791,7 +991,7 @@ export default function Portfolio() {
                    </div>
 
                    {/* Achievements - Modern List */}
-                   <div className="space-y-4">
+                   <div className="space-y-4 flex-1">
                      {t.workExperience.maybank.achievements.map((achievement, index) => (
                        <div key={index} className="relative group/achievement">
                          <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-white/5 to-white/10 border border-white/10 hover:border-[#00d4ff]/30 transition-all duration-300">
@@ -927,6 +1127,104 @@ export default function Portfolio() {
               </div>
           </div>
         </section>
+        </>
+      )}
+
+      {/* Personal Section */}
+      {activeSection === "personal" && (
+        <>
+          {/* Personal Hero */}
+          <section className="min-h-screen flex items-center pt-24 relative">
+            <div className="max-w-7xl mx-auto px-10 relative z-10">
+              <div className="text-center animate-fade-in">
+                <h1 className="text-responsive-xl font-black leading-tight mb-8 uppercase">
+                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.personal.title}</span>
+                </h1>
+                <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+                  {t.personal.subtitle}
+                </p>
+          </div>
+        </div>
+          </section>
+
+          {/* Hobbies Section */}
+          <section className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-10">
+              <div className="text-center mb-16 animate-fade-in">
+                <h2 className="text-gradient-tech text-4xl font-black mb-5">
+                  {t.personal.hobbies.title}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {t.personal.hobbies.items.map((hobby, index) => (
+                  <div 
+                    key={index}
+                    className="card-tech text-center group hover:scale-105 transition-all duration-300 animate-scale-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
+                      {hobby.icon}
+                </div>
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-gradient-primary transition-all">
+                      {hobby.name}
+                </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {hobby.description}
+                    </p>
+                    </div>
+                  ))}
+                    </div>
+                  </div>
+          </section>
+
+          {/* Values Section */}
+          <section className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-10">
+              <div className="text-center mb-16 animate-fade-in">
+                <h2 className="text-gradient-cyber text-4xl font-black mb-5">
+                  {t.personal.values.title}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {t.personal.values.items.map((value, index) => (
+                  <div 
+                    key={index}
+                    className="card-cyber p-8 group hover:scale-105 transition-all duration-300 animate-slide-up"
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gradient-tech rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span className="text-white font-bold">{index + 1}</span>
+                </div>
+                      <h3 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
+                        {value}
+                </h3>
+                    </div>
+                    </div>
+                  ))}
+                  </div>
+                </div>
+        </section>
+
+          {/* Goals Section */}
+          <section className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-10">
+              <div className="text-center animate-fade-in">
+                <h2 className="text-gradient-primary text-4xl font-black mb-8">
+                  {t.personal.goals.title}
+            </h2>
+                <div className="max-w-4xl mx-auto card-tech p-12">
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    {t.personal.goals.description}
+                  </p>
+              </div>
+          </div>
+        </div>
+        </section>
+        </>
+      )}
 
       {/* Footer */}
       <footer className="py-12 glass-tech border-t border-[#00ff88]/20">
@@ -988,6 +1286,7 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
+      )}
     </div>
   )
 }
