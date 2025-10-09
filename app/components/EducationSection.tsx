@@ -11,16 +11,11 @@ interface EducationSectionProps {
     gpa: string
     ielts: string
     coursework: string[]
-    certificates: {
-      coursera: {
-        title: string
-        image: string
-      }
-      nvidia: {
-        title: string
-        image: string
-      }
-    }
+    certifications: Array<{
+      title: string
+      issuer: string
+      image: string
+    }>
   }
 }
 
@@ -115,43 +110,26 @@ export default function EducationSection({ title, data }: EducationSectionProps)
               <span>Professional Certifications</span>
             </h4>
 
-            {/* Coursera Certificate */}
-            <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300 cursor-pointer group"
-                 onClick={() => setSelectedCertificate('coursera')}>
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00ff88]/25">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h5 className="text-lg font-bold text-white mb-2 group-hover:text-[#00ff88] transition-colors duration-300">
-                    {data.certificates.coursera.title}
-                  </h5>
-                  <p className="text-sm text-gray-400">Coursera Professional Certificate</p>
-                </div>
-                <div className="text-[#00ff88] group-hover:translate-x-1 transition-transform duration-300">
-                  <ExternalLink className="w-5 h-5" />
-                </div>
-              </div>
-            </div>
-
-            {/* NVIDIA Certificate */}
-            <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00d4ff]/10 transition-all duration-300 cursor-pointer group"
-                 onClick={() => setSelectedCertificate('nvidia')}>
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg flex items-center justify-center shadow-lg shadow-[#00d4ff]/25">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h5 className="text-lg font-bold text-white mb-2 group-hover:text-[#00d4ff] transition-colors duration-300">
-                    {data.certificates.nvidia.title}
-                  </h5>
-                  <p className="text-sm text-gray-400">NVIDIA Deep Learning Institute</p>
-                </div>
-                <div className="text-[#00d4ff] group-hover:translate-x-1 transition-transform duration-300">
-                  <ExternalLink className="w-5 h-5" />
+            {/* Certificates */}
+            {data.certifications.map((cert, index) => (
+              <div key={index} className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl hover:shadow-xl hover:shadow-[#00ff88]/10 transition-all duration-300 cursor-pointer group"
+                   onClick={() => setSelectedCertificate(cert.title)}>
+                <div className="flex items-center space-x-4">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${index === 0 ? 'from-[#00ff88] to-[#00d4ff]' : 'from-[#00d4ff] to-[#7c3aed]'} rounded-lg flex items-center justify-center shadow-lg ${index === 0 ? 'shadow-[#00ff88]/25' : 'shadow-[#00d4ff]/25'}`}>
+                    <Award className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h5 className={`text-lg font-bold text-white mb-2 group-hover:${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} transition-colors duration-300`}>
+                      {cert.title}
+                    </h5>
+                    <p className="text-sm text-gray-400">{cert.issuer} Professional Certificate</p>
+                  </div>
+                  <div className={`${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} group-hover:translate-x-1 transition-transform duration-300`}>
+                    <ExternalLink className="w-5 h-5" />
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -163,7 +141,7 @@ export default function EducationSection({ title, data }: EducationSectionProps)
                  onClick={(e) => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold text-white">
-                  {selectedCertificate === 'coursera' ? data.certificates.coursera.title : data.certificates.nvidia.title}
+                  {selectedCertificate}
                 </h3>
                 <button
                   onClick={() => setSelectedCertificate(null)}
@@ -174,8 +152,8 @@ export default function EducationSection({ title, data }: EducationSectionProps)
               </div>
               <div className="text-center">
                 <img
-                  src={selectedCertificate === 'coursera' ? data.certificates.coursera.image : data.certificates.nvidia.image}
-                  alt={selectedCertificate === 'coursera' ? data.certificates.coursera.title : data.certificates.nvidia.title}
+                  src={data.certifications.find(cert => cert.title === selectedCertificate)?.image || ''}
+                  alt={selectedCertificate}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
