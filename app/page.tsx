@@ -43,7 +43,6 @@ import {
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("vi")
-  const [activeSection, setActiveSection] = useState("professional")
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
 
   const translations = {
@@ -158,32 +157,6 @@ export default function Portfolio() {
         copyright: "© 2024 LÊ NAM TUYÊN. DATA ANALYST & FINTECH SPECIALIST TẠI HỒ CHÍ MINH",
         nav: ["VỀ TÔI", "DỊCH VỤ", "DỰ ÁN", "LIÊN HỆ"],
       },
-      personal: {
-        title: "CUỘC SỐNG CÁ NHÂN",
-        subtitle: "Khám phá những điều thú vị về tôi",
-        hobbies: {
-          title: "SỞ THÍCH",
-          items: [
-            { name: "Đọc sách", description: "Yêu thích sách về công nghệ và kinh doanh", icon: "📚" },
-            { name: "Du lịch", description: "Khám phá những vùng đất mới", icon: "✈️" },
-            { name: "Nấu ăn", description: "Thử nghiệm các món ăn mới", icon: "🍳" },
-            { name: "Thể thao", description: "Chạy bộ và bơi lội", icon: "🏃‍♂️" },
-          ]
-        },
-        values: {
-          title: "GIÁ TRỊ CỐT LÕI",
-          items: [
-            "Sáng tạo và đổi mới",
-            "Học hỏi liên tục",
-            "Làm việc nhóm hiệu quả",
-            "Trách nhiệm và đáng tin cậy"
-          ]
-        },
-        goals: {
-          title: "MỤC TIÊU",
-          description: "Phát triển bản thân và đóng góp tích cực cho cộng đồng công nghệ"
-        }
-      },
     },
   }
 
@@ -213,37 +186,11 @@ export default function Portfolio() {
               {t.header.location}
             </div>
 
-            {/* Navigation */}
-            <nav className="flex items-center gap-2 sm:gap-4 lg:gap-8">
-                <button
-                onClick={() => setActiveSection("professional")}
-                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm ${
-                  activeSection === "professional"
-                    ? "bg-gradient-primary text-white shadow-lg shadow-[#00ff88]/30"
-                    : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
-                }`}
-              >
-                <span className="hidden sm:inline">PROFESSIONAL</span>
-                <span className="sm:hidden">PRO</span>
-                </button>
-              <button
-                onClick={() => setActiveSection("personal")}
-                className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-xs sm:text-sm ${
-                  activeSection === "personal"
-                    ? "bg-gradient-tech text-white shadow-lg shadow-[#00d4ff]/30"
-                    : "text-gray-300 hover:text-white hover:bg-[#1a1a1a]/50"
-                }`}
-              >
-                <span className="hidden sm:inline">PERSONAL</span>
-                <span className="sm:hidden">PER</span>
-              </button>
-            </nav>
             </div>
           </div>
       </header>
 
-      {/* Professional Section */}
-      {activeSection === "professional" && (
+      {/* Main Content */}
         <>
           {/* Hero Section - Enhanced Responsive Layout */}
           <section className="min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24 lg:pt-32 relative overflow-hidden">
@@ -981,104 +928,6 @@ export default function Portfolio() {
               </div>
           </div>
         </section>
-        </>
-      )}
-
-      {/* Personal Section */}
-      {activeSection === "personal" && (
-        <>
-          {/* Personal Hero */}
-          <section className="min-h-screen flex items-center pt-24 relative">
-            <div className="max-w-7xl mx-auto px-10 relative z-10">
-              <div className="text-center animate-fade-in">
-                <h1 className="text-responsive-xl font-black leading-tight mb-8 uppercase">
-                  <span className="bg-gradient-to-r from-[#EEEEEE] to-[#EEEEEE]/80 bg-clip-text text-transparent">{t.personal.title}</span>
-                </h1>
-                <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
-                  {t.personal.subtitle}
-                </p>
-          </div>
-        </div>
-          </section>
-
-          {/* Hobbies Section */}
-          <section className="py-24 relative">
-            <div className="max-w-7xl mx-auto px-10">
-              <div className="text-center mb-16 animate-fade-in">
-                <h2 className="text-gradient-tech text-4xl font-black mb-5">
-                  {t.personal.hobbies.title}
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {t.personal.hobbies.items.map((hobby, index) => (
-                  <div 
-                    key={index}
-                    className="card-tech text-center group hover:scale-105 transition-all duration-300 animate-scale-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">
-                      {hobby.icon}
-                </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-gradient-primary transition-all">
-                      {hobby.name}
-                </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {hobby.description}
-                    </p>
-                    </div>
-                  ))}
-                    </div>
-                  </div>
-          </section>
-
-          {/* Values Section */}
-          <section className="py-24 relative">
-            <div className="max-w-7xl mx-auto px-10">
-              <div className="text-center mb-16 animate-fade-in">
-                <h2 className="text-gradient-cyber text-4xl font-black mb-5">
-                  {t.personal.values.title}
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {t.personal.values.items.map((value, index) => (
-                  <div 
-                    key={index}
-                    className="card-cyber p-8 group hover:scale-105 transition-all duration-300 animate-slide-up"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-tech rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span className="text-white font-bold">{index + 1}</span>
-                </div>
-                      <h3 className="text-xl font-bold group-hover:text-gradient-tech transition-all">
-                        {value}
-                </h3>
-                    </div>
-                    </div>
-                  ))}
-                  </div>
-                </div>
-        </section>
-
-          {/* Goals Section */}
-          <section className="py-24 relative">
-            <div className="max-w-7xl mx-auto px-10">
-              <div className="text-center animate-fade-in">
-                <h2 className="text-gradient-primary text-4xl font-black mb-8">
-                  {t.personal.goals.title}
-            </h2>
-                <div className="max-w-4xl mx-auto card-tech p-12">
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    {t.personal.goals.description}
-                  </p>
-              </div>
-          </div>
-        </div>
-        </section>
-        </>
-      )}
 
       {/* Footer */}
       <footer className="py-12 glass-tech border-t border-[#00ff88]/20">
