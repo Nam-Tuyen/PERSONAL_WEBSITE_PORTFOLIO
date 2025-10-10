@@ -13,12 +13,8 @@ export default function Sidebar({ translations, activeSection, onSectionChange }
   const [showContacts, setShowContacts] = useState(false)
 
   const navItems = [
-    { key: "about", label: translations?.about?.label || "ABOUT ME" },
-    { key: "education", label: translations?.education?.title || "EDUCATION" },
-    { key: "skills", label: translations?.skills?.title || "SKILLS" },
-    { key: "certifications", label: translations?.certifications?.title || "CERTIFICATIONS" },
-    { key: "experience", label: translations?.workExperience?.title || "EXPERIENCE" },
-    { key: "projects", label: translations?.projects?.title || "PROJECTS" }
+    { key: "professional", label: translations?.header?.nav?.professional || "PROFESSIONAL" },
+    { key: "personal", label: translations?.header?.nav?.personal || "PERSONAL" }
   ]
 
   return (

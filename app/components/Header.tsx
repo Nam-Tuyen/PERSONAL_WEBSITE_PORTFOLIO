@@ -71,89 +71,55 @@ export default function Header({
           </div>
 
           {/* Desktop Navigation with High-Tech Style */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-4">
             <button
-              onClick={() => onSectionChange('about')}
-              className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 group overflow-hidden text-sm ${
-                activeSection === 'about'
+              onClick={() => onSectionChange('professional')}
+              className={`relative px-6 py-3 rounded-xl font-bold transition-all duration-300 group overflow-hidden ${
+                activeSection === 'professional'
                   ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black shadow-lg shadow-[#00ff88]/30'
                   : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00ff88]/40'
               }`}
             >
-              <div className="relative z-10">About</div>
-              {activeSection === 'about' && (
+              {/* Background Animation */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              
+              <div className="relative z-10 flex items-center space-x-2">
+                <Terminal className="w-4 h-4" />
+                <span className="font-mono tracking-wider">{navItems.professional}</span>
+              </div>
+              
+              {/* Active Indicator */}
+              {activeSection === 'professional' && (
                 <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-pulse"></div>
               )}
+              
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
             
             <button
-              onClick={() => onSectionChange('education')}
-              className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 group overflow-hidden text-sm ${
-                activeSection === 'education'
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black shadow-lg shadow-[#00ff88]/30'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00ff88]/40'
+              onClick={() => onSectionChange('personal')}
+              className={`relative px-6 py-3 rounded-xl font-bold transition-all duration-300 group overflow-hidden ${
+                activeSection === 'personal'
+                  ? 'bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] text-white shadow-lg shadow-[#00d4ff]/30'
+                  : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00d4ff]/40'
               }`}
             >
-              <div className="relative z-10">Education</div>
-              {activeSection === 'education' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-pulse"></div>
+              {/* Background Animation */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              
+              <div className="relative z-10 flex items-center space-x-2">
+                <Zap className="w-4 h-4" />
+                <span className="font-mono tracking-wider">{navItems.personal}</span>
+              </div>
+              
+              {/* Active Indicator */}
+              {activeSection === 'personal' && (
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full animate-pulse"></div>
               )}
-            </button>
-            
-            <button
-              onClick={() => onSectionChange('skills')}
-              className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 group overflow-hidden text-sm ${
-                activeSection === 'skills'
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black shadow-lg shadow-[#00ff88]/30'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00ff88]/40'
-              }`}
-            >
-              <div className="relative z-10">Skills</div>
-              {activeSection === 'skills' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-pulse"></div>
-              )}
-            </button>
-            
-            <button
-              onClick={() => onSectionChange('certifications')}
-              className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 group overflow-hidden text-sm ${
-                activeSection === 'certifications'
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black shadow-lg shadow-[#00ff88]/30'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00ff88]/40'
-              }`}
-            >
-              <div className="relative z-10">Certifications</div>
-              {activeSection === 'certifications' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-pulse"></div>
-              )}
-            </button>
-            
-            <button
-              onClick={() => onSectionChange('experience')}
-              className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 group overflow-hidden text-sm ${
-                activeSection === 'experience'
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black shadow-lg shadow-[#00ff88]/30'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00ff88]/40'
-              }`}
-            >
-              <div className="relative z-10">Experience</div>
-              {activeSection === 'experience' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-pulse"></div>
-              )}
-            </button>
-            
-            <button
-              onClick={() => onSectionChange('projects')}
-              className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 group overflow-hidden text-sm ${
-                activeSection === 'projects'
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black shadow-lg shadow-[#00ff88]/30'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-[#00ff88]/40'
-              }`}
-            >
-              <div className="relative z-10">Projects</div>
-              {activeSection === 'projects' && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-pulse"></div>
-              )}
+              
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
             
           </nav>

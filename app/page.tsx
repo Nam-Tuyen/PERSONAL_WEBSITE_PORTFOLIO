@@ -10,7 +10,7 @@ import UniverseBackground from "./components/UniverseBackground"
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
-  const [activeSection, setActiveSection] = useState("about")
+  const [activeSection, setActiveSection] = useState("professional")
 
   const t = translations[language as keyof typeof translations]
 

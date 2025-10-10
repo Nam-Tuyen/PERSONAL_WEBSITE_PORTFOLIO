@@ -137,6 +137,111 @@ export const translations = {
           link: "#"
         }
       ]
+    },
+
+    // Personal Page Sections
+    personal: {
+      title: "CÁ NHÂN",
+      subtitle: "Khám phá con người cá nhân của tôi",
+      myHobby: {
+        title: "SỞ THÍCH CỦA TÔI",
+        subtitle: "Những điều tôi thích làm trong thời gian rảnh",
+        hobbies: [
+          {
+            name: "Nhiếp ảnh",
+            description: "Ghi lại những khoảnh khắc và khám phá các góc nhìn khác nhau qua ống kính",
+            icon: "📸",
+            details: "Tôi thích chụp ảnh phong cảnh và đường phố, luôn tìm kiếm những góc độ và ánh sáng độc đáo"
+          },
+          {
+            name: "Đọc sách",
+            description: "Mở rộng kiến thức thông qua sách và bài viết",
+            icon: "📚",
+            details: "Tập trung vào sách kinh doanh, công nghệ và phát triển bản thân"
+          },
+          {
+            name: "Chơi game",
+            description: "Game chiến thuật và giải đố để kích thích tinh thần",
+            icon: "🎮",
+            details: "Thích game chiến thuật và thử thách giải đố"
+          },
+          {
+            name: "Du lịch",
+            description: "Khám phá các nền văn hóa và địa điểm mới",
+            icon: "✈️",
+            details: "Yêu thích khám phá những điểm đến mới và trải nghiệm các nền văn hóa khác nhau"
+          }
+        ]
+      },
+      extracurriculars: {
+        title: "HOẠT ĐỘNG NGOẠI KHÓA",
+        subtitle: "Các hoạt động ngoài học tập và công việc",
+        activities: [
+          {
+            name: "Hội Sinh viên",
+            position: "Phó Chủ tịch",
+            period: "2022 - 2023",
+            description: "Dẫn dắt các sáng kiến sinh viên và tổ chức sự kiện trong khuôn viên",
+            achievements: [
+              "Tổ chức thành công 15+ sự kiện trong khuôn viên",
+              "Tăng sự tham gia của sinh viên lên 40%",
+              "Quản lý ngân sách $50,000 cho các hoạt động sinh viên"
+            ]
+          },
+          {
+            name: "Câu lạc bộ Tranh biện",
+            position: "Đội trưởng",
+            period: "2021 - 2023",
+            description: "Tham gia các giải đấu tranh biện khu vực và quốc gia",
+            achievements: [
+              "Thắng 3 chức vô địch khu vực",
+              "Dẫn dắt đội vào chung kết quốc gia",
+              "Hướng dẫn 20+ thành viên mới"
+            ]
+          },
+          {
+            name: "Công tác Tình nguyện",
+            position: "Tình nguyện viên Cộng đồng",
+            period: "2020 - Hiện tại",
+            description: "Tích cực trong dịch vụ cộng đồng và các vấn đề xã hội",
+            achievements: [
+              "500+ giờ dịch vụ cộng đồng",
+              "Tổ chức các đợt quyên góp thực phẩm cho các trung tâm tạm trú địa phương",
+              "Dạy kèm cho các học sinh có hoàn cảnh khó khăn"
+            ]
+          }
+        ]
+      },
+      achievements: {
+        title: "THÀNH TÍCH",
+        subtitle: "Các cột mốc cá nhân và sự công nhận",
+        personalAchievements: [
+          {
+            name: "Danh sách Hiệu trưởng",
+            period: "2021 - 2023",
+            description: "Duy trì thành tích học tập cao trong suốt thời gian đại học",
+            category: "Học thuật"
+          },
+          {
+            name: "Giải thưởng Lãnh đạo",
+            period: "2023",
+            description: "Được công nhận vì khả năng lãnh đạo xuất sắc trong các tổ chức sinh viên",
+            category: "Lãnh đạo"
+          },
+          {
+            name: "Giải thưởng Dịch vụ Cộng đồng",
+            period: "2022",
+            description: "Được vinh danh vì những đóng góp đáng kể cho dịch vụ cộng đồng",
+            category: "Dịch vụ"
+          },
+          {
+            name: "Giải nhất Cuộc thi Nhiếp ảnh",
+            period: "2023",
+            description: "Giải nhất trong cuộc thi nhiếp ảnh của trường đại học",
+            category: "Sáng tạo"
+          }
+        ]
+      }
     }
   },
   en: {
@@ -277,6 +382,111 @@ export const translations = {
           link: "#"
         }
       ]
+    },
+
+    // Personal Page Sections
+    personal: {
+      title: "PERSONAL",
+      subtitle: "Discover my personal side",
+      myHobby: {
+        title: "MY HOBBY",
+        subtitle: "Things I love to do in my free time",
+        hobbies: [
+          {
+            name: "Photography",
+            description: "Capturing moments and exploring different perspectives through the lens",
+            icon: "📸",
+            details: "I enjoy landscape and street photography, always looking for unique angles and lighting"
+          },
+          {
+            name: "Reading",
+            description: "Expanding knowledge through books and articles",
+            icon: "📚",
+            details: "Focused on business, technology, and personal development books"
+          },
+          {
+            name: "Gaming",
+            description: "Strategic and puzzle games for mental stimulation",
+            icon: "🎮",
+            details: "Enjoy strategy games and puzzle-solving challenges"
+          },
+          {
+            name: "Travel",
+            description: "Exploring new cultures and places",
+            icon: "✈️",
+            details: "Love discovering new destinations and experiencing different cultures"
+          }
+        ]
+      },
+      extracurriculars: {
+        title: "EXTRACURRICULARS",
+        subtitle: "Activities beyond academics and work",
+        activities: [
+          {
+            name: "Student Council",
+            position: "Vice President",
+            period: "2022 - 2023",
+            description: "Led student initiatives and organized campus events",
+            achievements: [
+              "Organized 15+ successful campus events",
+              "Increased student participation by 40%",
+              "Managed budget of $50,000 for student activities"
+            ]
+          },
+          {
+            name: "Debate Club",
+            position: "Team Captain",
+            period: "2021 - 2023",
+            description: "Competed in regional and national debate tournaments",
+            achievements: [
+              "Won 3 regional championships",
+              "Led team to national finals",
+              "Mentored 20+ new members"
+            ]
+          },
+          {
+            name: "Volunteer Work",
+            position: "Community Volunteer",
+            period: "2020 - Present",
+            description: "Active in community service and social causes",
+            achievements: [
+              "500+ hours of community service",
+              "Organized food drives for local shelters",
+              "Tutored underprivileged students"
+            ]
+          }
+        ]
+      },
+      achievements: {
+        title: "ACHIEVEMENTS",
+        subtitle: "Personal milestones and recognitions",
+        personalAchievements: [
+          {
+            name: "Dean's List",
+            period: "2021 - 2023",
+            description: "Maintained high academic performance throughout university",
+            category: "Academic"
+          },
+          {
+            name: "Leadership Award",
+            period: "2023",
+            description: "Recognized for outstanding leadership in student organizations",
+            category: "Leadership"
+          },
+          {
+            name: "Community Service Award",
+            period: "2022",
+            description: "Honored for significant contributions to community service",
+            category: "Service"
+          },
+          {
+            name: "Photography Contest Winner",
+            period: "2023",
+            description: "First place in university photography competition",
+            category: "Creative"
+          }
+        ]
+      }
     }
   }
 }
