@@ -122,9 +122,12 @@ export default function Body({ activeSection, translations }: BodyProps) {
                              {/* Profile Photo */}
                              <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] to-[#00d4ff] shadow-2xl">
                                <img 
-                                 src="/avatar.jpg" 
+                                 src="/Ảnh gửi CV.jpg" 
                                  alt="LE NAM TUYEN"
                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onError={(e) => {
+                                   e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
+                                 }}
                                />
                                {/* Overlay Gradient */}
                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
