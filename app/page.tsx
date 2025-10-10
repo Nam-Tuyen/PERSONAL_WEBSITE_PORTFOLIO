@@ -16,16 +16,16 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen text-white relative overflow-hidden">
       <UniverseBackground />
-      
-      <Sidebar
-        translations={t}
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-        language={language}
-        onLanguageChange={setLanguage}
-        isCollapsed={isSidebarCollapsed}
-        onToggleCollapse={setIsSidebarCollapsed}
-      />
+
+              <Sidebar
+                translations={t}
+                activeSection={activeSection}
+                onSectionChange={setActiveSection}
+                language={language}
+                onLanguageChange={setLanguage}
+                isCollapsed={isSidebarCollapsed}
+                onToggleCollapse={setIsSidebarCollapsed}
+              />
 
       <div className="relative z-10 transition-all duration-500">
         <div className={`min-h-screen transition-all duration-500 ${
@@ -42,11 +42,12 @@ export default function Portfolio() {
                     {/* Tech Grid Background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-3xl blur-3xl"></div>
                     <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-3xl p-2">
-                      <div className="relative overflow-hidden rounded-2xl">
+                      {/* Fixed Aspect Ratio Container */}
+                      <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl">
                         <img 
                           src="/Profilepicture50.jpg" 
                           alt="LE NAM TUYEN" 
-                          className="w-full h-[500px] object-cover transition-all duration-700 group-hover:scale-105"
+                          className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
                         />
                         {/* Tech Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
