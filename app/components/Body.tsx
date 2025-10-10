@@ -64,7 +64,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                       {translations.hero.title}
                     </p>
                   </div>
-
+                  
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button className="group relative px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105 overflow-hidden">
@@ -82,14 +82,14 @@ export default function Body({ activeSection, translations }: BodyProps) {
                       </div>
                     </button>
                   </div>
-
+                  
                   {/* Social Links */}
                   <div className="flex items-center space-x-6 pt-4">
                     <a href={translations.footer.contact.linkedin} target="_blank" rel="noopener noreferrer" 
                        className="group w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg shadow-[#00ff88]/25">
                       <Linkedin className="w-6 h-6 text-black group-hover:scale-110 transition-transform duration-300" />
                     </a>
-                    <a href={translations.footer.contact.github} target="_blank" rel="noopener noreferrer" 
+                    <a href={translations.footer.contact.github} target="_blank" rel="noopener noreferrer"
                        className="group w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg shadow-[#00d4ff]/25">
                       <Github className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
                     </a>
@@ -100,7 +100,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                 </div>
 
-                 {/* Right Column - Profile Photo with Modern Design */}
+                 {/* Right Column - Modern Profile Card */}
                  <div className="relative">
                    <div className="relative w-full h-96 lg:h-[500px]">
                      {/* Main Profile Card */}
@@ -113,7 +113,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                            </div>
-                           <div className="text-xs text-gray-400 font-mono">profile.js</div>
+                           <div className="text-xs text-gray-400 font-mono">PROFILE.JS</div>
                          </div>
                          
                          {/* Profile Photo Section */}
@@ -122,7 +122,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                              {/* Profile Photo */}
                              <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] to-[#00d4ff] shadow-2xl">
                                <img 
-                                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                                 src="/avatar.jpg" 
                                  alt="LE NAM TUYEN"
                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                />
@@ -136,38 +136,21 @@ export default function Body({ activeSection, translations }: BodyProps) {
                              </div>
                              
                              {/* Professional Badge */}
-                             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                               FinTech Expert
+                             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg uppercase tracking-wider">
+                               FINTECH EXPERT
                              </div>
                            </div>
                          </div>
                          
-                         {/* Skills Indicators */}
-                         <div className="grid grid-cols-3 gap-4">
-                           <div className="text-center space-y-2">
-                             <div className="w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg mx-auto flex items-center justify-center">
-                               <TrendingUp className="w-4 h-4 text-white" />
-                             </div>
-                             <div className="text-xs text-gray-300">Analytics</div>
-                           </div>
-                           <div className="text-center space-y-2">
-                             <div className="w-8 h-8 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg mx-auto flex items-center justify-center">
-                               <Target className="w-4 h-4 text-white" />
-                             </div>
-                             <div className="text-xs text-gray-300">Strategy</div>
-                           </div>
-                           <div className="text-center space-y-2">
-                             <div className="w-8 h-8 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-lg mx-auto flex items-center justify-center">
-                               <Zap className="w-4 h-4 text-white" />
-                             </div>
-                             <div className="text-xs text-gray-300">Execution</div>
-                           </div>
-                         </div>
-                         
-                         {/* Footer */}
-                         <div className="flex items-center justify-between text-xs text-gray-400">
-                           <span>Data Analyst & PM</span>
-                           <span>Available for opportunities</span>
+                         {/* Modern Title Section */}
+                         <div className="text-center space-y-3">
+                           <h2 className="text-2xl font-black text-white uppercase tracking-wider">
+                             LE NAM TUYEN
+                           </h2>
+                           <div className="h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
+                           <p className="text-sm text-[#00d4ff] font-bold uppercase tracking-widest">
+                             PRODUCT MANAGER & DATA ANALYST
+                           </p>
                          </div>
                        </div>
                      </div>
@@ -183,8 +166,8 @@ export default function Body({ activeSection, translations }: BodyProps) {
                      {/* Additional Floating Elements */}
                      <div className="absolute top-1/4 -left-6 w-4 h-4 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-ping opacity-60"></div>
                      <div className="absolute bottom-1/4 -right-6 w-3 h-3 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-pulse"></div>
-                   </div>
-                 </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -199,29 +182,29 @@ export default function Body({ activeSection, translations }: BodyProps) {
                     <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-full text-[#00ff88] text-sm font-medium">
                       <User className="w-4 h-4 mr-2" />
                       {translations.about.label}
-                    </div>
-                    
+            </div>
+
                     <h2 className="text-4xl lg:text-5xl font-black leading-tight">
                       <span className="bg-gradient-to-r from-white via-[#00ff88] to-white bg-clip-text text-transparent">
                         Professional
                       </span>
                       <br />
                       <span className="text-white">Profile</span>
-                    </h2>
-                    
+                  </h2>
+                  
                     <blockquote className="text-xl text-[#00d4ff] font-medium italic border-l-4 border-[#00ff88] pl-6">
                       "{translations.about.quote}"
                     </blockquote>
                   </div>
-                </div>
-
+                  </div>
+                  
                 {/* Right Column - Description */}
                 <div className="relative">
                   <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl p-8 lg:p-12">
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed text-lg">
-                        {translations.about.description}
-                      </p>
+                      {translations.about.description}
+                    </p>
                       
                       {/* Key Highlights */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
@@ -277,9 +260,9 @@ export default function Body({ activeSection, translations }: BodyProps) {
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold text-white mb-2">{translations.education.university}</h3>
                         <p className="text-[#00d4ff] font-semibold text-lg">{translations.education.degree}</p>
-                      </div>
-                    </div>
-                    
+              </div>
+            </div>
+
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-white/5 rounded-xl p-4">
                         <div className="text-sm text-gray-400 mb-1">GPA</div>
@@ -288,9 +271,9 @@ export default function Body({ activeSection, translations }: BodyProps) {
                       <div className="bg-white/5 rounded-xl p-4">
                         <div className="text-sm text-gray-400 mb-1">IELTS</div>
                         <div className="text-2xl font-bold text-[#00d4ff]">{translations.education.ielts}</div>
-                      </div>
-                    </div>
-                    
+                </div>
+                  </div>
+                  
                     <a href={translations.education.learnMoreUrl} target="_blank" rel="noopener noreferrer"
                        className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-[#00ff88]/25 transition-all duration-300 transform hover:scale-105">
                       <span>Learn More</span>
@@ -298,7 +281,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                     </a>
                   </div>
                 </div>
-
+                
                 {/* Coursework */}
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold text-white mb-6">Relevant Coursework</h3>
@@ -308,15 +291,15 @@ export default function Body({ activeSection, translations }: BodyProps) {
                         <div className="flex items-center space-x-3">
                           <div className="w-8 h-8 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg flex items-center justify-center">
                             <Code className="w-4 h-4 text-white" />
-                          </div>
+              </div>
                           <p className="text-gray-300 text-sm font-medium group-hover:text-white transition-colors duration-300">{course}</p>
-                        </div>
-                      </div>
+                    </div>
+                    </div>
                     ))}
                   </div>
-                </div>
-              </div>
-            </div>
+                    </div>
+                    </div>
+                  </div>
           </section>
 
           {/* Skills Section - Modern Grid */}
@@ -334,7 +317,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   <br />
                   <span className="text-white">Expertise</span>
                 </h2>
-              </div>
+                </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {translations.skills?.categories && translations.skills.categories.map((category: any, index: number) => (
@@ -347,7 +330,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                         <h3 className="text-xl font-bold text-white group-hover:text-[#00ff88] transition-colors duration-300">
                           {category.name}
                         </h3>
-                      </div>
+                        </div>
                       
                       <div className="flex flex-wrap gap-3">
                         {category.items.map((skill: string, skillIndex: number) => (
@@ -357,10 +340,10 @@ export default function Body({ activeSection, translations }: BodyProps) {
                         ))}
                       </div>
                     </div>
-                  </div>
+                    </div>
                 ))}
               </div>
-            </div>
+                    </div>
           </section>
 
           {/* Certifications Section - Modern Cards */}
@@ -396,9 +379,9 @@ export default function Body({ activeSection, translations }: BodyProps) {
                           </div>
                           <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <ExternalLink className="w-4 h-4 text-white" />
-                          </div>
-                        </div>
-                        
+              </div>
+            </div>
+
                         <div className="space-y-4">
                           <div className="flex items-start space-x-4">
                             <div className={`w-12 h-12 bg-gradient-to-br ${index === 0 ? 'from-[#00ff88] to-[#00d4ff]' : 'from-[#00d4ff] to-[#7c3aed]'} rounded-2xl flex items-center justify-center shadow-lg`}>
@@ -407,7 +390,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                             <div className="flex-1">
                               <h3 className={`text-lg font-bold text-white group-hover:${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} transition-colors duration-300`}>
                                 {cert.title}
-                              </h3>
+                    </h3>
                               <p className="text-sm text-gray-400 mt-1">{cert.description}</p>
                             </div>
                           </div>
@@ -418,10 +401,10 @@ export default function Body({ activeSection, translations }: BodyProps) {
                             </span>
                             <ChevronRight className={`w-5 h-5 ${index === 0 ? 'text-[#00ff88]' : 'text-[#00d4ff]'} group-hover:translate-x-1 transition-transform duration-300`} />
                           </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
+                  </div>
+                </div>
+              </div>
                 ))}
               </div>
             </div>
@@ -462,61 +445,61 @@ export default function Body({ activeSection, translations }: BodyProps) {
                       {/* Content */}
                       <div className="flex-1 bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl group-hover:shadow-2xl group-hover:shadow-[#00ff88]/10 transition-all duration-300 p-8">
                         <div className="space-y-6">
-                          {/* Header */}
+                        {/* Header */}
                           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                            <div>
-                              <h3 className="text-2xl font-bold text-white mb-2">{experience.position}</h3>
-                              <p className="text-xl text-[#00d4ff] font-semibold">{experience.company}</p>
-                            </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-white mb-2">{experience.position}</h3>
+                            <p className="text-xl text-[#00d4ff] font-semibold">{experience.company}</p>
+                          </div>
                             <div className="flex items-center space-x-6 mt-4 lg:mt-0">
-                              <div className="flex items-center space-x-2 text-gray-400">
-                                <Calendar className="w-4 h-4" />
-                                <span className="text-sm">{experience.period}</span>
-                              </div>
-                              <div className="flex items-center space-x-2 text-gray-400">
-                                <MapPin className="w-4 h-4" />
-                                <span className="text-sm">{experience.department}</span>
-                              </div>
+                            <div className="flex items-center space-x-2 text-gray-400">
+                              <Calendar className="w-4 h-4" />
+                              <span className="text-sm">{experience.period}</span>
+                            </div>
+                            <div className="flex items-center space-x-2 text-gray-400">
+                              <MapPin className="w-4 h-4" />
+                              <span className="text-sm">{experience.department}</span>
                             </div>
                           </div>
+                        </div>
 
-                          {/* Achievements */}
-                          <div className="space-y-3">
-                            {experience.achievements && experience.achievements.map((item: string, itemIndex: number) => (
-                              <div key={itemIndex} className="flex items-start space-x-3">
-                                <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                                <p className="text-gray-300 leading-relaxed">{item}</p>
-                              </div>
-                            ))}
-                          </div>
+                        {/* Achievements */}
+                        <div className="space-y-3">
+                          {experience.achievements && experience.achievements.map((item: string, itemIndex: number) => (
+                            <div key={itemIndex} className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                              <p className="text-gray-300 leading-relaxed">{item}</p>
+                            </div>
+                          ))}
+                        </div>
 
-                          {/* Skills Tags */}
+                        {/* Skills Tags */}
                           <div className="flex flex-wrap gap-3">
-                            {index === 0 ? (
-                              <>
+                          {index === 0 ? (
+                            <>
                                 <span className="px-4 py-2 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-xl text-[#00ff88] text-sm font-medium">
-                                  Financial Analysis
-                                </span>
+                                Financial Analysis
+                              </span>
                                 <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] text-sm font-medium">
-                                  Risk Assessment
-                                </span>
+                                Risk Assessment
+                              </span>
                                 <span className="px-4 py-2 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 border border-[#7c3aed]/30 rounded-xl text-[#7c3aed] text-sm font-medium">
-                                  Excel Modeling
-                                </span>
-                              </>
-                            ) : (
-                              <>
+                                Excel Modeling
+                              </span>
+                            </>
+                          ) : (
+                            <>
                                 <span className="px-4 py-2 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-xl text-[#00ff88] text-sm font-medium">
-                                  Market Research
-                                </span>
+                                Market Research
+                              </span>
                                 <span className="px-4 py-2 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] text-sm font-medium">
-                                  Power BI
-                                </span>
+                                Power BI
+                              </span>
                                 <span className="px-4 py-2 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 border border-[#7c3aed]/30 rounded-xl text-[#7c3aed] text-sm font-medium">
-                                  Investment Analysis
-                                </span>
-                              </>
-                            )}
+                                Investment Analysis
+                              </span>
+                            </>
+                          )}
                           </div>
                         </div>
                       </div>
@@ -647,11 +630,11 @@ export default function Body({ activeSection, translations }: BodyProps) {
             </div>
 
             <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
-              {/* Personal Content Header */}
-              <div className="mb-12">
+            {/* Personal Content Header */}
+            <div className="mb-12">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#00ff88] bg-clip-text text-transparent mb-8">
                   {translations.personal?.title || "PERSONAL"}
-                </h1>
+              </h1>
                 <p className="text-lg sm:text-xl text-[#00d4ff] font-medium tracking-wider">
                   {translations.personal?.subtitle || "Discover my personal side"}
                 </p>
@@ -684,7 +667,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                 <p className="text-lg text-[#00d4ff] font-medium mt-4">
                   {translations.personal?.myHobby?.subtitle || "Things I love to do in my free time"}
                 </p>
-              </div>
+                    </div>
 
               {/* Hobbies Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -702,8 +685,8 @@ export default function Body({ activeSection, translations }: BodyProps) {
                     </p>
                   </div>
                 ))}
-              </div>
-            </div>
+                  </div>
+                </div>
           </section>
 
           {/* Extracurriculars Section */}
@@ -720,7 +703,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   animation: 'grid-move 25s linear infinite'
                 }}></div>
               </div>
-            </div>
+                    </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               {/* Section Title */}
@@ -761,9 +744,9 @@ export default function Body({ activeSection, translations }: BodyProps) {
                             <div className="flex items-center space-x-2 text-gray-400">
                               <Calendar className="w-4 h-4" />
                               <span className="text-sm">{activity.period}</span>
-                            </div>
-                          </div>
-                        </div>
+                  </div>
+                </div>
+              </div>
 
                         <p className="text-gray-300 mb-4">{activity.description}</p>
 
@@ -780,8 +763,8 @@ export default function Body({ activeSection, translations }: BodyProps) {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
+                  </div>
+                </div>
           </section>
 
           {/* Achievements Section */}
