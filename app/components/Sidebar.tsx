@@ -9,11 +9,12 @@ interface SidebarProps {
   onSectionChange: (section: string) => void
   language: string
   onLanguageChange: (language: string) => void
+  isCollapsed: boolean
+  onToggleCollapse: (collapsed: boolean) => void
 }
 
-export default function Sidebar({ translations, activeSection, onSectionChange, language, onLanguageChange }: SidebarProps) {
+export default function Sidebar({ translations, activeSection, onSectionChange, language, onLanguageChange, isCollapsed, onToggleCollapse }: SidebarProps) {
   const [showContacts, setShowContacts] = useState(false)
-  const [isCollapsed, setIsCollapsed] = useState(false)
 
   const navItems = [
     { key: "professional", label: translations?.header?.nav?.professional || "PROFESSIONAL" },
@@ -22,10 +23,10 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
-      {/* Modern Toggle Button */}
+      {/* Universal Toggle Button - Works on all devices */}
       <button
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className="fixed top-6 left-6 z-50 w-14 h-14 bg-gradient-to-br from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 lg:hidden group"
+        onClick={() => onToggleCollapse(!isCollapsed)}
+        className="fixed top-6 left-6 z-50 w-14 h-14 bg-gradient-to-br from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
         <div className="relative z-10">
@@ -33,10 +34,10 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
         </div>
       </button>
 
-      {/* Modern Sidebar */}
+      {/* Optimized Sidebar - Collapsible on all devices */}
       <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] border-r border-[#00ff88]/20 shadow-2xl shadow-[#00ff88]/10 z-40 overflow-y-auto transition-all duration-500 ${
         isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-80 opacity-100 translate-x-0'
-      } lg:w-80 lg:opacity-100 lg:translate-x-0`}>
+      }`}>
         
         {/* Enhanced Tech Background Effects */}
         <div className="absolute inset-0 pointer-events-none">

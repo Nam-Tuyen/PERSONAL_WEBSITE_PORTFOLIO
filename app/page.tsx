@@ -11,6 +11,7 @@ import UniverseBackground from "./components/UniverseBackground"
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
   const [activeSection, setActiveSection] = useState("professional")
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
 
   const t = translations[language as keyof typeof translations]
 
@@ -26,14 +27,17 @@ export default function Portfolio() {
                 onSectionChange={setActiveSection}
                 language={language}
                 onLanguageChange={setLanguage}
+                isCollapsed={isSidebarCollapsed}
+                onToggleCollapse={setIsSidebarCollapsed}
               />
 
       {/* Main Content Area */}
-      <div className="lg:ml-80 relative z-10">
+      <div className="relative z-10 transition-all duration-500">
         {/* Body - Main Content */}
         <Body
           activeSection={activeSection}
           translations={t}
+          isSidebarCollapsed={isSidebarCollapsed}
         />
 
         {/* Footer */}
