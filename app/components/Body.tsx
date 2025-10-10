@@ -103,44 +103,32 @@ export default function Body({ activeSection, translations, isSidebarCollapsed =
                   </div>
                 </div>
 
-                 {/* Right Column - Modern Circular Avatar */}
+                 {/* Right Column - Minimalist Tech Avatar */}
                  <div className="relative flex items-center justify-center">
                    <div className="relative group">
-                     {/* Modern Circular Avatar with Tech Effects */}
+                     {/* Minimalist Tech Avatar */}
                      <div className="relative">
-                       {/* Outer Glow Ring */}
-                       <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
+                       {/* Subtle Outer Glow */}
+                       <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-md opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
                        
-                       {/* Inner Glow Ring */}
-                       <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-sm opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
-                       
-                       {/* Main Avatar Container */}
-                       <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-[#00ff88]/50 shadow-2xl shadow-[#00ff88]/25 group-hover:shadow-[#00ff88]/40 transition-all duration-500">
+                       {/* Main Avatar Container - Smaller Scale */}
+                       <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-[#00ff88]/30 shadow-xl shadow-[#00ff88]/10 group-hover:shadow-[#00ff88]/20 transition-all duration-700">
                          <img 
                            src="/Profilepicture.jpg" 
                            alt="LE NAM TUYEN"
-                           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                           className="w-full h-full object-cover object-top scale-75 transition-transform duration-700 group-hover:scale-80"
                            onError={(e) => {
                              e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
                            }}
                          />
                          
-                         {/* Tech Scan Line Effect */}
-                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff88]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                         {/* Minimalist Scan Effect */}
+                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff88]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                        </div>
                        
-                       {/* Status Badge - Modern Position */}
-                       <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-[#00ff88]/25 border-2 border-white/20">
-                         <div className="flex items-center space-x-2">
-                           <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
-                           <span>Available</span>
-                         </div>
-                       </div>
-                       
-                       {/* Floating Tech Elements */}
-                       <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#00ff88] rounded-full animate-ping opacity-60"></div>
-                       <div className="absolute -top-2 -right-6 w-2 h-2 bg-[#00d4ff] rounded-full animate-ping opacity-60" style={{animationDelay: '1s'}}></div>
-                       <div className="absolute -bottom-4 -left-6 w-2 h-2 bg-[#7c3aed] rounded-full animate-ping opacity-60" style={{animationDelay: '2s'}}></div>
+                       {/* Minimalist Tech Indicators */}
+                       <div className="absolute -top-2 -right-2 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+                       <div className="absolute -bottom-2 -left-2 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-40 group-hover:opacity-80 transition-opacity duration-500" style={{animationDelay: '1s'}}></div>
                      </div>
                    </div>
                  </div>
