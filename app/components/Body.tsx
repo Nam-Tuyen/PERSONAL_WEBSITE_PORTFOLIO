@@ -100,94 +100,38 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                 </div>
 
-                 {/* Right Column - Modern Profile Card */}
-                 <div className="relative">
-                   <div className="relative w-full h-96 lg:h-[500px]">
-                     {/* Main Profile Card */}
-                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl p-8">
-                       <div className="h-full flex flex-col justify-between">
-                         {/* Header */}
-                         <div className="flex items-center justify-between">
-                           <div className="flex items-center space-x-3">
-                             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                           </div>
-                           <div className="text-xs text-gray-400 font-mono">PROFILE.JS</div>
-                         </div>
+                 {/* Right Column - Beautiful Profile Image Frame */}
+                 <div className="relative flex items-center justify-center">
+                   <div className="relative w-80 h-96 lg:w-96 lg:h-[480px] group">
+                     {/* Beautiful Frame Design */}
+                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border-2 border-white/20 shadow-2xl p-6">
+                       {/* Inner Frame */}
+                       <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] shadow-inner">
+                         {/* Profile Image */}
+                         <img 
+                           src="/Ảnh gửi CV.jpg" 
+                           alt="LE NAM TUYEN"
+                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                           onError={(e) => {
+                             e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
+                           }}
+                         />
                          
-                         {/* Profile Photo Section */}
-                         <div className="flex-1 flex items-center justify-center">
-                           <div className="relative group">
-                             {/* Profile Photo */}
-                             <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] to-[#00d4ff] shadow-2xl">
-                               <img 
-                                 src="/avatar.jpg" 
-                                 alt="LE NAM TUYEN"
-                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                 onError={(e) => {
-                                   e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
-                                 }}
-                               />
-                               {/* Overlay Image */}
-                               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                 <img 
-                                   src="/Ảnh gửi CV.jpg" 
-                                   alt="LE NAM TUYEN"
-                                   className="w-full h-full object-cover"
-                                 />
-                               </div>
-                             </div>
-                             
-                             {/* Floating Status Badge */}
-                             <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                               <div className="w-3 h-3 bg-white rounded-full"></div>
-                             </div>
-                             
-                             {/* Modern Status Indicator */}
-                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
-                               <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
-                               <span className="text-xs text-[#00ff88] font-medium uppercase tracking-wider">ONLINE</span>
-                             </div>
-                           </div>
-                         </div>
-                         
-                         {/* Modern Title Section */}
-                         <div className="text-center space-y-4">
-                           <div className="relative">
-                             <h2 className="text-2xl font-black text-white uppercase tracking-wider relative z-10">
-                               LE NAM TUYEN
-                             </h2>
-                             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full"></div>
-                           </div>
-                           <div className="space-y-2">
-                             <p className="text-sm text-[#00d4ff] font-bold uppercase tracking-widest">
-                               PRODUCT MANAGER
-                             </p>
-                             <div className="flex items-center justify-center space-x-2">
-                               <div className="w-1 h-1 bg-[#00ff88] rounded-full"></div>
-                               <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
-                               <div className="w-1 h-1 bg-[#7c3aed] rounded-full"></div>
-                             </div>
-                             <p className="text-sm text-[#7c3aed] font-bold uppercase tracking-widest">
-                               DATA ANALYST
-                             </p>
-                           </div>
-                         </div>
+                         {/* Subtle Overlay on Hover */}
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                        </div>
                      </div>
                      
-                     {/* Floating Elements */}
-                     <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                       <Star className="w-4 h-4 text-white" />
-                     </div>
-                     <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-[#7c3aed] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                       <Code className="w-3 h-3 text-white" />
-                     </div>
+                     {/* Decorative Corner Elements */}
+                     <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg animate-pulse"></div>
+                     <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full shadow-lg animate-pulse"></div>
+                     <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full shadow-lg animate-pulse"></div>
+                     <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg animate-pulse"></div>
                      
-                     {/* Additional Floating Elements */}
-                     <div className="absolute top-1/4 -left-6 w-4 h-4 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-ping opacity-60"></div>
-                     <div className="absolute bottom-1/4 -right-6 w-3 h-3 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-pulse"></div>
+                     {/* Floating Accent Elements */}
+                     <div className="absolute top-1/4 -left-4 w-3 h-3 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-bounce opacity-70"></div>
+                     <div className="absolute bottom-1/4 -right-4 w-2 h-2 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-ping opacity-60"></div>
+                     <div className="absolute top-1/2 -right-6 w-4 h-4 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full animate-pulse opacity-50"></div>
                   </div>
                 </div>
               </div>
