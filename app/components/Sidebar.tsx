@@ -66,33 +66,6 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
         <div className="relative z-10 p-8">
           {/* Enhanced Profile Section */}
           <div className="text-center mb-10">
-            <div className="relative w-36 h-36 mx-auto mb-8 group">
-              {/* Multi-layer Profile Frame */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-30 blur-lg animate-pulse"></div>
-                <div className="absolute inset-2 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-20 blur-sm"></div>
-                <div className="absolute inset-4 rounded-full bg-black/80"></div>
-              </div>
-              
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] shadow-2xl">
-                <img 
-                  src="/avatar.jpg" 
-                  alt="LE NAM TUYEN" 
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
-                  }}
-                />
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              
-              {/* Status Indicator */}
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-            </div>
-
             <h1 className="text-3xl font-black text-white mb-3 tracking-wider">
               {translations?.hero?.name || "LE NAM TUYEN"}
             </h1>

@@ -103,22 +103,38 @@ export default function Body({ activeSection, translations, isSidebarCollapsed =
                   </div>
                 </div>
 
-                 {/* Right Column - Clean Professional Portrait */}
+                 {/* Right Column - Modern Circular Avatar */}
                  <div className="relative flex items-center justify-center">
-                   <div className="relative w-80 h-96 lg:w-96 lg:h-[480px] group">
-                     {/* Simple Clean Frame */}
-                     <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                       <img 
-                         src="/Ảnh gửi CV.jpg" 
-                         alt="LE NAM TUYEN"
-                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                         onError={(e) => {
-                           e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
-                         }}
-                       />
+                   <div className="relative w-80 h-80 lg:w-96 lg:h-96 group">
+                     {/* Modern Circular Avatar Frame */}
+                     <div className="relative w-full h-full">
+                       {/* Gradient Border Ring */}
+                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] p-2 animate-pulse">
+                         <div className="w-full h-full rounded-full bg-black/20 backdrop-blur-sm"></div>
+                       </div>
                        
-                       {/* Simple Status Badge */}
-                       <div className="absolute top-4 right-4 bg-[#00ff88] text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                       {/* Inner Avatar Container */}
+                       <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white/20">
+                         <img 
+                           src="/Profilepicture.jpg" 
+                           alt="LE NAM TUYEN"
+                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                           onError={(e) => {
+                             e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
+                           }}
+                         />
+                         
+                         {/* Hover Overlay */}
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                       </div>
+                       
+                       {/* Status Indicator */}
+                       <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-bounce border-4 border-white">
+                         <div className="w-4 h-4 bg-white rounded-full"></div>
+                       </div>
+                       
+                       {/* Floating Status Badge */}
+                       <div className="absolute top-4 right-4 bg-[#00ff88] text-black px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
                          Available
                        </div>
                      </div>
