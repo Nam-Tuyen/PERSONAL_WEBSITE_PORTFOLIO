@@ -129,8 +129,14 @@ export default function Body({ activeSection, translations }: BodyProps) {
                                    e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
                                  }}
                                />
-                               {/* Overlay Gradient */}
-                               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                               {/* Overlay Image */}
+                               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                 <img 
+                                   src="/Ảnh gửi CV.jpg" 
+                                   alt="LE NAM TUYEN"
+                                   className="w-full h-full object-cover"
+                                 />
+                               </div>
                              </div>
                              
                              {/* Floating Status Badge */}
