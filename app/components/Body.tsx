@@ -138,22 +138,35 @@ export default function Body({ activeSection, translations }: BodyProps) {
                                <div className="w-3 h-3 bg-white rounded-full"></div>
                              </div>
                              
-                             {/* Professional Badge */}
-                             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg uppercase tracking-wider">
-                               FINTECH EXPERT
+                             {/* Modern Status Indicator */}
+                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+                               <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
+                               <span className="text-xs text-[#00ff88] font-medium uppercase tracking-wider">ONLINE</span>
                              </div>
                            </div>
                          </div>
                          
                          {/* Modern Title Section */}
-                         <div className="text-center space-y-3">
-                           <h2 className="text-2xl font-black text-white uppercase tracking-wider">
-                             LE NAM TUYEN
-                           </h2>
-                           <div className="h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
-                           <p className="text-sm text-[#00d4ff] font-bold uppercase tracking-widest">
-                             PRODUCT MANAGER & DATA ANALYST
-                           </p>
+                         <div className="text-center space-y-4">
+                           <div className="relative">
+                             <h2 className="text-2xl font-black text-white uppercase tracking-wider relative z-10">
+                               LE NAM TUYEN
+                             </h2>
+                             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full"></div>
+                           </div>
+                           <div className="space-y-2">
+                             <p className="text-sm text-[#00d4ff] font-bold uppercase tracking-widest">
+                               PRODUCT MANAGER
+                             </p>
+                             <div className="flex items-center justify-center space-x-2">
+                               <div className="w-1 h-1 bg-[#00ff88] rounded-full"></div>
+                               <div className="w-1 h-1 bg-[#00d4ff] rounded-full"></div>
+                               <div className="w-1 h-1 bg-[#7c3aed] rounded-full"></div>
+                             </div>
+                             <p className="text-sm text-[#7c3aed] font-bold uppercase tracking-widest">
+                               DATA ANALYST
+                             </p>
+                           </div>
                          </div>
                        </div>
                      </div>
