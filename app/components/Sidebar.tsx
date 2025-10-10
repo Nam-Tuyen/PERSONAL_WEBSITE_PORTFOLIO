@@ -45,7 +45,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange }
             
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#00ff88]/30">
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg" 
+                src="/avatar.jpg" 
                 alt="LE NAM TUYEN" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -55,10 +55,6 @@ export default function Sidebar({ translations, activeSection, onSectionChange }
           <h1 className="text-2xl font-bold text-white mb-2">
             {translations?.hero?.name || "LE NAM TUYEN"}
           </h1>
-          
-          <p className="text-[#00ff88] font-medium text-sm mb-4">
-            {translations?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST"}
-          </p>
 
           {/* Show Contacts Button */}
           <button 
