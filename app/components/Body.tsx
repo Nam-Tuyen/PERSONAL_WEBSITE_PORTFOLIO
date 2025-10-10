@@ -106,17 +106,17 @@ export default function Body({ activeSection, translations, isSidebarCollapsed =
                  {/* Right Column - Minimalist Tech Avatar */}
                  <div className="relative flex items-center justify-center">
                    <div className="relative group">
-                     {/* Minimalist Tech Avatar */}
+                     {/* Minimalist Circular Avatar */}
                      <div className="relative">
                        {/* Subtle Outer Glow */}
-                       <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-md opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
+                       <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
                        
-                       {/* Main Avatar Container - Smaller Scale */}
-                       <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-[#00ff88]/30 shadow-xl shadow-[#00ff88]/10 group-hover:shadow-[#00ff88]/20 transition-all duration-700">
+                       {/* Main Avatar Container - Larger Size */}
+                       <div className="relative w-96 h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-2 border-[#00ff88]/30 shadow-xl shadow-[#00ff88]/10 group-hover:shadow-[#00ff88]/20 transition-all duration-700">
                          <img 
                            src="/Profilepicture.jpg" 
                            alt="LE NAM TUYEN"
-                           className="w-full h-full object-cover object-top scale-75 transition-transform duration-700 group-hover:scale-80"
+                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                            onError={(e) => {
                              e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
                            }}
@@ -124,11 +124,13 @@ export default function Body({ activeSection, translations, isSidebarCollapsed =
                          
                          {/* Minimalist Scan Effect */}
                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff88]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                         
+                         {/* Tech Border Animation */}
+                         <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-[#00ff88] to-[#00d4ff] bg-clip-border opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                        </div>
                        
-                       {/* Minimalist Tech Indicators */}
-                       <div className="absolute -top-2 -right-2 w-2 h-2 bg-[#00ff88] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-                       <div className="absolute -bottom-2 -left-2 w-1.5 h-1.5 bg-[#00d4ff] rounded-full opacity-40 group-hover:opacity-80 transition-opacity duration-500" style={{animationDelay: '1s'}}></div>
+                       {/* Minimalist Status Indicator */}
+                       <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#00ff88] rounded-full shadow-lg animate-pulse"></div>
                      </div>
                    </div>
                  </div>
