@@ -59,10 +59,6 @@ export default function Body({ activeSection, translations }: BodyProps) {
                         {translations.hero.name}
                       </span>
                     </h1>
-                    
-                    <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-                      {translations.hero.title}
-                    </p>
                   </div>
 
                   {/* Action Buttons */}
@@ -100,10 +96,10 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                 </div>
 
-                {/* Right Column - Visual Element */}
+                {/* Right Column - Profile Photo with Modern Design */}
                 <div className="relative">
                   <div className="relative w-full h-96 lg:h-[500px]">
-                    {/* Main Card */}
+                    {/* Main Profile Card */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl p-8">
                       <div className="h-full flex flex-col justify-between">
                         {/* Header */}
@@ -113,42 +109,60 @@ export default function Body({ activeSection, translations }: BodyProps) {
                             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                           </div>
-                          <div className="text-xs text-gray-400 font-mono">portfolio.js</div>
+                          <div className="text-xs text-gray-400 font-mono">profile.js</div>
                         </div>
                         
-                        {/* Content */}
-                        <div className="space-y-6">
-                          <div className="space-y-2">
-                            <div className="h-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded w-3/4"></div>
-                            <div className="h-3 bg-gray-600 rounded w-1/2"></div>
-                            <div className="h-3 bg-gray-600 rounded w-2/3"></div>
+                        {/* Profile Photo Section */}
+                        <div className="flex-1 flex items-center justify-center">
+                          <div className="relative group">
+                            {/* Profile Photo */}
+                            <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] to-[#00d4ff] shadow-2xl">
+                              <img 
+                                src="/images/profile-photo.jpg" 
+                                alt="LE NAM TUYEN - Professional Photo"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              {/* Overlay Gradient */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            {/* Floating Status Badge */}
+                            <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                              <div className="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            
+                            {/* Professional Badge */}
+                            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                              FinTech Expert
+                            </div>
                           </div>
-                          
-                          <div className="grid grid-cols-3 gap-4">
-                            <div className="text-center space-y-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg mx-auto flex items-center justify-center">
-                                <TrendingUp className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-xs text-gray-300">Analytics</div>
+                        </div>
+                        
+                        {/* Skills Indicators */}
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="text-center space-y-2">
+                            <div className="w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg mx-auto flex items-center justify-center">
+                              <TrendingUp className="w-4 h-4 text-white" />
                             </div>
-                            <div className="text-center space-y-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg mx-auto flex items-center justify-center">
-                                <Target className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-xs text-gray-300">Strategy</div>
+                            <div className="text-xs text-gray-300">Analytics</div>
+                          </div>
+                          <div className="text-center space-y-2">
+                            <div className="w-8 h-8 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg mx-auto flex items-center justify-center">
+                              <Target className="w-4 h-4 text-white" />
                             </div>
-                            <div className="text-center space-y-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-lg mx-auto flex items-center justify-center">
-                                <Zap className="w-4 h-4 text-white" />
-                              </div>
-                              <div className="text-xs text-gray-300">Execution</div>
+                            <div className="text-xs text-gray-300">Strategy</div>
+                          </div>
+                          <div className="text-center space-y-2">
+                            <div className="w-8 h-8 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-lg mx-auto flex items-center justify-center">
+                              <Zap className="w-4 h-4 text-white" />
                             </div>
+                            <div className="text-xs text-gray-300">Execution</div>
                           </div>
                         </div>
                         
                         {/* Footer */}
                         <div className="flex items-center justify-between text-xs text-gray-400">
-                          <span>FinTech Specialist</span>
+                          <span>Data Analyst & PM</span>
                           <span>Available for opportunities</span>
                         </div>
                       </div>
@@ -161,6 +175,10 @@ export default function Body({ activeSection, translations }: BodyProps) {
                     <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-[#7c3aed] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-pulse">
                       <Code className="w-3 h-3 text-white" />
                     </div>
+                    
+                    {/* Additional Floating Elements */}
+                    <div className="absolute top-1/4 -left-6 w-4 h-4 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-ping opacity-60"></div>
+                    <div className="absolute bottom-1/4 -right-6 w-3 h-3 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-pulse"></div>
                   </div>
                 </div>
               </div>
