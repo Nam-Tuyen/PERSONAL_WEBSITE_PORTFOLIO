@@ -122,7 +122,7 @@ export default function Body({ activeSection, translations }: BodyProps) {
                              {/* Profile Photo */}
                              <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] to-[#00d4ff] shadow-2xl">
                                <img 
-                                 src="/Ảnh gửi CV.jpg" 
+                                 src="/avatar.jpg" 
                                  alt="LE NAM TUYEN"
                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                  onError={(e) => {

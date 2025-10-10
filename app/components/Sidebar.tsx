@@ -45,7 +45,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange }
             
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#00ff88]/30">
               <img 
-                src="/Ảnh gửi CV.jpg" 
+                src="/avatar.jpg" 
                 alt="LE NAM TUYEN" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
