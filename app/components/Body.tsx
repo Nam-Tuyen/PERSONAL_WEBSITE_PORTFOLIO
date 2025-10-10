@@ -105,38 +105,42 @@ export default function Body({ activeSection, translations, isSidebarCollapsed =
 
                  {/* Right Column - Modern Circular Avatar */}
                  <div className="relative flex items-center justify-center">
-                   <div className="relative w-80 h-80 lg:w-96 lg:h-96 group">
-                     {/* Modern Circular Avatar Frame */}
-                     <div className="relative w-full h-full">
-                       {/* Gradient Border Ring */}
-                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] p-2 animate-pulse">
-                         <div className="w-full h-full rounded-full bg-black/20 backdrop-blur-sm"></div>
-                       </div>
+                   <div className="relative group">
+                     {/* Modern Circular Avatar with Tech Effects */}
+                     <div className="relative">
+                       {/* Outer Glow Ring */}
+                       <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
                        
-                       {/* Inner Avatar Container */}
-                       <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white/20">
+                       {/* Inner Glow Ring */}
+                       <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-sm opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+                       
+                       {/* Main Avatar Container */}
+                       <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-[#00ff88]/50 shadow-2xl shadow-[#00ff88]/25 group-hover:shadow-[#00ff88]/40 transition-all duration-500">
                          <img 
                            src="/Profilepicture.jpg" 
                            alt="LE NAM TUYEN"
-                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                            onError={(e) => {
                              e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
                            }}
                          />
                          
-                         {/* Hover Overlay */}
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                         {/* Tech Scan Line Effect */}
+                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00ff88]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                        </div>
                        
-                       {/* Status Indicator */}
-                       <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-bounce border-4 border-white">
-                         <div className="w-4 h-4 bg-white rounded-full"></div>
+                       {/* Status Badge - Modern Position */}
+                       <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-[#00ff88]/25 border-2 border-white/20">
+                         <div className="flex items-center space-x-2">
+                           <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
+                           <span>Available</span>
+                         </div>
                        </div>
                        
-                       {/* Floating Status Badge */}
-                       <div className="absolute top-4 right-4 bg-[#00ff88] text-black px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
-                         Available
-                       </div>
+                       {/* Floating Tech Elements */}
+                       <div className="absolute -top-4 -left-4 w-3 h-3 bg-[#00ff88] rounded-full animate-ping opacity-60"></div>
+                       <div className="absolute -top-2 -right-6 w-2 h-2 bg-[#00d4ff] rounded-full animate-ping opacity-60" style={{animationDelay: '1s'}}></div>
+                       <div className="absolute -bottom-4 -left-6 w-2 h-2 bg-[#7c3aed] rounded-full animate-ping opacity-60" style={{animationDelay: '2s'}}></div>
                      </div>
                    </div>
                  </div>
