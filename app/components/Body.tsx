@@ -100,40 +100,57 @@ export default function Body({ activeSection, translations }: BodyProps) {
                   </div>
                 </div>
 
-                 {/* Right Column - Beautiful Profile Image Frame */}
+                 {/* Right Column - Artistic Professional Portrait */}
                  <div className="relative flex items-center justify-center">
                    <div className="relative w-80 h-96 lg:w-96 lg:h-[480px] group">
-                     {/* Beautiful Frame Design */}
-                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border-2 border-white/20 shadow-2xl p-6">
-                       {/* Inner Frame */}
-                       <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] shadow-inner">
-                         {/* Profile Image */}
-                         <img 
-                           src="/Ảnh gửi CV.jpg" 
-                           alt="LE NAM TUYEN"
-                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                           onError={(e) => {
-                             e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
-                           }}
-                         />
+                     {/* Artistic Gallery Frame */}
+                     <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/12 to-white/8 backdrop-blur-3xl rounded-3xl border border-white/30 shadow-2xl p-8">
+                       {/* Museum-style Inner Frame */}
+                       <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                         {/* Professional Portrait */}
+                         <div className="relative w-full h-full">
+                           <img 
+                             src="/Ảnh gửi CV.jpg" 
+                             alt="LE NAM TUYEN - Professional Portrait"
+                             className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 group-hover:brightness-110"
+                             onError={(e) => {
+                               e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
+                             }}
+                           />
+                           
+                           {/* Artistic Overlay */}
+                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                           
+                           {/* Professional Badge */}
+                           <div className="absolute top-4 right-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                             Available
+                           </div>
+                           
+                           {/* Subtle Vignette */}
+                           <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                         </div>
                          
-                         {/* Subtle Overlay on Hover */}
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                         {/* Elegant Border */}
+                         <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-[#00ff88]/40 via-[#00d4ff]/40 to-[#7c3aed]/40 shadow-inner"></div>
                        </div>
                      </div>
                      
-                     {/* Decorative Corner Elements */}
-                     <div className="absolute -top-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg animate-pulse"></div>
-                     <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full shadow-lg animate-pulse"></div>
-                     <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full shadow-lg animate-pulse"></div>
-                     <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg animate-pulse"></div>
+                     {/* Sophisticated Corner Accents */}
+                     <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-xl animate-pulse opacity-80"></div>
+                     <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full shadow-xl animate-pulse opacity-80" style={{animationDelay: '0.5s'}}></div>
+                     <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full shadow-xl animate-pulse opacity-80" style={{animationDelay: '1s'}}></div>
+                     <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full shadow-xl animate-pulse opacity-80" style={{animationDelay: '1.5s'}}></div>
                      
-                     {/* Floating Accent Elements */}
-                     <div className="absolute top-1/4 -left-4 w-3 h-3 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-bounce opacity-70"></div>
-                     <div className="absolute bottom-1/4 -right-4 w-2 h-2 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-ping opacity-60"></div>
-                     <div className="absolute top-1/2 -right-6 w-4 h-4 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full animate-pulse opacity-50"></div>
-                  </div>
-                </div>
+                     {/* Artistic Floating Elements */}
+                     <div className="absolute top-1/4 -left-6 w-4 h-4 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-full animate-bounce opacity-60"></div>
+                     <div className="absolute bottom-1/3 -right-6 w-3 h-3 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-full animate-ping opacity-50"></div>
+                     <div className="absolute top-1/2 -right-8 w-5 h-5 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full animate-pulse opacity-40"></div>
+                     <div className="absolute bottom-1/4 -left-8 w-2 h-2 bg-gradient-to-br from-[#00ff88] to-[#7c3aed] rounded-full animate-pulse opacity-70"></div>
+                     
+                     {/* Professional Signature Line */}
+                     <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60"></div>
+                   </div>
+                 </div>
               </div>
             </div>
           </section>
