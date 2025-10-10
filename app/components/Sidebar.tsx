@@ -22,20 +22,25 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
-      {/* Toggle Button */}
+      {/* Modern Toggle Button */}
       <button
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className="fixed top-4 left-4 z-50 w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 lg:hidden"
+        className="fixed top-6 left-6 z-50 w-14 h-14 bg-gradient-to-br from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 lg:hidden group"
       >
-        {isCollapsed ? <Menu className="w-6 h-6 text-white" /> : <X className="w-6 h-6 text-white" />}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] via-[#00d4ff] to-[#7c3aed] rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+        <div className="relative z-10">
+          {isCollapsed ? <Menu className="w-6 h-6 text-white" /> : <X className="w-6 h-6 text-white" />}
+        </div>
       </button>
 
-      {/* Sidebar */}
-      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] border-r border-[#00ff88]/20 shadow-2xl shadow-[#00ff88]/10 z-40 overflow-y-auto transition-all duration-300 ${
-        isCollapsed ? 'w-0 opacity-0' : 'w-80 opacity-100'
-      } lg:w-80 lg:opacity-100`}>
-        {/* Tech Background Effects */}
+      {/* Modern Sidebar */}
+      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] border-r border-[#00ff88]/20 shadow-2xl shadow-[#00ff88]/10 z-40 overflow-y-auto transition-all duration-500 ${
+        isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-80 opacity-100 translate-x-0'
+      } lg:w-80 lg:opacity-100 lg:translate-x-0`}>
+        
+        {/* Enhanced Tech Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
+          {/* Animated Grid */}
           <div className="absolute inset-0 opacity-5">
             <div className="w-full h-full" style={{
               backgroundImage: `
@@ -46,132 +51,156 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
               animation: 'grid-move 20s linear infinite'
             }}></div>
           </div>
+          
+          {/* Floating Particles */}
+          <div className="absolute top-20 left-8 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
+          <div className="absolute top-40 right-12 w-1 h-1 bg-[#00d4ff] rounded-full animate-ping opacity-40"></div>
+          <div className="absolute bottom-32 left-16 w-1.5 h-1.5 bg-[#7c3aed] rounded-full animate-pulse opacity-50"></div>
+          
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 -right-8 w-16 h-16 bg-gradient-to-br from-[#00ff88]/10 to-[#00d4ff]/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-1/3 -left-8 w-12 h-12 bg-gradient-to-br from-[#7c3aed]/10 to-[#00ff88]/10 rounded-full blur-lg animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
 
         <div className="relative z-10 p-8">
-          {/* Profile Section */}
-          <div className="text-center mb-8">
-            <div className="relative w-32 h-32 mx-auto mb-6 group">
-              {/* Profile Image Frame */}
+          {/* Enhanced Profile Section */}
+          <div className="text-center mb-10">
+            <div className="relative w-36 h-36 mx-auto mb-8 group">
+              {/* Multi-layer Profile Frame */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-20 blur-sm"></div>
-                <div className="absolute inset-1 rounded-full bg-black"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] opacity-30 blur-lg animate-pulse"></div>
+                <div className="absolute inset-2 rounded-full bg-gradient-to-r from-[#00ff88] to-[#00d4ff] opacity-20 blur-sm"></div>
+                <div className="absolute inset-4 rounded-full bg-black/80"></div>
               </div>
               
-              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#00ff88]/30">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] shadow-2xl">
                 <img 
                   src="/avatar.jpg" 
                   alt="LE NAM TUYEN" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                   onError={(e) => {
                     e.currentTarget.src = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Avatar-653d9ylzzMfaEqsMFNdohWuJz9BSAB.jpg";
                   }}
                 />
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Status Indicator */}
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
             </div>
 
-            <h1 className="text-2xl font-bold text-white mb-2">
+            <h1 className="text-3xl font-black text-white mb-3 tracking-wider">
               {translations?.hero?.name || "LE NAM TUYEN"}
             </h1>
+            
+            <div className="h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent mb-6"></div>
 
-            {/* Language Toggle */}
-            <div className="mb-4">
+            {/* Enhanced Language Toggle */}
+            <div className="mb-6">
               <button
                 onClick={() => onLanguageChange(language === 'en' ? 'vi' : 'en')}
-                className="flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-lg text-[#00ff88] text-sm font-medium hover:bg-gradient-to-r hover:from-[#00ff88]/20 hover:to-[#00d4ff]/20 transition-all duration-300 mx-auto"
+                className="flex items-center justify-center space-x-3 px-6 py-3 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-xl text-[#00ff88] text-sm font-bold hover:bg-gradient-to-r hover:from-[#00ff88]/20 hover:to-[#00d4ff]/20 transition-all duration-300 mx-auto group"
               >
-                <Globe className="w-4 h-4" />
-                <span>{language === 'en' ? 'VI' : 'EN'}</span>
+                <Globe className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                <span className="uppercase tracking-wider">{language === 'en' ? 'VI' : 'EN'}</span>
               </button>
             </div>
 
-            {/* Show Contacts Button */}
+            {/* Enhanced Show Contacts Button */}
             <button 
               onClick={() => setShowContacts(!showContacts)}
-              className="flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 border border-[#00ff88]/30 rounded-lg text-[#00ff88] text-sm font-medium hover:bg-gradient-to-r hover:from-[#00ff88]/20 hover:to-[#00d4ff]/20 transition-all duration-300 mx-auto"
+              className="flex items-center justify-center space-x-3 px-6 py-3 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] text-sm font-bold hover:bg-gradient-to-r hover:from-[#00d4ff]/20 hover:to-[#7c3aed]/20 transition-all duration-300 mx-auto group"
             >
-              <span>Show Contacts</span>
-              {showContacts ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              <span className="uppercase tracking-wider">Show Contacts</span>
+              <div className={`transition-transform duration-300 ${showContacts ? 'rotate-180' : ''}`}>
+                {showContacts ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              </div>
             </button>
           </div>
 
-          {/* Contact Information */}
+          {/* Enhanced Contact Information */}
           {showContacts && (
-            <div className="mb-8">
-              <div className="h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent mb-6"></div>
+            <div className="mb-10 animate-fadeIn">
+              <div className="h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent mb-8"></div>
               
-              <ul className="space-y-4">
-                <li className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-white" />
+              <ul className="space-y-6">
+                <li className="flex items-center space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs">Email</p>
-                    <a href={`mailto:${translations?.footer?.contact?.email}`} className="text-white text-sm hover:text-[#00ff88] transition-colors">
+                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Email</p>
+                    <a href={`mailto:${translations?.footer?.contact?.email}`} className="text-white text-sm hover:text-[#00ff88] transition-colors font-medium">
                       {translations?.footer?.contact?.email}
                     </a>
                   </div>
                 </li>
 
-                <li className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-white" />
+                <li className="flex items-center space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs">Phone</p>
-                    <a href={`tel:${translations?.footer?.contact?.phone}`} className="text-white text-sm hover:text-[#00d4ff] transition-colors">
+                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Phone</p>
+                    <a href={`tel:${translations?.footer?.contact?.phone}`} className="text-white text-sm hover:text-[#00d4ff] transition-colors font-medium">
                       {translations?.footer?.contact?.phone}
                     </a>
                   </div>
                 </li>
 
-                <li className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-white" />
+                <li className="flex items-center space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#7c3aed] to-[#00ff88] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs">Location</p>
-                    <p className="text-white text-sm">{translations?.footer?.contact?.location}</p>
+                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Location</p>
+                    <p className="text-white text-sm font-medium">{translations?.footer?.contact?.location}</p>
                   </div>
                 </li>
               </ul>
             </div>
           )}
 
-          {/* Navigation */}
-          <nav className="mb-8">
-            <ul className="space-y-2">
+          {/* Enhanced Navigation */}
+          <nav className="mb-10">
+            <ul className="space-y-3">
               {navItems.map((item, index) => (
                 <li key={item.key}>
                   <button
                     onClick={() => onSectionChange(item.key)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 flex items-center space-x-3 ${
+                    className={`w-full text-left px-6 py-4 rounded-xl transition-all duration-300 flex items-center space-x-4 group relative overflow-hidden ${
                       activeSection === item.key
-                        ? 'bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88]'
-                        : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                        ? 'bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/40 text-[#00ff88] shadow-lg shadow-[#00ff88]/20'
+                        : 'text-gray-300 hover:bg-white/5 hover:text-white border border-transparent hover:border-[#00ff88]/20'
                     }`}
                   >
-                    <div className={`w-2 h-2 rounded-full ${
-                      activeSection === item.key ? 'bg-[#00ff88]' : 'bg-gray-500'
+                    <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      activeSection === item.key ? 'bg-[#00ff88] animate-pulse' : 'bg-gray-500 group-hover:bg-[#00ff88]/60'
                     }`}></div>
-                    <span className="font-medium">{item.label}</span>
+                    <span className="font-bold uppercase tracking-wider text-sm">{item.label}</span>
+                    {activeSection === item.key && (
+                      <div className="absolute right-4 w-2 h-2 bg-[#00ff88] rounded-full animate-ping"></div>
+                    )}
                   </button>
                 </li>
               ))}
             </ul>
           </nav>
 
-          {/* Social Links */}
-          <div className="border-t border-white/10 pt-6">
-            <p className="text-gray-400 text-xs mb-4">Social Media</p>
-            <div className="flex space-x-3">
+          {/* Enhanced Social Links */}
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-gray-400 text-xs mb-6 uppercase tracking-widest font-bold">Social Media</p>
+            <div className="flex space-x-4">
               <a 
                 href={translations?.footer?.contact?.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center hover:scale-110 hover:rotate-3 transition-all duration-300 shadow-lg group"
               >
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
@@ -179,9 +208,9 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 href={translations?.footer?.contact?.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                className="w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] rounded-xl flex items-center justify-center hover:scale-110 hover:rotate-3 transition-all duration-300 shadow-lg group"
               >
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
               </a>

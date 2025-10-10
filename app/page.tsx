@@ -30,11 +30,6 @@ export default function Portfolio() {
 
       {/* Main Content Area */}
       <div className="lg:ml-80 relative z-10">
-        {/* Header */}
-        <Header
-          logo={t.header.logo}
-        />
-
         {/* Body - Main Content */}
         <Body
           activeSection={activeSection}
