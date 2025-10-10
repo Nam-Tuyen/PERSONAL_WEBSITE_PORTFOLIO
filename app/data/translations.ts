@@ -23,12 +23,12 @@ export const translations = {
       title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"
     },
     about: {
-      label: "VỀ TÔI",
+      label: "PROFESSIONAL PROFILE",
       quote: "Transforming vision into reality turning intent into results",
       description: "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."
     },
     education: {
-      title: "HỌC VẤN",
+      title: "ACADEMIC EXCELLENCE",
       university: "University of Economics and Law (VNU-HCM)",
       degree: "Bachelor of Financial Technology",
       gpa: "3.0/4.0",
@@ -46,7 +46,7 @@ export const translations = {
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
     skills: {
-      title: "KỸ NĂNG",
+      title: "TECHNICAL EXPERTISE",
       categories: [
         {
           name: "Programming Languages",
@@ -67,7 +67,7 @@ export const translations = {
       ]
     },
     certifications: {
-      title: "CHỨNG CHỈ & GIẢI THƯỞNG",
+      title: "PROFESSIONAL CREDENTIALS",
       items: [
         {
           title: "Ask Questions to Make Data-Driven Decisions",
@@ -84,7 +84,7 @@ export const translations = {
       ]
     },
     workExperience: {
-      title: "KINH NGHIỆM LÀM VIỆC & THỰC TẬP",
+      title: "PROFESSIONAL JOURNEY",
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
         department: "Binh Trieu Branch - Credit Analysis Department",
@@ -113,7 +113,7 @@ export const translations = {
       }
     },
     projects: {
-      title: "DỰ ÁN",
+      title: "FEATURED PROJECTS",
       items: [
         {
           name: "Financial Data Analysis Dashboard",
@@ -268,12 +268,12 @@ export const translations = {
       title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"
     },
     about: {
-      label: "ABOUT ME",
+      label: "PROFESSIONAL PROFILE",
       quote: "Transforming vision into reality turning intent into results",
       description: "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."
     },
     education: {
-      title: "EDUCATION",
+      title: "ACADEMIC EXCELLENCE",
       university: "University of Economics and Law (VNU-HCM)",
       degree: "Bachelor of Financial Technology",
       gpa: "3.0/4.0",
@@ -291,7 +291,7 @@ export const translations = {
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
     skills: {
-      title: "SKILLS",
+      title: "TECHNICAL EXPERTISE",
       categories: [
         {
           name: "Programming Languages",
@@ -312,7 +312,7 @@ export const translations = {
       ]
     },
     certifications: {
-      title: "CERTIFICATIONS & AWARDS",
+      title: "PROFESSIONAL CREDENTIALS",
       items: [
         {
           title: "Ask Questions to Make Data-Driven Decisions",
@@ -329,7 +329,7 @@ export const translations = {
       ]
     },
     workExperience: {
-      title: "WORK EXPERIENCE & INTERNSHIP",
+      title: "PROFESSIONAL JOURNEY",
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
         department: "Binh Trieu Branch - Credit Analysis Department",

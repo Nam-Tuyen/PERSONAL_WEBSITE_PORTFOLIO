@@ -19,23 +19,20 @@ export default function Portfolio() {
       {/* Universe Background */}
       <UniverseBackground />
 
-      {/* Sidebar */}
-      <Sidebar
-        translations={t}
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-      />
+              {/* Sidebar */}
+              <Sidebar
+                translations={t}
+                activeSection={activeSection}
+                onSectionChange={setActiveSection}
+                language={language}
+                onLanguageChange={setLanguage}
+              />
 
       {/* Main Content Area */}
       <div className="lg:ml-80 relative z-10">
         {/* Header */}
         <Header
           logo={t.header.logo}
-          navItems={t.header.nav}
-          activeSection={activeSection}
-          onSectionChange={setActiveSection}
-          language={language}
-          onLanguageChange={setLanguage}
         />
 
         {/* Body - Main Content */}
