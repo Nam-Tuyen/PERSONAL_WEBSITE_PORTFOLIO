@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Mail, Phone, MapPin, User, Briefcase, Menu, X, Globe, Code, Database, BarChart3, Award, FolderOpen, ChevronRight, Home, UserCircle, GraduationCap, Wrench, Trophy, Building, Folder, Heart, Star } from "lucide-react"
+import { Mail, Phone, MapPin, User, Briefcase, Menu, X, Globe, Code, Database, BarChart3, Award, FolderOpen, ChevronRight, Home, UserCircle, GraduationCap, Wrench, Trophy, Building, Folder, Heart, Star, Settings, ChevronDown } from "lucide-react"
 
 interface SidebarProps {
   translations: any
@@ -18,11 +18,18 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   const navItems = [
     { 
+      key: "home", 
+      label: "Home",
+      icon: Home,
+      color: "text-blue-500",
+      bgColor: "bg-blue-500/10"
+    },
+    { 
       key: "professional", 
       label: "Professional",
       icon: Briefcase,
-      color: "text-blue-500",
-      bgColor: "bg-blue-500/10",
+      color: "text-green-500",
+      bgColor: "bg-green-500/10",
       sections: [
         { key: "about", label: "About Me", icon: UserCircle },
         { key: "education", label: "Education", icon: GraduationCap },
@@ -47,34 +54,33 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
+      {/* macOS-style Toggle Button - Always Visible */}
+      <button
+        onClick={() => onToggleCollapse(!isCollapsed)}
+        className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
+          isCollapsed ? 'left-4' : 'left-72'
+        }`}
+      >
+        <div className="w-8 h-12 bg-white/95 backdrop-blur-sm border border-gray-200/60 rounded-r-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group">
+          <div className="flex flex-col items-center space-y-1">
+            <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 ${
+              isCollapsed ? 'opacity-100' : 'opacity-60'
+            }`}></div>
+            <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 delay-50 ${
+              isCollapsed ? 'opacity-100' : 'opacity-60'
+            }`}></div>
+            <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 delay-100 ${
+              isCollapsed ? 'opacity-100' : 'opacity-60'
+            }`}></div>
+          </div>
+        </div>
+      </button>
+
       {/* macOS-style Sidebar */}
       <aside className={`fixed left-0 top-0 h-full bg-white/90 backdrop-blur-xl border-r border-gray-200/60 shadow-xl z-40 overflow-y-auto transition-all duration-300 ease-out ${
         isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-64 opacity-100 translate-x-0'
       }`}>
         
-        {/* macOS-style Toggle Button */}
-        <div className={`absolute top-1/2 -right-3 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
-          isCollapsed ? 'translate-x-0' : 'translate-x-0'
-        }`}>
-          <button
-            onClick={() => onToggleCollapse(!isCollapsed)}
-            className="w-6 h-12 bg-white/95 backdrop-blur-sm border border-gray-200/60 rounded-r-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group"
-          >
-            <div className="flex flex-col items-center space-y-1">
-              <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 ${
-                isCollapsed ? 'opacity-100' : 'opacity-60'
-              }`}></div>
-              <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 delay-50 ${
-                isCollapsed ? 'opacity-100' : 'opacity-60'
-              }`}></div>
-              <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 delay-100 ${
-                isCollapsed ? 'opacity-100' : 'opacity-60'
-              }`}></div>
-            </div>
-          </button>
-        </div>
-        
-        {/* macOS-style Content */}
         <div className="relative z-10 p-6">
           {/* Header */}
           <div className="mb-8">
@@ -130,9 +136,11 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                   >
                     <Icon className="w-4 h-4" />
                     <span className="font-medium text-sm">{item.label}</span>
-                    <ChevronRight className={`w-3 h-3 ml-auto transition-transform duration-200 ${
-                      activeSection === item.key ? 'rotate-90' : ''
-                    }`} />
+                    {item.sections && (
+                      <ChevronRight className={`w-3 h-3 ml-auto transition-transform duration-200 ${
+                        activeSection === item.key ? 'rotate-90' : ''
+                      }`} />
+                    )}
                   </button>
                   
                   {/* Sub-sections */}
