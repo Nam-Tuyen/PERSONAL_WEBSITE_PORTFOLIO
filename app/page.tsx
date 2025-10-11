@@ -45,7 +45,7 @@ export default function Portfolio() {
                       {/* Fixed Aspect Ratio Container */}
                       <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl">
                         <img 
-                          src="/Profilepicture50.jpg" 
+                          src="/Profilepicture.jpg" 
                           alt="LE NAM TUYEN" 
                           className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
                         />
