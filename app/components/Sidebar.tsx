@@ -43,35 +43,37 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
-      {/* Always Visible Toggle Button - Outside Sidebar */}
-      <div className="fixed top-1/2 left-0 z-50 transform -translate-y-1/2">
-      <button
-        onClick={() => onToggleCollapse(!isCollapsed)}
-          className="w-8 h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 group backdrop-blur-sm border border-white/10 hover:shadow-[#00ff88]/25"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-          <div className="relative z-10 flex flex-col items-center space-y-1">
-            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-500 ${
-              isCollapsed ? 'opacity-100 scale-100' : 'opacity-60 scale-90'
-            }`}></div>
-            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-500 delay-75 ${
-              isCollapsed ? 'opacity-100 scale-100' : 'opacity-60 scale-90'
-            }`}></div>
-            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-500 delay-150 ${
-              isCollapsed ? 'opacity-100 scale-100' : 'opacity-60 scale-90'
-            }`}></div>
-        </div>
-          {/* Arrow indicator */}
-          <div className={`absolute right-1 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-500 ${
-            isCollapsed ? 'opacity-100' : 'opacity-0 rotate-180'
-          }`}></div>
-      </button>
-      </div>
-
       {/* Modern Tech Sidebar */}
       <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-white/10 shadow-2xl z-40 overflow-y-auto transition-all duration-700 ease-in-out ${
         isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-72 opacity-100 translate-x-0'
       }`}>
+        
+        {/* Toggle Button - Moves with Navigation Edge */}
+        <div className={`absolute top-1/2 -right-4 z-50 transform -translate-y-1/2 transition-all duration-700 ease-in-out ${
+          isCollapsed ? 'translate-x-0' : 'translate-x-0'
+        }`}>
+      <button
+        onClick={() => onToggleCollapse(!isCollapsed)}
+            className="w-8 h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 group backdrop-blur-sm border border-white/10 hover:shadow-[#00ff88]/25"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+            <div className="relative z-10 flex flex-col items-center space-y-1">
+              <div className={`w-1 h-1 bg-white rounded-full transition-all duration-500 ${
+                isCollapsed ? 'opacity-100 scale-100' : 'opacity-60 scale-90'
+              }`}></div>
+              <div className={`w-1 h-1 bg-white rounded-full transition-all duration-500 delay-75 ${
+                isCollapsed ? 'opacity-100 scale-100' : 'opacity-60 scale-90'
+              }`}></div>
+              <div className={`w-1 h-1 bg-white rounded-full transition-all duration-500 delay-150 ${
+                isCollapsed ? 'opacity-100 scale-100' : 'opacity-60 scale-90'
+              }`}></div>
+            </div>
+            {/* Arrow indicator */}
+            <div className={`absolute right-1 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-500 ${
+              isCollapsed ? 'opacity-100' : 'opacity-0 rotate-180'
+            }`}></div>
+          </button>
+        </div>
         
         {/* Minimal Tech Background */}
         <div className="absolute inset-0 pointer-events-none">
