@@ -51,8 +51,6 @@ export default function Portfolio() {
                         />
                         {/* Tech Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        {/* Status Indicator */}
-                        <div className="absolute top-4 right-4 w-3 h-3 bg-[#00ff88] rounded-full animate-pulse shadow-lg shadow-[#00ff88]/50"></div>
                       </div>
                     </div>
                   </div>
@@ -63,10 +61,6 @@ export default function Portfolio() {
                   <div className="space-y-8">
                     {/* Greeting */}
                     <div className="space-y-4">
-                      <div className="flex items-center space-x-3 mb-6">
-                        <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
-                        <span className="text-[#00ff88] text-sm font-mono tracking-wider uppercase">Available for opportunities</span>
-                      </div>
                       
                       <h1 className="text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
                         {t?.hero?.greeting || "HI, I AM"}
