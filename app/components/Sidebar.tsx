@@ -72,50 +72,57 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
-      {/* Modern Tech Toggle Button - Responsive */}
+      {/* Synchronized Tech Toggle Button - Perfect Sync */}
       <button
         onClick={() => onToggleCollapse(!isCollapsed)}
         className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
-          isCollapsed ? 'left-0' : 'left-64 sm:left-64 md:left-72 lg:left-64'
+          isCollapsed ? 'left-0' : 'left-80 sm:left-72 md:left-64 lg:left-72 xl:left-64'
         }`}
+        style={{
+          transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          willChange: 'left'
+        }}
       >
         <div className="relative group">
-          {/* Main Button - Responsive sizing */}
-          <div className="w-8 h-12 sm:w-10 sm:h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/40 rounded-r-xl sm:rounded-r-2xl flex items-center justify-center shadow-2xl hover:shadow-[#00ff88]/25 transition-all duration-300 group-hover:scale-105">
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl sm:rounded-r-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+          {/* Main Button - Enhanced Responsive */}
+          <div className="w-8 h-12 sm:w-10 sm:h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/40 rounded-r-xl sm:rounded-r-2xl flex items-center justify-center shadow-2xl hover:shadow-[#00ff88]/25 transition-all duration-300 group-hover:scale-105 active:scale-95">
+            {/* Enhanced Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl sm:rounded-r-2xl blur opacity-30 group-hover:opacity-50 group-active:opacity-70 transition-opacity duration-300"></div>
             
-            {/* Content - Responsive dots */}
+            {/* Synchronized Content - Perfect Timing */}
             <div className="relative z-10 flex flex-col items-center space-y-0.5 sm:space-y-1">
-              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full transition-all duration-300 ${
+              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full transition-all duration-300 ease-out ${
                 isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
-              }`}></div>
-              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full transition-all duration-300 delay-100 ${
+              }`} style={{ transitionDelay: '0ms' }}></div>
+              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full transition-all duration-300 ease-out ${
                 isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
-              }`}></div>
-              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full transition-all duration-300 delay-200 ${
+              }`} style={{ transitionDelay: '50ms' }}></div>
+              <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full transition-all duration-300 ease-out ${
                 isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
-              }`}></div>
+              }`} style={{ transitionDelay: '100ms' }}></div>
         </div>
             
-            {/* Arrow Indicator - Responsive */}
-            <div className={`absolute right-1 sm:right-2 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-300 ${
+            {/* Synchronized Arrow Indicator */}
+            <div className={`absolute right-1 sm:right-2 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-300 ease-out ${
               isCollapsed ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
-            }`}></div>
+            }`} style={{ transitionDelay: '150ms' }}></div>
           </div>
           
-          {/* Tech Scan Line - Responsive */}
-          <div className={`absolute -top-0.5 sm:-top-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent transition-all duration-300 ${
+          {/* Synchronized Tech Scan Line */}
+          <div className={`absolute -top-0.5 sm:-top-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent transition-all duration-300 ease-out ${
             isCollapsed ? 'opacity-60 animate-pulse' : 'opacity-40'
-          }`}></div>
+          }`} style={{ transitionDelay: '100ms' }}></div>
           
-          {/* Corner Brackets - Responsive */}
-          <div className={`absolute -top-0.5 sm:-top-1 -left-0.5 sm:-left-1 w-2 h-2 sm:w-3 sm:h-3 border-l-2 border-t-2 border-[#00ff88] transition-all duration-300 ${
+          {/* Synchronized Corner Brackets */}
+          <div className={`absolute -top-0.5 sm:-top-1 -left-0.5 sm:-left-1 w-2 h-2 sm:w-3 sm:h-3 border-l-2 border-t-2 border-[#00ff88] transition-all duration-300 ease-out ${
             isCollapsed ? 'opacity-40' : 'opacity-20'
-          }`}></div>
-          <div className={`absolute -bottom-0.5 sm:-bottom-1 -left-0.5 sm:-left-1 w-2 h-2 sm:w-3 sm:h-3 border-l-2 border-b-2 border-[#00d4ff] transition-all duration-300 ${
+          }`} style={{ transitionDelay: '200ms' }}></div>
+          <div className={`absolute -bottom-0.5 sm:-bottom-1 -left-0.5 sm:-left-1 w-2 h-2 sm:w-3 sm:h-3 border-l-2 border-b-2 border-[#00d4ff] transition-all duration-300 ease-out ${
             isCollapsed ? 'opacity-40' : 'opacity-20'
-          }`}></div>
+          }`} style={{ transitionDelay: '250ms' }}></div>
+          
+          {/* Mobile Touch Enhancement */}
+          <div className="absolute inset-0 -m-2 sm:-m-3 rounded-r-xl sm:rounded-r-2xl bg-transparent hover:bg-white/5 active:bg-white/10 transition-colors duration-200"></div>
         </div>
       </button>
 

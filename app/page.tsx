@@ -126,8 +126,8 @@ export default function Portfolio() {
                         <div className="block">"Transforming vision into reality</div>
                         <div className="block">turning intent into results"</div>
                       </blockquote>
-                        <div className="max-w-4xl mx-auto">
-                          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed text-justify tracking-wide">
+                        <div className="max-w-4xl mx-auto px-2 sm:px-4">
+                          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed sm:leading-loose text-left sm:text-justify tracking-wide sm:tracking-wider break-words hyphens-auto">
                             {t?.about?.description || "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."}
                           </p>
                         </div>
