@@ -171,16 +171,6 @@ export default function Portfolio() {
                           </a>
                         </div>
                       </div>
-                      <div>
-                        <h5 className="text-xl font-bold text-white mb-6">Key Coursework</h5>
-                        <div className="space-y-3">
-                          {t?.education?.coursework?.slice(0, 8).map((course: string, index: number) => (
-                            <div key={index} className="flex items-center">
-                              <span className="text-gray-300 text-sm">{course}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
