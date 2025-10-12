@@ -8,7 +8,7 @@ import Sidebar from "./components/Sidebar"
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
   const [activeSection, setActiveSection] = useState("professional")
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
 
   const t = translations[language as keyof typeof translations]
