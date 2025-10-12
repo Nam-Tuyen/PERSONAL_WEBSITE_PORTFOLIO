@@ -442,31 +442,31 @@ export default function Portfolio() {
                          </div>
                       </div>
 
-                      {/* Job Description */}
-                      <div className="mb-8">
-                        <h5 className="text-xl font-bold text-white mb-6">Job Description</h5>
-                        <div className="space-y-4">
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                      {/* Job Description - Responsive */}
+                      <div className="mb-6 sm:mb-8">
+                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Job Description</h5>
+                        <div className="space-y-3 sm:space-y-4">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Produced timely market reports covering sector and macroeconomic updates to support lending decisions.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Conducted financial statement analysis with ratio and trend analysis to inform underwriting.
                             </span>
                           </div>
@@ -530,37 +530,37 @@ export default function Portfolio() {
                          </div>
                       </div>
 
-                      {/* Job Description */}
-                      <div className="mb-8">
-                        <h5 className="text-xl font-bold text-white mb-6">Job Description</h5>
-                        <div className="space-y-4">
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                      {/* Job Description - Responsive */}
+                      <div className="mb-6 sm:mb-8">
+                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Job Description</h5>
+                        <div className="space-y-3 sm:space-y-4">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
                               Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness.
                             </span>
                           </div>
