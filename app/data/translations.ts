@@ -133,11 +133,12 @@ export const translations = {
       title: "FEATURED PROJECTS",
       items: [
         {
-          name: "Financial Data Analysis Dashboard",
-          description: "Built an interactive dashboard using Power BI to analyze financial market trends and investment opportunities",
-          technologies: ["Power BI", "SQL", "Python", "Excel"],
-          image: "/project1.jpg",
-          link: "#"
+          name: "Automated Financial Report Export",
+          description: "Built an end to end pipeline using requests, pandas and python dotenv to collect, process and export stock ticker analytics, modularized into fetch, process and report export scripts. Implemented environment based configuration and reusable helpers for path management, API key loading, validation and date handling; standardized outputs to Excel, CSV and PDF. Delivered scheduled daily reports, cutting manual preparation time by about 90 percent and improving team responsiveness by about 25 percent.",
+          technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
+          image: "/Demo.mp4",
+          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
+          period: "08/2024 - 10/2024"
         },
         {
           name: "Product Analytics Platform",
@@ -395,11 +396,12 @@ export const translations = {
       title: "DỰ ÁN",
       items: [
         {
-          name: "Financial Data Analysis Dashboard",
-          description: "Built an interactive dashboard using Power BI to analyze financial market trends and investment opportunities",
-          technologies: ["Power BI", "SQL", "Python", "Excel"],
-          image: "/project1.jpg",
-          link: "#"
+          name: "Automated Financial Report Export",
+          description: "Built an end to end pipeline using requests, pandas and python dotenv to collect, process and export stock ticker analytics, modularized into fetch, process and report export scripts. Implemented environment based configuration and reusable helpers for path management, API key loading, validation and date handling; standardized outputs to Excel, CSV and PDF. Delivered scheduled daily reports, cutting manual preparation time by about 90 percent and improving team responsiveness by about 25 percent.",
+          technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
+          image: "/Demo.mp4",
+          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
+          period: "08/2024 - 10/2024"
         },
         {
           name: "Product Analytics Platform",

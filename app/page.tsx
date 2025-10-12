@@ -153,7 +153,7 @@ export default function Portfolio() {
                           <p className="text-[#00d4ff] font-bold text-sm sm:text-base lg:text-lg mb-1">
                             {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
                           </p>
-                          <p className="text-gray-400 text-xs sm:text-sm">2021 - 2026</p>
+                          <p className="text-gray-400 text-xs sm:text-sm">2022 - 2026</p>
                         </div>
                       </div>
 
@@ -579,13 +579,28 @@ export default function Portfolio() {
                     {t?.projects?.items?.map((project: any, index: number) => (
                       <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                         <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
-                          <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          {project.image?.endsWith('.mp4') ? (
+                            <video 
+                              className="w-full h-full object-cover"
+                              controls
+                              preload="metadata"
+                            >
+                              <source src={project.image} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          ) : (
+                            <>
+                              <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </>
+                          )}
                         </div>
                          <div className="p-8">
-                           <h4 className="text-2xl font-bold text-white mb-3 text-left">{project.title}</h4>
-                           <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider text-left">{project.category}</p>
-                           <p className="text-gray-300 mb-6 leading-relaxed text-left">{project.description}</p>
+                           <h4 className="text-2xl font-bold text-white mb-3 text-left">{project.name}</h4>
+                           {project.period && (
+                             <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider text-left">{project.period}</p>
+                           )}
+                           <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
                            <div className="flex flex-wrap gap-2 mb-6 justify-start">
                              {project.technologies?.map((tech: string, techIndex: number) => (
                                <span key={techIndex} className="px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">
@@ -593,9 +608,14 @@ export default function Portfolio() {
                                </span>
                              ))}
                            </div>
-                           <button className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                           <a 
+                             href={project.link} 
+                             target="_blank" 
+                             rel="noopener noreferrer"
+                             className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center"
+                           >
                              View Project
-                           </button>
+                           </a>
                          </div>
                       </div>
                     ))}
