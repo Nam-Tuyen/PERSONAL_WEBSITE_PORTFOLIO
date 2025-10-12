@@ -76,7 +76,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       <button
         onClick={() => onToggleCollapse(!isCollapsed)}
         className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
-          isCollapsed ? 'left-0' : 'left-64'
+          isCollapsed ? 'left-0' : 'left-64 lg:left-64'
         }`}
       >
         <div className="relative group">
@@ -121,12 +121,12 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
       {/* Tech-Style Sidebar */}
       <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-[#00ff88]/20 shadow-2xl z-40 overflow-y-auto transition-all duration-300 ease-out ${
-        isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-64 opacity-100 translate-x-0'
+        isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-72 sm:w-64 opacity-100 translate-x-0'
       }`}>
         
-        <div className="relative z-10 p-6">
+        <div className="relative z-10 p-4 sm:p-6">
           {/* Modern Header Section */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             {/* Centered Logo */}
             <div className="flex items-center justify-center mb-6">
               <div className="relative group">
