@@ -21,15 +21,15 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       key: "home", 
       label: "Home",
       icon: Home,
-      color: "text-blue-500",
-      bgColor: "bg-blue-500/10"
+      color: "text-[#00d4ff]",
+      bgColor: "bg-[#00d4ff]/10"
     },
     { 
       key: "professional", 
       label: "Professional",
       icon: Briefcase,
-      color: "text-green-500",
-      bgColor: "bg-green-500/10",
+      color: "text-[#00ff88]",
+      bgColor: "bg-[#00ff88]/10",
       sections: [
         { key: "about", label: "About Me", icon: UserCircle },
         { key: "education", label: "Education", icon: GraduationCap },
@@ -43,8 +43,8 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       key: "personal", 
       label: "Personal",
       icon: Heart,
-      color: "text-pink-500",
-      bgColor: "bg-pink-500/10",
+      color: "text-[#7c3aed]",
+      bgColor: "bg-[#7c3aed]/10",
       sections: [
         { key: "hobbies", label: "Hobbies", icon: Star },
         { key: "interests", label: "Interests", icon: BarChart3 }
@@ -61,23 +61,23 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
           isCollapsed ? 'left-4' : 'left-72'
         }`}
       >
-        <div className="w-8 h-12 bg-white/95 backdrop-blur-sm border border-gray-200/60 rounded-r-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group">
+        <div className="w-8 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/30 rounded-r-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group">
           <div className="flex flex-col items-center space-y-1">
-            <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 ${
+            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-200 ${
               isCollapsed ? 'opacity-100' : 'opacity-60'
             }`}></div>
-            <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 delay-50 ${
+            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-200 delay-50 ${
               isCollapsed ? 'opacity-100' : 'opacity-60'
             }`}></div>
-            <div className={`w-1 h-1 bg-gray-400 rounded-full transition-all duration-200 delay-100 ${
+            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-200 delay-100 ${
               isCollapsed ? 'opacity-100' : 'opacity-60'
             }`}></div>
           </div>
         </div>
       </button>
 
-      {/* macOS-style Sidebar */}
-      <aside className={`fixed left-0 top-0 h-full bg-white/90 backdrop-blur-xl border-r border-gray-200/60 shadow-xl z-40 overflow-y-auto transition-all duration-300 ease-out ${
+      {/* Tech-Style Sidebar */}
+      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-[#00ff88]/20 shadow-2xl z-40 overflow-y-auto transition-all duration-300 ease-out ${
         isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-64 opacity-100 translate-x-0'
       }`}>
         
@@ -85,23 +85,23 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center shadow-sm">
                 <Briefcase className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-900">Portfolio</h2>
-                <p className="text-xs text-gray-500">Navigation</p>
+                <h2 className="text-lg font-semibold text-white">Portfolio</h2>
+                <p className="text-xs text-[#00ff88]">Navigation</p>
               </div>
             </div>
             
-            {/* Language Toggle - macOS style */}
-            <div className="flex items-center bg-gray-100 rounded-lg p-1">
+            {/* Language Toggle - Tech style */}
+            <div className="flex items-center bg-white/5 border border-[#00ff88]/20 rounded-lg p-1">
               <button
                 onClick={() => onLanguageChange('en')}
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                   language === 'en' 
-                    ? 'bg-white text-gray-900 shadow-sm' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white shadow-sm' 
+                    : 'text-gray-400 hover:text-white'
                 }`}
               >
                 EN
@@ -110,8 +110,8 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 onClick={() => onLanguageChange('vi')}
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                   language === 'vi' 
-                    ? 'bg-white text-gray-900 shadow-sm' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white shadow-sm' 
+                    : 'text-gray-400 hover:text-white'
                 }`}
               >
                 VI
@@ -130,8 +130,8 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                     onClick={() => onSectionChange(item.key)}
                     className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                       activeSection === item.key
-                        ? `${item.bgColor} ${item.color} shadow-sm`
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
+                        ? `${item.bgColor} ${item.color} shadow-sm border border-[#00ff88]/20`
+                        : 'text-gray-400 hover:text-white hover:bg-white/5'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -154,8 +154,8 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                             onClick={() => onSectionChange(section.key)}
                             className={`w-full flex items-center space-x-3 px-3 py-2 rounded-md transition-all duration-200 text-sm ${
                               activeSection === section.key
-                                ? 'bg-blue-50 text-blue-600 border-l-2 border-blue-500'
-                                : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                                ? 'bg-[#00ff88]/10 text-[#00ff88] border-l-2 border-[#00ff88]'
+                                : 'text-gray-400 hover:text-white hover:bg-white/5'
                             }`}
                           >
                             <SectionIcon className="w-3.5 h-3.5" />
@@ -174,7 +174,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
           <div className="mt-8">
             <button
               onClick={() => setShowContacts(!showContacts)}
-              className="w-full flex items-center justify-between px-3 py-2.5 bg-gray-50 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200"
+              className="w-full flex items-center justify-between px-3 py-2.5 bg-white/5 border border-[#00ff88]/20 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
             >
               <span className="font-medium text-sm">Contact Info</span>
               <ChevronRight className={`w-3 h-3 transition-transform duration-200 ${
@@ -184,19 +184,19 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
             
             {showContacts && (
               <div className="mt-3 space-y-2 animate-fadeIn">
-                <div className="flex items-center space-x-3 text-gray-500 text-sm px-3 py-1.5">
-                  <Mail className="w-3.5 h-3.5" />
+                <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
+                  <Mail className="w-3.5 h-3.5 text-[#00ff88]" />
                   <span>lenamtuyen@gmail.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-500 text-sm px-3 py-1.5">
-                  <Phone className="w-3.5 h-3.5" />
+                <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
+                  <Phone className="w-3.5 h-3.5 text-[#00d4ff]" />
                   <span>+84 123 456 789</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-500 text-sm px-3 py-1.5">
-                  <MapPin className="w-3.5 h-3.5" />
+                <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
+                  <MapPin className="w-3.5 h-3.5 text-[#7c3aed]" />
                   <span>Ho Chi Minh City, Vietnam</span>
                 </div>
-              </div>
+            </div>
             )}
           </div>
         </div>
