@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import { useState } from "react"
 import { translations } from "./data/translations"
 import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
@@ -45,13 +45,13 @@ export default function Portfolio() {
             <section id="home" className="mb-16 sm:mb-24 lg:mb-32">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 {/* Left Column - Professional Image */}
-                <div className="order-2 lg:order-1">
-                  <div className="relative group">
+                <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
+                  <div className="relative group w-full max-w-sm lg:max-w-none">
                     {/* Tech Grid Background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
                     <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-1 sm:p-2">
                       {/* Fixed Aspect Ratio Container */}
-                      <div className="relative w-full aspect-[4/5] max-w-sm mx-auto sm:max-w-none overflow-hidden rounded-xl sm:rounded-2xl">
+                      <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl sm:rounded-2xl">
                         <img 
                           src="/Profilepicture.jpg" 
                           alt="LE NAM TUYEN" 
@@ -66,14 +66,14 @@ export default function Portfolio() {
 
                 {/* Right Column - Professional Content */}
                 <div className="order-1 lg:order-2 text-center lg:text-left">
-                  <div className="space-y-6 sm:space-y-8">
+                  <div className="space-y-6 sm:space-y-8 max-w-lg mx-auto lg:max-w-none">
                     {/* Greeting */}
                     <div className="space-y-3 sm:space-y-4">
                       
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 sm:mb-4 tracking-tight">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 sm:mb-4 tracking-tight leading-tight">
                         {t?.hero?.greeting || "HI, I AM"}
                       </h1>
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-6 tracking-tight">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-6 tracking-tight leading-tight">
                         {t?.hero?.name || "LE NAM TUYEN"}
                       </h2>
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-medium leading-relaxed mb-6 sm:mb-8">
@@ -84,12 +84,12 @@ export default function Portfolio() {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                      <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-sm sm:text-base">
+                      <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-sm sm:text-base w-full sm:w-auto">
                         Download Resume
                       </button>
                       <button 
                         onClick={scrollToProjects}
-                        className="px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300 text-sm sm:text-base"
+                        className="px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
                       >
                         View Projects
                       </button>
@@ -105,7 +105,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                 <div className="text-center mb-4 sm:mb-6">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">ABOUT ME</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">ABOUT ME</h3>
                 </div>
                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
@@ -118,7 +118,7 @@ export default function Portfolio() {
                         <div className="block">turning intent into results"</div>
                       </blockquote>
                       <div className="max-w-5xl mx-auto">
-                        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-justify">
+                        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center sm:text-justify">
                           {t?.about?.description || "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."}
                         </p>
                       </div>
@@ -134,7 +134,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                   <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">EDUCATION</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">EDUCATION</h3>
                   </div>
                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                 </div>
@@ -144,7 +144,7 @@ export default function Portfolio() {
                     {/* Modern Education Card Layout */}
                     <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center">
                       {/* Left Side - Degree Info */}
-                      <div className="flex-1 space-y-4 sm:space-y-6 text-center lg:text-left">
+                      <div className="flex-1 space-y-4 sm:space-y-6 text-center lg:text-left w-full">
                         <div>
                           <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 leading-tight">
                             <div className="block">Bachelor of</div>
@@ -158,9 +158,9 @@ export default function Portfolio() {
                       </div>
 
                       {/* Right Side - Stats & Link */}
-                      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:items-center">
+                      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:items-center w-full lg:w-auto">
                         {/* Academic Stats */}
-                        <div className="flex gap-4 sm:gap-6">
+                        <div className="flex gap-4 sm:gap-6 justify-center lg:justify-start">
                           <div className="text-center">
                             <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#00d4ff] mb-1">{t?.education?.gpa || "3.0"}</div>
                             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">GPA</div>
@@ -198,7 +198,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                   <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">SKILLS</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">SKILLS</h3>
                   </div>
                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                 </div>
@@ -299,7 +299,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                   <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">CERTIFICATIONS & AWARDS</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">CERTIFICATIONS & AWARDS</h3>
                   </div>
                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
@@ -366,54 +366,54 @@ export default function Portfolio() {
             </section>
 
             {/* 5. WORKING EXPERIENCE Section */}
-            <section id="experience" className="mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
+            <section id="experience" className="mb-16 sm:mb-24 lg:mb-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-16">
-                  <div className="text-center mb-6">
-                    <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">WORKING EXPERIENCE</h3>
+                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                  <div className="text-center mb-4 sm:mb-6">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">WORKING EXPERIENCE</h3>
                   </div>
-                  <div className="w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                 </div>
 
                 <div className="max-w-6xl mx-auto">
-                  <div className="space-y-8">
+                  <div className="space-y-6 sm:space-y-8">
                     {/* AGRIBANK Experience */}
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl group">
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl group">
                       {/* Header with Logo */}
-                      <div className="mb-8">
-                        <div className="flex items-center space-x-4 mb-4">
-                          <div className="w-16 h-16 bg-white rounded-xl p-2 shadow-lg">
+                      <div className="mb-6 sm:mb-8">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
+                          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl p-2 shadow-lg flex-shrink-0">
                             <img 
                               src="/agribank logo.jpg" 
                               alt="AGRIBANK Logo" 
                               className="w-full h-full object-contain"
                             />
                           </div>
-                          <div>
-                            <h4 className="text-3xl font-bold text-white mb-2">Credit Analyst Intern</h4>
-                            <p className="text-[#00ff88] font-semibold text-xl">AGRIBANK</p>
+                          <div className="text-center sm:text-left">
+                            <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Credit Analyst Intern</h4>
+                            <p className="text-[#00ff88] font-semibold text-lg sm:text-xl">AGRIBANK</p>
                           </div>
                         </div>
                         
                         {/* Modern Info Cards */}
-                        <div className="flex flex-wrap gap-3 mb-6">
-                          <div className="bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 px-4 py-2 rounded-xl">
+                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
+                          <div className="bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 px-3 sm:px-4 py-2 rounded-xl">
                             <div className="flex items-center space-x-2">
-                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                               </svg>
-                              <span className="text-white font-medium text-sm">Mar 2025 – Jun 2025</span>
+                              <span className="text-white font-medium text-xs sm:text-sm">Mar 2025 – Jun 2025</span>
                             </div>
                           </div>
                           
-                          <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-4 py-2 rounded-xl">
+                          <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-3 sm:px-4 py-2 rounded-xl">
                             <div className="flex items-center space-x-2">
-                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                               </svg>
-                              <span className="text-white font-medium text-sm">Binh Trieu Branch (On-site)</span>
+                              <span className="text-white font-medium text-xs sm:text-sm">Binh Trieu Branch (On-site)</span>
                             </div>
                           </div>
                         </div>
@@ -424,10 +424,10 @@ export default function Portfolio() {
                             href="https://www.agribank.com.vn/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88] font-semibold rounded-xl hover:from-[#00ff88]/30 hover:to-[#00d4ff]/30 hover:border-[#00ff88]/50 transition-all duration-300 group"
+                            className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88] font-semibold rounded-xl hover:from-[#00ff88]/30 hover:to-[#00d4ff]/30 hover:border-[#00ff88]/50 transition-all duration-300 group text-xs sm:text-sm"
                           >
                             <span>More information</span>
-                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                           </a>
@@ -435,30 +435,30 @@ export default function Portfolio() {
                       </div>
 
                       {/* Job Description */}
-                      <div className="mb-8">
-                        <h5 className="text-xl font-bold text-white mb-6">Job Description</h5>
-                        <div className="space-y-4">
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                      <div className="mb-6 sm:mb-8">
+                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 text-center sm:text-left">Job Description</h5>
+                        <div className="space-y-3 sm:space-y-4">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
                               Produced timely market reports covering sector and macroeconomic updates to support lending decisions.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
                               Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
                               Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.
                             </span>
                           </div>
-                          <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-justify">
+                          <div className="flex items-start space-x-2 sm:space-x-3">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
                               Conducted financial statement analysis with ratio and trend analysis to inform underwriting.
                             </span>
                           </div>
@@ -467,20 +467,20 @@ export default function Portfolio() {
                     </div>
 
                     {/* Maybank Experience */}
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
                       {/* Header with Logo */}
-                      <div className="mb-8">
-                        <div className="flex items-center space-x-4 mb-4">
-                          <div className="w-16 h-16 bg-white rounded-xl p-2 shadow-lg">
+                      <div className="mb-6 sm:mb-8">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
+                          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl p-2 shadow-lg flex-shrink-0">
                             <img 
                               src="/Maybank logo.png" 
                               alt="Maybank Logo" 
                               className="w-full h-full object-contain"
                             />
                           </div>
-                          <div>
-                            <h4 className="text-3xl font-bold text-white mb-2">Broker Intern</h4>
-                            <p className="text-[#00d4ff] font-semibold text-xl">Maybank Investment Bank Vietnam</p>
+                          <div className="text-center sm:text-left">
+                            <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Broker Intern</h4>
+                            <p className="text-[#00d4ff] font-semibold text-lg sm:text-xl">Maybank Investment Bank Vietnam</p>
                           </div>
                         </div>
                         
@@ -565,36 +565,36 @@ export default function Portfolio() {
             </section>
 
             {/* 6. PROJECT Section */}
-            <section id="projects" className="mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
+            <section id="projects" className="mb-16 sm:mb-24 lg:mb-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-16">
-                  <div className="mb-6">
-                    <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">PROJECT</h3>
+                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">PROJECT</h3>
                   </div>
-                  <div className="w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {t?.projects?.items?.map((project: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                         <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
-                          <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
+                          <div className="text-4xl sm:text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <div className="p-8">
-                          <h4 className="text-2xl font-bold text-white mb-3">{project.title}</h4>
-                          <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider">{project.category}</p>
-                          <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-6">
+                        <div className="p-6 sm:p-8">
+                          <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 text-center sm:text-left">{project.title}</h4>
+                          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 uppercase tracking-wider text-center sm:text-left">{project.category}</p>
+                          <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base text-center sm:text-left">{project.description}</p>
+                          <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
                             {project.technologies?.map((tech: string, techIndex: number) => (
-                              <span key={techIndex} className="px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">
+                              <span key={techIndex} className="px-2 sm:px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">
                                 {tech}
                               </span>
                             ))}
                           </div>
-                          <button className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                          <button className="w-full py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg text-sm sm:text-base">
                             View Project
                           </button>
                         </div>
