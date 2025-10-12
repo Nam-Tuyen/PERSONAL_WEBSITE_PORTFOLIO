@@ -157,9 +157,6 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                     }`}
                   >
                     <div className="flex items-center justify-center space-x-2">
-                      <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        language === 'en' ? 'bg-white' : 'bg-gray-500'
-                      }`}></div>
                       <span className="uppercase tracking-wider">EN</span>
                     </div>
                   </button>
@@ -173,9 +170,6 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                     }`}
                   >
                     <div className="flex items-center justify-center space-x-2">
-                      <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        language === 'vi' ? 'bg-white' : 'bg-gray-500'
-                      }`}></div>
                       <span className="uppercase tracking-wider">VI</span>
                     </div>
                   </button>
