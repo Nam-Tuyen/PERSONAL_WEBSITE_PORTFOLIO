@@ -1,35 +1,50 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle with gradient -->
   <defs>
+    <!-- Modern gradient background -->
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
       <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
     </linearGradient>
+    
+    <!-- Icon gradient -->
     <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
     </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
   </defs>
   
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="15" fill="url(#bgGradient)" stroke="#ffffff" stroke-width="1"/>
+  <!-- Background circle with subtle border -->
+  <circle cx="16" cy="16" r="15" fill="url(#bgGradient)" stroke="#ffffff" stroke-width="0.5"/>
   
-  <!-- Portfolio icon - Briefcase with modern design -->
-  <g fill="url(#iconGradient)">
-    <!-- Briefcase body -->
-    <rect x="8" y="12" width="16" height="10" rx="1" ry="1"/>
+  <!-- Portfolio icon - Modern briefcase design -->
+  <g fill="url(#iconGradient)" filter="url(#shadow)">
+    <!-- Main briefcase body -->
+    <rect x="7" y="11" width="18" height="12" rx="2" ry="2"/>
     
     <!-- Briefcase handle -->
-    <rect x="12" y="10" width="8" height="2" rx="1" ry="1"/>
+    <rect x="11" y="9" width="10" height="3" rx="1.5" ry="1.5"/>
     
-    <!-- Briefcase details -->
-    <rect x="10" y="14" width="12" height="1" rx="0.5" ry="0.5" opacity="0.7"/>
-    <rect x="10" y="16" width="8" height="1" rx="0.5" ry="0.5" opacity="0.5"/>
-    <rect x="10" y="18" width="10" height="1" rx="0.5" ry="0.5" opacity="0.5"/>
+    <!-- Handle detail -->
+    <rect x="12" y="10" width="8" height="1" rx="0.5" ry="0.5" opacity="0.3"/>
     
-    <!-- Small accent dots -->
-    <circle cx="14" cy="20" r="0.5" opacity="0.6"/>
-    <circle cx="18" cy="20" r="0.5" opacity="0.6"/>
+    <!-- Briefcase lock -->
+    <rect x="15" y="13" width="2" height="3" rx="0.5" ry="0.5" opacity="0.8"/>
+    
+    <!-- Briefcase details/lines -->
+    <rect x="9" y="15" width="14" height="0.5" rx="0.25" ry="0.25" opacity="0.6"/>
+    <rect x="9" y="17" width="10" height="0.5" rx="0.25" ry="0.25" opacity="0.4"/>
+    <rect x="9" y="19" width="12" height="0.5" rx="0.25" ry="0.25" opacity="0.4"/>
+    
+    <!-- Corner accents -->
+    <circle cx="10" cy="13" r="0.5" opacity="0.5"/>
+    <circle cx="22" cy="13" r="0.5" opacity="0.5"/>
+    <circle cx="10" cy="21" r="0.5" opacity="0.5"/>
+    <circle cx="22" cy="21" r="0.5" opacity="0.5"/>
   </g>
 </svg>
