@@ -384,17 +384,29 @@ export default function Portfolio() {
                 <div className="max-w-5xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
                     {/* Header */}
-                    <div className="flex items-start justify-between mb-8">
-                      <div>
-                        <h4 className="text-3xl font-bold text-white mb-3">Broker Intern</h4>
-                        <p className="text-[#00d4ff] font-semibold text-xl">Maybank Investment Bank Vietnam</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-gray-400 text-sm bg-gray-800/50 px-4 py-2 rounded-full border border-white/10 mb-2">
-                          Jun 2024 – Dec 2024
+                    <div className="mb-8">
+                      <h4 className="text-3xl font-bold text-white mb-3">Broker Intern</h4>
+                      <p className="text-[#00d4ff] font-semibold text-xl mb-4">Maybank Investment Bank Vietnam</p>
+                      
+                      {/* Modern Info Cards */}
+                      <div className="flex flex-wrap gap-3">
+                        <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-4 py-2 rounded-xl">
+                          <div className="flex items-center space-x-2">
+                            <svg className="w-4 h-4 text-[#00d4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span className="text-[#00d4ff] font-medium text-sm">Jun 2024 – Dec 2024</span>
+                          </div>
                         </div>
-                        <div className="text-gray-300 text-sm">
-                          Phu Nhuan Branch (On-site)
+                        
+                        <div className="bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 px-4 py-2 rounded-xl">
+                          <div className="flex items-center space-x-2">
+                            <svg className="w-4 h-4 text-[#7c3aed]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span className="text-[#7c3aed] font-medium text-sm">Phu Nhuan Branch (On-site)</span>
+                          </div>
                         </div>
                       </div>
                     </div>
