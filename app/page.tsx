@@ -147,7 +147,8 @@ export default function Portfolio() {
                       <div className="flex-1 space-y-6">
                         <div className="text-center lg:text-left">
                           <h4 className="text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">
-                            {t?.education?.degree || "Bachelor of Financial Technology"}
+                            <div className="block">Bachelor of</div>
+                            <div className="block">Financial Technology</div>
                           </h4>
                           <p className="text-[#00d4ff] font-bold text-lg lg:text-xl mb-2 break-words">
                             {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
