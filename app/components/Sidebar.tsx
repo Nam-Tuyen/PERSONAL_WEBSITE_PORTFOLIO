@@ -54,10 +54,10 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
-      {/* Modern Tech Toggle Button - Edge Positioned */}
+      {/* Modern Tech Toggle Button - Synchronized Movement */}
       <button
         onClick={() => onToggleCollapse(!isCollapsed)}
-        className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-500 ease-in-out ${
+        className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
           isCollapsed ? 'left-0' : 'left-64'
         }`}
       >
@@ -78,20 +78,26 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
               <div className={`w-1.5 h-1.5 bg-white rounded-full transition-all duration-300 delay-200 ${
                 isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
               }`}></div>
-            </div>
+        </div>
             
-            {/* Arrow Indicator */}
-            <div className={`absolute right-2 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-500 ${
+            {/* Arrow Indicator - Synchronized with sidebar */}
+            <div className={`absolute right-2 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-300 ${
               isCollapsed ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
             }`}></div>
           </div>
           
-          {/* Tech Scan Line */}
-          <div className="absolute -top-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60 animate-pulse"></div>
+          {/* Tech Scan Line - Synchronized animation */}
+          <div className={`absolute -top-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent transition-all duration-300 ${
+            isCollapsed ? 'opacity-60 animate-pulse' : 'opacity-40'
+          }`}></div>
           
-          {/* Corner Brackets */}
-          <div className="absolute -top-1 -left-1 w-3 h-3 border-l-2 border-t-2 border-[#00ff88] opacity-40"></div>
-          <div className="absolute -bottom-1 -left-1 w-3 h-3 border-l-2 border-b-2 border-[#00d4ff] opacity-40"></div>
+          {/* Corner Brackets - Synchronized visibility */}
+          <div className={`absolute -top-1 -left-1 w-3 h-3 border-l-2 border-t-2 border-[#00ff88] transition-all duration-300 ${
+            isCollapsed ? 'opacity-40' : 'opacity-20'
+          }`}></div>
+          <div className={`absolute -bottom-1 -left-1 w-3 h-3 border-l-2 border-b-2 border-[#00d4ff] transition-all duration-300 ${
+            isCollapsed ? 'opacity-40' : 'opacity-20'
+          }`}></div>
         </div>
       </button>
 
