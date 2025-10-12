@@ -139,7 +139,7 @@ export const translations = {
             "Implemented with requests, pandas, and python-dotenv; modularized into fetch, process, and report components with reusable helpers for path management, API key loading, validation, and date handling; scheduled via a cron runner.",
             "Automated report generation that reduced manual preparation by 90% and improved team responsiveness by 25%."
           ],
-          technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
+          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
           period: "08/2024 - 10/2024"
@@ -406,7 +406,7 @@ export const translations = {
             "Implemented with requests, pandas, and python-dotenv; modularized into fetch, process, and report components with reusable helpers for path management, API key loading, validation, and date handling; scheduled via a cron runner.",
             "Automated report generation that reduced manual preparation by 90% and improved team responsiveness by 25%."
           ],
-          technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
+          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
           period: "08/2024 - 10/2024"
