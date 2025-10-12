@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   title: "NamTuyenLe-Portfolio",
   description: "Personal portfolio of Tuyen Le Nam - Product Manager, Data Analyst, and FinTech Enthusiast",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', type: 'image/x-icon' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({
