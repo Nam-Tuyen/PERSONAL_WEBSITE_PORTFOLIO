@@ -302,10 +302,8 @@ export default function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
-                  <div className="inline-flex items-center space-x-3 mb-6">
-                    <div className="w-3 h-3 bg-[#00ff88] rounded-full animate-pulse"></div>
+                  <div className="text-center mb-6">
                     <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">CERTIFICATIONS & AWARDS</h3>
-                    <div className="w-3 h-3 bg-[#00d4ff] rounded-full animate-pulse"></div>
                   </div>
                   <div className="w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
