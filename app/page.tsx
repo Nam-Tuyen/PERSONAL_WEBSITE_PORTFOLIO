@@ -381,43 +381,60 @@ export default function Portfolio() {
                   <div className="w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                 </div>
 
-                <div className="max-w-6xl mx-auto">
-                  <div className="space-y-8">
-                    {t?.experience?.maybank && (
-                      <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
-                        <div className="flex items-start justify-between mb-8">
-                          <div>
-                            <h4 className="text-3xl font-bold text-white mb-3">{t.experience.maybank.position}</h4>
-                            <p className="text-[#00d4ff] font-semibold text-xl">{t.experience.maybank.company}</p>
-                          </div>
-                          <span className="text-gray-400 text-sm bg-gray-800/50 px-6 py-3 rounded-full border border-white/10">{t.experience.maybank.period}</span>
+                <div className="max-w-5xl mx-auto">
+                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
+                    {/* Header */}
+                    <div className="flex items-start justify-between mb-8">
+                      <div>
+                        <h4 className="text-3xl font-bold text-white mb-3">Broker Intern</h4>
+                        <p className="text-[#00d4ff] font-semibold text-xl">Maybank Investment Bank Vietnam</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-gray-400 text-sm bg-gray-800/50 px-4 py-2 rounded-full border border-white/10 mb-2">
+                          Jun 2024 – Dec 2024
                         </div>
-                        <p className="text-gray-300 text-lg mb-8 leading-relaxed">{t.experience.maybank.department}</p>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                          <div>
-                            <h5 className="text-lg font-bold text-white mb-4">Key Achievements</h5>
-                            <ul className="space-y-3">
-                              {t.experience.maybank.achievements?.slice(0, 3).map((achievement: string, achievementIndex: number) => (
-                                <li key={achievementIndex} className="flex items-start space-x-3">
-                                  <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-gray-300">{achievement}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div>
-                            <h5 className="text-lg font-bold text-white mb-4">Technologies Used</h5>
-                            <div className="flex flex-wrap gap-2">
-                              {['Python', 'SQL', 'Tableau', 'Power BI', 'Excel'].map((tech, techIndex) => (
-                                <span key={techIndex} className="px-3 py-1 bg-[#00d4ff]/20 text-[#00d4ff] text-sm rounded-full border border-[#00d4ff]/30">
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
+                        <div className="text-gray-300 text-sm">
+                          Phu Nhuan Branch (On-site)
                         </div>
                       </div>
-                    )}
+                    </div>
+
+                    {/* Job Description */}
+                    <div className="mb-8">
+                      <h5 className="text-xl font-bold text-white mb-6">Job Description</h5>
+                      <div className="space-y-4">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 leading-relaxed">
+                            Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.
+                          </span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 leading-relaxed">
+                            Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.
+                          </span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 leading-relaxed">
+                            Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.
+                          </span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 leading-relaxed">
+                            Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.
+                          </span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 leading-relaxed">
+                            Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
