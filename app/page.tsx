@@ -271,8 +271,7 @@ export default function Portfolio() {
 
                     {/* Database & Cloud */}
                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
-                      <div className="flex items-center space-x-4 mb-6">
-                        <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
+                      <div className="mb-6">
                         <h4 className="text-xl font-bold text-white">Database & Cloud</h4>
                       </div>
                       <div className="space-y-3">
