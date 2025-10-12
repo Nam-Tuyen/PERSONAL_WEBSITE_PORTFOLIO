@@ -103,7 +103,8 @@ export default function Portfolio() {
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-12 shadow-2xl">
                     <div className="text-center">
                       <blockquote className="text-3xl lg:text-4xl text-[#00ff88] font-bold italic mb-12 leading-tight max-w-4xl mx-auto">
-                        "{t?.about?.quote || "Transforming vision into reality turning intent into results"}"
+                        <div className="block">"Transforming vision into reality</div>
+                        <div className="block">turning intent into results"</div>
                       </blockquote>
                       <div className="max-w-5xl mx-auto">
                         <p className="text-lg text-gray-300 leading-relaxed text-justify">
