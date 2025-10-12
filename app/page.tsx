@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { translations } from "./data/translations"
 import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
@@ -65,7 +65,7 @@ export default function Portfolio() {
                 </div>
 
                  {/* Right Column - Professional Content */}
-                 <div className="order-1 lg:order-2 text-left">
+                 <div className="order-1 lg:order-2 text-center">
                    <div className="space-y-6 sm:space-y-8">
                      {/* Greeting */}
                      <div className="space-y-3 sm:space-y-4">
@@ -83,7 +83,7 @@ export default function Portfolio() {
 
 
                      {/* CTA Buttons */}
-                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start">
+                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-sm sm:text-base">
                          Download Resume
                        </button>
@@ -103,17 +103,17 @@ export default function Portfolio() {
             <section id="about" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
+                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                 <div className="mb-4 sm:mb-6">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">ABOUT ME</h3>
                 </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
+                <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
                 
                 <div className="max-w-6xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
                     <div className="text-left">
-                      <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#00ff88] font-bold italic mb-8 sm:mb-10 lg:mb-12 leading-tight max-w-4xl">
+                      <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#00ff88] font-bold italic mb-8 sm:mb-10 lg:mb-12 leading-tight max-w-4xl text-center">
                         <div className="block">"Transforming vision into reality</div>
                         <div className="block">turning intent into results"</div>
                       </blockquote>
@@ -132,12 +132,12 @@ export default function Portfolio() {
             <section id="education" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
-                  <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">EDUCATION</h3>
-                  </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed]"></div>
-                </div>
+                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                   <div className="mb-4 sm:mb-6">
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">EDUCATION</h3>
+                   </div>
+                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
+                 </div>
 
                 <div className="max-w-5xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
@@ -196,12 +196,12 @@ export default function Portfolio() {
             <section id="skills" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
-                  <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">SKILLS</h3>
-                  </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88]"></div>
-                </div>
+                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                   <div className="mb-4 sm:mb-6">
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">SKILLS</h3>
+                   </div>
+                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+                 </div>
 
                 <div className="max-w-6xl mx-auto">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
@@ -297,11 +297,11 @@ export default function Portfolio() {
             <section id="certifications" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
+                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                   <div className="mb-4 sm:mb-6">
                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">CERTIFICATIONS & AWARDS</h3>
                   </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
 
                 <div className="max-w-5xl mx-auto">
@@ -369,11 +369,11 @@ export default function Portfolio() {
             <section id="experience" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
-                 <div className="text-left mb-16">
-                   <div className="mb-6">
-                     <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">WORKING EXPERIENCE</h3>
+                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                   <div className="mb-4 sm:mb-6">
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">WORKING EXPERIENCE</h3>
                    </div>
-                   <div className="w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed]"></div>
+                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                  </div>
 
                 <div className="max-w-6xl mx-auto">
@@ -568,11 +568,11 @@ export default function Portfolio() {
             <section id="projects" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
-                 <div className="text-left mb-16">
-                   <div className="mb-6">
-                     <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">PROJECT</h3>
+                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                   <div className="mb-4 sm:mb-6">
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">PROJECT</h3>
                    </div>
-                   <div className="w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88]"></div>
+                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                  </div>
 
                 <div className="max-w-7xl mx-auto">
