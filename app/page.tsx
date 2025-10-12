@@ -41,39 +41,39 @@ export default function Portfolio() {
         }`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
             
-             {/* Hero Section - Tech Minimal Style */}
-             <section id="home" className="mb-16 sm:mb-24 lg:mb-32">
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-                 {/* Left Column - Professional Image */}
-                 <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-                   <div className="relative group w-full max-w-sm lg:max-w-none">
-                     {/* Tech Grid Background */}
-                     <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-                     <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-1 sm:p-2">
-                       {/* Fixed Aspect Ratio Container */}
-                       <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl sm:rounded-2xl">
-                         <img 
-                           src="/Profilepicture.jpg" 
-                           alt="LE NAM TUYEN" 
-                           className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
-                         />
-                         {/* Tech Overlay */}
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
+            {/* Hero Section - Tech Minimal Style */}
+            <section id="home" className="mb-16 sm:mb-24 lg:mb-32">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                {/* Left Column - Professional Image */}
+                <div className="order-2 lg:order-1">
+                  <div className="relative group">
+                    {/* Tech Grid Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-1 sm:p-2">
+                      {/* Fixed Aspect Ratio Container */}
+                      <div className="relative w-full aspect-[4/5] max-w-sm mx-auto sm:max-w-none overflow-hidden rounded-xl sm:rounded-2xl">
+                        <img 
+                          src="/Profilepicture.jpg" 
+                          alt="LE NAM TUYEN" 
+                          className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
+                        />
+                        {/* Tech Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                  {/* Right Column - Professional Content */}
-                 <div className="order-1 lg:order-2 text-center lg:text-left">
-                   <div className="space-y-6 sm:space-y-8 max-w-lg mx-auto lg:max-w-none">
+                 <div className="order-1 lg:order-2 text-left">
+                   <div className="space-y-6 sm:space-y-8">
                      {/* Greeting */}
                      <div className="space-y-3 sm:space-y-4">
                        
-                       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 sm:mb-4 tracking-tight leading-tight">
+                       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 sm:mb-4 tracking-tight">
                          {t?.hero?.greeting || "HI, I AM"}
                        </h1>
-                       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-6 tracking-tight leading-tight">
+                       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-6 tracking-tight">
                          {t?.hero?.name || "LE NAM TUYEN"}
                        </h2>
                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-medium leading-relaxed mb-6 sm:mb-8">
@@ -83,42 +83,42 @@ export default function Portfolio() {
 
 
                      {/* CTA Buttons */}
-                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                       <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-sm sm:text-base w-full sm:w-auto">
+                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start">
+                       <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-sm sm:text-base">
                          Download Resume
                        </button>
                        <button 
                          onClick={scrollToProjects}
-                         className="px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
+                         className="px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300 text-sm sm:text-base"
                        >
                          View Projects
                        </button>
                      </div>
                    </div>
                  </div>
-               </div>
-             </section>
+              </div>
+            </section>
 
             {/* 1. ABOUT ME Section */}
             <section id="about" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">ABOUT ME</h3>
-                  </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
+                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
+                <div className="mb-4 sm:mb-6">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">ABOUT ME</h3>
+                </div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
                 </div>
                 
                 <div className="max-w-6xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
-                    <div className="text-center">
-                      <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#00ff88] font-bold italic mb-8 sm:mb-10 lg:mb-12 leading-tight max-w-4xl mx-auto">
+                    <div className="text-left">
+                      <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#00ff88] font-bold italic mb-8 sm:mb-10 lg:mb-12 leading-tight max-w-4xl">
                         <div className="block">"Transforming vision into reality</div>
                         <div className="block">turning intent into results"</div>
                       </blockquote>
-                      <div className="max-w-5xl mx-auto">
-                        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center sm:text-justify">
+                      <div className="max-w-5xl">
+                        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-left">
                           {t?.about?.description || "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."}
                         </p>
                       </div>
@@ -132,19 +132,19 @@ export default function Portfolio() {
             <section id="education" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">EDUCATION</h3>
+                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">EDUCATION</h3>
                   </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed]"></div>
                 </div>
 
                 <div className="max-w-5xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
                     {/* Modern Education Card Layout */}
-                    <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center">
+                    <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start">
                       {/* Left Side - Degree Info */}
-                      <div className="flex-1 space-y-4 sm:space-y-6 text-center lg:text-left w-full">
+                      <div className="flex-1 space-y-4 sm:space-y-6 text-left">
                         <div>
                           <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 leading-tight">
                             <div className="block">Bachelor of</div>
@@ -158,21 +158,21 @@ export default function Portfolio() {
                       </div>
 
                       {/* Right Side - Stats & Link */}
-                      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:items-center w-full lg:w-auto">
+                      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:items-center">
                         {/* Academic Stats */}
-                        <div className="flex gap-4 sm:gap-6 justify-center lg:justify-start">
-                          <div className="text-center">
+                        <div className="flex gap-4 sm:gap-6">
+                          <div className="text-left">
                             <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#00d4ff] mb-1">{t?.education?.gpa || "3.0"}</div>
                             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">GPA</div>
                           </div>
-                          <div className="text-center">
+                          <div className="text-left">
                             <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#7c3aed] mb-1">{t?.education?.ielts || "6.0"}</div>
                             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">IELTS</div>
                           </div>
                         </div>
 
                         {/* Learn More Link */}
-                        <div className="flex justify-center lg:justify-end">
+                        <div className="flex justify-start">
                           <a 
                             href="https://www.uel.edu.vn/ArticleId/098e3942-d9c0-4d71-9e45-1436ad2a6538/lich-su-hinh-thanh-va-phat-trien"
                             target="_blank"
@@ -196,11 +196,11 @@ export default function Portfolio() {
             <section id="skills" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">SKILLS</h3>
+                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">SKILLS</h3>
                   </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88]"></div>
                 </div>
 
                 <div className="max-w-6xl mx-auto">
@@ -208,7 +208,7 @@ export default function Portfolio() {
                     {/* Programming Languages */}
                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                       <div className="mb-4 sm:mb-6">
-                        <h4 className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">Programming Languages</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-white">Programming Languages</h4>
                       </div>
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-center space-x-2 sm:space-x-3 group-hover:translate-x-2 transition-transform duration-300">
@@ -229,7 +229,7 @@ export default function Portfolio() {
                     {/* Data Tools */}
                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                       <div className="mb-4 sm:mb-6">
-                        <h4 className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">Data Tools</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-white">Data Tools</h4>
                       </div>
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-center space-x-2 sm:space-x-3 group-hover:translate-x-2 transition-transform duration-300">
@@ -250,7 +250,7 @@ export default function Portfolio() {
                     {/* Product Management */}
                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                       <div className="mb-4 sm:mb-6">
-                        <h4 className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">Product Management</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-white">Product Management</h4>
                       </div>
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-center space-x-2 sm:space-x-3 group-hover:translate-x-2 transition-transform duration-300">
@@ -271,7 +271,7 @@ export default function Portfolio() {
                     {/* Database & Cloud */}
                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                       <div className="mb-4 sm:mb-6">
-                        <h4 className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">Database & Cloud</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-white">Database & Cloud</h4>
                       </div>
                       <div className="space-y-2 sm:space-y-3">
                         <div className="flex items-center space-x-2 sm:space-x-3 group-hover:translate-x-2 transition-transform duration-300">
@@ -297,11 +297,11 @@ export default function Portfolio() {
             <section id="certifications" className="mb-16 sm:mb-24 lg:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">CERTIFICATIONS & AWARDS</h3>
+                <div className="text-left mb-8 sm:mb-12 lg:mb-16">
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">CERTIFICATIONS & AWARDS</h3>
                   </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
+                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff]"></div>
                 </div>
 
                 <div className="max-w-5xl mx-auto">
@@ -314,14 +314,14 @@ export default function Portfolio() {
                       >
                         <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00ff88] rounded-full animate-pulse"></div>
-                          <h4 className="text-base sm:text-lg font-bold text-white text-center sm:text-left">Google Certificate</h4>
+                          <h4 className="text-base sm:text-lg font-bold text-white">Google Certificate</h4>
                         </div>
-                        <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-center sm:text-left">
-                          Ask Questions to Make Data-Driven Decisions
-                        </p>
-                        <div className="mt-2 sm:mt-3 text-xs text-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center sm:text-left">
-                          Click to view certificate
-                        </div>
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
+                           Ask Questions to Make Data-Driven Decisions
+                         </p>
+                         <div className="mt-2 sm:mt-3 text-xs text-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
+                           Click to view certificate
+                         </div>
                       </div>
 
                       {/* NVIDIA Certificate */}
@@ -331,14 +331,14 @@ export default function Portfolio() {
                       >
                         <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00d4ff] rounded-full animate-pulse"></div>
-                          <h4 className="text-base sm:text-lg font-bold text-white text-center sm:text-left">NVIDIA Certificate</h4>
+                          <h4 className="text-base sm:text-lg font-bold text-white">NVIDIA Certificate</h4>
                         </div>
-                        <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-center sm:text-left">
-                          Accelerating End-to-End Data Science Workflows
-                        </p>
-                        <div className="mt-2 sm:mt-3 text-xs text-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center sm:text-left">
-                          Click to view certificate
-                        </div>
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
+                           Accelerating End-to-End Data Science Workflows
+                         </p>
+                         <div className="mt-2 sm:mt-3 text-xs text-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
+                           Click to view certificate
+                         </div>
                       </div>
 
                       {/* Journal Article */}
@@ -350,14 +350,14 @@ export default function Portfolio() {
                       >
                         <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
-                          <h4 className="text-base sm:text-lg font-bold text-white text-center sm:text-left">Journal Article</h4>
+                          <h4 className="text-base sm:text-lg font-bold text-white">Journal Article</h4>
                         </div>
-                        <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-center sm:text-left">
-                          Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries
-                        </p>
-                        <div className="mt-2 sm:mt-3 text-xs text-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center sm:text-left">
-                          Click to view article
-                        </div>
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
+                           Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries
+                         </p>
+                         <div className="mt-2 sm:mt-3 text-xs text-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
+                           Click to view article
+                         </div>
                       </a>
                     </div>
                   </div>
@@ -365,239 +365,239 @@ export default function Portfolio() {
               </div>
             </section>
 
-             {/* 5. WORKING EXPERIENCE Section */}
-             <section id="experience" className="mb-16 sm:mb-24 lg:mb-32 relative">
-               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-               <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="text-center mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">WORKING EXPERIENCE</h3>
+            {/* 5. WORKING EXPERIENCE Section */}
+            <section id="experience" className="mb-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
+              <div className="relative">
+                 <div className="text-left mb-16">
+                   <div className="mb-6">
+                     <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">WORKING EXPERIENCE</h3>
                    </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
+                   <div className="w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed]"></div>
                  </div>
 
-                 <div className="max-w-6xl mx-auto">
-                   <div className="space-y-6 sm:space-y-8">
-                     {/* AGRIBANK Experience */}
-                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl group">
-                       {/* Header with Logo */}
-                       <div className="mb-6 sm:mb-8">
-                         <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
-                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl p-2 shadow-lg flex-shrink-0">
-                             <img 
-                               src="/agribank logo.jpg" 
-                               alt="AGRIBANK Logo" 
-                               className="w-full h-full object-contain"
-                             />
-                           </div>
-                           <div className="text-center sm:text-left">
-                             <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">Credit Analyst Intern</h4>
-                             <p className="text-[#00ff88] font-semibold text-lg sm:text-xl">AGRIBANK</p>
-                           </div>
-                         </div>
-                         
-                         {/* Modern Info Cards */}
-                         <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
-                           <div className="bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 px-3 sm:px-4 py-2 rounded-xl">
-                             <div className="flex items-center space-x-2">
-                               <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                               </svg>
-                               <span className="text-white font-medium text-xs sm:text-sm">Mar 2025 – Jun 2025</span>
-                             </div>
-                           </div>
-                           
-                           <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-3 sm:px-4 py-2 rounded-xl">
-                             <div className="flex items-center space-x-2">
-                               <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                               </svg>
-                               <span className="text-white font-medium text-xs sm:text-sm">Binh Trieu Branch (On-site)</span>
-                             </div>
-                           </div>
-                         </div>
+                <div className="max-w-6xl mx-auto">
+                  <div className="space-y-8">
+                    {/* AGRIBANK Experience */}
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl group">
+                      {/* Header with Logo */}
+                      <div className="mb-8">
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-16 h-16 bg-white rounded-xl p-2 shadow-lg">
+                            <img 
+                              src="/agribank logo.jpg" 
+                              alt="AGRIBANK Logo" 
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="text-3xl font-bold text-white mb-2">Credit Analyst Intern</h4>
+                            <p className="text-[#00ff88] font-semibold text-xl">AGRIBANK</p>
+                          </div>
+                        </div>
+                        
+                        {/* Modern Info Cards */}
+                        <div className="flex flex-wrap gap-3 mb-6">
+                          <div className="bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 px-4 py-2 rounded-xl">
+                            <div className="flex items-center space-x-2">
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <span className="text-white font-medium text-sm">Mar 2025 – Jun 2025</span>
+                            </div>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-4 py-2 rounded-xl">
+                            <div className="flex items-center space-x-2">
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                              <span className="text-white font-medium text-sm">Binh Trieu Branch (On-site)</span>
+                            </div>
+                          </div>
+                        </div>
 
                          {/* Learn More Button */}
-                         <div className="flex justify-center lg:justify-start">
+                         <div className="flex justify-start">
                            <a
                              href="https://www.agribank.com.vn/"
                              target="_blank"
                              rel="noopener noreferrer"
-                             className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88] font-semibold rounded-xl hover:from-[#00ff88]/30 hover:to-[#00d4ff]/30 hover:border-[#00ff88]/50 transition-all duration-300 group text-xs sm:text-sm"
+                             className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88] font-semibold rounded-xl hover:from-[#00ff88]/30 hover:to-[#00d4ff]/30 hover:border-[#00ff88]/50 transition-all duration-300 group"
                            >
                              <span>More information</span>
-                             <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                              </svg>
                            </a>
                          </div>
-                       </div>
+                      </div>
 
-                       {/* Job Description */}
-                       <div className="mb-6 sm:mb-8">
-                         <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 text-center sm:text-left">Job Description</h5>
-                         <div className="space-y-3 sm:space-y-4">
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Produced timely market reports covering sector and macroeconomic updates to support lending decisions.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Conducted financial statement analysis with ratio and trend analysis to inform underwriting.
-                             </span>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
+                      {/* Job Description */}
+                      <div className="mb-8">
+                        <h5 className="text-xl font-bold text-white mb-6">Job Description</h5>
+                        <div className="space-y-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Produced timely market reports covering sector and macroeconomic updates to support lending decisions.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00ff88] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Conducted financial statement analysis with ratio and trend analysis to inform underwriting.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                     {/* Maybank Experience */}
-                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
-                       {/* Header with Logo */}
-                       <div className="mb-6 sm:mb-8">
-                         <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
-                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl p-2 shadow-lg flex-shrink-0">
-                             <img 
-                               src="/Maybank logo.png" 
-                               alt="Maybank Logo" 
-                               className="w-full h-full object-contain"
-                             />
-                           </div>
-                           <div className="text-center sm:text-left">
-                             <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">Broker Intern</h4>
-                             <p className="text-[#00d4ff] font-semibold text-lg sm:text-xl">Maybank Investment Bank Vietnam</p>
-                           </div>
-                         </div>
-                         
-                         {/* Modern Info Cards */}
-                         <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
-                           <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-3 sm:px-4 py-2 rounded-xl">
-                             <div className="flex items-center space-x-2">
-                               <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                               </svg>
-                               <span className="text-white font-medium text-xs sm:text-sm">Jun 2024 – Dec 2024</span>
-                             </div>
-                           </div>
-                           
-                           <div className="bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 px-3 sm:px-4 py-2 rounded-xl">
-                             <div className="flex items-center space-x-2">
-                               <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                               </svg>
-                               <span className="text-white font-medium text-xs sm:text-sm">Phu Nhuan Branch (On-site)</span>
-                             </div>
-                           </div>
-                         </div>
+                    {/* Maybank Experience */}
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
+                      {/* Header with Logo */}
+                      <div className="mb-8">
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-16 h-16 bg-white rounded-xl p-2 shadow-lg">
+                            <img 
+                              src="/Maybank logo.png" 
+                              alt="Maybank Logo" 
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="text-3xl font-bold text-white mb-2">Broker Intern</h4>
+                            <p className="text-[#00d4ff] font-semibold text-xl">Maybank Investment Bank Vietnam</p>
+                          </div>
+                        </div>
+                        
+                        {/* Modern Info Cards */}
+                        <div className="flex flex-wrap gap-3 mb-6">
+                          <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-4 py-2 rounded-xl">
+                            <div className="flex items-center space-x-2">
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <span className="text-white font-medium text-sm">Jun 2024 – Dec 2024</span>
+                            </div>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 px-4 py-2 rounded-xl">
+                            <div className="flex items-center space-x-2">
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                              <span className="text-white font-medium text-sm">Phu Nhuan Branch (On-site)</span>
+                            </div>
+                          </div>
+                        </div>
 
                          {/* Learn More Button */}
-                         <div className="flex justify-center lg:justify-start">
+                         <div className="flex justify-start">
                            <a
                              href="https://www.linkedin.com/company/mibv/"
                              target="_blank"
                              rel="noopener noreferrer"
-                             className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group text-xs sm:text-sm"
+                             className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group"
                            >
                              <span>More information</span>
-                             <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                              </svg>
                            </a>
                          </div>
-                       </div>
+                      </div>
 
-                       {/* Job Description */}
-                       <div className="mb-6 sm:mb-8">
-                         <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 text-center sm:text-left">Job Description</h5>
-                         <div className="space-y-3 sm:space-y-4">
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.
-                             </span>
-                           </div>
-                           <div className="flex items-start space-x-2 sm:space-x-3">
-                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
-                             <span className="text-gray-300 leading-relaxed text-sm sm:text-base text-center sm:text-justify">
-                               Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness.
-                             </span>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </section>
+                      {/* Job Description */}
+                      <div className="mb-8">
+                        <h5 className="text-xl font-bold text-white mb-6">Job Description</h5>
+                        <div className="space-y-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.
+                            </span>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 leading-relaxed text-justify">
+                              Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             {/* 6. PROJECT Section */}
-            <section id="projects" className="mb-16 sm:mb-24 lg:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
+            <section id="projects" className="mb-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">PROJECT</h3>
-                  </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
-                </div>
+                 <div className="text-left mb-16">
+                   <div className="mb-6">
+                     <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">PROJECT</h3>
+                   </div>
+                   <div className="w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88]"></div>
+                 </div>
 
                 <div className="max-w-7xl mx-auto">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {t?.projects?.items?.map((project: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
                         <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
-                          <div className="text-4xl sm:text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
+                          <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <div className="p-6 sm:p-8">
-                          <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 text-center sm:text-left leading-tight">{project.title}</h4>
-                          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 uppercase tracking-wider text-center sm:text-left">{project.category}</p>
-                          <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base text-center sm:text-left">{project.description}</p>
-                          <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
-                            {project.technologies?.map((tech: string, techIndex: number) => (
-                              <span key={techIndex} className="px-2 sm:px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                          <button className="w-full py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg text-sm sm:text-base">
-                            View Project
-                          </button>
-                        </div>
+                         <div className="p-8">
+                           <h4 className="text-2xl font-bold text-white mb-3 text-left">{project.title}</h4>
+                           <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider text-left">{project.category}</p>
+                           <p className="text-gray-300 mb-6 leading-relaxed text-left">{project.description}</p>
+                           <div className="flex flex-wrap gap-2 mb-6 justify-start">
+                             {project.technologies?.map((tech: string, techIndex: number) => (
+                               <span key={techIndex} className="px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">
+                                 {tech}
+                               </span>
+                             ))}
+                           </div>
+                           <button className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                             View Project
+                           </button>
+                         </div>
                       </div>
                     ))}
                   </div>
