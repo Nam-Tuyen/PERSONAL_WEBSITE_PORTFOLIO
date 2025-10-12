@@ -141,31 +141,45 @@ export default function Portfolio() {
 
                 <div className="max-w-6xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-12 shadow-2xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                      <div className="lg:col-span-2">
-                        <h4 className="text-3xl font-bold text-white mb-4">{t?.education?.degree || "Bachelor of Financial Technology"}</h4>
-                        <p className="text-[#00d4ff] font-semibold text-xl mb-6">{t?.education?.university || "University of Economics and Law (VNU-HCM)"}</p>
-                        <div className="grid grid-cols-2 gap-6 mb-8">
-                          <div className="bg-gradient-to-br from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-2xl p-6 border border-[#00d4ff]/20">
-                            <div className="text-2xl font-bold text-[#00d4ff] mb-2">{t?.education?.gpa || "3.0/4.0"}</div>
-                            <div className="text-sm text-gray-400 uppercase tracking-wider">GPA</div>
+                    {/* Modern Education Card Layout */}
+                    <div className="flex flex-col lg:flex-row gap-8 items-center">
+                      {/* Left Side - Degree Info */}
+                      <div className="flex-1 space-y-6">
+                        <div className="text-center lg:text-left">
+                          <h4 className="text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
+                            {t?.education?.degree || "Bachelor of Financial Technology"}
+                          </h4>
+                          <p className="text-[#00d4ff] font-bold text-xl lg:text-2xl mb-2">
+                            {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
+                          </p>
+                          <p className="text-gray-400 text-lg">2021 - 2025</p>
+                        </div>
+                      </div>
+
+                      {/* Right Side - Stats & Link */}
+                      <div className="flex flex-col lg:flex-row gap-6 lg:items-center">
+                        {/* Academic Stats */}
+                        <div className="flex gap-6">
+                          <div className="text-center">
+                            <div className="text-3xl font-black text-[#00d4ff] mb-1">{t?.education?.gpa || "3.0"}</div>
+                            <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">GPA</div>
                           </div>
-                          <div className="bg-gradient-to-br from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-2xl p-6 border border-[#00d4ff]/20">
-                            <div className="text-2xl font-bold text-[#00d4ff] mb-2">{t?.education?.ielts || "6.0"}</div>
-                            <div className="text-sm text-gray-400 uppercase tracking-wider">IELTS</div>
+                          <div className="text-center">
+                            <div className="text-3xl font-black text-[#7c3aed] mb-1">{t?.education?.ielts || "6.0"}</div>
+                            <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">IELTS</div>
                           </div>
                         </div>
-                        
+
                         {/* Learn More Link */}
-                        <div className="mt-6">
+                        <div className="flex justify-center lg:justify-end">
                           <a 
                             href="https://www.uel.edu.vn/ArticleId/098e3942-d9c0-4d71-9e45-1436ad2a6538/lich-su-hinh-thanh-va-phat-trien"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group"
+                            className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] text-white font-bold rounded-2xl hover:from-[#00d4ff]/90 hover:to-[#7c3aed]/90 hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00d4ff]/25 group"
                           >
                             <span>Xem thêm thông tin</span>
-                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                           </a>
