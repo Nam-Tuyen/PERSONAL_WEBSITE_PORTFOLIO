@@ -191,47 +191,84 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
             </div>
           </div>
 
-          {/* Navigation - macOS style */}
-          <nav className="space-y-1">
+          {/* Modern Navigation */}
+          <nav className="space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon
               return (
                 <div key={item.key} className="space-y-1">
-                  {/* Main Category */}
+                  {/* Main Category - Modern Design */}
                   <button
                     onClick={() => handleSectionChange(item.key)}
-                    className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
+                    className={`w-full flex items-center space-x-4 px-4 py-3 rounded-xl transition-all duration-300 group relative overflow-hidden ${
                       activeSection === item.key
-                        ? `${item.bgColor} ${item.color} shadow-sm border border-[#00ff88]/20`
+                        ? `${item.bgColor} ${item.color} shadow-lg border border-[#00ff88]/30`
                         : 'text-gray-400 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span className="font-medium text-sm">{item.label}</span>
+                    {/* Background Glow Effect */}
+                    {activeSection === item.key && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-xl"></div>
+                    )}
+                    
+                    {/* Icon Container */}
+                    <div className={`relative z-10 p-2 rounded-lg transition-all duration-300 ${
+                      activeSection === item.key 
+                        ? 'bg-white/10' 
+                        : 'group-hover:bg-white/5'
+                    }`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    
+                    {/* Label */}
+                    <span className="relative z-10 font-semibold text-sm flex-1">{item.label}</span>
+                    
+                    {/* Expand Indicator */}
                     {item.sections && (
-                      <ChevronRight className={`w-3 h-3 ml-auto transition-transform duration-200 ${
-                        activeSection === item.key ? 'rotate-90' : ''
-                      }`} />
+                      <div className="relative z-10">
+                        <ChevronRight className={`w-4 h-4 transition-all duration-300 ${
+                          activeSection === item.key ? 'rotate-90 text-[#00ff88]' : 'text-gray-500 group-hover:text-gray-300'
+                        }`} />
+                      </div>
+                    )}
+                    
+                    {/* Active Indicator */}
+                    {activeSection === item.key && (
+                      <div className="absolute right-3 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
                     )}
                   </button>
                   
-                  {/* Sub-sections */}
+                  {/* Sub-sections - Modern Design */}
                   {activeSection === item.key && item.sections && (
-                    <div className="ml-4 space-y-0.5 animate-fadeIn">
+                    <div className="ml-6 space-y-1 animate-fadeIn">
                       {item.sections.map((section) => {
                         const SectionIcon = section.icon
                         return (
                           <button
                             key={section.key}
                             onClick={() => handleSectionChange(section.key)}
-                            className={`w-full flex items-center space-x-3 px-3 py-2 rounded-md transition-all duration-200 text-sm ${
+                            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-300 text-sm group relative ${
                               activeSection === section.key
-                                ? 'bg-[#00ff88]/10 text-[#00ff88] border-l-2 border-[#00ff88]'
+                                ? 'bg-[#00ff88]/15 text-[#00ff88] border-l-3 border-[#00ff88] shadow-sm'
                                 : 'text-gray-400 hover:text-white hover:bg-white/5'
                             }`}
                           >
-                            <SectionIcon className="w-3.5 h-3.5" />
-                            <span>{section.label}</span>
+                            {/* Sub-section Icon */}
+                            <div className={`p-1.5 rounded-md transition-all duration-300 ${
+                              activeSection === section.key 
+                                ? 'bg-[#00ff88]/20' 
+                                : 'group-hover:bg-white/5'
+                            }`}>
+                              <SectionIcon className="w-4 h-4" />
+                            </div>
+                            
+                            {/* Sub-section Label */}
+                            <span className="flex-1 font-medium">{section.label}</span>
+                            
+                            {/* Active Indicator for Sub-sections */}
+                            {activeSection === section.key && (
+                              <div className="w-1.5 h-1.5 bg-[#00ff88] rounded-full animate-pulse"></div>
+                            )}
                           </button>
                         )
                       })}
