@@ -166,7 +166,7 @@ export const translations = {
           technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "04/2024 - 06/2024"
+          period: "08/2023 - 02/2024"
         }
       ]
     },
@@ -443,7 +443,7 @@ export const translations = {
           technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "04/2024 - 06/2024"
+          period: "08/2023 - 02/2024"
         }
       ]
     },
