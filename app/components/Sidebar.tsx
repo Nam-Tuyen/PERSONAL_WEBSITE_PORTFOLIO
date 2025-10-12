@@ -54,25 +54,44 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
-      {/* macOS-style Toggle Button - Always Visible */}
+      {/* Modern Tech Toggle Button - Edge Positioned */}
       <button
         onClick={() => onToggleCollapse(!isCollapsed)}
-        className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
-          isCollapsed ? 'left-4' : 'left-72'
+        className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-500 ease-in-out ${
+          isCollapsed ? 'left-0' : 'left-64'
         }`}
       >
-        <div className="w-8 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/30 rounded-r-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group">
-          <div className="flex flex-col items-center space-y-1">
-            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-200 ${
-              isCollapsed ? 'opacity-100' : 'opacity-60'
-            }`}></div>
-            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-200 delay-50 ${
-              isCollapsed ? 'opacity-100' : 'opacity-60'
-            }`}></div>
-            <div className={`w-1 h-1 bg-white rounded-full transition-all duration-200 delay-100 ${
-              isCollapsed ? 'opacity-100' : 'opacity-60'
+        <div className="relative group">
+          {/* Main Button */}
+          <div className="w-10 h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/40 rounded-r-2xl flex items-center justify-center shadow-2xl hover:shadow-[#00ff88]/25 transition-all duration-300 group-hover:scale-105">
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+            
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center space-y-1">
+              <div className={`w-1.5 h-1.5 bg-white rounded-full transition-all duration-300 ${
+                isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
+              }`}></div>
+              <div className={`w-1.5 h-1.5 bg-white rounded-full transition-all duration-300 delay-100 ${
+                isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
+              }`}></div>
+              <div className={`w-1.5 h-1.5 bg-white rounded-full transition-all duration-300 delay-200 ${
+                isCollapsed ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
+              }`}></div>
+            </div>
+            
+            {/* Arrow Indicator */}
+            <div className={`absolute right-2 w-0 h-0 border-l-2 border-l-white border-t-2 border-t-transparent border-b-2 border-b-transparent transition-all duration-500 ${
+              isCollapsed ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
             }`}></div>
           </div>
+          
+          {/* Tech Scan Line */}
+          <div className="absolute -top-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-60 animate-pulse"></div>
+          
+          {/* Corner Brackets */}
+          <div className="absolute -top-1 -left-1 w-3 h-3 border-l-2 border-t-2 border-[#00ff88] opacity-40"></div>
+          <div className="absolute -bottom-1 -left-1 w-3 h-3 border-l-2 border-b-2 border-[#00d4ff] opacity-40"></div>
         </div>
       </button>
 
