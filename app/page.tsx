@@ -151,7 +151,7 @@ export default function Portfolio() {
                             <div className="block">Bachelor of</div>
                             <div className="block">Financial Technology</div>
                           </h4>
-                          <p className="text-[#00d4ff] font-bold text-lg lg:text-xl mb-2 break-words">
+                          <p className="text-[#00d4ff] font-bold text-lg lg:text-xl mb-2">
                             {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
                           </p>
                           <p className="text-gray-400 text-base">2021 - 2026</p>
@@ -199,7 +199,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-16">
                   <div className="text-center mb-6">
-                    <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">SKILL</h3>
+                    <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">SKILLS</h3>
                   </div>
                   <div className="w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                 </div>
@@ -309,9 +309,9 @@ export default function Portfolio() {
                   <div className="w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
 
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                       {/* Google Certificate */}
                       <div 
                         onClick={() => setSelectedCertificate('google')}
@@ -345,6 +345,25 @@ export default function Portfolio() {
                           Click to view certificate
                         </div>
                       </div>
+
+                      {/* Journal Article */}
+                      <a 
+                        href="https://ojs.omniscient.sg/index.php/gep/article/view/62858"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer p-6 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-2xl border border-[#7c3aed]/20 hover:border-[#7c3aed]/40 hover:from-[#7c3aed]/20 hover:to-[#00ff88]/20 transition-all duration-300 group block"
+                      >
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
+                          <h4 className="text-lg font-bold text-white">Journal Article</h4>
+                        </div>
+                        <p className="text-gray-300 font-medium text-sm leading-relaxed">
+                          Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries
+                        </p>
+                        <div className="mt-3 text-xs text-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Click to view article
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>
