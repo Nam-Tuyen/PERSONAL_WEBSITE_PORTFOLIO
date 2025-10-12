@@ -34,7 +34,7 @@ export default function Portfolio() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             
             {/* Hero Section - Tech Minimal Style */}
-            <section className="mb-32">
+            <section id="home" className="mb-32">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Left Column - Professional Image */}
                 <div className="order-2 lg:order-1">
@@ -106,7 +106,7 @@ export default function Portfolio() {
             </section>
 
             {/* 1. ABOUT ME Section */}
-            <section className="mb-32 relative">
+            <section id="about" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
@@ -138,7 +138,7 @@ export default function Portfolio() {
             </section>
 
             {/* 2. EDUCATION Section */}
-            <section className="mb-32 relative">
+            <section id="education" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
@@ -185,7 +185,7 @@ export default function Portfolio() {
             </section>
 
             {/* 3. SKILL Section */}
-            <section className="mb-32 relative">
+            <section id="skills" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
@@ -221,7 +221,7 @@ export default function Portfolio() {
             </section>
 
             {/* 4. CERTIFICATIONS & AWARDS Section */}
-            <section className="mb-32 relative">
+            <section id="certifications" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
@@ -277,7 +277,7 @@ export default function Portfolio() {
             </section>
 
             {/* 5. WORKING EXPERIENCE Section */}
-            <section className="mb-32 relative">
+            <section id="experience" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
@@ -291,21 +291,21 @@ export default function Portfolio() {
 
                 <div className="max-w-6xl mx-auto">
                   <div className="space-y-8">
-                    {t?.experience?.items?.map((item: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
+                    {t?.experience?.maybank && (
+                      <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
                         <div className="flex items-start justify-between mb-8">
                           <div>
-                            <h4 className="text-3xl font-bold text-white mb-3">{item.title}</h4>
-                            <p className="text-[#00d4ff] font-semibold text-xl">{item.company}</p>
+                            <h4 className="text-3xl font-bold text-white mb-3">{t.experience.maybank.position}</h4>
+                            <p className="text-[#00d4ff] font-semibold text-xl">{t.experience.maybank.company}</p>
                           </div>
-                          <span className="text-gray-400 text-sm bg-gray-800/50 px-6 py-3 rounded-full border border-white/10">{item.period}</span>
+                          <span className="text-gray-400 text-sm bg-gray-800/50 px-6 py-3 rounded-full border border-white/10">{t.experience.maybank.period}</span>
                         </div>
-                        <p className="text-gray-300 text-lg mb-8 leading-relaxed">{item.description}</p>
+                        <p className="text-gray-300 text-lg mb-8 leading-relaxed">{t.experience.maybank.department}</p>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                           <div>
                             <h5 className="text-lg font-bold text-white mb-4">Key Achievements</h5>
                             <ul className="space-y-3">
-                              {item.achievements?.slice(0, 3).map((achievement: string, achievementIndex: number) => (
+                              {t.experience.maybank.achievements?.slice(0, 3).map((achievement: string, achievementIndex: number) => (
                                 <li key={achievementIndex} className="flex items-start space-x-3">
                                   <div className="w-2 h-2 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
                                   <span className="text-gray-300">{achievement}</span>
@@ -325,14 +325,14 @@ export default function Portfolio() {
                           </div>
                         </div>
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
             </section>
 
             {/* 6. PROJECT Section */}
-            <section className="mb-32 relative">
+            <section id="projects" className="mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">

@@ -9,8 +9,8 @@ export const translations = {
     },
     footer: {
       contact: {
-        email: "namtuyen.le@gmail.com",
-        phone: "+84 123 456 789",
+        email: "bingo.namtuyen@gmail.com",
+        phone: "0921270404",
         location: "Ho Chi Minh City, Vietnam",
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
@@ -98,6 +98,23 @@ export const translations = {
         ],
         icon: "🏦"
       },
+      maybank: {
+        company: "Maybank Investment Bank Vietnam",
+        department: "Phu Nhuan Branch - Investment Research & Analysis",
+        position: "Data Analysis & Research Intern",
+        period: "June 2024 - December 2024",
+        achievements: [
+          "Conducted market research and financial analysis for investment opportunities",
+          "Created interactive dashboards using Power BI for investment performance tracking",
+          "Assisted in preparing investment reports and presentations for clients",
+          "Analyzed economic indicators and market trends to support investment decisions"
+        ],
+        icon: "🏢"
+      }
+    },
+    experience: {
+      title: "PROFESSIONAL EXPERIENCE",
+      subtitle: "My career journey and achievements",
       maybank: {
         company: "Maybank Investment Bank Vietnam",
         department: "Phu Nhuan Branch - Investment Research & Analysis",
@@ -254,8 +271,8 @@ export const translations = {
     },
     footer: {
       contact: {
-        email: "namtuyen.le@gmail.com",
-        phone: "+84 123 456 789",
+        email: "bingo.namtuyen@gmail.com",
+        phone: "0921270404",
         location: "Ho Chi Minh City, Vietnam",
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
@@ -357,8 +374,25 @@ export const translations = {
         icon: "🏢"
       }
     },
+    experience: {
+      title: "KINH NGHIỆM LÀM VIỆC",
+      subtitle: "Hành trình sự nghiệp và thành tựu của tôi",
+      maybank: {
+        company: "Maybank Investment Bank Vietnam",
+        department: "Chi nhánh Phú Nhuận - Nghiên cứu & Phân tích Đầu tư",
+        position: "Thực tập sinh Phân tích Dữ liệu & Nghiên cứu",
+        period: "Tháng 6/2024 - Tháng 12/2024",
+        achievements: [
+          "Thực hiện nghiên cứu thị trường và phân tích tài chính cho các cơ hội đầu tư",
+          "Tạo dashboard tương tác sử dụng Power BI để theo dõi hiệu suất đầu tư",
+          "Hỗ trợ chuẩn bị báo cáo đầu tư và thuyết trình cho khách hàng",
+          "Phân tích các chỉ số kinh tế và xu hướng thị trường để hỗ trợ quyết định đầu tư"
+        ],
+        icon: "🏢"
+      }
+    },
     projects: {
-      title: "PROJECTS",
+      title: "DỰ ÁN",
       items: [
         {
           name: "Financial Data Analysis Dashboard",

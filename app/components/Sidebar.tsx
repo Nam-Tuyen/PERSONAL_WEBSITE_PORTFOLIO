@@ -16,6 +16,24 @@ interface SidebarProps {
 export default function Sidebar({ translations, activeSection, onSectionChange, language, onLanguageChange, isCollapsed, onToggleCollapse }: SidebarProps) {
   const [showContacts, setShowContacts] = useState(false)
 
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      })
+    }
+  }
+
+  // Handle section change with scroll
+  const handleSectionChange = (section: string) => {
+    onSectionChange(section)
+    scrollToSection(section)
+  }
+
   const navItems = [
     { 
       key: "home", 
@@ -152,7 +170,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 <div key={item.key} className="space-y-1">
                   {/* Main Category */}
                   <button
-                    onClick={() => onSectionChange(item.key)}
+                    onClick={() => handleSectionChange(item.key)}
                     className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                       activeSection === item.key
                         ? `${item.bgColor} ${item.color} shadow-sm border border-[#00ff88]/20`
@@ -176,7 +194,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                         return (
                           <button
                             key={section.key}
-                            onClick={() => onSectionChange(section.key)}
+                            onClick={() => handleSectionChange(section.key)}
                             className={`w-full flex items-center space-x-3 px-3 py-2 rounded-md transition-all duration-200 text-sm ${
                               activeSection === section.key
                                 ? 'bg-[#00ff88]/10 text-[#00ff88] border-l-2 border-[#00ff88]'
@@ -211,11 +229,11 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
               <div className="mt-3 space-y-2 animate-fadeIn">
                 <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
                   <Mail className="w-3.5 h-3.5 text-[#00ff88]" />
-                  <span>lenamtuyen@gmail.com</span>
+                  <span>bingo.namtuyen@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
                   <Phone className="w-3.5 h-3.5 text-[#00d4ff]" />
-                  <span>+84 123 456 789</span>
+                  <span>0921270404</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
                   <MapPin className="w-3.5 h-3.5 text-[#7c3aed]" />
