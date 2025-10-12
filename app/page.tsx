@@ -443,13 +443,24 @@ export default function Portfolio() {
 
                     {/* Maybank Experience */}
                     <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
-                      {/* Header */}
+                      {/* Header with Logo */}
                       <div className="mb-8">
-                        <h4 className="text-3xl font-bold text-white mb-3">Broker Intern</h4>
-                        <p className="text-[#00d4ff] font-semibold text-xl mb-4">Maybank Investment Bank Vietnam</p>
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-16 h-16 bg-white rounded-xl p-2 shadow-lg">
+                            <img 
+                              src="/Maybank logo.png" 
+                              alt="Maybank Logo" 
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="text-3xl font-bold text-white mb-2">Broker Intern</h4>
+                            <p className="text-[#00d4ff] font-semibold text-xl">Maybank Investment Bank Vietnam</p>
+                          </div>
+                        </div>
                         
                         {/* Modern Info Cards */}
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-wrap gap-3 mb-6">
                           <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-4 py-2 rounded-xl">
                             <div className="flex items-center space-x-2">
                               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -468,6 +479,21 @@ export default function Portfolio() {
                               <span className="text-white font-medium text-sm">Phu Nhuan Branch (On-site)</span>
                             </div>
                           </div>
+                        </div>
+
+                        {/* Learn More Button */}
+                        <div className="flex justify-center lg:justify-start">
+                          <a
+                            href="https://www.linkedin.com/company/mibv/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group"
+                          >
+                            <span>Xem thêm thông tin</span>
+                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
                         </div>
                       </div>
 
