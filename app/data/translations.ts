@@ -7,6 +7,16 @@ export const translations = {
         personal: "CÁ NHÂN"
       }
     },
+    sections: {
+      about: "GIỚI THIỆU",
+      education: "HỌC VẤN",
+      skills: "KỸ NĂNG",
+      certifications: "CHỨNG CHỈ & GIẢI THƯỞNG",
+      experience: "KINH NGHIỆM LÀM VIỆC",
+      projects: "DỰ ÁN",
+      hobbies: "SỞ THÍCH",
+      interests: "QUAN TÂM"
+    },
     footer: {
       contact: {
         email: "bingo.namtuyen@gmail.com",
@@ -230,6 +240,16 @@ export const translations = {
         professional: "PROFESSIONAL",
         personal: "PERSONAL"
       }
+    },
+    sections: {
+      about: "ABOUT ME",
+      education: "EDUCATION",
+      skills: "SKILLS",
+      certifications: "CERTIFICATIONS & AWARDS",
+      experience: "WORKING EXPERIENCE",
+      projects: "PROJECTS",
+      hobbies: "HOBBIES",
+      interests: "INTERESTS"
     },
     footer: {
       contact: {

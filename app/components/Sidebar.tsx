@@ -44,28 +44,28 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
     },
     { 
       key: "professional", 
-      label: "Professional",
+      label: translations?.header?.nav?.professional || "Professional",
       icon: Briefcase,
       color: "text-[#00ff88]",
       bgColor: "bg-[#00ff88]/10",
       sections: [
-        { key: "about", label: "About Me", icon: UserCircle },
-        { key: "education", label: "Education", icon: GraduationCap },
-        { key: "skills", label: "Skills", icon: Wrench },
-        { key: "certifications", label: "Certifications", icon: Trophy },
-        { key: "experience", label: "Experience", icon: Building },
-        { key: "projects", label: "Projects", icon: Folder }
+        { key: "about", label: translations?.sections?.about || "About Me", icon: UserCircle },
+        { key: "education", label: translations?.sections?.education || "Education", icon: GraduationCap },
+        { key: "skills", label: translations?.sections?.skills || "Skills", icon: Wrench },
+        { key: "certifications", label: translations?.sections?.certifications || "Certifications", icon: Trophy },
+        { key: "experience", label: translations?.sections?.experience || "Experience", icon: Building },
+        { key: "projects", label: translations?.sections?.projects || "Projects", icon: Folder }
       ]
     },
     { 
       key: "personal", 
-      label: "Personal",
+      label: translations?.header?.nav?.personal || "Personal",
       icon: Heart,
       color: "text-[#7c3aed]",
       bgColor: "bg-[#7c3aed]/10",
       sections: [
-        { key: "hobbies", label: "Hobbies", icon: Star },
-        { key: "interests", label: "Interests", icon: BarChart3 }
+        { key: "hobbies", label: translations?.sections?.hobbies || "Hobbies", icon: Star },
+        { key: "interests", label: translations?.sections?.interests || "Interests", icon: BarChart3 }
       ]
     }
   ]

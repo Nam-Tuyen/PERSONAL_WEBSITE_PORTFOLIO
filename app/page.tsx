@@ -114,7 +114,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                 <div className="mb-4 sm:mb-6">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">ABOUT ME</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.about || "ABOUT ME"}</h3>
                 </div>
                 <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
@@ -143,7 +143,7 @@ export default function Portfolio() {
               <div className="relative">
                  <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                    <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">EDUCATION</h3>
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.education || "EDUCATION"}</h3>
                    </div>
                    <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                  </div>
@@ -206,7 +206,7 @@ export default function Portfolio() {
               <div className="relative">
                  <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                    <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">SKILLS</h3>
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.skills || "SKILLS"}</h3>
                    </div>
                    <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                  </div>
@@ -307,7 +307,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                   <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">CERTIFICATIONS & AWARDS</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.certifications || "CERTIFICATIONS & AWARDS"}</h3>
                   </div>
                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
@@ -379,7 +379,7 @@ export default function Portfolio() {
               <div className="relative">
                  <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                    <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">WORKING EXPERIENCE</h3>
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.experience || "WORKING EXPERIENCE"}</h3>
                    </div>
                    <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                  </div>
@@ -578,7 +578,7 @@ export default function Portfolio() {
               <div className="relative">
                  <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                    <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">PROJECT</h3>
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECT"}</h3>
                    </div>
                    <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                  </div>
