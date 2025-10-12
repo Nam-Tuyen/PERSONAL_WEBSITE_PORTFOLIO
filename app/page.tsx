@@ -604,7 +604,7 @@ export default function Portfolio() {
                              <ul className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide space-y-2">
                                {project.description.map((item: string, descIndex: number) => (
                                  <li key={descIndex} className="flex items-start">
-                                   <span className="text-[#7c3aed] mr-3 mt-1 text-lg font-bold">●</span>
+                                   <span className="text-[#00d4ff] mr-4 mt-1 text-lg font-bold animate-pulse drop-shadow-lg">●</span>
                                    <span>{item}</span>
                                  </li>
                                ))}
