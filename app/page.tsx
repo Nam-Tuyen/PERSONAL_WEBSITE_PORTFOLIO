@@ -577,7 +577,7 @@ export default function Portfolio() {
                 <div className="max-w-7xl mx-auto">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {t?.projects?.items?.map((project: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group flex flex-col">
                         <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
                           {project.image?.endsWith('.mp4') ? (
                             <video 
@@ -601,28 +601,30 @@ export default function Portfolio() {
                             </>
                           )}
                         </div>
-                         <div className="p-8">
+                         <div className="p-8 flex flex-col flex-grow">
                            <h4 className="text-2xl font-bold text-white mb-3 text-left">{project.name}</h4>
                            {project.period && (
                              <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider text-left">{project.period}</p>
                            )}
-                           {Array.isArray(project.description) ? (
-                             <ul className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide space-y-2">
-                               {project.description.map((item: string, descIndex: number) => (
-                                 <li key={descIndex} className="flex items-start">
-                                   <span className="text-[#00d4ff] mr-4 mt-1 text-lg font-bold animate-pulse drop-shadow-lg">●</span>
-                                   <span>{item}</span>
-                                 </li>
-                               ))}
-                             </ul>
-                           ) : (
-                             <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
-                           )}
+                           <div className="flex-grow">
+                             {Array.isArray(project.description) ? (
+                               <ul className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide space-y-2">
+                                 {project.description.map((item: string, descIndex: number) => (
+                                   <li key={descIndex} className="flex items-start">
+                                     <span className="text-[#00d4ff] mr-4 mt-1 text-lg font-bold animate-pulse drop-shadow-lg">●</span>
+                                     <span>{item}</span>
+                                   </li>
+                                 ))}
+                               </ul>
+                             ) : (
+                               <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
+                             )}
+                           </div>
                            <a 
                              href={project.link} 
                              target="_blank" 
                              rel="noopener noreferrer"
-                             className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center"
+                             className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center mt-auto"
                            >
                              View Project
                            </a>
