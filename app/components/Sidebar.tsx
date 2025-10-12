@@ -127,13 +127,23 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
         <div className="relative z-10 p-6">
           {/* Header */}
           <div className="mb-8">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-lg flex items-center justify-center shadow-sm">
-                <Briefcase className="w-4 h-4 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold text-white">Portfolio</h2>
-                <p className="text-xs text-[#00ff88]">Navigation</p>
+            {/* Modern Minimalist Header */}
+            <div className="flex items-center justify-center mb-8">
+              <div className="relative group">
+                {/* Main Icon Container */}
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                  <Briefcase className="w-6 h-6 text-white" />
+                  
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                </div>
+                
+                {/* Tech Accent Elements */}
+                <div className="absolute -top-1 -right-1 w-3 h-3 border-l-2 border-t-2 border-[#00ff88] opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 border-r-2 border-b-2 border-[#00d4ff] opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+                
+                {/* Status Indicator */}
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
               </div>
             </div>
             
