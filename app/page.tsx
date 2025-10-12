@@ -10,6 +10,7 @@ export default function Portfolio() {
   const [language, setLanguage] = useState("en")
   const [activeSection, setActiveSection] = useState("professional")
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
 
   const t = translations[language as keyof typeof translations]
 
@@ -308,41 +309,40 @@ export default function Portfolio() {
                   <div className="w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
 
-                <div className="max-w-6xl mx-auto">
-                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-12 shadow-2xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div className="space-y-6">
-                        <h4 className="text-2xl font-bold text-white mb-6">Professional Certifications</h4>
-                        <div className="space-y-4">
-                          <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-2xl border border-[#00ff88]/20">
-                            <div className="w-3 h-3 bg-[#00ff88] rounded-full"></div>
-                            <span className="text-gray-300 font-medium">NVIDIA Deep Learning Institute Certificate</span>
-                          </div>
-                          <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-2xl border border-[#00d4ff]/20">
-                            <div className="w-3 h-3 bg-[#00d4ff] rounded-full"></div>
-                            <span className="text-gray-300 font-medium">Google Analytics Certified</span>
-                          </div>
-                          <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-2xl border border-[#7c3aed]/20">
-                            <div className="w-3 h-3 bg-[#7c3aed] rounded-full"></div>
-                            <span className="text-gray-300 font-medium">AWS Cloud Practitioner</span>
-                          </div>
+                <div className="max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      {/* Google Certificate */}
+                      <div 
+                        onClick={() => setSelectedCertificate('google')}
+                        className="cursor-pointer p-6 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-2xl border border-[#00ff88]/20 hover:border-[#00ff88]/40 hover:from-[#00ff88]/20 hover:to-[#00d4ff]/20 transition-all duration-300 group"
+                      >
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-4 h-4 bg-[#00ff88] rounded-full animate-pulse"></div>
+                          <h4 className="text-lg font-bold text-white">Google Certificate</h4>
+                        </div>
+                        <p className="text-gray-300 font-medium text-sm leading-relaxed">
+                          Ask Questions to Make Data-Driven Decisions
+                        </p>
+                        <div className="mt-3 text-xs text-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Click to view certificate
                         </div>
                       </div>
-                      <div className="space-y-6">
-                        <h4 className="text-2xl font-bold text-white mb-6">Awards & Recognition</h4>
-                        <div className="space-y-4">
-                          <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-2xl border border-[#00ff88]/20">
-                            <div className="w-3 h-3 bg-[#00ff88] rounded-full"></div>
-                            <span className="text-gray-300 font-medium">Best Data Analysis Project 2023</span>
-                          </div>
-                          <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-2xl border border-[#00d4ff]/20">
-                            <div className="w-3 h-3 bg-[#00d4ff] rounded-full"></div>
-                            <span className="text-gray-300 font-medium">Outstanding Student Award</span>
-                          </div>
-                          <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-2xl border border-[#7c3aed]/20">
-                            <div className="w-3 h-3 bg-[#7c3aed] rounded-full"></div>
-                            <span className="text-gray-300 font-medium">Innovation in FinTech</span>
-                          </div>
+
+                      {/* NVIDIA Certificate */}
+                      <div 
+                        onClick={() => setSelectedCertificate('nvidia')}
+                        className="cursor-pointer p-6 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-2xl border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 hover:from-[#00d4ff]/20 hover:to-[#7c3aed]/20 transition-all duration-300 group"
+                      >
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="w-4 h-4 bg-[#00d4ff] rounded-full animate-pulse"></div>
+                          <h4 className="text-lg font-bold text-white">NVIDIA Certificate</h4>
+                        </div>
+                        <p className="text-gray-300 font-medium text-sm leading-relaxed">
+                          Accelerating End-to-End Data Science Workflows
+                        </p>
+                        <div className="mt-3 text-xs text-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Click to view certificate
                         </div>
                       </div>
                     </div>
@@ -452,6 +452,32 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+          <div className="relative max-w-4xl max-h-[90vh] mx-4">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedCertificate(null)}
+              className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Certificate Image */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={selectedCertificate === 'google' ? '/ask-question-to-make-data-driven.PNG' : '/Certificate NVIDIA.PNG'}
+                alt={selectedCertificate === 'google' ? 'Google Certificate' : 'NVIDIA Certificate'}
+                className="w-full h-auto max-h-[85vh] object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
