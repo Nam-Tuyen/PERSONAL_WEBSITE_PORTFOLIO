@@ -600,7 +600,18 @@ export default function Portfolio() {
                            {project.period && (
                              <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider text-left">{project.period}</p>
                            )}
-                           <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
+                           {Array.isArray(project.description) ? (
+                             <ul className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide space-y-2">
+                               {project.description.map((item: string, descIndex: number) => (
+                                 <li key={descIndex} className="flex items-start">
+                                   <span className="text-[#7c3aed] mr-3 mt-1">•</span>
+                                   <span>{item}</span>
+                                 </li>
+                               ))}
+                             </ul>
+                           ) : (
+                             <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
+                           )}
                            <div className="flex flex-wrap gap-2 mb-6 justify-start">
                              {project.technologies?.map((tech: string, techIndex: number) => (
                                <span key={techIndex} className="px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">

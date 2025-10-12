@@ -134,7 +134,11 @@ export const translations = {
       items: [
         {
           name: "Automated Financial Report Export",
-          description: "Built an end-to-end Python pipeline for stock-ticker analytics from August to October 2024 as an individual project. Inputs included raw ticker data pulled from APIs and environment-managed secrets; outputs were standardized daily reports in Excel, CSV, and PDF. Implemented with requests, pandas, and python-dotenv, the system was modularized into fetch, process, and report components, with reusable helpers for path management, API-key loading, validation, and date handling, and scheduled via a simple cron runner. The project reduced manual report prep by 90% and improved team responsiveness by 25%.",
+          description: [
+            "Built an end-to-end Python pipeline (Aug–Oct 2024, individual) for stock-ticker analytics, ingesting raw API data with environment-managed secrets and producing standardized daily reports in Excel, CSV, and PDF.",
+            "Implemented with requests, pandas, and python-dotenv; modularized into fetch, process, and report components with reusable helpers for path management, API key loading, validation, and date handling; scheduled via a cron runner.",
+            "Automated report generation that reduced manual preparation by 90% and improved team responsiveness by 25%."
+          ],
           technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
@@ -397,7 +401,11 @@ export const translations = {
       items: [
         {
           name: "Automated Financial Report Export",
-          description: "Built an end-to-end Python pipeline for stock-ticker analytics from August to October 2024 as an individual project. Inputs included raw ticker data pulled from APIs and environment-managed secrets; outputs were standardized daily reports in Excel, CSV, and PDF. Implemented with requests, pandas, and python-dotenv, the system was modularized into fetch, process, and report components, with reusable helpers for path management, API-key loading, validation, and date handling, and scheduled via a simple cron runner. The project reduced manual report prep by 90% and improved team responsiveness by 25%.",
+          description: [
+            "Built an end-to-end Python pipeline (Aug–Oct 2024, individual) for stock-ticker analytics, ingesting raw API data with environment-managed secrets and producing standardized daily reports in Excel, CSV, and PDF.",
+            "Implemented with requests, pandas, and python-dotenv; modularized into fetch, process, and report components with reusable helpers for path management, API key loading, validation, and date handling; scheduled via a cron runner.",
+            "Automated report generation that reduced manual preparation by 90% and improved team responsiveness by 25%."
+          ],
           technologies: ["Python", "Pandas", "Requests", "Python-dotenv", "Excel", "CSV", "PDF"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
