@@ -139,33 +139,33 @@ export default function Portfolio() {
                    <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                  </div>
 
-                <div className="max-w-6xl mx-auto">
-                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
+                <div className="max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
                     {/* Responsive Education Card Layout */}
-                    <div className="space-y-6 sm:space-y-8">
+                    <div className="space-y-4 sm:space-y-6">
                       {/* Degree Information - Centered */}
-                      <div className="text-center space-y-4 sm:space-y-6">
+                      <div className="text-center space-y-3 sm:space-y-4">
                         <div>
-                          <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 leading-tight">
+                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 leading-tight">
                             <div className="block">Bachelor of</div>
                             <div className="block">Financial Technology</div>
                           </h4>
-                          <p className="text-[#00d4ff] font-bold text-base sm:text-lg lg:text-xl mb-2">
+                          <p className="text-[#00d4ff] font-bold text-sm sm:text-base lg:text-lg mb-1">
                             {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
                           </p>
-                          <p className="text-gray-400 text-sm sm:text-base">2021 - 2026</p>
+                          <p className="text-gray-400 text-xs sm:text-sm">2021 - 2026</p>
                         </div>
                       </div>
 
                       {/* Academic Stats - Centered Grid */}
                       <div className="flex justify-center">
-                        <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+                        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                           <div className="text-center">
-                            <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#00d4ff] mb-2">{t?.education?.gpa || "3.0"}</div>
+                            <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#00d4ff] mb-1">{t?.education?.gpa || "3.0"}</div>
                             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">GPA</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#7c3aed] mb-2">{t?.education?.ielts || "6.0"}</div>
+                            <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#7c3aed] mb-1">{t?.education?.ielts || "6.0"}</div>
                             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">IELTS</div>
                           </div>
                         </div>
@@ -177,10 +177,10 @@ export default function Portfolio() {
                           href="https://www.uel.edu.vn/ArticleId/098e3942-d9c0-4d71-9e45-1436ad2a6538/lich-su-hinh-thanh-va-phat-trien"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group text-sm sm:text-base"
+                          className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group text-xs sm:text-sm"
                         >
                           <span>More information</span>
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </a>
