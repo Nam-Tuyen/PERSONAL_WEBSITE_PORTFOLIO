@@ -73,17 +73,6 @@ export default function Portfolio() {
                       </p>
                     </div>
 
-                    {/* Quick Stats */}
-                    <div className="grid grid-cols-2 gap-6 mb-8">
-                      <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                        <div className="text-2xl font-bold text-[#00ff88] mb-2">3+</div>
-                        <div className="text-sm text-gray-400 uppercase tracking-wider">Years Experience</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                        <div className="text-2xl font-bold text-[#00d4ff] mb-2">15+</div>
-                        <div className="text-sm text-gray-400 uppercase tracking-wider">Projects Completed</div>
-                      </div>
-                    </div>
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4">
