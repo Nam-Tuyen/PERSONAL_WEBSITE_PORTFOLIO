@@ -157,11 +157,16 @@ export const translations = {
           period: "04/2024 - 06/2024"
         },
         {
-          name: "Credit Risk Assessment Model",
-          description: "Created a machine learning model for assessing credit risk in agricultural loan applications",
-          technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter"],
-          image: "/project3.jpg",
-          link: "#"
+          name: "Workforce Insight Hub: Retention and Compensation",
+          description: [
+            "Built an end-to-end HR analytics workflow (individual) to clean and encode Human_Resources.csv and conduct EDA with histograms, KDE, boxplots, and a correlation heatmap to surface retention risks.",
+            "Trained a Random Forest attrition model and a Logistic Regression for interpretability, achieving 85% accuracy with key drivers including MonthlyIncome, Age, OverTime, TotalWorkingYears, and DailyRate, while noting low recall on leavers at 0.07.",
+            "Segmented employees into three clusters using MonthlyIncome, TotalWorkingYears, YearsAtCompany, and JobSatisfaction, and delivered salary and overtime policy recommendations based on a 16.1% attrition rate."
+          ],
+          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
+          image: "/HRanalytic.png",
+          link: "#",
+          period: "04/2024 - 06/2024"
         }
       ]
     },
@@ -429,11 +434,16 @@ export const translations = {
           period: "04/2024 - 06/2024"
         },
         {
-          name: "Credit Risk Assessment Model",
-          description: "Created a machine learning model for assessing credit risk in agricultural loan applications",
-          technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter"],
-          image: "/project3.jpg",
-          link: "#"
+          name: "Workforce Insight Hub: Retention and Compensation",
+          description: [
+            "Built an end-to-end HR analytics workflow (individual) to clean and encode Human_Resources.csv and conduct EDA with histograms, KDE, boxplots, and a correlation heatmap to surface retention risks.",
+            "Trained a Random Forest attrition model and a Logistic Regression for interpretability, achieving 85% accuracy with key drivers including MonthlyIncome, Age, OverTime, TotalWorkingYears, and DailyRate, while noting low recall on leavers at 0.07.",
+            "Segmented employees into three clusters using MonthlyIncome, TotalWorkingYears, YearsAtCompany, and JobSatisfaction, and delivered salary and overtime policy recommendations based on a 16.1% attrition rate."
+          ],
+          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
+          image: "/HRanalytic.png",
+          link: "#",
+          period: "04/2024 - 06/2024"
         }
       ]
     },
