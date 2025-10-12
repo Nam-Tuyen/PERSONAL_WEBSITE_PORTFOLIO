@@ -125,25 +125,15 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       }`}>
         
         <div className="relative z-10 p-6">
-          {/* Header */}
+          {/* Modern Header Section */}
           <div className="mb-8">
-            {/* Modern Minimalist Header */}
-            <div className="flex items-center justify-center mb-8">
+            {/* Centered Logo */}
+            <div className="flex items-center justify-center mb-6">
               <div className="relative group">
-                {/* Main Icon Container */}
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                  <Briefcase className="w-6 h-6 text-white" />
-                  
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div className="w-10 h-10 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                  <Briefcase className="w-5 h-5 text-white" />
                 </div>
-                
-                {/* Tech Accent Elements */}
-                <div className="absolute -top-1 -right-1 w-3 h-3 border-l-2 border-t-2 border-[#00ff88] opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 border-r-2 border-b-2 border-[#00d4ff] opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-                
-                {/* Status Indicator */}
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse opacity-60"></div>
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
               </div>
             </div>
             
@@ -191,84 +181,47 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
             </div>
           </div>
 
-          {/* Modern Navigation */}
-          <nav className="space-y-2">
+          {/* Navigation - macOS style */}
+          <nav className="space-y-1">
             {navItems.map((item) => {
               const Icon = item.icon
               return (
                 <div key={item.key} className="space-y-1">
-                  {/* Main Category - Modern Design */}
+                  {/* Main Category */}
                   <button
                     onClick={() => handleSectionChange(item.key)}
-                    className={`w-full flex items-center space-x-4 px-4 py-3 rounded-xl transition-all duration-300 group relative overflow-hidden ${
+                    className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                       activeSection === item.key
-                        ? `${item.bgColor} ${item.color} shadow-lg border border-[#00ff88]/30`
+                        ? `${item.bgColor} ${item.color} shadow-sm border border-[#00ff88]/20`
                         : 'text-gray-400 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    {/* Background Glow Effect */}
-                    {activeSection === item.key && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-xl"></div>
-                    )}
-                    
-                    {/* Icon Container */}
-                    <div className={`relative z-10 p-2 rounded-lg transition-all duration-300 ${
-                      activeSection === item.key 
-                        ? 'bg-white/10' 
-                        : 'group-hover:bg-white/5'
-                    }`}>
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    
-                    {/* Label */}
-                    <span className="relative z-10 font-semibold text-sm flex-1">{item.label}</span>
-                    
-                    {/* Expand Indicator */}
+                    <Icon className="w-4 h-4" />
+                    <span className="font-medium text-sm">{item.label}</span>
                     {item.sections && (
-                      <div className="relative z-10">
-                        <ChevronRight className={`w-4 h-4 transition-all duration-300 ${
-                          activeSection === item.key ? 'rotate-90 text-[#00ff88]' : 'text-gray-500 group-hover:text-gray-300'
-                        }`} />
-                      </div>
-                    )}
-                    
-                    {/* Active Indicator */}
-                    {activeSection === item.key && (
-                      <div className="absolute right-3 w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
+                      <ChevronRight className={`w-3 h-3 ml-auto transition-transform duration-200 ${
+                        activeSection === item.key ? 'rotate-90' : ''
+                      }`} />
                     )}
                   </button>
                   
-                  {/* Sub-sections - Modern Design */}
+                  {/* Sub-sections */}
                   {activeSection === item.key && item.sections && (
-                    <div className="ml-6 space-y-1 animate-fadeIn">
+                    <div className="ml-4 space-y-0.5 animate-fadeIn">
                       {item.sections.map((section) => {
                         const SectionIcon = section.icon
                         return (
                           <button
                             key={section.key}
                             onClick={() => handleSectionChange(section.key)}
-                            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-300 text-sm group relative ${
+                            className={`w-full flex items-center space-x-3 px-3 py-2 rounded-md transition-all duration-200 text-sm ${
                               activeSection === section.key
-                                ? 'bg-[#00ff88]/15 text-[#00ff88] border-l-3 border-[#00ff88] shadow-sm'
+                                ? 'bg-[#00ff88]/10 text-[#00ff88] border-l-2 border-[#00ff88]'
                                 : 'text-gray-400 hover:text-white hover:bg-white/5'
                             }`}
                           >
-                            {/* Sub-section Icon */}
-                            <div className={`p-1.5 rounded-md transition-all duration-300 ${
-                              activeSection === section.key 
-                                ? 'bg-[#00ff88]/20' 
-                                : 'group-hover:bg-white/5'
-                            }`}>
-                              <SectionIcon className="w-4 h-4" />
-                            </div>
-                            
-                            {/* Sub-section Label */}
-                            <span className="flex-1 font-medium">{section.label}</span>
-                            
-                            {/* Active Indicator for Sub-sections */}
-                            {activeSection === section.key && (
-                              <div className="w-1.5 h-1.5 bg-[#00ff88] rounded-full animate-pulse"></div>
-                            )}
+                            <SectionIcon className="w-3.5 h-3.5" />
+                            <span>{section.label}</span>
                           </button>
                         )
                       })}
@@ -279,33 +232,38 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
             })}
           </nav>
 
-          {/* Contact Section - macOS style */}
+          {/* Modern Contact Section */}
           <div className="mt-8">
             <button
               onClick={() => setShowContacts(!showContacts)}
-              className="w-full flex items-center justify-between px-3 py-2.5 bg-white/5 border border-[#00ff88]/20 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+              className="w-full flex items-center justify-between px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 group"
             >
-              <span className="font-medium text-sm">Contact Info</span>
-              <ChevronRight className={`w-3 h-3 transition-transform duration-200 ${
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-[#00ff88]" />
+                </div>
+                <span className="font-medium text-sm">Contact</span>
+              </div>
+              <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${
                 showContacts ? 'rotate-90' : ''
               }`} />
             </button>
             
             {showContacts && (
-              <div className="mt-3 space-y-2 animate-fadeIn">
-                <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
-                  <Mail className="w-3.5 h-3.5 text-[#00ff88]" />
-                  <span>bingo.namtuyen@gmail.com</span>
+              <div className="mt-4 space-y-3 animate-fadeIn">
+                <div className="flex items-center space-x-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+                  <Mail className="w-4 h-4 text-[#00ff88] group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-sm text-gray-300">bingo.namtuyen@gmail.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
-                  <Phone className="w-3.5 h-3.5 text-[#00d4ff]" />
-                  <span>0921270404</span>
+                <div className="flex items-center space-x-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+                  <Phone className="w-4 h-4 text-[#00d4ff] group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-sm text-gray-300">0921270404</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-400 text-sm px-3 py-1.5 hover:text-white transition-colors duration-200">
-                  <MapPin className="w-3.5 h-3.5 text-[#7c3aed]" />
-                  <span>Ho Chi Minh City, Vietnam</span>
+                <div className="flex items-center space-x-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+                  <MapPin className="w-4 h-4 text-[#7c3aed] group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-sm text-gray-300">Ho Chi Minh City, Vietnam</span>
                 </div>
-            </div>
+              </div>
             )}
           </div>
         </div>
