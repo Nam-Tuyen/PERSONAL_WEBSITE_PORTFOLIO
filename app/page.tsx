@@ -133,10 +133,8 @@ export default function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
                 <div className="text-center mb-16">
-                  <div className="inline-flex items-center space-x-3 mb-6">
-                    <div className="w-3 h-3 bg-[#00d4ff] rounded-full animate-pulse"></div>
+                  <div className="text-center mb-6">
                     <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight">EDUCATION</h3>
-                    <div className="w-3 h-3 bg-[#7c3aed] rounded-full animate-pulse"></div>
                   </div>
                   <div className="w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
                 </div>
@@ -162,8 +160,7 @@ export default function Portfolio() {
                         <h5 className="text-xl font-bold text-white mb-6">Key Coursework</h5>
                         <div className="space-y-3">
                           {t?.education?.coursework?.slice(0, 8).map((course: string, index: number) => (
-                            <div key={index} className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-[#00d4ff] rounded-full"></div>
+                            <div key={index} className="flex items-center">
                               <span className="text-gray-300 text-sm">{course}</span>
                             </div>
                           ))}
