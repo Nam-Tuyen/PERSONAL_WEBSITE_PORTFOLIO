@@ -48,11 +48,11 @@ export default function Portfolio() {
         <div className={`min-h-screen transition-all duration-500 ${
           isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
         }`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
             {/* Hero Section - Tech Minimal Style */}
-            <section id="home" className="mb-16 sm:mb-24 lg:mb-32">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <section id="home" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
                 {/* Left Column - Professional Image */}
                 <div className="order-2 lg:order-1">
                   <div className="relative group">
@@ -74,31 +74,31 @@ export default function Portfolio() {
                 </div>
 
                  {/* Right Column - Professional Content */}
-                 <div className="order-1 lg:order-2 text-center">
-                   <div className="space-y-6 sm:space-y-8">
+                 <div className="order-1 lg:order-2 text-center lg:text-left">
+                   <div className="space-y-4 sm:space-y-6 md:space-y-8">
                      {/* Greeting */}
-                     <div className="space-y-3 sm:space-y-4">
+                     <div className="space-y-2 sm:space-y-3 md:space-y-4">
                        
-                       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2 sm:mb-4 tracking-tight">
+                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-1 sm:mb-2 md:mb-4 tracking-tight leading-tight">
                          {t?.hero?.greeting || "HI, I AM"}
                        </h1>
-                       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-6 tracking-tight">
+                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-3 sm:mb-4 md:mb-6 tracking-tight leading-tight">
                          {t?.hero?.name || "LE NAM TUYEN"}
                        </h2>
-                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-medium leading-relaxed mb-6 sm:mb-8">
+                       <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium leading-relaxed mb-4 sm:mb-6 md:mb-8">
                          {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
                        </p>
                      </div>
 
 
                      {/* CTA Buttons */}
-                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                       <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-sm sm:text-base">
+                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
+                       <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base">
                          Download Resume
                        </button>
                        <button 
                          onClick={scrollToProjects}
-                         className="px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300 text-sm sm:text-base"
+                         className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base"
                        >
                          View Projects
                        </button>
@@ -119,15 +119,15 @@ export default function Portfolio() {
                 <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                 </div>
                 
-                <div className="max-w-6xl mx-auto">
-                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl">
+                <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-2xl">
                     <div className="text-left">
-                      <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#00ff88] font-bold italic mb-8 sm:mb-10 lg:mb-12 leading-tight max-w-4xl text-center mx-auto">
+                      <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#00ff88] font-bold italic mb-6 sm:mb-8 md:mb-10 lg:mb-12 leading-tight max-w-4xl text-center mx-auto">
                         <div className="block">"Transforming vision into reality</div>
                         <div className="block">turning intent into results"</div>
                       </blockquote>
                         <div className="max-w-4xl mx-auto">
-                          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-justify tracking-wide">
+                          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed text-justify tracking-wide">
                             {t?.about?.description || "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."}
                           </p>
                         </div>
@@ -583,8 +583,8 @@ export default function Portfolio() {
                    <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                  </div>
 
-                <div className="max-w-7xl mx-auto">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                     {t?.projects?.items?.map((project: any, index: number) => (
                       <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group flex flex-col">
                         <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
@@ -610,30 +610,30 @@ export default function Portfolio() {
                             </>
                           )}
                         </div>
-                         <div className="p-8 flex flex-col flex-grow">
-                           <h4 className="text-2xl font-bold text-white mb-3 text-left">{project.name}</h4>
+                         <div className="p-4 sm:p-6 lg:p-8 flex flex-col flex-grow">
+                           <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 text-left leading-tight">{project.name}</h4>
                            {project.period && (
-                             <p className="text-gray-400 text-sm mb-4 uppercase tracking-wider text-left">{project.period}</p>
+                             <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 uppercase tracking-wider text-left">{project.period}</p>
                            )}
                            <div className="flex-grow">
                              {Array.isArray(project.description) ? (
-                               <ul className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide space-y-2">
+                               <ul className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-left tracking-wide space-y-1 sm:space-y-2">
                                  {project.description.map((item: string, descIndex: number) => (
                                    <li key={descIndex} className="flex items-start">
-                                     <span className="text-[#00d4ff] mr-4 mt-1 text-lg font-bold animate-pulse drop-shadow-lg">●</span>
-                                     <span>{item}</span>
+                                     <span className="text-[#00d4ff] mr-2 sm:mr-3 lg:mr-4 mt-1 text-sm sm:text-base lg:text-lg font-bold animate-pulse drop-shadow-lg flex-shrink-0">●</span>
+                                     <span className="text-xs sm:text-sm lg:text-base leading-relaxed">{item}</span>
                                    </li>
                                  ))}
                                </ul>
                              ) : (
-                               <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
+                               <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-left tracking-wide text-xs sm:text-sm lg:text-base">{project.description}</p>
                              )}
                            </div>
                            <a 
                              href={project.link} 
                              target="_blank" 
                              rel="noopener noreferrer"
-                             className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center mt-auto"
+                             className="w-full py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center mt-auto text-sm sm:text-base"
                            >
                              View Project
                            </a>
