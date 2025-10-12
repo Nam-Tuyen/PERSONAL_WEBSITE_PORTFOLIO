@@ -588,6 +588,15 @@ export default function Portfolio() {
                               <source src={project.image} type="video/mp4" />
                               Your browser does not support the video tag.
                             </video>
+                          ) : project.image?.endsWith('.PNG') || project.image?.endsWith('.png') || project.image?.endsWith('.jpg') || project.image?.endsWith('.jpeg') ? (
+                            <>
+                              <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
+                              <img 
+                                src={project.image} 
+                                alt={project.name}
+                                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                              />
+                            </>
                           ) : (
                             <>
                               <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
@@ -612,13 +621,6 @@ export default function Portfolio() {
                            ) : (
                              <p className="text-gray-300 mb-6 leading-relaxed text-left tracking-wide">{project.description}</p>
                            )}
-                           <div className="flex flex-wrap gap-2 mb-6 justify-start">
-                             {project.technologies?.map((tech: string, techIndex: number) => (
-                               <span key={techIndex} className="px-3 py-1 bg-[#7c3aed]/20 text-[#7c3aed] text-xs rounded-full border border-[#7c3aed]/30">
-                                 {tech}
-                               </span>
-                             ))}
-                           </div>
                            <a 
                              href={project.link} 
                              target="_blank" 
