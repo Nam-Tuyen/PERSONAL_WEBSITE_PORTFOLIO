@@ -13,6 +13,14 @@ export default function Portfolio() {
 
   const t = translations[language as keyof typeof translations]
 
+  // Function to scroll to projects section
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects')
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="min-h-screen text-white relative overflow-hidden">
       <UniverseBackground />
@@ -79,7 +87,10 @@ export default function Portfolio() {
                       <button className="px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25">
                         Download Resume
                       </button>
-                      <button className="px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300">
+                      <button 
+                        onClick={scrollToProjects}
+                        className="px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all duration-300"
+                      >
                         View Projects
                       </button>
                     </div>
