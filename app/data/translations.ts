@@ -17,6 +17,19 @@ export const translations = {
       hobbies: "SỞ THÍCH",
       interests: "QUAN TÂM"
     },
+    buttons: {
+      downloadResume: "Tải CV",
+      viewProjects: "Xem Dự án",
+      moreInformation: "Thông tin thêm",
+      jobDescription: "Mô tả Công việc",
+      viewProject: "Xem Dự án"
+    },
+    labels: {
+      bachelorOf: "Cử nhân",
+      financialTechnology: "Công nghệ Tài chính",
+      gpa: "Điểm TB",
+      ielts: "IELTS"
+    },
     footer: {
       contact: {
         email: "bingo.namtuyen@gmail.com",
@@ -250,6 +263,19 @@ export const translations = {
       projects: "PROJECTS",
       hobbies: "HOBBIES",
       interests: "INTERESTS"
+    },
+    buttons: {
+      downloadResume: "Download Resume",
+      viewProjects: "View Projects",
+      moreInformation: "More information",
+      jobDescription: "Job Description",
+      viewProject: "View Project"
+    },
+    labels: {
+      bachelorOf: "Bachelor of",
+      financialTechnology: "Financial Technology",
+      gpa: "GPA",
+      ielts: "IELTS"
     },
     footer: {
       contact: {

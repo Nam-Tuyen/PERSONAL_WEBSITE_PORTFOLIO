@@ -94,13 +94,13 @@ export default function Portfolio() {
                      {/* CTA Buttons */}
                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
                        <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base">
-                         Download Resume
+                         {t?.buttons?.downloadResume || "Download Resume"}
                        </button>
                        <button 
                          onClick={scrollToProjects}
                          className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base"
                        >
-                         View Projects
+                         {t?.buttons?.viewProjects || "View Projects"}
                        </button>
                      </div>
                    </div>
@@ -156,8 +156,8 @@ export default function Portfolio() {
                       <div className="text-center space-y-3 sm:space-y-4">
                         <div>
                           <h4 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 leading-tight">
-                            <div className="block">Bachelor of</div>
-                            <div className="block">Financial Technology</div>
+                            <div className="block">{t?.labels?.bachelorOf || "Bachelor of"}</div>
+                            <div className="block">{t?.labels?.financialTechnology || "Financial Technology"}</div>
                           </h4>
                           <p className="text-[#00d4ff] font-bold text-sm sm:text-base lg:text-lg mb-1">
                             {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
@@ -171,11 +171,11 @@ export default function Portfolio() {
                         <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                           <div className="text-center">
                             <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#00d4ff] mb-1">{t?.education?.gpa || "3.0"}</div>
-                            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">GPA</div>
+                            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">{t?.labels?.gpa || "GPA"}</div>
                           </div>
                           <div className="text-center">
                             <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#7c3aed] mb-1">{t?.education?.ielts || "6.0"}</div>
-                            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">IELTS</div>
+                            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">{t?.labels?.ielts || "IELTS"}</div>
                           </div>
                         </div>
                       </div>
@@ -188,7 +188,7 @@ export default function Portfolio() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group text-xs sm:text-sm"
                         >
-                          <span>More information</span>
+                          <span>{t?.buttons?.moreInformation || "More information"}</span>
                           <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
@@ -434,7 +434,7 @@ export default function Portfolio() {
                              rel="noopener noreferrer"
                              className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88] font-semibold rounded-xl hover:from-[#00ff88]/30 hover:to-[#00d4ff]/30 hover:border-[#00ff88]/50 transition-all duration-300 group"
                            >
-                             <span>More information</span>
+                             <span>{t?.buttons?.moreInformation || "More information"}</span>
                              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                              </svg>
@@ -444,7 +444,7 @@ export default function Portfolio() {
 
                       {/* Job Description - Responsive */}
                       <div className="mb-6 sm:mb-8">
-                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Job Description</h5>
+                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{t?.buttons?.jobDescription || "Job Description"}</h5>
                         <div className="space-y-3 sm:space-y-4">
                           <div className="flex items-start space-x-2 sm:space-x-3">
                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
@@ -522,7 +522,7 @@ export default function Portfolio() {
                              rel="noopener noreferrer"
                              className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group"
                            >
-                             <span>More information</span>
+                             <span>{t?.buttons?.moreInformation || "More information"}</span>
                              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                              </svg>
@@ -532,7 +532,7 @@ export default function Portfolio() {
 
                       {/* Job Description - Responsive */}
                       <div className="mb-6 sm:mb-8">
-                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Job Description</h5>
+                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{t?.buttons?.jobDescription || "Job Description"}</h5>
                         <div className="space-y-3 sm:space-y-4">
                           <div className="flex items-start space-x-2 sm:space-x-3">
                             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
@@ -635,7 +635,7 @@ export default function Portfolio() {
                              rel="noopener noreferrer"
                              className="w-full py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center mt-auto text-sm sm:text-base"
                            >
-                             View Project
+                             {t?.buttons?.viewProject || "View Project"}
                            </a>
                          </div>
                       </div>
