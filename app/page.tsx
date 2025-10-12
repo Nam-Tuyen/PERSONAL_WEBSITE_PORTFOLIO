@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import { useState, useEffect } from "react"
 import { translations } from "./data/translations"
 import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
@@ -8,10 +8,19 @@ import Sidebar from "./components/Sidebar"
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
   const [activeSection, setActiveSection] = useState("professional")
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
 
   const t = translations[language as keyof typeof translations]
+
+  if (!mounted) {
+    return null
+  }
 
   // Function to scroll to projects section
   const scrollToProjects = () => {
@@ -22,7 +31,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden">
+    <div className="min-h-screen text-white relative overflow-hidden" suppressHydrationWarning>
       <UniverseBackground />
 
               <Sidebar
