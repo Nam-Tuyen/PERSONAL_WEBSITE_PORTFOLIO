@@ -137,28 +137,53 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
               </div>
             </div>
             
-            {/* Language Toggle - Tech style */}
-            <div className="flex items-center bg-white/5 border border-[#00ff88]/20 rounded-lg p-1">
-              <button
-                onClick={() => onLanguageChange('en')}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
-                  language === 'en' 
-                    ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white shadow-sm' 
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => onLanguageChange('vi')}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
-                  language === 'vi' 
-                    ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white shadow-sm' 
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                VI
-              </button>
+            {/* Modern Language Toggle */}
+            <div className="relative">
+              {/* Background Container */}
+              <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 backdrop-blur-sm border border-white/10 rounded-xl p-1 shadow-lg">
+                {/* Active Background Slider */}
+                <div className={`absolute top-1 bottom-1 w-1/2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-lg shadow-lg transition-all duration-300 ease-out ${
+                  language === 'en' ? 'left-1' : 'left-1/2'
+                }`}></div>
+                
+                {/* Language Buttons */}
+                <div className="relative flex">
+                  <button
+                    onClick={() => onLanguageChange('en')}
+                    className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 relative z-10 ${
+                      language === 'en' 
+                        ? 'text-white shadow-sm' 
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        language === 'en' ? 'bg-white' : 'bg-gray-500'
+                      }`}></div>
+                      <span className="uppercase tracking-wider">EN</span>
+                    </div>
+                  </button>
+                  
+                  <button
+                    onClick={() => onLanguageChange('vi')}
+                    className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 relative z-10 ${
+                      language === 'vi' 
+                        ? 'text-white shadow-sm' 
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        language === 'vi' ? 'bg-white' : 'bg-gray-500'
+                      }`}></div>
+                      <span className="uppercase tracking-wider">VI</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Tech Accent Line */}
+              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full opacity-60"></div>
             </div>
           </div>
 
