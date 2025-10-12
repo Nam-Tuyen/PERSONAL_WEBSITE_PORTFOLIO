@@ -145,11 +145,16 @@ export const translations = {
           period: "08/2024 - 10/2024"
         },
         {
-          name: "Product Analytics Platform",
-          description: "Developed a comprehensive analytics platform for tracking user behavior and product performance metrics",
-          technologies: ["Python", "Pandas", "Matplotlib", "SQL", "Figma"],
-          image: "/project2.jpg",
-          link: "#"
+          name: "Airbnb rental pricing predictor",
+          description: [
+            "Cleaned and engineered a 26,000-row Airbnb dataset as an individual project, converting currencies to numeric, parsing dates, trimming outliers at the 99.5th percentile, and producing a pricing workflow with standardized inputs and outputs.",
+            "Built a full preprocessing and modeling pipeline in scikit-learn using ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling by city, and GridSearchCV for tuning.",
+            "Delivered client-ready insights with feature importance highlighting accommodates, bathrooms, bedrooms, beds, and fees as key drivers and achieved test RMSE 95.84 and MAE 57.98 using the tuned Random Forest with about 4% error reduction versus the linear baseline and an example predicted price of 834.20 for a Bondi Beach home."
+          ],
+          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
+          image: "/AirBnB.PNG",
+          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
+          period: "04/2024 - 06/2024"
         },
         {
           name: "Credit Risk Assessment Model",
@@ -412,11 +417,16 @@ export const translations = {
           period: "08/2024 - 10/2024"
         },
         {
-          name: "Product Analytics Platform",
-          description: "Developed a comprehensive analytics platform for tracking user behavior and product performance metrics",
-          technologies: ["Python", "Pandas", "Matplotlib", "SQL", "Figma"],
-          image: "/project2.jpg",
-          link: "#"
+          name: "Airbnb rental pricing predictor",
+          description: [
+            "Cleaned and engineered a 26,000-row Airbnb dataset as an individual project, converting currencies to numeric, parsing dates, trimming outliers at the 99.5th percentile, and producing a pricing workflow with standardized inputs and outputs.",
+            "Built a full preprocessing and modeling pipeline in scikit-learn using ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling by city, and GridSearchCV for tuning.",
+            "Delivered client-ready insights with feature importance highlighting accommodates, bathrooms, bedrooms, beds, and fees as key drivers and achieved test RMSE 95.84 and MAE 57.98 using the tuned Random Forest with about 4% error reduction versus the linear baseline and an example predicted price of 834.20 for a Bondi Beach home."
+          ],
+          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
+          image: "/AirBnB.PNG",
+          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
+          period: "04/2024 - 06/2024"
         },
         {
           name: "Credit Risk Assessment Model",
