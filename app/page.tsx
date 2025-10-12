@@ -589,14 +589,11 @@ export default function Portfolio() {
                               Your browser does not support the video tag.
                             </video>
                           ) : project.image?.endsWith('.PNG') || project.image?.endsWith('.png') || project.image?.endsWith('.jpg') || project.image?.endsWith('.jpeg') ? (
-                            <>
-                              <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
-                              <img 
-                                src={project.image} 
-                                alt={project.name}
-                                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                              />
-                            </>
+                            <img 
+                              src={project.image} 
+                              alt={project.name}
+                              className="w-full h-full object-cover"
+                            />
                           ) : (
                             <>
                               <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
