@@ -203,24 +203,95 @@ export default function Portfolio() {
                   <div className="w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {t?.skills?.categories?.map((category: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
-                        <div className="flex items-center space-x-4 mb-8">
-                          <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
-                          <h4 className="text-2xl font-bold text-white">{category.name}</h4>
+                <div className="max-w-6xl mx-auto">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Programming Languages */}
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
+                        <h4 className="text-xl font-bold text-white">Programming Languages</h4>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">Python</span>
                         </div>
-                        <div className="space-y-4">
-                          {category.items?.map((skill: string, skillIndex: number) => (
-                            <div key={skillIndex} className="flex items-center space-x-4 group-hover:translate-x-2 transition-transform duration-300">
-                              <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
-                              <span className="text-gray-300 font-medium">{skill}</span>
-                            </div>
-                          ))}
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">SQL</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">R</span>
                         </div>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Data Tools */}
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
+                        <h4 className="text-xl font-bold text-white">Data Tools</h4>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">Power BI</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">Tableau</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">Excel</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Product Management */}
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
+                        <h4 className="text-xl font-bold text-white">Product Management</h4>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">User Research</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">Product Discovery</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">Analytics</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Database & Cloud */}
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
+                      <div className="flex items-center space-x-4 mb-6">
+                        <div className="w-4 h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
+                        <h4 className="text-xl font-bold text-white">Database & Cloud</h4>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">MySQL</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">PostgreSQL</span>
+                        </div>
+                        <div className="flex items-center space-x-3 group-hover:translate-x-2 transition-transform duration-300">
+                          <div className="w-2 h-2 bg-[#7c3aed] rounded-full"></div>
+                          <span className="text-gray-300 font-medium">MongoDB</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
