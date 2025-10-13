@@ -65,7 +65,10 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       bgColor: "bg-[#7c3aed]/10",
       sections: [
         { key: "hobbies", label: translations?.sections?.hobbies || "Hobbies", icon: Star },
-        { key: "interests", label: translations?.sections?.interests || "Interests", icon: BarChart3 }
+        { key: "interests", label: translations?.sections?.interests || "Interests", icon: BarChart3 },
+        { key: "extracurriculars", label: translations?.sections?.extracurriculars || "Extracurriculars", icon: Settings },
+        { key: "socialActivities", label: translations?.sections?.socialActivities || "Social Activities", icon: User },
+        { key: "researchAchievement", label: translations?.sections?.researchAchievement || "Research Achievement", icon: Award }
       ]
     }
   ]

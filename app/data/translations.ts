@@ -16,7 +16,10 @@ export const translations = {
       experience: "Kinh nghiệm làm việc",
       projects: "Dự án",
       hobbies: "Sở thích",
-      interests: "Quan tâm"
+      interests: "Quan tâm",
+      extracurriculars: "Hoạt động ngoại khóa",
+      socialActivities: "Hoạt động xã hội",
+      researchAchievement: "Thành tựu nghiên cứu"
     },
     buttons: {
       downloadResume: "Tải CV",
@@ -259,6 +262,114 @@ export const translations = {
           icon: "🎯"
         }
       ]
+    },
+    extracurriculars: {
+      title: "HOẠT ĐỘNG NGOẠI KHÓA",
+      items: [
+        {
+          name: "Câu lạc bộ Công nghệ Tài chính",
+          role: "Thành viên tích cực",
+          period: "2022 - Hiện tại",
+          description: "Tham gia các workshop về blockchain, cryptocurrency và fintech. Tổ chức các buổi thảo luận về xu hướng công nghệ tài chính.",
+          achievements: [
+            "Tổ chức 5+ workshop về blockchain và DeFi",
+            "Tham gia hackathon fintech và đạt giải khuyến khích",
+            "Mentor cho sinh viên năm dưới về lập trình Python"
+          ]
+        },
+        {
+          name: "Đội bóng đá Khoa Kinh tế",
+          role: "Thành viên đội tuyển",
+          period: "2021 - 2024",
+          description: "Tham gia đội bóng đá của khoa, rèn luyện thể lực và tinh thần đồng đội.",
+          achievements: [
+            "Vô địch giải bóng đá sinh viên trường 2023",
+            "Thành viên đội hình xuất sắc nhất giải",
+            "Đóng góp 15+ bàn thắng trong 2 mùa giải"
+          ]
+        },
+        {
+          name: "Tình nguyện viên Tech4Good",
+          role: "Tình nguyện viên",
+          period: "2022 - 2023",
+          description: "Tham gia các dự án sử dụng công nghệ để giải quyết các vấn đề xã hội.",
+          achievements: [
+            "Phát triển ứng dụng web cho trẻ em học lập trình",
+            "Tổ chức 3+ sự kiện dạy code cho trẻ em có hoàn cảnh khó khăn",
+            "Đạt chứng nhận tình nguyện viên xuất sắc"
+          ]
+        }
+      ]
+    },
+    socialActivities: {
+      title: "HOẠT ĐỘNG XÃ HỘI",
+      items: [
+        {
+          name: "Chương trình 'Mái ấm cho em'",
+          role: "Tình nguyện viên",
+          period: "2021 - 2023",
+          description: "Tham gia dạy học và hỗ trợ trẻ em có hoàn cảnh khó khăn tại các mái ấm.",
+          impact: "Đã hỗ trợ 20+ trẻ em trong việc học tập và phát triển kỹ năng sống"
+        },
+        {
+          name: "Chiến dịch 'Xanh hóa thành phố'",
+          role: "Điều phối viên",
+          period: "2022 - 2024",
+          description: "Tổ chức các hoạt động trồng cây và bảo vệ môi trường tại TP.HCM.",
+          impact: "Trồng được 500+ cây xanh và nâng cao ý thức bảo vệ môi trường cho 200+ người"
+        },
+        {
+          name: "Dự án 'Số hóa nông thôn'",
+          role: "Thành viên dự án",
+          period: "2023 - Hiện tại",
+          description: "Hỗ trợ nông dân ứng dụng công nghệ vào sản xuất nông nghiệp.",
+          impact: "Đào tạo 50+ nông dân sử dụng ứng dụng quản lý nông nghiệp thông minh"
+        }
+      ]
+    },
+    researchAchievement: {
+      title: "THÀNH TỰU NGHIÊN CỨU",
+      items: [
+        {
+          name: "Nghiên cứu về Ứng dụng AI trong Phân tích Tài chính",
+          type: "Nghiên cứu khoa học",
+          period: "2023 - 2024",
+          status: "Đang thực hiện",
+          description: "Nghiên cứu ứng dụng machine learning trong dự đoán xu hướng thị trường chứng khoán Việt Nam.",
+          achievements: [
+            "Xây dựng mô hình dự đoán với độ chính xác 78%",
+            "Xuất bản 1 bài báo trên tạp chí khoa học quốc tế",
+            "Trình bày tại hội nghị FinTech Asia 2024"
+          ],
+          technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"]
+        },
+        {
+          name: "Phân tích Tác động của Nợ Công đến Ổn định Kinh tế",
+          type: "Bài báo khoa học",
+          period: "2023",
+          status: "Đã xuất bản",
+          description: "Nghiên cứu mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á.",
+          achievements: [
+            "Xuất bản trên tạp chí Journal of Economic Studies",
+            "Được trích dẫn 15+ lần trong các nghiên cứu khác",
+            "Nhận giải thưởng nghiên cứu sinh viên xuất sắc"
+          ],
+          technologies: ["R", "Stata", "EViews"]
+        },
+        {
+          name: "Dự án Blockchain cho Minh bạch Tài chính",
+          type: "Dự án nghiên cứu",
+          period: "2022 - 2023",
+          status: "Hoàn thành",
+          description: "Phát triển prototype ứng dụng blockchain để tăng tính minh bạch trong giao dịch tài chính.",
+          achievements: [
+            "Xây dựng thành công prototype trên Ethereum",
+            "Đạt giải nhất cuộc thi Blockchain Innovation 2023",
+            "Được đề xuất thương mại hóa bởi 2 công ty fintech"
+          ],
+          technologies: ["Solidity", "Web3.js", "React", "Node.js"]
+        }
+      ]
     }
   },
   en: {
@@ -278,7 +389,10 @@ export const translations = {
       experience: "WORKING EXPERIENCE",
       projects: "PROJECTS",
       hobbies: "HOBBIES",
-      interests: "INTERESTS"
+      interests: "INTERESTS",
+      extracurriculars: "EXTRACURRICULARS",
+      socialActivities: "SOCIAL ACTIVITIES",
+      researchAchievement: "RESEARCH ACHIEVEMENT"
     },
     buttons: {
       downloadResume: "Download Resume",
@@ -513,6 +627,114 @@ export const translations = {
           name: "Product Management",
           description: "Fascinated by product development and UX/UI",
           icon: "🎯"
+        }
+      ]
+    },
+    extracurriculars: {
+      title: "EXTRACURRICULAR ACTIVITIES",
+      items: [
+        {
+          name: "Financial Technology Club",
+          role: "Active Member",
+          period: "2022 - Present",
+          description: "Participate in workshops about blockchain, cryptocurrency, and fintech. Organize discussions about financial technology trends.",
+          achievements: [
+            "Organized 5+ workshops on blockchain and DeFi",
+            "Participated in fintech hackathon and won consolation prize",
+            "Mentored junior students in Python programming"
+          ]
+        },
+        {
+          name: "Economics Faculty Football Team",
+          role: "Team Member",
+          period: "2021 - 2024",
+          description: "Participate in faculty football team, improving physical fitness and teamwork spirit.",
+          achievements: [
+            "Champion of university student football tournament 2023",
+            "Member of the best team lineup",
+            "Contributed 15+ goals in 2 seasons"
+          ]
+        },
+        {
+          name: "Tech4Good Volunteer",
+          role: "Volunteer",
+          period: "2022 - 2023",
+          description: "Participate in projects using technology to solve social problems.",
+          achievements: [
+            "Developed web application for children to learn programming",
+            "Organized 3+ coding events for underprivileged children",
+            "Received outstanding volunteer certificate"
+          ]
+        }
+      ]
+    },
+    socialActivities: {
+      title: "SOCIAL ACTIVITIES",
+      items: [
+        {
+          name: "'Home for Children' Program",
+          role: "Volunteer",
+          period: "2021 - 2023",
+          description: "Participate in teaching and supporting underprivileged children at orphanages.",
+          impact: "Supported 20+ children in learning and life skills development"
+        },
+        {
+          name: "'Greening the City' Campaign",
+          role: "Coordinator",
+          period: "2022 - 2024",
+          description: "Organize tree planting and environmental protection activities in Ho Chi Minh City.",
+          impact: "Planted 500+ trees and raised environmental awareness for 200+ people"
+        },
+        {
+          name: "'Digitalizing Rural Areas' Project",
+          role: "Project Member",
+          period: "2023 - Present",
+          description: "Support farmers in applying technology to agricultural production.",
+          impact: "Trained 50+ farmers to use smart agriculture management applications"
+        }
+      ]
+    },
+    researchAchievement: {
+      title: "RESEARCH ACHIEVEMENTS",
+      items: [
+        {
+          name: "Research on AI Applications in Financial Analysis",
+          type: "Scientific Research",
+          period: "2023 - 2024",
+          status: "In Progress",
+          description: "Research on applying machine learning in predicting Vietnamese stock market trends.",
+          achievements: [
+            "Built prediction model with 78% accuracy",
+            "Published 1 paper in international scientific journal",
+            "Presented at FinTech Asia 2024 conference"
+          ],
+          technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"]
+        },
+        {
+          name: "Analysis of Public Debt Impact on Economic Stability",
+          type: "Scientific Paper",
+          period: "2023",
+          status: "Published",
+          description: "Research on the relationship between public debt and economic stability in Southeast Asian countries.",
+          achievements: [
+            "Published in Journal of Economic Studies",
+            "Cited 15+ times in other research",
+            "Received outstanding student research award"
+          ],
+          technologies: ["R", "Stata", "EViews"]
+        },
+        {
+          name: "Blockchain Project for Financial Transparency",
+          type: "Research Project",
+          period: "2022 - 2023",
+          status: "Completed",
+          description: "Developed blockchain application prototype to increase transparency in financial transactions.",
+          achievements: [
+            "Successfully built prototype on Ethereum",
+            "Won 1st place in Blockchain Innovation 2023 competition",
+            "Received commercialization proposals from 2 fintech companies"
+          ],
+          technologies: ["Solidity", "Web3.js", "React", "Node.js"]
         }
       ]
     }
