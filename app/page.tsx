@@ -353,8 +353,8 @@ export default function Portfolio() {
                             />
                           </div>
                         <div>
-                            <h4 className="text-3xl font-bold text-white mb-2">Credit Analyst Intern</h4>
-                            <p className="text-[#00ff88] font-semibold text-xl">AGRIBANK</p>
+                            <h4 className="text-3xl font-bold text-white mb-2">{t?.experience?.agribank?.position || "Credit Analyst Intern"}</h4>
+                            <p className="text-[#00ff88] font-semibold text-xl">{t?.experience?.agribank?.company || "AGRIBANK"}</p>
                           </div>
                         </div>
                         
@@ -365,7 +365,7 @@ export default function Portfolio() {
                               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                               </svg>
-                              <span className="text-white font-medium text-sm">Mar 2025 – Jun 2025</span>
+                              <span className="text-white font-medium text-sm">{t?.experience?.agribank?.period || "Mar 2025 – Jun 2025"}</span>
                             </div>
                           </div>
                           
@@ -375,7 +375,7 @@ export default function Portfolio() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                               </svg>
-                              <span className="text-white font-medium text-sm">Binh Trieu Branch (On-site)</span>
+                              <span className="text-white font-medium text-sm">{t?.experience?.agribank?.department || "Binh Trieu Branch (On-site)"}</span>
                             </div>
                           </div>
                         </div>
@@ -425,8 +425,8 @@ export default function Portfolio() {
                             />
                           </div>
                         <div>
-                            <h4 className="text-3xl font-bold text-white mb-2">Broker Intern</h4>
-                            <p className="text-[#00d4ff] font-semibold text-xl">Maybank Investment Bank Vietnam</p>
+                            <h4 className="text-3xl font-bold text-white mb-2">{t?.experience?.maybank?.position || "Broker Intern"}</h4>
+                            <p className="text-[#00d4ff] font-semibold text-xl">{t?.experience?.maybank?.company || "Maybank Investment Bank Vietnam"}</p>
                           </div>
                         </div>
                         
@@ -437,7 +437,7 @@ export default function Portfolio() {
                               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                               </svg>
-                              <span className="text-white font-medium text-sm">Jun 2024 – Dec 2024</span>
+                              <span className="text-white font-medium text-sm">{t?.experience?.maybank?.period || "Jun 2024 – Dec 2024"}</span>
                             </div>
                           </div>
                           
@@ -447,7 +447,7 @@ export default function Portfolio() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                               </svg>
-                              <span className="text-white font-medium text-sm">Phu Nhuan Branch (On-site)</span>
+                              <span className="text-white font-medium text-sm">{t?.experience?.maybank?.department || "Phu Nhuan Branch (On-site)"}</span>
                             </div>
                           </div>
                         </div>
@@ -472,36 +472,14 @@ export default function Portfolio() {
                       <div className="mb-6 sm:mb-8">
                         <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{t?.buttons?.jobDescription || "Job Description"}</h5>
                         <div className="space-y-3 sm:space-y-4">
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness.
-                            </span>
-                          </div>
+                        {t?.experience?.maybank?.achievements?.map((achievement: string, index: number) => (
+                            <div key={index} className="flex items-start space-x-2 sm:space-x-3">
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
+                                {achievement}
+                              </span>
+                            </div>
+                        ))}
                         </div>
                       </div>
                     </div>
