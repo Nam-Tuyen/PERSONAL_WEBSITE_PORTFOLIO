@@ -116,28 +116,28 @@ export const translations = {
       title: "HÀNH TRÌNH CHUYÊN NGHIỆP",
       agribank: {
         company: "AGRIBANK",
-        department: "Chi nhánh Bình Triệu (On-site)",
-        position: "Thực tập sinh Phân tích Tín dụng",
+        department: "Chi nhánh Bình Triệu (Tại văn phòng)",
+        position: "Thực tập sinh tín dụng doanh nghiệp",
         period: "03/2025 – 06/2025",
         achievements: [
-          "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô phục vụ quyết định cấp tín dụng.",
-          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility) bao gồm mô hình dòng tiền và phân tích kịch bản.",
-          "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay dựa trên mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
-          "Phân tích báo cáo tài chính với chỉ số và xu hướng để hỗ trợ thẩm định."
+          "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô để hỗ trợ quyết định cấp tín dụng.",
+          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility), bao gồm mô hình dòng tiền và phân tích kịch bản.",
+          "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay từ phân tích mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
+          "Phân tích báo cáo tài chính bằng chỉ số và xu hướng để hỗ trợ thẩm định."
         ],
         icon: "🏦"
       },
       maybank: {
         company: "Maybank Investment Bank Vietnam",
-        department: "Chi nhánh Phú Nhuận (On-site)",
-        position: "Thực tập sinh Môi giới",
+        department: "Chi nhánh Phú Nhuận (Tại văn phòng)",
+        position: "Thực tập sinh môi giới chứng khoán",
         period: "06/2024 – 12/2024",
         achievements: [
-          "Ứng dụng phân tích dữ liệu thị trường: làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch cho các mã niêm yết.",
-          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị bản tin đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
-          "Soạn báo cáo thị trường hàng ngày/tuần phục vụ Broker cấp cao trong tiếp cận khách hàng và hành động danh mục.",
-          "Hỗ trợ phát triển khách hàng: sàng lọc tiềm năng, chuẩn bị pitch deck, theo dõi portfolio.",
-          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hàng ngày và đưa ra insight theo mã, nâng cao hiệu suất và tốc độ phản hồi của nhóm."
+          "Ứng dụng phân tích dữ liệu để làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch của các mã niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; soạn bản tin/brief đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
+          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và hành động danh mục.",
+          "Hỗ trợ phát triển khách hàng: sàng lọc khách hàng tiềm năng, chuẩn bị pitch deck, theo dõi hiệu quả danh mục.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, cải thiện hiệu suất và tốc độ phản hồi của nhóm."
         ],
         icon: "🏢"
       }
@@ -146,28 +146,28 @@ export const translations = {
       title: "KINH NGHIỆM CHUYÊN NGHIỆP",
       agribank: {
         company: "AGRIBANK",
-        department: "Chi nhánh Bình Triệu (On-site)",
-        position: "Thực tập sinh Phân tích Tín dụng",
+        department: "Chi nhánh Bình Triệu (Tại văn phòng)",
+        position: "Thực tập sinh tín dụng doanh nghiệp",
         period: "03/2025 – 06/2025",
         achievements: [
-          "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô phục vụ quyết định cấp tín dụng.",
-          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility) bao gồm mô hình dòng tiền và phân tích kịch bản.",
-          "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay dựa trên mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
-          "Phân tích báo cáo tài chính với chỉ số và xu hướng để hỗ trợ thẩm định."
+          "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô để hỗ trợ quyết định cấp tín dụng.",
+          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility), bao gồm mô hình dòng tiền và phân tích kịch bản.",
+          "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay từ phân tích mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
+          "Phân tích báo cáo tài chính bằng chỉ số và xu hướng để hỗ trợ thẩm định."
         ],
         icon: "🏦"
       },
       maybank: {
         company: "Maybank Investment Bank Vietnam",
-        department: "Chi nhánh Phú Nhuận (On-site)",
-        position: "Thực tập sinh Môi giới",
+        department: "Chi nhánh Phú Nhuận (Tại văn phòng)",
+        position: "Thực tập sinh môi giới chứng khoán",
         period: "06/2024 – 12/2024",
         achievements: [
-          "Ứng dụng phân tích dữ liệu thị trường: làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch cho các mã niêm yết.",
-          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị bản tin đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
-          "Soạn báo cáo thị trường hàng ngày/tuần phục vụ Broker cấp cao trong tiếp cận khách hàng và hành động danh mục.",
-          "Hỗ trợ phát triển khách hàng: sàng lọc tiềm năng, chuẩn bị pitch deck, theo dõi portfolio.",
-          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hàng ngày và đưa ra insight theo mã, nâng cao hiệu suất và tốc độ phản hồi của nhóm."
+          "Ứng dụng phân tích dữ liệu để làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch của các mã niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; soạn bản tin/brief đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
+          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và hành động danh mục.",
+          "Hỗ trợ phát triển khách hàng: sàng lọc khách hàng tiềm năng, chuẩn bị pitch deck, theo dõi hiệu quả danh mục.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, cải thiện hiệu suất và tốc độ phản hồi của nhóm."
         ],
         icon: "🏢"
       }
