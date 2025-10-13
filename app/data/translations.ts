@@ -371,7 +371,7 @@ export const translations = {
       title: "PROFESSIONAL JOURNEY",
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
-        department: "Binh Trieu Branch - Credit Analysis Department",
+        department: "Binh Trieu Branch (On-site)",
         position: "Corporate Credit Intern",
         period: "Mar 2025 – Jun 2025",
         achievements: [
@@ -401,7 +401,7 @@ export const translations = {
       title: "PROFESSIONAL EXPERIENCE",
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
-        department: "Binh Trieu Branch - Credit Analysis Department",
+        department: "Binh Trieu Branch (On-site)",
         position: "Corporate Credit Intern",
         period: "Mar 2025 – Jun 2025",
         achievements: [
