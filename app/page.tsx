@@ -79,10 +79,10 @@ export default function Portfolio() {
                      {/* Greeting */}
                      <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
                        
-                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 tracking-tight leading-relaxed">
+                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 tracking-tight leading-relaxed vietnamese-text">
                          {t?.hero?.greeting || "HI, I AM"}
                         </h1>
-                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 tracking-tight leading-relaxed">
+                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-transparent bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 tracking-tight leading-relaxed vietnamese-text gradient-text">
                          {t?.hero?.name || "LE NAM TUYEN"}
                        </h2>
                        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium leading-relaxed mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9">

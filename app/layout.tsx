@@ -5,15 +5,17 @@ import { Montserrat, Great_Vibes } from "next/font/google"
 import "./globals.css"
 
 const montserrat = Montserrat({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
+  display: "swap",
 })
 
 const greatVibes = Great_Vibes({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   weight: "400",
   variable: "--font-great-vibes",
+  display: "swap",
 })
 
 export const metadata: Metadata = {

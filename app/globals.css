@@ -18,7 +18,27 @@ body {
   font-feature-settings: 'rlig' 1, 'calt' 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--font-montserrat), 'Montserrat', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Vietnamese text support */
+.vietnamese-text {
+  font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1;
+  -moz-font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1;
+}
+
+/* Gradient text with proper overflow handling */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 /* Custom scrollbar */
