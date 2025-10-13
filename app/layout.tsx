@@ -1,25 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Suspense } from "react"
-import { Montserrat, Great_Vibes } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css"
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-montserrat",
-})
-
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-great-vibes",
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
-  title: "NamTuyenLe-Portfolio",
-  description: "Personal portfolio of Tuyen Le Nam - Product Manager, Data Analyst, and FinTech Enthusiast",
-  generator: "v0.app",
+  title: "Lê Nam Tuyến — Portfolio",
+  description: "Personal portfolio of Lê Nam Tuyến - Product Manager & Data Analyst in FinTech",
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -34,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-            <body className={`${montserrat.variable} ${greatVibes.variable} font-montserrat antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>
