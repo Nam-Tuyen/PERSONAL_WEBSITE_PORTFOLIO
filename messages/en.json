@@ -1,0 +1,125 @@
+{
+  "Meta": { "title": "Namtuyenle-portfolio-websites" },
+
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "edu": "Education",
+    "skills": "Skills",
+    "awards": "Certificates & Awards",
+    "exp": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+
+  "Hero": {
+    "hello": "Hello, I am",
+    "name": "Le Nam Tuyen",
+    "role": "Product Manager & Data Analyst candidate in FinTech",
+    "download": "Download CV",
+    "viewProjects": "View Projects",
+    "quote": "Transforming vision into reality, turning intent into results."
+  },
+
+  "About": {
+    "title": "About Me",
+    "description": "Final-year Financial Technology student at the University of Economics and Law (VNU-HCM), focused on product development, data analysis, and evidence-based decision making. Design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, convert insights into clear product requirements, establish success metrics, and implement lean experiments to enhance user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms; build scalable templates and reporting systems to improve execution quality and velocity. Seeking a Data Analyst or Associate PM role in FinTech to translate data and customer insights into measurable product impact."
+  },
+
+  "Education": {
+    "title": "Education",
+    "degree": "Bachelor of Financial Technology",
+    "university": "University of Economics and Law (VNU-HCM)",
+    "period": "2022 – 2026",
+    "gpa": "GPA: 3.0/4.0",
+    "ielts": "IELTS: 6.0"
+  },
+
+  "Skills": {
+    "title": "Skills",
+    "programming": "Programming Languages",
+    "dataTools": "Data Tools",
+    "productManagement": "Product Management",
+    "database": "Database & Cloud"
+  },
+
+  "Certifications": {
+    "title": "Certificates & Awards",
+    "googleCert": "Google Certificate – Ask Questions to Make Data-Driven Decisions",
+    "nvidiaCert": "NVIDIA Certificate – Accelerating End-to-End Data Science Workflows",
+    "journalArticle": "Journal Article – Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
+    "clickToView": "Click to view"
+  },
+
+  "Experience": {
+    "title": "Work Experience",
+    "maybank": {
+      "position": "Broker Intern",
+      "company": "Maybank Investment Bank Vietnam",
+      "location": "Phu Nhuan Branch (On-site)",
+      "period": "06/2024 – 12/2024",
+      "description": "Job Description",
+      "achievements": [
+        "Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.",
+        "Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.",
+        "Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.",
+        "Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.",
+        "Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness."
+      ]
+    },
+    "agribank": {
+      "position": "Credit Analyst Intern",
+      "company": "AGRIBANK",
+      "location": "Binh Trieu Branch (On-site)",
+      "period": "03/2025 – 06/2025",
+      "description": "Job Description",
+      "achievements": [
+        "Produced timely market reports covering sector and macroeconomic updates to support lending decisions.",
+        "Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.",
+        "Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.",
+        "Conducted financial statement analysis with ratio and trend analysis to inform underwriting."
+      ]
+    }
+  },
+
+  "Projects": {
+    "title": "Projects",
+    "viewProject": "View Project",
+    "automatedReport": {
+      "name": "Automated Financial Report Export",
+      "period": "08/2024 – 10/2024",
+      "description": [
+        "Built an end-to-end Python pipeline (individual) for stock-ticker analytics: ingesting raw API data with environment-managed secrets, producing standardized daily reports in Excel, CSV, and PDF formats.",
+        "Implemented with requests, pandas, python-dotenv; modularized into fetch • process • report components with reusable helpers for path management, API key loading, validation, and date handling; scheduled via cron.",
+        "Results: reduced manual preparation time by 90%, improved team responsiveness by 25%."
+      ]
+    },
+    "airbnbPredictor": {
+      "name": "Airbnb rental pricing predictor",
+      "period": "04/2024 – 06/2024",
+      "description": [
+        "Cleaned and engineered a 26,000-row Airbnb dataset (individual): converting currencies to numeric, parsing dates, trimming outliers at the 99.5th percentile, building a pricing workflow with standardized inputs and outputs.",
+        "Built a full preprocessing and modeling pipeline in scikit-learn: ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling by city, GridSearchCV for tuning.",
+        "Delivered client-ready insights with feature importance highlighting accommodates, bathrooms, bedrooms, beds, and fees as key drivers; achieved test RMSE = 95.84 and MAE = 57.98 using tuned Random Forest (~4% error reduction versus linear baseline); example predicted price 834.20 for a Bondi Beach home."
+      ]
+    },
+    "hrAnalytics": {
+      "name": "Workforce Insight Hub: Retention and Compensation",
+      "period": "08/2023 – 02/2024",
+      "description": [
+        "Built an end-to-end HR analytics workflow (individual): cleaning and encoding Human_Resources.csv, conducting EDA with histograms, KDE, boxplots, and correlation heatmap to surface retention risks.",
+        "Trained a Random Forest attrition model and Logistic Regression for interpretability; achieved 85% accuracy with key drivers including MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; noted low recall on leavers = 0.07.",
+        "Segmented employees into 3 clusters using MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction; delivered salary and overtime policy recommendations based on 16.1% attrition rate."
+      ]
+    }
+  },
+
+  "Contact": {
+    "title": "Contact",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Ho Chi Minh City, Vietnam",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}
