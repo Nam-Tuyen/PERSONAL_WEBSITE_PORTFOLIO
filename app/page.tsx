@@ -75,24 +75,24 @@ export default function Portfolio() {
 
                  {/* Right Column - Professional Content */}
                   <div className="order-1 lg:order-2 text-center lg:text-left">
-                   <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                   <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12">
                      {/* Greeting */}
-                     <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                     <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8">
                        
-                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-2 sm:mb-3 md:mb-4 lg:mb-5 tracking-tight leading-tight">
+                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 tracking-tight leading-relaxed">
                          {t?.hero?.greeting || "HI, I AM"}
                         </h1>
-                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-tight">
+                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 tracking-tight leading-relaxed">
                          {t?.hero?.name || "LE NAM TUYEN"}
                        </h2>
-                       <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium leading-relaxed mb-4 sm:mb-5 md:mb-6 lg:mb-7">
+                       <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium leading-relaxed mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9">
                          {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
                         </p>
                       </div>
 
 
                       {/* CTA Buttons */}
-                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
+                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center lg:justify-start mt-6 sm:mt-8 md:mt-10 lg:mt-12">
                        <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base">
                          {t?.buttons?.downloadResume || "Download Resume"}
                         </button>
