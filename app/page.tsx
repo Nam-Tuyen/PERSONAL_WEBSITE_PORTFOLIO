@@ -50,74 +50,164 @@ export default function Portfolio() {
         }`}>
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
-            {/* Hero Section - Tech Minimal Style */}
-            <section id="home" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
-                {/* Left Column - Professional Image */}
-                <div className="order-2 lg:order-1">
-                    <div className="relative group">
-                    {/* Tech Grid Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-                    <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-1 sm:p-2">
-                      {/* Fixed Aspect Ratio Container */}
-                      <div className="relative w-full aspect-[4/5] max-w-sm mx-auto sm:max-w-none overflow-hidden rounded-xl sm:rounded-2xl">
-                          <img 
-                            src="/Profilepicture.jpg" 
-                          alt="LE NAM TUYEN" 
-                          className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
-                          />
-                        {/* Tech Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </div>
-                      </div>
+            {/* Hero Section - Modern Design */}
+            <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+              {/* Animated Background Elements */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-full blur-2xl animate-pulse delay-500"></div>
+              </div>
+
+              <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                  
+                  {/* Left Column - Content */}
+                  <div className="text-center lg:text-left space-y-6 sm:space-y-8">
+                    {/* Greeting Badge */}
+                    <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 rounded-full backdrop-blur-sm">
+                      <div className="w-2 h-2 bg-[#00ff88] rounded-full mr-3 animate-pulse"></div>
+                      <span className="text-sm font-medium text-[#00ff88]">
+                        {language === 'vi' ? 'Sẵn sàng cho cơ hội mới' : 'Available for opportunities'}
+                      </span>
+                    </div>
+
+                    {/* Main Heading */}
+                    <div className="space-y-4 sm:space-y-6">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight">
+                        <span className="block text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl mb-2 sm:mb-4">
+                          {t?.hero?.greeting || "HI, I AM"}
+                        </span>
+                        <span className="block bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent">
+                          {t?.hero?.name || "LE NAM TUYEN"}
+                        </span>
+                      </h1>
+                      
+                      <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
+                      </p>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                      {language === 'vi' 
+                        ? 'Chuyên gia phân tích dữ liệu và quản lý sản phẩm với kinh nghiệm trong lĩnh vực FinTech, tập trung vào việc chuyển đổi dữ liệu thành insights có giá trị.'
+                        : 'Data analysis and product management specialist with FinTech experience, focused on transforming data into valuable insights.'
+                      }
+                    </p>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-4">
+                      <button className="group relative px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 overflow-hidden">
+                        <span className="relative z-10 flex items-center justify-center">
+                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          {t?.buttons?.downloadResume || "Download Resume"}
+                        </span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </button>
+                      
+                      <button 
+                        onClick={scrollToProjects}
+                        className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
+                      >
+                        <span className="flex items-center justify-center">
+                          <svg className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                          </svg>
+                          {t?.buttons?.viewProjects || "View Projects"}
+                        </span>
+                      </button>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="flex justify-center lg:justify-start space-x-6 pt-4">
+                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-[#00ff88]/50 transition-all duration-300">
+                        <svg className="w-6 h-6 text-gray-400 group-hover:text-[#00ff88] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
+                      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="group p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-[#00ff88]/50 transition-all duration-300">
+                        <svg className="w-6 h-6 text-gray-400 group-hover:text-[#00ff88] transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
+                      <a href="mailto:contact@example.com" className="group p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-[#00ff88]/50 transition-all duration-300">
+                        <svg className="w-6 h-6 text-gray-400 group-hover:text-[#00ff88] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
 
-                 {/* Right Column - Professional Content */}
-                  <div className="order-1 lg:order-2 text-center lg:text-left">
-                   <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                     {/* Greeting */}
-                     <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-                       
-                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-2 sm:mb-3 md:mb-4 lg:mb-5 tracking-tight leading-tight">
-                         {t?.hero?.greeting || "HI, I AM"}
-                        </h1>
-                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-3 sm:mb-4 md:mb-5 lg:mb-6 tracking-tight leading-tight">
-                         {t?.hero?.name || "LE NAM TUYEN"}
-                       </h2>
-                       <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-medium leading-relaxed mb-4 sm:mb-5 md:mb-6 lg:mb-7">
-                         {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
-                        </p>
+                  {/* Right Column - Professional Image */}
+                  <div className="relative">
+                    <div className="relative group">
+                      {/* Floating Elements */}
+                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full animate-bounce"></div>
+                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-[#7c3aed] to-[#00d4ff] rounded-full animate-bounce delay-1000"></div>
+                      
+                      {/* Main Image Container */}
+                      <div className="relative">
+                        {/* Glow Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-3xl blur-2xl scale-110"></div>
+                        
+                        {/* Image Frame */}
+                        <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-white/20 rounded-3xl p-2 shadow-2xl">
+                          <div className="relative w-full aspect-[4/5] max-w-md mx-auto overflow-hidden rounded-2xl">
+                            <img 
+                              src="/Profilepicture.jpg" 
+                              alt="LE NAM TUYEN" 
+                              className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110"
+                            />
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            {/* Tech Grid Overlay */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                              <div className="w-full h-full" style={{
+                                backgroundImage: `
+                                  linear-gradient(rgba(0,255,136,0.1) 1px, transparent 1px),
+                                  linear-gradient(90deg, rgba(0,255,136,0.1) 1px, transparent 1px)
+                                `,
+                                backgroundSize: '20px 20px'
+                              }}></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-
-
-                      {/* CTA Buttons */}
-                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start">
-                       <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base">
-                         {t?.buttons?.downloadResume || "Download Resume"}
-                        </button>
-                        <button 
-                         onClick={scrollToProjects}
-                         className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base"
-                       >
-                         {t?.buttons?.viewProjects || "View Projects"}
-                        </button>
-                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </section>
 
-            {/* Scroll Indicator */}
+            {/* Modern Scroll Indicator */}
             <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
-              <div className="flex flex-col items-center space-y-2 animate-bounce">
-                <span className="text-gray-400 text-xs sm:text-sm font-medium">{t?.scrollIndicator?.text || "Scroll to explore"}</span>
-                <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                  <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+              <div className="group cursor-pointer" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+                <div className="flex flex-col items-center space-y-3">
+                  <span className="text-gray-400 text-sm font-medium group-hover:text-[#00ff88] transition-colors duration-300">
+                    {t?.scrollIndicator?.text || "Scroll to explore"}
+                  </span>
+                  
+                  {/* Modern Mouse Icon */}
+                  <div className="relative">
+                    <div className="w-8 h-12 border-2 border-gray-400 group-hover:border-[#00ff88] rounded-full flex justify-center transition-colors duration-300">
+                      <div className="w-1 h-2 bg-gray-400 group-hover:bg-[#00ff88] rounded-full mt-3 animate-bounce transition-colors duration-300"></div>
+                    </div>
+                    
+                    {/* Animated Scroll Arrow */}
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                      <svg className="w-5 h-5 text-gray-400 group-hover:text-[#00ff88] animate-bounce transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  {/* Pulse Effect */}
+                  <div className="absolute w-16 h-16 border border-[#00ff88]/20 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <svg className="w-4 h-4 text-gray-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
               </div>
             </div>
 
