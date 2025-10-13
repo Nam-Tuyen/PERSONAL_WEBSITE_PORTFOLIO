@@ -21,18 +21,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Minimal */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -54,7 +54,7 @@ body {
 /* Modern gradient buttons */
 @layer components {
   .btn-gradient-primary {
-    @apply relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-white rounded-2xl transition-all duration-300 ease-out;
+    @apply relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-white rounded-lg transition-all duration-300 ease-out;
     background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
     box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
   }
@@ -65,7 +65,7 @@ body {
   }
   
   .btn-outline-gradient {
-    @apply relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold rounded-2xl transition-all duration-300 ease-out;
+    @apply relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold rounded-lg transition-all duration-300 ease-out;
     background: transparent;
     border: 2px solid transparent;
     background-clip: padding-box;
@@ -91,16 +91,16 @@ body {
     color: white;
   }
   
-  /* Modern card styles */
+  /* Modern card styles - Minimal */
   .card-tech {
-    @apply bg-gradient-to-br from-[#1a1a1a] to-[#252525] backdrop-blur-xl border border-[#00ff88]/20 rounded-3xl p-8 transition-all duration-300 ease-out;
-    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.1);
+    @apply bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 transition-all duration-300 ease-out;
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.05);
   }
   
   .card-tech:hover {
-    @apply transform -translate-y-2;
-    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
-    border-color: #00ff88;
+    @apply transform -translate-y-1;
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
   }
   
   /* Text gradients */
@@ -125,32 +125,37 @@ body {
     background-clip: text;
   }
   
-  /* Glass morphism */
+  /* Glass morphism - Subtle */
   .glass-tech {
-    @apply bg-[#1a1a1a]/20 backdrop-blur-xl border border-[#00ff88]/20;
+    @apply bg-gray-900/20 backdrop-blur-xl border border-white/10;
   }
   
   .glass-cyber {
-    @apply bg-[#0a0a0a]/20 backdrop-blur-xl border border-[#00d4ff]/20;
+    @apply bg-gray-800/20 backdrop-blur-xl border border-white/10;
   }
   
-  /* Tag styles for skills */
+  /* Tag styles for skills - Modern */
   .skill-tag {
-    @apply inline-block px-3 py-1 text-sm font-medium rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200;
+    @apply inline-block px-4 py-2 text-sm font-medium rounded-full border transition-all duration-300;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+    border-color: rgba(0, 255, 136, 0.3);
+    color: white;
   }
   
-  .skill-tag.dark {
-    @apply border-gray-600 text-gray-300 bg-gray-800 hover:bg-gray-700;
+  .skill-tag:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
+    border-color: rgba(0, 255, 136, 0.5);
+    transform: translateY(-1px);
   }
 }
 
-/* Animations */
+/* Minimal Animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
 }
 
@@ -163,6 +168,17 @@ body {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientShift 3s ease infinite;
@@ -170,6 +186,10 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
 }
 
 /* Responsive typography */
@@ -201,4 +221,40 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
+}
+
+/* Custom utilities */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.backdrop-blur-strong {
+  backdrop-filter: blur(20px);
+}
+
+/* Minimal hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient borders */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+  padding: 2px;
+  border-radius: 12px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #0a0a0a;
+  border-radius: 10px;
+  z-index: -1;
 }
