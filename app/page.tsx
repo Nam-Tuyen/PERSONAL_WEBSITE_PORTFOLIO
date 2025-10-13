@@ -45,35 +45,67 @@ export default function Portfolio() {
             
             {/* Hero Section - Ultra Modern */}
             <section id="home" className="min-h-screen flex items-center justify-center relative">
-              <div className="text-center space-y-8 max-w-4xl mx-auto">
-                {/* Main Title */}
-                <div className="space-y-4">
-                  <h1 className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] leading-none">
-                    {language === 'vi' ? 'LÊ NAM TUYẾN' : 'LE NAM TUYEN'}
-                  </h1>
-                  <div className="h-1 w-32 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
-                  <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
-                    {t?.hero?.title || "Ứng viên Product Manager & Data Analyst trong lĩnh vực FinTech"}
-                  </p>
-                </div>
+              <div className="max-w-6xl mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  
+                  {/* Left Column - Profile Image */}
+                  <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+                    <div className="relative group">
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                      
+                      {/* Image Container */}
+                      <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-white/20 rounded-3xl p-2 shadow-2xl">
+                        <div className="relative w-80 h-80 lg:w-96 lg:h-96 overflow-hidden rounded-2xl">
+                          <img 
+                            src="/Profilepicture.jpg" 
+                            alt={language === 'vi' ? 'LÊ NAM TUYẾN' : 'LE NAM TUYEN'} 
+                            className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        {/* Decorative Elements */}
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full animate-pulse"></div>
+                        <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-                  <button className="group relative px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25">
-                    <span className="relative z-10">{t?.buttons?.downloadResume || "Tải CV"}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
-                  <button 
-                    onClick={() => {
-                      const projectsSection = document.getElementById('projects')
-                      if (projectsSection) {
-                        projectsSection.scrollIntoView({ behavior: 'smooth' })
-                      }
-                    }}
-                    className="px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 hover:border-white/40 transition-all duration-300"
-                  >
-                    {t?.buttons?.viewProjects || "Xem Dự án"}
-                  </button>
+                  {/* Right Column - Content */}
+                  <div className="order-1 lg:order-2 text-center lg:text-left">
+                    <div className="space-y-6">
+                      {/* Main Title */}
+                      <div className="space-y-4">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] leading-none">
+                          {language === 'vi' ? 'LÊ NAM TUYẾN' : 'LE NAM TUYEN'}
+                        </h1>
+                        <div className="h-1 w-24 lg:w-32 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto lg:mx-0"></div>
+                        <p className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed">
+                          {t?.hero?.title || "Ứng viên Product Manager & Data Analyst trong lĩnh vực FinTech"}
+                        </p>
+                      </div>
+
+                      {/* CTA Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-6">
+                        <button className="group relative px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25">
+                          <span className="relative z-10">{t?.buttons?.downloadResume || "Tải CV"}</span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </button>
+                        <button 
+                          onClick={() => {
+                            const projectsSection = document.getElementById('projects')
+                            if (projectsSection) {
+                              projectsSection.scrollIntoView({ behavior: 'smooth' })
+                            }
+                          }}
+                          className="px-8 py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 hover:border-white/40 transition-all duration-300"
+                        >
+                          {t?.buttons?.viewProjects || "Xem Dự án"}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Scroll Indicator */}
