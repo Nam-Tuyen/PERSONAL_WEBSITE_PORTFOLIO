@@ -37,7 +37,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
   const navItems = [
     { 
       key: "home", 
-      label: "Home",
+      label: translations?.header?.nav?.home || "Home",
       icon: Home,
       color: "text-[#00d4ff]",
       bgColor: "bg-[#00d4ff]/10"
@@ -248,7 +248,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-[#00ff88]" />
                 </div>
-                <span className="font-medium text-xs sm:text-sm">Contact</span>
+                <span className="font-medium text-xs sm:text-sm">{translations?.contact?.title || "Contact"}</span>
               </div>
               <ChevronRight className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 flex-shrink-0 ${
                 showContacts ? 'rotate-90' : ''

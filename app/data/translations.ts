@@ -3,6 +3,7 @@ export const translations = {
     header: {
       logo: "LNT",
       nav: {
+        home: "Trang chủ",
         professional: "Chuyên nghiệp",
         personal: "Cá nhân"
       }
@@ -26,6 +27,9 @@ export const translations = {
     },
     scrollIndicator: {
       text: "Cuộn để khám phá"
+    },
+    contact: {
+      title: "Liên hệ"
     },
     labels: {
       bachelorOf: "Cử nhân ngành",
@@ -136,11 +140,11 @@ export const translations = {
         position: "Thực tập sinh môi giới chứng khoán",
         period: "Tháng 6/2024 – Tháng 12/2024",
         achievements: [
-          "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã cổ phiếu niêm yết.",
-          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ đề xuất giao dịch.",
-          "Soạn báo cáo thị trường hằng ngày/tuần cho Chuyên viên Môi giới Cấp cao, phục vụ tiếp cận khách hàng và điều chỉnh danh mục.",
-          "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu pitching và theo dõi danh mục đầu tư.",
-          "Xây dựng chatbot tư vấn cổ phiếu tự động, tổng hợp tin tức hằng ngày và cung cấp insight theo từng mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của đội ngũ."
+          "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ ý tưởng giao dịch.",
+          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và các quyết định danh mục.",
+          "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu/pitch và theo dõi danh mục.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của nhóm."
         ],
         icon: "🏢"
       }
@@ -166,11 +170,11 @@ export const translations = {
         position: "Thực tập sinh môi giới chứng khoán",
         period: "Tháng 6/2024 – Tháng 12/2024",
         achievements: [
-          "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã cổ phiếu niêm yết.",
-          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ đề xuất giao dịch.",
-          "Soạn báo cáo thị trường hằng ngày/tuần cho Chuyên viên Môi giới Cấp cao, phục vụ tiếp cận khách hàng và điều chỉnh danh mục.",
-          "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu pitching và theo dõi danh mục đầu tư.",
-          "Xây dựng chatbot tư vấn cổ phiếu tự động, tổng hợp tin tức hằng ngày và cung cấp insight theo từng mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của đội ngũ."
+          "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ ý tưởng giao dịch.",
+          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và các quyết định danh mục.",
+          "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu/pitch và theo dõi danh mục.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của nhóm."
         ],
         icon: "🏢"
       }
@@ -261,6 +265,7 @@ export const translations = {
     header: {
       logo: "LNT",
       nav: {
+        home: "Home",
         professional: "PROFESSIONAL",
         personal: "PERSONAL"
       }
@@ -284,6 +289,9 @@ export const translations = {
     },
     scrollIndicator: {
       text: "Scroll to explore"
+    },
+    contact: {
+      title: "Contact"
     },
     labels: {
       bachelorOf: "Bachelor of",
