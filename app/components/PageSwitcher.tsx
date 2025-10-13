@@ -27,12 +27,12 @@ export default function PageSwitcher({ translations, language, isSidebarCollapse
 
   return (
     <div className="fixed top-0 left-0 right-0 z-40 bg-black/10 backdrop-blur-2xl border-b border-white/5">
-      <div className={`max-w-7xl mx-auto px-4 py-4 transition-all duration-500 ${
+      <div className={`w-full px-4 py-4 transition-all duration-500 ${
         isSidebarCollapsed ? 'lg:ml-0' : 'lg:ml-64'
       }`}>
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-1.5 shadow-2xl">
-            <div className="flex gap-1">
+            <div className="flex gap-1 justify-center items-center">
               {/* Professional Page Button */}
               <button
                 onClick={() => handlePageSwitch('professional')}
