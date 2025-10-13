@@ -3,31 +3,31 @@ export const translations = {
     header: {
       logo: "LNT",
       nav: {
-        professional: "CHUYÊN NGHIỆP",
-        personal: "CÁ NHÂN"
+        professional: "Chuyên nghiệp",
+        personal: "Cá nhân"
       }
     },
     sections: {
-      about: "GIỚI THIỆU",
-      education: "HỌC VẤN",
-      skills: "KỸ NĂNG",
-      certifications: "CHỨNG CHỈ & GIẢI THƯỞNG",
-      experience: "KINH NGHIỆM LÀM VIỆC",
-      projects: "DỰ ÁN",
-      hobbies: "SỞ THÍCH",
-      interests: "QUAN TÂM"
+      about: "Giới thiệu",
+      education: "Học vấn",
+      skills: "Kỹ năng",
+      certifications: "Chứng chỉ & Giải thưởng",
+      experience: "Kinh nghiệm làm việc",
+      projects: "Dự án",
+      hobbies: "Sở thích",
+      interests: "Quan tâm"
     },
     buttons: {
       downloadResume: "Tải CV",
       viewProjects: "Xem Dự án",
       moreInformation: "Thông tin thêm",
-      jobDescription: "Mô tả Công việc",
+      jobDescription: "Mô tả công việc",
       viewProject: "Xem Dự án"
     },
     labels: {
       bachelorOf: "Cử nhân",
       financialTechnology: "Công nghệ Tài chính",
-      gpa: "Điểm TB",
+      gpa: "Điểm trung bình",
       ielts: "IELTS"
     },
     footer: {
@@ -41,18 +41,18 @@ export const translations = {
       copyright: "© 2024 LÊ NAM TUYẾN. Tất cả quyền được bảo lưu."
     },
     hero: {
-      greeting: "XIN CHÀO, TÔI LÀ",
+      greeting: "Xin chào, tôi là",
       name: "LÊ NAM TUYẾN",
-      title: "ỨNG VIÊN PRODUCT MANAGER & DATA ANALYST TRONG LĨNH VỰC FINTECH"
+      title: "Ứng viên Product Manager & Data Analyst trong lĩnh vực FinTech"
     },
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
-      quote: "Biến tầm nhìn thành hiện thực, chuyển ý định thành kết quả",
-      description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế - Luật với chuyên môn về phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Tôi thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm, nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, tôi chuyển đổi insights thành các yêu cầu sản phẩm rõ ràng, định nghĩa các chỉ số thành công và thực hiện các thí nghiệm tinh gọn nhằm nâng cao trải nghiệm người dùng và kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại, tôi xây dựng các template và hệ thống báo cáo có thể mở rộng để cải thiện chất lượng và tốc độ thực thi. Tôi đang tìm kiếm vị trí Data Analyst hoặc Associate PM trong lĩnh vực FinTech để có thể chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm có thể đo lường được."
+      quote: "Biến tầm nhìn thành hiện thực, biến ý định thành kết quả",
+      description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm (product discovery), nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, chuyển hoá insight thành yêu cầu sản phẩm rõ ràng, xác lập chỉ số thành công, và triển khai thí nghiệm tinh gọn để nâng cao trải nghiệm người dùng lẫn kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại; xây dựng template và hệ thống báo cáo mở rộng nhằm cải thiện chất lượng và tốc độ thực thi. Định hướng tìm kiếm vị trí Data Analyst hoặc Associate PM trong FinTech để chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được."
     },
     education: {
       title: "THÀNH TÍCH HỌC TẬP",
-      university: "Đại học Kinh tế - Luật (VNU-HCM)",
+      university: "Đại học Kinh tế – Luật (VNU-HCM)",
       degree: "Cử nhân Công nghệ Tài chính",
       gpa: "3.0/4.0",
       ielts: "6.0",
@@ -72,20 +72,20 @@ export const translations = {
       title: "CHUYÊN MÔN KỸ THUẬT",
       categories: [
         {
-          name: "Ngôn ngữ Lập trình",
-          items: ["Python", "SQL", "JavaScript", "HTML/CSS", "R"]
+          name: "Ngôn ngữ lập trình",
+          items: ["Python", "SQL", "R"]
         },
         {
-          name: "Phân tích & Trực quan hóa Dữ liệu",
-          items: ["Power BI", "Tableau", "Excel", "Pandas", "NumPy", "Matplotlib"]
+          name: "Công cụ dữ liệu",
+          items: ["Power BI", "Tableau", "Excel"]
         },
         {
-          name: "Quản lý Sản phẩm",
-          items: ["Nghiên cứu Người dùng", "Khám phá Sản phẩm", "A/B Testing", "Phân tích", "Figma"]
+          name: "Quản trị sản phẩm",
+          items: ["Nghiên cứu người dùng", "Product Discovery", "Product Analytics"]
         },
         {
-          name: "Cơ sở Dữ liệu & Cloud",
-          items: ["MySQL", "PostgreSQL", "AWS", "Google Cloud", "MongoDB"]
+          name: "Cơ sở dữ liệu & Cloud",
+          items: ["MySQL", "PostgreSQL", "MongoDB"]
         }
       ]
     },
@@ -93,44 +93,51 @@ export const translations = {
       title: "CHỨNG CHỈ CHUYÊN NGHIỆP",
       items: [
         {
-          title: "Đặt Câu hỏi để Ra Quyết định Dựa trên Dữ liệu",
-          issuer: "Coursera",
+          title: "Google Certificate – Ask Questions to Make Data-Driven Decisions",
+          issuer: "Google",
           image: "/ask-question-to-make-data-driven.PNG",
-          description: "Chứng chỉ Chuyên nghiệp Coursera"
+          description: "Bấm để xem chứng chỉ"
         },
         {
-          title: "Tăng tốc Quy trình Khoa học Dữ liệu End-to-End",
+          title: "NVIDIA Certificate – Accelerating End-to-End Data Science Workflows",
           issuer: "NVIDIA",
           image: "/Certificate%20NVIDIA.PNG",
-          description: "Chứng chỉ Chuyên nghiệp NVIDIA"
+          description: "Bấm để xem chứng chỉ"
+        },
+        {
+          title: "Bài báo khoa học – Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
+          issuer: "Journal",
+          image: "/journal-article.PNG",
+          description: "Bấm để xem bài báo"
         }
       ]
     },
     workExperience: {
       title: "HÀNH TRÌNH CHUYÊN NGHIỆP",
       agribank: {
-        company: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam",
-        department: "Chi nhánh Bình Triệu - Phòng Phân tích Tín dụng",
-        position: "Thực tập sinh Phân tích Tài chính",
-        period: "Tháng 3/2025 - Tháng 6/2025",
+        company: "AGRIBANK",
+        department: "Chi nhánh Bình Triệu (On-site)",
+        position: "Thực tập sinh Phân tích Tín dụng",
+        period: "03/2025 – 06/2025",
         achievements: [
-          "Phân tích báo cáo tài chính và đánh giá rủi ro tín dụng cho các đơn xin vay nông nghiệp",
-          "Phát triển mô hình Excel để phân tích danh mục cho vay và giám sát rủi ro",
-          "Hỗ trợ chuẩn bị báo cáo tín dụng và khuyến nghị phê duyệt khoản vay",
-          "Hợp tác với các nhà phân tích cấp cao để đánh giá uy tín và khả năng trả nợ của người vay"
+          "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô phục vụ quyết định cấp tín dụng.",
+          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility) bao gồm mô hình dòng tiền và phân tích kịch bản.",
+          "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay dựa trên mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
+          "Phân tích báo cáo tài chính với chỉ số và xu hướng để hỗ trợ thẩm định."
         ],
         icon: "🏦"
       },
       maybank: {
-        company: "Ngân hàng Đầu tư Maybank Việt Nam",
-        department: "Chi nhánh Phú Nhuận - Nghiên cứu & Phân tích Đầu tư",
-        position: "Thực tập sinh Phân tích Dữ liệu & Nghiên cứu",
-        period: "Tháng 6/2024 - Tháng 12/2024",
+        company: "Maybank Investment Bank Vietnam",
+        department: "Chi nhánh Phú Nhuận (On-site)",
+        position: "Thực tập sinh Môi giới",
+        period: "06/2024 – 12/2024",
         achievements: [
-          "Thực hiện nghiên cứu thị trường và phân tích tài chính cho các cơ hội đầu tư",
-          "Tạo dashboard tương tác sử dụng Power BI để theo dõi hiệu suất đầu tư",
-          "Hỗ trợ chuẩn bị báo cáo đầu tư và thuyết trình cho khách hàng",
-          "Phân tích các chỉ số kinh tế và xu hướng thị trường để hỗ trợ quyết định đầu tư"
+          "Ứng dụng phân tích dữ liệu thị trường: làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch cho các mã niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị bản tin đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
+          "Soạn báo cáo thị trường hàng ngày/tuần phục vụ Broker cấp cao trong tiếp cận khách hàng và hành động danh mục.",
+          "Hỗ trợ phát triển khách hàng: sàng lọc tiềm năng, chuẩn bị pitch deck, theo dõi portfolio.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hàng ngày và đưa ra insight theo mã, nâng cao hiệu suất và tốc độ phản hồi của nhóm."
         ],
         icon: "🏢"
       }
@@ -138,28 +145,29 @@ export const translations = {
     experience: {
       title: "KINH NGHIỆM CHUYÊN NGHIỆP",
       agribank: {
-        company: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam",
-        department: "Chi nhánh Bình Triệu - Phòng Phân tích Tín dụng",
-        position: "Thực tập sinh Phân tích Tài chính",
-        period: "Tháng 3/2025 - Tháng 6/2025",
+        company: "AGRIBANK",
+        department: "Chi nhánh Bình Triệu (On-site)",
+        position: "Thực tập sinh Phân tích Tín dụng",
+        period: "03/2025 – 06/2025",
         achievements: [
-          "Phân tích báo cáo tài chính và đánh giá rủi ro tín dụng cho các đơn xin vay nông nghiệp",
-          "Phát triển mô hình Excel để phân tích danh mục cho vay và giám sát rủi ro",
-          "Hỗ trợ chuẩn bị báo cáo tín dụng và khuyến nghị phê duyệt khoản vay",
-          "Hợp tác với các nhà phân tích cấp cao để đánh giá uy tín và khả năng trả nợ của người vay"
+          "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô phục vụ quyết định cấp tín dụng.",
+          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility) bao gồm mô hình dòng tiền và phân tích kịch bản.",
+          "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay dựa trên mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
+          "Phân tích báo cáo tài chính với chỉ số và xu hướng để hỗ trợ thẩm định."
         ],
         icon: "🏦"
       },
       maybank: {
-        company: "Ngân hàng Đầu tư Maybank Việt Nam",
-        department: "Chi nhánh Phú Nhuận - Nghiên cứu & Phân tích Đầu tư",
-        position: "Thực tập sinh Phân tích Dữ liệu & Nghiên cứu",
-        period: "Tháng 6/2024 - Tháng 12/2024",
+        company: "Maybank Investment Bank Vietnam",
+        department: "Chi nhánh Phú Nhuận (On-site)",
+        position: "Thực tập sinh Môi giới",
+        period: "06/2024 – 12/2024",
         achievements: [
-          "Thực hiện nghiên cứu thị trường và phân tích tài chính cho các cơ hội đầu tư",
-          "Tạo dashboard tương tác sử dụng Power BI để theo dõi hiệu suất đầu tư",
-          "Hỗ trợ chuẩn bị báo cáo đầu tư và thuyết trình cho khách hàng",
-          "Phân tích các chỉ số kinh tế và xu hướng thị trường để hỗ trợ quyết định đầu tư"
+          "Ứng dụng phân tích dữ liệu thị trường: làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch cho các mã niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị bản tin đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
+          "Soạn báo cáo thị trường hàng ngày/tuần phục vụ Broker cấp cao trong tiếp cận khách hàng và hành động danh mục.",
+          "Hỗ trợ phát triển khách hàng: sàng lọc tiềm năng, chuẩn bị pitch deck, theo dõi portfolio.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hàng ngày và đưa ra insight theo mã, nâng cao hiệu suất và tốc độ phản hồi của nhóm."
         ],
         icon: "🏢"
       }
@@ -170,38 +178,38 @@ export const translations = {
         {
           name: "Xuất Báo cáo Tài chính Tự động",
           description: [
-            "Xây dựng pipeline Python end-to-end (Tháng 8–10/2024, cá nhân) cho phân tích mã chứng khoán, thu thập dữ liệu API thô với bí mật được quản lý môi trường và tạo báo cáo hàng ngày chuẩn hóa trong Excel, CSV và PDF.",
-            "Triển khai với requests, pandas và python-dotenv; mô-đun hóa thành các thành phần fetch, process và report với các helper có thể tái sử dụng cho quản lý đường dẫn, tải API key, xác thực và xử lý ngày tháng; lên lịch qua cron runner.",
-            "Tự động hóa tạo báo cáo giảm 90% thời gian chuẩn bị thủ công và cải thiện 25% khả năng phản hồi của nhóm."
+            "Xây dựng pipeline Python end-to-end (cá nhân) cho phân tích mã chứng khoán: thu thập dữ liệu API thô với bí mật môi trường, tạo báo cáo hằng ngày chuẩn hoá định dạng Excel, CSV, PDF.",
+            "Triển khai với requests, pandas, python-dotenv; mô-đun hoá thành fetch • process • report cùng helper tái sử dụng cho quản lý đường dẫn, tải API key, xác thực, xử lý thời gian; lên lịch qua cron.",
+            "Kết quả: giảm 90% thời gian chuẩn bị thủ công, cải thiện 25% khả năng phản hồi của nhóm."
           ],
           technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
-          period: "08/2024 - 10/2024"
+          period: "08/2024 – 10/2024"
         },
         {
           name: "Dự đoán Giá Thuê Airbnb",
           description: [
-            "Làm sạch và kỹ thuật hóa dataset Airbnb 26,000 dòng như một dự án cá nhân, chuyển đổi tiền tệ thành số, phân tích ngày tháng, cắt bỏ outliers ở phân vị 99.5, và tạo workflow định giá với đầu vào và đầu ra chuẩn hóa.",
-            "Xây dựng pipeline tiền xử lý và mô hình hóa đầy đủ trong scikit-learn sử dụng ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling theo thành phố, và GridSearchCV để tuning.",
-            "Cung cấp insights sẵn sàng cho khách hàng với tầm quan trọng tính năng nổi bật accommodates, bathrooms, bedrooms, beds và fees như các yếu tố chính và đạt được test RMSE 95.84 và MAE 57.98 sử dụng Random Forest đã tuning với khoảng 4% giảm lỗi so với baseline tuyến tính và giá dự đoán ví dụ 834.20 cho một ngôi nhà ở Bondi Beach."
+            "Làm sạch và kỹ thuật hoá dataset Airbnb 26.000 dòng (cá nhân): chuyển đổi tiền tệ sang số, phân tích ngày tháng, cắt outlier tại phân vị 99,5, xây dựng workflow định giá với đầu vào/đầu ra chuẩn hoá.",
+            "Xây dựng pipeline tiền xử lý & mô hình trên scikit-learn: ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling theo thành phố, GridSearchCV để tinh chỉnh.",
+            "Insight cho khách hàng: nổi bật accommodates, bathrooms, bedrooms, beds, fees là yếu tố chính; đạt RMSE test = 95,84 và MAE = 57,98 với Random Forest đã tinh chỉnh (~4% giảm lỗi so với baseline tuyến tính); ví dụ giá dự đoán 834,20 cho căn ở Bondi Beach."
           ],
           technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/AirBnB.PNG",
           link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
-          period: "04/2024 - 06/2024"
+          period: "04/2024 – 06/2024"
         },
         {
-          name: "Trung tâm Thông tin Nhân lực: Duy trì và Bồi thường",
+          name: "Trung tâm Thông tin Nhân lực: Duy trì & Đãi ngộ",
           description: [
-            "Xây dựng workflow phân tích HR end-to-end (cá nhân) để làm sạch và mã hóa Human_Resources.csv và thực hiện EDA với histogram, KDE, boxplot và correlation heatmap để phát hiện rủi ro duy trì.",
-            "Huấn luyện mô hình Random Forest cho attrition và Logistic Regression để giải thích, đạt được 85% độ chính xác với các yếu tố chính bao gồm MonthlyIncome, Age, OverTime, TotalWorkingYears và DailyRate, đồng thời lưu ý recall thấp trên người rời đi ở mức 0.07.",
-            "Phân đoạn nhân viên thành ba cluster sử dụng MonthlyIncome, TotalWorkingYears, YearsAtCompany và JobSatisfaction, và đưa ra khuyến nghị chính sách lương và làm thêm giờ dựa trên tỷ lệ attrition 16.1%."
+            "Xây dựng workflow phân tích HR end-to-end (cá nhân): làm sạch & mã hoá Human_Resources.csv, thực hiện EDA với histogram, KDE, boxplot, correlation heatmap để nhận diện rủi ro duy trì.",
+            "Huấn luyện Random Forest cho attrition và Logistic Regression để giải thích; đạt 85% accuracy, biến số quan trọng gồm MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; lưu ý recall người rời đi = 0,07.",
+            "Phân khúc nhân sự thành 3 cluster theo MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction; đề xuất chính sách lương & làm thêm dựa trên tỷ lệ attrition 16,1%."
           ],
           technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "08/2023 - 02/2024"
+          period: "08/2023 – 02/2024"
         }
       ]
     },
@@ -320,19 +328,19 @@ export const translations = {
       categories: [
         {
           name: "Programming Languages",
-          items: ["Python", "SQL", "JavaScript", "HTML/CSS", "R"]
+          items: ["Python", "SQL", "R"]
         },
         {
-          name: "Data Analysis & Visualization",
-          items: ["Power BI", "Tableau", "Excel", "Pandas", "NumPy", "Matplotlib"]
+          name: "Data Tools",
+          items: ["Power BI", "Tableau", "Excel"]
         },
         {
           name: "Product Management",
-          items: ["User Research", "Product Discovery", "A/B Testing", "Analytics", "Figma"]
+          items: ["User Research", "Product Discovery", "Analytics"]
         },
         {
           name: "Database & Cloud",
-          items: ["MySQL", "PostgreSQL", "AWS", "Google Cloud", "MongoDB"]
+          items: ["MySQL", "PostgreSQL", "MongoDB"]
         }
       ]
     },
@@ -358,26 +366,27 @@ export const translations = {
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
         department: "Binh Trieu Branch - Credit Analysis Department",
-        position: "Financial Analysis Intern",
+        position: "Credit Analyst Intern",
         period: "March 2025 - June 2025",
         achievements: [
-          "Analyzed financial statements and credit risk assessment for agricultural loan applications",
-          "Developed Excel models for loan portfolio analysis and risk monitoring",
-          "Assisted in preparing credit reports and recommendations for loan approval",
-          "Collaborated with senior analysts to evaluate borrower creditworthiness and repayment capacity"
+          "Produced timely market reports covering sector and macroeconomic updates to support lending decisions.",
+          "Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.",
+          "Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.",
+          "Conducted financial statement analysis with ratio and trend analysis to inform underwriting."
         ],
         icon: "🏦"
       },
       maybank: {
         company: "Maybank Investment Bank Vietnam",
         department: "Phu Nhuan Branch - Investment Research & Analysis",
-        position: "Data Analysis & Research Intern",
+        position: "Broker Intern",
         period: "June 2024 - December 2024",
         achievements: [
-          "Conducted market research and financial analysis for investment opportunities",
-          "Created interactive dashboards using Power BI for investment performance tracking",
-          "Assisted in preparing investment reports and presentations for clients",
-          "Analyzed economic indicators and market trends to support investment decisions"
+          "Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.",
+          "Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.",
+          "Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.",
+          "Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.",
+          "Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness."
         ],
         icon: "🏢"
       }
@@ -387,26 +396,27 @@ export const translations = {
       agribank: {
         company: "Vietnam Bank for Agriculture and Rural Development",
         department: "Binh Trieu Branch - Credit Analysis Department",
-        position: "Financial Analysis Intern",
+        position: "Credit Analyst Intern",
         period: "March 2025 - June 2025",
         achievements: [
-          "Analyzed financial statements and credit risk assessment for agricultural loan applications",
-          "Developed Excel models for loan portfolio analysis and risk monitoring",
-          "Assisted in preparing credit reports and recommendations for loan approval",
-          "Collaborated with senior analysts to evaluate borrower creditworthiness and repayment capacity"
+          "Produced timely market reports covering sector and macroeconomic updates to support lending decisions.",
+          "Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.",
+          "Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.",
+          "Conducted financial statement analysis with ratio and trend analysis to inform underwriting."
         ],
         icon: "🏦"
       },
       maybank: {
         company: "Maybank Investment Bank Vietnam",
         department: "Phu Nhuan Branch - Investment Research & Analysis",
-        position: "Data Analysis & Research Intern",
+        position: "Broker Intern",
         period: "June 2024 - December 2024",
         achievements: [
-          "Conducted market research and financial analysis for investment opportunities",
-          "Created interactive dashboards using Power BI for investment performance tracking",
-          "Assisted in preparing investment reports and presentations for clients",
-          "Analyzed economic indicators and market trends to support investment decisions"
+          "Applied data-driven market analysis to clean, visualize, and interpret trading data for listed tickers.",
+          "Performed financial analysis and equity valuation; prepared concise investment briefs to support trade ideas.",
+          "Authored daily/weekly market reports for the Senior Broker to inform client outreach and portfolio actions.",
+          "Supported client development by screening prospects, assembling pitch materials, and monitoring portfolios.",
+          "Built an automated stock-advisory chatbot that aggregated daily news and surfaced ticker-level insights, improving team efficiency and responsiveness."
         ],
         icon: "🏢"
       }

@@ -446,30 +446,14 @@ export default function Portfolio() {
                       <div className="mb-6 sm:mb-8">
                         <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{t?.buttons?.jobDescription || "Job Description"}</h5>
                         <div className="space-y-3 sm:space-y-4">
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Produced timely market reports covering sector and macroeconomic updates to support lending decisions.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Developed capital-utilization proposals for corporate clients (working capital, capex, facility mix), including cash-flow modeling and scenario analysis.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Performed credit risk assessments and drafted loan recommendations by analyzing business models, collateral, and repayment capacity.
-                            </span>
-                          </div>
-                          <div className="flex items-start space-x-2 sm:space-x-3">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
-                              Conducted financial statement analysis with ratio and trend analysis to inform underwriting.
-                            </span>
-                          </div>
+                          {t?.experience?.agribank?.achievements?.map((achievement: string, index: number) => (
+                            <div key={index} className="flex items-start space-x-2 sm:space-x-3">
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
+                                {achievement}
+                              </span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
