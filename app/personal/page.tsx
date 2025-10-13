@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { translations } from '../data/translations'
 import Sidebar from '../components/Sidebar'
 import UniverseBackground from '../components/UniverseBackground'
+import TopNavigation from '../components/TopNavigation'
 
 export default function PersonalPage() {
   const [language, setLanguage] = useState<'en' | 'vi'>('en')
@@ -27,6 +28,12 @@ export default function PersonalPage() {
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       <UniverseBackground />
       
+      {/* Top Navigation */}
+      <TopNavigation 
+        language={language} 
+        onLanguageToggle={toggleLanguage}
+      />
+      
       {/* Sidebar */}
       <Sidebar 
         language={language} 
@@ -37,7 +44,7 @@ export default function PersonalPage() {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 ml-0 lg:ml-80 transition-all duration-300">
+      <div className="relative z-10 ml-0 lg:ml-80 pt-16 transition-all duration-300">
         <div className="min-h-screen">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             

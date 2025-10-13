@@ -4,8 +4,8 @@ export const translations = {
       logo: "LNT",
       nav: {
         home: "Trang chủ",
-        professional: "Chuyên nghiệp",
-        personal: "Cá nhân"
+        professional: "CHUYÊN NGHIỆP",
+        personal: "CÁ NHÂN"
       }
     },
     sections: {

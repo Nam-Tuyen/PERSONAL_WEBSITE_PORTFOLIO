@@ -130,68 +130,7 @@ export default function Sidebar({ language, onLanguageToggle, activeSection, onS
             </div>
           </div>
           
-          {/* Page Navigation */}
-          <div className="flex mb-4">
-            <Link 
-              href="/"
-              className={`flex-1 px-3 py-2 text-center text-sm font-semibold rounded-l-lg transition-all duration-300 ${
-                !isPersonalPage 
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white shadow-lg' 
-                  : 'bg-gray-800/50 text-gray-400 hover:text-white hover:bg-gray-700/50'
-              }`}
-            >
-              {t?.header?.nav?.professional || "PROFESSIONAL"}
-            </Link>
-            <Link 
-              href="/personal"
-              className={`flex-1 px-3 py-2 text-center text-sm font-semibold rounded-r-lg transition-all duration-300 ${
-                isPersonalPage 
-                  ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-white shadow-lg' 
-                  : 'bg-gray-800/50 text-gray-400 hover:text-white hover:bg-gray-700/50'
-              }`}
-            >
-              {t?.header?.nav?.personal || "PERSONAL"}
-            </Link>
-          </div>
           
-          {/* Language Toggle */}
-          <div className="relative">
-            <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-0.5 sm:p-1 shadow-lg">
-              <div className={`absolute top-0.5 sm:top-1 bottom-0.5 sm:bottom-1 w-1/2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-md sm:rounded-lg shadow-lg transition-all duration-300 ease-out ${
-                language === 'en' ? 'left-0.5 sm:left-1' : 'left-1/2'
-              }`}></div>
-              
-              <div className="relative flex">
-                <button
-                  onClick={() => language !== 'en' && onLanguageToggle()}
-                  className={`flex-1 px-2 sm:px-4 py-1.5 sm:py-2.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 relative z-10 ${
-                    language === 'en' 
-                      ? 'text-white shadow-sm' 
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  <div className="flex items-center justify-center space-x-1 sm:space-x-2">
-                    <span className="uppercase tracking-wider">EN</span>
-                  </div>
-                </button>
-
-                <button 
-                  onClick={() => language !== 'vi' && onLanguageToggle()}
-                  className={`flex-1 px-2 sm:px-4 py-1.5 sm:py-2.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 relative z-10 ${
-                    language === 'vi' 
-                      ? 'text-white shadow-sm' 
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  <div className="flex items-center justify-center space-x-1 sm:space-x-2">
-                    <span className="uppercase tracking-wider">VI</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-0.5 sm:-bottom-1 left-1/2 transform -translate-x-1/2 w-6 sm:w-8 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full opacity-60"></div>
-          </div>
         </div>
 
         {/* Navigation */}
