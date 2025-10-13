@@ -4,23 +4,20 @@ import { useState, useEffect } from "react"
 import { translations } from "./data/translations"
 import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
-import TopNavigation from "./components/TopNavigation"
+import PageSwitcher from "./components/PageSwitcher"
 
 export default function Portfolio() {
-  const [language, setLanguage] = useState<"en" | "vi">("en")
-  const [activeSection, setActiveSection] = useState("professional")
+  const [language, setLanguage] = useState("en")
+  const [activeSection, setActiveSection] = useState("about")
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
 
-  const t = translations[language]
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'vi' : 'en')
-  }
+  const t = translations[language as keyof typeof translations]
 
   if (!mounted) {
     return null
@@ -37,23 +34,24 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen text-white relative overflow-hidden" suppressHydrationWarning>
       <UniverseBackground />
-      
-      {/* Top Navigation */}
-      <TopNavigation 
-        language={language} 
-        onLanguageToggle={toggleLanguage}
-      />
 
-      <Sidebar 
-        language={language} 
-        onLanguageToggle={toggleLanguage}
+      <PageSwitcher translations={t} language={language} />
+
+      <Sidebar
+        translations={t}
         activeSection={activeSection}
         onSectionChange={setActiveSection}
+        language={language}
+        onLanguageChange={setLanguage}
+        isCollapsed={isSidebarCollapsed}
+        onToggleCollapse={setIsSidebarCollapsed}
         isPersonalPage={false}
       />
 
-      <div className="relative z-10 ml-0 lg:ml-80 pt-16 transition-all duration-300">
-        <div className="min-h-screen">
+      <div className="relative z-10 transition-all duration-500">
+        <div className={`min-h-screen transition-all duration-500 ${
+          isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
+        }`}>
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
             {/* Hero Section - Tech Minimal Style */}

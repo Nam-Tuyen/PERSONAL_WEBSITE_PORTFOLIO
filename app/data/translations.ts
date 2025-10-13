@@ -4,8 +4,8 @@ export const translations = {
       logo: "LNT",
       nav: {
         home: "Trang chủ",
-        professional: "CHUYÊN NGHIỆP",
-        personal: "CÁ NHÂN"
+        professional: "Chuyên nghiệp",
+        personal: "Cá nhân"
       }
     },
     sections: {
@@ -16,10 +16,7 @@ export const translations = {
       experience: "Kinh nghiệm làm việc",
       projects: "Dự án",
       hobbies: "Sở thích",
-      interests: "Quan tâm",
-      extracurriculars: "Hoạt động ngoại khóa",
-      socialActivities: "Hoạt động xã hội",
-      researchAchievement: "Thành tích nghiên cứu"
+      interests: "Quan tâm"
     },
     buttons: {
       downloadResume: "Tải CV",
@@ -264,93 +261,123 @@ export const translations = {
       ]
     },
     personal: {
-      title: "CÁ NHÂN",
-      subtitle: "Khám phá sở thích, hoạt động và thành tích cá nhân của tôi ngoài lĩnh vực chuyên nghiệp"
-    },
-    extracurriculars: {
-      title: "HOẠT ĐỘNG NGOẠI KHÓA",
-      keyAchievements: "Thành tích nổi bật",
-      items: [
-        {
-          name: "Câu lạc bộ Công nghệ Tài chính",
-          role: "Phó Chủ tịch",
-          period: "2023 - 2024",
-          description: "Lãnh đạo và tổ chức các hoạt động học thuật, workshop về FinTech và blockchain cho sinh viên.",
-          achievements: [
-            "Tổ chức 15+ workshop về Python, SQL và phân tích dữ liệu tài chính",
-            "Phối hợp với 5+ doanh nghiệp FinTech để tổ chức talkshow và networking",
-            "Tăng số lượng thành viên từ 50 lên 150+ sinh viên",
-            "Phát triển chương trình mentorship cho sinh viên năm nhất"
-          ]
-        },
-        {
-          name: "Cuộc thi Hackathon FinTech",
-          role: "Đội trưởng",
-          period: "2024",
-          description: "Tham gia và dẫn dắt đội thi trong cuộc thi hackathon về giải pháp tài chính số.",
-          achievements: [
-            "Đạt giải Nhì với sản phẩm ứng dụng quản lý tài chính cá nhân",
-            "Phát triển MVP trong 48 giờ với team 4 người",
-            "Thuyết trình trước ban giám khảo gồm các chuyên gia từ ngân hàng và fintech",
-            "Nhận được feedback tích cực về tính khả thi thương mại"
-          ]
-        }
-      ]
-    },
-    socialActivities: {
-      title: "HOẠT ĐỘNG XÃ HỘI",
-      impact: "Tác động",
-      items: [
-        {
-          name: "Chương trình dạy học miễn phí",
-          role: "Giáo viên tình nguyện",
-          period: "2023 - 2024",
-          description: "Tham gia dạy học miễn phí cho trẻ em có hoàn cảnh khó khăn tại các trung tâm bảo trợ xã hội.",
-          impact: "Đã giúp đỡ 50+ trẻ em cải thiện kết quả học tập, đặc biệt là môn Toán và Tiếng Anh. Tổ chức các hoạt động ngoại khóa để phát triển kỹ năng mềm cho các em."
-        },
-        {
-          name: "Chiến dịch hiến máu nhân đạo",
-          role: "Tình nguyện viên",
-          period: "2022 - 2024",
-          description: "Tham gia và hỗ trợ tổ chức các chiến dịch hiến máu nhân đạo tại trường đại học và cộng đồng.",
-          impact: "Góp phần vận động 200+ người tham gia hiến máu, cung cấp nguồn máu cứu sống nhiều bệnh nhân. Được công nhận là tình nguyện viên tích cực của Hội Chữ thập đỏ."
-        }
-      ]
-    },
-    researchAchievement: {
-      title: "THÀNH TÍCH NGHIÊN CỨU",
-      keyAchievements: "Thành tích nổi bật",
-      technologiesUsed: "Công nghệ sử dụng",
-      items: [
-        {
-          name: "Nghiên cứu về ảnh hưởng của AI đến ngành tài chính Việt Nam",
-          type: "Nghiên cứu khoa học",
-          status: "Đã xuất bản",
-          period: "2024",
-          description: "Nghiên cứu về tác động của trí tuệ nhân tạo đến hiệu quả hoạt động và rủi ro trong ngành tài chính Việt Nam, phân tích dữ liệu từ 50+ ngân hàng và tổ chức tài chính.",
-          achievements: [
-            "Xuất bản bài báo trên Tạp chí Khoa học Đại học Kinh tế - Luật",
-            "Phát hiện mối tương quan tích cực giữa ứng dụng AI và hiệu quả hoạt động ngân hàng",
-            "Đề xuất khung pháp lý cho việc ứng dụng AI trong lĩnh vực tài chính",
-            "Nhận được 15+ trích dẫn từ các nghiên cứu khác"
-          ],
-          technologies: ["Python", "R", "Machine Learning", "Statistical Analysis", "Data Visualization"]
-        },
-        {
-          name: "Dự án phân tích xu hướng đầu tư của thế hệ Z",
-          type: "Nghiên cứu thị trường",
-          status: "Đang thực hiện",
-          period: "2024 - 2025",
-          description: "Nghiên cứu về hành vi đầu tư và quản lý tài chính của thế hệ Z tại Việt Nam, sử dụng phương pháp khảo sát và phân tích dữ liệu lớn.",
-          achievements: [
-            "Thu thập dữ liệu từ 1000+ người tham gia khảo sát",
-            "Phát triển mô hình dự đoán xu hướng đầu tư",
-            "Hợp tác với 3+ fintech startup để thu thập dữ liệu thực tế",
-            "Dự kiến hoàn thành và xuất bản vào Q2/2025"
-          ],
-          technologies: ["Python", "Pandas", "Scikit-learn", "Survey Analysis", "Predictive Modeling"]
-        }
-      ]
+      hero: {
+        title: "CÁ NHÂN",
+        subtitle: "Khám phá sở thích, hoạt động và hành trình cá nhân của tôi"
+      },
+      hobbies: {
+        title: "SỞ THÍCH",
+        items: [
+          {
+            name: "Đọc sách",
+            description: "Thích đọc sách về công nghệ, kinh doanh và phát triển bản thân",
+            icon: "📚"
+          },
+          {
+            name: "Thể thao",
+            description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
+            icon: "⚽"
+          },
+          {
+            name: "Du lịch",
+            description: "Khám phá các địa điểm mới và trải nghiệm văn hóa",
+            icon: "✈️"
+          },
+          {
+            name: "Nhiếp ảnh",
+            description: "Chụp ảnh phong cảnh và cuộc sống hàng ngày",
+            icon: "📸"
+          },
+          {
+            name: "Âm nhạc",
+            description: "Chơi guitar và nghe nhạc để thư giãn",
+            icon: "🎵"
+          },
+          {
+            name: "Nấu ăn",
+            description: "Thử nghiệm các món ăn mới và học hỏi ẩm thực",
+            icon: "🍳"
+          }
+        ]
+      },
+      extracurriculars: {
+        title: "HOẠT ĐỘNG NGOẠI KHÓA",
+        items: [
+          {
+            name: "Câu lạc bộ Công nghệ Tài chính",
+            organization: "Đại học Kinh tế - Luật",
+            period: "2022 - 2024",
+            description: "Thành viên tích cực, tổ chức các workshop về blockchain và FinTech, tham gia các cuộc thi hackathon",
+            icon: "💻"
+          },
+          {
+            name: "Tình nguyện viên Tech4Good",
+            organization: "Tổ chức phi lợi nhuận",
+            period: "2023 - Hiện tại",
+            description: "Hỗ trợ các dự án công nghệ phục vụ cộng đồng, dạy lập trình cho trẻ em",
+            icon: "🤝"
+          },
+          {
+            name: "Đội bóng đá sinh viên",
+            organization: "Khoa Công nghệ Tài chính",
+            period: "2022 - Hiện tại",
+            description: "Thành viên đội bóng, tham gia các giải đấu liên trường và hoạt động team building",
+            icon: "⚽"
+          }
+        ]
+      },
+      socialActivities: {
+        title: "HOẠT ĐỘNG XÃ HỘI",
+        items: [
+          {
+            name: "Mentor cho sinh viên năm nhất",
+            role: "Mentor",
+            period: "2023 - Hiện tại",
+            description: "Hướng dẫn và hỗ trợ sinh viên mới về học tập và định hướng nghề nghiệp",
+            icon: "👨‍🏫"
+          },
+          {
+            name: "Tham gia các sự kiện networking",
+            role: "Participant",
+            period: "2022 - Hiện tại",
+            description: "Tham gia các sự kiện kết nối doanh nghiệp, hội thảo công nghệ và startup",
+            icon: "🌐"
+          },
+          {
+            name: "Tổ chức workshop kỹ năng mềm",
+            role: "Organizer",
+            period: "2023 - 2024",
+            description: "Tổ chức các buổi workshop về kỹ năng thuyết trình, làm việc nhóm và leadership",
+            icon: "🎯"
+          },
+          {
+            name: "Tham gia chương trình từ thiện",
+            role: "Volunteer",
+            period: "2022 - Hiện tại",
+            description: "Tham gia các hoạt động từ thiện, quyên góp và hỗ trợ cộng đồng",
+            icon: "❤️"
+          }
+        ]
+      },
+      researchAchievement: {
+        title: "THÀNH TÍCH NGHIÊN CỨU",
+        items: [
+          {
+            title: "Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
+            publication: "Journal of Southeast Asian Economics",
+            date: "2024",
+            description: "Nghiên cứu về mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á, với vai trò điều tiết của quản trị quốc gia. Sử dụng dữ liệu panel từ 10 quốc gia ASEAN trong giai đoạn 2000-2022.",
+            link: "https://example.com/research-paper"
+          },
+          {
+            title: "FinTech Adoption and Financial Inclusion in Vietnam",
+            publication: "Vietnam Economic Review",
+            date: "2023",
+            description: "Phân tích tác động của việc áp dụng công nghệ tài chính đến tình hình tài chính toàn diện tại Việt Nam. Nghiên cứu dựa trên khảo sát 1,000 hộ gia đình tại 5 tỉnh thành lớn.",
+            link: "https://example.com/fintech-research"
+          }
+        ]
+      }
     }
   },
   en: {
@@ -370,10 +397,7 @@ export const translations = {
       experience: "WORKING EXPERIENCE",
       projects: "PROJECTS",
       hobbies: "HOBBIES",
-      interests: "INTERESTS",
-      extracurriculars: "EXTRACURRICULARS",
-      socialActivities: "SOCIAL ACTIVITIES",
-      researchAchievement: "RESEARCH ACHIEVEMENT"
+      interests: "INTERESTS"
     },
     buttons: {
       downloadResume: "Download Resume",
@@ -612,93 +636,123 @@ export const translations = {
       ]
     },
     personal: {
-      title: "PERSONAL",
-      subtitle: "Discover my personal interests, activities, and achievements beyond the professional realm"
-    },
-    extracurriculars: {
-      title: "EXTRACURRICULAR ACTIVITIES",
-      keyAchievements: "Key Achievements",
-      items: [
-        {
-          name: "Financial Technology Club",
-          role: "Vice President",
-          period: "2023 - 2024",
-          description: "Led and organized academic activities, workshops on FinTech and blockchain for students.",
-          achievements: [
-            "Organized 15+ workshops on Python, SQL, and financial data analysis",
-            "Collaborated with 5+ FinTech companies to organize talkshows and networking events",
-            "Increased membership from 50 to 150+ students",
-            "Developed mentorship program for first-year students"
-          ]
-        },
-        {
-          name: "FinTech Hackathon Competition",
-          role: "Team Leader",
-          period: "2024",
-          description: "Participated and led team in hackathon competition for digital financial solutions.",
-          achievements: [
-            "Won 2nd place with personal finance management application",
-            "Developed MVP within 48 hours with 4-person team",
-            "Presented to panel of experts from banks and fintech companies",
-            "Received positive feedback on commercial viability"
-          ]
-        }
-      ]
-    },
-    socialActivities: {
-      title: "SOCIAL ACTIVITIES",
-      impact: "Impact",
-      items: [
-        {
-          name: "Free Tutoring Program",
-          role: "Volunteer Teacher",
-          period: "2023 - 2024",
-          description: "Participated in free tutoring for underprivileged children at social care centers.",
-          impact: "Helped 50+ children improve their academic performance, especially in Math and English. Organized extracurricular activities to develop soft skills for the children."
-        },
-        {
-          name: "Blood Donation Campaign",
-          role: "Volunteer",
-          period: "2022 - 2024",
-          description: "Participated and supported organizing blood donation campaigns at university and community.",
-          impact: "Contributed to mobilizing 200+ people to donate blood, providing life-saving blood for many patients. Recognized as an active volunteer by the Red Cross Society."
-        }
-      ]
-    },
-    researchAchievement: {
-      title: "RESEARCH ACHIEVEMENTS",
-      keyAchievements: "Key Achievements",
-      technologiesUsed: "Technologies Used",
-      items: [
-        {
-          name: "Research on AI Impact on Vietnamese Financial Sector",
-          type: "Scientific Research",
-          status: "Published",
-          period: "2024",
-          description: "Research on the impact of artificial intelligence on operational efficiency and risks in Vietnam's financial sector, analyzing data from 50+ banks and financial institutions.",
-          achievements: [
-            "Published paper in University of Economics and Law Science Journal",
-            "Discovered positive correlation between AI application and bank operational efficiency",
-            "Proposed legal framework for AI application in financial sector",
-            "Received 15+ citations from other research studies"
-          ],
-          technologies: ["Python", "R", "Machine Learning", "Statistical Analysis", "Data Visualization"]
-        },
-        {
-          name: "Gen Z Investment Trends Analysis Project",
-          type: "Market Research",
-          status: "In Progress",
-          period: "2024 - 2025",
-          description: "Research on investment behavior and financial management of Gen Z in Vietnam, using survey methods and big data analysis.",
-          achievements: [
-            "Collected data from 1000+ survey participants",
-            "Developed investment trend prediction model",
-            "Collaborated with 3+ fintech startups for real data collection",
-            "Expected completion and publication in Q2/2025"
-          ],
-          technologies: ["Python", "Pandas", "Scikit-learn", "Survey Analysis", "Predictive Modeling"]
-        }
-      ]
+      hero: {
+        title: "PERSONAL",
+        subtitle: "Discover my passions, interests, and personal journey"
+      },
+      hobbies: {
+        title: "HOBBIES",
+        items: [
+          {
+            name: "Reading",
+            description: "Enjoy reading books about technology, business, and personal development",
+            icon: "📚"
+          },
+          {
+            name: "Sports",
+            description: "Play football and swimming to maintain health",
+            icon: "⚽"
+          },
+          {
+            name: "Travel",
+            description: "Explore new places and experience different cultures",
+            icon: "✈️"
+          },
+          {
+            name: "Photography",
+            description: "Capture landscapes and daily life moments",
+            icon: "📸"
+          },
+          {
+            name: "Music",
+            description: "Play guitar and listen to music for relaxation",
+            icon: "🎵"
+          },
+          {
+            name: "Cooking",
+            description: "Experiment with new dishes and learn about cuisine",
+            icon: "🍳"
+          }
+        ]
+      },
+      extracurriculars: {
+        title: "EXTRACURRICULARS",
+        items: [
+          {
+            name: "Financial Technology Club",
+            organization: "University of Economics and Law",
+            period: "2022 - 2024",
+            description: "Active member, organized blockchain and FinTech workshops, participated in hackathons",
+            icon: "💻"
+          },
+          {
+            name: "Tech4Good Volunteer",
+            organization: "Non-profit Organization",
+            period: "2023 - Present",
+            description: "Support community technology projects, teach programming to children",
+            icon: "🤝"
+          },
+          {
+            name: "Student Football Team",
+            organization: "Financial Technology Department",
+            period: "2022 - Present",
+            description: "Team member, participated in inter-university tournaments and team building activities",
+            icon: "⚽"
+          }
+        ]
+      },
+      socialActivities: {
+        title: "SOCIAL ACTIVITIES",
+        items: [
+          {
+            name: "Mentor for First-year Students",
+            role: "Mentor",
+            period: "2023 - Present",
+            description: "Guide and support new students in academics and career orientation",
+            icon: "👨‍🏫"
+          },
+          {
+            name: "Networking Events Participation",
+            role: "Participant",
+            period: "2022 - Present",
+            description: "Attend business networking events, technology conferences, and startup events",
+            icon: "🌐"
+          },
+          {
+            name: "Soft Skills Workshop Organization",
+            role: "Organizer",
+            period: "2023 - 2024",
+            description: "Organize workshops on presentation skills, teamwork, and leadership",
+            icon: "🎯"
+          },
+          {
+            name: "Charity Program Participation",
+            role: "Volunteer",
+            period: "2022 - Present",
+            description: "Participate in charity activities, donations, and community support",
+            icon: "❤️"
+          }
+        ]
+      },
+      researchAchievement: {
+        title: "RESEARCH ACHIEVEMENT",
+        items: [
+          {
+            title: "Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
+            publication: "Journal of Southeast Asian Economics",
+            date: "2024",
+            description: "Research on the relationship between public debt and economic stability in Southeast Asian countries, with the moderating role of national governance. Using panel data from 10 ASEAN countries from 2000-2022.",
+            link: "https://example.com/research-paper"
+          },
+          {
+            title: "FinTech Adoption and Financial Inclusion in Vietnam",
+            publication: "Vietnam Economic Review",
+            date: "2023",
+            description: "Analysis of the impact of financial technology adoption on financial inclusion in Vietnam. Research based on survey of 1,000 households in 5 major cities.",
+            link: "https://example.com/fintech-research"
+          }
+        ]
+      }
     }
   }
 }
