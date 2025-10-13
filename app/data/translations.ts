@@ -24,10 +24,13 @@ export const translations = {
       jobDescription: "Mô tả công việc",
       viewProject: "Xem Dự án"
     },
+    scrollIndicator: {
+      text: "Cuộn để khám phá"
+    },
     labels: {
-      bachelorOf: "Cử nhân",
+      bachelorOf: "Cử nhân ngành",
       financialTechnology: "Công nghệ Tài chính",
-      gpa: "Điểm trung bình",
+      gpa: "Điểm GPA",
       ielts: "IELTS"
     },
     footer: {
@@ -47,7 +50,7 @@ export const translations = {
     },
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
-      quote: "Biến tầm nhìn thành hiện thực, biến ý định thành kết quả",
+      quote: "Biến tầm nhìn thành hiện thực, từ ý định đến thành quả",
       description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm (product discovery), nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, chuyển hoá insight thành yêu cầu sản phẩm rõ ràng, xác lập chỉ số thành công, và triển khai thí nghiệm tinh gọn để nâng cao trải nghiệm người dùng lẫn kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại; xây dựng template và hệ thống báo cáo mở rộng nhằm cải thiện chất lượng và tốc độ thực thi. Định hướng tìm kiếm vị trí Data Analyst hoặc Associate PM trong FinTech để chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được."
     },
     education: {
@@ -84,7 +87,7 @@ export const translations = {
           items: ["Nghiên cứu người dùng", "Product Discovery", "Product Analytics"]
         },
         {
-          name: "Cơ sở dữ liệu & Cloud",
+          name: "Cơ sở dữ liệu & Đám mây",
           items: ["MySQL", "PostgreSQL", "MongoDB"]
         }
       ]
@@ -278,6 +281,9 @@ export const translations = {
       moreInformation: "More information",
       jobDescription: "Job Description",
       viewProject: "View Project"
+    },
+    scrollIndicator: {
+      text: "Scroll to explore"
     },
     labels: {
       bachelorOf: "Bachelor of",
