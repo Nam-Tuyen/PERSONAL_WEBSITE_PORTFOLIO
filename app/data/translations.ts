@@ -45,11 +45,11 @@ export const translations = {
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
       },
-      copyright: "© 2024 LÊ NAM TUYẾN. Tất cả quyền được bảo lưu."
+      copyright: "© 2024 LÊ NAM TUYÊN. Tất cả quyền được bảo lưu."
     },
     hero: {
       greeting: "Xin chào, tôi là",
-      name: "LÊ NAM TUYẾN",
+      name: "LÊ NAM TUYÊN",
       title: "Ứng viên Product Manager & Data Analyst trong lĩnh vực FinTech"
     },
     about: {
