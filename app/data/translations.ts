@@ -119,9 +119,9 @@ export const translations = {
       title: "HÀNH TRÌNH CHUYÊN NGHIỆP",
       agribank: {
         company: "AGRIBANK",
-        department: "Chi nhánh Bình Triệu",
-        position: "Thực tập sinh tín dụng doanh nghiệp",
-        period: "03/2025 – 06/2025",
+        department: "Chi nhánh Bình Triệu (Tại văn phòng)",
+        position: "Thực tập sinh phân tích tín dụng",
+        period: "Tháng 3/2025 – Tháng 6/2025",
         achievements: [
           "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô để hỗ trợ quyết định cấp tín dụng.",
           "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility), bao gồm mô hình dòng tiền và phân tích kịch bản.",
@@ -132,15 +132,15 @@ export const translations = {
       },
       maybank: {
         company: "Maybank Investment Bank Vietnam",
-        department: "Chi nhánh Phú Nhuận",
+        department: "Chi nhánh Phú Nhuận (Tại văn phòng)",
         position: "Thực tập sinh môi giới chứng khoán",
-        period: "06/2024 – 12/2024",
+        period: "Tháng 6/2024 – Tháng 12/2024",
         achievements: [
-          "Ứng dụng phân tích dữ liệu để làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch của các mã niêm yết.",
-          "Thực hiện phân tích tài chính và định giá cổ phiếu; soạn bản tin/brief đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
-          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và hành động danh mục.",
-          "Hỗ trợ phát triển khách hàng: sàng lọc khách hàng tiềm năng, chuẩn bị pitch deck, theo dõi hiệu quả danh mục.",
-          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, cải thiện hiệu suất và tốc độ phản hồi của nhóm."
+          "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã cổ phiếu niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ đề xuất giao dịch.",
+          "Soạn báo cáo thị trường hằng ngày/tuần cho Chuyên viên Môi giới Cấp cao, phục vụ tiếp cận khách hàng và điều chỉnh danh mục.",
+          "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu pitching và theo dõi danh mục đầu tư.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động, tổng hợp tin tức hằng ngày và cung cấp insight theo từng mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của đội ngũ."
         ],
         icon: "🏢"
       }
@@ -149,9 +149,9 @@ export const translations = {
       title: "KINH NGHIỆM CHUYÊN NGHIỆP",
       agribank: {
         company: "AGRIBANK",
-        department: "Chi nhánh Bình Triệu",
-        position: "Thực tập sinh tín dụng doanh nghiệp",
-        period: "03/2025 – 06/2025",
+        department: "Chi nhánh Bình Triệu (Tại văn phòng)",
+        position: "Thực tập sinh phân tích tín dụng",
+        period: "Tháng 3/2025 – Tháng 6/2025",
         achievements: [
           "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô để hỗ trợ quyết định cấp tín dụng.",
           "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility), bao gồm mô hình dòng tiền và phân tích kịch bản.",
@@ -162,15 +162,15 @@ export const translations = {
       },
       maybank: {
         company: "Maybank Investment Bank Vietnam",
-        department: "Chi nhánh Phú Nhuận",
+        department: "Chi nhánh Phú Nhuận (Tại văn phòng)",
         position: "Thực tập sinh môi giới chứng khoán",
-        period: "06/2024 – 12/2024",
+        period: "Tháng 6/2024 – Tháng 12/2024",
         achievements: [
-          "Ứng dụng phân tích dữ liệu để làm sạch, trực quan hoá và diễn giải dữ liệu giao dịch của các mã niêm yết.",
-          "Thực hiện phân tích tài chính và định giá cổ phiếu; soạn bản tin/brief đầu tư súc tích hỗ trợ ý tưởng giao dịch.",
-          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và hành động danh mục.",
-          "Hỗ trợ phát triển khách hàng: sàng lọc khách hàng tiềm năng, chuẩn bị pitch deck, theo dõi hiệu quả danh mục.",
-          "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, cải thiện hiệu suất và tốc độ phản hồi của nhóm."
+          "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã cổ phiếu niêm yết.",
+          "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ đề xuất giao dịch.",
+          "Soạn báo cáo thị trường hằng ngày/tuần cho Chuyên viên Môi giới Cấp cao, phục vụ tiếp cận khách hàng và điều chỉnh danh mục.",
+          "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu pitching và theo dõi danh mục đầu tư.",
+          "Xây dựng chatbot tư vấn cổ phiếu tự động, tổng hợp tin tức hằng ngày và cung cấp insight theo từng mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của đội ngũ."
         ],
         icon: "🏢"
       }
@@ -179,7 +179,7 @@ export const translations = {
       title: "DỰ ÁN NỔI BẬT",
       items: [
         {
-          name: "Xuất Báo cáo Tài chính Tự động",
+          name: "Công cụ xuất báo cáo phân tích cổ phiếu tự động",
           description: [
             "Xây dựng pipeline Python end-to-end (cá nhân) cho phân tích mã chứng khoán: thu thập dữ liệu API thô với bí mật môi trường, tạo báo cáo hằng ngày chuẩn hoá định dạng Excel, CSV, PDF.",
             "Triển khai với requests, pandas, python-dotenv; mô-đun hoá thành fetch • process • report cùng helper tái sử dụng cho quản lý đường dẫn, tải API key, xác thực, xử lý thời gian; lên lịch qua cron.",
@@ -191,7 +191,7 @@ export const translations = {
           period: "08/2024 – 10/2024"
         },
         {
-          name: "Dự đoán Giá Thuê Airbnb",
+          name: "Phân tích giá thuê nhà trên AirBnB",
           description: [
             "Làm sạch và kỹ thuật hoá dataset Airbnb 26.000 dòng (cá nhân): chuyển đổi tiền tệ sang số, phân tích ngày tháng, cắt outlier tại phân vị 99,5, xây dựng workflow định giá với đầu vào/đầu ra chuẩn hoá.",
             "Xây dựng pipeline tiền xử lý & mô hình trên scikit-learn: ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling theo thành phố, GridSearchCV để tinh chỉnh.",
@@ -203,7 +203,7 @@ export const translations = {
           period: "04/2024 – 06/2024"
         },
         {
-          name: "Trung tâm Thông tin Nhân lực: Duy trì & Đãi ngộ",
+          name: "Phân tích nhân sự trong doanh nghiệp",
           description: [
             "Xây dựng workflow phân tích HR end-to-end (cá nhân): làm sạch & mã hoá Human_Resources.csv, thực hiện EDA với histogram, KDE, boxplot, correlation heatmap để nhận diện rủi ro duy trì.",
             "Huấn luyện Random Forest cho attrition và Logistic Regression để giải thích; đạt 85% accuracy, biến số quan trọng gồm MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; lưu ý recall người rời đi = 0,07.",

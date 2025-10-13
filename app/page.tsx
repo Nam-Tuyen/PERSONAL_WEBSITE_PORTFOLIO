@@ -136,12 +136,12 @@ export default function Portfolio() {
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-2xl">
                     <div className="text-left">
                       <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#00ff88] font-bold italic mb-6 sm:mb-8 md:mb-10 lg:mb-12 leading-tight max-w-4xl text-center mx-auto">
-                    {language === 'vi' ? (
-                      <>
+                        {language === 'vi' ? (
+                          <>
                             <div className="block">"Biến tầm nhìn thành hiện thực</div>
-                            <div className="block">từ ý định đến thành quả"</div>
-                      </>
-                    ) : (
+                            <div className="block">Từ ý định đến thành quả"</div>
+                          </>
+                        ) : (
                       <>
                             <div className="block">"Transforming vision into reality</div>
                             <div className="block">turning intent into results"</div>
