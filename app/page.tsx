@@ -46,15 +46,10 @@ export default function Portfolio() {
             {/* Hero Section - Ultra Modern */}
             <section id="home" className="min-h-screen flex items-center justify-center relative">
               <div className="text-center space-y-8 max-w-4xl mx-auto">
-                {/* Binary Code Header */}
-                <div className="font-mono text-xs text-gray-500 tracking-widest mb-8">
-                  01001000 01100101 01101100 01101100 01101111
-                </div>
-                
                 {/* Main Title */}
                 <div className="space-y-4">
                   <h1 className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] leading-none">
-                    LÊ NAM TUYẾN
+                    {language === 'vi' ? 'LÊ NAM TUYẾN' : 'LE NAM TUYEN'}
                   </h1>
                   <div className="h-1 w-32 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
                   <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
@@ -100,7 +95,17 @@ export default function Portfolio() {
                 
                 <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
                   <blockquote className="text-2xl md:text-3xl text-[#00ff88] font-bold italic text-center mb-8 leading-relaxed">
-                    "{t?.about?.quote || "Biến tầm nhìn thành hiện thực, biến ý định thành kết quả"}"
+                    {language === 'vi' ? (
+                      <>
+                        <div>"Biến tầm nhìn thành hiện thực"</div>
+                        <div>"Biến ý định thành kết quả"</div>
+                      </>
+                    ) : (
+                      <>
+                        <div>"Transforming vision into reality"</div>
+                        <div>"Turning intent into results"</div>
+                      </>
+                    )}
                   </blockquote>
                   <p className="text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
                     {t?.about?.description || "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng..."}
@@ -351,10 +356,7 @@ export default function Portfolio() {
             {/* Footer */}
             <footer className="py-12 border-t border-white/10">
               <div className="text-center">
-                <div className="font-mono text-xs text-gray-500 tracking-widest mb-4">
-                  01000110 01101001 01101110 01101001 01110011
-                </div>
-                <p className="text-gray-400">© 2024 LÊ NAM TUYẾN. Tất cả quyền được bảo lưu.</p>
+                <p className="text-gray-400">© 2024 {language === 'vi' ? 'LÊ NAM TUYẾN' : 'LE NAM TUYEN'}. Tất cả quyền được bảo lưu.</p>
               </div>
             </footer>
 
