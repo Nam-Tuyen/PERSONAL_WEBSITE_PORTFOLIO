@@ -54,7 +54,7 @@ export default function PersonalPage() {
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
             {/* Hero Section - Personal */}
-            <section id="personal-hero" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
+            <section id="personal-hero" className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
               <div className="text-center">
                 <div className="space-y-4 sm:space-y-6 md:space-y-8">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight vietnamese-text">
