@@ -19,7 +19,7 @@ export const translations = {
       interests: "Quan tâm",
       extracurriculars: "Hoạt động ngoại khóa",
       socialActivities: "Hoạt động xã hội",
-      researchAchievement: "Thành tựu nghiên cứu"
+      researchAchievement: "Thành tích nghiên cứu"
     },
     buttons: {
       downloadResume: "Tải CV",
@@ -263,111 +263,92 @@ export const translations = {
         }
       ]
     },
+    personal: {
+      title: "CÁ NHÂN",
+      subtitle: "Khám phá sở thích, hoạt động và thành tích cá nhân của tôi ngoài lĩnh vực chuyên nghiệp"
+    },
     extracurriculars: {
       title: "HOẠT ĐỘNG NGOẠI KHÓA",
+      keyAchievements: "Thành tích nổi bật",
       items: [
         {
           name: "Câu lạc bộ Công nghệ Tài chính",
-          role: "Thành viên tích cực",
-          period: "2022 - Hiện tại",
-          description: "Tham gia các workshop về blockchain, cryptocurrency và fintech. Tổ chức các buổi thảo luận về xu hướng công nghệ tài chính.",
+          role: "Phó Chủ tịch",
+          period: "2023 - 2024",
+          description: "Lãnh đạo và tổ chức các hoạt động học thuật, workshop về FinTech và blockchain cho sinh viên.",
           achievements: [
-            "Tổ chức 5+ workshop về blockchain và DeFi",
-            "Tham gia hackathon fintech và đạt giải khuyến khích",
-            "Mentor cho sinh viên năm dưới về lập trình Python"
+            "Tổ chức 15+ workshop về Python, SQL và phân tích dữ liệu tài chính",
+            "Phối hợp với 5+ doanh nghiệp FinTech để tổ chức talkshow và networking",
+            "Tăng số lượng thành viên từ 50 lên 150+ sinh viên",
+            "Phát triển chương trình mentorship cho sinh viên năm nhất"
           ]
         },
         {
-          name: "Đội bóng đá Khoa Kinh tế",
-          role: "Thành viên đội tuyển",
-          period: "2021 - 2024",
-          description: "Tham gia đội bóng đá của khoa, rèn luyện thể lực và tinh thần đồng đội.",
+          name: "Cuộc thi Hackathon FinTech",
+          role: "Đội trưởng",
+          period: "2024",
+          description: "Tham gia và dẫn dắt đội thi trong cuộc thi hackathon về giải pháp tài chính số.",
           achievements: [
-            "Vô địch giải bóng đá sinh viên trường 2023",
-            "Thành viên đội hình xuất sắc nhất giải",
-            "Đóng góp 15+ bàn thắng trong 2 mùa giải"
-          ]
-        },
-        {
-          name: "Tình nguyện viên Tech4Good",
-          role: "Tình nguyện viên",
-          period: "2022 - 2023",
-          description: "Tham gia các dự án sử dụng công nghệ để giải quyết các vấn đề xã hội.",
-          achievements: [
-            "Phát triển ứng dụng web cho trẻ em học lập trình",
-            "Tổ chức 3+ sự kiện dạy code cho trẻ em có hoàn cảnh khó khăn",
-            "Đạt chứng nhận tình nguyện viên xuất sắc"
+            "Đạt giải Nhì với sản phẩm ứng dụng quản lý tài chính cá nhân",
+            "Phát triển MVP trong 48 giờ với team 4 người",
+            "Thuyết trình trước ban giám khảo gồm các chuyên gia từ ngân hàng và fintech",
+            "Nhận được feedback tích cực về tính khả thi thương mại"
           ]
         }
       ]
     },
     socialActivities: {
       title: "HOẠT ĐỘNG XÃ HỘI",
+      impact: "Tác động",
       items: [
         {
-          name: "Chương trình 'Mái ấm cho em'",
+          name: "Chương trình dạy học miễn phí",
+          role: "Giáo viên tình nguyện",
+          period: "2023 - 2024",
+          description: "Tham gia dạy học miễn phí cho trẻ em có hoàn cảnh khó khăn tại các trung tâm bảo trợ xã hội.",
+          impact: "Đã giúp đỡ 50+ trẻ em cải thiện kết quả học tập, đặc biệt là môn Toán và Tiếng Anh. Tổ chức các hoạt động ngoại khóa để phát triển kỹ năng mềm cho các em."
+        },
+        {
+          name: "Chiến dịch hiến máu nhân đạo",
           role: "Tình nguyện viên",
-          period: "2021 - 2023",
-          description: "Tham gia dạy học và hỗ trợ trẻ em có hoàn cảnh khó khăn tại các mái ấm.",
-          impact: "Đã hỗ trợ 20+ trẻ em trong việc học tập và phát triển kỹ năng sống"
-        },
-        {
-          name: "Chiến dịch 'Xanh hóa thành phố'",
-          role: "Điều phối viên",
           period: "2022 - 2024",
-          description: "Tổ chức các hoạt động trồng cây và bảo vệ môi trường tại TP.HCM.",
-          impact: "Trồng được 500+ cây xanh và nâng cao ý thức bảo vệ môi trường cho 200+ người"
-        },
-        {
-          name: "Dự án 'Số hóa nông thôn'",
-          role: "Thành viên dự án",
-          period: "2023 - Hiện tại",
-          description: "Hỗ trợ nông dân ứng dụng công nghệ vào sản xuất nông nghiệp.",
-          impact: "Đào tạo 50+ nông dân sử dụng ứng dụng quản lý nông nghiệp thông minh"
+          description: "Tham gia và hỗ trợ tổ chức các chiến dịch hiến máu nhân đạo tại trường đại học và cộng đồng.",
+          impact: "Góp phần vận động 200+ người tham gia hiến máu, cung cấp nguồn máu cứu sống nhiều bệnh nhân. Được công nhận là tình nguyện viên tích cực của Hội Chữ thập đỏ."
         }
       ]
     },
     researchAchievement: {
-      title: "THÀNH TỰU NGHIÊN CỨU",
+      title: "THÀNH TÍCH NGHIÊN CỨU",
+      keyAchievements: "Thành tích nổi bật",
+      technologiesUsed: "Công nghệ sử dụng",
       items: [
         {
-          name: "Nghiên cứu về Ứng dụng AI trong Phân tích Tài chính",
+          name: "Nghiên cứu về ảnh hưởng của AI đến ngành tài chính Việt Nam",
           type: "Nghiên cứu khoa học",
-          period: "2023 - 2024",
-          status: "Đang thực hiện",
-          description: "Nghiên cứu ứng dụng machine learning trong dự đoán xu hướng thị trường chứng khoán Việt Nam.",
-          achievements: [
-            "Xây dựng mô hình dự đoán với độ chính xác 78%",
-            "Xuất bản 1 bài báo trên tạp chí khoa học quốc tế",
-            "Trình bày tại hội nghị FinTech Asia 2024"
-          ],
-          technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"]
-        },
-        {
-          name: "Phân tích Tác động của Nợ Công đến Ổn định Kinh tế",
-          type: "Bài báo khoa học",
-          period: "2023",
           status: "Đã xuất bản",
-          description: "Nghiên cứu mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á.",
+          period: "2024",
+          description: "Nghiên cứu về tác động của trí tuệ nhân tạo đến hiệu quả hoạt động và rủi ro trong ngành tài chính Việt Nam, phân tích dữ liệu từ 50+ ngân hàng và tổ chức tài chính.",
           achievements: [
-            "Xuất bản trên tạp chí Journal of Economic Studies",
-            "Được trích dẫn 15+ lần trong các nghiên cứu khác",
-            "Nhận giải thưởng nghiên cứu sinh viên xuất sắc"
+            "Xuất bản bài báo trên Tạp chí Khoa học Đại học Kinh tế - Luật",
+            "Phát hiện mối tương quan tích cực giữa ứng dụng AI và hiệu quả hoạt động ngân hàng",
+            "Đề xuất khung pháp lý cho việc ứng dụng AI trong lĩnh vực tài chính",
+            "Nhận được 15+ trích dẫn từ các nghiên cứu khác"
           ],
-          technologies: ["R", "Stata", "EViews"]
+          technologies: ["Python", "R", "Machine Learning", "Statistical Analysis", "Data Visualization"]
         },
         {
-          name: "Dự án Blockchain cho Minh bạch Tài chính",
-          type: "Dự án nghiên cứu",
-          period: "2022 - 2023",
-          status: "Hoàn thành",
-          description: "Phát triển prototype ứng dụng blockchain để tăng tính minh bạch trong giao dịch tài chính.",
+          name: "Dự án phân tích xu hướng đầu tư của thế hệ Z",
+          type: "Nghiên cứu thị trường",
+          status: "Đang thực hiện",
+          period: "2024 - 2025",
+          description: "Nghiên cứu về hành vi đầu tư và quản lý tài chính của thế hệ Z tại Việt Nam, sử dụng phương pháp khảo sát và phân tích dữ liệu lớn.",
           achievements: [
-            "Xây dựng thành công prototype trên Ethereum",
-            "Đạt giải nhất cuộc thi Blockchain Innovation 2023",
-            "Được đề xuất thương mại hóa bởi 2 công ty fintech"
+            "Thu thập dữ liệu từ 1000+ người tham gia khảo sát",
+            "Phát triển mô hình dự đoán xu hướng đầu tư",
+            "Hợp tác với 3+ fintech startup để thu thập dữ liệu thực tế",
+            "Dự kiến hoàn thành và xuất bản vào Q2/2025"
           ],
-          technologies: ["Solidity", "Web3.js", "React", "Node.js"]
+          technologies: ["Python", "Pandas", "Scikit-learn", "Survey Analysis", "Predictive Modeling"]
         }
       ]
     }
@@ -630,111 +611,92 @@ export const translations = {
         }
       ]
     },
+    personal: {
+      title: "PERSONAL",
+      subtitle: "Discover my personal interests, activities, and achievements beyond the professional realm"
+    },
     extracurriculars: {
       title: "EXTRACURRICULAR ACTIVITIES",
+      keyAchievements: "Key Achievements",
       items: [
         {
           name: "Financial Technology Club",
-          role: "Active Member",
-          period: "2022 - Present",
-          description: "Participate in workshops about blockchain, cryptocurrency, and fintech. Organize discussions about financial technology trends.",
+          role: "Vice President",
+          period: "2023 - 2024",
+          description: "Led and organized academic activities, workshops on FinTech and blockchain for students.",
           achievements: [
-            "Organized 5+ workshops on blockchain and DeFi",
-            "Participated in fintech hackathon and won consolation prize",
-            "Mentored junior students in Python programming"
+            "Organized 15+ workshops on Python, SQL, and financial data analysis",
+            "Collaborated with 5+ FinTech companies to organize talkshows and networking events",
+            "Increased membership from 50 to 150+ students",
+            "Developed mentorship program for first-year students"
           ]
         },
         {
-          name: "Economics Faculty Football Team",
-          role: "Team Member",
-          period: "2021 - 2024",
-          description: "Participate in faculty football team, improving physical fitness and teamwork spirit.",
+          name: "FinTech Hackathon Competition",
+          role: "Team Leader",
+          period: "2024",
+          description: "Participated and led team in hackathon competition for digital financial solutions.",
           achievements: [
-            "Champion of university student football tournament 2023",
-            "Member of the best team lineup",
-            "Contributed 15+ goals in 2 seasons"
-          ]
-        },
-        {
-          name: "Tech4Good Volunteer",
-          role: "Volunteer",
-          period: "2022 - 2023",
-          description: "Participate in projects using technology to solve social problems.",
-          achievements: [
-            "Developed web application for children to learn programming",
-            "Organized 3+ coding events for underprivileged children",
-            "Received outstanding volunteer certificate"
+            "Won 2nd place with personal finance management application",
+            "Developed MVP within 48 hours with 4-person team",
+            "Presented to panel of experts from banks and fintech companies",
+            "Received positive feedback on commercial viability"
           ]
         }
       ]
     },
     socialActivities: {
       title: "SOCIAL ACTIVITIES",
+      impact: "Impact",
       items: [
         {
-          name: "'Home for Children' Program",
+          name: "Free Tutoring Program",
+          role: "Volunteer Teacher",
+          period: "2023 - 2024",
+          description: "Participated in free tutoring for underprivileged children at social care centers.",
+          impact: "Helped 50+ children improve their academic performance, especially in Math and English. Organized extracurricular activities to develop soft skills for the children."
+        },
+        {
+          name: "Blood Donation Campaign",
           role: "Volunteer",
-          period: "2021 - 2023",
-          description: "Participate in teaching and supporting underprivileged children at orphanages.",
-          impact: "Supported 20+ children in learning and life skills development"
-        },
-        {
-          name: "'Greening the City' Campaign",
-          role: "Coordinator",
           period: "2022 - 2024",
-          description: "Organize tree planting and environmental protection activities in Ho Chi Minh City.",
-          impact: "Planted 500+ trees and raised environmental awareness for 200+ people"
-        },
-        {
-          name: "'Digitalizing Rural Areas' Project",
-          role: "Project Member",
-          period: "2023 - Present",
-          description: "Support farmers in applying technology to agricultural production.",
-          impact: "Trained 50+ farmers to use smart agriculture management applications"
+          description: "Participated and supported organizing blood donation campaigns at university and community.",
+          impact: "Contributed to mobilizing 200+ people to donate blood, providing life-saving blood for many patients. Recognized as an active volunteer by the Red Cross Society."
         }
       ]
     },
     researchAchievement: {
       title: "RESEARCH ACHIEVEMENTS",
+      keyAchievements: "Key Achievements",
+      technologiesUsed: "Technologies Used",
       items: [
         {
-          name: "Research on AI Applications in Financial Analysis",
+          name: "Research on AI Impact on Vietnamese Financial Sector",
           type: "Scientific Research",
-          period: "2023 - 2024",
-          status: "In Progress",
-          description: "Research on applying machine learning in predicting Vietnamese stock market trends.",
-          achievements: [
-            "Built prediction model with 78% accuracy",
-            "Published 1 paper in international scientific journal",
-            "Presented at FinTech Asia 2024 conference"
-          ],
-          technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"]
-        },
-        {
-          name: "Analysis of Public Debt Impact on Economic Stability",
-          type: "Scientific Paper",
-          period: "2023",
           status: "Published",
-          description: "Research on the relationship between public debt and economic stability in Southeast Asian countries.",
+          period: "2024",
+          description: "Research on the impact of artificial intelligence on operational efficiency and risks in Vietnam's financial sector, analyzing data from 50+ banks and financial institutions.",
           achievements: [
-            "Published in Journal of Economic Studies",
-            "Cited 15+ times in other research",
-            "Received outstanding student research award"
+            "Published paper in University of Economics and Law Science Journal",
+            "Discovered positive correlation between AI application and bank operational efficiency",
+            "Proposed legal framework for AI application in financial sector",
+            "Received 15+ citations from other research studies"
           ],
-          technologies: ["R", "Stata", "EViews"]
+          technologies: ["Python", "R", "Machine Learning", "Statistical Analysis", "Data Visualization"]
         },
         {
-          name: "Blockchain Project for Financial Transparency",
-          type: "Research Project",
-          period: "2022 - 2023",
-          status: "Completed",
-          description: "Developed blockchain application prototype to increase transparency in financial transactions.",
+          name: "Gen Z Investment Trends Analysis Project",
+          type: "Market Research",
+          status: "In Progress",
+          period: "2024 - 2025",
+          description: "Research on investment behavior and financial management of Gen Z in Vietnam, using survey methods and big data analysis.",
           achievements: [
-            "Successfully built prototype on Ethereum",
-            "Won 1st place in Blockchain Innovation 2023 competition",
-            "Received commercialization proposals from 2 fintech companies"
+            "Collected data from 1000+ survey participants",
+            "Developed investment trend prediction model",
+            "Collaborated with 3+ fintech startups for real data collection",
+            "Expected completion and publication in Q2/2025"
           ],
-          technologies: ["Solidity", "Web3.js", "React", "Node.js"]
+          technologies: ["Python", "Pandas", "Scikit-learn", "Survey Analysis", "Predictive Modeling"]
         }
       ]
     }
