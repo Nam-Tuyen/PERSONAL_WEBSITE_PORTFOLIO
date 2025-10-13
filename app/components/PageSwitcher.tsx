@@ -7,9 +7,10 @@ import { Briefcase, Heart } from "lucide-react"
 interface PageSwitcherProps {
   translations: any
   language: string
+  isSidebarCollapsed?: boolean
 }
 
-export default function PageSwitcher({ translations, language }: PageSwitcherProps) {
+export default function PageSwitcher({ translations, language, isSidebarCollapsed = true }: PageSwitcherProps) {
   const router = useRouter()
   const pathname = usePathname()
   
@@ -25,10 +26,12 @@ export default function PageSwitcher({ translations, language }: PageSwitcherPro
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-2xl border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 py-4">
+    <div className="fixed top-0 left-0 right-0 z-40 bg-black/10 backdrop-blur-2xl border-b border-white/5">
+      <div className={`max-w-7xl mx-auto px-4 py-4 transition-all duration-500 ${
+        isSidebarCollapsed ? 'lg:ml-0' : 'lg:ml-64'
+      }`}>
         <div className="flex justify-center">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-1.5 shadow-2xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-1.5 shadow-2xl">
             <div className="flex gap-1">
               {/* Professional Page Button */}
               <button

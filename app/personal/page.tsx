@@ -35,7 +35,7 @@ export default function PersonalPage() {
     <div className="min-h-screen text-white relative overflow-hidden" suppressHydrationWarning>
       <UniverseBackground />
 
-      <PageSwitcher translations={t} language={language} />
+      <PageSwitcher translations={t} language={language} isSidebarCollapsed={isSidebarCollapsed} />
 
       <Sidebar
         translations={t}
