@@ -117,6 +117,14 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
+      {/* Mobile Overlay - Only show on mobile when sidebar is open */}
+      {!isCollapsed && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-20 lg:hidden"
+          onClick={() => onToggleCollapse(true)}
+        />
+      )}
+
       {/* Synchronized Tech Toggle Button - Perfect Sync */}
       <button
         onClick={() => onToggleCollapse(!isCollapsed)}
@@ -172,7 +180,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       </button>
 
       {/* Tech-Style Sidebar - Responsive */}
-      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-[#00ff88]/20 shadow-2xl z-40 overflow-y-auto transition-all duration-300 ease-out ${
+      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-[#00ff88]/20 shadow-2xl z-30 overflow-y-auto transition-all duration-300 ease-out ${
         isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-80 sm:w-72 md:w-64 lg:w-72 xl:w-64 opacity-100 translate-x-0'
       }`}>
         

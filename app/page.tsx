@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { translations } from "./data/translations"
 import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
@@ -49,14 +49,14 @@ export default function Portfolio() {
         isPersonalPage={false}
       />
 
-      <div className="relative z-10 transition-all duration-500">
+      <div className="relative z-10 transition-all duration-500 lg:z-10">
         <div className={`min-h-screen transition-all duration-500 ${
           isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
         }`}>
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
             {/* Hero Section - Tech Minimal Style */}
-            <section id="home" className="mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
+            <section id="home" className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
                 {/* Left Column - Professional Image */}
                 <div className="order-2 lg:order-1">
