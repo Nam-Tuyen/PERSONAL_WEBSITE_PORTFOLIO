@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Montserrat, Great_Vibes } from "next/font/google"
 import "./globals.css"
-import PortfolioWrapper from "./components/PortfolioWrapper"
 
 const montserrat = Montserrat({
   subsets: ["latin", "vietnamese"],
@@ -37,10 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${greatVibes.variable} font-montserrat antialiased`}>
-        <Suspense fallback={null}>
-          <PortfolioWrapper>{children}</PortfolioWrapper>
-        </Suspense>
+            <body className={`${montserrat.variable} ${greatVibes.variable} font-montserrat antialiased`}>
+        <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>
   )
