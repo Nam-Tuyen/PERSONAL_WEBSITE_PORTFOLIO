@@ -829,6 +829,15 @@ body {
   display: none;  /* Safari and Chrome */
 }
 
+/* Anchor offset for fixed header */
+:root { 
+  --header-h: 56px; 
+}
+
+h1, h2, h3, section[id] { 
+  scroll-margin-top: var(--header-h); 
+}
+
 /* Mobile responsive improvements */
 @media (max-width: 1023px) {
   /* Ensure content is below sidebar on mobile */
