@@ -55,101 +55,76 @@ export default function Portfolio() {
         }`}>
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
-            {/* Modern Hero Section - Minimalist Design */}
-            <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-              {/* Animated Background Elements */}
-              <div className="absolute inset-0">
-                {/* Floating Orbs */}
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
-              </div>
-
-              <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                  
-                  {/* Left Column - Content */}
-                  <div className="text-center lg:text-left space-y-8">
-                    {/* Greeting Badge */}
-                    <div className="inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-sm font-medium text-gray-300">
-                      <div className="w-2 h-2 bg-[#00ff88] rounded-full mr-3 animate-pulse"></div>
-                      {t?.hero?.greeting || "HI, I AM"}
-                    </div>
-
-                    {/* Main Heading */}
-                    <div className="space-y-4">
-                      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tight">
-                        <span className="block">{t?.hero?.name?.split(' ')[0] || "LE"}</span>
-                        <span className="block text-transparent bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text">
-                          {t?.hero?.name?.split(' ').slice(1).join(' ') || "NAM TUYEN"}
-                        </span>
-                      </h1>
-                    </div>
-
-                    {/* Subtitle */}
-                    <div className="space-y-6">
-                      <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
-                      </p>
-                      
-                      {/* Decorative Line */}
-                      <div className="flex items-center justify-center lg:justify-start space-x-4">
-                        <div className="w-16 h-px bg-gradient-to-r from-[#00ff88] to-transparent"></div>
-                        <div className="w-2 h-2 bg-[#00ff88] rounded-full"></div>
-                        <div className="w-16 h-px bg-gradient-to-l from-[#00d4ff] to-transparent"></div>
-                      </div>
-                    </div>
-
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                      <button className="group relative px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl shadow-[#00ff88]/25 overflow-hidden">
-                        <span className="relative z-10">{t?.buttons?.downloadResume || "Download Resume"}</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </button>
-                      <button 
-                        onClick={scrollToProjects}
-                        className="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-2xl hover:border-[#00ff88]/50 hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
-                      >
-                        {t?.buttons?.viewProjects || "View Projects"}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Right Column - Image */}
-                  <div className="relative">
+            {/* Hero Section - Tech Minimal Style */}
+            <section id="home" className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
+                {/* Left Column - Professional Image */}
+                <div className="order-2 lg:order-1">
                     <div className="relative group">
-                      {/* Glow Effect */}
-                      <div className="absolute -inset-4 bg-gradient-to-r from-[#00ff88]/30 via-[#00d4ff]/30 to-[#7c3aed]/30 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-                      
-                      {/* Image Container */}
-                      <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-white/10 rounded-3xl p-2 shadow-2xl">
-                        <div className="relative w-full aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-2xl">
+                    {/* Tech Grid Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-1 sm:p-2">
+                      {/* Fixed Aspect Ratio Container */}
+                      <div className="relative w-full aspect-[4/5] max-w-xs sm:max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-xl sm:rounded-2xl">
                           <img 
                             src="/Profilepicture.jpg" 
-                            alt="LE NAM TUYEN" 
-                            className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110"
+                          alt="LE NAM TUYEN" 
+                          className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
                           />
-                          {/* Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        {/* Tech Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         </div>
                       </div>
-
-                      {/* Floating Elements */}
-                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-[#00ff88] rounded-full opacity-60 animate-bounce"></div>
-                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#00d4ff] rounded-full opacity-60 animate-bounce" style={{animationDelay: '0.5s'}}></div>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Scroll Indicator */}
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                  <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+                 {/* Right Column - Professional Content */}
+                  <div className="order-1 lg:order-2 text-center lg:text-left">
+                   <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12">
+                     {/* Greeting */}
+                     <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-7">
+                       
+                       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 tracking-tight leading-tight vietnamese-text">
+                         {t?.hero?.greeting || "HI, I AM"}
+                        </h1>
+                       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-transparent bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 tracking-tight leading-tight vietnamese-text gradient-text">
+                         {t?.hero?.name || "LE NAM TUYEN"}
+                       </h2>
+                       <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 font-medium leading-relaxed mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
+                         {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
+                        </p>
+                      </div>
+
+
+                      {/* CTA Buttons */}
+                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mt-4 sm:mt-6 md:mt-8 lg:mt-10">
+                       <button className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base">
+                         {t?.buttons?.downloadResume || "Download Resume"}
+                        </button>
+                        <button 
+                         onClick={scrollToProjects}
+                         className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base"
+                       >
+                         {t?.buttons?.viewProjects || "View Projects"}
+                        </button>
+                      </div>
+                  </div>
                 </div>
               </div>
             </section>
 
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
+              <div className="flex flex-col items-center space-y-2 animate-bounce">
+                <span className="text-gray-400 text-xs sm:text-sm font-medium">{t?.scrollIndicator?.text || "Scroll to explore"}</span>
+                <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+                  <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+                </div>
+                <svg className="w-4 h-4 text-gray-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+            </div>
 
             {/* 1. ABOUT ME Section */}
             <section id="about" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
