@@ -248,14 +248,19 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 <button
                   key={item.key}
                   onClick={() => handleSectionChange(item.key)}
-                  className={`w-full flex items-center space-x-2 sm:space-x-3 px-2 sm:px-3 py-2 sm:py-2.5 rounded-md sm:rounded-lg transition-all duration-200 group ${
+                  className={`w-full flex items-center space-x-2 sm:space-x-3 px-2 sm:px-3 py-2 sm:py-2.5 rounded-md sm:rounded-lg transition-all duration-200 group touch-target relative ${
                     activeSection === item.key
                       ? `${item.bgColor} ${item.color} shadow-sm border border-[#00ff88]/20`
-                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5 active:scale-95'
                   }`}
+                  aria-label={`Navigate to ${item.label} section`}
                 >
-                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
                   <span className="font-medium text-xs sm:text-sm truncate">{item.label}</span>
+                  {/* Active indicator */}
+                  {activeSection === item.key && (
+                    <div className="absolute right-2 w-1.5 h-1.5 bg-current rounded-full animate-pulse"></div>
+                  )}
                 </button>
               )
             })}
@@ -265,7 +270,9 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
           <div className="mt-6 sm:mt-8">
             <button
               onClick={() => setShowContacts(!showContacts)}
-              className="w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 group"
+              className="w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 group touch-target active:scale-95"
+              aria-label={`${showContacts ? 'Hide' : 'Show'} contact information`}
+              aria-expanded={showContacts}
             >
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">

@@ -96,16 +96,18 @@ export default function Portfolio() {
                       </div>
 
 
-                      {/* CTA Buttons */}
+                      {/* Enhanced CTA Buttons */}
                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mt-4 sm:mt-6 md:mt-8 lg:mt-10">
-                       <button className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base">
-                         {t?.buttons?.downloadResume || "Download Resume"}
+                       <button className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base touch-target group relative overflow-hidden active:scale-95">
+                         <span className="relative z-10">{t?.buttons?.downloadResume || "Download Resume"}</span>
+                         <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </button>
                         <button 
                          onClick={scrollToProjects}
-                         className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base"
+                         className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base touch-target group relative overflow-hidden active:scale-95"
                        >
-                         {t?.buttons?.viewProjects || "View Projects"}
+                         <span className="relative z-10">{t?.buttons?.viewProjects || "View Projects"}</span>
+                         <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </button>
                       </div>
                   </div>
