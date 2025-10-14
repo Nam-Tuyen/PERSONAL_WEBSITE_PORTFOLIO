@@ -117,10 +117,18 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
 
   return (
     <>
+      {/* Mobile Overlay - Only show on mobile when sidebar is open */}
+      {!isCollapsed && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          onClick={() => onToggleCollapse(true)}
+        />
+      )}
+
       {/* Synchronized Tech Toggle Button - Perfect Sync */}
       <button
         onClick={() => onToggleCollapse(!isCollapsed)}
-        className={`fixed top-1/2 z-50 transform -translate-y-1/2 transition-all duration-300 ease-out ${
+        className={`fixed top-1/2 z-[60] transform -translate-y-1/2 transition-all duration-300 ease-out ${
           isCollapsed ? 'left-0' : 'left-80 sm:left-72 md:left-64 lg:left-72 xl:left-64'
         }`}
         style={{
@@ -130,7 +138,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       >
         <div className="relative group">
           {/* Main Button - Enhanced Responsive */}
-          <div className="w-10 h-12 sm:w-10 sm:h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/40 rounded-r-xl sm:rounded-r-2xl flex items-center justify-center shadow-2xl hover:shadow-[#00ff88]/25 transition-all duration-300 group-hover:scale-105 active:scale-95 touch-target">
+          <div className="w-8 h-12 sm:w-10 sm:h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] backdrop-blur-sm border border-[#00ff88]/40 rounded-r-xl sm:rounded-r-2xl flex items-center justify-center shadow-2xl hover:shadow-[#00ff88]/25 transition-all duration-300 group-hover:scale-105 active:scale-95">
             {/* Enhanced Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-r-xl sm:rounded-r-2xl blur opacity-30 group-hover:opacity-50 group-active:opacity-70 transition-opacity duration-300"></div>
             
@@ -171,16 +179,8 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
         </div>
       </button>
 
-      {/* Mobile Overlay */}
-      {!isCollapsed && (
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 lg:hidden"
-          onClick={() => onToggleCollapse(true)}
-        />
-      )}
-
       {/* Tech-Style Sidebar - Responsive */}
-      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-[#00ff88]/20 shadow-2xl z-40 overflow-y-auto transition-all duration-300 ease-out ${
+      <aside className={`fixed left-0 top-0 h-full bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border-r border-[#00ff88]/20 shadow-2xl z-50 overflow-y-auto transition-all duration-300 ease-out ${
         isCollapsed ? 'w-0 opacity-0 -translate-x-full' : 'w-80 sm:w-72 md:w-64 lg:w-72 xl:w-64 opacity-100 translate-x-0'
       }`}>
         
@@ -248,7 +248,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 <button
                   key={item.key}
                   onClick={() => handleSectionChange(item.key)}
-                  className={`w-full flex items-center space-x-2 sm:space-x-3 px-2 sm:px-3 py-3 sm:py-2.5 rounded-md sm:rounded-lg transition-all duration-200 group touch-target ${
+                  className={`w-full flex items-center space-x-2 sm:space-x-3 px-2 sm:px-3 py-2 sm:py-2.5 rounded-md sm:rounded-lg transition-all duration-200 group ${
                     activeSection === item.key
                       ? `${item.bgColor} ${item.color} shadow-sm border border-[#00ff88]/20`
                       : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -265,7 +265,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
           <div className="mt-6 sm:mt-8">
             <button
               onClick={() => setShowContacts(!showContacts)}
-              className="w-full flex items-center justify-between px-3 sm:px-4 py-3 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 group touch-target"
+              className="w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 group"
             >
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
