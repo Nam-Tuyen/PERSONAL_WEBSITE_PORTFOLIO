@@ -355,7 +355,7 @@ export const translations = {
         title: "HOẠT ĐỘNG XÃ HỘI",
         items: [
           {
-            name: "ATTACKER 2025 - Cuộc thi học thuật FinTech quy mô toàn quốc",
+            name: "ATTACKER 2025 - CUỘC THI HỌC THUẬT FINTECH QUY MÔ TOÀN QUỐC",
             role: "Ban tổ chức - Điều phối liên ban",
             period: "2025",
             description: "Ban tổ chức Cuộc thi học thuật ATTACKER 2025 về Công nghệ Tài chính quy mô toàn quốc, thu hút hơn 2.000 tài khoản sinh viên đăng ký và gần 250 dự án FinTech, đặt mục tiêu tìm kiếm ý tưởng đột phá có khả năng ứng dụng bền vững và tạo bệ phóng để sinh viên biến tri thức thành sản phẩm thực tiễn. Sáu nhóm chủ đề trọng tâm gồm ứng dụng công nghệ trong kinh doanh và kinh tế, sinh trắc học, tự động hóa chấm điểm tín dụng và cho vay, Blockchain trong tài chính và quản lý rủi ro, đổi mới tư duy khởi nghiệp, cùng pháp lý và đạo đức số. Ở vai trò điều phối liên ban, tôi có nhiệm vụ là hỗ trợ dựng khung kế hoạch theo mốc thời gian rõ ràng, phân luồng nhiệm vụ minh bạch, chuẩn hóa thể lệ, tiêu chí chấm và tài liệu hướng dẫn để đội thi nộp bài đúng chuẩn và giám khảo đánh giá nhất quán. Kết quả không chỉ là một mùa giải vận hành trơn tru mà còn mở ra mạng lưới cố vấn, học bổng và cơ hội gọi vốn cho các dự án tiềm năng, góp phần kết nối học thuật với nhu cầu thực tiễn của tài chính số và lan tỏa tinh thần đổi mới sáng tạo trong cộng đồng sinh viên.",
@@ -381,7 +381,7 @@ export const translations = {
             ]
           },
           {
-            name: "WEB3 CAREER INNOVATION Job Fair",
+            name: "WEB3 CAREER INNOVATION JOB FAIR",
             role: "Event Coordinator & Operations Manager",
             period: "2022 - Hiện tại",
             description: "Tham gia tổ chức WEB3 CAREER INNOVATION Job Fair với quy mô hơn 3.000 sinh viên với mục tiêu tạo không gian kết nối trực tiếp giữa sinh viên và doanh nghiệp trong lĩnh vực FinTech, Blockchain và Web3. Sự kiện quy tụ 15 doanh nghiệp, triển khai tuyển dụng ngay tại chỗ với hơn 300 vị trí thực tập và cộng tác viên đồng thời có talkshow chuyên sâu thu hút trên 500 sinh viên, giúp người tham dự nắm bắt xu hướng kỹ năng và định hình lộ trình phát triển phù hợp. Nhiệm vụ của tôi trong sự kiện này là điều phối để các bộ phận vận hành nhịp nhàng: bố trí khu Job Fair tiếp nhận hồ sơ và tư vấn trực tiếp, vận hành liên tục khu booth trải nghiệm và khu phỏng vấn nhanh kèm phản hồi CV để bảo đảm dòng trải nghiệm liền mạch cho các bạn sinh viên. Nhờ sự phối hợp chặt chẽ giữa các thành viên, sự kiện diễn ra an toàn, đúng tiến độ và mang đến một ngày hội nghề nghiệp bổ ích, thiết thực cho các bạn sinh viên.",
@@ -407,7 +407,7 @@ export const translations = {
             ]
           },
           {
-            name: "Talkshow 'Chứng khoán thời công nghệ – tư duy tiếp cận phù hợp'",
+            name: "TALKSHOW 'CHỨNG KHOÁN THỜI CÔNG NGHỆ – TƯ DUY TIẾP CẬN PHÙ HỢP'",
             role: "Event Director & Coordinator",
             period: "2023 - 2024",
             description: "Chỉ đạo tổ chức Talkshow \"Chứng khoán thời công nghệ – tư duy tiếp cận phù hợp\" hợp tác với Maybank Investment Bank Vietnam, quy mô hơn 100 sinh viên, với mục tiêu cập nhật xu hướng tài chính 2024, giúp người tham dự nhìn rõ bức tranh thị trường chứng khoán Việt Nam và trang bị tư duy tiếp cận phù hợp trong giai đoạn chuyển đổi số. Nội dung chương trình tập trung vào ba trụ cột: chiến lược đầu tư, quản trị rủi ro và kiểm soát tâm lý hành vi, qua đó hỗ trợ sinh viên xây dựng phương pháp đầu tư bền vững và nâng cao năng lực ra quyết định. Vai trò của tôi trong sự kiện này là điều phối các ban trong câu lạc bộ từ việc xây dựng kịch bản theo mốc thời gian, làm việc với diễn giả và chuẩn bị nội dung, quản lý truyền thông đồng thời tổng hợp phản hồi để cải thiện cho lần sau. Kết quả là Talkshow đã diễn ra đúng tiến độ và nhận lại nhiều phản hồi tích cực, mang lại giá trị thiết thực cho cộng đồng sinh viên trong lĩnh vực FinTech và đầu tư.",
@@ -425,7 +425,7 @@ export const translations = {
             ]
           },
           {
-            name: "Chương trình thiện nguyện Trung thu tại Lâm Đồng",
+            name: "CHƯƠNG TRÌNH THIỆN NGUYỆN TRUNG THU TẠI LÂM ĐỒNG",
             role: "Volunteer & Event Coordinator",
             description: "Tham gia chương trình thiện nguyện cùng giáo xứ tại Lâm Đồng, phối hợp tổ chức gian hàng hội chợ Trung thu dành cho trẻ em có hoàn cảnh khó khăn. Công việc được triển khai tuần tự và rõ ràng: lên ý tưởng chủ đề, kêu gọi đóng góp, chuẩn bị vật phẩm, thiết kế trò chơi trong đó phụ trách thiết kế và vận hành trò chơi ném vòng, bố trí lối đi, phân công ca trực và trao quà. Sự kiện diễn ra an toàn, đúng tiến độ, mang lại một đêm Trung thu ấm áp với nhiều nụ cười và sự sẻ chia. Trải nghiệm này giúp rèn luyện kỹ năng điều phối tình nguyện viên, quản lý ngân sách nhỏ, truyền thông cộng đồng và xử lý tình huống linh hoạt khi nguồn lực hạn chế.",
             icon: "❤️",
@@ -808,7 +808,7 @@ export const translations = {
         title: "SOCIAL ACTIVITIES",
         items: [
           {
-            name: "ATTACKER 2025 - National FinTech Academic Competition",
+            name: "ATTACKER 2025 - NATIONAL FINTECH ACADEMIC COMPETITION",
             role: "Organizing Committee - Cross-team Coordinator",
             period: "2025",
             description: "The ATTACKER 2025 National FinTech Academic Competition attracted over 2,000 student registrations and nearly 250 FinTech projects, aiming to surface breakthrough ideas with sustainable real-world potential and to provide a launchpad for students to turn academic knowledge into practical products. The competition focused on six core themes: technology applications in business and economics, biometric identification, automation in credit scoring and lending, blockchain in finance and risk management, innovation and tech entrepreneurship, and legal, ethical, and privacy issues. In a cross-team coordination role, responsibilities included building a clear timeline-based plan, assigning tasks transparently, and standardizing the rulebook, scoring criteria, and participant guidelines to ensure consistent submissions and fair evaluation. The outcome was not only a smoothly executed season but also a network of mentors, scholarships, and funding opportunities for high-potential projects, strengthening the bridge between academia and industry needs in digital finance while fostering a culture of innovation among students.",
@@ -834,7 +834,7 @@ export const translations = {
             ]
           },
           {
-            name: "WEB3 CAREER INNOVATION Job Fair",
+            name: "WEB3 CAREER INNOVATION JOB FAIR",
             role: "Event Coordinator & Operations Manager",
             period: "2022 - Present",
             description: "Participated in organizing WEB3 CAREER INNOVATION Job Fair with over 3,000 students, aiming to create direct connection space between students and businesses in FinTech, Blockchain and Web3 fields. The event gathered 15 companies, implemented on-site recruitment with over 300 internship and collaborator positions, and featured in-depth talkshows attracting over 500 students, helping participants grasp skill trends and shape appropriate development paths. My responsibilities in this event included coordinating smooth operations across departments: arranging Job Fair area for resume reception and direct consultation, continuously operating experience booth and quick interview area with CV feedback to ensure seamless experience flow for students. Thanks to close coordination between team members, the event ran safely, on schedule and delivered a beneficial, practical career day for students.",
@@ -860,7 +860,7 @@ export const translations = {
             ]
           },
           {
-            name: "Talk Show 'Investing in the Age of Technology: A Practical Mindset'",
+            name: "TALK SHOW 'INVESTING IN THE AGE OF TECHNOLOGY: A PRACTICAL MINDSET'",
             role: "Event Director & Coordinator",
             period: "2023 - 2024",
             description: "Directed the talk show \"Investing in the Age of Technology: A Practical Mindset\" in partnership with Maybank Investment Bank Vietnam for an audience of over 100 students. The event updated 2024 financial trends, offered a clear view of Vietnam's stock market, and equipped attendees with a technology-aware investing mindset. Content focused on three pillars: investment strategy, risk management, and behavioral discipline, helping students build sustainable approaches and make better decisions. In a coordinating capacity, ensured smooth cross-team execution by developing a timeline-based run of show, working with speakers and curating content, managing communications, and compiling post-event feedback for improvement. The talk show ran on schedule, received strong positive responses, and delivered practical value to students interested in FinTech and investing.",
@@ -878,7 +878,7 @@ export const translations = {
             ]
           },
           {
-            name: "Mid-Autumn Festival Charity Program in Lam Dong",
+            name: "MID-AUTUMN FESTIVAL CHARITY PROGRAM IN LAM DONG",
             role: "Volunteer & Event Coordinator",
             description: "Participated in charity program with local parish in Lam Dong, coordinated Mid-Autumn Festival fair booth for underprivileged children. Work was implemented systematically and clearly: developing theme ideas, calling for contributions, preparing materials, designing games including taking charge of designing and operating ring toss game, arranging pathways, assigning shifts and distributing gifts. The event ran safely and on schedule, bringing a warm Mid-Autumn night with many smiles and sharing. This experience helped develop skills in volunteer coordination, small budget management, community communication and flexible problem-solving with limited resources.",
             icon: "❤️",
