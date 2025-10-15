@@ -6,6 +6,7 @@ import UniverseBackground from "../components/UniverseBackground"
 import Sidebar from "../components/Sidebar"
 import PageSwitcher from "../components/PageSwitcher"
 import ScrollToTopButton from "../components/ScrollToTopButton"
+import SportsModal from "../components/SportsModal"
 
 export default function PersonalPage() {
   const [language, setLanguage] = useState("en")
@@ -13,6 +14,7 @@ export default function PersonalPage() {
   const [mounted, setMounted] = useState(false)
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedAchievement, setSelectedAchievement] = useState<string | null>(null)
+  const [isSportsModalOpen, setIsSportsModalOpen] = useState(false)
 
   const t = translations[language as keyof typeof translations]
 
@@ -80,7 +82,16 @@ export default function PersonalPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                   <div key={index} className="group relative">
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl h-full">
+                    <div 
+                      className={`bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl h-full ${
+                        hobby.name === "THỂ THAO" || hobby.name === "SPORTS" ? 'cursor-pointer' : ''
+                      }`}
+                      onClick={() => {
+                        if (hobby.name === "THỂ THAO" || hobby.name === "SPORTS") {
+                          setIsSportsModalOpen(true)
+                        }
+                      }}
+                    >
                       <div className="text-center">
                         <div className="text-4xl sm:text-5xl mb-4 sm:mb-6">{hobby.icon}</div>
                         <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 vietnamese-text">
@@ -89,6 +100,11 @@ export default function PersonalPage() {
                         <p className="text-gray-300 leading-relaxed vietnamese-text">
                           {hobby.description}
                         </p>
+                        {(hobby.name === "THỂ THAO" || hobby.name === "SPORTS") && (
+                          <div className="mt-4 text-xs text-[#00ff88] font-medium">
+                            {language === 'vi' ? 'Click để xem chi tiết' : 'Click to view details'}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -313,6 +329,14 @@ export default function PersonalPage() {
        </div>
 
        <ScrollToTopButton />
+       
+       {/* Sports Modal */}
+       <SportsModal 
+         isOpen={isSportsModalOpen}
+         onClose={() => setIsSportsModalOpen(false)}
+         translations={t}
+         language={language}
+       />
      </div>
    )
  }
