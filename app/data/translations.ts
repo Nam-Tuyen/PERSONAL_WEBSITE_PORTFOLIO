@@ -435,7 +435,7 @@ export const translations = {
     },
     about: {
       label: "PROFESSIONAL PROFILE",
-      quote: "Transforming vision into reality turning intent into results",
+      quote: "TRANSFORMING VISION INTO REALITY TURNING INTENT INTO RESULTS",
       description: "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."
     },
     education: {
