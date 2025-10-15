@@ -230,39 +230,8 @@ export const translations = {
         },
         {
           name: "THỂ THAO",
-          description: "Tennis, Pickleball, Cầu lông và Bóng rổ",
-          icon: "⚽",
-          details: {
-            title: "THỂ THAO",
-            sports: [
-              {
-                name: "TENNIS",
-                description: "Chơi tennis để rèn luyện sức khỏe và tinh thần đồng đội",
-                icon: "🎾"
-              },
-              {
-                name: "PICKLEBALL",
-                description: "Môn thể thao mới, kết hợp giữa tennis và cầu lông",
-                icon: "🏓"
-              },
-              {
-                name: "CẦU LÔNG",
-                description: "Rèn luyện phản xạ và sự nhanh nhẹn",
-                icon: "🏸"
-              },
-              {
-                name: "BÓNG RỔ",
-                description: "Gắn bó hơn 10 năm, Đội trưởng đội tuyển Đại học Kinh tế – Luật",
-                icon: "🏀",
-                detailedDescription: "Gắn bó với bóng rổ hơn 10 năm, đảm nhiệm vai trò Đội trưởng đội tuyển Đại học Kinh tế – Luật, dẫn dắt đội tham dự các giải sinh viên cấp quốc gia gồm VUG 3x3 Giải Thể thao Sinh viên Việt Nam và NUC Giải bóng rổ sinh viên toàn quốc, đồng thời đạt chức vô địch đầu tiên tại Basketball STU Open 2024, một giải quy tụ nhiều trường đại học tại TP.HCM. Quá trình rèn luyện và thi đấu đã giúp bản thân tôi hình thành nên phương pháp làm việc rõ ràng: xác lập mục tiêu, xây dựng chiến lược, triển khai kỷ luật và phối hợp hiệu quả để đạt kết quả cụ thể. Những nguyên tắc này được áp dụng nhất quán trong môi trường chuyên nghiệp, tập trung vào trách nhiệm, hiệu suất và tiêu chuẩn thực thi.",
-                images: [
-                  "/basketballteam.jpg",
-                  "/baskteballteamchampion.jpg", 
-                  "/vug.jpg"
-                ]
-              }
-            ]
-          }
+          description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
+          icon: "⚽"
         },
         {
           name: "DU LỊCH",
@@ -311,39 +280,8 @@ export const translations = {
           },
           {
             name: "THỂ THAO",
-            description: "Tennis, Pickleball, Cầu lông và Bóng rổ",
-            icon: "⚽",
-            details: {
-              title: "THỂ THAO",
-              sports: [
-                {
-                  name: "TENNIS",
-                  description: "Chơi tennis để rèn luyện sức khỏe và tinh thần đồng đội",
-                  icon: "🎾"
-                },
-                {
-                  name: "PICKLEBALL",
-                  description: "Môn thể thao mới, kết hợp giữa tennis và cầu lông",
-                  icon: "🏓"
-                },
-                {
-                  name: "CẦU LÔNG",
-                  description: "Rèn luyện phản xạ và sự nhanh nhẹn",
-                  icon: "🏸"
-                },
-                {
-                  name: "BÓNG RỔ",
-                  description: "Gắn bó hơn 10 năm, Đội trưởng đội tuyển Đại học Kinh tế – Luật",
-                  icon: "🏀",
-                  detailedDescription: "Gắn bó với bóng rổ hơn 10 năm, đảm nhiệm vai trò Đội trưởng đội tuyển Đại học Kinh tế – Luật, dẫn dắt đội tham dự các giải sinh viên cấp quốc gia gồm VUG 3x3 Giải Thể thao Sinh viên Việt Nam và NUC Giải bóng rổ sinh viên toàn quốc, đồng thời đạt chức vô địch đầu tiên tại Basketball STU Open 2024, một giải quy tụ nhiều trường đại học tại TP.HCM. Quá trình rèn luyện và thi đấu đã giúp bản thân tôi hình thành nên phương pháp làm việc rõ ràng: xác lập mục tiêu, xây dựng chiến lược, triển khai kỷ luật và phối hợp hiệu quả để đạt kết quả cụ thể. Những nguyên tắc này được áp dụng nhất quán trong môi trường chuyên nghiệp, tập trung vào trách nhiệm, hiệu suất và tiêu chuẩn thực thi.",
-                  images: [
-                    "/basketballteam.jpg",
-                    "/baskteballteamchampion.jpg", 
-                    "/vug.jpg"
-                  ]
-                }
-              ]
-            }
+            description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
+            icon: "⚽"
           },
           {
             name: "DU LỊCH",
@@ -375,11 +313,16 @@ export const translations = {
             icon: "🤝"
           },
           {
-            name: "Đội bóng đá sinh viên",
-            organization: "Khoa Công nghệ Tài chính",
-            period: "2022 - Hiện tại",
-            description: "Thành viên đội bóng, tham gia các giải đấu liên trường và hoạt động team building",
-            icon: "⚽"
+            name: "Đội trưởng đội bóng rổ",
+            organization: "Đại học Kinh tế - Luật",
+            period: "2014 - Hiện tại",
+            description: "Gắn bó với bóng rổ hơn 10 năm, đảm nhiệm vai trò Đội trưởng đội tuyển Đại học Kinh tế – Luật, dẫn dắt đội tham dự các giải sinh viên cấp quốc gia gồm VUG 3x3 Giải Thể thao Sinh viên Việt Nam và NUC Giải bóng rổ sinh viên toàn quốc, đồng thời đạt chức vô địch đầu tiên tại Basketball STU Open 2024, một giải quy tụ nhiều trường đại học tại TP.HCM. Quá trình rèn luyện và thi đấu đã giúp bản thân tôi hình thành nên phương pháp làm việc rõ ràng: xác lập mục tiêu, xây dựng chiến lược, triển khai kỷ luật và phối hợp hiệu quả để đạt kết quả cụ thể. Những nguyên tắc này được áp dụng nhất quán trong môi trường chuyên nghiệp, tập trung vào trách nhiệm, hiệu suất và tiêu chuẩn thực thi.",
+            icon: "🏀",
+            images: [
+              "/basketballteam.jpg",
+              "/baskteballteamchampion.jpg", 
+              "/vug.jpg"
+            ]
           }
         ]
       },
@@ -662,39 +605,8 @@ export const translations = {
         },
         {
           name: "SPORTS",
-          description: "Tennis, Pickleball, Badminton and Basketball",
-          icon: "⚽",
-          details: {
-            title: "SPORTS",
-            sports: [
-              {
-                name: "TENNIS",
-                description: "Play tennis to maintain health and team spirit",
-                icon: "🎾"
-              },
-              {
-                name: "PICKLEBALL",
-                description: "New sport combining tennis and badminton",
-                icon: "🏓"
-              },
-              {
-                name: "BADMINTON",
-                description: "Develop reflexes and agility",
-                icon: "🏸"
-              },
-              {
-                name: "BASKETBALL",
-                description: "Over 10 years experience, Captain of University of Economics and Law team",
-                icon: "🏀",
-                detailedDescription: "Committed to basketball for over 10 years, serving as Captain of the University of Economics and Law team, leading the team to participate in national student competitions including VUG 3x3 Vietnam Student Sports and NUC National Student Basketball Championship, while achieving the first championship at Basketball STU Open 2024, a tournament gathering many universities in Ho Chi Minh City. The training and competition process has helped me develop a clear working methodology: setting goals, building strategies, implementing discipline and effective coordination to achieve specific results. These principles are consistently applied in professional environments, focusing on responsibility, performance and execution standards.",
-                images: [
-                  "/basketballteam.jpg",
-                  "/baskteballteamchampion.jpg", 
-                  "/vug.jpg"
-                ]
-              }
-            ]
-          }
+          description: "Play football and swimming to maintain health",
+          icon: "⚽"
         },
         {
           name: "TRAVEL",
@@ -743,39 +655,8 @@ export const translations = {
           },
           {
             name: "SPORTS",
-            description: "Tennis, Pickleball, Badminton and Basketball",
-            icon: "⚽",
-            details: {
-              title: "SPORTS",
-              sports: [
-                {
-                  name: "TENNIS",
-                  description: "Play tennis to maintain health and team spirit",
-                  icon: "🎾"
-                },
-                {
-                  name: "PICKLEBALL",
-                  description: "New sport combining tennis and badminton",
-                  icon: "🏓"
-                },
-                {
-                  name: "BADMINTON",
-                  description: "Develop reflexes and agility",
-                  icon: "🏸"
-                },
-                {
-                  name: "BASKETBALL",
-                  description: "Over 10 years experience, Captain of University of Economics and Law team",
-                  icon: "🏀",
-                  detailedDescription: "Committed to basketball for over 10 years, serving as Captain of the University of Economics and Law team, leading the team to participate in national student competitions including VUG 3x3 Vietnam Student Sports and NUC National Student Basketball Championship, while achieving the first championship at Basketball STU Open 2024, a tournament gathering many universities in Ho Chi Minh City. The training and competition process has helped me develop a clear working methodology: setting goals, building strategies, implementing discipline and effective coordination to achieve specific results. These principles are consistently applied in professional environments, focusing on responsibility, performance and execution standards.",
-                  images: [
-                    "/basketballteam.jpg",
-                    "/baskteballteamchampion.jpg", 
-                    "/vug.jpg"
-                  ]
-                }
-              ]
-            }
+            description: "Play football and swimming to maintain health",
+            icon: "⚽"
           },
           {
             name: "TRAVEL",
@@ -807,11 +688,16 @@ export const translations = {
             icon: "🤝"
           },
           {
-            name: "Student Football Team",
-            organization: "Financial Technology Department",
-            period: "2022 - Present",
-            description: "Team member, participated in inter-university tournaments and team building activities",
-            icon: "⚽"
+            name: "Basketball Team Captain",
+            organization: "University of Economics and Law",
+            period: "2014 - Present",
+            description: "Committed to basketball for over 10 years, serving as Captain of the University of Economics and Law team, leading the team to participate in national student competitions including VUG 3x3 Vietnam Student Sports and NUC National Student Basketball Championship, while achieving the first championship at Basketball STU Open 2024, a tournament gathering many universities in Ho Chi Minh City. The training and competition process has helped me develop a clear working methodology: setting goals, building strategies, implementing discipline and effective coordination to achieve specific results. These principles are consistently applied in professional environments, focusing on responsibility, performance and execution standards.",
+            icon: "🏀",
+            images: [
+              "/basketballteam.jpg",
+              "/baskteballteamchampion.jpg", 
+              "/vug.jpg"
+            ]
           }
         ]
       },

@@ -6,7 +6,6 @@ import UniverseBackground from "../components/UniverseBackground"
 import Sidebar from "../components/Sidebar"
 import PageSwitcher from "../components/PageSwitcher"
 import ScrollToTopButton from "../components/ScrollToTopButton"
-import SportsDetail from "../components/SportsDetail"
 
 export default function PersonalPage() {
   const [language, setLanguage] = useState("en")
@@ -14,7 +13,6 @@ export default function PersonalPage() {
   const [mounted, setMounted] = useState(false)
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedAchievement, setSelectedAchievement] = useState<string | null>(null)
-  const [showSportsDetail, setShowSportsDetail] = useState(false)
 
   const t = translations[language as keyof typeof translations]
 
@@ -82,10 +80,7 @@ export default function PersonalPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                   <div key={index} className="group relative">
-                    <button
-                      onClick={() => hobby.details ? setShowSportsDetail(true) : null}
-                      className={`w-full bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl h-full text-left ${hobby.details ? 'cursor-pointer' : ''}`}
-                    >
+                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl h-full">
                       <div className="text-center">
                         <div className="text-4xl sm:text-5xl mb-4 sm:mb-6">{hobby.icon}</div>
                         <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 vietnamese-text">
@@ -94,13 +89,8 @@ export default function PersonalPage() {
                         <p className="text-gray-300 leading-relaxed vietnamese-text">
                           {hobby.description}
                         </p>
-                        {hobby.details && (
-                          <div className="mt-4 text-[#00ff88] text-sm font-medium">
-                            Click to explore →
-                          </div>
-                        )}
                       </div>
-                    </button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -135,6 +125,24 @@ export default function PersonalPage() {
                           <p className="text-gray-300 leading-relaxed vietnamese-text">
                             {activity.description}
                           </p>
+                          
+                          {/* Basketball Images Gallery */}
+                          {activity.images && activity.images.length > 0 && (
+                            <div className="mt-4 sm:mt-6">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                                {activity.images.map((image: string, imgIndex: number) => (
+                                  <div key={imgIndex} className="relative group">
+                                    <img 
+                                      src={image} 
+                                      alt={`${activity.name} - Image ${imgIndex + 1}`}
+                                      className="w-full h-32 sm:h-40 object-cover rounded-lg sm:rounded-xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl"></div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -323,15 +331,6 @@ export default function PersonalPage() {
        </div>
 
        <ScrollToTopButton />
-
-       {/* Sports Detail Modal */}
-       {showSportsDetail && (
-         <SportsDetail
-           sportsData={t?.personal?.hobbies?.items?.find((hobby: any) => hobby.name === "THỂ THAO" || hobby.name === "SPORTS")?.details}
-           language={language}
-           onClose={() => setShowSportsDetail(false)}
-         />
-       )}
      </div>
    )
  }
