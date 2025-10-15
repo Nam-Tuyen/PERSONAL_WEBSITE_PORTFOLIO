@@ -447,8 +447,8 @@ export const translations = {
         title: "THÀNH TÍCH NGHIÊN CỨU",
         items: [
           {
-            title: "Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
-            publication: "Journal of Southeast Asian Economics",
+            title: "Nợ công và ổn định kinh tế: Tác động điều tiết của chất lượng quản trị tại Đông Nam Á",
+            publication: "Tạp chí Kinh tế Đông Nam Á",
             date: "2025",
             description: "Nghiên cứu về mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á, với vai trò điều tiết của quản trị quốc gia. Sử dụng dữ liệu panel từ 10 quốc gia ASEAN trong giai đoạn 2000-2022.",
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"

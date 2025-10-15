@@ -625,7 +625,7 @@ export default function PersonalPage() {
                             className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg sm:rounded-xl text-[#00ff88] hover:bg-[#00ff88]/20 transition-all duration-300 text-sm sm:text-base"
                           >
                             <span>📄</span>
-                            View Publication
+                            {language === "vi" ? "Xem tài liệu" : "View Publication"}
                           </a>
                         </div>
                       )}
