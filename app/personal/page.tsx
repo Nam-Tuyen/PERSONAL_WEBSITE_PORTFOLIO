@@ -115,18 +115,6 @@ export default function PersonalPage() {
               </div>
             </section>
 
-            {/* Scroll Indicator */}
-            <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
-              <div className="flex flex-col items-center space-y-2 animate-bounce">
-                <span className="text-gray-400 text-xs sm:text-sm font-medium">Scroll to explore</span>
-                <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                  <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-                </div>
-                <svg className="w-4 h-4 text-gray-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </div>
-            </div>
 
             {/* Hobbies Section */}
             <section id="hobbies" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">

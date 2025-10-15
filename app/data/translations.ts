@@ -268,8 +268,8 @@ export const translations = {
     },
     personal: {
       hero: {
-        title: "CÁ NHÂN",
-        subtitle: "Khám phá sở thích, hoạt động và hành trình cá nhân của tôi"
+        title: "THÔNG TIN VỀ BẢN THÂN",
+        subtitle: "Khám phá thêm sở thích và hành trình của tôi"
       },
       hobbies: {
         title: "SỞ THÍCH",
@@ -714,8 +714,8 @@ export const translations = {
     },
     personal: {
       hero: {
-        title: "PERSONAL",
-        subtitle: "Discover my passions, interests, and personal journey"
+        title: "ABOUT ME",
+        subtitle: "Discover more about my interests and journey"
       },
       hobbies: {
         title: "HOBBIES",
