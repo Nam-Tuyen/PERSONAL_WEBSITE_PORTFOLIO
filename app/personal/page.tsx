@@ -209,13 +209,13 @@ export default function PersonalPage() {
                       {/* Images Gallery */}
                       {activity.images && activity.images.length > 0 && (
                         <div className="mt-8 pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {activity.images.map((image: string, imgIndex: number) => (
                               <div key={imgIndex} className="relative group">
                                 <img 
                                   src={image} 
                                   alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 object-cover rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
+                                  className="w-full h-64 object-cover rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
