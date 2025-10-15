@@ -9,14 +9,14 @@ export const translations = {
       }
     },
     sections: {
-      about: "Giới thiệu",
-      education: "Học vấn",
-      skills: "Kỹ năng",
-      certifications: "Chứng chỉ & Giải thưởng",
-      experience: "Kinh nghiệm làm việc",
-      projects: "Dự án",
-      hobbies: "Sở thích",
-      interests: "Quan tâm"
+      about: "GIỚI THIỆU",
+      education: "HỌC VẤN",
+      skills: "KỸ NĂNG",
+      certifications: "CHỨNG CHỈ & GIẢI THƯỞNG",
+      experience: "KINH NGHIỆM LÀM VIỆC",
+      projects: "DỰ ÁN",
+      hobbies: "SỞ THÍCH",
+      interests: "QUAN TÂM"
     },
     buttons: {
       downloadResume: "Tải CV",
@@ -29,7 +29,7 @@ export const translations = {
       text: "Cuộn để khám phá"
     },
     contact: {
-      title: "Liên hệ"
+      title: "LIÊN HỆ"
     },
     labels: {
       bachelorOf: "Cử nhân ngành",
