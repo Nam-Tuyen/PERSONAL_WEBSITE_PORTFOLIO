@@ -387,11 +387,22 @@ export const translations = {
             ]
           },
           {
-            name: "Tổ chức workshop kỹ năng mềm",
-            role: "Organizer",
+            name: "Talkshow 'Chứng khoán thời công nghệ – tư duy tiếp cận phù hợp'",
+            role: "Event Director & Coordinator",
             period: "2023 - 2024",
-            description: "Tổ chức các buổi workshop về kỹ năng thuyết trình, làm việc nhóm và leadership",
-            icon: "🎯"
+            description: "Chỉ đạo tổ chức Talkshow \"Chứng khoán thời công nghệ – tư duy tiếp cận phù hợp\" hợp tác với Maybank Investment Bank Vietnam, quy mô hơn 100 sinh viên, với mục tiêu cập nhật xu hướng tài chính 2024, giúp người tham dự nhìn rõ bức tranh thị trường chứng khoán Việt Nam và trang bị tư duy tiếp cận phù hợp trong giai đoạn chuyển đổi số. Nội dung chương trình tập trung vào ba trụ cột: chiến lược đầu tư, quản trị rủi ro và kiểm soát tâm lý hành vi, qua đó hỗ trợ sinh viên xây dựng phương pháp đầu tư bền vững và nâng cao năng lực ra quyết định. Vai trò của tôi trong sự kiện này là điều phối các ban trong câu lạc bộ từ việc xây dựng kịch bản theo mốc thời gian, làm việc với diễn giả và chuẩn bị nội dung, quản lý truyền thông đồng thời tổng hợp phản hồi để cải thiện cho lần sau. Kết quả là Talkshow đã diễn ra đúng tiến độ và nhận lại nhiều phản hồi tích cực, mang lại giá trị thiết thực cho cộng đồng sinh viên trong lĩnh vực FinTech và đầu tư.",
+            icon: "🎯",
+            images: [
+              "/maybank.jpg",
+              "/maybank2.jpg", 
+              "/maybank3.jpg"
+            ],
+            links: [
+              {
+                title: "Facebook - Talkshow Maybank Investment",
+                url: "https://www.facebook.com/share/p/1GzVP9BCum/"
+              }
+            ]
           },
           {
             name: "Chương trình thiện nguyện Trung thu tại Lâm Đồng",
@@ -809,11 +820,22 @@ export const translations = {
             ]
           },
           {
-            name: "Soft Skills Workshop Organization",
-            role: "Organizer",
+            name: "Talk Show 'Investing in the Age of Technology: A Practical Mindset'",
+            role: "Event Director & Coordinator",
             period: "2023 - 2024",
-            description: "Organize workshops on presentation skills, teamwork, and leadership",
-            icon: "🎯"
+            description: "Directed the talk show \"Investing in the Age of Technology: A Practical Mindset\" in partnership with Maybank Investment Bank Vietnam for an audience of over 100 students. The event updated 2024 financial trends, offered a clear view of Vietnam's stock market, and equipped attendees with a technology-aware investing mindset. Content focused on three pillars: investment strategy, risk management, and behavioral discipline, helping students build sustainable approaches and make better decisions. In a coordinating capacity, ensured smooth cross-team execution by developing a timeline-based run of show, working with speakers and curating content, managing communications, and compiling post-event feedback for improvement. The talk show ran on schedule, received strong positive responses, and delivered practical value to students interested in FinTech and investing.",
+            icon: "🎯",
+            images: [
+              "/maybank.jpg",
+              "/maybank2.jpg", 
+              "/maybank3.jpg"
+            ],
+            links: [
+              {
+                title: "Facebook - Maybank Investment Talk Show",
+                url: "https://www.facebook.com/share/p/1GzVP9BCum/"
+              }
+            ]
           },
           {
             name: "Mid-Autumn Festival Charity Program in Lam Dong",
