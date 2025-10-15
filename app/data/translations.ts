@@ -35,7 +35,8 @@ export const translations = {
       bachelorOf: "CỬ NHÂN NGÀNH",
       financialTechnology: "CÔNG NGHỆ TÀI CHÍNH",
       gpa: "ĐIỂM GPA",
-      ielts: "IELTS"
+      ielts: "IELTS",
+      newsAndMedia: "Báo chí & Truyền thông"
     },
     footer: {
       contact: {
@@ -474,7 +475,8 @@ export const translations = {
       bachelorOf: "BACHELOR OF",
       financialTechnology: "FINANCIAL TECHNOLOGY",
       gpa: "GPA",
-      ielts: "IELTS"
+      ielts: "IELTS",
+      newsAndMedia: "News & Media"
     },
     footer: {
       contact: {
