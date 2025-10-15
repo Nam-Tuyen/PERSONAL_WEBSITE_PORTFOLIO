@@ -188,7 +188,7 @@ export default function Portfolio() {
                             <div className="block text-sm sm:text-base lg:text-lg text-gray-400 font-medium mb-2 sm:mb-3">{t?.labels?.bachelorOf || "Bachelor of"}</div>
                             <div className="block bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent font-black text-xl sm:text-2xl lg:text-3xl">{t?.labels?.financialTechnology || "Financial Technology"}</div>
                           </h4>
-                          <p className="text-[#00d4ff] font-bold text-sm sm:text-base lg:text-lg mb-1">
+                          <p className="text-white/80 font-medium text-sm sm:text-base lg:text-lg mb-1">
                             {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
                           </p>
                           <p className="text-gray-400 text-xs sm:text-sm">2022 - 2026</p>

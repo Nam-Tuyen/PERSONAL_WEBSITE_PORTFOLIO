@@ -413,8 +413,8 @@ export const translations = {
       title: "Contact"
     },
     labels: {
-      bachelorOf: "Bachelor of",
-      financialTechnology: "Financial Technology",
+      bachelorOf: "BACHELOR OF",
+      financialTechnology: "FINANCIAL TECHNOLOGY",
       gpa: "GPA",
       ielts: "IELTS"
     },
