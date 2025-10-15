@@ -6,7 +6,6 @@ import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
 import PageSwitcher from "./components/PageSwitcher"
 import ScrollToTopButton from "./components/ScrollToTopButton"
-import SportsModal from "./components/SportsModal"
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
@@ -18,7 +17,6 @@ export default function Portfolio() {
   }, [])
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
-  const [isSportsModalOpen, setIsSportsModalOpen] = useState(false)
 
   const t = translations[language as keyof typeof translations]
 
