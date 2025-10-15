@@ -483,39 +483,43 @@ export default function PersonalPage() {
                         <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
                           {activity.name}
                         </h3>
-                        {(activity.role || activity.period) && (
-                          <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                            {activity.role}{activity.period ? ` • ${activity.period}` : ''}
-                          </p>
-                        )}
+                        <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 min-h-[1.25rem] sm:min-h-[1.5rem] md:min-h-[1.75rem] lg:min-h-[2rem]">
+                          {(activity.role || activity.period) && (
+                            <p className="text-[#7c3aed] font-medium text-xs sm:text-sm md:text-base">
+                              {activity.role}{activity.period ? ` • ${activity.period}` : ''}
+                            </p>
+                          )}
+                        </div>
                         
                         {/* Links */}
-                        {(activity.website || activity.linkedin) && (
-                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                            {activity.website && (
-                              <a 
-                                href={activity.website} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
-                              >
-                                <span>🌐</span>
-                                Website
-                              </a>
-                            )}
-                            {activity.linkedin && (
-                              <a 
-                                href={activity.linkedin} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
-                              >
-                                <span>💼</span>
-                                LinkedIn
-                              </a>
-                            )}
-                          </div>
-                        )}
+                        <div className="mb-3 sm:mb-4 md:mb-6 min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem]">
+                          {(activity.website || activity.linkedin) && (
+                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                              {activity.website && (
+                                <a 
+                                  href={activity.website} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
+                                >
+                                  <span>🌐</span>
+                                  Website
+                                </a>
+                              )}
+                              {activity.linkedin && (
+                                <a 
+                                  href={activity.linkedin} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
+                                >
+                                  <span>💼</span>
+                                  LinkedIn
+                                </a>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
 
