@@ -877,7 +877,7 @@ export const translations = {
         ]
       },
       researchAchievement: {
-        title: "RESEARCH ACHIEVEMENT",
+        title: "RESEARCH ACHIEVEMENTS",
         items: [
           {
             title: "Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
