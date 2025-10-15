@@ -440,8 +440,8 @@ export const translations = {
     },
     education: {
       title: "ACADEMIC EXCELLENCE",
-      university: "University of Economics and Law (VNU-HCM)",
-      degree: "Bachelor of Financial Technology",
+      university: "UNIVERSITY OF ECONOMICS AND LAW (VNU-HCM)",
+      degree: "BACHELOR OF FINANCIAL TECHNOLOGY",
       gpa: "3.0/4.0",
       ielts: "6.0",
       coursework: [
