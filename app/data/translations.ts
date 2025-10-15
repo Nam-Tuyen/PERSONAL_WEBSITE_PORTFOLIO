@@ -365,6 +365,7 @@ export const translations = {
         items: [
           {
             name: "ATTACKER 2025 - CUỘC THI HỌC THUẬT FINTECH QUY MÔ TOÀN QUỐC",
+            organization: "Rex Hotel",
             description: "Ban tổ chức Cuộc thi học thuật ATTACKER 2025 về Công nghệ Tài chính quy mô toàn quốc, thu hút hơn 2.000 tài khoản sinh viên đăng ký và gần 250 dự án FinTech, đặt mục tiêu tìm kiếm ý tưởng đột phá có khả năng ứng dụng bền vững và tạo bệ phóng để sinh viên biến tri thức thành sản phẩm thực tiễn. Sáu nhóm chủ đề trọng tâm gồm ứng dụng công nghệ trong kinh doanh và kinh tế, sinh trắc học, tự động hóa chấm điểm tín dụng và cho vay, Blockchain trong tài chính và quản lý rủi ro, đổi mới tư duy khởi nghiệp, cùng pháp lý và đạo đức số. Ở vai trò điều phối liên ban, tôi có nhiệm vụ là hỗ trợ dựng khung kế hoạch theo mốc thời gian rõ ràng, phân luồng nhiệm vụ minh bạch, chuẩn hóa thể lệ, tiêu chí chấm và tài liệu hướng dẫn để đội thi nộp bài đúng chuẩn và giám khảo đánh giá nhất quán. Kết quả không chỉ là một mùa giải vận hành trơn tru mà còn mở ra mạng lưới cố vấn, học bổng và cơ hội gọi vốn cho các dự án tiềm năng, góp phần kết nối học thuật với nhu cầu thực tiễn của tài chính số và lan tỏa tinh thần đổi mới sáng tạo trong cộng đồng sinh viên.",
             icon: "🏆",
             images: [
@@ -389,6 +390,7 @@ export const translations = {
           },
           {
             name: "WEB3 CAREER INNOVATION JOB FAIR",
+            organization: "Đại học Kinh tế - Luật",
             description: "Tham gia tổ chức WEB3 CAREER INNOVATION Job Fair với quy mô hơn 3.000 sinh viên với mục tiêu tạo không gian kết nối trực tiếp giữa sinh viên và doanh nghiệp trong lĩnh vực FinTech, Blockchain và Web3. Sự kiện quy tụ 15 doanh nghiệp, triển khai tuyển dụng ngay tại chỗ với hơn 300 vị trí thực tập và cộng tác viên đồng thời có talkshow chuyên sâu thu hút trên 500 sinh viên, giúp người tham dự nắm bắt xu hướng kỹ năng và định hình lộ trình phát triển phù hợp. Nhiệm vụ của tôi trong sự kiện này là điều phối để các bộ phận vận hành nhịp nhàng: bố trí khu Job Fair tiếp nhận hồ sơ và tư vấn trực tiếp, vận hành liên tục khu booth trải nghiệm và khu phỏng vấn nhanh kèm phản hồi CV để bảo đảm dòng trải nghiệm liền mạch cho các bạn sinh viên. Nhờ sự phối hợp chặt chẽ giữa các thành viên, sự kiện diễn ra an toàn, đúng tiến độ và mang đến một ngày hội nghề nghiệp bổ ích, thiết thực cho các bạn sinh viên.",
             icon: "💼",
             images: [
@@ -820,6 +822,7 @@ export const translations = {
         items: [
           {
             name: "ATTACKER 2025 - NATIONAL FINTECH ACADEMIC COMPETITION",
+            organization: "Rex Hotel",
             description: "The ATTACKER 2025 National FinTech Academic Competition attracted over 2,000 student registrations and nearly 250 FinTech projects, aiming to surface breakthrough ideas with sustainable real-world potential and to provide a launchpad for students to turn academic knowledge into practical products. The competition focused on six core themes: technology applications in business and economics, biometric identification, automation in credit scoring and lending, blockchain in finance and risk management, innovation and tech entrepreneurship, and legal, ethical, and privacy issues. In a cross-team coordination role, responsibilities included building a clear timeline-based plan, assigning tasks transparently, and standardizing the rulebook, scoring criteria, and participant guidelines to ensure consistent submissions and fair evaluation. The outcome was not only a smoothly executed season but also a network of mentors, scholarships, and funding opportunities for high-potential projects, strengthening the bridge between academia and industry needs in digital finance while fostering a culture of innovation among students.",
             icon: "🏆",
             images: [

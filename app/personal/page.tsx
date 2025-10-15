@@ -349,7 +349,7 @@ export default function PersonalPage() {
                           {activity.name}
                         </h3>
                         <p className="text-[#00d4ff] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                          {activity.name === "Basketball Team Captain" || activity.name === "Đội trưởng đội bóng rổ" 
+                          {activity.name === "BASKETBALL TEAM CAPTAIN" || activity.name === "ĐỘI TRƯỞNG ĐỘI BÓNG RỔ" 
                             ? activity.organization 
                             : `${activity.organization} • ${activity.period}`}
                         </p>
