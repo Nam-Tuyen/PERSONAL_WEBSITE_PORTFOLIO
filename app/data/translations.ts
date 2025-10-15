@@ -312,7 +312,7 @@ export const translations = {
             ],
             roles: [
               {
-                title: "Phó Chủ tịch",
+                title: "Phó chủ nhiệm câu lạc bộ",
                 period: "2024 - Hiện tại",
                 description: [
                   "Chỉ đạo lập kế hoạch chiến lược, điều phối đa chức năng và quan hệ đối tác. Giám sát các chương trình trọng điểm và sự kiện hướng nghiệp.",
@@ -325,7 +325,7 @@ export const translations = {
                 ]
               },
               {
-                title: "Trưởng Ban Học thuật",
+                title: "Trưởng ban Học thuật",
                 period: "08/2023 - 08/2024",
                 description: [
                   "Dẫn dắt thiết kế chương trình cho các workshop, talkshow và cuộc thi ATTACKER. Xây dựng ngân hàng câu hỏi, tiêu chí chấm điểm và khung đánh giá.",
@@ -734,7 +734,7 @@ export const translations = {
             ],
             roles: [
               {
-                title: "Vice President",
+                title: "Vice Club President",
                 period: "08/2024 - Present",
                 description: [
                   "Directed strategic planning, cross-functional coordination, and partner relations. Oversaw flagship programs and career events.",
@@ -747,7 +747,7 @@ export const translations = {
                 ]
               },
               {
-                title: "Head of Academics",
+                title: "Academic Department Head",
                 period: "08/2023 - 08/2024",
                 description: [
                   "Led curriculum design for workshops, talkshows, and the ATTACKER competition. Built question banks, scoring rubrics, and evaluation frameworks.",
