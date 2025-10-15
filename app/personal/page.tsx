@@ -14,9 +14,6 @@ export default function PersonalPage() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedAchievement, setSelectedAchievement] = useState<string | null>(null)
   const [currentHobbyIndex, setCurrentHobbyIndex] = useState(0)
-  const [touchStart, setTouchStart] = useState<number | null>(null)
-  const [touchEnd, setTouchEnd] = useState<number | null>(null)
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true)
 
   const t = translations[language as keyof typeof translations]
 
@@ -24,19 +21,6 @@ export default function PersonalPage() {
     setMounted(true)
   }, [])
 
-  // Auto-scroll effect
-  useEffect(() => {
-    if (!isAutoScrolling) return
-
-    const interval = setInterval(() => {
-      setCurrentHobbyIndex((prevIndex) => {
-        const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-        return (prevIndex + 1) % totalHobbies
-      })
-    }, 3000) // Change every 3 seconds
-
-    return () => clearInterval(interval)
-  }, [isAutoScrolling, t?.personal?.hobbies?.items?.length])
 
   if (!mounted) {
     return null
@@ -49,40 +33,6 @@ export default function PersonalPage() {
     }
   }
 
-  const minSwipeDistance = 50
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-    setIsAutoScrolling(false) // Pause auto-scroll on touch
-  }
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-
-    if (isLeftSwipe) {
-      setCurrentHobbyIndex((prev) => 
-        prev === (t?.personal?.hobbies?.items?.length || 1) - 1 ? 0 : prev + 1
-      )
-    }
-    if (isRightSwipe) {
-      setCurrentHobbyIndex((prev) => 
-        prev === 0 ? (t?.personal?.hobbies?.items?.length || 1) - 1 : prev - 1
-      )
-    }
-    
-    // Resume auto-scroll after 5 seconds of no interaction
-    setTimeout(() => {
-      setIsAutoScrolling(true)
-    }, 5000)
-  }
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden" suppressHydrationWarning>
@@ -177,179 +127,74 @@ export default function PersonalPage() {
                 <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
               </div>
 
-              <div 
-                className="max-w-7xl mx-auto relative"
-                onTouchStart={onTouchStart}
-                onTouchMove={onTouchMove}
-                onTouchEnd={onTouchEnd}
-              >
-                {/* Modern Horizontal Scrollable Layout */}
-                <div className="relative">
-                  {/* Scroll Container */}
-                  <div className="overflow-x-auto scrollbar-hide scroll-smooth px-2 sm:px-4">
-                    <div className="flex space-x-4 sm:space-x-6 pb-4" style={{ width: 'max-content' }}>
-                      {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
-                        <div
-                          key={index}
-                          className="group cursor-pointer relative flex-shrink-0 sm:w-80"
-                          onClick={() => {
-                            setIsAutoScrolling(false)
-                            setCurrentHobbyIndex(index)
-                            setTimeout(() => setIsAutoScrolling(true), 5000)
-                          }}
-                          style={{
-                            width: '280px',
-                            transform: `translateY(${index === currentHobbyIndex ? '0px' : '10px'})`,
-                            zIndex: index === currentHobbyIndex ? 10 : 5 - index
-                          }}
-                        >
-                          {/* Background Glow Layer */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/10 to-[#00d4ff]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
-                          
-                          {/* Main Card */}
-                          <div className={`relative bg-gradient-to-br from-gray-900/70 to-gray-800/70 backdrop-blur-3xl border rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 transition-all duration-700 hover:scale-105 ${
+              {/* Clean Grid Layout */}
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                  {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
+                    <div
+                      key={index}
+                      className="group cursor-pointer"
+                      onClick={() => setCurrentHobbyIndex(index)}
+                    >
+                      {/* Simple Card */}
+                      <div className={`relative bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border rounded-2xl p-6 transition-all duration-300 hover:scale-105 ${
+                        index === currentHobbyIndex 
+                          ? 'border-[#00ff88]/50 shadow-lg shadow-[#00ff88]/20' 
+                          : 'border-white/20 hover:border-[#00ff88]/30 hover:shadow-lg hover:shadow-[#00ff88]/10'
+                      }`}>
+                        
+                        {/* Icon */}
+                        <div className="flex justify-center mb-4">
+                          <div className={`w-16 h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl flex items-center justify-center transition-all duration-300 border ${
                             index === currentHobbyIndex 
-                              ? 'border-[#00ff88]/50 shadow-2xl shadow-[#00ff88]/20' 
-                              : 'border-white/20 hover:border-[#00ff88]/30 hover:shadow-xl hover:shadow-[#00ff88]/10'
+                              ? 'border-[#00ff88]/40' 
+                              : 'border-white/20 group-hover:border-[#00ff88]/30'
                           }`}>
-                            
-                            {/* Animated Background Pattern */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 via-transparent to-[#00d4ff]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                            
-                            {/* Content */}
-                            <div className="relative z-10 text-center">
-                              {/* Icon Section */}
-                              <div className="relative mb-4 sm:mb-5 md:mb-6">
-                                {/* Icon Background Glow */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/30 to-[#00d4ff]/30 rounded-xl sm:rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
-                                
-                                {/* Icon Container */}
-                                <div className={`relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-700 border ${
-                                  index === currentHobbyIndex 
-                                    ? 'border-[#00ff88]/40 group-hover:scale-110 group-hover:rotate-6' 
-                                    : 'border-white/20 group-hover:scale-110 group-hover:rotate-3'
-                                }`}>
-                                  <span className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300">{hobby.icon}</span>
-                                </div>
-                                
-                                {/* Floating Particles */}
-                                <div className="absolute -top-2 -right-2 w-3 h-3 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
-                                <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-gradient-to-br from-[#00d4ff] to-[#00ff88] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse delay-300"></div>
-                              </div>
-                              
-                              {/* Text Content */}
-                              <div className="space-y-2 sm:space-y-3">
-                                <h3 className={`text-lg sm:text-xl font-bold vietnamese-text transition-colors duration-300 ${
-                                  index === currentHobbyIndex 
-                                    ? 'text-[#00ff88]' 
-                                    : 'text-white group-hover:text-[#00ff88]'
-                                }`}>
-                                  {hobby.name}
-                                </h3>
-                                
-                                <p className="text-gray-300 text-xs sm:text-sm vietnamese-text leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                                  {hobby.description}
-                                </p>
-                              </div>
-                              
-                              {/* Progress Indicator */}
-                              <div className="mt-4 sm:mt-5 md:mt-6 flex justify-center">
-                                <div className={`w-10 sm:w-12 h-0.5 sm:h-1 rounded-full transition-all duration-500 ${
-                                  index === currentHobbyIndex 
-                                    ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff]' 
-                                    : 'bg-white/20 group-hover:bg-white/40'
-                                }`}></div>
-                              </div>
-                            </div>
-                            
-                            {/* Shimmer Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-3xl"></div>
-                            
-                            {/* Corner Accents */}
-                            <div className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                            <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-gradient-to-br from-[#00d4ff] to-[#00ff88] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200"></div>
+                            <span className="text-3xl">{hobby.icon}</span>
                           </div>
                         </div>
-                      ))}
+                        
+                        {/* Content */}
+                        <div className="text-center">
+                          <h3 className={`text-lg font-bold vietnamese-text mb-2 transition-colors duration-300 ${
+                            index === currentHobbyIndex 
+                              ? 'text-[#00ff88]' 
+                              : 'text-white group-hover:text-[#00ff88]'
+                          }`}>
+                            {hobby.name}
+                          </h3>
+                          
+                          <p className="text-gray-300 text-sm vietnamese-text leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                            {hobby.description}
+                          </p>
+                        </div>
+                        
+                        {/* Simple Progress Bar */}
+                        <div className="mt-4 flex justify-center">
+                          <div className={`w-12 h-1 rounded-full transition-all duration-300 ${
+                            index === currentHobbyIndex 
+                              ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff]' 
+                              : 'bg-white/20 group-hover:bg-white/40'
+                          }`}></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Navigation Arrows */}
-                  <button 
-                    onClick={() => {
-                      setIsAutoScrolling(false)
-                      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-                      setCurrentHobbyIndex((prev) => (prev - 1 + totalHobbies) % totalHobbies)
-                      setTimeout(() => setIsAutoScrolling(true), 5000)
-                    }}
-                    className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/90 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center hover:bg-gray-800/90 hover:border-[#00ff88]/50 transition-all duration-300 z-20 shadow-lg"
-                  >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  
-                  <button 
-                    onClick={() => {
-                      setIsAutoScrolling(false)
-                      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-                      setCurrentHobbyIndex((prev) => (prev + 1) % totalHobbies)
-                      setTimeout(() => setIsAutoScrolling(true), 5000)
-                    }}
-                    className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/90 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center hover:bg-gray-800/90 hover:border-[#00ff88]/50 transition-all duration-300 z-20 shadow-lg"
-                  >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
+                  ))}
                 </div>
 
-                {/* Auto-scroll Control */}
-                <div className="flex justify-center mt-4 sm:mt-6">
-                  <button
-                    onClick={() => setIsAutoScrolling(!isAutoScrolling)}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-900/80 backdrop-blur-xl border border-white/20 rounded-full hover:bg-gray-800/80 hover:border-[#00ff88]/40 transition-all duration-300"
-                  >
-                    {isAutoScrolling ? (
-                      <>
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="text-xs sm:text-sm text-white">Pause</span>
-                      </>
-                    ) : (
-                      <>
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5v14l11-7z" />
-                        </svg>
-                        <span className="text-xs sm:text-sm text-white">Play</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                {/* Modern Dots Indicator */}
-                <div className="flex justify-center mt-4 sm:mt-6 gap-3 sm:gap-4">
+                {/* Simple Dots Indicator */}
+                <div className="flex justify-center mt-6 gap-3">
                   {t?.personal?.hobbies?.items?.map((_: any, index: number) => (
                     <button
                       key={index}
-                      onClick={() => {
-                        setIsAutoScrolling(false)
-                        setCurrentHobbyIndex(index)
-                        setTimeout(() => setIsAutoScrolling(true), 5000)
-                      }}
-                      className={`relative transition-all duration-500 ${
+                      onClick={() => setCurrentHobbyIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
                         index === currentHobbyIndex
-                          ? 'w-6 sm:w-8 h-2 sm:h-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg shadow-[#00ff88]/30'
-                          : 'w-2 sm:w-3 h-2 sm:h-3 bg-white/30 hover:bg-white/50 hover:scale-110 rounded-full'
+                          ? 'bg-[#00ff88]'
+                          : 'bg-white/30 hover:bg-white/50'
                       }`}
                       aria-label={`Go to hobby ${index + 1}`}
-                    >
-                      {/* Active dot glow effect */}
-                      {index === currentHobbyIndex && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-sm opacity-50 animate-pulse"></div>
-                      )}
-                    </button>
+                    />
                   ))}
                 </div>
               </div>
