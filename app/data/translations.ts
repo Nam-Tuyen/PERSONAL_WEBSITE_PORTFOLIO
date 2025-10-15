@@ -309,10 +309,7 @@ export const translations = {
             images: [
               "/FTC.JPG",
               "/FTC1.jpg",
-              "/FTC2.jpg",
-              "/attacker.jpg",
-              "/attacker2.jpg",
-              "/attacker3.jpg"
+              "/FTC2.jpg"
             ],
             roles: [
               {
@@ -323,7 +320,7 @@ export const translations = {
                   "Cố vấn cho các trưởng nhóm và triển khai các mẫu, quy trình vận hành tiêu chuẩn để nâng cao chất lượng thực hiện và trách nhiệm giải trình. Quản lý truyền thông với các bên liên quan và báo cáo chương trình cho các nhà tài trợ và đơn vị trường đại học."
                 ],
                 achievements: [
-                  "Ban tổ chức Cuộc thi học thuật ATTACKER 2025 về Công nghệ Tài chính quy mô toàn quốc, thu hút hơn 2.000 tài khoản sinh viên đăng ký và gần 250 dự án FinTech, đặt mục tiêu tìm kiếm ý tưởng đột phá có khả năng ứng dụng bền vững và tạo bệ phóng để sinh viên biến tri thức thành sản phẩm thực tiễn. Sáu nhóm chủ đề trọng tâm gồm ứng dụng công nghệ trong kinh doanh và kinh tế, sinh trắc học, tự động hóa chấm điểm tín dụng và cho vay, Blockchain trong tài chính và quản lý rủi ro, đổi mới tư duy khởi nghiệp, cùng pháp lý và đạo đức số. Ở vai trò điều phối liên ban, tôi có nhiệm vụ là hỗ trợ dựng khung kế hoạch theo mốc thời gian rõ ràng, phân luồng nhiệm vụ minh bạch, chuẩn hóa thể lệ, tiêu chí chấm và tài liệu hướng dẫn để đội thi nộp bài đúng chuẩn và giám khảo đánh giá nhất quán. Kết quả không chỉ là một mùa giải vận hành trơn tru mà còn mở ra mạng lưới cố vấn, học bổng và cơ hội gọi vốn cho các dự án tiềm năng, góp phần kết nối học thuật với nhu cầu thực tiễn của tài chính số và lan tỏa tinh thần đổi mới sáng tạo trong cộng đồng sinh viên.",
+                  "Tổ chức ATTACKER với hơn 1.000 thí sinh đăng ký và xây dựng cầu nối với hệ sinh thái đổi mới sáng tạo fintech của TP.HCM.",
                   "Nâng cao sự công nhận lên Top 10 tại giải thưởng I-Star.",
                   "Nhận Giấy khen của Đoàn trường ĐH Kinh tế – Luật năm học 2024-2025 và được khen thưởng hoàn thành xuất sắc nhiệm vụ năm 2025."
                 ]
@@ -337,20 +334,6 @@ export const translations = {
                   "Điều phối giảng viên và diễn giả trong ngành. Quản lý các nhóm đa chức năng để mang lại kết quả học tập chất lượng cao."
                 ],
                 achievements: []
-              }
-            ],
-            links: [
-              {
-                title: "Tuổi Trẻ - Tìm kiếm ý tưởng fintech táo bạo của sinh viên cả nước",
-                url: "https://tuoitre.vn/tim-kiem-y-tuong-fintech-tao-bao-cua-sinh-vien-ca-nuoc-20250522142808196.htm"
-              },
-              {
-                title: "HTV - Giải nhất cuộc thi ATTACKER 2025 thuộc về sinh viên Trường Đại học Bách khoa",
-                url: "https://htv.com.vn/giai-nhat-cuoc-thi-attacker-2025-thuoc-ve-sinh-vien-truong-dai-hoc-bach-khoa-dai-hoc-quoc-gia-tphcm-222250920181536716.htm"
-              },
-              {
-                title: "UEL - Cuộc thi ATTACKER 2025: Cơ hội cho sinh viên phát triển lĩnh vực FinTech",
-                url: "https://www.uel.edu.vn/tin-tuc/cuoc-thi-attacker-2025-co-hoi-cho-sinh-vien-phat-trien-linh-vuc-fintech"
               }
             ]
           },
@@ -372,11 +355,30 @@ export const translations = {
         title: "HOẠT ĐỘNG XÃ HỘI",
         items: [
           {
-            name: "Mentor cho sinh viên năm nhất",
-            role: "Mentor",
-            period: "2023 - Hiện tại",
-            description: "Hướng dẫn và hỗ trợ sinh viên mới về học tập và định hướng nghề nghiệp",
-            icon: "👨‍🏫"
+            name: "ATTACKER 2025 - Cuộc thi học thuật FinTech quy mô toàn quốc",
+            role: "Ban tổ chức - Điều phối liên ban",
+            period: "2025",
+            description: "Ban tổ chức Cuộc thi học thuật ATTACKER 2025 về Công nghệ Tài chính quy mô toàn quốc, thu hút hơn 2.000 tài khoản sinh viên đăng ký và gần 250 dự án FinTech, đặt mục tiêu tìm kiếm ý tưởng đột phá có khả năng ứng dụng bền vững và tạo bệ phóng để sinh viên biến tri thức thành sản phẩm thực tiễn. Sáu nhóm chủ đề trọng tâm gồm ứng dụng công nghệ trong kinh doanh và kinh tế, sinh trắc học, tự động hóa chấm điểm tín dụng và cho vay, Blockchain trong tài chính và quản lý rủi ro, đổi mới tư duy khởi nghiệp, cùng pháp lý và đạo đức số. Ở vai trò điều phối liên ban, tôi có nhiệm vụ là hỗ trợ dựng khung kế hoạch theo mốc thời gian rõ ràng, phân luồng nhiệm vụ minh bạch, chuẩn hóa thể lệ, tiêu chí chấm và tài liệu hướng dẫn để đội thi nộp bài đúng chuẩn và giám khảo đánh giá nhất quán. Kết quả không chỉ là một mùa giải vận hành trơn tru mà còn mở ra mạng lưới cố vấn, học bổng và cơ hội gọi vốn cho các dự án tiềm năng, góp phần kết nối học thuật với nhu cầu thực tiễn của tài chính số và lan tỏa tinh thần đổi mới sáng tạo trong cộng đồng sinh viên.",
+            icon: "🏆",
+            images: [
+              "/attacker.jpg",
+              "/attacker2.jpg",
+              "/attacker3.jpg"
+            ],
+            links: [
+              {
+                title: "Tuổi Trẻ - Tìm kiếm ý tưởng fintech táo bạo của sinh viên cả nước",
+                url: "https://tuoitre.vn/tim-kiem-y-tuong-fintech-tao-bao-cua-sinh-vien-ca-nuoc-20250522142808196.htm"
+              },
+              {
+                title: "HTV - Giải nhất cuộc thi ATTACKER 2025 thuộc về sinh viên Trường Đại học Bách khoa",
+                url: "https://htv.com.vn/giai-nhat-cuoc-thi-attacker-2025-thuoc-ve-sinh-vien-truong-dai-hoc-bach-khoa-dai-hoc-quoc-gia-tphcm-222250920181536716.htm"
+              },
+              {
+                title: "UEL - Cuộc thi ATTACKER 2025: Cơ hội cho sinh viên phát triển lĩnh vực FinTech",
+                url: "https://www.uel.edu.vn/tin-tuc/cuoc-thi-attacker-2025-co-hoi-cho-sinh-vien-phat-trien-linh-vuc-fintech"
+              }
+            ]
           },
           {
             name: "WEB3 CAREER INNOVATION Job Fair",
@@ -760,10 +762,7 @@ export const translations = {
             images: [
               "/FTC.JPG",
               "/FTC1.jpg",
-              "/FTC2.jpg",
-              "/attacker.jpg",
-              "/attacker2.jpg",
-              "/attacker3.jpg"
+              "/FTC2.jpg"
             ],
             roles: [
               {
@@ -774,7 +773,7 @@ export const translations = {
                   "Mentored team leads and implemented templates and standard operating procedures to scale execution quality and accountability. Managed stakeholder communication and program reporting for sponsors and university units."
                 ],
                 achievements: [
-                  "The ATTACKER 2025 National FinTech Academic Competition attracted over 2,000 student registrations and nearly 250 FinTech projects, aiming to surface breakthrough ideas with sustainable real-world potential and to provide a launchpad for students to turn academic knowledge into practical products. The competition focused on six core themes: technology applications in business and economics, biometric identification, automation in credit scoring and lending, blockchain in finance and risk management, innovation and tech entrepreneurship, and legal, ethical, and privacy issues. In a cross-team coordination role, responsibilities included building a clear timeline-based plan, assigning tasks transparently, and standardizing the rulebook, scoring criteria, and participant guidelines to ensure consistent submissions and fair evaluation. The outcome was not only a smoothly executed season but also a network of mentors, scholarships, and funding opportunities for high-potential projects, strengthening the bridge between academia and industry needs in digital finance while fostering a culture of innovation among students.",
+                  "Organized ATTACKER with more than 1,000 registered contestants and built a bridge to Ho Chi Minh City's innovation ecosystem in fintech.",
                   "Elevated recognition to Top 10 at the I-Star awards.",
                   "Received a Certificate of Merit from the VNU HCM Youth Union for 2024 to 2025 and was commended for outstanding completion of 2025 objectives."
                 ]
@@ -788,20 +787,6 @@ export const translations = {
                   "Coordinated lecturers and industry speakers. Managed cross-functional teams to deliver high-quality learning outcomes."
                 ],
                 achievements: []
-              }
-            ],
-            links: [
-              {
-                title: "Tuoi Tre - Seeking bold fintech ideas from students nationwide",
-                url: "https://tuoitre.vn/tim-kiem-y-tuong-fintech-tao-bao-cua-sinh-vien-ca-nuoc-20250522142808196.htm"
-              },
-              {
-                title: "HTV - First prize of ATTACKER 2025 competition goes to Bach Khoa University students",
-                url: "https://htv.com.vn/giai-nhat-cuoc-thi-attacker-2025-thuoc-ve-sinh-vien-truong-dai-hoc-bach-khoa-dai-hoc-quoc-gia-tphcm-222250920181536716.htm"
-              },
-              {
-                title: "UEL - ATTACKER 2025 competition: Opportunity for students to develop FinTech field",
-                url: "https://www.uel.edu.vn/tin-tuc/cuoc-thi-attacker-2025-co-hoi-cho-sinh-vien-phat-trien-linh-vuc-fintech"
               }
             ]
           },
@@ -823,11 +808,30 @@ export const translations = {
         title: "SOCIAL ACTIVITIES",
         items: [
           {
-            name: "Mentor for First-year Students",
-            role: "Mentor",
-            period: "2023 - Present",
-            description: "Guide and support new students in academics and career orientation",
-            icon: "👨‍🏫"
+            name: "ATTACKER 2025 - National FinTech Academic Competition",
+            role: "Organizing Committee - Cross-team Coordinator",
+            period: "2025",
+            description: "The ATTACKER 2025 National FinTech Academic Competition attracted over 2,000 student registrations and nearly 250 FinTech projects, aiming to surface breakthrough ideas with sustainable real-world potential and to provide a launchpad for students to turn academic knowledge into practical products. The competition focused on six core themes: technology applications in business and economics, biometric identification, automation in credit scoring and lending, blockchain in finance and risk management, innovation and tech entrepreneurship, and legal, ethical, and privacy issues. In a cross-team coordination role, responsibilities included building a clear timeline-based plan, assigning tasks transparently, and standardizing the rulebook, scoring criteria, and participant guidelines to ensure consistent submissions and fair evaluation. The outcome was not only a smoothly executed season but also a network of mentors, scholarships, and funding opportunities for high-potential projects, strengthening the bridge between academia and industry needs in digital finance while fostering a culture of innovation among students.",
+            icon: "🏆",
+            images: [
+              "/attacker.jpg",
+              "/attacker2.jpg",
+              "/attacker3.jpg"
+            ],
+            links: [
+              {
+                title: "Tuổi Trẻ - Seeking bold FinTech ideas from students nationwide",
+                url: "https://tuoitre.vn/tim-kiem-y-tuong-fintech-tao-bao-cua-sinh-vien-ca-nuoc-20250522142808196.htm"
+              },
+              {
+                title: "HTV - First prize of ATTACKER 2025 competition goes to Bach Khoa University students",
+                url: "https://htv.com.vn/giai-nhat-cuoc-thi-attacker-2025-thuoc-ve-sinh-vien-truong-dai-hoc-bach-khoa-dai-hoc-quoc-gia-tphcm-222250920181536716.htm"
+              },
+              {
+                title: "UEL - ATTACKER 2025 competition: Opportunity for students to develop FinTech field",
+                url: "https://www.uel.edu.vn/tin-tuc/cuoc-thi-attacker-2025-co-hoi-cho-sinh-vien-phat-trien-linh-vuc-fintech"
+              }
+            ]
           },
           {
             name: "WEB3 CAREER INNOVATION Job Fair",
