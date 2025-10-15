@@ -3,9 +3,9 @@ export const translations = {
     header: {
       logo: "LNT",
       nav: {
-        home: "Trang chủ",
-        professional: "Chuyên nghiệp",
-        personal: "Cá nhân"
+        home: "TRANG CHỦ",
+        professional: "CHUYÊN NGHIỆP",
+        personal: "CÁ NHÂN"
       }
     },
     sections: {
@@ -19,11 +19,11 @@ export const translations = {
       interests: "QUAN TÂM"
     },
     buttons: {
-      downloadResume: "Tải CV",
-      viewProjects: "Xem Dự án",
-      moreInformation: "Thông tin thêm",
-      jobDescription: "Mô tả công việc",
-      viewProject: "Xem Dự án"
+      downloadResume: "TẢI CV",
+      viewProjects: "XEM DỰ ÁN",
+      moreInformation: "THÔNG TIN THÊM",
+      jobDescription: "MÔ TẢ CÔNG VIỆC",
+      viewProject: "XEM DỰ ÁN"
     },
     scrollIndicator: {
       text: "Cuộn để khám phá"
@@ -48,9 +48,9 @@ export const translations = {
       copyright: "© 2024 LÊ NAM TUYÊN. Tất cả quyền được bảo lưu."
     },
     hero: {
-      greeting: "Xin chào, tôi là",
+      greeting: "XIN CHÀO, TÔI LÀ",
       name: "LÊ NAM TUYÊN",
-      title: "Ứng viên Product Manager & Data Analyst trong lĩnh vực FinTech"
+      title: "ỨNG VIÊN PRODUCT MANAGER & DATA ANALYST TRONG LĨNH VỰC FINTECH"
     },
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
