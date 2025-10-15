@@ -463,80 +463,114 @@ export default function PersonalPage() {
             </section>
 
             {/* Social Activities Section */}
-            <section id="social-activities" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 vietnamese-text">
+            <section id="social-activities" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
                   {t?.personal?.socialActivities?.title || "SOCIAL ACTIVITIES"}
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
+                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {t?.personal?.socialActivities?.items?.map((activity: any, index: number) => (
                   <div key={index} className="group">
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#7c3aed]/30 transition-all duration-500">
-                      <div className="flex items-start gap-6">
-                        <div className="w-14 h-14 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                          <span className="text-xl">{activity.icon}</span>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-xl font-bold text-white mb-2 vietnamese-text">
-                            {activity.name}
-                          </h3>
-                          <p className="text-[#7c3aed] font-medium mb-4">
-                            {activity.role}{activity.period ? ` • ${activity.period}` : ''}
-                          </p>
-                          <p className="text-gray-300 leading-relaxed vietnamese-text">
-                            {activity.description}
-                          </p>
-                          
-                          {/* Images Gallery */}
-                          {activity.images && activity.images.length > 0 && (
-                            <div className="mt-8 pt-6 border-t border-white/10">
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {activity.images.map((image: string, imgIndex: number) => (
-                                  <div key={imgIndex} className="relative group">
-                                    <img 
-                                      src={image} 
-                                      alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                      className="w-full h-64 object-cover rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* External Links */}
-                          {activity.links && activity.links.length > 0 && (
-                            <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 vietnamese-text">
-                                {t?.labels?.newsAndMedia || "News & Media"}
-                              </h4>
-                              <div className="space-y-2 sm:space-y-3">
-                                {activity.links.map((link: any, linkIndex: number) => (
-                                  <a 
-                                    key={linkIndex}
-                                    href={link.url} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-white/10 hover:border-[#7c3aed]/40 hover:bg-gray-800/50 transition-all duration-300 group"
-                                  >
-                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#7c3aed] rounded-full flex-shrink-0"></div>
-                                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300 vietnamese-text text-xs sm:text-sm leading-relaxed">
-                                      {link.title}
-                                    </span>
-                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-[#7c3aed] transition-colors duration-300 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                  </a>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
+                    {/* Header */}
+                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{activity.icon}</span>
                       </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
+                          {activity.name}
+                        </h3>
+                        <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
+                          {activity.role}{activity.period ? ` • ${activity.period}` : ''}
+                        </p>
+                        
+                        {/* Links */}
+                        {(activity.website || activity.linkedin) && (
+                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
+                            {activity.website && (
+                              <a 
+                                href={activity.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
+                              >
+                                <span>🌐</span>
+                                Website
+                              </a>
+                            )}
+                            {activity.linkedin && (
+                              <a 
+                                href={activity.linkedin} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
+                              >
+                                <span>💼</span>
+                                LinkedIn
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500">
+                      {/* Description */}
+                      <div className="mb-3 sm:mb-4 md:mb-6">
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
+                          {activity.description}
+                        </p>
+                      </div>
+                      
+                      {/* Images Gallery */}
+                      {activity.images && activity.images.length > 0 && (
+                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+                            {activity.images.map((image: string, imgIndex: number) => (
+                              <div key={imgIndex} className="relative group">
+                                <img 
+                                  src={image} 
+                                  alt={`${activity.name} - Image ${imgIndex + 1}`}
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* External Links */}
+                      {activity.links && activity.links.length > 0 && (
+                        <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 vietnamese-text">
+                            {t?.labels?.newsAndMedia || "News & Media"}
+                          </h4>
+                          <div className="space-y-2 sm:space-y-3">
+                            {activity.links.map((link: any, linkIndex: number) => (
+                              <a 
+                                key={linkIndex}
+                                href={link.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-white/10 hover:border-[#7c3aed]/40 hover:bg-gray-800/50 transition-all duration-300 group"
+                              >
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#7c3aed] rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 vietnamese-text text-xs sm:text-sm leading-relaxed">
+                                  {link.title}
+                                </span>
+                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-[#7c3aed] transition-colors duration-300 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
