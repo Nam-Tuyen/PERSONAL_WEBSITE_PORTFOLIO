@@ -337,13 +337,6 @@ export const translations = {
             ]
           },
           {
-            name: "Tình nguyện viên Tech4Good",
-            organization: "Tổ chức phi lợi nhuận",
-            period: "2023 - Hiện tại",
-            description: "Hỗ trợ các dự án công nghệ phục vụ cộng đồng, dạy lập trình cho trẻ em",
-            icon: "🤝"
-          },
-          {
             name: "Đội trưởng đội bóng rổ",
             organization: "Đại học Kinh tế - Luật",
             period: "2014 - Hiện tại",
@@ -741,13 +734,6 @@ export const translations = {
                 achievements: []
               }
             ]
-          },
-          {
-            name: "Tech4Good Volunteer",
-            organization: "Non-profit Organization",
-            period: "2023 - Present",
-            description: "Support community technology projects, teach programming to children",
-            icon: "🤝"
           },
           {
             name: "Basketball Team Captain",
