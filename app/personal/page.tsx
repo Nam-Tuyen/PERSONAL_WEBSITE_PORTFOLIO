@@ -165,15 +165,15 @@ export default function PersonalPage() {
                 {/* Modern Horizontal Scrollable Layout */}
                 <div className="relative">
                   {/* Scroll Container */}
-                  <div className="overflow-x-auto scrollbar-hide scroll-smooth">
-                    <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
+                  <div className="overflow-x-auto scrollbar-hide scroll-smooth px-2 sm:px-4">
+                    <div className="flex space-x-4 sm:space-x-6 pb-4" style={{ width: 'max-content' }}>
                       {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                         <div
                           key={index}
-                          className="group cursor-pointer relative flex-shrink-0"
+                          className="group cursor-pointer relative flex-shrink-0 sm:w-80"
                           onClick={() => setCurrentHobbyIndex(index)}
                           style={{
-                            width: '320px',
+                            width: '280px',
                             transform: `translateY(${index === currentHobbyIndex ? '0px' : '10px'})`,
                             zIndex: index === currentHobbyIndex ? 10 : 5 - index
                           }}
@@ -182,7 +182,7 @@ export default function PersonalPage() {
                           <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/10 to-[#00d4ff]/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
                           
                           {/* Main Card */}
-                          <div className={`relative bg-gradient-to-br from-gray-900/70 to-gray-800/70 backdrop-blur-3xl border rounded-3xl p-8 transition-all duration-700 hover:scale-105 ${
+                          <div className={`relative bg-gradient-to-br from-gray-900/70 to-gray-800/70 backdrop-blur-3xl border rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 transition-all duration-700 hover:scale-105 ${
                             index === currentHobbyIndex 
                               ? 'border-[#00ff88]/50 shadow-2xl shadow-[#00ff88]/20' 
                               : 'border-white/20 hover:border-[#00ff88]/30 hover:shadow-xl hover:shadow-[#00ff88]/10'
@@ -194,17 +194,17 @@ export default function PersonalPage() {
                             {/* Content */}
                             <div className="relative z-10 text-center">
                               {/* Icon Section */}
-                              <div className="relative mb-6">
+                              <div className="relative mb-4 sm:mb-5 md:mb-6">
                                 {/* Icon Background Glow */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/30 to-[#00d4ff]/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/30 to-[#00d4ff]/30 rounded-xl sm:rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
                                 
                                 {/* Icon Container */}
-                                <div className={`relative w-20 h-20 mx-auto bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-2xl flex items-center justify-center transition-all duration-700 border ${
+                                <div className={`relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-700 border ${
                                   index === currentHobbyIndex 
                                     ? 'border-[#00ff88]/40 group-hover:scale-110 group-hover:rotate-6' 
                                     : 'border-white/20 group-hover:scale-110 group-hover:rotate-3'
                                 }`}>
-                                  <span className="text-4xl group-hover:scale-110 transition-transform duration-300">{hobby.icon}</span>
+                                  <span className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300">{hobby.icon}</span>
                                 </div>
                                 
                                 {/* Floating Particles */}
@@ -213,8 +213,8 @@ export default function PersonalPage() {
                               </div>
                               
                               {/* Text Content */}
-                              <div className="space-y-3">
-                                <h3 className={`text-xl font-bold vietnamese-text transition-colors duration-300 ${
+                              <div className="space-y-2 sm:space-y-3">
+                                <h3 className={`text-lg sm:text-xl font-bold vietnamese-text transition-colors duration-300 ${
                                   index === currentHobbyIndex 
                                     ? 'text-[#00ff88]' 
                                     : 'text-white group-hover:text-[#00ff88]'
@@ -222,14 +222,14 @@ export default function PersonalPage() {
                                   {hobby.name}
                                 </h3>
                                 
-                                <p className="text-gray-300 text-sm vietnamese-text leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                                <p className="text-gray-300 text-xs sm:text-sm vietnamese-text leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                                   {hobby.description}
                                 </p>
                               </div>
                               
                               {/* Progress Indicator */}
-                              <div className="mt-6 flex justify-center">
-                                <div className={`w-12 h-1 rounded-full transition-all duration-500 ${
+                              <div className="mt-4 sm:mt-5 md:mt-6 flex justify-center">
+                                <div className={`w-10 sm:w-12 h-0.5 sm:h-1 rounded-full transition-all duration-500 ${
                                   index === currentHobbyIndex 
                                     ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff]' 
                                     : 'bg-white/20 group-hover:bg-white/40'
@@ -252,33 +252,33 @@ export default function PersonalPage() {
                   {/* Navigation Arrows */}
                   <button 
                     onClick={() => setCurrentHobbyIndex(Math.max(0, currentHobbyIndex - 1))}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-900/80 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center hover:bg-gray-800/80 hover:border-[#00ff88]/40 transition-all duration-300 z-20"
+                    className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/90 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center hover:bg-gray-800/90 hover:border-[#00ff88]/50 transition-all duration-300 z-20 shadow-lg"
                   >
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   
                   <button 
                     onClick={() => setCurrentHobbyIndex(Math.min((t?.personal?.hobbies?.items?.length || 1) - 1, currentHobbyIndex + 1))}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-900/80 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center hover:bg-gray-800/80 hover:border-[#00ff88]/40 transition-all duration-300 z-20"
+                    className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/90 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center hover:bg-gray-800/90 hover:border-[#00ff88]/50 transition-all duration-300 z-20 shadow-lg"
                   >
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>
 
                 {/* Modern Dots Indicator */}
-                <div className="flex justify-center mt-8 sm:mt-10 gap-4">
+                <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-4">
                   {t?.personal?.hobbies?.items?.map((_: any, index: number) => (
                     <button
                       key={index}
                       onClick={() => setCurrentHobbyIndex(index)}
                       className={`relative transition-all duration-500 ${
                         index === currentHobbyIndex
-                          ? 'w-8 h-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg shadow-[#00ff88]/30'
-                          : 'w-3 h-3 bg-white/30 hover:bg-white/50 hover:scale-110 rounded-full'
+                          ? 'w-6 sm:w-8 h-2 sm:h-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg shadow-[#00ff88]/30'
+                          : 'w-2 sm:w-3 h-2 sm:h-3 bg-white/30 hover:bg-white/50 hover:scale-110 rounded-full'
                       }`}
                       aria-label={`Go to hobby ${index + 1}`}
                     >
