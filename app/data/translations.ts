@@ -306,9 +306,9 @@ export const translations = {
             website: "https://ftc-websites.vercel.app/",
             linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
             images: [
-              "/%E1%BA%A2nh%20c%C3%A2u%20l%E1%BA%A1c%20b%E1%BB%99%20FTC%20(1).JPG",
-              "/%E1%BA%A2nh%20c%C3%A2u%20l%E1%BA%A1c%20b%E1%BB%99%20FTC.jpg",
-              "/FTC_2.jpg"
+              "/FTC.JPG",
+              "/FTC1.jpg",
+              "/FTC2.jpg"
             ],
             roles: [
               {
@@ -712,9 +712,9 @@ export const translations = {
             website: "https://ftc-websites.vercel.app/",
             linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
             images: [
-              "/%E1%BA%A2nh%20c%C3%A2u%20l%E1%BA%A1c%20b%E1%BB%99%20FTC%20(1).JPG",
-              "/%E1%BA%A2nh%20c%C3%A2u%20l%E1%BA%A1c%20b%E1%BB%99%20FTC.jpg",
-              "/FTC_2.jpg"
+              "/FTC.JPG",
+              "/FTC1.jpg",
+              "/FTC2.jpg"
             ],
             roles: [
               {
