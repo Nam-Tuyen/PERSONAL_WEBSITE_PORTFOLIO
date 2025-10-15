@@ -32,9 +32,9 @@ export const translations = {
       title: "LIÊN HỆ"
     },
     labels: {
-      bachelorOf: "Cử nhân ngành",
-      financialTechnology: "Công nghệ Tài chính",
-      gpa: "Điểm GPA",
+      bachelorOf: "CỬ NHÂN NGÀNH",
+      financialTechnology: "CÔNG NGHỆ TÀI CHÍNH",
+      gpa: "ĐIỂM GPA",
       ielts: "IELTS"
     },
     footer: {
@@ -54,13 +54,13 @@ export const translations = {
     },
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
-      quote: "Biến tầm nhìn thành hiện thực, từ ý định đến thành quả",
+      quote: "BIẾN TẦM NHÌN THÀNH HIỆN THỰC, TỪ Ý ĐỊNH ĐẾN THÀNH QUẢ",
       description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm (product discovery), nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, chuyển hoá insight thành yêu cầu sản phẩm rõ ràng, xác lập chỉ số thành công, và triển khai thí nghiệm tinh gọn để nâng cao trải nghiệm người dùng lẫn kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại; xây dựng template và hệ thống báo cáo mở rộng nhằm cải thiện chất lượng và tốc độ thực thi. Định hướng tìm kiếm vị trí Data Analyst hoặc Associate PM trong FinTech để chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được."
     },
     education: {
       title: "THÀNH TÍCH HỌC TẬP",
-      university: "Đại học Kinh tế – Luật (VNU-HCM)",
-      degree: "Cử nhân Công nghệ Tài chính",
+      university: "ĐẠI HỌC KINH TẾ – LUẬT (VNU-HCM)",
+      degree: "CỬ NHÂN CÔNG NGHỆ TÀI CHÍNH",
       gpa: "3.0/4.0",
       ielts: "6.0",
       coursework: [
