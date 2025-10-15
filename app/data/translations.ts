@@ -361,11 +361,30 @@ export const translations = {
             icon: "👨‍🏫"
           },
           {
-            name: "Tham gia các sự kiện networking",
-            role: "Participant",
+            name: "WEB3 CAREER INNOVATION Job Fair",
+            role: "Event Coordinator & Operations Manager",
             period: "2022 - Hiện tại",
-            description: "Tham gia các sự kiện kết nối doanh nghiệp, hội thảo công nghệ và startup",
-            icon: "🌐"
+            description: "Tham gia tổ chức WEB3 CAREER INNOVATION Job Fair với quy mô hơn 3.000 sinh viên với mục tiêu tạo không gian kết nối trực tiếp giữa sinh viên và doanh nghiệp trong lĩnh vực FinTech, Blockchain và Web3. Sự kiện quy tụ 15 doanh nghiệp, triển khai tuyển dụng ngay tại chỗ với hơn 300 vị trí thực tập và cộng tác viên đồng thời có talkshow chuyên sâu thu hút trên 500 sinh viên, giúp người tham dự nắm bắt xu hướng kỹ năng và định hình lộ trình phát triển phù hợp. Nhiệm vụ của tôi trong sự kiện này là điều phối để các bộ phận vận hành nhịp nhàng: bố trí khu Job Fair tiếp nhận hồ sơ và tư vấn trực tiếp, vận hành liên tục khu booth trải nghiệm và khu phỏng vấn nhanh kèm phản hồi CV để bảo đảm dòng trải nghiệm liền mạch cho các bạn sinh viên. Nhờ sự phối hợp chặt chẽ giữa các thành viên, sự kiện diễn ra an toàn, đúng tiến độ và mang đến một ngày hội nghề nghiệp bổ ích, thiết thực cho các bạn sinh viên.",
+            icon: "🌐",
+            images: [
+              "/jobfare.jpg",
+              "/jobfare2.jpg", 
+              "/jobfare3.jpg"
+            ],
+            links: [
+              {
+                title: "Thư viện UEL - Web3 Career Innovation",
+                url: "https://lib.uel.edu.vn/tin-tuc-hoat-dong-13/web3-career-innovation-trai-nghiem-tuyet-voi-cho-sinh-vien-dam-me-fintech-2"
+              },
+              {
+                title: "Blockchain Work - Hơn 3000 bạn trẻ tham gia",
+                url: "https://insider.blockchainwork.net/hon-3000-ban-tre-hao-hung-tham-gia-ket-noi-nghe-nghiep-tai-su-kien-web3-career-innovation-tai-uel"
+              },
+              {
+                title: "Blog Tiền Ảo - Web3 Career Innovation",
+                url: "https://blogtienao.com/web3-career-innovation-canh-cong-buoc-vao-the-gioi-blockchain/"
+              }
+            ]
           },
           {
             name: "Tổ chức workshop kỹ năng mềm",
@@ -764,11 +783,30 @@ export const translations = {
             icon: "👨‍🏫"
           },
           {
-            name: "Networking Events Participation",
-            role: "Participant",
+            name: "WEB3 CAREER INNOVATION Job Fair",
+            role: "Event Coordinator & Operations Manager",
             period: "2022 - Present",
-            description: "Attend business networking events, technology conferences, and startup events",
-            icon: "🌐"
+            description: "Participated in organizing WEB3 CAREER INNOVATION Job Fair with over 3,000 students, aiming to create direct connection space between students and businesses in FinTech, Blockchain and Web3 fields. The event gathered 15 companies, implemented on-site recruitment with over 300 internship and collaborator positions, and featured in-depth talkshows attracting over 500 students, helping participants grasp skill trends and shape appropriate development paths. My responsibilities in this event included coordinating smooth operations across departments: arranging Job Fair area for resume reception and direct consultation, continuously operating experience booth and quick interview area with CV feedback to ensure seamless experience flow for students. Thanks to close coordination between team members, the event ran safely, on schedule and delivered a beneficial, practical career day for students.",
+            icon: "🌐",
+            images: [
+              "/jobfare.jpg",
+              "/jobfare2.jpg", 
+              "/jobfare3.jpg"
+            ],
+            links: [
+              {
+                title: "UEL Library - Web3 Career Innovation",
+                url: "https://lib.uel.edu.vn/tin-tuc-hoat-dong-13/web3-career-innovation-trai-nghiem-tuyet-voi-cho-sinh-vien-dam-me-fintech-2"
+              },
+              {
+                title: "Blockchain Work - Over 3000 young people participated",
+                url: "https://insider.blockchainwork.net/hon-3000-ban-tre-hao-hung-tham-gia-ket-noi-nghe-nghiep-tai-su-kien-web3-career-innovation-tai-uel"
+              },
+              {
+                title: "Blog Tiền Ảo - Web3 Career Innovation",
+                url: "https://blogtienao.com/web3-career-innovation-canh-cong-buoc-vao-the-gioi-blockchain/"
+              }
+            ]
           },
           {
             name: "Soft Skills Workshop Organization",

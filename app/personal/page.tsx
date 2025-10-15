@@ -276,6 +276,32 @@ export default function PersonalPage() {
                               </div>
                             </div>
                           )}
+
+                          {/* External Links */}
+                          {activity.links && activity.links.length > 0 && (
+                            <div className="mt-6 pt-6 border-t border-white/10">
+                              <h4 className="text-lg font-semibold text-white mb-4 vietnamese-text">Tin tức & Báo chí</h4>
+                              <div className="space-y-3">
+                                {activity.links.map((link: any, linkIndex: number) => (
+                                  <a 
+                                    key={linkIndex}
+                                    href={link.url} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-xl border border-white/10 hover:border-[#7c3aed]/40 hover:bg-gray-800/50 transition-all duration-300 group"
+                                  >
+                                    <div className="w-2 h-2 bg-[#7c3aed] rounded-full flex-shrink-0"></div>
+                                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300 vietnamese-text text-sm">
+                                      {link.title}
+                                    </span>
+                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-[#7c3aed] transition-colors duration-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
