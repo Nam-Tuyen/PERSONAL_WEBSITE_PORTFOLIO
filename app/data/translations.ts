@@ -231,7 +231,7 @@ export const translations = {
         },
         {
           name: "THỂ THAO",
-          description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
+          description: "Thích chơi: bóng rổ, pickleball, badminton và tennis, trekking",
           icon: "⚽"
         },
         {
@@ -281,7 +281,7 @@ export const translations = {
           },
           {
             name: "THỂ THAO",
-            description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
+            description: "Thích chơi: bóng rổ, pickleball, badminton và tennis, trekking",
             icon: "⚽"
           },
           {
@@ -677,7 +677,7 @@ export const translations = {
         },
         {
           name: "SPORTS",
-          description: "Play football and swimming to maintain health",
+          description: "Enjoy playing: basketball, pickleball, badminton and tennis, trekking",
           icon: "⚽"
         },
         {
@@ -727,7 +727,7 @@ export const translations = {
           },
           {
             name: "SPORTS",
-            description: "Play football and swimming to maintain health",
+            description: "Enjoy playing: basketball, pickleball, badminton and tennis, trekking",
             icon: "⚽"
           },
           {
