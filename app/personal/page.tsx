@@ -475,7 +475,7 @@ export default function PersonalPage() {
                 {t?.personal?.socialActivities?.items?.map((activity: any, index: number) => (
                   <div key={index} className="group">
                     {/* Header */}
-                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
                         <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{activity.icon}</span>
                       </div>
@@ -483,9 +483,11 @@ export default function PersonalPage() {
                         <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
                           {activity.name}
                         </h3>
-                        <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                          {activity.role}{activity.period ? ` • ${activity.period}` : ''}
-                        </p>
+                        {(activity.role || activity.period) && (
+                          <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
+                            {activity.role}{activity.period ? ` • ${activity.period}` : ''}
+                          </p>
+                        )}
                         
                         {/* Links */}
                         {(activity.website || activity.linkedin) && (
@@ -518,9 +520,9 @@ export default function PersonalPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500">
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
                       {/* Description */}
-                      <div className="mb-3 sm:mb-4 md:mb-6">
+                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
                         <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
                           {activity.description}
                         </p>
