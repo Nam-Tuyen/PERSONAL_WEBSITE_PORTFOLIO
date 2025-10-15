@@ -224,19 +224,24 @@ export const translations = {
       title: "SỞ THÍCH CÁ NHÂN",
       items: [
         {
-          name: "Đọc sách",
+          name: "ĐỌC SÁCH",
           description: "Thích đọc sách về công nghệ, kinh doanh và phát triển bản thân",
           icon: "📚"
         },
         {
-          name: "Thể thao",
+          name: "THỂ THAO",
           description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
           icon: "⚽"
         },
         {
-          name: "Du lịch",
+          name: "DU LỊCH",
           description: "Khám phá các địa điểm mới và trải nghiệm văn hóa",
           icon: "✈️"
+        },
+        {
+          name: "ÂM NHẠC",
+          description: "Chơi guitar và nghe nhạc để thư giãn",
+          icon: "🎵"
         }
       ]
     },
@@ -269,34 +274,24 @@ export const translations = {
         title: "SỞ THÍCH",
         items: [
           {
-            name: "Đọc sách",
+            name: "ĐỌC SÁCH",
             description: "Thích đọc sách về công nghệ, kinh doanh và phát triển bản thân",
             icon: "📚"
           },
           {
-            name: "Thể thao",
+            name: "THỂ THAO",
             description: "Chơi bóng đá và bơi lội để giữ gìn sức khỏe",
             icon: "⚽"
           },
           {
-            name: "Du lịch",
+            name: "DU LỊCH",
             description: "Khám phá các địa điểm mới và trải nghiệm văn hóa",
             icon: "✈️"
           },
           {
-            name: "Nhiếp ảnh",
-            description: "Chụp ảnh phong cảnh và cuộc sống hàng ngày",
-            icon: "📸"
-          },
-          {
-            name: "Âm nhạc",
+            name: "ÂM NHẠC",
             description: "Chơi guitar và nghe nhạc để thư giãn",
             icon: "🎵"
-          },
-          {
-            name: "Nấu ăn",
-            description: "Thử nghiệm các món ăn mới và học hỏi ẩm thực",
-            icon: "🍳"
           }
         ]
       },
@@ -599,19 +594,24 @@ export const translations = {
       title: "PERSONAL HOBBIES",
       items: [
         {
-          name: "Reading",
+          name: "READING",
           description: "Enjoy reading books about technology, business, and personal development",
           icon: "📚"
         },
         {
-          name: "Sports",
+          name: "SPORTS",
           description: "Play football and swimming to maintain health",
           icon: "⚽"
         },
         {
-          name: "Travel",
+          name: "TRAVEL",
           description: "Explore new places and experience different cultures",
           icon: "✈️"
+        },
+        {
+          name: "MUSIC",
+          description: "Play guitar and listen to music for relaxation",
+          icon: "🎵"
         }
       ]
     },
@@ -644,34 +644,24 @@ export const translations = {
         title: "HOBBIES",
         items: [
           {
-            name: "Reading",
+            name: "READING",
             description: "Enjoy reading books about technology, business, and personal development",
             icon: "📚"
           },
           {
-            name: "Sports",
+            name: "SPORTS",
             description: "Play football and swimming to maintain health",
             icon: "⚽"
           },
           {
-            name: "Travel",
+            name: "TRAVEL",
             description: "Explore new places and experience different cultures",
             icon: "✈️"
           },
           {
-            name: "Photography",
-            description: "Capture landscapes and daily life moments",
-            icon: "📸"
-          },
-          {
-            name: "Music",
+            name: "MUSIC",
             description: "Play guitar and listen to music for relaxation",
             icon: "🎵"
-          },
-          {
-            name: "Cooking",
-            description: "Experiment with new dishes and learn about cuisine",
-            icon: "🍳"
           }
         ]
       },
