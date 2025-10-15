@@ -105,121 +105,121 @@ export default function PersonalPage() {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-8">
                 {t?.personal?.extracurriculars?.items?.map((activity: any, index: number) => (
-                  <div key={index} className="group relative">
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl">
-                      <div className="flex flex-col lg:flex-row lg:items-center gap-4 sm:gap-6">
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                            <span className="text-2xl sm:text-3xl">{activity.icon}</span>
+                  <div key={index} className="group">
+                    {/* Header */}
+                    <div className="flex items-start gap-6 mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">{activity.icon}</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-2xl font-bold text-white mb-2 vietnamese-text">
+                          {activity.name}
+                        </h3>
+                        <p className="text-[#00d4ff] font-medium mb-4">
+                          {activity.organization} • {activity.period}
+                        </p>
+                        
+                        {/* Links */}
+                        {(activity.website || activity.linkedin) && (
+                          <div className="flex gap-3 mb-6">
+                            {activity.website && (
+                              <a 
+                                href={activity.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-all duration-300"
+                              >
+                                <span>🌐</span>
+                                Website
+                              </a>
+                            )}
+                            {activity.linkedin && (
+                              <a 
+                                href={activity.linkedin} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300"
+                              >
+                                <span>💼</span>
+                                LinkedIn
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#00d4ff]/30 transition-all duration-500">
+                      {/* Roles */}
+                      {activity.roles && activity.roles.length > 0 ? (
+                        <div className="space-y-8">
+                          {activity.roles.map((role: any, roleIndex: number) => (
+                            <div key={roleIndex} className="border-l-4 border-[#00d4ff]/40 pl-6">
+                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                <h4 className="text-xl font-bold text-white vietnamese-text">
+                                  {role.title}
+                                </h4>
+                                <span className="text-[#00d4ff] font-medium text-sm">
+                                  {role.period}
+                                </span>
+                              </div>
+                              
+                              {/* Role Description */}
+                              {role.description && role.description.length > 0 && (
+                                <div className="mb-6">
+                                  {role.description.map((desc: string, descIndex: number) => (
+                                    <p key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text mb-3">
+                                      {desc}
+                                    </p>
+                                  ))}
+                                </div>
+                              )}
+                              
+                              {/* Achievements */}
+                              {role.achievements && role.achievements.length > 0 && (
+                                <div>
+                                  <h5 className="text-[#00ff88] font-semibold mb-3 vietnamese-text">
+                                    {language === 'vi' ? 'Thành tựu nổi bật:' : 'Key Achievements:'}
+                                  </h5>
+                                  <ul className="space-y-2">
+                                    {role.achievements.map((achievement: string, achIndex: number) => (
+                                      <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-3">
+                                        <span className="text-[#00ff88] mt-2 text-sm">•</span>
+                                        <span>{achievement}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-lg">
+                          {activity.description}
+                        </p>
+                      )}
+                      
+                      {/* Images Gallery */}
+                      {activity.images && activity.images.length > 0 && (
+                        <div className="mt-8 pt-6 border-t border-white/10">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {activity.images.map((image: string, imgIndex: number) => (
+                              <div key={imgIndex} className="relative group">
+                                <img 
+                                  src={image} 
+                                  alt={`${activity.name} - Image ${imgIndex + 1}`}
+                                  className="w-full h-48 object-cover rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                              </div>
+                            ))}
                           </div>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 vietnamese-text">
-                            {activity.name}
-                          </h3>
-                          <p className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 sm:mb-3">
-                            {activity.organization} • {activity.period}
-                          </p>
-                          
-                          {/* Links */}
-                          {(activity.website || activity.linkedin) && (
-                            <div className="flex flex-wrap gap-3 mb-4">
-                              {activity.website && (
-                                <a 
-                                  href={activity.website} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-all duration-300 text-sm"
-                                >
-                                  <span>🌐</span>
-                                  Website
-                                </a>
-                              )}
-                              {activity.linkedin && (
-                                <a 
-                                  href={activity.linkedin} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm"
-                                >
-                                  <span>💼</span>
-                                  LinkedIn
-                                </a>
-                              )}
-                            </div>
-                          )}
-                          
-                          {/* Roles */}
-                          {activity.roles && activity.roles.length > 0 ? (
-                            <div className="space-y-4">
-                              {activity.roles.map((role: any, roleIndex: number) => (
-                                <div key={roleIndex} className="border-l-2 border-[#00d4ff]/30 pl-4">
-                                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                                    <h4 className="text-lg font-bold text-white vietnamese-text">
-                                      {role.title}
-                                    </h4>
-                                    <span className="text-[#00d4ff] text-sm font-medium">
-                                      {role.period}
-                                    </span>
-                                  </div>
-                                  
-                                  {/* Role Description */}
-                                  {role.description && role.description.length > 0 && (
-                                    <div className="mb-3">
-                                      {role.description.map((desc: string, descIndex: number) => (
-                                        <p key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text mb-2 text-sm">
-                                          {desc}
-                                        </p>
-                                      ))}
-                                    </div>
-                                  )}
-                                  
-                                  {/* Achievements */}
-                                  {role.achievements && role.achievements.length > 0 && (
-                                    <div className="mb-3">
-                                      <h5 className="text-[#00ff88] font-semibold text-sm mb-2 vietnamese-text">
-                                        {language === 'vi' ? 'Thành tựu nổi bật:' : 'Key Achievements:'}
-                                      </h5>
-                                      <ul className="space-y-1">
-                                        {role.achievements.map((achievement: string, achIndex: number) => (
-                                          <li key={achIndex} className="text-gray-300 text-sm leading-relaxed vietnamese-text flex items-start gap-2">
-                                            <span className="text-[#00ff88] mt-1">•</span>
-                                            {achievement}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  )}
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-gray-300 leading-relaxed vietnamese-text">
-                              {activity.description}
-                            </p>
-                          )}
-                          
-                          {/* Images Gallery */}
-                          {activity.images && activity.images.length > 0 && (
-                            <div className="mt-4 sm:mt-6">
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                {activity.images.map((image: string, imgIndex: number) => (
-                                  <div key={imgIndex} className="relative group">
-                                    <img 
-                                      src={image} 
-                                      alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                      className="w-full h-32 sm:h-40 object-cover rounded-lg sm:rounded-xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg sm:rounded-xl"></div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -235,24 +235,22 @@ export default function PersonalPage() {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {t?.personal?.socialActivities?.items?.map((activity: any, index: number) => (
-                  <div key={index} className="group relative">
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl h-full">
-                      <div className="flex items-start gap-4 sm:gap-6">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl flex items-center justify-center">
-                            <span className="text-lg sm:text-xl">{activity.icon}</span>
-                          </div>
+                  <div key={index} className="group">
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#7c3aed]/30 transition-all duration-500 h-full">
+                      <div className="flex items-start gap-6">
+                        <div className="w-14 h-14 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                          <span className="text-xl">{activity.icon}</span>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg sm:text-xl font-bold text-white mb-2 vietnamese-text">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-xl font-bold text-white mb-2 vietnamese-text">
                             {activity.name}
                           </h3>
-                          <p className="text-[#7c3aed] font-semibold text-sm mb-2">
+                          <p className="text-[#7c3aed] font-medium mb-4">
                             {activity.role} • {activity.period}
                           </p>
-                          <p className="text-gray-300 text-sm leading-relaxed vietnamese-text">
+                          <p className="text-gray-300 leading-relaxed vietnamese-text">
                             {activity.description}
                           </p>
                         </div>
@@ -272,24 +270,22 @@ export default function PersonalPage() {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-8">
                 {t?.personal?.researchAchievement?.items?.map((achievement: any, index: number) => (
-                  <div key={index} className="group relative">
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl">
-                      <div className="flex flex-col lg:flex-row lg:items-start gap-4 sm:gap-6">
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                            <span className="text-2xl sm:text-3xl">🏆</span>
-                          </div>
+                  <div key={index} className="group">
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#00ff88]/30 transition-all duration-500">
+                      <div className="flex items-start gap-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                          <span className="text-2xl">🏆</span>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 vietnamese-text">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-2xl font-bold text-white mb-2 vietnamese-text">
                             {achievement.title}
                           </h3>
-                          <p className="text-[#00ff88] font-semibold text-sm sm:text-base mb-2 sm:mb-3">
+                          <p className="text-[#00ff88] font-medium mb-4">
                             {achievement.publication} • {achievement.date}
                           </p>
-                          <p className="text-gray-300 leading-relaxed mb-4 vietnamese-text">
+                          <p className="text-gray-300 leading-relaxed mb-6 vietnamese-text text-lg">
                             {achievement.description}
                           </p>
                           {achievement.link && (
@@ -297,9 +293,9 @@ export default function PersonalPage() {
                               href={achievement.link} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-lg hover:scale-105 transition-all duration-300"
+                              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-xl hover:scale-105 transition-all duration-300"
                             >
-                              <span className="mr-2">View Publication</span>
+                              <span>View Publication</span>
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                               </svg>
