@@ -603,21 +603,6 @@ export default function PersonalPage() {
                         <p className="text-[#00ff88] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
                           {achievement.publication} • {achievement.date}
                         </p>
-                        
-                        {/* Links */}
-                        {achievement.link && (
-                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                            <a 
-                              href={achievement.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg sm:rounded-xl text-[#00ff88] hover:bg-[#00ff88]/20 transition-all duration-300 text-sm sm:text-base"
-                            >
-                              <span>📄</span>
-                              View Publication
-                            </a>
-                          </div>
-                        )}
                       </div>
                     </div>
 
@@ -629,6 +614,21 @@ export default function PersonalPage() {
                           {achievement.description}
                         </p>
                       </div>
+                      
+                      {/* Links */}
+                      {achievement.link && (
+                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                          <a 
+                            href={achievement.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg sm:rounded-xl text-[#00ff88] hover:bg-[#00ff88]/20 transition-all duration-300 text-sm sm:text-base"
+                          >
+                            <span>📄</span>
+                            View Publication
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
