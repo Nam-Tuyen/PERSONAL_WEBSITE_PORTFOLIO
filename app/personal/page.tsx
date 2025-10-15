@@ -156,61 +156,109 @@ export default function PersonalPage() {
                 <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
               </div>
 
-              {/* Compact Carousel Layout */}
-              <div className="max-w-2xl mx-auto relative">
-                {/* Carousel Container */}
+              {/* Compact 3D Carousel */}
+              <div className="max-w-4xl mx-auto relative">
+                {/* 3D Carousel Container */}
                 <div 
-                  className="relative overflow-hidden rounded-3xl"
+                  className="relative h-96 perspective-2000"
                   onTouchStart={onTouchStart}
                   onTouchMove={onTouchMove}
                   onTouchEnd={onTouchEnd}
                 >
-                  <div 
-                    className="flex transition-transform duration-500 ease-out"
-                    style={{ transform: `translateX(-${currentHobbyIndex * 100}%)` }}
-                  >
-                    {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
-                      <div key={index} className="w-full flex-shrink-0">
-                        {/* Hobby Card */}
-                        <div className="relative bg-gradient-to-br from-gray-900/70 to-gray-800/70 backdrop-blur-xl border border-[#00ff88]/30 rounded-3xl p-8 mx-4 shadow-2xl shadow-[#00ff88]/10">
-                          {/* Tech Corners */}
-                          <div className="absolute inset-0 pointer-events-none">
-                            <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-[#00ff88]/40"></div>
-                            <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-[#00ff88]/40"></div>
-                            <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-[#00ff88]/40"></div>
-                            <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-[#00ff88]/40"></div>
-                          </div>
-                          
-                          {/* Content */}
-                          <div className="text-center">
-                            {/* Icon */}
-                            <div className="flex justify-center mb-6">
-                              <div className="w-20 h-20 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-2xl flex items-center justify-center border-2 border-[#00ff88]/40 animate-pulse">
-                                <span className="text-4xl">{hobby.icon}</span>
+                  <div className="relative w-full h-full transform-style-preserve-3d">
+                    {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => {
+                      const diff = index - currentHobbyIndex
+                      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
+                      
+                      let translateX = 0
+                      let translateZ = 0
+                      let rotateY = 0
+                      let scale = 1
+                      let opacity = 1
+                      let zIndex = 0
+
+                      if (diff === 0) {
+                        // Center card
+                        translateX = 0
+                        translateZ = 0
+                        rotateY = 0
+                        scale = 1
+                        opacity = 1
+                        zIndex = 3
+                      } else if (diff === 1 || diff === -(totalHobbies - 1)) {
+                        // Right card
+                        translateX = 280
+                        translateZ = -80
+                        rotateY = -12
+                        scale = 0.9
+                        opacity = 0.8
+                        zIndex = 2
+                      } else if (diff === -1 || diff === totalHobbies - 1) {
+                        // Left card
+                        translateX = -280
+                        translateZ = -80
+                        rotateY = 12
+                        scale = 0.9
+                        opacity = 0.8
+                        zIndex = 2
+                      } else if (diff === 2 || diff === -(totalHobbies - 2)) {
+                        // Far right card
+                        translateX = 500
+                        translateZ = -150
+                        rotateY = -20
+                        scale = 0.8
+                        opacity = 0.6
+                        zIndex = 1
+                      } else {
+                        // Far left card
+                        translateX = -500
+                        translateZ = -150
+                        rotateY = 20
+                        scale = 0.8
+                        opacity = 0.6
+                        zIndex = 1
+                      }
+
+                      return (
+                        <div
+                          key={index}
+                          className="absolute w-72 h-80 left-1/2 top-1/2 cursor-pointer transition-all duration-700 ease-out"
+                          style={{
+                            transform: `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
+                            opacity,
+                            zIndex
+                          }}
+                          onClick={() => setCurrentHobbyIndex(index)}
+                        >
+                          {/* Hobby Card */}
+                          <div className="relative w-full h-full bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-[#00ff88]/30 rounded-2xl p-6 shadow-2xl shadow-[#00ff88]/20">
+                            {/* Shimmer Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl"></div>
+                            
+                            {/* Content */}
+                            <div className="relative z-10 text-center h-full flex flex-col items-center justify-center">
+                              {/* Icon */}
+                              <div className="flex justify-center mb-4">
+                                <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center shadow-lg shadow-[#00ff88]/40 relative">
+                                  <span className="text-3xl">{hobby.icon}</span>
+                                  <div className="absolute inset-0 bg-white/20 rounded-xl"></div>
+                                </div>
                               </div>
-                            </div>
-                            
-                            {/* Title */}
-                            <h3 className="text-2xl font-bold text-[#00ff88] mb-4 vietnamese-text tracking-wider uppercase">
-                              {hobby.name}
-                            </h3>
-                            
-                            {/* Description */}
-                            <p className="text-gray-300 text-base vietnamese-text leading-relaxed mb-6 max-w-sm mx-auto">
-                              {hobby.description}
-                            </p>
-                            
-                            {/* Progress Bar */}
-                            <div className="w-20 h-1 bg-[#00ff88]/20 rounded-full mx-auto overflow-hidden">
-                              <div 
-                                className="h-full bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full transition-all duration-1000"
-                                style={{ width: `${(index + 1) * 25}%` }}
-                              ></div>
+                              
+                              {/* Title */}
+                              <h3 className="text-xl font-bold text-[#00ff88] mb-3 vietnamese-text tracking-wide uppercase">
+                                {hobby.name}
+                              </h3>
+                              
+                              {/* Description */}
+                              <p className="text-gray-300 text-sm vietnamese-text leading-relaxed max-w-xs mx-auto">
+                                {hobby.description}
+                              </p>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 </div>
 
@@ -220,7 +268,7 @@ export default function PersonalPage() {
                     const totalHobbies = t?.personal?.hobbies?.items?.length || 1
                     setCurrentHobbyIndex((prev) => (prev - 1 + totalHobbies) % totalHobbies)
                   }}
-                  className="hidden md:flex absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 w-12 h-12 bg-[#00ff88]/20 border-2 border-[#00ff88]/40 rounded-xl items-center justify-center hover:bg-[#00ff88]/30 hover:border-[#00ff88] transition-all duration-300 backdrop-blur-sm"
+                  className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-900/80 backdrop-blur-xl border border-[#00ff88]/40 rounded-full items-center justify-center hover:bg-[#00ff88]/20 hover:border-[#00ff88] transition-all duration-300 z-10"
                 >
                   <svg className="w-6 h-6 text-[#00ff88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -232,7 +280,7 @@ export default function PersonalPage() {
                     const totalHobbies = t?.personal?.hobbies?.items?.length || 1
                     setCurrentHobbyIndex((prev) => (prev + 1) % totalHobbies)
                   }}
-                  className="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 w-12 h-12 bg-[#00ff88]/20 border-2 border-[#00ff88]/40 rounded-xl items-center justify-center hover:bg-[#00ff88]/30 hover:border-[#00ff88] transition-all duration-300 backdrop-blur-sm"
+                  className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-900/80 backdrop-blur-xl border border-[#00ff88]/40 rounded-full items-center justify-center hover:bg-[#00ff88]/20 hover:border-[#00ff88] transition-all duration-300 z-10"
                 >
                   <svg className="w-6 h-6 text-[#00ff88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -245,14 +293,23 @@ export default function PersonalPage() {
                     <button
                       key={index}
                       onClick={() => setCurrentHobbyIndex(index)}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 border-2 ${
+                      className={`transition-all duration-300 border-2 ${
                         index === currentHobbyIndex
-                          ? 'bg-[#00ff88] border-[#00ff88]/30 scale-125 shadow-lg shadow-[#00ff88]/50'
-                          : 'bg-white/20 border-transparent hover:bg-white/40'
+                          ? 'w-8 h-3 bg-[#00ff88] border-[#00ff88]/30 rounded-full shadow-lg shadow-[#00ff88]/50'
+                          : 'w-3 h-3 bg-white/20 border-transparent rounded-full hover:bg-white/40'
                       }`}
                       aria-label={`Go to hobby ${index + 1}`}
                     />
                   ))}
+                </div>
+
+                {/* Counter */}
+                <div className="text-center mt-4">
+                  <div className="inline-block bg-gray-900/60 backdrop-blur-xl px-4 py-2 rounded-full border border-[#00ff88]/20">
+                    <span className="text-sm text-[#00ff88] font-semibold">
+                      {currentHobbyIndex + 1} / {t?.personal?.hobbies?.items?.length || 1}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Swipe Hint - Mobile Only */}
