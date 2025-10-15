@@ -712,7 +712,7 @@ export const translations = {
             roles: [
               {
                 title: "Vice President",
-                period: "2024 - Present",
+                period: "08/2024 - Present",
                 description: [
                   "Directed strategic planning, cross-functional coordination, and partner relations. Oversaw flagship programs and career events.",
                   "Mentored team leads and implemented templates and standard operating procedures to scale execution quality and accountability. Managed stakeholder communication and program reporting for sponsors and university units."
@@ -739,7 +739,7 @@ export const translations = {
             name: "Basketball Team Captain",
             organization: "University of Economics and Law",
             period: "2014 - Present",
-            description: "Committed to basketball for over 10 years, serving as Captain of the University of Economics and Law team, leading the team to participate in national student competitions including VUG 3x3 Vietnam Student Sports and NUC National Student Basketball Championship, while achieving the first championship at Basketball STU Open 2024, a tournament gathering many universities in Ho Chi Minh City. The training and competition process has helped me develop a clear working methodology: setting goals, building strategies, implementing discipline and effective coordination to achieve specific results. These principles are consistently applied in professional environments, focusing on responsibility, performance and execution standards.",
+            description: "Serving as Captain of the University of Economics and Law team, leading the team to participate in national student competitions including VUG 3x3 Vietnam Student Sports and NUC National Student Basketball Championship, while achieving the first championship at Basketball STU Open 2024, a tournament gathering many universities in Ho Chi Minh City. The training and competition process has helped me develop a clear working methodology: setting goals, building strategies, implementing discipline and effective coordination to achieve specific results. These principles are consistently applied in professional environments, focusing on responsibility, performance and execution standards.",
             icon: "🏀",
             images: [
               "/basketballteam.jpg",
