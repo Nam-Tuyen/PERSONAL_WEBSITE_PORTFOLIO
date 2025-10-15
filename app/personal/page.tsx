@@ -130,200 +130,88 @@ export default function PersonalPage() {
 
             {/* Hobbies Section */}
             <section id="hobbies" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 vietnamese-text">
+              <div className="text-center mb-6 sm:mb-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 vietnamese-text">
                   {t?.personal?.hobbies?.title || "HOBBIES"}
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
               </div>
 
-              <div className="relative w-full max-w-7xl mx-auto">
-                {/* Desktop 3D Carousel */}
-                <div className="hidden lg:block relative h-[600px] perspective-2000">
-                  <div className="relative w-full h-full transform-style-preserve-3d">
-                    {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => {
-                      const isActive = index === currentHobbyIndex;
-                      const isLeft = index < currentHobbyIndex;
-                      const isRight = index > currentHobbyIndex;
-                      
-                      let transform = "";
-                      let opacity = 0;
-                      let zIndex = 0;
-                      
-                      if (isActive) {
-                        transform = "translate(-50%, -50%) translateX(0px) translateZ(0px) rotateY(0deg) scale(1)";
-                        opacity = 1;
-                        zIndex = 3;
-                      } else if (isLeft) {
-                        const distance = currentHobbyIndex - index;
-                        const translateX = -350 * distance;
-                        const translateZ = -100 * distance;
-                        const rotateY = 15 * distance;
-                        const scale = 1 - (0.08 * distance);
-                        transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
-                        opacity = 0.8 - (0.2 * distance);
-                        zIndex = 3 - distance;
-                      } else if (isRight) {
-                        const distance = index - currentHobbyIndex;
-                        const translateX = 350 * distance;
-                        const translateZ = -100 * distance;
-                        const rotateY = -15 * distance;
-                        const scale = 1 - (0.08 * distance);
-                        transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
-                        opacity = 0.8 - (0.2 * distance);
-                        zIndex = 3 - distance;
-                      }
-                      
-                      return (
-                        <div
-                          key={index}
-                          className="absolute w-[450px] h-[500px] left-1/2 top-1/2 transform-style-preserve-3d transition-all duration-700 ease-out cursor-pointer group"
-                          style={{
-                            transform,
-                            opacity,
-                            zIndex
-                          }}
-                          onClick={() => setCurrentHobbyIndex(index)}
-                        >
-                          <div className="relative w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border-2 border-[#00ff88]/30 shadow-2xl group-hover:shadow-[#00ff88]/20 transition-all duration-500">
-                            {/* Icon Section */}
-                            <div className="relative w-full h-[70%] flex items-center justify-center overflow-hidden">
-                              <div className="text-8xl mb-4 group-hover:scale-110 transition-transform duration-700">
-                                {hobby.icon}
-                              </div>
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                            </div>
-                            
-                            {/* Content Section */}
-                            <div className="relative h-[30%] flex flex-col items-center justify-center bg-gray-900/5 backdrop-blur-sm overflow-hidden p-4">
-                              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-2000"></div>
-                              <h3 className="text-xl font-bold text-white uppercase tracking-wider text-center relative leading-tight vietnamese-text">
-                                {hobby.name}
-                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
-                              </h3>
-                              <p className="text-gray-300 text-sm text-center mt-2 vietnamese-text leading-relaxed">
-                                {hobby.description}
-                              </p>
+              <div className="max-w-5xl mx-auto">
+                {/* Desktop Compact Grid */}
+                <div className="hidden lg:grid grid-cols-2 gap-6">
+                  {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
+                    <div
+                      key={index}
+                      className="group cursor-pointer"
+                      onClick={() => setCurrentHobbyIndex(index)}
+                    >
+                      <div className="relative bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-[#00ff88]/30 transition-all duration-300 hover:scale-[1.02]">
+                        <div className="flex items-center space-x-4">
+                          <div className="flex-shrink-0">
+                            <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <span className="text-3xl">{hobby.icon}</span>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Mobile Horizontal Scroll */}
-                <div className="lg:hidden relative">
-                  <div className="overflow-x-auto scrollbar-hide pb-4">
-                    <div className="flex gap-4 px-4" style={{scrollSnapType: 'x mandatory'}}>
-                      {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
-                        <div
-                          key={index}
-                          className="flex-shrink-0 w-80 sm:w-96 group cursor-pointer"
-                          style={{scrollSnapAlign: 'start'}}
-                          onClick={() => setCurrentHobbyIndex(index)}
-                        >
-                          <div className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border-2 border-[#00ff88]/30 shadow-xl group-hover:shadow-[#00ff88]/20 transition-all duration-500">
-                            {/* Icon Section */}
-                            <div className="relative w-full h-[70%] flex items-center justify-center overflow-hidden">
-                              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-700">
-                                {hobby.icon}
-                              </div>
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                            </div>
-                            
-                            {/* Content Section */}
-                            <div className="relative h-[30%] flex flex-col items-center justify-center bg-gray-900/5 backdrop-blur-sm overflow-hidden p-4">
-                              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-2000"></div>
-                              <h3 className="text-lg font-bold text-white uppercase tracking-wider text-center relative leading-tight vietnamese-text">
-                                {hobby.name}
-                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
-                              </h3>
-                              <p className="text-gray-300 text-xs text-center mt-2 vietnamese-text leading-relaxed">
-                                {hobby.description}
-                              </p>
-                            </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-bold text-white mb-1 vietnamese-text">
+                              {hobby.name}
+                            </h3>
+                            <p className="text-gray-300 text-sm vietnamese-text leading-relaxed">
+                              {hobby.description}
+                            </p>
                           </div>
                         </div>
-                      ))}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl"></div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
 
-                {/* Navigation Buttons */}
-                <button
-                  onClick={() => setCurrentHobbyIndex((prev) => 
-                    prev === 0 ? (t?.personal?.hobbies?.items?.length || 1) - 1 : prev - 1
-                  )}
-                  className="hidden lg:flex absolute left-5 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-[#00ff88]/15 backdrop-blur-lg border-2 border-[#00ff88]/30 rounded-full items-center justify-center hover:bg-[#00ff88]/25 transition-all duration-300 hover:scale-110 group z-50"
-                  aria-label="Previous hobby"
-                >
-                  <svg className="h-8 w-8 text-[#00ff88] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m15 18-6-6 6-6" />
-                  </svg>
-                </button>
-
-                <button
-                  onClick={() => setCurrentHobbyIndex((prev) => 
-                    prev === (t?.personal?.hobbies?.items?.length || 1) - 1 ? 0 : prev + 1
-                  )}
-                  className="hidden lg:flex absolute right-5 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-[#00ff88]/15 backdrop-blur-lg border-2 border-[#00ff88]/30 rounded-full items-center justify-center hover:bg-[#00ff88]/25 transition-all duration-300 hover:scale-110 group z-50"
-                  aria-label="Next hobby"
-                >
-                  <svg className="h-8 w-8 text-[#00ff88] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 18 6-6-6-6" />
-                  </svg>
-                </button>
-
-                {/* Mobile Navigation Buttons */}
-                <div className="lg:hidden flex justify-center gap-4 mt-6">
-                  <button
-                    onClick={() => setCurrentHobbyIndex((prev) => 
-                      prev === 0 ? (t?.personal?.hobbies?.items?.length || 1) - 1 : prev - 1
-                    )}
-                    className="w-12 h-12 bg-[#00ff88]/15 backdrop-blur-lg border-2 border-[#00ff88]/30 rounded-full flex items-center justify-center hover:bg-[#00ff88]/25 transition-all duration-300 hover:scale-110 group"
-                    aria-label="Previous hobby"
-                  >
-                    <svg className="h-6 w-6 text-[#00ff88] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m15 18-6-6 6-6" />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={() => setCurrentHobbyIndex((prev) => 
-                      prev === (t?.personal?.hobbies?.items?.length || 1) - 1 ? 0 : prev + 1
-                    )}
-                    className="w-12 h-12 bg-[#00ff88]/15 backdrop-blur-lg border-2 border-[#00ff88]/30 rounded-full flex items-center justify-center hover:bg-[#00ff88]/25 transition-all duration-300 hover:scale-110 group"
-                    aria-label="Next hobby"
-                  >
-                    <svg className="h-6 w-6 text-[#00ff88] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 18 6-6-6-6" />
-                    </svg>
-                  </button>
+                {/* Mobile Compact List */}
+                <div className="lg:hidden space-y-4">
+                  {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
+                    <div
+                      key={index}
+                      className="group cursor-pointer"
+                      onClick={() => setCurrentHobbyIndex(index)}
+                    >
+                      <div className="relative bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-xl p-4 hover:border-[#00ff88]/30 transition-all duration-300">
+                        <div className="flex items-center space-x-3">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <span className="text-2xl">{hobby.icon}</span>
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-base font-bold text-white mb-1 vietnamese-text">
+                              {hobby.name}
+                            </h3>
+                            <p className="text-gray-300 text-xs vietnamese-text leading-relaxed">
+                              {hobby.description}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-xl"></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Dots Indicator */}
-                <div className="flex justify-center mt-6 lg:mt-8 gap-3 z-50">
+                {/* Minimalist Dots Indicator */}
+                <div className="flex justify-center mt-6 gap-2">
                   {t?.personal?.hobbies?.items?.map((_: any, index: number) => (
                     <button
                       key={index}
                       onClick={() => setCurrentHobbyIndex(index)}
-                      className={`transition-all duration-300 border-2 border-[#00ff88]/50 rounded-full hover:scale-110 ${
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         index === currentHobbyIndex
-                          ? 'w-8 h-3 sm:w-10 sm:h-3 bg-[#00ff88] shadow-lg shadow-[#00ff88]/60'
-                          : 'w-3 h-3 bg-[#00ff88]/30 hover:bg-[#00ff88]/50'
+                          ? 'bg-[#00ff88] scale-125'
+                          : 'bg-white/30 hover:bg-white/50'
                       }`}
                       aria-label={`Go to hobby ${index + 1}`}
                     />
                   ))}
-                </div>
-
-                {/* Counter */}
-                <div className="flex justify-center mt-4">
-                  <div className="bg-gray-900/20 backdrop-blur-sm px-4 py-2 rounded-full border border-[#00ff88]/20">
-                    <span className="text-sm text-white/80 font-medium">
-                      {currentHobbyIndex + 1} / {t?.personal?.hobbies?.items?.length || 1}
-                    </span>
-                  </div>
                 </div>
               </div>
             </section>
