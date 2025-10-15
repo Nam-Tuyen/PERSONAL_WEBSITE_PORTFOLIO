@@ -56,16 +56,62 @@ export default function PersonalPage() {
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
             
             {/* Hero Section - Personal */}
-            <section id="personal-hero" className="mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="text-center">
-                <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight vietnamese-text">
-                    {t?.personal?.hero?.title || "PERSONAL"}
-                  </h1>
-                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto vietnamese-text">
-                    {t?.personal?.hero?.subtitle || "Discover my passions, interests, and personal journey"}
-                  </p>
+            <section id="personal-hero" className="relative min-h-screen flex items-center justify-center mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
+              <div className="text-center relative z-10">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 -z-10">
+                  <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-full blur-2xl animate-pulse delay-500"></div>
                 </div>
+
+                <div className="space-y-6 sm:space-y-8 md:space-y-12">
+                  {/* Main Title with Gradient Text */}
+                  <div className="relative">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight vietnamese-text">
+                      <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-x">
+                        {t?.personal?.hero?.title || "PERSONAL"}
+                      </span>
+                    </h1>
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-3xl -z-10"></div>
+                  </div>
+
+                  {/* Subtitle with Typewriter Effect */}
+                  <div className="relative">
+                    <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 font-medium leading-relaxed max-w-5xl mx-auto vietnamese-text">
+                      <span className="inline-block opacity-0 animate-fade-in-up delay-500">
+                        {t?.personal?.hero?.subtitle || "Discover my passions, interests, and personal journey"}
+                      </span>
+                    </p>
+                  </div>
+
+                  {/* Decorative Line */}
+                  <div className="flex justify-center items-center space-x-4 mt-8">
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-[#00ff88]"></div>
+                    <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
+                    <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-[#00ff88]"></div>
+                  </div>
+                </div>
+
+                {/* Scroll Indicator */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                  <div className="flex flex-col items-center space-y-2 text-[#00ff88]">
+                    <span className="text-sm font-medium opacity-70">Scroll to explore</span>
+                    <div className="w-6 h-10 border-2 border-[#00ff88]/50 rounded-full flex justify-center">
+                      <div className="w-1 h-3 bg-[#00ff88] rounded-full mt-2 animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Particles */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ff88]/30 rounded-full animate-float delay-0"></div>
+                <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#00d4ff]/40 rounded-full animate-float delay-1000"></div>
+                <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-[#7c3aed]/30 rounded-full animate-float delay-2000"></div>
+                <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-[#00ff88]/40 rounded-full animate-float delay-3000"></div>
+                <div className="absolute bottom-1/4 right-1/2 w-2 h-2 bg-[#00d4ff]/30 rounded-full animate-float delay-4000"></div>
               </div>
             </section>
 
