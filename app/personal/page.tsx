@@ -209,14 +209,22 @@ export default function PersonalPage() {
                         scale = 0.8
                         opacity = 0.6
                         zIndex = 1
+                      } else if (diff === 3 || diff === -(totalHobbies - 3)) {
+                        // Very far right card
+                        translateX = 700
+                        translateZ = -200
+                        rotateY = -25
+                        scale = 0.7
+                        opacity = 0.4
+                        zIndex = 0
                       } else {
-                        // Far left card
-                        translateX = -500
-                        translateZ = -150
-                        rotateY = 20
-                        scale = 0.8
-                        opacity = 0.6
-                        zIndex = 1
+                        // Very far left card
+                        translateX = -700
+                        translateZ = -200
+                        rotateY = 25
+                        scale = 0.7
+                        opacity = 0.4
+                        zIndex = 0
                       }
 
                       return (

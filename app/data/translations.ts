@@ -293,6 +293,16 @@ export const translations = {
             name: "ÂM NHẠC",
             description: "Chơi guitar và nghe nhạc để thư giãn",
             icon: "🎵"
+          },
+          {
+            name: "ẨM THỰC",
+            description: "Đam mê ẩm thực, mỗi hành trình là dịp khám phá hương vị bản địa",
+            icon: "🍳"
+          },
+          {
+            name: "NHIẾP ẢNH",
+            description: "Lưu giữ những khoảnh khắc đáng nhớ qua ống kính",
+            icon: "📸"
           }
         ]
       },
@@ -739,6 +749,16 @@ export const translations = {
             name: "MUSIC",
             description: "Play guitar and listen to music for relaxation",
             icon: "🎵"
+          },
+          {
+            name: "COOKING",
+            description: "Passionate about cuisine, every journey is an opportunity to explore local flavors",
+            icon: "🍳"
+          },
+          {
+            name: "PHOTOGRAPHY",
+            description: "Capture memorable moments through the lens",
+            icon: "📸"
           }
         ]
       },
