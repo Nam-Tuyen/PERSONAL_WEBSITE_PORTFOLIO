@@ -884,7 +884,7 @@ export const translations = {
             publication: "Journal of Southeast Asian Economics",
             date: "2024",
             description: "Research on the relationship between public debt and economic stability in Southeast Asian countries, with the moderating role of national governance. Using panel data from 10 ASEAN countries from 2000-2022.",
-            link: "https://example.com/research-paper"
+            link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
           },
           {
             title: "FinTech Adoption and Financial Inclusion in Vietnam",

@@ -302,24 +302,6 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  {/* Journal Article */}
-                  <a 
-                    href="https://ojs.omniscient.sg/index.php/gep/article/view/62858"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                        className="cursor-pointer p-4 sm:p-6 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-xl sm:rounded-2xl border border-[#7c3aed]/20 hover:border-[#7c3aed]/40 hover:from-[#7c3aed]/20 hover:to-[#00ff88]/20 transition-all duration-300 group block"
-                      >
-                        <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
-                          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#7c3aed] rounded-full animate-pulse"></div>
-                          <h4 className="text-base sm:text-lg font-bold text-white">Journal Article</h4>
-                        </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
-                           Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries
-                         </p>
-                         <div className="mt-2 sm:mt-3 text-xs text-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
-                           Click to view article
-                         </div>
-                      </a>
                     </div>
                     </div>
                 </div>
