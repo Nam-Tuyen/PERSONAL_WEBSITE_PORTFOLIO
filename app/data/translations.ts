@@ -54,7 +54,7 @@ export const translations = {
     },
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
-      quote: "BIẾN TẦM NHÌN THÀNH HIỆN THỰC, TỪ Ý ĐỊNH ĐẾN THÀNH QUẢ",
+      quote: "BIẾN TẦM NHÌN THÀNH HIỆN THỰC\nTỪ Ý ĐỊNH TỚI THÀNH QUẢ",
       description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm (product discovery), nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, chuyển hoá insight thành yêu cầu sản phẩm rõ ràng, xác lập chỉ số thành công, và triển khai thí nghiệm tinh gọn để nâng cao trải nghiệm người dùng lẫn kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại; xây dựng template và hệ thống báo cáo mở rộng nhằm cải thiện chất lượng và tốc độ thực thi. Định hướng tìm kiếm vị trí Data Analyst hoặc Associate PM trong FinTech để chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được."
     },
     education: {
@@ -430,7 +430,7 @@ export const translations = {
     },
     about: {
       label: "PROFESSIONAL PROFILE",
-      quote: "TRANSFORMING VISION INTO REALITY TURNING INTENT INTO RESULTS",
+      quote: "TRANSFORMING VISION INTO REALITY\nTURNING INTENT INTO RESULT",
       description: "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."
     },
     education: {
