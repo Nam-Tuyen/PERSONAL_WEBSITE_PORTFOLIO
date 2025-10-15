@@ -84,7 +84,7 @@ export default function PersonalPage() {
         <div className={`min-h-screen transition-all duration-500 ${
           isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
         }`}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-12">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-4 sm:py-6 md:py-8 lg:py-12">
             
             {/* Hero Section - Personal */}
             <section id="personal-hero" className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] flex items-center justify-center mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
@@ -293,27 +293,27 @@ export default function PersonalPage() {
             </section>
 
             {/* Extracurriculars Section */}
-            <section id="extracurriculars" className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
-              <div className="text-center mb-4 sm:mb-6 md:mb-8">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
+            <section id="extracurriculars" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
                   {t?.personal?.extracurriculars?.title || "EXTRACURRICULARS"}
                 </h2>
-                <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
+                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
               </div>
 
               <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {t?.personal?.extracurriculars?.items?.map((activity: any, index: number) => (
                   <div key={index} className="group">
                     {/* Header */}
-                    <div className="flex items-start gap-3 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-6">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-lg sm:text-xl md:text-2xl">{activity.icon}</span>
+                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{activity.icon}</span>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
                           {activity.name}
                         </h3>
-                        <p className="text-[#00d4ff] font-medium mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base">
+                        <p className="text-[#00d4ff] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
                           {activity.name === "Basketball Team Captain" || activity.name === "Đội trưởng đội bóng rổ" 
                             ? activity.organization 
                             : `${activity.organization} • ${activity.period}`}
@@ -350,7 +350,7 @@ export default function PersonalPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:border-[#00d4ff]/30 transition-all duration-500">
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#00d4ff]/30 transition-all duration-500">
                       {/* Roles */}
                       {activity.roles && activity.roles.length > 0 ? (
                         <div className="space-y-4 sm:space-y-6 md:space-y-8">
@@ -406,14 +406,14 @@ export default function PersonalPage() {
                       
                       {/* Images Gallery */}
                       {activity.images && activity.images.length > 0 && (
-                        <div className="mt-4 sm:mt-6 md:mt-8 pt-4 sm:pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                             {activity.images.map((image: string, imgIndex: number) => (
                               <div key={imgIndex} className="relative group">
                                 <img 
                                   src={image} 
                                   alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                  className="w-full h-64 object-cover rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
@@ -475,24 +475,24 @@ export default function PersonalPage() {
 
                           {/* External Links */}
                           {activity.links && activity.links.length > 0 && (
-                            <div className="mt-6 pt-6 border-t border-white/10">
-                              <h4 className="text-lg font-semibold text-white mb-4 vietnamese-text">
+                            <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 vietnamese-text">
                                 {t?.labels?.newsAndMedia || "News & Media"}
                               </h4>
-                              <div className="space-y-3">
+                              <div className="space-y-2 sm:space-y-3">
                                 {activity.links.map((link: any, linkIndex: number) => (
                                   <a 
                                     key={linkIndex}
                                     href={link.url} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-xl border border-white/10 hover:border-[#7c3aed]/40 hover:bg-gray-800/50 transition-all duration-300 group"
+                                    className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-white/10 hover:border-[#7c3aed]/40 hover:bg-gray-800/50 transition-all duration-300 group"
                                   >
-                                    <div className="w-2 h-2 bg-[#7c3aed] rounded-full flex-shrink-0"></div>
-                                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300 vietnamese-text text-sm">
+                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#7c3aed] rounded-full flex-shrink-0"></div>
+                                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300 vietnamese-text text-xs sm:text-sm leading-relaxed">
                                       {link.title}
                                     </span>
-                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-[#7c3aed] transition-colors duration-300 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-[#7c3aed] transition-colors duration-300 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                   </a>
