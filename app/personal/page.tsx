@@ -16,12 +16,27 @@ export default function PersonalPage() {
   const [currentHobbyIndex, setCurrentHobbyIndex] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true)
 
   const t = translations[language as keyof typeof translations]
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!isAutoScrolling) return
+
+    const interval = setInterval(() => {
+      setCurrentHobbyIndex((prevIndex) => {
+        const totalHobbies = t?.personal?.hobbies?.items?.length || 1
+        return (prevIndex + 1) % totalHobbies
+      })
+    }, 3000) // Change every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [isAutoScrolling, t?.personal?.hobbies?.items?.length])
 
   if (!mounted) {
     return null
@@ -39,6 +54,7 @@ export default function PersonalPage() {
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
+    setIsAutoScrolling(false) // Pause auto-scroll on touch
   }
 
   const onTouchMove = (e: React.TouchEvent) => {
@@ -61,6 +77,11 @@ export default function PersonalPage() {
         prev === 0 ? (t?.personal?.hobbies?.items?.length || 1) - 1 : prev - 1
       )
     }
+    
+    // Resume auto-scroll after 5 seconds of no interaction
+    setTimeout(() => {
+      setIsAutoScrolling(true)
+    }, 5000)
   }
 
   return (
@@ -171,7 +192,11 @@ export default function PersonalPage() {
                         <div
                           key={index}
                           className="group cursor-pointer relative flex-shrink-0 sm:w-80"
-                          onClick={() => setCurrentHobbyIndex(index)}
+                          onClick={() => {
+                            setIsAutoScrolling(false)
+                            setCurrentHobbyIndex(index)
+                            setTimeout(() => setIsAutoScrolling(true), 5000)
+                          }}
                           style={{
                             width: '280px',
                             transform: `translateY(${index === currentHobbyIndex ? '0px' : '10px'})`,
@@ -251,7 +276,12 @@ export default function PersonalPage() {
                   
                   {/* Navigation Arrows */}
                   <button 
-                    onClick={() => setCurrentHobbyIndex(Math.max(0, currentHobbyIndex - 1))}
+                    onClick={() => {
+                      setIsAutoScrolling(false)
+                      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
+                      setCurrentHobbyIndex((prev) => (prev - 1 + totalHobbies) % totalHobbies)
+                      setTimeout(() => setIsAutoScrolling(true), 5000)
+                    }}
                     className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/90 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center hover:bg-gray-800/90 hover:border-[#00ff88]/50 transition-all duration-300 z-20 shadow-lg"
                   >
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -260,7 +290,12 @@ export default function PersonalPage() {
                   </button>
                   
                   <button 
-                    onClick={() => setCurrentHobbyIndex(Math.min((t?.personal?.hobbies?.items?.length || 1) - 1, currentHobbyIndex + 1))}
+                    onClick={() => {
+                      setIsAutoScrolling(false)
+                      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
+                      setCurrentHobbyIndex((prev) => (prev + 1) % totalHobbies)
+                      setTimeout(() => setIsAutoScrolling(true), 5000)
+                    }}
                     className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900/90 backdrop-blur-xl border border-white/30 rounded-full flex items-center justify-center hover:bg-gray-800/90 hover:border-[#00ff88]/50 transition-all duration-300 z-20 shadow-lg"
                   >
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -269,12 +304,40 @@ export default function PersonalPage() {
                   </button>
                 </div>
 
+                {/* Auto-scroll Control */}
+                <div className="flex justify-center mt-4 sm:mt-6">
+                  <button
+                    onClick={() => setIsAutoScrolling(!isAutoScrolling)}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-900/80 backdrop-blur-xl border border-white/20 rounded-full hover:bg-gray-800/80 hover:border-[#00ff88]/40 transition-all duration-300"
+                  >
+                    {isAutoScrolling ? (
+                      <>
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-xs sm:text-sm text-white">Pause</span>
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5v14l11-7z" />
+                        </svg>
+                        <span className="text-xs sm:text-sm text-white">Play</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
                 {/* Modern Dots Indicator */}
-                <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-4">
+                <div className="flex justify-center mt-4 sm:mt-6 gap-3 sm:gap-4">
                   {t?.personal?.hobbies?.items?.map((_: any, index: number) => (
                     <button
                       key={index}
-                      onClick={() => setCurrentHobbyIndex(index)}
+                      onClick={() => {
+                        setIsAutoScrolling(false)
+                        setCurrentHobbyIndex(index)
+                        setTimeout(() => setIsAutoScrolling(true), 5000)
+                      }}
                       className={`relative transition-all duration-500 ${
                         index === currentHobbyIndex
                           ? 'w-6 sm:w-8 h-2 sm:h-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full shadow-lg shadow-[#00ff88]/30'
