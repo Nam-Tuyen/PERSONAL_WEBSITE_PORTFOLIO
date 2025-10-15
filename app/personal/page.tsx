@@ -483,43 +483,39 @@ export default function PersonalPage() {
                         <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
                           {activity.name}
                         </h3>
-                        <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 min-h-[1.25rem] sm:min-h-[1.5rem] md:min-h-[1.75rem] lg:min-h-[2rem]">
-                          {(activity.role || activity.period) && (
-                            <p className="text-[#7c3aed] font-medium text-xs sm:text-sm md:text-base">
-                              {activity.role}{activity.period ? ` • ${activity.period}` : ''}
-                            </p>
-                          )}
-                        </div>
+                        {(activity.role || activity.period) && (
+                          <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
+                            {activity.role}{activity.period ? ` • ${activity.period}` : ''}
+                          </p>
+                        )}
                         
                         {/* Links */}
-                        <div className="mb-3 sm:mb-4 md:mb-6 min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem]">
-                          {(activity.website || activity.linkedin) && (
-                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                              {activity.website && (
-                                <a 
-                                  href={activity.website} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
-                                >
-                                  <span>🌐</span>
-                                  Website
-                                </a>
-                              )}
-                              {activity.linkedin && (
-                                <a 
-                                  href={activity.linkedin} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
-                                >
-                                  <span>💼</span>
-                                  LinkedIn
-                                </a>
-                              )}
-                            </div>
-                          )}
-                        </div>
+                        {(activity.website || activity.linkedin) && (
+                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
+                            {activity.website && (
+                              <a 
+                                href={activity.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
+                              >
+                                <span>🌐</span>
+                                Website
+                              </a>
+                            )}
+                            {activity.linkedin && (
+                              <a 
+                                href={activity.linkedin} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
+                              >
+                                <span>💼</span>
+                                LinkedIn
+                              </a>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
 
@@ -584,46 +580,54 @@ export default function PersonalPage() {
             </section>
 
             {/* Research Achievement Section */}
-            <section id="research-achievement" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 vietnamese-text">
-                  {t?.personal?.researchAchievement?.title || "RESEARCH ACHIEVEMENT"}
+            <section id="research-achievement" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
+                  {t?.personal?.researchAchievement?.title || "RESEARCH ACHIEVEMENTS"}
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
+                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {t?.personal?.researchAchievement?.items?.map((achievement: any, index: number) => (
                   <div key={index} className="group">
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#00ff88]/30 transition-all duration-500">
-                      <div className="flex items-start gap-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                          <span className="text-2xl">🏆</span>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-2xl font-bold text-white mb-2 vietnamese-text">
-                            {achievement.title}
-                          </h3>
-                          <p className="text-[#00ff88] font-medium mb-4">
-                            {achievement.publication} • {achievement.date}
-                          </p>
-                          <p className="text-gray-300 leading-relaxed mb-6 vietnamese-text text-lg">
-                            {achievement.description}
-                          </p>
-                          {achievement.link && (
+                    {/* Header */}
+                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">🏆</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
+                          {achievement.title}
+                        </h3>
+                        <p className="text-[#00ff88] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
+                          {achievement.publication} • {achievement.date}
+                        </p>
+                        
+                        {/* Links */}
+                        {achievement.link && (
+                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
                             <a 
                               href={achievement.link} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-semibold rounded-xl hover:scale-105 transition-all duration-300"
+                              className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg sm:rounded-xl text-[#00ff88] hover:bg-[#00ff88]/20 transition-all duration-300 text-sm sm:text-base"
                             >
-                              <span>View Publication</span>
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                              </svg>
+                              <span>📄</span>
+                              View Publication
                             </a>
-                          )}
-                        </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#00ff88]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
+                      {/* Description */}
+                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
+                          {achievement.description}
+                        </p>
                       </div>
                     </div>
                   </div>
