@@ -377,7 +377,6 @@ export const translations = {
           {
             name: "Chương trình thiện nguyện Trung thu tại Lâm Đồng",
             role: "Volunteer & Event Coordinator",
-            period: "2022 - Hiện tại",
             description: "Tham gia chương trình thiện nguyện cùng giáo xứ tại Lâm Đồng, phối hợp tổ chức gian hàng hội chợ Trung thu dành cho trẻ em có hoàn cảnh khó khăn. Công việc được triển khai tuần tự và rõ ràng: lên ý tưởng chủ đề, kêu gọi đóng góp, chuẩn bị vật phẩm, thiết kế trò chơi trong đó phụ trách thiết kế và vận hành trò chơi ném vòng, bố trí lối đi, phân công ca trực và trao quà. Sự kiện diễn ra an toàn, đúng tiến độ, mang lại một đêm Trung thu ấm áp với nhiều nụ cười và sự sẻ chia. Trải nghiệm này giúp rèn luyện kỹ năng điều phối tình nguyện viên, quản lý ngân sách nhỏ, truyền thông cộng đồng và xử lý tình huống linh hoạt khi nguồn lực hạn chế.",
             icon: "❤️",
             images: [
@@ -781,7 +780,6 @@ export const translations = {
           {
             name: "Mid-Autumn Festival Charity Program in Lam Dong",
             role: "Volunteer & Event Coordinator",
-            period: "2022 - Present",
             description: "Participated in charity program with local parish in Lam Dong, coordinated Mid-Autumn Festival fair booth for underprivileged children. Work was implemented systematically and clearly: developing theme ideas, calling for contributions, preparing materials, designing games including taking charge of designing and operating ring toss game, arranging pathways, assigning shifts and distributing gifts. The event ran safely and on schedule, bringing a warm Mid-Autumn night with many smiles and sharing. This experience helped develop skills in volunteer coordination, small budget management, community communication and flexible problem-solving with limited resources.",
             icon: "❤️",
             images: [

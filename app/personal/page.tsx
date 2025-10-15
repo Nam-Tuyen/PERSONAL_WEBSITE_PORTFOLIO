@@ -253,7 +253,7 @@ export default function PersonalPage() {
                             {activity.name}
                           </h3>
                           <p className="text-[#7c3aed] font-medium mb-4">
-                            {activity.role} • {activity.period}
+                            {activity.role}{activity.period ? ` • ${activity.period}` : ''}
                           </p>
                           <p className="text-gray-300 leading-relaxed vietnamese-text">
                             {activity.description}
