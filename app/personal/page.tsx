@@ -240,10 +240,10 @@ export default function PersonalPage() {
                 <div className="w-24 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="space-y-8">
                 {t?.personal?.socialActivities?.items?.map((activity: any, index: number) => (
                   <div key={index} className="group">
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#7c3aed]/30 transition-all duration-500 h-full">
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#7c3aed]/30 transition-all duration-500">
                       <div className="flex items-start gap-6">
                         <div className="w-14 h-14 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
                           <span className="text-xl">{activity.icon}</span>
@@ -258,6 +258,24 @@ export default function PersonalPage() {
                           <p className="text-gray-300 leading-relaxed vietnamese-text">
                             {activity.description}
                           </p>
+                          
+                          {/* Images Gallery */}
+                          {activity.images && activity.images.length > 0 && (
+                            <div className="mt-8 pt-6 border-t border-white/10">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {activity.images.map((image: string, imgIndex: number) => (
+                                  <div key={imgIndex} className="relative group">
+                                    <img 
+                                      src={image} 
+                                      alt={`${activity.name} - Image ${imgIndex + 1}`}
+                                      className="w-full h-64 object-cover rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
