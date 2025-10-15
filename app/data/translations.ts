@@ -415,6 +415,7 @@ export const translations = {
           },
           {
             name: "TALKSHOW 'CHỨNG KHOÁN THỜI CÔNG NGHỆ – TƯ DUY TIẾP CẬN PHÙ HỢP'",
+            organization: "Đại học Kinh tế - Luật",
             description: "Chỉ đạo tổ chức Talkshow \"Chứng khoán thời công nghệ – tư duy tiếp cận phù hợp\" hợp tác với Maybank Investment Bank Vietnam, quy mô hơn 100 sinh viên, với mục tiêu cập nhật xu hướng tài chính 2024, giúp người tham dự nhìn rõ bức tranh thị trường chứng khoán Việt Nam và trang bị tư duy tiếp cận phù hợp trong giai đoạn chuyển đổi số. Nội dung chương trình tập trung vào ba trụ cột: chiến lược đầu tư, quản trị rủi ro và kiểm soát tâm lý hành vi, qua đó hỗ trợ sinh viên xây dựng phương pháp đầu tư bền vững và nâng cao năng lực ra quyết định. Vai trò của tôi trong sự kiện này là điều phối các ban trong câu lạc bộ từ việc xây dựng kịch bản theo mốc thời gian, làm việc với diễn giả và chuẩn bị nội dung, quản lý truyền thông đồng thời tổng hợp phản hồi để cải thiện cho lần sau. Kết quả là Talkshow đã diễn ra đúng tiến độ và nhận lại nhiều phản hồi tích cực, mang lại giá trị thiết thực cho cộng đồng sinh viên trong lĩnh vực FinTech và đầu tư.",
             icon: "📈",
             images: [
@@ -848,6 +849,7 @@ export const translations = {
           },
           {
             name: "WEB3 CAREER INNOVATION JOB FAIR",
+            organization: "University of Economics and Law",
             description: "Participated in organizing WEB3 CAREER INNOVATION Job Fair with over 3,000 students, aiming to create direct connection space between students and businesses in FinTech, Blockchain and Web3 fields. The event gathered 15 companies, implemented on-site recruitment with over 300 internship and collaborator positions, and featured in-depth talkshows attracting over 500 students, helping participants grasp skill trends and shape appropriate development paths. My responsibilities in this event included coordinating smooth operations across departments: arranging Job Fair area for resume reception and direct consultation, continuously operating experience booth and quick interview area with CV feedback to ensure seamless experience flow for students. Thanks to close coordination between team members, the event ran safely, on schedule and delivered a beneficial, practical career day for students.",
             icon: "💼",
             images: [
@@ -872,6 +874,7 @@ export const translations = {
           },
           {
             name: "TALK SHOW 'INVESTING IN THE AGE OF TECHNOLOGY: A PRACTICAL MINDSET'",
+            organization: "University of Economics and Law",
             description: "Directed the talk show \"Investing in the Age of Technology: A Practical Mindset\" in partnership with Maybank Investment Bank Vietnam for an audience of over 100 students. The event updated 2024 financial trends, offered a clear view of Vietnam's stock market, and equipped attendees with a technology-aware investing mindset. Content focused on three pillars: investment strategy, risk management, and behavioral discipline, helping students build sustainable approaches and make better decisions. In a coordinating capacity, ensured smooth cross-team execution by developing a timeline-based run of show, working with speakers and curating content, managing communications, and compiling post-event feedback for improvement. The talk show ran on schedule, received strong positive responses, and delivered practical value to students interested in FinTech and investing.",
             icon: "📈",
             images: [
