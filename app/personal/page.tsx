@@ -280,7 +280,7 @@ export default function PersonalPage() {
                           {/* External Links */}
                           {activity.links && activity.links.length > 0 && (
                             <div className="mt-6 pt-6 border-t border-white/10">
-                              <h4 className="text-lg font-semibold text-white mb-4 vietnamese-text">Tin tức & Báo chí</h4>
+                              <h4 className="text-lg font-semibold text-white mb-4 vietnamese-text">News & Media</h4>
                               <div className="space-y-3">
                                 {activity.links.map((link: any, linkIndex: number) => (
                                   <a 
