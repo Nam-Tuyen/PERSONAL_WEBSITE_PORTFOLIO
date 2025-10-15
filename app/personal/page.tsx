@@ -84,10 +84,10 @@ export default function PersonalPage() {
         <div className={`min-h-screen transition-all duration-500 ${
           isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
         }`}>
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-12">
             
             {/* Hero Section - Personal */}
-            <section id="personal-hero" className="relative h-[70vh] flex items-center justify-center mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+            <section id="personal-hero" className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] flex items-center justify-center mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
               <div className="text-center relative z-10">
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0 -z-10">
@@ -127,10 +127,10 @@ export default function PersonalPage() {
 
                 {/* Scroll Indicator */}
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                  <div className="flex flex-col items-center space-y-2 text-[#00ff88]">
+                  <div className="flex flex-col items-center space-y-2 text-white">
                     <span className="text-sm font-medium opacity-70">Scroll to explore</span>
-                    <div className="w-6 h-10 border-2 border-[#00ff88]/50 rounded-full flex justify-center">
-                      <div className="w-1 h-3 bg-[#00ff88] rounded-full mt-2 animate-pulse"></div>
+                    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                      <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
                     </div>
                   </div>
                 </div>
@@ -148,12 +148,12 @@ export default function PersonalPage() {
 
 
             {/* Hobbies Section */}
-            <section id="hobbies" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="text-center mb-6 sm:mb-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 vietnamese-text">
+            <section id="hobbies" className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+              <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
                   {t?.personal?.hobbies?.title || "HOBBIES"}
                 </h2>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
+                <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
               </div>
 
               <div 
@@ -163,7 +163,7 @@ export default function PersonalPage() {
                 onTouchEnd={onTouchEnd}
               >
                 {/* Desktop Compact Grid */}
-                <div className="hidden lg:grid grid-cols-2 gap-6">
+                <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                   {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                     <div
                       key={index}
@@ -193,29 +193,29 @@ export default function PersonalPage() {
                 </div>
 
                 {/* Mobile Compact List */}
-                <div className="lg:hidden space-y-4">
+                <div className="md:hidden space-y-3 sm:space-y-4">
                   {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                     <div
                       key={index}
                       className="group cursor-pointer"
                       onClick={() => setCurrentHobbyIndex(index)}
                     >
-                      <div className="relative bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-xl p-4 hover:border-[#00ff88]/30 transition-all duration-300">
-                        <div className="flex items-center space-x-3">
-                          <div className="flex-shrink-0">
-                            <div className="w-12 h-12 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <span className="text-2xl">{hobby.icon}</span>
-                            </div>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-base font-bold text-white mb-1 vietnamese-text">
-                              {hobby.name}
-                            </h3>
-                            <p className="text-gray-300 text-xs vietnamese-text leading-relaxed">
-                              {hobby.description}
-                            </p>
+                    <div className="relative bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-[#00ff88]/30 transition-all duration-300">
+                      <div className="flex items-center space-x-3 sm:space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span className="text-xl sm:text-2xl">{hobby.icon}</span>
                           </div>
                         </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm sm:text-base font-bold text-white mb-1 vietnamese-text">
+                            {hobby.name}
+                          </h3>
+                          <p className="text-gray-300 text-xs sm:text-sm vietnamese-text leading-relaxed">
+                            {hobby.description}
+                          </p>
+                        </div>
+                      </div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-xl"></div>
                       </div>
                     </div>
@@ -241,27 +241,27 @@ export default function PersonalPage() {
             </section>
 
             {/* Extracurriculars Section */}
-            <section id="extracurriculars" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 vietnamese-text">
+            <section id="extracurriculars" className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+              <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
                   {t?.personal?.extracurriculars?.title || "EXTRACURRICULARS"}
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
+                <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {t?.personal?.extracurriculars?.items?.map((activity: any, index: number) => (
                   <div key={index} className="group">
                     {/* Header */}
-                    <div className="flex items-start gap-6 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-2xl">{activity.icon}</span>
+                    <div className="flex items-start gap-3 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-lg sm:text-xl md:text-2xl">{activity.icon}</span>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-2xl font-bold text-white mb-2 vietnamese-text">
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text">
                           {activity.name}
                         </h3>
-                        <p className="text-[#00d4ff] font-medium mb-4">
+                        <p className="text-[#00d4ff] font-medium mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base">
                           {activity.name === "Basketball Team Captain" || activity.name === "Đội trưởng đội bóng rổ" 
                             ? activity.organization 
                             : `${activity.organization} • ${activity.period}`}
@@ -269,13 +269,13 @@ export default function PersonalPage() {
                         
                         {/* Links */}
                         {(activity.website || activity.linkedin) && (
-                          <div className="flex gap-3 mb-6">
+                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
                             {activity.website && (
                               <a 
                                 href={activity.website} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-all duration-300"
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg sm:rounded-xl text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-all duration-300 text-sm sm:text-base"
                               >
                                 <span>🌐</span>
                                 Website
@@ -286,7 +286,7 @@ export default function PersonalPage() {
                                 href={activity.linkedin} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300"
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
                               >
                                 <span>💼</span>
                                 LinkedIn
@@ -298,28 +298,28 @@ export default function PersonalPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-[#00d4ff]/30 transition-all duration-500">
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:border-[#00d4ff]/30 transition-all duration-500">
                       {/* Roles */}
                       {activity.roles && activity.roles.length > 0 ? (
-                        <div className="space-y-8">
+                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
                           {activity.roles.map((role: any, roleIndex: number) => (
-                            <div key={roleIndex} className="border-l-4 border-[#00d4ff]/40 pl-6">
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                                <h4 className="text-xl font-bold text-white vietnamese-text">
+                            <div key={roleIndex} className="border-l-4 border-[#00d4ff]/40 pl-3 sm:pl-4 md:pl-6">
+                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-3 md:mb-4">
+                                <h4 className="text-lg sm:text-xl font-bold text-white vietnamese-text">
                                   {role.title}
                                 </h4>
-                                <span className="text-[#00d4ff] font-medium text-sm">
+                                <span className="text-[#00d4ff] font-medium text-xs sm:text-sm">
                                   {role.period}
                                 </span>
                               </div>
                               
                               {/* Role Description */}
                               {role.description && role.description.length > 0 && (
-                                <div className="mb-6">
-                                  <ul className="space-y-3">
+                                <div className="mb-3 sm:mb-4 md:mb-6">
+                                  <ul className="space-y-2 sm:space-y-3">
                                     {role.description.map((desc: string, descIndex: number) => (
-                                      <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-3 group">
-                                        <div className="w-2 h-2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                      <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
+                                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
                                         <span className="group-hover:text-white transition-colors duration-300">{desc}</span>
                                       </li>
                                     ))}
@@ -330,13 +330,13 @@ export default function PersonalPage() {
                               {/* Achievements */}
                               {role.achievements && role.achievements.length > 0 && (
                                 <div>
-                                  <h5 className="text-[#00ff88] font-semibold mb-3 vietnamese-text">
+                                  <h5 className="text-[#00ff88] font-semibold mb-2 sm:mb-3 vietnamese-text text-sm sm:text-base">
                                     {language === 'vi' ? 'Thành tựu nổi bật:' : 'Key Achievements:'}
                                   </h5>
-                                  <ul className="space-y-3">
+                                  <ul className="space-y-2 sm:space-y-3">
                                     {role.achievements.map((achievement: string, achIndex: number) => (
-                                      <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-3 group">
-                                        <div className="w-2 h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                      <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
+                                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
                                         <span className="group-hover:text-white transition-colors duration-300">{achievement}</span>
                                       </li>
                                     ))}
@@ -347,15 +347,15 @@ export default function PersonalPage() {
                           ))}
                         </div>
                       ) : (
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-lg">
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
                           {activity.description}
                         </p>
                       )}
                       
                       {/* Images Gallery */}
                       {activity.images && activity.images.length > 0 && (
-                        <div className="mt-8 pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="mt-4 sm:mt-6 md:mt-8 pt-4 sm:pt-6 border-t border-white/10">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                             {activity.images.map((image: string, imgIndex: number) => (
                               <div key={imgIndex} className="relative group">
                                 <img 
