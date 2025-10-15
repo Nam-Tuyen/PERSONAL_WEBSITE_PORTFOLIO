@@ -395,11 +395,11 @@ export const translations = {
       interests: "INTERESTS"
     },
     buttons: {
-      downloadResume: "Download Resume",
-      viewProjects: "View Projects",
-      moreInformation: "More information",
-      jobDescription: "Job Description",
-      viewProject: "View Project"
+      downloadResume: "DOWNLOAD RESUME",
+      viewProjects: "VIEW PROJECTS",
+      moreInformation: "MORE INFORMATION",
+      jobDescription: "JOB DESCRIPTION",
+      viewProject: "VIEW PROJECT"
     },
     scrollIndicator: {
       text: "Scroll to explore"
