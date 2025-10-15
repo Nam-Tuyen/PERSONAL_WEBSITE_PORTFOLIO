@@ -350,7 +350,6 @@ export const translations = {
           {
             name: "ĐỘI TRƯỞNG ĐỘI BÓNG RỔ",
             organization: "Đại học Kinh tế - Luật",
-            period: "2014 - Hiện tại",
             description: "Gắn bó với bóng rổ hơn 10 năm, đảm nhiệm vai trò Đội trưởng đội tuyển Đại học Kinh tế – Luật, dẫn dắt đội tham dự các giải sinh viên cấp quốc gia gồm VUG 3x3 Giải Thể thao Sinh viên Việt Nam và NUC Giải bóng rổ sinh viên toàn quốc, đồng thời đạt chức vô địch đầu tiên tại Basketball STU Open 2024, một giải quy tụ nhiều trường đại học tại TP.HCM. Quá trình rèn luyện và thi đấu đã giúp bản thân tôi hình thành nên phương pháp làm việc rõ ràng: xác lập mục tiêu, xây dựng chiến lược, triển khai kỷ luật và phối hợp hiệu quả để đạt kết quả cụ thể. Những nguyên tắc này được áp dụng nhất quán trong môi trường chuyên nghiệp, tập trung vào trách nhiệm, hiệu suất và tiêu chuẩn thực thi.",
             icon: "🏀",
             images: [
@@ -806,7 +805,6 @@ export const translations = {
           {
             name: "BASKETBALL TEAM CAPTAIN",
             organization: "University of Economics and Law",
-            period: "2014 - Present",
             description: "Serving as Captain of the University of Economics and Law team, leading the team to participate in national student competitions including VUG 3x3 Vietnam Student Sports and NUC National Student Basketball Championship, while achieving the first championship at Basketball STU Open 2024, a tournament gathering many universities in Ho Chi Minh City. The training and competition process has helped me develop a clear working methodology: setting goals, building strategies, implementing discipline and effective coordination to achieve specific results. These principles are consistently applied in professional environments, focusing on responsibility, performance and execution standards.",
             icon: "🏀",
             images: [
