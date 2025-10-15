@@ -302,8 +302,39 @@ export const translations = {
             name: "Câu lạc bộ Công nghệ Tài chính",
             organization: "Đại học Kinh tế - Luật",
             period: "2022 - 2024",
-            description: "Thành viên tích cực, tổ chức các workshop về blockchain và FinTech, tham gia các cuộc thi hackathon",
-            icon: "💻"
+            icon: "💻",
+            website: "https://ftc-websites.vercel.app/",
+            linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
+            images: [
+              "/Ảnh câu lạc bộ FTC (1).JPG",
+              "/Ảnh câu lạc bộ FTC.jpg",
+              "/FTC_2.jpg"
+            ],
+            roles: [
+              {
+                title: "Phó Chủ tịch",
+                period: "2024 - Hiện tại",
+                description: [
+                  "Chỉ đạo lập kế hoạch chiến lược, điều phối đa chức năng và quan hệ đối tác. Giám sát các chương trình trọng điểm và sự kiện hướng nghiệp.",
+                  "Cố vấn cho các trưởng nhóm và triển khai các mẫu, quy trình vận hành tiêu chuẩn để nâng cao chất lượng thực hiện và trách nhiệm giải trình. Quản lý truyền thông với các bên liên quan và báo cáo chương trình cho các nhà tài trợ và đơn vị trường đại học."
+                ],
+                achievements: [
+                  "Tổ chức ATTACKER với hơn 1.000 thí sinh đăng ký và xây dựng cầu nối với hệ sinh thái đổi mới sáng tạo fintech của TP.HCM.",
+                  "Nâng cao sự công nhận lên Top 10 tại giải thưởng I-Star.",
+                  "Nhận Giấy khen của Đoàn trường ĐH Kinh tế – Luật năm học 2024-2025 và được khen thưởng hoàn thành xuất sắc nhiệm vụ năm 2025."
+                ]
+              },
+              {
+                title: "Trưởng Ban Học thuật",
+                period: "08/2023 - 08/2024",
+                description: [
+                  "Dẫn dắt thiết kế chương trình cho các workshop, talkshow và cuộc thi ATTACKER. Xây dựng ngân hàng câu hỏi, tiêu chí chấm điểm và khung đánh giá.",
+                  "Phát triển các lộ trình đào tạo về phân tích sản phẩm, SQL và Python, và dashboarding. Thiết lập dashboard KPI và báo cáo sau sự kiện để cải tiến liên tục.",
+                  "Điều phối giảng viên và diễn giả trong ngành. Quản lý các nhóm đa chức năng để mang lại kết quả học tập chất lượng cao."
+                ],
+                achievements: []
+              }
+            ]
           },
           {
             name: "Tình nguyện viên Tech4Good",
@@ -677,8 +708,39 @@ export const translations = {
             name: "Financial Technology Club",
             organization: "University of Economics and Law",
             period: "2022 - 2024",
-            description: "Active member, organized blockchain and FinTech workshops, participated in hackathons",
-            icon: "💻"
+            icon: "💻",
+            website: "https://ftc-websites.vercel.app/",
+            linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
+            images: [
+              "/Ảnh câu lạc bộ FTC (1).JPG",
+              "/Ảnh câu lạc bộ FTC.jpg",
+              "/FTC_2.jpg"
+            ],
+            roles: [
+              {
+                title: "Vice President",
+                period: "2024 - Present",
+                description: [
+                  "Directed strategic planning, cross-functional coordination, and partner relations. Oversaw flagship programs and career events.",
+                  "Mentored team leads and implemented templates and standard operating procedures to scale execution quality and accountability. Managed stakeholder communication and program reporting for sponsors and university units."
+                ],
+                achievements: [
+                  "Organized ATTACKER with more than 1,000 registered contestants and built a bridge to Ho Chi Minh City's innovation ecosystem in fintech.",
+                  "Elevated recognition to Top 10 at the I-Star awards.",
+                  "Received a Certificate of Merit from the VNU HCM Youth Union for 2024 to 2025 and was commended for outstanding completion of 2025 objectives."
+                ]
+              },
+              {
+                title: "Head of Academics",
+                period: "08/2023 - 08/2024",
+                description: [
+                  "Led curriculum design for workshops, talkshows, and the ATTACKER competition. Built question banks, scoring rubrics, and evaluation frameworks.",
+                  "Developed training tracks in product analytics, SQL and Python, and dashboarding. Set up KPI dashboards and post-event reporting for continuous improvement.",
+                  "Coordinated lecturers and industry speakers. Managed cross-functional teams to deliver high-quality learning outcomes."
+                ],
+                achievements: []
+              }
+            ]
           },
           {
             name: "Tech4Good Volunteer",

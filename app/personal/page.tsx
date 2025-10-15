@@ -122,11 +122,86 @@ export default function PersonalPage() {
                           <p className="text-[#00d4ff] font-semibold text-sm sm:text-base mb-2 sm:mb-3">
                             {activity.organization} • {activity.period}
                           </p>
-                          <p className="text-gray-300 leading-relaxed vietnamese-text">
-                            {activity.description}
-                          </p>
                           
-                          {/* Basketball Images Gallery */}
+                          {/* Links */}
+                          {(activity.website || activity.linkedin) && (
+                            <div className="flex flex-wrap gap-3 mb-4">
+                              {activity.website && (
+                                <a 
+                                  href={activity.website} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-all duration-300 text-sm"
+                                >
+                                  <span>🌐</span>
+                                  Website
+                                </a>
+                              )}
+                              {activity.linkedin && (
+                                <a 
+                                  href={activity.linkedin} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm"
+                                >
+                                  <span>💼</span>
+                                  LinkedIn
+                                </a>
+                              )}
+                            </div>
+                          )}
+                          
+                          {/* Roles */}
+                          {activity.roles && activity.roles.length > 0 ? (
+                            <div className="space-y-4">
+                              {activity.roles.map((role: any, roleIndex: number) => (
+                                <div key={roleIndex} className="border-l-2 border-[#00d4ff]/30 pl-4">
+                                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                                    <h4 className="text-lg font-bold text-white vietnamese-text">
+                                      {role.title}
+                                    </h4>
+                                    <span className="text-[#00d4ff] text-sm font-medium">
+                                      {role.period}
+                                    </span>
+                                  </div>
+                                  
+                                  {/* Role Description */}
+                                  {role.description && role.description.length > 0 && (
+                                    <div className="mb-3">
+                                      {role.description.map((desc: string, descIndex: number) => (
+                                        <p key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text mb-2 text-sm">
+                                          {desc}
+                                        </p>
+                                      ))}
+                                    </div>
+                                  )}
+                                  
+                                  {/* Achievements */}
+                                  {role.achievements && role.achievements.length > 0 && (
+                                    <div className="mb-3">
+                                      <h5 className="text-[#00ff88] font-semibold text-sm mb-2 vietnamese-text">
+                                        {language === 'vi' ? 'Thành tựu nổi bật:' : 'Key Achievements:'}
+                                      </h5>
+                                      <ul className="space-y-1">
+                                        {role.achievements.map((achievement: string, achIndex: number) => (
+                                          <li key={achIndex} className="text-gray-300 text-sm leading-relaxed vietnamese-text flex items-start gap-2">
+                                            <span className="text-[#00ff88] mt-1">•</span>
+                                            {achievement}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-gray-300 leading-relaxed vietnamese-text">
+                              {activity.description}
+                            </p>
+                          )}
+                          
+                          {/* Images Gallery */}
                           {activity.images && activity.images.length > 0 && (
                             <div className="mt-4 sm:mt-6">
                               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
