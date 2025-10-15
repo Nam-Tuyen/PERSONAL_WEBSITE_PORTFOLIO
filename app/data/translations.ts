@@ -281,7 +281,7 @@ export const translations = {
           },
           {
             name: "THỂ THAO",
-            description: "Thích chơi: bóng rổ, pickleball, badminton và tennis, trekking",
+            description: "Thích chơi: bóng rổ, Pickleball, cầu lông, quần vợt và Trekking",
             icon: "🏀"
           },
           {
@@ -727,7 +727,7 @@ export const translations = {
           },
           {
             name: "SPORTS",
-            description: "Enjoy playing: basketball, pickleball, badminton and tennis, trekking",
+            description: "Enjoy playing: basketball, pickleball, badminton, tennis and trekking",
             icon: "🏀"
           },
           {
