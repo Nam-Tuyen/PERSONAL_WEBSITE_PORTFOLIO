@@ -170,11 +170,14 @@ export default function PersonalPage() {
                               {/* Role Description */}
                               {role.description && role.description.length > 0 && (
                                 <div className="mb-6">
-                                  {role.description.map((desc: string, descIndex: number) => (
-                                    <p key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text mb-3">
-                                      {desc}
-                                    </p>
-                                  ))}
+                                  <ul className="space-y-3">
+                                    {role.description.map((desc: string, descIndex: number) => (
+                                      <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-3 group">
+                                        <div className="w-2 h-2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                        <span className="group-hover:text-white transition-colors duration-300">{desc}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
                                 </div>
                               )}
                               
@@ -184,11 +187,11 @@ export default function PersonalPage() {
                                   <h5 className="text-[#00ff88] font-semibold mb-3 vietnamese-text">
                                     {language === 'vi' ? 'Thành tựu nổi bật:' : 'Key Achievements:'}
                                   </h5>
-                                  <ul className="space-y-2">
+                                  <ul className="space-y-3">
                                     {role.achievements.map((achievement: string, achIndex: number) => (
-                                      <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-3">
-                                        <span className="text-[#00ff88] mt-2 text-sm">•</span>
-                                        <span>{achievement}</span>
+                                      <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-3 group">
+                                        <div className="w-2 h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                        <span className="group-hover:text-white transition-colors duration-300">{achievement}</span>
                                       </li>
                                     ))}
                                   </ul>
