@@ -451,14 +451,7 @@ export const translations = {
             publication: "Journal of Southeast Asian Economics",
             date: "2025",
             description: "Nghiên cứu về mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á, với vai trò điều tiết của quản trị quốc gia. Sử dụng dữ liệu panel từ 10 quốc gia ASEAN trong giai đoạn 2000-2022.",
-            link: "https://example.com/research-paper"
-          },
-          {
-            title: "FinTech Adoption and Financial Inclusion in Vietnam",
-            publication: "Vietnam Economic Review",
-            date: "2023",
-            description: "Phân tích tác động của việc áp dụng công nghệ tài chính đến tình hình tài chính toàn diện tại Việt Nam. Nghiên cứu dựa trên khảo sát 1,000 hộ gia đình tại 5 tỉnh thành lớn.",
-            link: "https://example.com/fintech-research"
+            link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
           }
         ]
       }
