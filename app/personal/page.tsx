@@ -483,9 +483,9 @@ export default function PersonalPage() {
                         <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
                           {activity.name}
                         </h3>
-                        {(activity.role || activity.period) && (
+                        {activity.organization && (
                           <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                            {activity.role}{activity.period ? ` • ${activity.period}` : ''}
+                            {activity.organization}
                           </p>
                         )}
                         
