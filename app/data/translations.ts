@@ -365,7 +365,7 @@ export const translations = {
         items: [
           {
             name: "ATTACKER 2025 - CUỘC THI HỌC THUẬT FINTECH QUY MÔ TOÀN QUỐC",
-            organization: "Rex Hotel",
+            organization: "Khách sạn Rex Sài Gòn",
             description: "Ban tổ chức Cuộc thi học thuật ATTACKER 2025 về Công nghệ Tài chính quy mô toàn quốc, thu hút hơn 2.000 tài khoản sinh viên đăng ký và gần 250 dự án FinTech, đặt mục tiêu tìm kiếm ý tưởng đột phá có khả năng ứng dụng bền vững và tạo bệ phóng để sinh viên biến tri thức thành sản phẩm thực tiễn. Sáu nhóm chủ đề trọng tâm gồm ứng dụng công nghệ trong kinh doanh và kinh tế, sinh trắc học, tự động hóa chấm điểm tín dụng và cho vay, Blockchain trong tài chính và quản lý rủi ro, đổi mới tư duy khởi nghiệp, cùng pháp lý và đạo đức số. Ở vai trò điều phối liên ban, tôi có nhiệm vụ là hỗ trợ dựng khung kế hoạch theo mốc thời gian rõ ràng, phân luồng nhiệm vụ minh bạch, chuẩn hóa thể lệ, tiêu chí chấm và tài liệu hướng dẫn để đội thi nộp bài đúng chuẩn và giám khảo đánh giá nhất quán. Kết quả không chỉ là một mùa giải vận hành trơn tru mà còn mở ra mạng lưới cố vấn, học bổng và cơ hội gọi vốn cho các dự án tiềm năng, góp phần kết nối học thuật với nhu cầu thực tiễn của tài chính số và lan tỏa tinh thần đổi mới sáng tạo trong cộng đồng sinh viên.",
             icon: "🏆",
             images: [
