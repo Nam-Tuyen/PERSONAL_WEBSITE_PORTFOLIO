@@ -125,15 +125,6 @@ export default function PersonalPage() {
                   </div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                  <div className="flex flex-col items-center space-y-2 text-white">
-                    <span className="text-sm font-medium opacity-70">Scroll to explore</span>
-                    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-                      <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Floating Particles */}
@@ -146,95 +137,147 @@ export default function PersonalPage() {
               </div>
             </section>
 
+            {/* Scroll Indicator */}
+            <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
+              <div className="flex flex-col items-center space-y-2 animate-bounce">
+                <span className="text-gray-400 text-xs sm:text-sm font-medium">Scroll to explore</span>
+                <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+                  <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+                </div>
+              </div>
+            </div>
 
             {/* Hobbies Section */}
             <section id="hobbies" className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
-              <div className="text-center mb-4 sm:mb-6 md:mb-8">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
+              <div className="text-center mb-6 sm:mb-8 md:mb-10">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-5 vietnamese-text">
                   {t?.personal?.hobbies?.title || "HOBBIES"}
                 </h2>
-                <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
+                <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
               </div>
 
               <div 
-                className="max-w-5xl mx-auto"
+                className="max-w-6xl mx-auto relative"
                 onTouchStart={onTouchStart}
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
               >
-                {/* Desktop Compact Grid */}
-                <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                {/* Desktop Layered Grid */}
+                <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                   {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                     <div
                       key={index}
-                      className="group cursor-pointer"
+                      className="group cursor-pointer relative"
                       onClick={() => setCurrentHobbyIndex(index)}
+                      style={{
+                        transform: `translateZ(${index * 10}px)`,
+                        zIndex: t?.personal?.hobbies?.items?.length - index
+                      }}
                     >
-                      <div className="relative bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-[#00ff88]/30 transition-all duration-300 hover:scale-[1.02]">
-                        <div className="flex items-center space-x-4">
+                      {/* Background Layer */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      
+                      {/* Main Card Layer */}
+                      <div className="relative bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 lg:p-8 hover:border-[#00ff88]/40 transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#00ff88]/10">
+                        {/* Glow Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/10 via-transparent to-[#00d4ff]/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div className="relative z-10 flex items-center space-x-5 lg:space-x-6">
                           <div className="flex-shrink-0">
-                            <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <span className="text-3xl">{hobby.icon}</span>
+                            <div className="relative">
+                              {/* Icon Background Glow */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/30 to-[#00d4ff]/30 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
+                              {/* Icon Container */}
+                              <div className="relative w-18 h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 border border-white/10">
+                                <span className="text-3xl lg:text-4xl group-hover:scale-110 transition-transform duration-300">{hobby.icon}</span>
+                              </div>
                             </div>
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h3 className="text-lg font-bold text-white mb-1 vietnamese-text">
+                            <h3 className="text-lg lg:text-xl font-bold text-white mb-2 vietnamese-text group-hover:text-[#00ff88] transition-colors duration-300">
                               {hobby.name}
                             </h3>
-                            <p className="text-gray-300 text-sm vietnamese-text leading-relaxed">
+                            <p className="text-gray-300 text-sm lg:text-base vietnamese-text leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                               {hobby.description}
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl"></div>
+                        
+                        {/* Shimmer Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-3xl"></div>
+                        
+                        {/* Corner Accent */}
+                        <div className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Mobile Compact List */}
-                <div className="md:hidden space-y-3 sm:space-y-4">
+                {/* Mobile Layered List */}
+                <div className="md:hidden space-y-4 sm:space-y-5">
                   {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => (
                     <div
                       key={index}
-                      className="group cursor-pointer"
+                      className="group cursor-pointer relative"
                       onClick={() => setCurrentHobbyIndex(index)}
                     >
-                    <div className="relative bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-[#00ff88]/30 transition-all duration-300">
-                      <div className="flex items-center space-x-3 sm:space-x-4">
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <span className="text-xl sm:text-2xl">{hobby.icon}</span>
+                      {/* Background Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
+                      
+                      {/* Main Card */}
+                      <div className="relative bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 sm:p-5 hover:border-[#00ff88]/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#00ff88]/10">
+                        {/* Glow Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/10 via-transparent to-[#00d4ff]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div className="relative z-10 flex items-center space-x-4 sm:space-x-5">
+                          <div className="flex-shrink-0">
+                            <div className="relative">
+                              {/* Icon Background Glow */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/30 to-[#00d4ff]/30 rounded-xl blur-md group-hover:blur-lg transition-all duration-500"></div>
+                              {/* Icon Container */}
+                              <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 border border-white/10">
+                                <span className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300">{hobby.icon}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-sm sm:text-base font-bold text-white mb-1 vietnamese-text group-hover:text-[#00ff88] transition-colors duration-300">
+                              {hobby.name}
+                            </h3>
+                            <p className="text-gray-300 text-xs sm:text-sm vietnamese-text leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                              {hobby.description}
+                            </p>
                           </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-sm sm:text-base font-bold text-white mb-1 vietnamese-text">
-                            {hobby.name}
-                          </h3>
-                          <p className="text-gray-300 text-xs sm:text-sm vietnamese-text leading-relaxed">
-                            {hobby.description}
-                          </p>
-                        </div>
-                      </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-xl"></div>
+                        
+                        {/* Shimmer Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl"></div>
+                        
+                        {/* Corner Accent */}
+                        <div className="absolute top-3 right-3 w-1.5 h-1.5 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Minimalist Dots Indicator */}
-                <div className="flex justify-center mt-6 gap-2">
+                {/* Enhanced Dots Indicator */}
+                <div className="flex justify-center mt-8 sm:mt-10 gap-3">
                   {t?.personal?.hobbies?.items?.map((_: any, index: number) => (
                     <button
                       key={index}
                       onClick={() => setCurrentHobbyIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      className={`relative w-3 h-3 rounded-full transition-all duration-500 ${
                         index === currentHobbyIndex
-                          ? 'bg-[#00ff88] scale-125'
-                          : 'bg-white/30 hover:bg-white/50'
+                          ? 'bg-gradient-to-r from-[#00ff88] to-[#00d4ff] scale-125 shadow-lg shadow-[#00ff88]/30'
+                          : 'bg-white/30 hover:bg-white/50 hover:scale-110'
                       }`}
                       aria-label={`Go to hobby ${index + 1}`}
-                    />
+                    >
+                      {/* Active dot glow effect */}
+                      {index === currentHobbyIndex && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full blur-sm opacity-50 animate-pulse"></div>
+                      )}
+                    </button>
                   ))}
                 </div>
               </div>
