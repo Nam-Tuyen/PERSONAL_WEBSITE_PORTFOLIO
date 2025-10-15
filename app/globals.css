@@ -1197,6 +1197,15 @@ button, a, [role="button"] {
   cursor: pointer;
 }
 
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 /* 3D Carousel Animations */
 @keyframes carousel-rotate {
   0% {
