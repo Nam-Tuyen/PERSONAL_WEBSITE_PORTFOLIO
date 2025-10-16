@@ -157,7 +157,7 @@ export default function PersonalPage() {
               </div>
 
               {/* Compact 3D Carousel */}
-              <div className="max-w-4xl mx-auto relative px-3 sm:px-4 md:px-6">
+              <div className="max-w-4xl mx-auto relative">
                 {/* 3D Carousel Container */}
                 <div 
                   className="relative h-96 perspective-2000"
@@ -259,7 +259,7 @@ export default function PersonalPage() {
                               </h3>
                               
                               {/* Description */}
-                              <p className="text-gray-300 text-sm vietnamese-text leading-relaxed max-w-xs mx-auto text-justify">
+                              <p className="text-gray-300 text-sm vietnamese-text leading-relaxed max-w-xs mx-auto text-center">
                                 {hobby.description}
                               </p>
                             </div>
