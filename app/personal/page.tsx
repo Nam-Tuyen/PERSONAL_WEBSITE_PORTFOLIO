@@ -157,7 +157,7 @@ export default function PersonalPage() {
               </div>
 
               {/* Compact 3D Carousel */}
-              <div className="max-w-4xl mx-auto relative">
+              <div className="max-w-4xl mx-auto relative px-3 sm:px-4 md:px-6">
                 {/* 3D Carousel Container */}
                 <div 
                   className="relative h-96 perspective-2000"
