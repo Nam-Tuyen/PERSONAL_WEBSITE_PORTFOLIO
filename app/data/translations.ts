@@ -12,29 +12,25 @@ export const translations = {
       about: "GIỚI THIỆU",
       education: "HỌC VẤN",
       skills: "KỸ NĂNG",
-      certifications: "CHỨNG CHỈ & GIẢI THƯỞNG",
+      certifications: "CHỨNG CHỈ VÀ GIẢI THƯỞNG",
       experience: "KINH NGHIỆM LÀM VIỆC",
-      projects: "DỰ ÁN",
-      hobbies: "SỞ THÍCH",
-      interests: "QUAN TÂM"
+      projects: "DỰ ÁN"
     },
     buttons: {
       downloadResume: "TẢI CV",
       viewProjects: "XEM DỰ ÁN",
-      moreInformation: "THÔNG TIN THÊM",
+      moreInformation: "THÊM THÔNG TIN",
       jobDescription: "MÔ TẢ CÔNG VIỆC",
       viewProject: "XEM DỰ ÁN"
     },
-    scrollIndicator: {
-      text: "Cuộn xuống để khám phá"
-    },
+    scrollIndicator: { text: "Cuộn xuống để khám phá" },
     contact: {
       title: "LIÊN HỆ"
     },
     labels: {
       bachelorOf: "CỬ NHÂN NGÀNH",
       financialTechnology: "CÔNG NGHỆ TÀI CHÍNH",
-      gpa: "ĐIỂM GPA",
+      gpa: "GPA",
       ielts: "IELTS",
       newsAndMedia: "Báo chí & Truyền thông"
     },
@@ -42,11 +38,11 @@ export const translations = {
       contact: {
         email: "bingo.namtuyen@gmail.com",
         phone: "0921270404",
-        location: "TP. Hồ Chí Minh, Việt Nam",
+        location: "TP Hồ Chí Minh Việt Nam",
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
       },
-      copyright: "©2025.NAMTUYENLE"
+      copyright: "©2025 NAM TUYEN LE"
     },
     hero: {
       greeting: "XIN CHÀO, TÔI LÀ",
@@ -406,14 +402,12 @@ export const translations = {
       }
     },
     sections: {
-      about: "ABOUT ME",
-      education: "EDUCATION",
-      skills: "SKILLS",
-      certifications: "CERTIFICATIONS & AWARDS",
-      experience: "WORKING EXPERIENCE",
-      projects: "PROJECTS",
-      hobbies: "HOBBIES",
-      interests: "INTERESTS"
+      about: "About Me",
+      education: "Education",
+      skills: "Skills",
+      certifications: "Certifications and Awards",
+      experience: "Work Experience",
+      projects: "Projects"
     },
     buttons: {
       downloadResume: "DOWNLOAD RESUME",
@@ -446,9 +440,9 @@ export const translations = {
       copyright: "© 2024 LE NAM TUYEN. All rights reserved."
     },
     hero: {
-      greeting: "HI, I AM",
-      name: "LE NAM TUYEN",
-      title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"
+      greeting: "Hi I am",
+      name: "Le Nam Tuyen",
+      title: "Aspiring Product Manager and Data Analyst in FinTech"
     },
     about: {
       label: "PROFESSIONAL PROFILE",
@@ -474,24 +468,12 @@ export const translations = {
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
     skills: {
-      title: "TECHNICAL EXPERTISE",
+      title: "Technical Expertise",
       categories: [
-        {
-          name: "Programming Languages",
-          items: ["Python", "SQL", "R"]
-        },
-        {
-          name: "Data Tools",
-          items: ["Power BI", "Tableau", "Excel"]
-        },
-        {
-          name: "Product Management",
-          items: ["User Research", "Product Discovery", "Analytics"]
-        },
-        {
-          name: "Database & Cloud",
-          items: ["MySQL", "PostgreSQL", "MongoDB"]
-        }
+        { name: "Programming Languages", items: ["Python", "SQL", "R"] },
+        { name: "Data Tools", items: ["Power BI", "Tableau", "Excel"] },
+        { name: "Product Management", items: ["User Research", "Product Discovery", "Product Analytics"] },
+        { name: "Database and Cloud", items: ["MySQL", "PostgreSQL", "MongoDB"] }
       ]
     },
     certifications: {
