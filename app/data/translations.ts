@@ -26,7 +26,7 @@ export const translations = {
       viewProject: "XEM DỰ ÁN"
     },
     scrollIndicator: {
-      text: "Cuộn để khám phá"
+      text: "Cuộn xuống để khám phá"
     },
     contact: {
       title: "LIÊN HỆ"
@@ -46,7 +46,7 @@ export const translations = {
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
       },
-      copyright: "© 2024 LÊ NAM TUYÊN. Tất cả quyền được bảo lưu."
+      copyright: "©2025.NAMTUYENLE"
     },
     hero: {
       greeting: "XIN CHÀO, TÔI LÀ",
@@ -56,7 +56,7 @@ export const translations = {
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
       quote: "BIẾN TẦM NHÌN THÀNH HIỆN THỰC\nTỪ Ý ĐỊNH TỚI THÀNH QUẢ",
-      description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm (product discovery), nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, chuyển hoá insight thành yêu cầu sản phẩm rõ ràng, xác lập chỉ số thành công, và triển khai thí nghiệm tinh gọn để nâng cao trải nghiệm người dùng lẫn kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại; xây dựng template và hệ thống báo cáo mở rộng nhằm cải thiện chất lượng và tốc độ thực thi. Định hướng tìm kiếm vị trí Data Analyst hoặc Associate PM trong FinTech để chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được."
+      description: "Sinh viên năm cuối ngành FinTech tại UEL. Thành thạo Python, SQL và BI. Có kinh nghiệm xây dựng template và hệ thống báo cáo mở rộng để nâng cao chất lượng quyết định và hiệu suất vận hành. Mục tiêu công việc là trở thành một Data Analyst hoặc Associate PM trong FinTech với trọng tâm biến dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được"
     },
     education: {
       title: "THÀNH TÍCH HỌC TẬP",
@@ -64,16 +64,7 @@ export const translations = {
       degree: "CỬ NHÂN CÔNG NGHỆ TÀI CHÍNH",
       gpa: "3.0/4.0",
       ielts: "6.0",
-      coursework: [
-        "Hệ thống Cơ sở Dữ liệu Nâng cao",
-        "Khai thác & Phân tích Dữ liệu", 
-        "Phân tích Dữ liệu Lớn trong Tài chính",
-        "Công nghệ Blockchain & Tiền điện tử",
-        "Ứng dụng Phần mềm Tài chính",
-        "Hệ thống Thông tin Kinh doanh",
-        "Quản lý Tài chính & Đánh giá Rủi ro",
-        "Tài chính Định lượng & Mô hình hóa"
-      ],
+      coursework: [],
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
     skills: {
@@ -112,12 +103,7 @@ export const translations = {
           image: "/Certificate%20NVIDIA.PNG",
           description: "Bấm để xem chứng chỉ"
         },
-        {
-          title: "Bài báo khoa học – Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
-          issuer: "Journal",
-          image: "/journal-article.PNG",
-          description: "Bấm để xem bài báo"
-        }
+        
       ]
     },
     workExperience: {
@@ -159,7 +145,7 @@ export const translations = {
         period: "Tháng 3/2025 – Tháng 6/2025",
         achievements: [
           "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô để hỗ trợ quyết định cấp tín dụng.",
-          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility), bao gồm mô hình dòng tiền và phân tích kịch bản.",
+          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp bao gồm mô hình dòng tiền và phân tích kịch bản.",
           "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay từ phân tích mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
           "Phân tích báo cáo tài chính bằng chỉ số và xu hướng để hỗ trợ thẩm định."
         ],
@@ -173,7 +159,7 @@ export const translations = {
         achievements: [
           "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã niêm yết.",
           "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ ý tưởng giao dịch.",
-          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và các quyết định danh mục.",
+          "Biên soạn báo cáo thị trường hằng tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và các quyết định danh mục.",
           "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu/pitch và theo dõi danh mục.",
           "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của nhóm."
         ],
@@ -186,11 +172,10 @@ export const translations = {
         {
           name: "Công cụ xuất báo cáo phân tích cổ phiếu tự động",
           description: [
-            "Xây dựng pipeline Python end-to-end (cá nhân) cho phân tích mã chứng khoán: thu thập dữ liệu API thô với bí mật môi trường, tạo báo cáo hằng ngày chuẩn hoá định dạng Excel, CSV, PDF.",
-            "Triển khai với requests, pandas, python-dotenv; mô-đun hoá thành fetch • process • report cùng helper tái sử dụng cho quản lý đường dẫn, tải API key, xác thực, xử lý thời gian; lên lịch qua cron.",
-            "Kết quả: giảm 90% thời gian chuẩn bị thủ công, cải thiện 25% khả năng phản hồi của nhóm."
+            "Xây dựng pipeline để xử lý dữ liệu nhằm mục đích phân tích chứng khoán bằng cách thu thập dữ liệu API thô với bí mật môi trường, tạo báo cáo hằng ngày chuẩn hoá định dạng Excel, CSV, PDF.",
+            "Tích hợp ai để đưa ra nhận xét về số liệu báo cáo của mã cổ phiếu được phân tích.",
+            "Kết quả: giúp cải thiện hiệu suất xử lý công việc và cập nhật báo cáo tự động cho khách hàng lên tới 60%."
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
           period: "08/2024 – 10/2024"
@@ -198,11 +183,10 @@ export const translations = {
         {
           name: "Phân tích giá thuê nhà trên AirBnB",
           description: [
-            "Làm sạch và kỹ thuật hoá dataset Airbnb 26.000 dòng (cá nhân): chuyển đổi tiền tệ sang số, phân tích ngày tháng, cắt outlier tại phân vị 99,5, xây dựng workflow định giá với đầu vào/đầu ra chuẩn hoá.",
+            "Làm sạch và kỹ thuật hoá dataset Airbnb 26.000 dòng như chuyển đổi tiền tệ sang số, phân tích ngày tháng, làm sạch outlier, xây dựng workflow định giá tài sản.",
             "Xây dựng pipeline tiền xử lý & mô hình trên scikit-learn: ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling theo thành phố, GridSearchCV để tinh chỉnh.",
             "Insight cho khách hàng: nổi bật accommodates, bathrooms, bedrooms, beds, fees là yếu tố chính; đạt RMSE test = 95,84 và MAE = 57,98 với Random Forest đã tinh chỉnh (~4% giảm lỗi so với baseline tuyến tính); ví dụ giá dự đoán 834,20 cho căn ở Bondi Beach."
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/AirBnB.PNG",
           link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
           period: "04/2024 – 06/2024"
@@ -214,58 +198,13 @@ export const translations = {
             "Huấn luyện Random Forest cho attrition và Logistic Regression để giải thích; đạt 85% accuracy, biến số quan trọng gồm MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; lưu ý recall người rời đi = 0,07.",
             "Phân khúc nhân sự thành 3 cluster theo MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction; đề xuất chính sách lương & làm thêm dựa trên tỷ lệ attrition 16,1%."
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
           period: "08/2023 – 02/2024"
         }
       ]
     },
-    hobbies: {
-      title: "SỞ THÍCH CÁ NHÂN",
-      items: [
-        {
-          name: "ĐỌC SÁCH",
-          description: "Thích đọc sách về công nghệ, kinh doanh và phát triển bản thân",
-          icon: "📚"
-        },
-        {
-          name: "THỂ THAO",
-          description: "Thích chơi: bóng rổ, pickleball, badminton và tennis, trekking",
-          icon: "🏀"
-        },
-        {
-          name: "DU LỊCH",
-          description: "Khám phá các địa điểm mới và trải nghiệm văn hóa",
-          icon: "✈️"
-        },
-        {
-          name: "ÂM NHẠC",
-          description: "Chơi guitar và nghe nhạc để thư giãn",
-          icon: "🎵"
-        }
-      ]
-    },
-    interests: {
-      title: "SỞ THÍCH NGHỀ NGHIỆP",
-      items: [
-        {
-          name: "FinTech",
-          description: "Quan tâm đến các công nghệ tài chính mới và blockchain",
-          icon: "🔗"
-        },
-        {
-          name: "Data Science",
-          description: "Đam mê phân tích dữ liệu và machine learning",
-          icon: "🤖"
-        },
-        {
-          name: "Product Management",
-          description: "Hứng thú với việc phát triển sản phẩm và UX/UI",
-          icon: "🎨"
-        }
-      ]
-    },
+    
     personal: {
       hero: {
         title: "BẢN THÂN TÔI",
@@ -673,31 +612,7 @@ export const translations = {
         }
       ]
     },
-    hobbies: {
-      title: "PERSONAL HOBBIES",
-      items: [
-        {
-          name: "READING",
-          description: "Enjoy reading books about technology, business, and personal development",
-          icon: "📚"
-        },
-        {
-          name: "SPORTS",
-          description: "Enjoy playing: basketball, pickleball, badminton and tennis, trekking",
-          icon: "🏀"
-        },
-        {
-          name: "TRAVEL",
-          description: "Explore new places and experience different cultures",
-          icon: "✈️"
-        },
-        {
-          name: "MUSIC",
-          description: "Play guitar and listen to music for relaxation",
-          icon: "🎵"
-        }
-      ]
-    },
+    
     interests: {
       title: "PROFESSIONAL INTERESTS",
       items: [
