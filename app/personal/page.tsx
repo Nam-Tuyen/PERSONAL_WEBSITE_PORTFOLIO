@@ -259,7 +259,7 @@ export default function PersonalPage() {
                               </h3>
                               
                               {/* Description */}
-                              <p className="text-gray-300 text-sm vietnamese-text leading-relaxed max-w-xs mx-auto">
+                              <p className="text-gray-300 text-sm vietnamese-text leading-relaxed max-w-xs mx-auto text-justify">
                                 {hobby.description}
                               </p>
                             </div>
@@ -407,7 +407,7 @@ export default function PersonalPage() {
                                     {role.description.map((desc: string, descIndex: number) => (
                                       <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
                                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                        <span className="group-hover:text-white transition-colors duration-300">{desc}</span>
+                                        <span className="group-hover:text-white transition-colors duration-300 text-justify">{desc}</span>
                                       </li>
                                     ))}
                                   </ul>
@@ -424,7 +424,7 @@ export default function PersonalPage() {
                                     {role.achievements.map((achievement: string, achIndex: number) => (
                                       <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
                                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                        <span className="group-hover:text-white transition-colors duration-300">{achievement}</span>
+                                        <span className="group-hover:text-white transition-colors duration-300 text-justify">{achievement}</span>
                                       </li>
                                     ))}
                                   </ul>
@@ -434,7 +434,7 @@ export default function PersonalPage() {
                           ))}
                         </div>
                       ) : (
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
                           {activity.description}
                         </p>
                       )}
@@ -523,7 +523,7 @@ export default function PersonalPage() {
                     <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
                       {/* Description */}
                       <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
                           {activity.description}
                         </p>
                       </div>
@@ -610,7 +610,7 @@ export default function PersonalPage() {
                     <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#00ff88]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
                       {/* Description */}
                       <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg">
+                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
                           {achievement.description}
                         </p>
                       </div>
