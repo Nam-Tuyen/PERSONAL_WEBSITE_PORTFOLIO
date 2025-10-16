@@ -172,6 +172,8 @@ export const translations = {
             "Tổ chức mã theo ba bước gồm lấy dữ liệu xử lý và xuất báo cáo kèm các hàm tái sử dụng cho quản lý đường dẫn quản lý khóa xác thực và xử lý thời gian được lập lịch bằng cron",
             "Kết quả giảm chín mươi phần trăm thời gian chuẩn bị thủ công và tăng hai mươi lăm phần trăm tốc độ phản hồi của nhóm"
           ],
+          image: "/Demo.mp4",
+          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
           period: "Tháng 08 2024 đến Tháng 10 2024"
         },
         {
@@ -181,6 +183,8 @@ export const translations = {
             "Dựng pipeline tiền xử lý và mô hình bằng scikit learn với ColumnTransformer StandardScaler OneHotEncoder Linear Regression và Random Forest áp dụng lấy mẫu phân tầng theo thành phố cùng tinh chỉnh bằng GridSearchCV",
             "Kết quả cho khách hàng nhấn mạnh các yếu tố accommodates bathrooms bedrooms beds và fees Mô hình Random Forest tinh chỉnh đạt RMSE kiểm thử 95.84 và MAE 57.98 giảm khoảng bốn phần trăm so với tuyến tính Ví dụ giá dự đoán 834.20 cho căn tại Bondi Beach"
           ],
+          image: "/AirBnB.PNG",
+          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
           period: "Tháng 04 2024 đến Tháng 06 2024"
         },
         {
@@ -190,6 +194,8 @@ export const translations = {
             "Huấn luyện mô hình Random Forest dự báo nghỉ việc và Logistic Regression để giải thích đạt độ chính xác tám mươi lăm phần trăm các biến quan trọng gồm thu nhập hàng tháng độ tuổi làm thêm số năm làm việc tổng và mức lương ngày ghi nhận độ bao phủ nhóm rời đi ở mức không phẩy không bảy",
             "Phân khúc nhân sự thành ba nhóm theo thu nhập hàng tháng số năm làm việc tổng số năm gắn bó và mức độ hài lòng đồng thời đề xuất chính sách lương và làm thêm dựa trên tỷ lệ nghỉ việc mười sáu phẩy một phần trăm"
           ],
+          image: "/HRanalytic.png",
+          link: "https://github.com/Nam-Tuyen/HR_Analytic",
           period: "Tháng 08 2023 đến Tháng 02 2024"
         }
       ]
@@ -557,6 +563,8 @@ export const translations = {
             "Structured code into fetch process and report with reusable helpers for path management key handling authentication and time utilities scheduled with cron",
             "Delivered a ninety percent reduction in manual preparation time and a twenty five percent improvement in team responsiveness"
           ],
+          image: "/Demo.mp4",
+          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
           period: "Aug 2024 to Oct 2024"
         },
         {
@@ -566,6 +574,8 @@ export const translations = {
             "Built a preprocessing and modeling pipeline in scikit learn using ColumnTransformer StandardScaler OneHotEncoder Linear Regression and Random Forest with stratified sampling by city and tuning via GridSearchCV",
             "Client ready insights highlighted accommodates bathrooms bedrooms beds and fees Tuned Random Forest achieved test RMSE 95.84 and MAE 57.98 with about four percent error reduction versus a linear baseline Example predicted price 834.20 for a Bondi Beach home"
           ],
+          image: "/AirBnB.PNG",
+          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
           period: "Apr 2024 to Jun 2024"
         },
         {
@@ -575,6 +585,8 @@ export const translations = {
             "Trained a Random Forest attrition model and Logistic Regression for interpretability achieving accuracy of eighty five percent with key drivers including MonthlyIncome Age OverTime TotalWorkingYears and DailyRate and noted a low recall for leavers at zero point zero seven",
             "Segmented employees into three clusters based on MonthlyIncome TotalWorkingYears YearsAtCompany and JobSatisfaction and recommended salary and overtime policies using an attrition rate of sixteen point one percent"
           ],
+          image: "/HRanalytic.png",
+          link: "https://github.com/Nam-Tuyen/HR_Analytic",
           period: "Aug 2023 to Feb 2024"
         }
       ]
