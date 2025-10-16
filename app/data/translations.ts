@@ -168,35 +168,29 @@ export const translations = {
         {
           name: "Công cụ xuất báo cáo phân tích cổ phiếu tự động",
           description: [
-            "Xây dựng pipeline để xử lý dữ liệu nhằm mục đích phân tích chứng khoán bằng cách thu thập dữ liệu API thô với bí mật môi trường, tạo báo cáo hằng ngày chuẩn hoá định dạng Excel, CSV, PDF.",
-            "Tích hợp ai để đưa ra nhận xét về số liệu báo cáo của mã cổ phiếu được phân tích.",
-            "Kết quả: giúp cải thiện hiệu suất xử lý công việc và cập nhật báo cáo tự động cho khách hàng lên tới 60%."
+            "Xây dựng pipeline Python phân tích mã cổ phiếu với dữ liệu API dùng biến môi trường và tạo báo cáo hằng ngày ở định dạng Excel CSV và PDF",
+            "Tổ chức mã theo ba bước gồm lấy dữ liệu xử lý và xuất báo cáo kèm các hàm tái sử dụng cho quản lý đường dẫn quản lý khóa xác thực và xử lý thời gian được lập lịch bằng cron",
+            "Kết quả giảm chín mươi phần trăm thời gian chuẩn bị thủ công và tăng hai mươi lăm phần trăm tốc độ phản hồi của nhóm"
           ],
-          image: "/Demo.mp4",
-          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
-          period: "08/2024 – 10/2024"
+          period: "Tháng 08 2024 đến Tháng 10 2024"
         },
         {
-          name: "Phân tích giá thuê nhà trên AirBnB",
+          name: "Phân tích giá thuê nhà trên Airbnb",
           description: [
-            "Làm sạch và kỹ thuật hoá dataset Airbnb 26.000 dòng như chuyển đổi tiền tệ sang số, phân tích ngày tháng, làm sạch outlier, xây dựng workflow định giá tài sản.",
-            "Xây dựng pipeline tiền xử lý & mô hình trên scikit-learn: ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling theo thành phố, GridSearchCV để tinh chỉnh.",
-            "Insight cho khách hàng: nổi bật accommodates, bathrooms, bedrooms, beds, fees là yếu tố chính; đạt RMSE test = 95,84 và MAE = 57,98 với Random Forest đã tinh chỉnh (~4% giảm lỗi so với baseline tuyến tính); ví dụ giá dự đoán 834,20 cho căn ở Bondi Beach."
+            "Làm sạch và kỹ thuật hóa bộ dữ liệu hai mươi sáu nghìn dòng gồm chuyển đổi tiền tệ sang dạng số phân tích ngày tháng xử lý ngoại lệ và chuẩn hóa quy trình định giá",
+            "Dựng pipeline tiền xử lý và mô hình bằng scikit learn với ColumnTransformer StandardScaler OneHotEncoder Linear Regression và Random Forest áp dụng lấy mẫu phân tầng theo thành phố cùng tinh chỉnh bằng GridSearchCV",
+            "Kết quả cho khách hàng nhấn mạnh các yếu tố accommodates bathrooms bedrooms beds và fees Mô hình Random Forest tinh chỉnh đạt RMSE kiểm thử 95.84 và MAE 57.98 giảm khoảng bốn phần trăm so với tuyến tính Ví dụ giá dự đoán 834.20 cho căn tại Bondi Beach"
           ],
-          image: "/AirBnB.PNG",
-          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
-          period: "04/2024 – 06/2024"
+          period: "Tháng 04 2024 đến Tháng 06 2024"
         },
         {
-          name: "Phân tích nhân sự trong doanh nghiệp",
+          name: "Workforce Insight Hub Retention and Compensation",
           description: [
-            "Xây dựng workflow phân tích HR end-to-end (cá nhân): làm sạch & mã hoá Human_Resources.csv, thực hiện EDA với histogram, KDE, boxplot, correlation heatmap để nhận diện rủi ro duy trì.",
-            "Huấn luyện Random Forest cho attrition và Logistic Regression để giải thích; đạt 85% accuracy, biến số quan trọng gồm MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; lưu ý recall người rời đi = 0,07.",
-            "Phân khúc nhân sự thành 3 cluster theo MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction; đề xuất chính sách lương & làm thêm dựa trên tỷ lệ attrition 16,1%."
+            "Xây dựng quy trình phân tích nhân sự toàn diện gồm làm sạch và mã hóa dữ liệu thực hiện phân tích khám phá với biểu đồ phân phối mật độ biểu đồ hộp và bản đồ tương quan để nhận diện rủi ro duy trì",
+            "Huấn luyện mô hình Random Forest dự báo nghỉ việc và Logistic Regression để giải thích đạt độ chính xác tám mươi lăm phần trăm các biến quan trọng gồm thu nhập hàng tháng độ tuổi làm thêm số năm làm việc tổng và mức lương ngày ghi nhận độ bao phủ nhóm rời đi ở mức không phẩy không bảy",
+            "Phân khúc nhân sự thành ba nhóm theo thu nhập hàng tháng số năm làm việc tổng số năm gắn bó và mức độ hài lòng đồng thời đề xuất chính sách lương và làm thêm dựa trên tỷ lệ nghỉ việc mười sáu phẩy một phần trăm"
           ],
-          image: "/HRanalytic.png",
-          link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "08/2023 – 02/2024"
+          period: "Tháng 08 2023 đến Tháng 02 2024"
         }
       ]
     },
@@ -559,38 +553,29 @@ export const translations = {
         {
           name: "Automated Financial Report Export",
           description: [
-            "Built an end-to-end Python pipeline (individual) for analyzing stock tickers: ingested raw API data with environment-managed secrets; produced standardized daily reports in Excel, CSV, and PDF.",
-            "Implemented with requests, pandas, python-dotenv; modularized into fetch • process • report with reusable helpers for path management, API key loading, auth, time handling; scheduled via cron.",
-            "Results: reduced manual prep time by 90% and improved team responsiveness by 25%."
+            "Built an end to end Python pipeline for stock analysis that ingested raw API data with environment managed secrets and produced standardized daily reports in Excel CSV and PDF",
+            "Structured code into fetch process and report with reusable helpers for path management key handling authentication and time utilities scheduled with cron",
+            "Delivered a ninety percent reduction in manual preparation time and a twenty five percent improvement in team responsiveness"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
-          image: "/Demo.mp4",
-          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
-          period: "Aug 2024 – Oct 2024"
+          period: "Aug 2024 to Oct 2024"
         },
         {
           name: "Airbnb Rental Price Prediction",
           description: [
-            "Cleaned and engineered a 26,000-row Airbnb dataset: converted currency to numeric, parsed dates, clipped outliers at the 99.5th percentile, and built a standardized pricing workflow.",
-            "Built a full preprocessing & modeling pipeline in scikit-learn using ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling by city, and GridSearchCV for tuning.",
-            "Client-ready insights: key features include accommodates, bathrooms, bedrooms, beds, and fees; achieved test RMSE 95.84 and MAE 57.98 with tuned Random Forest (~4% error reduction vs linear baseline); example predicted price 834.20 for a Bondi Beach home."
+            "Cleaned and engineered a dataset of twenty six thousand rows including currency to numeric conversion date parsing outlier treatment and a standardized pricing workflow",
+            "Built a preprocessing and modeling pipeline in scikit learn using ColumnTransformer StandardScaler OneHotEncoder Linear Regression and Random Forest with stratified sampling by city and tuning via GridSearchCV",
+            "Client ready insights highlighted accommodates bathrooms bedrooms beds and fees Tuned Random Forest achieved test RMSE 95.84 and MAE 57.98 with about four percent error reduction versus a linear baseline Example predicted price 834.20 for a Bondi Beach home"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
-          image: "/AirBnB.PNG",
-          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
-          period: "Apr 2024 – Jun 2024"
+          period: "Apr 2024 to Jun 2024"
         },
         {
-          name: "Workforce Insight Hub: Retention & Compensation",
+          name: "Workforce Insight Hub Retention and Compensation",
           description: [
-            "Built an end-to-end HR analytics workflow: cleaned & encoded Human_Resources.csv; performed EDA with histograms, KDE, boxplots, and a correlation heatmap to surface retention risks.",
-            "Trained a Random Forest attrition model and logistic regression for interpretability; achieved 85% accuracy; key drivers: MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; noted low recall on leavers at 0.07.",
-            "Segmented employees into three clusters (MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction) and recommended salary/overtime policies based on a 16.1% attrition rate."
+            "Developed an end to end HR analytics workflow that cleaned and encoded the dataset and performed exploratory analysis with histograms density plots boxplots and a correlation heatmap to surface retention risks",
+            "Trained a Random Forest attrition model and Logistic Regression for interpretability achieving accuracy of eighty five percent with key drivers including MonthlyIncome Age OverTime TotalWorkingYears and DailyRate and noted a low recall for leavers at zero point zero seven",
+            "Segmented employees into three clusters based on MonthlyIncome TotalWorkingYears YearsAtCompany and JobSatisfaction and recommended salary and overtime policies using an attrition rate of sixteen point one percent"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
-          image: "/HRanalytic.png",
-          link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "Aug 2023 – Feb 2024"
+          period: "Aug 2023 to Feb 2024"
         }
       ]
     },
