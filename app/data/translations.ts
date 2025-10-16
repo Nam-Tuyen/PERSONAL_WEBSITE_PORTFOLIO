@@ -317,9 +317,9 @@ export const translations = {
             website: "https://ftc-websites.vercel.app/",
             linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
             images: [
-              "/FTC.JPG",
-              "/FTC1.jpg",
-              "/FTC2.jpg"
+              "/FTCclb.JPG",
+              "/FTC2.jpg",
+              "/FTC1.jpg"
             ],
             roles: [
               {
@@ -769,9 +769,9 @@ export const translations = {
             website: "https://ftc-websites.vercel.app/",
             linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
             images: [
-              "/FTC.JPG",
-              "/FTC1.jpg",
-              "/FTC2.jpg"
+              "/FTCclb.JPG",
+              "/FTC2.jpg",
+              "/FTC1.jpg"
             ],
             roles: [
               {
