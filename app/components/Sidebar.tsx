@@ -105,18 +105,18 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       bgColor: "bg-[#7c3aed]/10"
     },
     { 
-      key: "research-achievement", 
-      label: translations?.personal?.researchAchievement?.title || "Research Achievement",
-      icon: Award,
-      color: "text-[#00ff88]",
-      bgColor: "bg-[#00ff88]/10"
-    },
-    { 
       key: "achievements", 
       label: translations?.personal?.achievements?.title || "Achievements",
       icon: Trophy,
       color: "text-[#7c3aed]",
       bgColor: "bg-[#7c3aed]/10"
+    },
+    { 
+      key: "research-achievement", 
+      label: translations?.personal?.researchAchievement?.title || "Research Achievement",
+      icon: Award,
+      color: "text-[#00ff88]",
+      bgColor: "bg-[#00ff88]/10"
     }
   ]
 
