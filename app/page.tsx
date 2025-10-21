@@ -502,13 +502,16 @@ export default function Portfolio() {
                             
                             {/* Project Links */}
                             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                              <button
-                                onClick={() => setSelectedProject(project)}
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                              >
-                                <span>🎬</span>
-                                {t?.buttons?.viewDemo || "VIEW DEMO"}
-                              </button>
+                              {/* Show VIEW DEMO button only for non-Airbnb projects */}
+                              {project.name !== "Airbnb Rental Price Prediction" && (
+                                <button
+                                  onClick={() => setSelectedProject(project)}
+                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                                >
+                                  <span>🎬</span>
+                                  {t?.buttons?.viewDemo || "VIEW DEMO"}
+                                </button>
+                              )}
                               {project.link && (
                                 <a 
                                   href={project.link} 
@@ -543,9 +546,38 @@ export default function Portfolio() {
                               </p>
                             )}
                           </div>
+                          
+                          {/* Show 3 images directly for Airbnb project */}
+                          {project.name === "Airbnb Rental Price Prediction" && (
+                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                                <div className="relative group">
+                                  <img 
+                                    src="/AirBnB.PNG" 
+                                    alt="Airbnb Analysis 1"
+                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                                <div className="relative group">
+                                  <img 
+                                    src="/AirBB2.png" 
+                                    alt="Airbnb Analysis 2"
+                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                                <div className="relative group">
+                                  <img 
+                                    src="/airBNBPrice.png" 
+                                    alt="Airbnb Analysis 3"
+                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                   </div>
                 </div>
               </div>
