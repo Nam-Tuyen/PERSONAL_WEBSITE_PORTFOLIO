@@ -18,7 +18,6 @@ export default function Portfolio() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
   const [selectedProject, setSelectedProject] = useState<any | null>(null)
-  const [showPdfModal, setShowPdfModal] = useState(false)
 
   const t = translations[language as keyof typeof translations]
 
@@ -646,13 +645,15 @@ export default function Portfolio() {
                   {/* Sample Report Button - Only for Automated Financial Report Export */}
                   {selectedProject.name === "Automated Financial Report Export" && (
                     <div className="flex justify-center mb-6">
-                      <button
-                        onClick={() => setShowPdfModal(true)}
+                      <a 
+                        href="/Report_demo.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
                       >
                         <span>📄</span>
                         {t?.buttons?.readSampleReport || "READ SAMPLE REPORT"}
-                      </button>
+                      </a>
                     </div>
                   )}
 
@@ -660,67 +661,6 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        )}
-
-        {/* PDF Report Modal */}
-        {showPdfModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-            <div className="relative max-w-6xl max-h-[90vh] w-full">
-              {/* Close Button */}
-              <button
-                onClick={() => setShowPdfModal(false)}
-                className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
-              >
-                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              {/* PDF Modal Content */}
-              <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl max-h-[85vh] overflow-y-auto">
-                {/* Header */}
-                <div className="p-4 sm:p-6 border-b border-white/10">
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl sm:text-3xl">📄</span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
-                        {language === 'vi' ? 'Báo cáo mẫu - Automated Financial Report Export' : 'Sample Report - Automated Financial Report Export'}
-                      </h3>
-                      <p className="text-[#00ff88] font-medium text-sm sm:text-base">
-                        {language === 'vi' ? 'Báo cáo phân tích cổ phiếu tự động' : 'Automated Stock Analysis Report'}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* PDF Content */}
-                <div className="p-4 sm:p-6">
-                  <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-                    <iframe
-                      src="/Report_demo.pdf"
-                      className="w-full h-96 sm:h-[500px] md:h-[600px] lg:h-[700px]"
-                      title="Sample Report PDF"
-                    />
-                  </div>
-                  
-                  {/* Download Button */}
-                  <div className="flex justify-center mt-6">
-                    <a
-                      href="/Report_demo.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                    >
-                      <span>⬇️</span>
-                      {language === 'vi' ? 'Tải xuống báo cáo' : 'Download Report'}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         )}
 
         <ScrollToTopButton />
