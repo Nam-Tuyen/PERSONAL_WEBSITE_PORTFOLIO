@@ -39,42 +39,42 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
   const professionalNavItems = [
     { 
       key: "about", 
-      label: translations?.sections?.about || "About Me",
+      label: translations?.sections?.about || "ABOUT ME",
       icon: UserCircle,
       color: "text-[#00ff88]",
       bgColor: "bg-[#00ff88]/10"
     },
     { 
       key: "education", 
-      label: translations?.sections?.education || "Education",
+      label: translations?.sections?.education || "EDUCATION",
       icon: GraduationCap,
       color: "text-[#00d4ff]",
       bgColor: "bg-[#00d4ff]/10"
     },
     { 
       key: "skills", 
-      label: translations?.sections?.skills || "Skills",
+      label: translations?.sections?.skills || "SKILLS",
       icon: Wrench,
       color: "text-[#7c3aed]",
       bgColor: "bg-[#7c3aed]/10"
     },
     { 
       key: "certifications", 
-      label: translations?.sections?.certifications || "Certifications & Awards",
+      label: translations?.sections?.certifications || "CERTIFICATIONS & AWARDS",
       icon: Trophy,
       color: "text-[#00ff88]",
       bgColor: "bg-[#00ff88]/10"
     },
     { 
       key: "experience", 
-      label: translations?.sections?.experience || "Working Experience",
+      label: translations?.sections?.experience || "WORKING EXPERIENCE",
       icon: Building,
       color: "text-[#00d4ff]",
       bgColor: "bg-[#00d4ff]/10"
     },
     { 
       key: "projects", 
-      label: translations?.sections?.projects || "Projects",
+      label: translations?.sections?.projects || "PROJECTS",
       icon: Folder,
       color: "text-[#7c3aed]",
       bgColor: "bg-[#7c3aed]/10"
