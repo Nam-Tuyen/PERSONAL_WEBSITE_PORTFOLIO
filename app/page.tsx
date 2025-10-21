@@ -470,12 +470,12 @@ export default function Portfolio() {
             </section>
 
             {/* 6. PROJECT Section */}
-            <section id="projects" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                <div className="mb-4 sm:mb-6">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
-                </div>
-                <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+            <section id="projects" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
+                  {t?.sections?.projects || "PROJECTS"}
+                </h2>
+                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
               </div>
 
               <div className="space-y-4 sm:space-y-6 md:space-y-8">
@@ -490,11 +490,13 @@ export default function Portfolio() {
                         <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
                           {project.name}
                         </h3>
-                        <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                          {project.period}
-                        </p>
+                        {project.period && (
+                          <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
+                            {project.period}
+                          </p>
+                        )}
                         
-                        {/* Project Link */}
+                        {/* GitHub Link */}
                         {project.link && (
                           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
                             <a 
@@ -504,7 +506,7 @@ export default function Portfolio() {
                               className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
                             >
                               <span>🔗</span>
-                              View Project
+                              {t?.buttons?.viewProject || "View Project"}
                             </a>
                           </div>
                         )}
@@ -516,11 +518,11 @@ export default function Portfolio() {
                       {/* Description */}
                       <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
                         {Array.isArray(project.description) ? (
-                          <ul className="space-y-2 sm:space-y-3">
-                            {project.description.map((desc: string, descIndex: number) => (
-                              <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base md:text-lg text-justify">
-                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="group-hover:text-white transition-colors duration-300">{desc}</span>
+                          <ul className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify space-y-2">
+                            {project.description.map((item: string, descIndex: number) => (
+                              <li key={descIndex} className="flex items-start">
+                                <span className="text-[#00d4ff] mr-2 sm:mr-3 lg:mr-4 mt-1 text-sm sm:text-base lg:text-lg font-bold animate-pulse drop-shadow-lg flex-shrink-0">●</span>
+                                <span className="text-xs sm:text-sm lg:text-base leading-relaxed">{item}</span>
                               </li>
                             ))}
                           </ul>
@@ -537,8 +539,8 @@ export default function Portfolio() {
                           <div className="relative group">
                             {project.image?.endsWith('.mp4') ? (
                               <video 
-                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105" 
-                                controls 
+                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                controls
                                 preload="metadata"
                               >
                                 <source src={project.image} type="video/mp4" />
