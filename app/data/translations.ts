@@ -402,12 +402,12 @@ export const translations = {
       }
     },
     sections: {
-      about: "About Me",
-      education: "Education",
-      skills: "Skills",
-      certifications: "Certifications and Awards",
-      experience: "Work Experience",
-      projects: "Projects"
+      about: "ABOUT ME",
+      education: "EDUCATION",
+      skills: "SKILLS",
+      certifications: "CERTIFICATIONS & AWARDS",
+      experience: "WORK EXPERIENCE",
+      projects: "PROJECTS"
     },
     buttons: {
       downloadResume: "DOWNLOAD RESUME",
@@ -440,9 +440,9 @@ export const translations = {
       copyright: "© 2024 LE NAM TUYEN. All rights reserved."
     },
     hero: {
-      greeting: "Hi I am",
-      name: "Le Nam Tuyen",
-      title: "Aspiring Product Manager and Data Analyst in FinTech"
+      greeting: "HI I AM",
+      name: "LE NAM TUYEN",
+      title: "ASPIRING PRODUCT MANAGER AND DATA ANALYST IN FINTECH"
     },
     about: {
       label: "PROFESSIONAL PROFILE",
