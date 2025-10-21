@@ -697,16 +697,18 @@ export default function PersonalPage() {
                         </div>
                       )}
 
-                      {/* View Certificate Button */}
+                      {/* Certificate Button */}
                       {achievement.certificate && (
                         <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <button
-                            onClick={() => setSelectedAchievement(achievement.certificate)}
-                            className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                          >
-                            <span>📜</span>
-                            {achievement.viewButton || (language === "vi" ? "XEM BẰNG KHEN" : "VIEW")}
-                          </button>
+                          <div className="flex justify-center">
+                            <button
+                              onClick={() => setSelectedAchievement(achievement.certificate)}
+                              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                            >
+                              <span>🏆</span>
+                              {t?.buttons?.viewCertificate || "VIEW CERTIFICATE OF MERIT"}
+                            </button>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -737,7 +739,7 @@ export default function PersonalPage() {
              <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
                <img
                  src={selectedAchievement}
-                 alt="Achievement Certificate"
+                 alt="Certificate of Merit"
                  className="w-full h-auto max-h-[85vh] object-contain"
                />
              </div>

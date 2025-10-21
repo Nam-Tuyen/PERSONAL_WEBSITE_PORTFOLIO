@@ -23,7 +23,8 @@ export const translations = {
       jobDescription: "MÔ TẢ CÔNG VIỆC",
       viewProject: "XEM DỰ ÁN",
       viewDemo: "XEM DEMO",
-      readSampleReport: "ĐỌC BÁO CÁO MẪU"
+      readSampleReport: "ĐỌC BÁO CÁO MẪU",
+      viewCertificate: "XEM BẰNG KHEN"
     },
     sections: {
       insight: "KẾT LUẬN RÚT RA"
@@ -405,14 +406,13 @@ export const translations = {
         title: "THÀNH TỰU ĐẠT ĐƯỢC",
         items: [
           {
-            title: "Được vinh danh Cá nhân có thành tích xuất sắc trong công tác Đoàn và phong trào thanh niên tại Hội nghị Tổng kết năm học 2024–2025.",
+            title: "Cá nhân có thành tích xuất sắc trong công tác Đoàn và phong trào thanh niên",
             description: [
               "Dẫn dắt và hỗ trợ các hoạt động Đoàn – Hội có tác động tích cực lan tỏa tinh thần tiên phong và sáng tạo trong sinh viên.",
               "Góp phần xây dựng môi trường sinh hoạt gắn kết khuyến khích rèn luyện và cống hiến của cộng đồng UEL."
             ],
             images: ["/IMG_5063.JPG", "/IMG_5064.JPG", "/IMG_5065.JPG"],
-            certificate: "/IMG_5081.jpg",
-            viewButton: "XEM BẰNG KHEN"
+            certificate: "/IMG_5081.jpg"
           }
         ]
       }
@@ -442,7 +442,8 @@ export const translations = {
       jobDescription: "JOB DESCRIPTION",
       viewProject: "VIEW PROJECT",
       viewDemo: "VIEW DEMO",
-      readSampleReport: "READ SAMPLE REPORT"
+      readSampleReport: "READ SAMPLE REPORT",
+      viewCertificate: "VIEW CERTIFICATE OF MERIT"
     },
     sections: {
       insight: "INSIGHT"
@@ -842,14 +843,13 @@ export const translations = {
         title: "ACHIEVEMENTS",
         items: [
           {
-            title: "Recognized as Outstanding Individual in Youth Union and Student Movement at the Annual Review Conference AY 2024–2025.",
+            title: "Outstanding Individual in Youth Union and Student Movement",
             description: [
               "Led and supported impactful Youth Union and student initiatives that nurtured initiative and creativity across UEL.",
               "Helped build an engaging and cohesive environment that encouraged student growth and service."
             ],
             images: ["/IMG_5063.JPG", "/IMG_5064.JPG", "/IMG_5065.JPG"],
-            certificate: "/IMG_5081.jpg",
-            viewButton: "VIEW"
+            certificate: "/IMG_5081.jpg"
           }
         ]
       }
