@@ -471,74 +471,93 @@ export default function Portfolio() {
 
             {/* 6. PROJECT Section */}
             <section id="projects" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECT"}</h3>
-                   </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                <div className="mb-4 sm:mb-6">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
                 </div>
-                
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                  {t?.projects?.items?.map((project: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group flex flex-col">
-                      <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
-                        {project.image?.endsWith('.mp4') ? (
-                          <video 
-                            className="w-full h-full object-cover"
-                            controls
-                            preload="metadata"
-                          >
-                            <source src={project.image} type="video/mp4" />
-                              Your browser does not support the video tag.
-                          </video>
-                        ) : project.image?.endsWith('.PNG') || project.image?.endsWith('.png') || project.image?.endsWith('.jpg') || project.image?.endsWith('.jpeg') ? (
-                          <img 
-                            src={project.image} 
-                            alt={project.name}
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                            <>
-                              <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </>
-                        )}
+                <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+              </div>
+
+              <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                {t?.projects?.items?.map((project: any, index: number) => (
+                  <div key={index} className="group">
+                    {/* Header */}
+                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">💻</span>
                       </div>
-                         <div className="p-4 sm:p-6 lg:p-8 flex flex-col flex-grow">
-                           <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 text-left leading-tight">{project.name}</h4>
-                        {project.period && (
-                             <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 uppercase tracking-wider text-left">{project.period}</p>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
+                          {project.name}
+                        </h3>
+                        <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
+                          {project.period}
+                        </p>
+                        
+                        {/* Project Link */}
+                        {project.link && (
+                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
+                            <a 
+                              href={project.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
+                            >
+                              <span>🔗</span>
+                              View Project
+                            </a>
+                          </div>
                         )}
-                           <div className="flex-grow">
-                          {Array.isArray(project.description) ? (
-                               <ul className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-justify tracking-wide space-y-1 sm:space-y-2">
-                                 {project.description.map((item: string, descIndex: number) => (
-                                   <li key={descIndex} className="flex items-start">
-                                     <span className="text-[#00d4ff] mr-2 sm:mr-3 lg:mr-4 mt-1 text-sm sm:text-base lg:text-lg font-bold animate-pulse drop-shadow-lg flex-shrink-0">●</span>
-                                     <span className="text-xs sm:text-sm lg:text-base leading-relaxed">{item}</span>
-                                   </li>
-                                 ))}
-                               </ul>
-                             ) : (
-                               <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-justify tracking-wide text-xs sm:text-sm lg:text-base">{project.description}</p>
-                          )}
-                        </div>
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                             className="w-full py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg block text-center mt-auto text-sm sm:text-base"
-                        >
-                             {t?.buttons?.viewProject || "View Project"}
-                        </a>
                       </div>
                     </div>
-                  ))}
+
+                    {/* Content */}
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
+                      {/* Description */}
+                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+                        {Array.isArray(project.description) ? (
+                          <ul className="space-y-2 sm:space-y-3">
+                            {project.description.map((desc: string, descIndex: number) => (
+                              <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base md:text-lg text-justify">
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                <span className="group-hover:text-white transition-colors duration-300">{desc}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
+                            {project.description}
+                          </p>
+                        )}
+                      </div>
+                      
+                      {/* Project Image/Video */}
+                      {project.image && (
+                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <div className="relative group">
+                            {project.image?.endsWith('.mp4') ? (
+                              <video 
+                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105" 
+                                controls 
+                                preload="metadata"
+                              >
+                                <source src={project.image} type="video/mp4" />
+                                Your browser does not support the video tag.
+                              </video>
+                            ) : (
+                              <img 
+                                src={project.image} 
+                                alt={project.name}
+                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                              />
+                            )}
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </section>
 
