@@ -62,7 +62,7 @@ export const translations = {
     },
     education: {
       title: "THÀNH TÍCH HỌC TẬP",
-      university: "ĐẠI HỌC KINH TẾ – LUẬT (VNU-HCM)",
+      university: "TRƯỜNG ĐẠI HỌC KINH TẾ – LUẬT (VNU-HCM)",
       degree: "CỬ NHÂN CÔNG NGHỆ TÀI CHÍNH",
       gpa: "3.0/4.0",
       ielts: "6.0",
