@@ -502,8 +502,8 @@ export default function Portfolio() {
                             
                             {/* Project Links */}
                             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                              {/* Show VIEW DEMO button only for non-Airbnb projects */}
-                              {project.name !== "Airbnb Rental Price Prediction" && (
+                              {/* Show VIEW DEMO button only for projects that are not Airbnb or Workforce Insight Hub */}
+                              {project.name !== "Airbnb Rental Price Prediction" && project.name !== "Workforce Insight Hub Retention and Compensation" && (
                                 <button
                                   onClick={() => setSelectedProject(project)}
                                   className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
@@ -573,6 +573,52 @@ export default function Portfolio() {
                                   />
                                 </div>
                               </div>
+                            </div>
+                          )}
+
+                          {/* Show 3 images directly for Workforce Insight Hub project */}
+                          {project.name === "Workforce Insight Hub Retention and Compensation" && (
+                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                                <div className="relative group">
+                                  <img 
+                                    src="/HR2.png" 
+                                    alt="HR Analysis 1"
+                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                                <div className="relative group">
+                                  <img 
+                                    src="/HR3.png" 
+                                    alt="HR Analysis 2"
+                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                                <div className="relative group">
+                                  <img 
+                                    src="/HRanalytic.png" 
+                                    alt="HR Analysis 3"
+                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Show Insight section for Workforce Insight Hub project */}
+                          {project.name === "Workforce Insight Hub Retention and Compensation" && project.insight && (
+                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
+                              <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
+                                {t?.sections?.insight || "INSIGHT"}
+                              </h4>
+                              <ul className="space-y-2 sm:space-y-3">
+                                {project.insight.map((item: string, insightIndex: number) => (
+                                  <li key={insightIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
+                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                    <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
                           )}
                         </div>

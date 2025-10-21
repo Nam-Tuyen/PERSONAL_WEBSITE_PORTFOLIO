@@ -25,6 +25,9 @@ export const translations = {
       viewDemo: "XEM DEMO",
       readSampleReport: "ĐỌC BÁO CÁO MẪU"
     },
+    sections: {
+      insight: "KẾT LUẬN RÚT RA"
+    },
     scrollIndicator: { text: "Cuộn xuống để khám phá" },
     contact: {
       title: "LIÊN HỆ"
@@ -198,7 +201,13 @@ export const translations = {
           ],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "Tháng 08 2023 đến Tháng 02 2024"
+          period: "Tháng 08 2023 đến Tháng 02 2024",
+          images: ["/HR2.png", "/HR3.png", "/HRanalytic.png"],
+          insight: [
+            "Yếu tố rời bỏ: Lương thấp và làm thêm giờ thường xuyên cùng với thâm niên ngắn làm tăng rủi ro nghỉ việc.",
+            "Phân nhóm: Tiềm năng hài lòng cao nhưng thu nhập thấp, dễ rời đi. Trung cấp cần cân bằng công việc và cuộc sống cùng lộ trình phát triển. Cốt lõi thu nhập cao nhưng hài lòng vừa, cần tăng gắn kết.",
+            "Hành động: Trả lương làm thêm đúng và đủ, thưởng theo hiệu suất, nâng bậc và mở lộ trình thăng tiến cho nhóm tiềm năng, giao nhiệm vụ có tác động lớn và hỗ trợ huấn luyện cùng phúc lợi tinh thần cho nhóm cốt lõi."
+          ]
         }
       ]
     },
@@ -420,6 +429,9 @@ export const translations = {
       viewDemo: "VIEW DEMO",
       readSampleReport: "READ SAMPLE REPORT"
     },
+    sections: {
+      insight: "INSIGHT"
+    },
     scrollIndicator: {
       text: "Scroll to explore"
     },
@@ -591,7 +603,13 @@ export const translations = {
           ],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "Aug 2023 to Feb 2024"
+          period: "Aug 2023 to Feb 2024",
+          images: ["/HR2.png", "/HR3.png", "/HRanalytic.png"],
+          insight: [
+            "Attrition drivers: Low pay and frequent overtime combined with short tenure increase quit risk.",
+            "Segments: High-potential have high satisfaction but low pay and are prone to leave, mid-level need work–life balance and growth, core have high pay but only moderate satisfaction and need stronger engagement.",
+            "Actions: Pay overtime fairly and fully, add performance bonuses, raise pay bands and define promotion paths for high-potentials, assign high-impact work and provide coaching and well-being support for core talent."
+          ]
         }
       ]
     },
