@@ -543,50 +543,6 @@ export default function Portfolio() {
                               </p>
                             )}
                           </div>
-                          
-                          {/* Project Media */}
-                          {project.image && (
-                            <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                              <div className="relative group">
-                        {project.image?.endsWith('.mp4') ? (
-                          <video 
-                                    className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300"
-                            controls
-                            preload="metadata"
-                          >
-                            <source src={project.image} type="video/mp4" />
-                              Your browser does not support the video tag.
-                          </video>
-                                ) : (
-                          <img 
-                            src={project.image} 
-                            alt={project.name}
-                                    className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
-                          />
-                        )}
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                              </div>
-                      </div>
-                          )}
-
-                          {/* Project Technologies/Tags */}
-                          {project.technologies && (
-                            <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 vietnamese-text">
-                                Technologies Used
-                              </h4>
-                              <div className="flex flex-wrap gap-2 sm:gap-3">
-                                {project.technologies.map((tech: string, techIndex: number) => (
-                                  <span 
-                                    key={techIndex}
-                                    className="px-3 py-1.5 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg text-[#7c3aed] text-xs sm:text-sm font-medium hover:bg-[#7c3aed]/20 transition-all duration-300"
-                                  >
-                                    {tech}
-                                  </span>
-                                ))}
-                              </div>
-                           </div>
-                          )}
                       </div>
                     </div>
                   ))}
