@@ -394,7 +394,7 @@ export const translations = {
         title: "THÀNH TÍCH NGHIÊN CỨU",
         items: [
           {
-            title: "Nợ công và ổn định kinh tế: Tác động điều tiết của chất lượng quản trị tại Đông Nam Á",
+            title: "NỢ CÔNG VÀ ỔN ĐỊNH KINH TẾ: TÁC ĐỘNG ĐIỀU TIẾT CỦA CHẤT LƯỢNG QUẢN TRỊ TẠI ĐÔNG NAM Á",
             publication: "Tạp chí Kinh tế Đông Nam Á",
             date: "2025",
             description: "Nghiên cứu về mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á, với vai trò điều tiết của quản trị quốc gia. Sử dụng dữ liệu panel từ 10 quốc gia ASEAN trong giai đoạn 2000-2022.",
@@ -406,7 +406,7 @@ export const translations = {
         title: "THÀNH TỰU ĐẠT ĐƯỢC",
         items: [
           {
-            title: "Cá nhân có thành tích xuất sắc trong công tác Đoàn và phong trào thanh niên",
+            title: "CÁ NHÂN CÓ THÀNH TÍCH XUẤT SẮC TRONG CÔNG TÁC ĐOÀN VÀ PHONG TRÀO THANH NIÊN",
             period: "2024 - 2025",
             description: [
               "Dẫn dắt và hỗ trợ các hoạt động Đoàn – Hội có tác động tích cực lan tỏa tinh thần tiên phong và sáng tạo trong sinh viên.",
@@ -832,7 +832,7 @@ export const translations = {
         title: "RESEARCH ACHIEVEMENTS",
         items: [
           {
-            title: "Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
+            title: "PUBLIC DEBT AND ECONOMIC STABILITY, THE MODERATING EFFECT OF GOVERNANCE: EVIDENCE FROM SEA COUNTRIES",
             publication: "Journal of Southeast Asian Economics",
             date: "2025",
             description: "Research on the relationship between public debt and economic stability in Southeast Asian countries, with the moderating role of national governance. Using panel data from 10 ASEAN countries from 2000-2022.",
@@ -844,7 +844,7 @@ export const translations = {
         title: "ACHIEVEMENTS",
         items: [
           {
-            title: "Outstanding Individual in Youth Union and Student Movement",
+            title: "OUTSTANDING INDIVIDUAL IN YOUTH UNION AND STUDENT MOVEMENT",
             period: "2024 - 2025",
             description: [
               "Led and supported impactful Youth Union and student initiatives that nurtured initiative and creativity across UEL.",
