@@ -420,7 +420,7 @@ export const translations = {
       text: "Scroll to explore"
     },
     contact: {
-      title: "Contact"
+      title: "CONTACT"
     },
     labels: {
       bachelorOf: "BACHELOR OF",
