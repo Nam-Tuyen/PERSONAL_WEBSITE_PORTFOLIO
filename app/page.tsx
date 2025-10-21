@@ -642,60 +642,6 @@ export default function Portfolio() {
                     </div>
                   )}
 
-                  {/* Project Description */}
-                  <div className="mb-6">
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
-                      {language === 'vi' ? 'Mô tả dự án' : 'Project Description'}
-                    </h4>
-                    {Array.isArray(selectedProject.description) ? (
-                      <ul className="space-y-3 sm:space-y-4">
-                        {selectedProject.description.map((item: string, descIndex: number) => (
-                          <li key={descIndex} className="text-gray-300 leading-relaxed flex items-start gap-3 group text-sm sm:text-base">
-                            <div className="w-2 h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                            <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
-                        {selectedProject.description}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Project Technologies */}
-                  {selectedProject.technologies && (
-                    <div className="mb-6">
-                      <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
-                        {language === 'vi' ? 'Công nghệ sử dụng' : 'Technologies Used'}
-                      </h4>
-                      <div className="flex flex-wrap gap-2 sm:gap-3">
-                        {selectedProject.technologies.map((tech: string, techIndex: number) => (
-                          <span 
-                            key={techIndex}
-                            className="px-3 py-1.5 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg text-[#7c3aed] text-xs sm:text-sm font-medium hover:bg-[#7c3aed]/20 transition-all duration-300"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Project Links */}
-                  {selectedProject.link && (
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                      <a 
-                        href={selectedProject.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                      >
-                        <span>🔗</span>
-                        {t?.buttons?.viewProject || "VIEW PROJECT"}
-                      </a>
-                    </div>
-                  )}
                 </div>
             </div>
           </div>
