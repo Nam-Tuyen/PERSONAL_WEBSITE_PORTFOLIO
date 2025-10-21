@@ -621,24 +621,52 @@ export default function Portfolio() {
                   {/* Project Media */}
                   {selectedProject.image && (
                     <div className="mb-6">
-                      <div className="relative group">
-                        {selectedProject.image?.endsWith('.mp4') ? (
-                          <video 
-                            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10"
-                            controls
-                            preload="metadata"
-                          >
-                            <source src={selectedProject.image} type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </video>
-                        ) : (
-                          <img 
-                            src={selectedProject.image} 
-                            alt={selectedProject.name}
-                            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                          />
-                        )}
-                      </div>
+                      {/* Multiple Images for Airbnb Project */}
+                      {selectedProject.name === "Airbnb Rental Price Prediction" ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                          <div className="relative group">
+                            <img 
+                              src="/AirBnB.PNG" 
+                              alt="Airbnb Analysis 1"
+                              className="w-full h-48 sm:h-56 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="relative group">
+                            <img 
+                              src="/AirBB2.png" 
+                              alt="Airbnb Analysis 2"
+                              className="w-full h-48 sm:h-56 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="relative group">
+                            <img 
+                              src="/airBNBPrice.png" 
+                              alt="Airbnb Analysis 3"
+                              className="w-full h-48 sm:h-56 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        /* Single Media for Other Projects */
+                        <div className="relative group">
+                          {selectedProject.image?.endsWith('.mp4') ? (
+                            <video 
+                              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10"
+                              controls
+                              preload="metadata"
+                            >
+                              <source src={selectedProject.image} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          ) : (
+                            <img 
+                              src={selectedProject.image} 
+                              alt={selectedProject.name}
+                              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                            />
+                          )}
+                        </div>
+                      )}
                     </div>
                   )}
 
