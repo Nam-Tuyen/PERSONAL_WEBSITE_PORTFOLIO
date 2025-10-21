@@ -6,7 +6,6 @@ import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
 import PageSwitcher from "./components/PageSwitcher"
 import ScrollToTopButton from "./components/ScrollToTopButton"
-import Projects from "./components/Projects"
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
@@ -471,7 +470,121 @@ export default function Portfolio() {
             </section>
 
             {/* 6. PROJECT Section */}
-            <Projects translations={t} />
+            <section id="projects" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
+              <div className="relative">
+                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                   <div className="mb-4 sm:mb-6">
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
+                   </div>
+                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+                </div>
+                
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
+                  {t?.projects?.items?.map((project: any, index: number) => (
+                      <div key={index} className="group relative">
+                        {/* Enhanced Card with Better Visual Hierarchy */}
+                        <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden hover:border-[#7c3aed]/50 transition-all duration-700 shadow-2xl hover:shadow-3xl hover:scale-[1.02] hover:-translate-y-2">
+                          
+                          {/* Enhanced Media Section */}
+                          <div className="relative aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 overflow-hidden">
+                            {project.image?.endsWith('.mp4') ? (
+                              <video 
+                                className="w-full h-full object-cover"
+                                controls
+                                preload="metadata"
+                              >
+                                <source src={project.image} type="video/mp4" />
+                                Your browser does not support the video tag.
+                              </video>
+                            ) : project.image?.endsWith('.PNG') || project.image?.endsWith('.png') || project.image?.endsWith('.jpg') || project.image?.endsWith('.jpeg') ? (
+                              <img 
+                                src={project.image} 
+                                alt={project.name}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                              />
+                            ) : (
+                              <div className="flex items-center justify-center h-full">
+                                <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
+                              </div>
+                            )}
+                            
+                            {/* Enhanced Overlay with Gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                            
+                            {/* Project Type Badge */}
+                            <div className="absolute top-4 left-4 bg-gradient-to-r from-[#7c3aed]/90 to-[#00ff88]/90 text-black px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                              {project.type || "Project"}
+                            </div>
+                          </div>
+
+                          {/* Enhanced Content Section */}
+                          <div className="p-6 lg:p-8 flex flex-col flex-grow">
+                            {/* Header with Enhanced Typography */}
+                            <div className="mb-6">
+                              <div className="flex items-start justify-between mb-3">
+                                <h4 className="text-xl lg:text-2xl font-bold text-white leading-tight group-hover:text-[#00d4ff] transition-colors duration-500 flex-1">
+                                  {project.name}
+                                </h4>
+                                <div className="ml-4 flex-shrink-0">
+                                  <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
+                                </div>
+                              </div>
+                              
+                              {project.period && (
+                                <div className="flex items-center space-x-2 mb-4">
+                                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                                  <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">{project.period}</p>
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Enhanced Description */}
+                            <div className="flex-grow mb-6">
+                              {Array.isArray(project.description) ? (
+                                <ul className="space-y-3">
+                                  {project.description.map((item: string, descIndex: number) => (
+                                    <li key={descIndex} className="flex items-start group/item">
+                                      <div className="flex-shrink-0 mr-3 mt-1.5">
+                                        <div className="w-2 h-2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full group-hover/item:scale-125 transition-transform duration-300"></div>
+                                      </div>
+                                      <span className="text-gray-300 leading-relaxed text-sm group-hover/item:text-white transition-colors duration-300">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : (
+                                <p className="text-gray-300 leading-relaxed text-sm">{project.description}</p>
+                              )}
+                            </div>
+
+                            {/* Enhanced CTA Button */}
+                            <div className="mt-auto">
+                              <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="group/btn relative w-full py-4 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-2xl hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-xl text-center text-sm overflow-hidden"
+                              >
+                                <span className="relative z-10 flex items-center justify-center space-x-2">
+                                  <span>{t?.buttons?.viewProject || "VIEW PROJECT"}</span>
+                                  <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                  </svg>
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] to-[#7c3aed] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  ))}
+                  </div>
+                </div>
+              </div>
+            </section>
 
           </div>
         </div>
