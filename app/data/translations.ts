@@ -12,29 +12,25 @@ export const translations = {
       about: "GIỚI THIỆU",
       education: "HỌC VẤN",
       skills: "KỸ NĂNG",
-      certifications: "CHỨNG CHỈ & GIẢI THƯỞNG",
+      certifications: "CHỨNG CHỈ VÀ GIẢI THƯỞNG",
       experience: "KINH NGHIỆM LÀM VIỆC",
-      projects: "DỰ ÁN",
-      hobbies: "SỞ THÍCH",
-      interests: "QUAN TÂM"
+      projects: "DỰ ÁN"
     },
     buttons: {
       downloadResume: "TẢI CV",
       viewProjects: "XEM DỰ ÁN",
-      moreInformation: "THÔNG TIN THÊM",
+      moreInformation: "THÊM THÔNG TIN",
       jobDescription: "MÔ TẢ CÔNG VIỆC",
       viewProject: "XEM DỰ ÁN"
     },
-    scrollIndicator: {
-      text: "Cuộn để khám phá"
-    },
+    scrollIndicator: { text: "Cuộn xuống để khám phá" },
     contact: {
       title: "LIÊN HỆ"
     },
     labels: {
       bachelorOf: "CỬ NHÂN NGÀNH",
       financialTechnology: "CÔNG NGHỆ TÀI CHÍNH",
-      gpa: "ĐIỂM GPA",
+      gpa: "GPA",
       ielts: "IELTS",
       newsAndMedia: "Báo chí & Truyền thông"
     },
@@ -42,11 +38,11 @@ export const translations = {
       contact: {
         email: "bingo.namtuyen@gmail.com",
         phone: "0921270404",
-        location: "TP. Hồ Chí Minh, Việt Nam",
+        location: "TP Hồ Chí Minh Việt Nam",
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
       },
-      copyright: "© 2024 LÊ NAM TUYÊN. Tất cả quyền được bảo lưu."
+      copyright: "©2025 NAM TUYEN LE"
     },
     hero: {
       greeting: "XIN CHÀO, TÔI LÀ",
@@ -56,7 +52,7 @@ export const translations = {
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
       quote: "BIẾN TẦM NHÌN THÀNH HIỆN THỰC\nTỪ Ý ĐỊNH TỚI THÀNH QUẢ",
-      description: "Sinh viên năm cuối ngành Công nghệ Tài chính tại Đại học Kinh tế – Luật (VNU-HCM), tập trung vào phát triển sản phẩm, phân tích dữ liệu và ra quyết định dựa trên bằng chứng. Thiết kế và tổ chức các workshop thực hành về khám phá sản phẩm (product discovery), nghiên cứu người dùng, SQL, Python, dashboard, đánh giá thí nghiệm và phân tích sản phẩm. Trong môi trường liên chức năng, chuyển hoá insight thành yêu cầu sản phẩm rõ ràng, xác lập chỉ số thành công, và triển khai thí nghiệm tinh gọn để nâng cao trải nghiệm người dùng lẫn kết quả kinh doanh. Thành thạo Python, SQL và các nền tảng BI hiện đại; xây dựng template và hệ thống báo cáo mở rộng nhằm cải thiện chất lượng và tốc độ thực thi. Định hướng tìm kiếm vị trí Data Analyst hoặc Associate PM trong FinTech để chuyển đổi dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được."
+      description: "Sinh viên năm cuối ngành FinTech tại UEL. Thành thạo Python, SQL và BI. Có kinh nghiệm xây dựng template và hệ thống báo cáo mở rộng để nâng cao chất lượng quyết định và hiệu suất vận hành. Mục tiêu công việc là trở thành một Data Analyst hoặc Associate PM trong FinTech với trọng tâm biến dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được"
     },
     education: {
       title: "THÀNH TÍCH HỌC TẬP",
@@ -64,16 +60,7 @@ export const translations = {
       degree: "CỬ NHÂN CÔNG NGHỆ TÀI CHÍNH",
       gpa: "3.0/4.0",
       ielts: "6.0",
-      coursework: [
-        "Hệ thống Cơ sở Dữ liệu Nâng cao",
-        "Khai thác & Phân tích Dữ liệu", 
-        "Phân tích Dữ liệu Lớn trong Tài chính",
-        "Công nghệ Blockchain & Tiền điện tử",
-        "Ứng dụng Phần mềm Tài chính",
-        "Hệ thống Thông tin Kinh doanh",
-        "Quản lý Tài chính & Đánh giá Rủi ro",
-        "Tài chính Định lượng & Mô hình hóa"
-      ],
+      coursework: [],
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
     skills: {
@@ -112,12 +99,7 @@ export const translations = {
           image: "/Certificate%20NVIDIA.PNG",
           description: "Bấm để xem chứng chỉ"
         },
-        {
-          title: "Bài báo khoa học – Public Debt and Economic Stability, the Moderating Effect of Governance: Evidence from SEA Countries",
-          issuer: "Journal",
-          image: "/journal-article.PNG",
-          description: "Bấm để xem bài báo"
-        }
+        
       ]
     },
     workExperience: {
@@ -159,7 +141,7 @@ export const translations = {
         period: "Tháng 3/2025 – Tháng 6/2025",
         achievements: [
           "Biên soạn báo cáo thị trường kịp thời về ngành và vĩ mô để hỗ trợ quyết định cấp tín dụng.",
-          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp (vốn lưu động, capex, cơ cấu facility), bao gồm mô hình dòng tiền và phân tích kịch bản.",
+          "Xây dựng đề xuất sử dụng vốn cho khách hàng doanh nghiệp bao gồm mô hình dòng tiền và phân tích kịch bản.",
           "Thực hiện đánh giá rủi ro tín dụng và soạn khuyến nghị cho vay từ phân tích mô hình kinh doanh, tài sản bảo đảm và khả năng trả nợ.",
           "Phân tích báo cáo tài chính bằng chỉ số và xu hướng để hỗ trợ thẩm định."
         ],
@@ -173,7 +155,7 @@ export const translations = {
         achievements: [
           "Thực hiện phân tích thị trường dựa trên dữ liệu để làm sạch, trực quan hóa và diễn giải dữ liệu giao dịch của các mã niêm yết.",
           "Thực hiện phân tích tài chính và định giá cổ phiếu; chuẩn bị các bản tóm tắt đầu tư súc tích nhằm hỗ trợ ý tưởng giao dịch.",
-          "Biên soạn báo cáo thị trường hằng ngày/tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và các quyết định danh mục.",
+          "Biên soạn báo cáo thị trường hằng tuần cho Senior Broker nhằm phục vụ tiếp cận khách hàng và các quyết định danh mục.",
           "Hỗ trợ phát triển khách hàng bằng cách sàng lọc khách hàng tiềm năng, chuẩn bị tài liệu/pitch và theo dõi danh mục.",
           "Xây dựng chatbot tư vấn cổ phiếu tự động tổng hợp tin tức hằng ngày và nêu bật insight theo mã, qua đó nâng cao hiệu suất và tốc độ phản hồi của nhóm."
         ],
@@ -186,86 +168,39 @@ export const translations = {
         {
           name: "Công cụ xuất báo cáo phân tích cổ phiếu tự động",
           description: [
-            "Xây dựng pipeline Python end-to-end (cá nhân) cho phân tích mã chứng khoán: thu thập dữ liệu API thô với bí mật môi trường, tạo báo cáo hằng ngày chuẩn hoá định dạng Excel, CSV, PDF.",
-            "Triển khai với requests, pandas, python-dotenv; mô-đun hoá thành fetch • process • report cùng helper tái sử dụng cho quản lý đường dẫn, tải API key, xác thực, xử lý thời gian; lên lịch qua cron.",
-            "Kết quả: giảm 90% thời gian chuẩn bị thủ công, cải thiện 25% khả năng phản hồi của nhóm."
+            "Xây dựng pipeline Python phân tích mã cổ phiếu với dữ liệu API dùng biến môi trường và tạo báo cáo hằng ngày ở định dạng Excel CSV và PDF",
+            "Tổ chức mã theo ba bước gồm lấy dữ liệu xử lý và xuất báo cáo kèm các hàm tái sử dụng cho quản lý đường dẫn quản lý khóa xác thực và xử lý thời gian được lập lịch bằng cron",
+            "Kết quả giảm chín mươi phần trăm thời gian chuẩn bị thủ công và tăng hai mươi lăm phần trăm tốc độ phản hồi của nhóm"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
-          period: "08/2024 – 10/2024"
+          period: "Tháng 08 2024 đến Tháng 10 2024"
         },
         {
-          name: "Phân tích giá thuê nhà trên AirBnB",
+          name: "Phân tích giá thuê nhà trên Airbnb",
           description: [
-            "Làm sạch và kỹ thuật hoá dataset Airbnb 26.000 dòng (cá nhân): chuyển đổi tiền tệ sang số, phân tích ngày tháng, cắt outlier tại phân vị 99,5, xây dựng workflow định giá với đầu vào/đầu ra chuẩn hoá.",
-            "Xây dựng pipeline tiền xử lý & mô hình trên scikit-learn: ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling theo thành phố, GridSearchCV để tinh chỉnh.",
-            "Insight cho khách hàng: nổi bật accommodates, bathrooms, bedrooms, beds, fees là yếu tố chính; đạt RMSE test = 95,84 và MAE = 57,98 với Random Forest đã tinh chỉnh (~4% giảm lỗi so với baseline tuyến tính); ví dụ giá dự đoán 834,20 cho căn ở Bondi Beach."
+            "Làm sạch và kỹ thuật hóa bộ dữ liệu hai mươi sáu nghìn dòng gồm chuyển đổi tiền tệ sang dạng số phân tích ngày tháng xử lý ngoại lệ và chuẩn hóa quy trình định giá",
+            "Dựng pipeline tiền xử lý và mô hình bằng scikit learn với ColumnTransformer StandardScaler OneHotEncoder Linear Regression và Random Forest áp dụng lấy mẫu phân tầng theo thành phố cùng tinh chỉnh bằng GridSearchCV",
+            "Kết quả cho khách hàng nhấn mạnh các yếu tố accommodates bathrooms bedrooms beds và fees Mô hình Random Forest tinh chỉnh đạt RMSE kiểm thử 95.84 và MAE 57.98 giảm khoảng bốn phần trăm so với tuyến tính Ví dụ giá dự đoán 834.20 cho căn tại Bondi Beach"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/AirBnB.PNG",
           link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
-          period: "04/2024 – 06/2024"
+          period: "Tháng 04 2024 đến Tháng 06 2024"
         },
         {
-          name: "Phân tích nhân sự trong doanh nghiệp",
+          name: "Workforce Insight Hub Retention and Compensation",
           description: [
-            "Xây dựng workflow phân tích HR end-to-end (cá nhân): làm sạch & mã hoá Human_Resources.csv, thực hiện EDA với histogram, KDE, boxplot, correlation heatmap để nhận diện rủi ro duy trì.",
-            "Huấn luyện Random Forest cho attrition và Logistic Regression để giải thích; đạt 85% accuracy, biến số quan trọng gồm MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; lưu ý recall người rời đi = 0,07.",
-            "Phân khúc nhân sự thành 3 cluster theo MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction; đề xuất chính sách lương & làm thêm dựa trên tỷ lệ attrition 16,1%."
+            "Xây dựng quy trình phân tích nhân sự toàn diện gồm làm sạch và mã hóa dữ liệu thực hiện phân tích khám phá với biểu đồ phân phối mật độ biểu đồ hộp và bản đồ tương quan để nhận diện rủi ro duy trì",
+            "Huấn luyện mô hình Random Forest dự báo nghỉ việc và Logistic Regression để giải thích đạt độ chính xác tám mươi lăm phần trăm các biến quan trọng gồm thu nhập hàng tháng độ tuổi làm thêm số năm làm việc tổng và mức lương ngày ghi nhận độ bao phủ nhóm rời đi ở mức không phẩy không bảy",
+            "Phân khúc nhân sự thành ba nhóm theo thu nhập hàng tháng số năm làm việc tổng số năm gắn bó và mức độ hài lòng đồng thời đề xuất chính sách lương và làm thêm dựa trên tỷ lệ nghỉ việc mười sáu phẩy một phần trăm"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "08/2023 – 02/2024"
+          period: "Tháng 08 2023 đến Tháng 02 2024"
         }
       ]
     },
-    hobbies: {
-      title: "SỞ THÍCH CÁ NHÂN",
-      items: [
-        {
-          name: "ĐỌC SÁCH",
-          description: "Thích đọc sách về công nghệ, kinh doanh và phát triển bản thân",
-          icon: "📚"
-        },
-        {
-          name: "THỂ THAO",
-          description: "Thích chơi: bóng rổ, pickleball, badminton và tennis, trekking",
-          icon: "🏀"
-        },
-        {
-          name: "DU LỊCH",
-          description: "Khám phá các địa điểm mới và trải nghiệm văn hóa",
-          icon: "✈️"
-        },
-        {
-          name: "ÂM NHẠC",
-          description: "Chơi guitar và nghe nhạc để thư giãn",
-          icon: "🎵"
-        }
-      ]
-    },
-    interests: {
-      title: "SỞ THÍCH NGHỀ NGHIỆP",
-      items: [
-        {
-          name: "FinTech",
-          description: "Quan tâm đến các công nghệ tài chính mới và blockchain",
-          icon: "🔗"
-        },
-        {
-          name: "Data Science",
-          description: "Đam mê phân tích dữ liệu và machine learning",
-          icon: "🤖"
-        },
-        {
-          name: "Product Management",
-          description: "Hứng thú với việc phát triển sản phẩm và UX/UI",
-          icon: "🎨"
-        }
-      ]
-    },
+    
     personal: {
       hero: {
         title: "BẢN THÂN TÔI",
@@ -317,9 +252,9 @@ export const translations = {
             website: "https://ftc-websites.vercel.app/",
             linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
             images: [
-              "/FTC.JPG",
-              "/FTC1.jpg",
-              "/FTC2.jpg"
+              "/FTCclb.JPG",
+              "/FTC2.jpg",
+              "/FTC1.jpg"
             ],
             roles: [
               {
@@ -467,14 +402,12 @@ export const translations = {
       }
     },
     sections: {
-      about: "ABOUT ME",
-      education: "EDUCATION",
-      skills: "SKILLS",
-      certifications: "CERTIFICATIONS & AWARDS",
-      experience: "WORKING EXPERIENCE",
-      projects: "PROJECTS",
-      hobbies: "HOBBIES",
-      interests: "INTERESTS"
+      about: "About Me",
+      education: "Education",
+      skills: "Skills",
+      certifications: "Certifications and Awards",
+      experience: "Work Experience",
+      projects: "Projects"
     },
     buttons: {
       downloadResume: "DOWNLOAD RESUME",
@@ -507,9 +440,9 @@ export const translations = {
       copyright: "© 2024 LE NAM TUYEN. All rights reserved."
     },
     hero: {
-      greeting: "HI, I AM",
-      name: "LE NAM TUYEN",
-      title: "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"
+      greeting: "Hi I am",
+      name: "Le Nam Tuyen",
+      title: "Aspiring Product Manager and Data Analyst in FinTech"
     },
     about: {
       label: "PROFESSIONAL PROFILE",
@@ -535,24 +468,12 @@ export const translations = {
       learnMoreUrl: "https://www.uel.edu.vn/"
     },
     skills: {
-      title: "TECHNICAL EXPERTISE",
+      title: "Technical Expertise",
       categories: [
-        {
-          name: "Programming Languages",
-          items: ["Python", "SQL", "R"]
-        },
-        {
-          name: "Data Tools",
-          items: ["Power BI", "Tableau", "Excel"]
-        },
-        {
-          name: "Product Management",
-          items: ["User Research", "Product Discovery", "Analytics"]
-        },
-        {
-          name: "Database & Cloud",
-          items: ["MySQL", "PostgreSQL", "MongoDB"]
-        }
+        { name: "Programming Languages", items: ["Python", "SQL", "R"] },
+        { name: "Data Tools", items: ["Power BI", "Tableau", "Excel"] },
+        { name: "Product Management", items: ["User Research", "Product Discovery", "Product Analytics"] },
+        { name: "Database and Cloud", items: ["MySQL", "PostgreSQL", "MongoDB"] }
       ]
     },
     certifications: {
@@ -638,66 +559,39 @@ export const translations = {
         {
           name: "Automated Financial Report Export",
           description: [
-            "Built an end-to-end Python pipeline (individual) for analyzing stock tickers: ingested raw API data with environment-managed secrets; produced standardized daily reports in Excel, CSV, and PDF.",
-            "Implemented with requests, pandas, python-dotenv; modularized into fetch • process • report with reusable helpers for path management, API key loading, auth, time handling; scheduled via cron.",
-            "Results: reduced manual prep time by 90% and improved team responsiveness by 25%."
+            "Built an end to end Python pipeline for stock analysis that ingested raw API data with environment managed secrets and produced standardized daily reports in Excel CSV and PDF",
+            "Structured code into fetch process and report with reusable helpers for path management key handling authentication and time utilities scheduled with cron",
+            "Delivered a ninety percent reduction in manual preparation time and a twenty five percent improvement in team responsiveness"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
-          period: "Aug 2024 – Oct 2024"
+          period: "Aug 2024 to Oct 2024"
         },
         {
           name: "Airbnb Rental Price Prediction",
           description: [
-            "Cleaned and engineered a 26,000-row Airbnb dataset: converted currency to numeric, parsed dates, clipped outliers at the 99.5th percentile, and built a standardized pricing workflow.",
-            "Built a full preprocessing & modeling pipeline in scikit-learn using ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, Random Forest, stratified sampling by city, and GridSearchCV for tuning.",
-            "Client-ready insights: key features include accommodates, bathrooms, bedrooms, beds, and fees; achieved test RMSE 95.84 and MAE 57.98 with tuned Random Forest (~4% error reduction vs linear baseline); example predicted price 834.20 for a Bondi Beach home."
+            "Cleaned and engineered a dataset of twenty six thousand rows including currency to numeric conversion date parsing outlier treatment and a standardized pricing workflow",
+            "Built a preprocessing and modeling pipeline in scikit learn using ColumnTransformer StandardScaler OneHotEncoder Linear Regression and Random Forest with stratified sampling by city and tuning via GridSearchCV",
+            "Client ready insights highlighted accommodates bathrooms bedrooms beds and fees Tuned Random Forest achieved test RMSE 95.84 and MAE 57.98 with about four percent error reduction versus a linear baseline Example predicted price 834.20 for a Bondi Beach home"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/AirBnB.PNG",
           link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
-          period: "Apr 2024 – Jun 2024"
+          period: "Apr 2024 to Jun 2024"
         },
         {
-          name: "Workforce Insight Hub: Retention & Compensation",
+          name: "Workforce Insight Hub Retention and Compensation",
           description: [
-            "Built an end-to-end HR analytics workflow: cleaned & encoded Human_Resources.csv; performed EDA with histograms, KDE, boxplots, and a correlation heatmap to surface retention risks.",
-            "Trained a Random Forest attrition model and logistic regression for interpretability; achieved 85% accuracy; key drivers: MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate; noted low recall on leavers at 0.07.",
-            "Segmented employees into three clusters (MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction) and recommended salary/overtime policies based on a 16.1% attrition rate."
+            "Developed an end to end HR analytics workflow that cleaned and encoded the dataset and performed exploratory analysis with histograms density plots boxplots and a correlation heatmap to surface retention risks",
+            "Trained a Random Forest attrition model and Logistic Regression for interpretability achieving accuracy of eighty five percent with key drivers including MonthlyIncome Age OverTime TotalWorkingYears and DailyRate and noted a low recall for leavers at zero point zero seven",
+            "Segmented employees into three clusters based on MonthlyIncome TotalWorkingYears YearsAtCompany and JobSatisfaction and recommended salary and overtime policies using an attrition rate of sixteen point one percent"
           ],
-          technologies: ["Python", "Pandas", "Flask", "Streamlit", "API"],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
-          period: "Aug 2023 – Feb 2024"
+          period: "Aug 2023 to Feb 2024"
         }
       ]
     },
-    hobbies: {
-      title: "PERSONAL HOBBIES",
-      items: [
-        {
-          name: "READING",
-          description: "Enjoy reading books about technology, business, and personal development",
-          icon: "📚"
-        },
-        {
-          name: "SPORTS",
-          description: "Enjoy playing: basketball, pickleball, badminton and tennis, trekking",
-          icon: "🏀"
-        },
-        {
-          name: "TRAVEL",
-          description: "Explore new places and experience different cultures",
-          icon: "✈️"
-        },
-        {
-          name: "MUSIC",
-          description: "Play guitar and listen to music for relaxation",
-          icon: "🎵"
-        }
-      ]
-    },
+    
     interests: {
       title: "PROFESSIONAL INTERESTS",
       items: [
@@ -769,9 +663,9 @@ export const translations = {
             website: "https://ftc-websites.vercel.app/",
             linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
             images: [
-              "/FTC.JPG",
-              "/FTC1.jpg",
-              "/FTC2.jpg"
+              "/FTCclb.JPG",
+              "/FTC2.jpg",
+              "/FTC1.jpg"
             ],
             roles: [
               {

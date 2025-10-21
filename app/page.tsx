@@ -148,7 +148,7 @@ export default function Portfolio() {
                         ))}
                       </blockquote>
                         <div className="max-w-4xl mx-auto px-2 sm:px-4">
-                          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed sm:leading-loose text-left sm:text-justify tracking-wide sm:tracking-wider break-words hyphens-auto">
+                          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed sm:leading-loose text-justify tracking-wide sm:tracking-wider break-words hyphens-auto">
                             {t?.about?.description || "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."}
                   </p>
                         </div>
@@ -277,7 +277,7 @@ export default function Portfolio() {
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00ff88] rounded-full animate-pulse"></div>
                           <h4 className="text-base sm:text-lg font-bold text-white">Google Certificate</h4>
                     </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-justify">
                            Ask Questions to Make Data-Driven Decisions
                          </p>
                          <div className="mt-2 sm:mt-3 text-xs text-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
@@ -294,7 +294,7 @@ export default function Portfolio() {
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00d4ff] rounded-full animate-pulse"></div>
                           <h4 className="text-base sm:text-lg font-bold text-white">NVIDIA Certificate</h4>
                     </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-justify">
                            Accelerating End-to-End Data Science Workflows
                          </p>
                          <div className="mt-2 sm:mt-3 text-xs text-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
@@ -384,7 +384,7 @@ export default function Portfolio() {
                         {t?.experience?.agribank?.achievements?.map((achievement: string, index: number) => (
                             <div key={index} className="flex items-start space-x-2 sm:space-x-3">
                               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
+                              <span className="text-gray-300 leading-relaxed text-justify text-xs sm:text-sm lg:text-base">
                                 {achievement}
                               </span>
                           </div>
@@ -456,7 +456,7 @@ export default function Portfolio() {
                         {t?.experience?.maybank?.achievements?.map((achievement: string, index: number) => (
                             <div key={index} className="flex items-start space-x-2 sm:space-x-3">
                               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-300 leading-relaxed text-left text-xs sm:text-sm lg:text-base">
+                              <span className="text-gray-300 leading-relaxed text-justify text-xs sm:text-sm lg:text-base">
                                 {achievement}
                               </span>
                             </div>
@@ -514,7 +514,7 @@ export default function Portfolio() {
                         )}
                            <div className="flex-grow">
                           {Array.isArray(project.description) ? (
-                               <ul className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-left tracking-wide space-y-1 sm:space-y-2">
+                               <ul className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-justify tracking-wide space-y-1 sm:space-y-2">
                                  {project.description.map((item: string, descIndex: number) => (
                                    <li key={descIndex} className="flex items-start">
                                      <span className="text-[#00d4ff] mr-2 sm:mr-3 lg:mr-4 mt-1 text-sm sm:text-base lg:text-lg font-bold animate-pulse drop-shadow-lg flex-shrink-0">●</span>
@@ -523,7 +523,7 @@ export default function Portfolio() {
                                  ))}
                                </ul>
                              ) : (
-                               <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-left tracking-wide text-xs sm:text-sm lg:text-base">{project.description}</p>
+                               <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-justify tracking-wide text-xs sm:text-sm lg:text-base">{project.description}</p>
                           )}
                         </div>
                         <a 
