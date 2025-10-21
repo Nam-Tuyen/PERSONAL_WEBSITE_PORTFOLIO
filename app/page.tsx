@@ -278,7 +278,7 @@ export default function Portfolio() {
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00ff88] rounded-full animate-pulse"></div>
                           <h4 className="text-base sm:text-lg font-bold text-white">Google Certificate</h4>
                     </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-justify">
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
                            Ask Questions to Make Data-Driven Decisions
                          </p>
                          <div className="mt-2 sm:mt-3 text-xs text-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
@@ -295,7 +295,7 @@ export default function Portfolio() {
                           <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00d4ff] rounded-full animate-pulse"></div>
                           <h4 className="text-base sm:text-lg font-bold text-white">NVIDIA Certificate</h4>
                     </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-justify">
+                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
                            Accelerating End-to-End Data Science Workflows
                          </p>
                          <div className="mt-2 sm:mt-3 text-xs text-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
