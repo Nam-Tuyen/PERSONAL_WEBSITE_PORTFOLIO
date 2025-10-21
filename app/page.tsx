@@ -6,6 +6,7 @@ import UniverseBackground from "./components/UniverseBackground"
 import Sidebar from "./components/Sidebar"
 import PageSwitcher from "./components/PageSwitcher"
 import ScrollToTopButton from "./components/ScrollToTopButton"
+import Projects from "./components/Projects"
 
 export default function Portfolio() {
   const [language, setLanguage] = useState("en")
@@ -470,80 +471,7 @@ export default function Portfolio() {
             </section>
 
             {/* 6. PROJECT Section */}
-            <section id="projects" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
-                   </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
-                </div>
-                
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-                  {t?.projects?.items?.map((project: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/70 to-gray-800/70 backdrop-blur-xl border border-white/20 rounded-2xl overflow-hidden hover:border-[#7c3aed]/50 transition-all duration-500 shadow-2xl group flex flex-col hover:scale-105 hover:shadow-3xl">
-                      <div className="aspect-video bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 flex items-center justify-center relative overflow-hidden">
-                        {project.image?.endsWith('.mp4') ? (
-                          <video 
-                            className="w-full h-full object-cover"
-                            controls
-                            preload="metadata"
-                          >
-                            <source src={project.image} type="video/mp4" />
-                              Your browser does not support the video tag.
-                          </video>
-                        ) : project.image?.endsWith('.PNG') || project.image?.endsWith('.png') || project.image?.endsWith('.jpg') || project.image?.endsWith('.jpeg') ? (
-                          <img 
-                            src={project.image} 
-                            alt={project.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
-                        ) : (
-                            <>
-                              <div className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-500">📊</div>
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </>
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </div>
-                         <div className="p-5 sm:p-6 lg:p-7 flex flex-col flex-grow">
-                           <div className="mb-3">
-                             <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-[#00d4ff] transition-colors duration-300">{project.name}</h4>
-                             {project.period && (
-                                 <p className="text-gray-400 text-sm uppercase tracking-wider font-medium">{project.period}</p>
-                             )}
-                           </div>
-                           <div className="flex-grow mb-4">
-                          {Array.isArray(project.description) ? (
-                               <ul className="text-gray-300 leading-relaxed space-y-2">
-                                 {project.description.map((item: string, descIndex: number) => (
-                                   <li key={descIndex} className="flex items-start">
-                                     <span className="text-[#00d4ff] mr-3 mt-1.5 text-sm font-bold flex-shrink-0">●</span>
-                                     <span className="text-sm leading-relaxed">{item}</span>
-                                   </li>
-                                 ))}
-                               </ul>
-                             ) : (
-                               <p className="text-gray-300 leading-relaxed text-sm">{project.description}</p>
-                          )}
-                        </div>
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                             className="w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg text-center text-sm hover:shadow-xl"
-                        >
-                             {t?.buttons?.viewProject || "VIEW PROJECT"}
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                  </div>
-                </div>
-              </div>
-            </section>
+            <Projects translations={t} />
 
           </div>
         </div>
