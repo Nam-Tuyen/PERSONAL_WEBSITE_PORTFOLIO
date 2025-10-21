@@ -539,7 +539,7 @@ export default function Portfolio() {
                           <div className="relative group">
                             {project.image?.endsWith('.mp4') ? (
                               <video 
-                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                className="w-full h-32 sm:h-36 md:h-40 object-cover rounded-lg sm:rounded-xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
                                 controls
                                 preload="metadata"
                               >
@@ -550,7 +550,7 @@ export default function Portfolio() {
                               <img 
                                 src={project.image} 
                                 alt={project.name}
-                                className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                className="w-full h-32 sm:h-36 md:h-40 object-cover rounded-lg sm:rounded-xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
                               />
                             )}
                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
