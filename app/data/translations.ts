@@ -400,6 +400,21 @@ export const translations = {
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
           }
         ]
+      },
+      achievements: {
+        title: "THÀNH TỰU ĐẠT ĐƯỢC",
+        items: [
+          {
+            title: "Được vinh danh Cá nhân có thành tích xuất sắc trong công tác Đoàn và phong trào thanh niên tại Hội nghị Tổng kết năm học 2024–2025.",
+            description: [
+              "Dẫn dắt và hỗ trợ các hoạt động Đoàn – Hội có tác động tích cực lan tỏa tinh thần tiên phong và sáng tạo trong sinh viên.",
+              "Góp phần xây dựng môi trường sinh hoạt gắn kết khuyến khích rèn luyện và cống hiến của cộng đồng UEL."
+            ],
+            images: ["/IMG_5063.JPG", "/IMG_5064.JPG", "/IMG_5065.JPG"],
+            certificate: "/IMG_5081.jpg",
+            viewButton: "XEM BẰNG KHEN"
+          }
+        ]
       }
     }
   },
@@ -820,6 +835,21 @@ export const translations = {
             date: "2025",
             description: "Research on the relationship between public debt and economic stability in Southeast Asian countries, with the moderating role of national governance. Using panel data from 10 ASEAN countries from 2000-2022.",
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
+          }
+        ]
+      },
+      achievements: {
+        title: "ACHIEVEMENTS",
+        items: [
+          {
+            title: "Recognized as Outstanding Individual in Youth Union and Student Movement at the Annual Review Conference AY 2024–2025.",
+            description: [
+              "Led and supported impactful Youth Union and student initiatives that nurtured initiative and creativity across UEL.",
+              "Helped build an engaging and cohesive environment that encouraged student growth and service."
+            ],
+            images: ["/IMG_5063.JPG", "/IMG_5064.JPG", "/IMG_5065.JPG"],
+            certificate: "/IMG_5081.jpg",
+            viewButton: "VIEW"
           }
         ]
       }

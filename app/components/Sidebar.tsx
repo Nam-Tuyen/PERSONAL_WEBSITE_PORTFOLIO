@@ -110,6 +110,13 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
       icon: Award,
       color: "text-[#00ff88]",
       bgColor: "bg-[#00ff88]/10"
+    },
+    { 
+      key: "achievements", 
+      label: translations?.personal?.achievements?.title || "Achievements",
+      icon: Trophy,
+      color: "text-[#7c3aed]",
+      bgColor: "bg-[#7c3aed]/10"
     }
   ]
 

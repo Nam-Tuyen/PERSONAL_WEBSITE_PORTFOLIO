@@ -635,9 +635,115 @@ export default function PersonalPage() {
               </div>
             </section>
 
+            {/* Achievements Section */}
+            <section id="achievements" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
+                  {t?.personal?.achievements?.title || "ACHIEVEMENTS"}
+                </h2>
+                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
+              </div>
+
+              <div className="space-y-4 sm:space-y-6 md:space-y-8">
+                {t?.personal?.achievements?.items?.map((achievement: any, index: number) => (
+                  <div key={index} className="group">
+                    {/* Header */}
+                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">🏅</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
+                          {achievement.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
+                      {/* Description */}
+                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
+                        {Array.isArray(achievement.description) ? (
+                          <ul className="space-y-2 sm:space-y-3">
+                            {achievement.description.map((item: string, descIndex: number) => (
+                              <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
+                            {achievement.description}
+                          </p>
+                        )}
+                      </div>
+                      
+                      {/* Images Gallery */}
+                      {achievement.images && achievement.images.length > 0 && (
+                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+                            {achievement.images.map((image: string, imgIndex: number) => (
+                              <div key={imgIndex} className="relative group">
+                                <img 
+                                  src={image} 
+                                  alt={`Achievement - Image ${imgIndex + 1}`}
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* View Certificate Button */}
+                      {achievement.certificate && (
+                        <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <button
+                            onClick={() => setSelectedAchievement(achievement.certificate)}
+                            className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                          >
+                            <span>📜</span>
+                            {achievement.viewButton || (language === "vi" ? "XEM BẰNG KHEN" : "VIEW")}
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
            </div>
          </div>
        </div>
+
+       {/* Achievement Certificate Modal */}
+       {selectedAchievement && (
+         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+           <div className="relative max-w-4xl max-h-[90vh] w-full">
+             {/* Close Button */}
+             <button
+               onClick={() => setSelectedAchievement(null)}
+               className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
+             >
+               <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+               </svg>
+             </button>
+
+             {/* Certificate Image */}
+             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+               <img
+                 src={selectedAchievement}
+                 alt="Achievement Certificate"
+                 className="w-full h-auto max-h-[85vh] object-contain"
+               />
+             </div>
+           </div>
+         </div>
+       )}
 
        <ScrollToTopButton />
      </div>
