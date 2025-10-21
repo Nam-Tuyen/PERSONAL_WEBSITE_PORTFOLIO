@@ -21,7 +21,8 @@ export const translations = {
       viewProjects: "XEM DỰ ÁN",
       moreInformation: "THÊM THÔNG TIN",
       jobDescription: "MÔ TẢ CÔNG VIỆC",
-      viewProject: "XEM DỰ ÁN"
+      viewProject: "XEM DỰ ÁN",
+      viewDemo: "XEM DEMO"
     },
     scrollIndicator: { text: "Cuộn xuống để khám phá" },
     contact: {
@@ -414,7 +415,8 @@ export const translations = {
       viewProjects: "VIEW PROJECTS",
       moreInformation: "MORE INFORMATION",
       jobDescription: "JOB DESCRIPTION",
-      viewProject: "VIEW PROJECT"
+      viewProject: "VIEW PROJECT",
+      viewDemo: "VIEW DEMO"
     },
     scrollIndicator: {
       text: "Scroll to explore"

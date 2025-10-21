@@ -17,6 +17,7 @@ export default function Portfolio() {
   }, [])
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
+  const [selectedProject, setSelectedProject] = useState<any | null>(null)
 
   const t = translations[language as keyof typeof translations]
 
@@ -473,16 +474,16 @@ export default function Portfolio() {
             <section id="projects" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
               <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
-                  </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
+                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                   <div className="mb-4 sm:mb-6">
+                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
+                   </div>
+                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
                 </div>
                 
                 <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                   <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                    {t?.projects?.items?.map((project: any, index: number) => (
+                  {t?.projects?.items?.map((project: any, index: number) => (
                       <div key={index} className="group">
                         {/* Header */}
                         <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
@@ -499,9 +500,16 @@ export default function Portfolio() {
                               </p>
                             )}
                             
-                            {/* Project Link */}
-                            {project.link && (
-                              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
+                            {/* Project Links */}
+                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
+                              <button
+                                onClick={() => setSelectedProject(project)}
+                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                              >
+                                <span>🎬</span>
+                                {t?.buttons?.viewDemo || "VIEW DEMO"}
+                              </button>
+                              {project.link && (
                                 <a 
                                   href={project.link} 
                                   target="_blank" 
@@ -509,10 +517,10 @@ export default function Portfolio() {
                                   className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
                                 >
                                   <span>🔗</span>
-                                  View Project
+                                  {t?.buttons?.viewProject || "VIEW PROJECT"}
                                 </a>
-                              </div>
-                            )}
+                              )}
+                            </div>
                           </div>
                         </div>
 
@@ -540,25 +548,25 @@ export default function Portfolio() {
                           {project.image && (
                             <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
                               <div className="relative group">
-                                {project.image?.endsWith('.mp4') ? (
-                                  <video 
+                        {project.image?.endsWith('.mp4') ? (
+                          <video 
                                     className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300"
-                                    controls
-                                    preload="metadata"
-                                  >
-                                    <source src={project.image} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                  </video>
+                            controls
+                            preload="metadata"
+                          >
+                            <source src={project.image} type="video/mp4" />
+                              Your browser does not support the video tag.
+                          </video>
                                 ) : (
-                                  <img 
-                                    src={project.image} 
-                                    alt={project.name}
+                          <img 
+                            src={project.image} 
+                            alt={project.name}
                                     className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
-                                  />
-                                )}
+                          />
+                        )}
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
-                            </div>
+                      </div>
                           )}
 
                           {/* Project Technologies/Tags */}
@@ -577,11 +585,11 @@ export default function Portfolio() {
                                   </span>
                                 ))}
                               </div>
-                            </div>
+                           </div>
                           )}
-                        </div>
                       </div>
-                    ))}
+                    </div>
+                  ))}
                   </div>
                 </div>
               </div>
@@ -612,6 +620,127 @@ export default function Portfolio() {
                 alt={selectedCertificate === 'google' ? 'Google Certificate' : 'NVIDIA Certificate'}
                 className="w-full h-auto max-h-[85vh] object-contain"
               />
+            </div>
+          </div>
+        </div>
+        )}
+
+        {/* Project Demo Modal */}
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+            <div className="relative max-w-6xl max-h-[90vh] w-full">
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
+              >
+                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Project Modal Content */}
+              <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl max-h-[85vh] overflow-y-auto">
+                {/* Header */}
+                <div className="p-4 sm:p-6 border-b border-white/10">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl sm:text-3xl">🚀</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
+                        {selectedProject.name}
+                      </h3>
+                      {selectedProject.period && (
+                        <p className="text-[#7c3aed] font-medium text-sm sm:text-base">
+                          {selectedProject.period}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-4 sm:p-6">
+                  {/* Project Media */}
+                  {selectedProject.image && (
+                    <div className="mb-6">
+                      <div className="relative group">
+                        {selectedProject.image?.endsWith('.mp4') ? (
+                          <video 
+                            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10"
+                            controls
+                            preload="metadata"
+                          >
+                            <source src={selectedProject.image} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        ) : (
+                          <img 
+                            src={selectedProject.image} 
+                            alt={selectedProject.name}
+                            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
+                          />
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Project Description */}
+                  <div className="mb-6">
+                    <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
+                      {language === 'vi' ? 'Mô tả dự án' : 'Project Description'}
+                    </h4>
+                    {Array.isArray(selectedProject.description) ? (
+                      <ul className="space-y-3 sm:space-y-4">
+                        {selectedProject.description.map((item: string, descIndex: number) => (
+                          <li key={descIndex} className="text-gray-300 leading-relaxed flex items-start gap-3 group text-sm sm:text-base">
+                            <div className="w-2 h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                            <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
+                        {selectedProject.description}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Project Technologies */}
+                  {selectedProject.technologies && (
+                    <div className="mb-6">
+                      <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
+                        {language === 'vi' ? 'Công nghệ sử dụng' : 'Technologies Used'}
+                      </h4>
+                      <div className="flex flex-wrap gap-2 sm:gap-3">
+                        {selectedProject.technologies.map((tech: string, techIndex: number) => (
+                          <span 
+                            key={techIndex}
+                            className="px-3 py-1.5 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg text-[#7c3aed] text-xs sm:text-sm font-medium hover:bg-[#7c3aed]/20 transition-all duration-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Project Links */}
+                  {selectedProject.link && (
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                      <a 
+                        href={selectedProject.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                      >
+                        <span>🔗</span>
+                        {t?.buttons?.viewProject || "VIEW PROJECT"}
+                      </a>
+                    </div>
+                  )}
+                </div>
             </div>
           </div>
         </div>
