@@ -22,7 +22,8 @@ export const translations = {
       moreInformation: "THÊM THÔNG TIN",
       jobDescription: "MÔ TẢ CÔNG VIỆC",
       viewProject: "XEM DỰ ÁN",
-      viewDemo: "XEM DEMO"
+      viewDemo: "XEM DEMO",
+      readSampleReport: "ĐỌC BÁO CÁO MẪU"
     },
     scrollIndicator: { text: "Cuộn xuống để khám phá" },
     contact: {
@@ -416,7 +417,8 @@ export const translations = {
       moreInformation: "MORE INFORMATION",
       jobDescription: "JOB DESCRIPTION",
       viewProject: "VIEW PROJECT",
-      viewDemo: "VIEW DEMO"
+      viewDemo: "VIEW DEMO",
+      readSampleReport: "READ SAMPLE REPORT"
     },
     scrollIndicator: {
       text: "Scroll to explore"
