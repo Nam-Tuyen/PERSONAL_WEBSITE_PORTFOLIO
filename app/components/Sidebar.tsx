@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Mail, Phone, MapPin, User, Briefcase, Menu, X, Globe, Code, Database, BarChart3, Award, FolderOpen, ChevronRight, Home, UserCircle, GraduationCap, Wrench, Trophy, Building, Folder, Heart, Star, Settings, ChevronDown, Users } from "lucide-react"
+import { Mail, MapPin, User, Briefcase, Menu, X, Globe, Code, Database, BarChart3, Award, FolderOpen, ChevronRight, Home, UserCircle, GraduationCap, Wrench, Trophy, Building, Folder, Heart, Star, Settings, ChevronDown, Users } from "lucide-react"
 
 interface SidebarProps {
   translations: any
@@ -297,13 +297,7 @@ export default function Sidebar({ translations, activeSection, onSectionChange, 
                 {/* Email */}
                 <div className="flex items-start space-x-2 sm:space-x-3 p-2.5 sm:p-3 bg-white/5 rounded-md sm:rounded-lg hover:bg-white/10 transition-all duration-300 group">
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00ff88] group-hover:scale-110 transition-transform duration-300 mt-0.5 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-gray-300 break-all leading-relaxed">bingo.namtuyen@gmail.com</span>
-                </div>
-                
-                {/* Phone */}
-                <div className="flex items-center space-x-2 sm:space-x-3 p-2.5 sm:p-3 bg-white/5 rounded-md sm:rounded-lg hover:bg-white/10 transition-all duration-300 group">
-                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00d4ff] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-gray-300">0921270404</span>
+                  <span className="text-xs sm:text-sm text-gray-300 break-all leading-relaxed">namtuyenle.cv@gmail.com</span>
                 </div>
                 
                 {/* Location */}
