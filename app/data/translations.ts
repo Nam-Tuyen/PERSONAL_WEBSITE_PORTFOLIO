@@ -42,8 +42,7 @@ export const translations = {
     },
     footer: {
       contact: {
-        email: "bingo.namtuyen@gmail.com",
-        phone: "0921270404",
+        email: "namtuyenle.cv@gmail.com",
         location: "TP Hồ Chí Minh Việt Nam",
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
@@ -58,7 +57,7 @@ export const translations = {
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
       quote: "BIẾN TẦM NHÌN THÀNH HIỆN THỰC\nTỪ Ý ĐỊNH TỚI THÀNH QUẢ",
-      description: "Sinh viên năm cuối ngành FinTech tại UEL. Thành thạo Python, SQL và BI. Có kinh nghiệm xây dựng template và hệ thống báo cáo mở rộng để nâng cao chất lượng quyết định và hiệu suất vận hành. Mục tiêu công việc là trở thành một Data Analyst hoặc Associate PM trong FinTech với trọng tâm biến dữ liệu và insight khách hàng thành tác động sản phẩm đo lường được"
+      description: "Sinh viên năm cuối Công nghệ Tài chính tại Trường Đại học Kinh tế – Luật với định hướng công việc ở mảng phát triển sản phẩm và phân tích dữ liệu trong lĩnh vực tài chính và FinTech. Sở hữu nền tảng Python, SQL và các công cụ xử lý, phân tích dữ liệu qua đó khai thác dữ liệu và tìm ra insight khách hàng để tạo ra sản phẩm giải quyết được vấn đề được đặt ra."
     },
     education: {
       title: "THÀNH TÍCH HỌC TẬP",
@@ -174,9 +173,9 @@ export const translations = {
         {
           name: "Công cụ xuất báo cáo phân tích cổ phiếu tự động",
           description: [
-            "Xây dựng pipeline Python phân tích mã cổ phiếu với dữ liệu API dùng biến môi trường và tạo báo cáo hằng ngày ở định dạng Excel CSV và PDF",
-            "Tổ chức mã theo ba bước gồm lấy dữ liệu xử lý và xuất báo cáo kèm các hàm tái sử dụng cho quản lý đường dẫn quản lý khóa xác thực và xử lý thời gian được lập lịch bằng cron",
-            "Kết quả giảm chín mươi phần trăm thời gian chuẩn bị thủ công và tăng hai mươi lăm phần trăm tốc độ phản hồi của nhóm"
+            "Xây dựng mạch xử lý bằng python và dùng requests, pandas, python-dotenv và vnstock để thu thập dữ liệu chứng khoán Việt Nam, làm sạch và kiểm tra tính hợp lệ, chuẩn hóa và xử lý thiếu, đồng thời lưu trữ dữ liệu đã chuẩn hóa trong kho, sẵn sàng cho việc xuất báo cáo.",
+            "Tự động hóa báo cáo để khi nhập mã cổ phiếu hệ thống lấy dữ liệu đã xử lý, trực quan hóa bằng Matplotlib, Seaborn và xuất báo cáo PDF chuẩn hóa.",
+            "Tích hợp Gemini API để bổ sung nhận định ngắn gọn và tin tức mới nhất theo mã, giúp giảm khoảng 90 phần trăm thời gian chuẩn bị thủ công và tăng khoảng 25 phần trăm tốc độ phản hồi của đội ngũ."
           ],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
@@ -185,9 +184,9 @@ export const translations = {
         {
           name: "Phân tích giá thuê nhà trên Airbnb",
           description: [
-            "Làm sạch và kỹ thuật hóa bộ dữ liệu hai mươi sáu nghìn dòng gồm chuyển đổi tiền tệ sang dạng số phân tích ngày tháng xử lý ngoại lệ và chuẩn hóa quy trình định giá",
-            "Dựng pipeline tiền xử lý và mô hình bằng scikit learn với ColumnTransformer StandardScaler OneHotEncoder Linear Regression và Random Forest áp dụng lấy mẫu phân tầng theo thành phố cùng tinh chỉnh bằng GridSearchCV",
-            "Kết quả cho khách hàng nhấn mạnh các yếu tố accommodates bathrooms bedrooms beds và fees Mô hình Random Forest tinh chỉnh đạt RMSE kiểm thử 95.84 và MAE 57.98 giảm khoảng bốn phần trăm so với tuyến tính Ví dụ giá dự đoán 834.20 cho căn tại Bondi Beach"
+            "Làm sạch và xây dựng đặc trưng cho bộ dữ liệu Airbnb bằng cách chuyển đổi tiền tệ về dạng số, phân tích ngày tháng, xử lý ngoại lệ tại mức 99,5 phần trăm và tạo các biến như số ngày kể từ khi bắt đầu cho thuê, số phòng ngủ trên mỗi người và số phòng tắm trên mỗi người.",
+            "Xây dựng pipeline tiền xử lý và mô hình hóa từ đầu đến cuối với ColumnTransformer, StandardScaler, OneHotEncoder, Hồi quy tuyến tính và Random Forest, áp dụng lấy mẫu phân tầng theo thành phố và tinh chỉnh tham số bằng GridSearchCV.",
+            "Phân tích cho thấy tầm quan trọng của các biến đặc trưng như sức chứa tối đa, phòng tắm, phòng ngủ, và giá là các yếu tố chính ảnh hưởng tới giá nhà cho thuê."
           ],
           image: "/AirBnB.PNG",
           link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
@@ -196,18 +195,18 @@ export const translations = {
         {
           name: "Workforce Insight Hub Retention and Compensation",
           description: [
-            "Xây dựng quy trình phân tích nhân sự toàn diện gồm làm sạch và mã hóa dữ liệu thực hiện phân tích khám phá với biểu đồ phân phối mật độ biểu đồ hộp và bản đồ tương quan để nhận diện rủi ro duy trì",
-            "Huấn luyện mô hình Random Forest dự báo nghỉ việc và Logistic Regression để giải thích đạt độ chính xác tám mươi lăm phần trăm các biến quan trọng gồm thu nhập hàng tháng độ tuổi làm thêm số năm làm việc tổng và mức lương ngày ghi nhận độ bao phủ nhóm rời đi ở mức không phẩy không bảy",
-            "Phân khúc nhân sự thành ba nhóm theo thu nhập hàng tháng số năm làm việc tổng số năm gắn bó và mức độ hài lòng đồng thời đề xuất chính sách lương và làm thêm dựa trên tỷ lệ nghỉ việc mười sáu phẩy một phần trăm"
+            "Thực hiện tiền xử lý và khám phá dữ liệu nhân sự từ đầu đến cuối, mã hóa và chuẩn hóa biến, sử dụng histogram, KDE, boxplot và heatmap để nhận diện rủi ro nghỉ việc.",
+            "Xây dựng mô hình dự báo rời bỏ bằng Random Forest và hồi quy logistic, đạt độ chính xác 85 phần trăm và recall nhóm nghỉ việc 0.07, xác định các biến ảnh hưởng chính gồm MonthlyIncome, Age, OverTime, TotalWorkingYears, DailyRate, đồng thời trực quan hóa mức độ quan trọng của từng biến.",
+            "Phân cụm nhân viên dựa trên MonthlyIncome, TotalWorkingYears, YearsAtCompany, JobSatisfaction và so sánh mức độ hài lòng công việc để đề xuất chính sách lương và làm thêm."
           ],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
           period: "Tháng 08 2023 đến Tháng 02 2024",
           images: ["/HR2.png", "/HR3.png", "/HRanalytic.png"],
           insight: [
-            "Yếu tố rời bỏ: Lương thấp và làm thêm giờ thường xuyên cùng với thâm niên ngắn làm tăng rủi ro nghỉ việc.",
-            "Phân nhóm: Tiềm năng hài lòng cao nhưng thu nhập thấp, dễ rời đi. Trung cấp cần cân bằng công việc và cuộc sống cùng lộ trình phát triển. Cốt lõi thu nhập cao nhưng hài lòng vừa, cần tăng gắn kết.",
-            "Hành động: Trả lương làm thêm đúng và đủ, thưởng theo hiệu suất, nâng bậc và mở lộ trình thăng tiến cho nhóm tiềm năng, giao nhiệm vụ có tác động lớn và hỗ trợ huấn luyện cùng phúc lợi tinh thần cho nhóm cốt lõi."
+            "Lương thấp, làm thêm thường xuyên và thâm niên ngắn làm tăng rủi ro nghỉ việc",
+            "Nhóm tiềm năng cao hài lòng nhưng đãi ngộ chưa tương xứng nên dễ rời đi. Nhóm trung cấp cần cân bằng công việc và cuộc sống cùng lộ trình phát triển rõ ràng. Nhóm nòng cốt thu nhập cao nhưng mức hài lòng chỉ trung bình nên cần tăng cường gắn kết",
+            "Tập trung giải pháp trả lương làm thêm công bằng và thưởng hiệu suất, điều chỉnh bậc lương và lộ trình thăng tiến cho nhóm tiềm năng, giao việc có hướng dẫn và hỗ trợ phúc lợi cho nhóm nòng cốt"
           ]
         }
       ]
@@ -464,8 +463,7 @@ export const translations = {
     },
     footer: {
       contact: {
-        email: "bingo.namtuyen@gmail.com",
-        phone: "0921270404",
+        email: "namtuyenle.cv@gmail.com",
         location: "Ho Chi Minh City, Vietnam",
         linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
         github: "https://github.com/Nam-Tuyen"
@@ -480,7 +478,7 @@ export const translations = {
     about: {
       label: "PROFESSIONAL PROFILE",
       quote: "TRANSFORMING VISION INTO REALITY\nTURNING INTENT INTO RESULT",
-      description: "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."
+      description: "Final-year Financial Technology student at the University of Economics and Law, aiming for roles in Product manager, Product owner and Data analyst within finance and FinTech. Proficient in Python, SQL and data processing and analytics tools. Able to leverage data to surface customer insights and build products that address clearly defined problems."
     },
     education: {
       title: "ACADEMIC EXCELLENCE",
@@ -592,9 +590,9 @@ export const translations = {
         {
           name: "Automated Financial Report Export",
           description: [
-            "Built an end to end Python pipeline for stock analysis that ingested raw API data with environment managed secrets and produced standardized daily reports in Excel CSV and PDF",
-            "Structured code into fetch process and report with reusable helpers for path management key handling authentication and time utilities scheduled with cron",
-            "Delivered a ninety percent reduction in manual preparation time and a twenty five percent improvement in team responsiveness"
+            "Built an end to end Python pipeline with requests, pandas, python-dotenv and vnstock to crawl Vietnamese stock data, clean and validate it, normalize and impute missing values, and persist schema-validated datasets in a structured repository ready for reporting.",
+            "Automated reporting so that when a ticker is entered the system fetches processed fundamentals and metrics, visualizes with Matplotlib, Seaborn and exports a standardized PDF.",
+            "Integrated the Gemini API to add concise insights and the latest ticker news, reducing manual preparation time by about 90 percent and improving team responsiveness by about 25 percent."
           ],
           image: "/Demo.mp4",
           link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
@@ -603,9 +601,9 @@ export const translations = {
         {
           name: "Airbnb Rental Price Prediction",
           description: [
-            "Cleaned and engineered a dataset of twenty six thousand rows including currency to numeric conversion date parsing outlier treatment and a standardized pricing workflow",
-            "Built a preprocessing and modeling pipeline in scikit learn using ColumnTransformer StandardScaler OneHotEncoder Linear Regression and Random Forest with stratified sampling by city and tuning via GridSearchCV",
-            "Client ready insights highlighted accommodates bathrooms bedrooms beds and fees Tuned Random Forest achieved test RMSE 95.84 and MAE 57.98 with about four percent error reduction versus a linear baseline Example predicted price 834.20 for a Bondi Beach home"
+            "Cleaned and engineered an Airbnb dataset by converting currency fields to numeric, parsing dates, handling outliers at the 99.5th percentile, and creating features such as days since first hosted, bedrooms per person, and bathrooms per person.",
+            "Built an end-to-end preprocessing and modeling pipeline using ColumnTransformer, StandardScaler, OneHotEncoder, Linear Regression, and Random Forest, with city-stratified sampling and hyperparameter tuning via GridSearchCV.",
+            "Feature-importance analysis indicated that variables such as maximum capacity, number of bathrooms, number of bedrooms, and price are key factors influencing rental prices."
           ],
           image: "/AirBnB.PNG",
           link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
@@ -614,18 +612,18 @@ export const translations = {
         {
           name: "Workforce Insight Hub Retention and Compensation",
           description: [
-            "Developed an end to end HR analytics workflow that cleaned and encoded the dataset and performed exploratory analysis with histograms density plots boxplots and a correlation heatmap to surface retention risks",
-            "Trained a Random Forest attrition model and Logistic Regression for interpretability achieving accuracy of eighty five percent with key drivers including MonthlyIncome Age OverTime TotalWorkingYears and DailyRate and noted a low recall for leavers at zero point zero seven",
-            "Segmented employees into three clusters based on MonthlyIncome TotalWorkingYears YearsAtCompany and JobSatisfaction and recommended salary and overtime policies using an attrition rate of sixteen point one percent"
+            "Performed end-to-end HR data preprocessing and EDA, encoding and scaling variables and using histograms, KDE, boxplots, and a correlation heatmap to identify attrition risks.",
+            "Built attrition models with Random Forest and logistic regression, achieving 85 percent accuracy and 0.07 recall for leavers, identified key drivers including MonthlyIncome, Age, OverTime, TotalWorkingYears, and DailyRate, and visualized feature importance.",
+            "Clustered employees using MonthlyIncome, TotalWorkingYears, YearsAtCompany, and JobSatisfaction, then compared job satisfaction across clusters to recommend salary and overtime policies."
           ],
           image: "/HRanalytic.png",
           link: "https://github.com/Nam-Tuyen/HR_Analytic",
           period: "Aug 2023 to Feb 2024",
           images: ["/HR2.png", "/HR3.png", "/HRanalytic.png"],
           insight: [
-            "Attrition drivers: Low pay and frequent overtime combined with short tenure increase quit risk.",
-            "Segments: High-potential have high satisfaction but low pay and are prone to leave, mid-level need work–life balance and growth, core have high pay but only moderate satisfaction and need stronger engagement.",
-            "Actions: Pay overtime fairly and fully, add performance bonuses, raise pay bands and define promotion paths for high-potentials, assign high-impact work and provide coaching and well-being support for core talent."
+            "Low pay, frequent overtime, and short tenure jointly raise attrition risk",
+            "High-potential staff are satisfied yet underpaid and more likely to leave. Mid-level staff need work–life balance and clear growth. Core staff are well paid but only moderately satisfied and require stronger engagement",
+            "Focus actions on fair overtime pay and performance bonuses, adjusted pay bands and promotion paths for high-potentials, and high-impact work with coaching and well-being support for core talent"
           ]
         }
       ]
