@@ -14,7 +14,8 @@ export const translations = {
       skills: "KỸ NĂNG",
       certifications: "GIẤY CHỨNG NHẬN & GIẢI THƯỞNG",
       experience: "KINH NGHIỆM LÀM VIỆC",
-      projects: "ĐỒ ÁN CÁ NHÂN"
+      projects: "ĐỒ ÁN CÁ NHÂN",
+      insight: "KẾT LUẬN RÚT RA"
     },
     buttons: {
       downloadResume: "TẢI CV",
@@ -26,9 +27,7 @@ export const translations = {
       readSampleReport: "ĐỌC BÁO CÁO MẪU",
       viewCertificate: "XEM BẰNG KHEN"
     },
-    sections: {
-      insight: "KẾT LUẬN RÚT RA"
-    },
+
     scrollIndicator: { text: "Cuộn xuống để khám phá" },
     contact: {
       title: "LIÊN HỆ"
@@ -433,7 +432,8 @@ export const translations = {
       skills: "SKILLS",
       certifications: "CERTIFICATIONS & AWARDS",
       experience: "WORK EXPERIENCE",
-      projects: "PROJECTS"
+      projects: "PROJECTS",
+      insight: "INSIGHT"
     },
     buttons: {
       downloadResume: "DOWNLOAD RESUME",
@@ -445,9 +445,7 @@ export const translations = {
       readSampleReport: "READ SAMPLE REPORT",
       viewCertificate: "VIEW CERTIFICATE OF MERIT"
     },
-    sections: {
-      insight: "INSIGHT"
-    },
+
     scrollIndicator: {
       text: "Scroll to explore"
     },
