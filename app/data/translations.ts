@@ -9,12 +9,12 @@ export const translations = {
       }
     },
     sections: {
-      about: "GIỚI THIỆU",
+      about: "GIỚI THIỆU VỀ BẢN THÂN",
       education: "HỌC VẤN",
       skills: "KỸ NĂNG",
-      certifications: "CHỨNG CHỈ VÀ GIẢI THƯỞNG",
+      certifications: "GIẤY CHỨNG NHẬN & GIẢI THƯỞNG",
       experience: "KINH NGHIỆM LÀM VIỆC",
-      projects: "DỰ ÁN"
+      projects: "ĐỒ ÁN CÁ NHÂN"
     },
     buttons: {
       downloadResume: "TẢI CV",
