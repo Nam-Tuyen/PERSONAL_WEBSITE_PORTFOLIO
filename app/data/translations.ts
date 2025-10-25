@@ -51,7 +51,7 @@ export const translations = {
     hero: {
       greeting: "XIN CHÀO, TÔI LÀ",
       name: "LÊ NAM TUYÊN",
-      title: "ỨNG VIÊN PRODUCT MANAGER & DATA ANALYST TRONG LĨNH VỰC FINTECH"
+      title: "ỨNG VIÊN CHO VỊ TRÍ PRODUCT MANAGER VÀ DATA ANALYST TRONG LĨNH VỰC FINTECH"
     },
     about: {
       label: "HỒ SƠ CHUYÊN NGHIỆP",
