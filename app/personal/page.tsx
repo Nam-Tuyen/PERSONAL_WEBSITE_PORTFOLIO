@@ -613,8 +613,9 @@ export default function PersonalPage() {
                         {Array.isArray(achievement.description) ? (
                           <ul className="space-y-2 sm:space-y-3">
                             {achievement.description.map((item: string, descIndex: number) => (
-                              <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 text-sm sm:text-base">
-                                <span className="text-justify">{item}</span>
+                              <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
                               </li>
                             ))}
                           </ul>
