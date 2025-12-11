@@ -199,11 +199,7 @@ export default function Portfolio() {
 
                       {/* Academic Stats - Centered Grid */}
                       <div className="flex justify-center">
-                        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                    <div className="text-center">
-                            <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#00d4ff] mb-1">{t?.education?.gpa || "3.0"}</div>
-                            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">{t?.labels?.gpa || "GPA"}</div>
-                    </div>
+                        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
                     <div className="text-center">
                             <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#7c3aed] mb-1">{t?.education?.ielts || "6.0"}</div>
                             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">{t?.labels?.ielts || "IELTS"}</div>
