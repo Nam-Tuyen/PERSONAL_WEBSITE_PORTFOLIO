@@ -399,10 +399,10 @@ export const translations = {
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
           },
           {
-            title: "Tree Ensembles Lead the Way: Benchmarking Machine-Learning Models for Corporate Failure in Vietnam",
+            title: "CÁC MÔ HÌNH TỔ HỢP CÂY QUYẾT ĐỊNH DẪN ĐẦU: ĐỐI SÁNH CÁC MÔ HÌNH HỌC MÁY TRONG DỰ BÁO PHÁ SẢN DOANH NGHIỆP TẠI VIỆT NAM",
             publication: "Hội thảo Quốc tế về Phát triển bền vững trong Kinh tế, Kinh doanh và Luật",
             date: "2025",
-            description: "Nghiên cứu so sánh hiệu quả của các mô hình học máy trong dự đoán thất bại doanh nghiệp tại Việt Nam, với trọng tâm vào các phương pháp Tree Ensembles.",
+            description: "Bài nghiên cứu về mô hình học máy dự báo phá sản doanh nghiệp tại Việt Nam được trình bày tại Hội thảo Quốc tế về Phát triển bền vững trong Kinh tế, Kinh doanh và Luật (SEBL 2025) tại Trường Đại học Kinh tế và Luật, ĐHQG TP HCM ngày 21 tháng 11 năm 2025, dưới sự hướng dẫn của ThS. Phan Huy Tâm. Nghiên cứu xây dựng bộ so sánh các mô hình học máy, đặc biệt là nhóm mô hình tree ensemble, từ khâu xử lý dữ liệu, thiết kế thí nghiệm đến đánh giá hiệu quả trên bộ dữ liệu mất cân bằng. Trải nghiệm này giúp tôi rèn luyện tư duy nghiên cứu định lượng, kỹ năng viết bài học thuật, thuyết trình trước diễn đàn quốc tế và mở rộng kết nối với giảng viên, nhà nghiên cứu trong lĩnh vực tài chính và dữ liệu.",
             link: ""
           }
         ]
@@ -842,10 +842,10 @@ export const translations = {
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
           },
           {
-            title: "Tree Ensembles Lead the Way: Benchmarking Machine-Learning Models for Corporate Failure in Vietnam",
+            title: "TREE ENSEMBLES LEAD THE WAY: BENCHMARKING MACHINE-LEARNING MODELS FOR CORPORATE FAILURE IN VIETNAM",
             publication: "Global Conference on Sustainability in Economics, Business and Law",
             date: "2025",
-            description: "Comparative study of machine learning models for predicting corporate failure in Vietnam, focusing on Tree Ensemble methods.",
+            description: "A research paper on machine learning models for corporate failure prediction in Vietnam was selected for presentation at the International Conference on Sustainable Development in Economics, Business and Law (SEBL 2025) hosted by the University of Economics and Law, VNU HCMC on 21 November 2025, under the supervision of MSc Phan Huy Tam. The study builds a benchmark of machine learning models, with a focus on tree ensemble methods, covering data preprocessing, experimental design and performance evaluation on highly imbalanced default data. This experience strengthened my quantitative research skills, academic writing, English presentation in an international forum and networking with lecturers and researchers in finance and data driven risk modeling.",
             link: ""
           }
         ]
