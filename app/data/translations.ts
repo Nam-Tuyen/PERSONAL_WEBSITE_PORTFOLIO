@@ -404,7 +404,8 @@ export const translations = {
             date: "2025",
             description: "Bài nghiên cứu về mô hình học máy dự báo phá sản doanh nghiệp tại Việt Nam được trình bày tại Hội thảo Quốc tế về Phát triển bền vững trong Kinh tế, Kinh doanh và Luật (SEBL 2025) tại Trường Đại học Kinh tế và Luật, ĐHQG TP HCM ngày 21 tháng 11 năm 2025, dưới sự hướng dẫn của ThS. Phan Huy Tâm. Nghiên cứu xây dựng bộ so sánh các mô hình học máy, đặc biệt là nhóm mô hình tree ensemble, từ khâu xử lý dữ liệu, thiết kế thí nghiệm đến đánh giá hiệu quả trên bộ dữ liệu mất cân bằng. Trải nghiệm này giúp tôi rèn luyện tư duy nghiên cứu định lượng, kỹ năng viết bài học thuật, thuyết trình trước diễn đàn quốc tế và mở rộng kết nối với giảng viên, nhà nghiên cứu trong lĩnh vực tài chính và dữ liệu.",
             link: "",
-            images: ["/SEBL1.jpg", "/SEBL2.jpg", "/SEBL3.jpg"]
+            images: ["/SEBL1.jpg", "/SEBL2.jpg", "/SEBL3.jpg"],
+            certificate: "/SEBL4.jpg"
           }
         ]
       },
@@ -848,7 +849,8 @@ export const translations = {
             date: "2025",
             description: "A research paper on machine learning models for corporate failure prediction in Vietnam was selected for presentation at the International Conference on Sustainable Development in Economics, Business and Law (SEBL 2025) hosted by the University of Economics and Law, VNU HCMC on 21 November 2025, under the supervision of MSc Phan Huy Tam. The study builds a benchmark of machine learning models, with a focus on tree ensemble methods, covering data preprocessing, experimental design and performance evaluation on highly imbalanced default data. This experience strengthened my quantitative research skills, academic writing, English presentation in an international forum and networking with lecturers and researchers in finance and data driven risk modeling.",
             link: "",
-            images: ["/SEBL1.jpg", "/SEBL2.jpg", "/SEBL3.jpg"]
+            images: ["/SEBL1.jpg", "/SEBL2.jpg", "/SEBL3.jpg"],
+            certificate: "/SEBL4.jpg"
           }
         ]
       },

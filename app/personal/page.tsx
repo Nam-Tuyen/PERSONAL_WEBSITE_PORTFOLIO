@@ -720,6 +720,21 @@ export default function PersonalPage() {
                         </div>
                       )}
                       
+                      {/* Certificate Button */}
+                      {achievement.certificate && (
+                        <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
+                          <div className="flex justify-center">
+                            <button
+                              onClick={() => setSelectedAchievement(achievement.certificate)}
+                              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                            >
+                              <span>🏆</span>
+                              {language === "vi" ? "XEM GIẤY CHỨNG NHẬN" : "VIEW CERTIFICATE OF PRESENTATION"}
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
                       {/* Links */}
                       {achievement.link && (
                         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-4 md:mt-6">
