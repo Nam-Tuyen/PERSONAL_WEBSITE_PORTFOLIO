@@ -423,10 +423,10 @@ export const translations = {
             certificate: "/IMG_5081.jpg"
           },
           {
-            title: "TOP 5 CUỘC THI 𝐁𝐀𝐍𝐊𝐄𝐑'𝐒 𝐆𝐎𝐓 𝐓𝐀𝐋𝐄𝐍𝐓 𝟮𝟬𝟮𝟭",
+            title: "TOP 5 CUỘC THI BANKER'S GOT TALENT 2025",
             period: "2025",
             description: [
-              "Tham gia cuộc thi học thuật 𝐁𝐀𝐍𝐊𝐄𝐑'𝐒 𝐆𝐎𝐓 𝐓𝐀𝐋𝐄𝐍𝐓 về lĩnh vực Tài chính – Ngân hàng và đạt TOP 5 chung cuộc. Trong hành trình cuộc thi, đội của tôi xây dựng báo cáo phân tích doanh nghiệp theo chuẩn CFA Research, thực hành tư duy định lượng, phân tích số liệu tài chính và trình bày khuyến nghị đầu tư trước hội đồng chuyên gia. Trải nghiệm này giúp tôi củng cố nền tảng phân tích tài chính, làm quen với quy trình nghiên cứu chuyên nghiệp, cũng như phát triển kỹ năng làm việc nhóm, thuyết trình và giao tiếp với các chuyên gia trong ngành, mở ra nhiều cơ hội nghề nghiệp sau này."
+              "Tham gia cuộc thi học thuật BANKER'S GOT TALENT 2025 về lĩnh vực Tài chính – Ngân hàng và đạt TOP 5 chung cuộc. Trong hành trình cuộc thi, đội của tôi xây dựng báo cáo phân tích doanh nghiệp theo chuẩn CFA Research, thực hành tư duy định lượng, phân tích số liệu tài chính và trình bày khuyến nghị đầu tư trước hội đồng chuyên gia. Trải nghiệm này giúp tôi củng cố nền tảng phân tích tài chính, làm quen với quy trình nghiên cứu chuyên nghiệp, cũng như phát triển kỹ năng làm việc nhóm, thuyết trình và giao tiếp với các chuyên gia trong ngành, mở ra nhiều cơ hội nghề nghiệp sau này."
             ],
             images: ["/FBG1.jpg", "/FBG2.jpg", "/FBG3.jpg"]
           }
@@ -876,10 +876,10 @@ export const translations = {
             certificate: "/IMG_5081.jpg"
           },
           {
-            title: "TOP 5 – 𝐁𝐀𝐍𝐊𝐄𝐑'𝐒 𝐆𝐎𝐓 𝐓𝐀𝐋𝐄𝐍𝐓 𝟮𝟬𝟮𝟭 COMPETITION",
+            title: "TOP 5 – BANKER'S GOT TALENT 2025 COMPETITION",
             period: "2025",
             description: [
-              "Placed in the Top 5 of 𝐁𝐀𝐍𝐊𝐄𝐑'𝐒 𝐆𝐎𝐓 𝐓𝐀𝐋𝐄𝐍𝐓 𝟮𝟬𝟮𝟭, an academic Finance & Banking competition that focuses on quantitative thinking, corporate research and CFA-style equity analysis. My team developed an equity research report and investment pitch for a listed company, applying financial statement analysis, valuation techniques and risk assessment, and presented our recommendations to a panel of industry experts. This experience strengthened my quantitative reasoning, research discipline and presentation skills, while also expanding my professional network and exposure to real-world career opportunities in finance and banking."
+              "Placed in the Top 5 of BANKER'S GOT TALENT 2025, an academic Finance & Banking competition that focuses on quantitative thinking, corporate research and CFA-style equity analysis. My team developed an equity research report and investment pitch for a listed company, applying financial statement analysis, valuation techniques and risk assessment, and presented our recommendations to a panel of industry experts. This experience strengthened my quantitative reasoning, research discipline and presentation skills, while also expanding my professional network and exposure to real-world career opportunities in finance and banking."
             ],
             images: ["/FBG1.jpg", "/FBG2.jpg", "/FBG3.jpg"]
           }
