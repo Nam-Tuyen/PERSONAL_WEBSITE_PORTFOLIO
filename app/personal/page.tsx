@@ -444,13 +444,12 @@ export default function PersonalPage() {
                         <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                             {activity.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex} className="relative group">
+                              <div key={imgIndex}>
                                 <img 
                                   src={image} 
                                   alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
                                 />
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
                             ))}
                           </div>
@@ -533,13 +532,12 @@ export default function PersonalPage() {
                         <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                             {activity.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex} className="relative group">
+                              <div key={imgIndex}>
                                 <img 
                                   src={image} 
                                   alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
                                 />
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
                             ))}
                           </div>
@@ -633,13 +631,12 @@ export default function PersonalPage() {
                         <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                             {achievement.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex} className="relative group">
+                              <div key={imgIndex}>
                                 <img 
                                   src={image} 
                                   alt={`Achievement - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#7c3aed]/40 transition-all duration-300 group-hover:scale-105"
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
                                 />
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
                             ))}
                           </div>
@@ -707,13 +704,12 @@ export default function PersonalPage() {
                         <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                             {achievement.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex} className="relative group">
+                              <div key={imgIndex}>
                                 <img 
                                   src={image} 
                                   alt={`${achievement.title} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:border-[#00d4ff]/40 transition-all duration-300 group-hover:scale-105"
+                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
                                 />
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                               </div>
                             ))}
                           </div>
