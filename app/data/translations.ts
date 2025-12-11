@@ -397,6 +397,13 @@ export const translations = {
             date: "2025",
             description: "Nghiên cứu về mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á, với vai trò điều tiết của quản trị quốc gia. Sử dụng dữ liệu panel từ 10 quốc gia ASEAN trong giai đoạn 2000-2022.",
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
+          },
+          {
+            title: "Tree Ensembles Lead the Way: Benchmarking Machine-Learning Models for Corporate Failure in Vietnam",
+            publication: "Hội thảo Quốc tế về Phát triển bền vững trong Kinh tế, Kinh doanh và Luật",
+            date: "2025",
+            description: "Nghiên cứu so sánh hiệu quả của các mô hình học máy trong dự đoán thất bại doanh nghiệp tại Việt Nam, với trọng tâm vào các phương pháp Tree Ensembles.",
+            link: ""
           }
         ]
       },
@@ -833,6 +840,13 @@ export const translations = {
             date: "2025",
             description: "Research on the relationship between public debt and economic stability in Southeast Asian countries, with the moderating role of national governance. Using panel data from 10 ASEAN countries from 2000-2022.",
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858"
+          },
+          {
+            title: "Tree Ensembles Lead the Way: Benchmarking Machine-Learning Models for Corporate Failure in Vietnam",
+            publication: "Global Conference on Sustainability in Economics, Business and Law",
+            date: "2025",
+            description: "Comparative study of machine learning models for predicting corporate failure in Vietnam, focusing on Tree Ensemble methods.",
+            link: ""
           }
         ]
       },
