@@ -1,780 +1,1137 @@
-"use client"
+﻿"use client"
 
 import React, { useState, useEffect } from "react"
-import { translations } from "./data/translations"
-import UniverseBackground from "./components/UniverseBackground"
-import Sidebar from "./components/Sidebar"
-import PageSwitcher from "./components/PageSwitcher"
+import Navbar from "./components/Navbar"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 
-export default function Portfolio() {
-  const [language, setLanguage] = useState("en")
-  const [activeSection, setActiveSection] = useState("about")
-  const [mounted, setMounted] = useState(false)
+const getInitialLanguage = (): "en" | "vi" => {
+  if (typeof window === "undefined") return "en"
+  const storedLanguage = window.localStorage.getItem("portfolio-language")
+  return storedLanguage === "vi" || storedLanguage === "en" ? storedLanguage : "en"
+}
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
+const getInitialTheme = () => {
+  if (typeof window === "undefined") return true
+  const storedTheme = window.localStorage.getItem("portfolio-theme")
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme === "dark"
+  }
+  return document.documentElement.classList.contains("dark")
+}
+
+export default function Portfolio() {
+  const [language, setLanguage] = useState<"en" | "vi">(getInitialLanguage)
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme)
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
   const [selectedProject, setSelectedProject] = useState<any | null>(null)
+  const [selectedProjectMedia, setSelectedProjectMedia] = useState<{ type: "pdf" | "video"; src: string } | null>(null)
+  const languageStorageKey = "portfolio-language"
+  const themeStorageKey = "portfolio-theme"
 
-  const t = translations[language as keyof typeof translations]
-
-  if (!mounted) {
-    return null
-  }
-
-  // Function to scroll to projects section
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects')
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' })
+  useEffect(() => {
+    const handleScroll = () => {
+      document.querySelectorAll(".anim").forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight * 0.92) el.classList.add("visible")
+      })
     }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const syncTheme = () => setIsDarkMode(document.documentElement.classList.contains("dark"))
+    syncTheme()
+    const observer = new MutationObserver(syncTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "portfolio-theme" && (event.newValue === "dark" || event.newValue === "light")) {
+        setIsDarkMode(event.newValue === "dark")
+      }
+      if (event.key === languageStorageKey && (event.newValue === "en" || event.newValue === "vi")) {
+        setLanguage(event.newValue)
+      }
+    }
+    window.addEventListener("storage", handleStorage)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("storage", handleStorage)
+    }
+  }, [languageStorageKey])
+
+  useEffect(() => {
+    window.localStorage.setItem(languageStorageKey, language)
+  }, [language, languageStorageKey])
+
+  const handleDownloadResume = () => {
+    window.open(
+      "https://drive.google.com/drive/folders/1uw7hsng9s3FGMLs_sMuhlzW2IfQpsxdU?usp=drive_link",
+      "_blank",
+      "noopener,noreferrer"
+    )
   }
+
+  const isVietnamese = language === "vi"
+  const footerContact = {
+    email: "Namtuyenle.CV@gmail.com",
+    location: isVietnamese ? "Thành phố Hồ Chí Minh, Việt Nam" : "Ho Chi Minh City, Vietnam",
+    linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
+    github: "https://github.com/Nam-Tuyen",
+  }
+  const heroName = isVietnamese ? "LÊ NAM TUYÊN" : "TUYEN LE NAM"
+  const heroTitle = isVietnamese ? "ĐỊNH HƯỚNG QUẢN LÝ SẢN PHẨM TRONG FINTECH" : "ASPIRING PRODUCT MANAGER IN FINTECH"
+  const heroDescription = isVietnamese
+    ? "Sinh viên năm cuối ngành FinTech tại UEL (VNU-HCM) với định hướng phát triển trong lĩnh vực tài chính, công nghệ và đổi mới sáng tạo. Mục tiêu của tôi là từng bước trở thành chuyên gia fintech, đồng thời góp phần tạo ra những giải pháp tài chính hiệu quả và có tính ứng dụng cao."
+    : "Final-year FinTech student at UEL (VNU-HCM) with a strong interest in the intersection of finance, technology, and innovation. My long-term goal is to become a fintech expert who creates impactful solutions for the financial industry."
+  const heroLinkedInLabel = isVietnamese ? "LinkedIn cá nhân" : "LinkedIn profile"
+  const heroGithubLabel = isVietnamese ? "GitHub cá nhân" : "GitHub profile"
+  const viewCertificateLabel = isVietnamese ? "XEM CHỨNG CHỈ" : "View certificate"
+  const demoPromptLabel = isVietnamese ? "Bạn hãy lựa chọn loại demo muốn xem:" : "Please select the type of demo you would like to view:"
+  const sampleReportLabel = isVietnamese ? "XEM BÁO CÁO MẪU" : "READ SAMPLE REPORT"
+  const demoVideoLabel = isVietnamese ? "XEM VIDEO DEMO" : "WATCH DEMO VIDEO"
+  const mobileDemoLabel = isVietnamese ? "XEM BẢN DEMO ĐIỆN THOẠI" : "VIEW MOBILE DEMO"
+  const desktopDemoLabel = isVietnamese ? "XEM BẢN DEMO MÁY TÍNH" : "VIEW DESKTOP DEMO"
+  const introLabel = isVietnamese ? "GIỚI THIỆU" : "INTRO"
+  const experienceLabel = isVietnamese ? "KINH NGHIỆM NỔI BẬT" : "EXPERIENCE HIGHLIGHTS"
+  const skillsLabel = isVietnamese ? "KỸ NĂNG NỔI BẬT" : "SKILLS SNAPSHOT"
+  const projectsLabel = isVietnamese ? "DỰ ÁN" : "PROJECT"
+  const achievementsLabel = isVietnamese ? "THÀNH TÍCH VÀ CHỨNG CHỈ" : "ACHIEVEMENTS AND CERTIFICATES"
+  const moreInformationLabel = isVietnamese ? "THÊM THÔNG TIN" : "MORE INFORMATION"
+  const bachelorLabel = isVietnamese ? "CỬ NHÂN NGÀNH" : "BACHELOR OF"
+  const degreeLabel = isVietnamese ? "CÔNG NGHỆ TÀI CHÍNH" : "FINANCIAL TECHNOLOGY"
+  const viewDemoLabel = isVietnamese ? "XEM DEMO" : "VIEW DEMO"
+  const viewProjectLabel = isVietnamese ? "XEM DỰ ÁN" : "VIEW PROJECT"
+  const externalLinkLabel = isVietnamese ? "LIÊN KẾT" : "LINK"
+  const keyInsightLabel = isVietnamese ? "Điểm nhấn:" : "Key insight:"
+  const downloadResumeLabel = isVietnamese ? "TẢI CV" : "DOWNLOAD RESUME"
+  const theme = isDarkMode
+      ? {
+        pageBg: "#090909",
+        shellBg: "#0d110d",
+        shellBorder: "1px solid rgba(255,255,255,0.07)",
+        shellShadow: "0 22px 48px rgba(0,0,0,0.42)",
+        coverBg: "linear-gradient(135deg,#0d1f0a 0%,#132b10 35%,#0a1a1f 65%,#091215 100%)",
+        cardBg: "rgba(255,255,255,0.03)",
+        cardBorder: "1px solid rgba(255,255,255,0.06)",
+        nestedCardBg: "rgba(8,8,8,0.28)",
+        nestedCardBorder: "1px solid rgba(255,255,255,0.05)",
+        chipBg: "#1e1e1e",
+        chipBorder: "1px solid #333",
+        textPrimary: "#f2f2ed",
+        textSecondary: "#a8a8a8",
+        textMuted: "#555",
+        sectionBorder: "#222",
+        modalBg: "#141414",
+        accent: "#9dff3b",
+        accentOnSolid: "#000",
+        accentLine: "rgba(157,255,59,0.28)",
+        accentGlow: "rgba(157,255,59,0.4)",
+        accentGlowSoft: "rgba(157,255,59,0.16)",
+        accentSoftBg: "rgba(157,255,59,0.08)",
+        accentSoftBorder: "1px solid rgba(157,255,59,0.12)",
+        socialBg: "rgba(255,255,255,0.04)",
+        socialBorder: "1px solid rgba(255,255,255,0.08)",
+        ctaGradient: "linear-gradient(135deg,#9dff3b 0%,#c8ff7a 55%,#96f6ff 100%)",
+        ctaGradientHover: "linear-gradient(135deg,#c8ff7a 0%,#9dff3b 50%,#78eaff 100%)",
+        ctaShadow: "0 0 24px rgba(157,255,59,0.28)",
+      }
+    : {
+        pageBg: "#f3f7ef",
+        shellBg: "#fbfdf8",
+        shellBorder: "1px solid rgba(94,143,31,0.26)",
+        shellShadow: "0 18px 36px rgba(20,40,20,0.08), 0 8px 18px rgba(0,0,0,0.04)",
+        coverBg: "linear-gradient(135deg,#eef7e6 0%,#e8f4ea 35%,#e5f1f4 65%,#eef4f6 100%)",
+        cardBg: "rgba(255,255,255,0.86)",
+        cardBorder: "1px solid rgba(94,143,31,0.28)",
+        nestedCardBg: "rgba(255,255,255,0.94)",
+        nestedCardBorder: "1px solid rgba(94,143,31,0.24)",
+        chipBg: "rgba(16,20,16,0.05)",
+        chipBorder: "1px solid rgba(16,20,16,0.09)",
+        textPrimary: "#121712",
+        textSecondary: "#3f4d3d",
+        textMuted: "#697566",
+        sectionBorder: "rgba(94,143,31,0.2)",
+        modalBg: "#fbfdf8",
+        accent: "#5e8f1f",
+        accentOnSolid: "#f7fbf2",
+        accentLine: "rgba(94,143,31,0.32)",
+        accentGlow: "rgba(94,143,31,0.18)",
+        accentGlowSoft: "rgba(94,143,31,0.1)",
+        accentSoftBg: "rgba(94,143,31,0.12)",
+        accentSoftBorder: "1px solid rgba(94,143,31,0.34)",
+        socialBg: "rgba(16,20,16,0.05)",
+        socialBorder: "1px solid rgba(16,20,16,0.1)",
+        ctaGradient: "linear-gradient(135deg,#5e8f1f 0%,#7aa93a 55%,#5ca6b8 100%)",
+        ctaGradientHover: "linear-gradient(135deg,#7aa93a 0%,#5e8f1f 50%,#4f93a4 100%)",
+        ctaShadow: "0 16px 28px rgba(94,143,31,0.18)",
+      }
+  const heroSkillSnapshot = isVietnamese
+    ? [
+        { name: "Ngôn ngữ lập trình", items: ["Python", "SQL", "R"] },
+        { name: "Công cụ", items: ["SPSS", "NVivo", "Power BI", "Jupyter Notebook", "GitHub"] },
+        { name: "Cơ sở dữ liệu", items: ["Supabase", "PostgreSQL"] },
+        { name: "Báo cáo và năng suất", items: ["Microsoft Office Suite", "Lark"] },
+        { name: "Kiến thức chuyên môn", items: ["Phân tích tài chính", "Ngân hàng", "Dịch vụ tài chính"] },
+      ]
+    : [
+        { name: "Programming Languages", items: ["Python", "SQL", "R"] },
+        { name: "Tools", items: ["SPSS", "NVivo", "Power BI", "Jupyter Notebook", "GitHub"] },
+        { name: "Databases", items: ["Supabase", "PostgreSQL"] },
+        { name: "Reporting and Productivity", items: ["Microsoft Office Suite", "Lark"] },
+        { name: "Domain Knowledge", items: ["Financial analysis", "Banking", "Financial services"] },
+      ]
+  const heroExperienceHighlights = isVietnamese
+    ? [
+        {
+          title: "THỰC TẬP SINH PHÁT TRIỂN KINH DOANH",
+          company: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam",
+          logo: "/agribank logo.jpg",
+          period: "03/2025 - 09/2025",
+          location: "Chi nhánh Bình Triệu (Làm việc trực tiếp)",
+          link: "https://www.agribank.com.vn/",
+          bullets: [
+            "Hỗ trợ công tác báo cáo và phối hợp trong các hoạt động phát triển dịch vụ và chuyển đổi số thông qua việc thu thập cập nhật từ các bộ phận nội bộ và tổng hợp thành các bản tóm tắt có cấu trúc.",
+            "Theo dõi các đầu việc được phân công và chuẩn bị báo cáo tiến độ hàng tuần cho cấp quản lý.",
+            "Hỗ trợ xây dựng tài liệu nội bộ, tài liệu đối chiếu so sánh và các báo cáo liên quan đến quy trình.",
+          ],
+        },
+        {
+          title: "THỰC TẬP SINH MÔI GIỚI CHỨNG KHOÁN",
+          company: "Maybank Investment Bank Vietnam",
+          logo: "/Maybank logo.png",
+          period: "06/2024 - 12/2024",
+          location: "Chi nhánh Phú Nhuận (Làm việc trực tiếp)",
+          link: "https://www.linkedin.com/company/mibv/",
+          bullets: [
+            "Làm sạch, kiểm tra và chuẩn hóa dữ liệu giao dịch bằng Python nhằm phục vụ báo cáo hàng ngày và hàng tuần.",
+            "Thực hiện kiểm tra chất lượng dữ liệu và tổ chức bộ dữ liệu sẵn sàng cho báo cáo nhằm nâng cao độ chính xác và tính nhất quán.",
+            "Chuẩn bị các bản tóm tắt có cấu trúc và duy trì hệ thống lưu trữ dữ liệu khoa học để hỗ trợ quá trình báo cáo kịp thời.",
+          ],
+        },
+      ]
+    : [
+        {
+          title: "BUSINESS DEVELOPMENT INTERN",
+          company: "Vietnam Bank for Agriculture and Rural Development",
+          logo: "/agribank logo.jpg",
+          period: "Mar 2025 - Sep 2025",
+          location: "Binh Trieu Branch (On-site)",
+          link: "https://www.agribank.com.vn/",
+          bullets: [
+            "Supported reporting and coordination for service development and digital transformation initiatives by collecting updates from internal teams and consolidating them into structured summaries.",
+            "Tracked assigned tasks and prepared weekly progress reports for supervisors.",
+            "Assisted in preparing internal documentation, benchmarking materials, and process-related reports.",
+          ],
+        },
+        {
+          title: "BROKER INTERN",
+          company: "Maybank Investment Bank Vietnam",
+          logo: "/Maybank logo.png",
+          period: "Jun 2024 - Dec 2024",
+          location: "Phu Nhuan Branch (On - site)",
+          link: "https://www.linkedin.com/company/mibv/",
+          bullets: [
+            "Cleaned, validated, and standardized trading datasets using Python to support daily and weekly reporting.",
+            "Conducted data quality checks and organized reporting-ready datasets to improve accuracy and consistency.",
+            "Prepared structured summaries and maintained well-organized data files to support timely reporting.",
+          ],
+        },
+      ]
+  const heroAchievements = isVietnamese
+    ? [
+        { strong: "IELTS: 6.0" },
+        { strong: "Top 6 cuộc thi đổi mới sáng tạo Finnovation Hackathon" },
+        { strong: "Top 5 cuộc thi học thuật Banker's Got Talent 2025" },
+        { strong: "Phó Chủ nhiệm Câu lạc bộ Công nghệ Tài chính" },
+        {
+          strong: "Trình bày tại hội thảo quốc tế về phát triển bền vững trong kinh tế, kinh doanh và pháp luật:",
+          rest: "\"Phương pháp tổ hợp cây vượt trội: Đối sánh các mô hình học máy trong dự báo rủi ro thất bại doanh nghiệp tại Việt Nam\"",
+        },
+        {
+          strong: "Công bố trên Tạp chí Kinh tế Đông Nam Á:",
+          rest: "\"Nợ công và ổn định kinh tế: Vai trò điều tiết của quản trị - Bằng chứng từ các quốc gia Đông Nam Á\"",
+        },
+      ]
+    : [
+        { strong: "IELTS: 6.0" },
+        { strong: "Top 6 Finnovation Hackathon" },
+        { strong: "Top 5 Banker's Got Talent 2025" },
+        { strong: "Vice President of Financial Technology Club" },
+        {
+          strong: "Presented at the Global Conference on Sustainability in Economics, Business and Law:",
+          rest: "\"Tree Ensembles Lead the Way: Benchmarking Machine Learning Models for Corporate Failure in Vietnam\"",
+        },
+        {
+          strong: "Published in the Journal of Southeast Asian Economies:",
+          rest: "\"Public Debt and Economic Stability: The Moderating Effect of Governance: Evidence from Southeast Asian Countries\"",
+        },
+      ]
+  const heroCertificates = isVietnamese
+      ? [
+        {
+          id: "nvidia",
+          title: "Chứng chỉ NVIDIA:",
+          description: "Tăng tốc quy trình khoa học dữ liệu đầu cuối",
+        },
+        {
+          id: "ert",
+          title: "Viện Kinh tế và Xã hội",
+          description: "Phân tích dữ liệu dành cho chuyên gia",
+        },
+      ]
+    : [
+        {
+          id: "nvidia",
+          title: "NVIDIA certificate:",
+          description: "Accelerating End-to-End Data Science Workflows",
+        },
+        {
+          id: "ert",
+          title: "Institute for Economic and Social",
+          description: "Data Analytics for Professionals",
+        },
+      ]
+  const certificatePreviewMap: Record<string, { src: string; alt: string }> = {
+    google: { src: "/ask-question-to-make-data-driven.PNG", alt: "Google Certificate" },
+    nvidia: { src: "/Certificate NVIDIA.PNG", alt: "NVIDIA Certificate" },
+    ert: { src: "/Data professional ERT.png", alt: "Data Analytics for Professionals" },
+  }
+  const selectedCertificatePreview = selectedCertificate ? certificatePreviewMap[selectedCertificate] : null
+  const heroProjectHighlights = isVietnamese
+    ? [
+        {
+          id: "profitpulse-financial-analysis-and-forecasting-platform",
+          name: "PROFITPULSE: Nền tảng phân tích và dự báo tài chính",
+          period: "12/2025 – 03/2026",
+          link: "https://github.com/Nam-Tuyen/profitpulse",
+          externalLink: "https://listedfirmdashboard.vercel.app/",
+          hasDemo: false,
+          description: [
+            "Phát triển nền tảng phân tích các doanh nghiệp niêm yết tại Việt Nam, tập trung vào khả năng sinh lời, phân loại rủi ro và xu hướng tài chính.",
+            "Ứng dụng PCA và các mô hình ensemble để hỗ trợ sàng lọc, so sánh doanh nghiệp và tạo insight phục vụ ra quyết định.",
+            "Xây dựng hệ thống end-to-end bằng React, Flask và Supabase, giúp người dùng theo dõi và hiểu dữ liệu tài chính dễ dàng hơn.",
+          ],
+          insight: "Khi kết hợp phân tích tài chính, mô hình dự báo và trực quan hóa dữ liệu rõ ràng, người dùng có thể hiểu tình hình doanh nghiệp nhanh hơn và đưa ra quyết định hiệu quả hơn.",
+        },
+        {
+          id: "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam",
+          name: "MACROINSIGHT.ME: Trợ lý AI về tài chính và pháp lý tại Việt Nam",
+          period: "11/2025 – 01/2026",
+          hasDemo: true,
+          description: [
+            "Xác định định hướng sản phẩm và nhóm người dùng mục tiêu cho một trợ lý AI tập trung vào thông tin tài chính và pháp lý tại Việt Nam.",
+            "Thiết kế các luồng trải nghiệm chính như chat AI có dẫn nguồn, khám phá tin tức theo dạng vuốt và theo dõi danh mục để tăng tính dễ dùng và độ tin cậy.",
+            "Xây dựng ý tưởng giao diện, luồng tương tác và đặc tả sản phẩm để hỗ trợ triển khai và cải tiến trong các giai đoạn tiếp theo.",
+          ],
+          insight: "Thiết kế cơ chế cập nhật tin tức theo hướng gamification giúp nhà đầu tư F0 tiếp cận và hiểu tin tức vĩ mô một cách đơn giản, trực quan và dễ theo dõi hơn.",
+        },
+        {
+          id: "automated-financial-report-export",
+          name: "Hệ thống tự động hóa tạo báo cáo phân tích cổ phiếu",
+          period: "08/2024 – 10/2024",
+          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
+          hasDemo: true,
+          description: [
+            "Xây dựng pipeline Python end-to-end để thu thập, làm sạch, kiểm tra và chuẩn hóa dữ liệu cổ phiếu Việt Nam.",
+            "Chuẩn bị bộ dữ liệu có cấu trúc, sẵn sàng phục vụ cho quy trình phân tích và báo cáo tài chính.",
+            "Tự động hóa quá trình tạo báo cáo theo mã cổ phiếu, trực quan hóa dữ liệu và xuất PDF nhằm nâng cao tốc độ, tính nhất quán và khả năng mở rộng.",
+          ],
+          insight: "Một quy trình dữ liệu được chuẩn hóa và tự động hóa trong khâu viết báo cáo tài chính phân tích cổ phiếu giúp đội ngũ môi giới chứng khoán tiết kiệm thời gian.",
+        },
+        {
+          id: "airbnb-rental-price-prediction",
+          name: "Dự báo giá nhà cho thuê được niêm yết trên Airbnb",
+          period: "04/2024 – 06/2024",
+          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
+          hasDemo: false,
+          description: [
+            "Làm sạch và chuyển đổi dữ liệu Airbnb, bao gồm chuẩn hóa dữ liệu số, xử lý ngày tháng, ngoại lệ và thiết kế đặc trưng.",
+            "Xây dựng pipeline tiền xử lý và mô hình dự báo giá thuê bằng Linear Regression và Random Forest.",
+            "Chỉ ra rằng cả đặc điểm bất động sản và yếu tố liên quan đến chủ nhà đều ảnh hưởng đáng kể đến giá niêm yết.",
+          ],
+          insight: "Giá niêm yết không chỉ phụ thuộc vào đặc điểm của chỗ ở mà còn bị ảnh hưởng bởi thông tin của chủ nhà và quá trình đăng tin. Khi kết hợp cả hai nhóm yếu tố này, mô hình có thể dự báo giá chính xác hơn.",
+        },
+        {
+          id: "workforce-insight-hub-retention-and-compensation",
+          name: "Phân tích dữ liệu nhân sự trong công ty để dự đoán khả năng nghỉ việc",
+          period: "08/2023 – 02/2024",
+          link: "https://github.com/Nam-Tuyen/HR_Analytic",
+          hasDemo: false,
+          description: [
+            "Thực hiện tiền xử lý dữ liệu nhân sự, phân tích khám phá và chuẩn bị biến cho bài toán phân tích nghỉ việc.",
+            "Xây dựng mô hình dự báo nghỉ việc bằng Random Forest và Logistic Regression để đánh giá xu hướng biến động nhân sự.",
+            "Xác định mức thu nhập, độ tuổi, làm thêm giờ, tổng số năm kinh nghiệm và mức lương theo ngày là các yếu tố ảnh hưởng chính đến nghỉ việc.",
+          ],
+          insight: "Nhân viên thường dễ nghỉ việc hơn khi thu nhập chưa phù hợp hoặc khối lượng công việc quá cao. Insight này giúp doanh nghiệp đưa ra các chính sách phù hợp để cải thiện khả năng giữ chân nhân sự.",
+        },
+      ]
+    : [
+        {
+          id: "profitpulse-financial-analysis-and-forecasting-platform",
+          name: "PROFITPULSE: Financial Analysis and Forecasting Platform",
+          period: "Dec 2025 – Mar 2026",
+          link: "https://github.com/Nam-Tuyen/profitpulse",
+          externalLink: "https://listedfirmdashboard.vercel.app/",
+          hasDemo: false,
+          description: [
+            "Developed a platform to analyze Vietnamese listed companies, focusing on profitability, risk classification, and financial trends.",
+            "Used PCA and ensemble models to support company screening, comparison, and insight generation for decision-making.",
+            "Built the system end-to-end with React, Flask, and Supabase to make financial data easier to explore and understand.",
+          ],
+          insight: "Combining financial analysis, prediction models, and clear data visualization helps users understand company performance more quickly and make better decisions.",
+        },
+        {
+          id: "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam",
+          name: "MACROINSIGHT.ME: AI Finance and Legal Assistant for Vietnam",
+          period: "Nov 2025 – Jan 2026",
+          hasDemo: true,
+          description: [
+            "Defined the product direction and target users for an AI assistant focused on finance and legal information in Vietnam.",
+            "Designed key user flows such as AI chat with citations, swipe-based news discovery, and portfolio tracking to improve usability and trust.",
+            "Created UI concepts, interaction flows, and product specifications to support implementation and future iteration.",
+          ],
+          insight: "Designing a gamified news update experience helps beginner investors approach and understand macroeconomic news in a simpler, more engaging, and user-friendly way.",
+        },
+        {
+          id: "automated-financial-report-export",
+          name: "Automated Financial Report Export",
+          period: "Aug 2024 – Oct 2024",
+          link: "https://github.com/Nam-Tuyen/Automated-Financial-Report-Export",
+          hasDemo: true,
+          description: [
+            "Built an end-to-end Python pipeline to collect, clean, validate, and standardize Vietnamese stock market data.",
+            "Prepared structured, reporting-ready datasets to support consistent financial analysis and reporting workflows.",
+            "Automated ticker-based report generation with visualizations and PDF export, improving speed, consistency, and scalability.",
+          ],
+          insight: "A standardized and automated data workflow in the stock analysis reporting process helps brokerage teams save time.",
+        },
+        {
+          id: "airbnb-rental-price-prediction",
+          name: "Airbnb Rental Price Prediction",
+          period: "Apr 2024 – Jun 2024",
+          link: "https://github.com/Nam-Tuyen/AirBnB_Pricepredictmodel",
+          hasDemo: false,
+          description: [
+            "Cleaned and transformed Airbnb listing data, including numeric conversion, date parsing, outlier handling, and feature engineering.",
+            "Built a full preprocessing and modeling pipeline using Linear Regression and Random Forest for rental price prediction.",
+            "Identified that both property characteristics and host-related factors significantly influence listing prices.",
+          ],
+          insight: "Listing prices depend not only on property features but also on host information and listing history. By combining both groups of factors, the model can predict prices more accurately.",
+        },
+        {
+          id: "workforce-insight-hub-retention-and-compensation",
+          name: "Workforce Insight Hub: Retention and Compensation",
+          period: "Aug 2023 – Feb 2024",
+          link: "https://github.com/Nam-Tuyen/HR_Analytic",
+          hasDemo: false,
+          description: [
+            "Performed end-to-end HR data preprocessing, exploratory analysis, and feature preparation for attrition analysis.",
+            "Built attrition prediction models using Random Forest and Logistic Regression to evaluate employee turnover patterns.",
+            "Found that income, age, overtime, total working years, and daily rate were key drivers associated with attrition.",
+          ],
+          insight: "Employees are more likely to leave when compensation is not competitive or workloads are too high. This insight helps companies design better policies to improve employee retention.",
+        },
+      ]
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden" suppressHydrationWarning>
-      <UniverseBackground />
+    <div className="page-theme-smooth portfolio-font min-h-screen overflow-x-hidden" suppressHydrationWarning style={{ background: theme.pageBg, color: theme.textPrimary }}>
+      {/* Navbar */}
+      <Navbar language={language} onLanguageChange={setLanguage} />
 
-      <PageSwitcher translations={t} language={language} isSidebarCollapsed={isSidebarCollapsed} />
+      <div>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-16 sm:pt-24 md:pt-32 pb-6 sm:pb-8 md:pb-12">
 
-      <Sidebar
-        translations={t}
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-        language={language}
-        onLanguageChange={setLanguage}
-        isCollapsed={isSidebarCollapsed}
-        onToggleCollapse={setIsSidebarCollapsed}
-        isPersonalPage={false}
-      />
+          {/* HERO */}
+          <section id="home" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative overflow-hidden">
 
-      <div className="relative z-10 transition-all duration-500">
-        <div className={`min-h-screen transition-all duration-500 ${
-          isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
-        }`}>
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-20">
-            
-            {/* Hero Section - Tech Minimal Style */}
-            <section id="home" className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
-                {/* Left Column - Professional Image */}
-                <div className="order-2 lg:order-1">
-                    <div className="relative group">
-                    {/* Tech Grid Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-                    <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-1 sm:p-2">
-                      {/* Fixed Aspect Ratio Container */}
-                      <div className="relative w-full aspect-[4/5] max-w-xs sm:max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-xl sm:rounded-2xl">
-                          <img 
-                            src="/Profilepicture.jpg" 
-                          alt="LE NAM TUYEN" 
-                          className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
-                          />
-                        {/* Tech Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="grid grid-cols-1 items-center">
+              {/* Left Column - Professional Image */}
+              <div className="hidden order-2 lg:order-1" style={{ animation: "slideRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both" }}>
+                <div className="relative mx-auto w-fit group" style={{ animation: "slideUp 0.9s 0.12s cubic-bezier(0.34,1.56,0.64,1) both" }}>
+                  <div className="absolute inset-0 rounded-[32px] pointer-events-none" style={{ border: `1px solid ${theme.accentLine}`, boxShadow: `0 0 45px ${theme.accentGlowSoft}` }} />
+
+                  <div className="hero-photo-arch relative rounded-[32px] p-3 sm:p-4 md:p-5" style={{ background: "linear-gradient(145deg,#111 0%,#181818 55%,#101010 100%)", border: "1px solid #222" }}>
+                    <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[340px] lg:h-[340px] xl:w-[380px] xl:h-[380px] overflow-hidden rounded-[26px]" style={{ border: "1px solid #262626" }}>
+                      <div className="absolute left-3 top-3 z-20 rounded-full px-3 py-1" style={{ background: isDarkMode ? "rgba(10,10,10,.72)" : "rgba(255,255,255,.88)", border: `1px solid ${theme.accentLine}` }}>
+                        <span className="font-orbitron text-[9px] sm:text-[10px] uppercase tracking-[0.16em]" style={{ color: theme.accent }}>
+                          {isVietnamese ? "Hồ sơ cá nhân" : "Portfolio Profile"}
+                        </span>
+                      </div>
+
+                      <img
+                        src="/áº¢nh portfolio.png"
+                        alt="LE NAM TUYEN"
+                        className="absolute inset-0 h-full w-full object-cover object-top"
+                      />
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70" />
+                      <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: isDarkMode ? "linear-gradient(to bottom right,transparent,transparent,rgba(157,255,59,.1))" : "linear-gradient(to bottom right,transparent,transparent,rgba(94,143,31,.12))" }} />
+                    </div>
+                  </div>
+
+                  <div className="absolute -right-3 sm:-right-4 -bottom-3 sm:-bottom-4 w-6 h-6 sm:w-8 sm:h-8 rounded-full" style={{ background: theme.accent, boxShadow: `0 0 22px ${theme.accentGlow}` }} />
+                  <div className="absolute -left-2 sm:-left-3 top-8 sm:top-10 w-3 h-3 sm:w-4 sm:h-4 rounded-full" style={{ background: isDarkMode ? "#00d4ff" : "#5ca6b8", boxShadow: isDarkMode ? "0 0 16px rgba(0,212,255,0.5)" : "0 0 16px rgba(92,166,184,0.35)" }} />
+                </div>
+              </div>
+
+              <div className="order-1" style={{ animation: "slideRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both" }}>
+                <div
+                  className="profile-card-hover mx-auto w-full max-w-[1160px] overflow-hidden rounded-[30px] lg:rounded-[34px]"
+                  style={{
+                    background: theme.shellBg,
+                    border: theme.shellBorder,
+                    boxShadow: theme.shellShadow,
+                  }}
+                >
+                  <div className="relative h-[220px] overflow-hidden" style={{ background: theme.coverBg }}>
+                    <img
+                      src="/Background_image.png"
+                      alt="Transforming vision into reality"
+                      className="absolute inset-0 h-full w-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(7,18,10,0.2) 0%,rgba(7,18,10,0.06) 35%,rgba(4,10,12,0.28) 100%)" }} />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        backgroundImage: isDarkMode
+                          ? "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(157,255,59,0.04) 20px), repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(157,255,59,0.03) 20px)"
+                          : "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(94,143,31,0.05) 20px), repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(94,143,31,0.04) 20px)",
+                      }}
+                    />
+                    <div className="cover-sweep absolute inset-0" />
+                    <div className={`absolute inset-y-0 left-[14%] hidden w-px lg:block ${isDarkMode ? "bg-[linear-gradient(to_bottom,transparent,rgba(157,255,59,0.1),transparent)]" : "bg-[linear-gradient(to_bottom,transparent,rgba(94,143,31,0.12),transparent)]"}`} />
+                    <div className="absolute inset-y-0 left-[38%] hidden w-px bg-[linear-gradient(to_bottom,transparent,rgba(0,212,255,0.08),transparent)] lg:block" />
+                    <div className="absolute top-[24px] left-[21%] h-[5px] w-[5px] rounded-full" style={{ background: theme.accent, boxShadow: `0 0 10px ${theme.accent}`, opacity: 0.42 }} />
+                    <div className="absolute top-[34px] left-[38%] h-[4px] w-[4px] rounded-full" style={{ background: theme.accent, boxShadow: `0 0 8px ${theme.accent}`, opacity: 0.68 }} />
+                    <div className="absolute top-[56px] left-[61%] h-[3px] w-[3px] rounded-full" style={{ background: isDarkMode ? "#00d4ff" : "#5ca6b8", boxShadow: isDarkMode ? "0 0 6px #00d4ff" : "0 0 6px #5ca6b8", opacity: 0.7 }} />
+                  </div>
+
+                  <div className="relative px-5 pb-5 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:px-10 lg:pb-10">
+                    <div className="relative mt-[-52px] grid grid-cols-1 gap-6 lg:mt-[-62px] lg:grid-cols-[340px_minmax(0,1fr)] lg:items-start lg:gap-9">
+                      <div className="space-y-5">
+                        <div className="flex justify-center lg:justify-start">
+                          <div className="avatar-ring-wrap relative h-[108px] w-[108px] shrink-0 sm:h-[124px] sm:w-[124px]">
+                            <div
+                              className="absolute inset-[-3px] rounded-full"
+                              style={{
+                                background: isDarkMode ? "linear-gradient(135deg,#9dff3b,#c8ff7a 40%,#00d4ff 70%,#9dff3b)" : "linear-gradient(135deg,#5e8f1f,#8db44b 40%,#5ca6b8 70%,#5e8f1f)",
+                                boxShadow: isDarkMode ? "0 0 28px rgba(157,255,59,0.4), 0 0 60px rgba(157,255,59,0.12)" : "0 0 24px rgba(94,143,31,0.22), 0 0 48px rgba(94,143,31,0.08)",
+                              }}
+                            />
+                            <div className="absolute inset-0 rounded-full" style={{ background: theme.shellBg }} />
+                            <div className="absolute inset-[4px] overflow-hidden rounded-full" style={{ background: "linear-gradient(135deg,#1a2a10,#0d1a0d)" }}>
+                              <img
+                                className="avatar-img-inner h-full w-full object-cover object-top"
+                                alt={heroName}
+                                src="/%E1%BA%A2nh%20portfolio.png"
+                              />
+                            </div>
+                            <div
+                              className="absolute bottom-[6px] right-[4px] z-[3] h-[13px] w-[13px] rounded-full"
+                              style={{
+                                background: theme.accent,
+                                border: `2px solid ${theme.shellBg}`,
+                                boxShadow: `0 0 8px ${theme.accentGlow}`,
+                                animation: "blink 2.2s ease-in-out infinite",
+                              }}
+                            />
+                          </div>
+                        </div>
+
+                        <div className="space-y-5 text-center lg:text-left">
+                          <div>
+                            <div className="mb-2 flex flex-wrap items-end justify-center gap-x-2 gap-y-1 lg:justify-start">
+                              <span className="font-orbitron text-[24px] font-black uppercase tracking-[0.01em] sm:text-[28px] md:text-[30px]" style={{ color: theme.textPrimary }}>
+                                {heroName}
+                              </span>
+                            </div>
+
+                            <p className="mb-1 text-sm leading-[1.75] sm:text-[15px] md:text-base" style={{ color: theme.textSecondary }}>
+                              {heroTitle}
+                            </p>
+
+                            <p className="mb-4 text-[12.5px] sm:text-[13px]" style={{ color: theme.textMuted }}>
+                              {footerContact.location}
+                            </p>
+
+                            <div className="flex items-center justify-center gap-3 lg:justify-start">
+                              <a
+                                href={footerContact?.linkedin || "#"}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="card-action-btn inline-flex h-9 w-9 items-center justify-center rounded-full"
+                                style={{ background: theme.socialBg, border: theme.socialBorder, color: theme.accent, textDecoration: "none" }}
+                                aria-label={heroLinkedInLabel}
+                              >
+                                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[16px] w-[16px]" fill="currentColor">
+                                  <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.28 4.97c0 1.08.88 1.97 1.97 1.97a1.97 1.97 0 1 0 0-3ZM20.44 12.56c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.38c.04.55 0 11.5 0 11.5h3.36v-6.42c0-.34.02-.68.13-.92.27-.68.89-1.39 1.92-1.39 1.36 0 1.9 1.05 1.9 2.58V20H20v-6.86c0-.2.01-.39.01-.58h.43Z" />
+                                </svg>
+                              </a>
+
+                              <a
+                                href={footerContact?.github || "#"}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="card-action-btn inline-flex h-9 w-9 items-center justify-center rounded-full"
+                                style={{ background: theme.socialBg, border: theme.socialBorder, color: theme.accent, textDecoration: "none" }}
+                                aria-label={heroGithubLabel}
+                              >
+                                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[16px] w-[16px]" fill="currentColor">
+                                  <path d="M12 .5C5.65.5.5 5.7.5 12.1c0 5.12 3.3 9.46 7.88 10.99.58.11.79-.25.79-.56v-2.17c-3.2.71-3.88-1.38-3.88-1.38-.52-1.35-1.28-1.71-1.28-1.71-1.05-.73.08-.72.08-.72 1.16.08 1.78 1.21 1.78 1.21 1.03 1.79 2.71 1.27 3.37.97.1-.76.4-1.27.72-1.56-2.55-.29-5.24-1.29-5.24-5.74 0-1.27.45-2.31 1.18-3.13-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.2a10.9 10.9 0 0 1 5.8 0c2.22-1.52 3.19-1.2 3.19-1.2.62 1.59.23 2.77.11 3.06.73.82 1.18 1.86 1.18 3.13 0 4.46-2.69 5.44-5.25 5.73.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.63 11.63 0 0 0 23.5 12.1C23.5 5.7 18.35.5 12 .5Z" />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div
+                            className="rounded-[20px] px-5 py-5"
+                            style={{ background: theme.cardBg, border: theme.cardBorder }}
+                          >
+                          <div className="text-left">
+                            <div className="mb-3 inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
+                                {bachelorLabel}
+                              </div>
+                              <div className="font-orbitron text-[18px] font-black uppercase leading-tight tracking-[-0.03em] sm:text-[20px] md:text-[22px]" style={{ color: theme.textPrimary }}>
+                                {degreeLabel}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://www.uel.edu.vn/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="card-action-btn flex items-start gap-3 rounded-2xl px-5 py-4"
+                          style={{ background: theme.cardBg, border: theme.cardBorder, textDecoration: "none" }}
+                        >
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/95 p-0.5">
+                            <img
+                              src="/Logo.png"
+                              alt="UEL logo"
+                              className="h-full w-full object-contain"
+                            />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="text-sm font-medium leading-[1.55] sm:text-[15px]" style={{ color: theme.textSecondary }}>
+                              {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
+                            </div>
+                            <div
+                              className="mt-3 inline-flex items-center space-x-1.5 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:px-4 sm:text-[11px]"
+                              style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                            >
+                              <span>{moreInformationLabel}</span>
+                              <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+
+                        <div
+                          className="rounded-2xl px-5 py-5"
+                          style={{ background: theme.cardBg, border: theme.cardBorder }}
+                        >
+                          <div className="mb-3 flex items-center justify-between gap-3">
+                            <div className="font-orbitron text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: theme.accent }}>
+                              {achievementsLabel}
+                            </div>
+                            <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
+                          </div>
+
+                          <div className="space-y-2.5 text-left">
+                            {heroAchievements.map((item, index) => (
+                              <div key={index} className="flex items-start gap-2">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
+                                <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
+                                  <strong style={{ color: theme.textPrimary }}>{item.strong}</strong>
+                                  {item.rest ? ` ${item.rest}` : ""}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+
+                          <div className="mt-4 space-y-2.5 text-left">
+                            {heroCertificates.map((certificate) => (
+                              <div key={certificate.id} className="flex items-start gap-2">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
+                                <div className="min-w-0">
+                                  <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
+                                    {certificate.id === "ert" ? (
+                                      <strong style={{ color: theme.textPrimary }}>
+                                        {certificate.title} {certificate.description}
+                                      </strong>
+                                    ) : (
+                                      <>
+                                        <strong style={{ color: theme.textPrimary }}>{certificate.title}</strong>{" "}
+                                        {certificate.description}
+                                      </>
+                                    )}
+                                  </p>
+                                  <button
+                                    type="button"
+                                    onClick={() => setSelectedCertificate(certificate.id)}
+                                    className="mt-2 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[10px]"
+                                    style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
+                                  >
+                                    <span>{viewCertificateLabel}</span>
+                                    <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-5 lg:pt-[140px]">
+                        <div className="space-y-5 text-center lg:text-left">
+                          <div id="about-me" className="rounded-[20px] px-4 py-4 sm:px-5" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                            <div className="mb-2.5 flex items-center justify-between gap-3">
+                              <div className="font-orbitron text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: theme.accent }}>
+                                {introLabel}
+                              </div>
+                              <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
+                            </div>
+
+                            <p className="text-justify text-sm leading-[1.9] vietnamese-text sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                              {heroDescription}
+                            </p>
+                          </div>
+
+                          <div className="rounded-[20px] px-5 py-5 sm:px-6" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                            <div className="mb-2.5 flex items-center justify-between gap-3">
+                              <div className="font-orbitron text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: theme.accent }}>
+                                {experienceLabel}
+                              </div>
+                              <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
+                            </div>
+
+                            <div className="grid gap-3.5">
+                              {heroExperienceHighlights.map((item, index) => (
+                                <div key={index} className="rounded-[18px] px-4 py-4 text-left sm:px-5 sm:py-5" style={{ background: theme.nestedCardBg, border: theme.nestedCardBorder }}>
+                                  <div className="mb-4">
+                                    <div className="flex items-start gap-3">
+                                      {item.logo ? (
+                                        <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-0.5" style={{ border: theme.accentSoftBorder }}>
+                                          <img src={item.logo} alt={item.company} className="h-full w-full object-contain" />
+                                        </div>
+                                      ) : null}
+                                      <div className="min-w-0 flex-1">
+                                        <h4 className="font-orbitron text-[12px] font-bold leading-snug sm:text-[13px] md:text-[14px]" style={{ color: theme.textPrimary }}>
+                                          {item.title}
+                                        </h4>
+                                        <p className="mt-1 text-[11px] leading-[1.7] sm:text-[12px] md:text-[13px]" style={{ color: theme.textSecondary }}>
+                                          {item.company}
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <div className="mt-3 inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] sm:text-[11px]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
+                                      {item.period}
+                                    </div>
+                                    <div className="mt-3 flex flex-wrap gap-2.5">
+                                      <div className="rounded-full px-3 py-1.5 text-[11px] font-medium sm:text-[12px]" style={{ background: theme.chipBg, border: theme.chipBorder, color: theme.textSecondary }}>
+                                        <div className="flex items-center space-x-1.5">
+                                          <svg className="h-3 w-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                          </svg>
+                                          <span>{item.location}</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="space-y-3">
+                                    {item.bullets.map((bullet, bulletIndex) => (
+                                      <div key={bulletIndex} className="flex items-start gap-2">
+                                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
+                                        <p className="text-[11px] leading-[1.8] sm:text-[12.5px] md:text-[13.5px]" style={{ color: theme.textSecondary }}>
+                                          {bullet}
+                                        </p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                  <div className="mt-3 flex justify-start">
+                                    <a
+                                      href={item.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center space-x-1.5 rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:space-x-2"
+                                      style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                                    >
+                                      <span>{moreInformationLabel}</span>
+                                      <svg className="h-3 w-3 shrink-0 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                      </svg>
+                                    </a>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="rounded-[20px] px-5 py-5 sm:px-6" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                            <div className="mb-2.5 flex items-center justify-between gap-3">
+                              <div className="font-orbitron text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: theme.accent }}>
+                                {skillsLabel}
+                              </div>
+                              <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
+                            </div>
+
+                            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                              {heroSkillSnapshot.map((category, index) => (
+                                <div
+                                  key={index}
+                                  className="rounded-[18px] px-4 py-4 text-left sm:px-5 sm:py-5"
+                                  style={{ background: theme.nestedCardBg, border: theme.nestedCardBorder }}
+                                >
+                                  <h4 className="mb-3 font-orbitron text-[12px] font-bold leading-snug sm:text-[13px] md:text-[14px]" style={{ color: theme.textPrimary }}>
+                                    {category.name}
+                                  </h4>
+                                  <div className="flex flex-wrap gap-1.5">
+                                    {category.items.map((item, itemIndex) => (
+                                      <span
+                                        key={itemIndex}
+                                        className="rounded-full px-2.5 py-1 text-[10px] font-medium sm:text-[11px]"
+                                        style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.textSecondary }}
+                                      >
+                                        {item}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div id="projects" className="rounded-[20px] px-5 py-5 sm:px-6" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                            <div className="mb-2.5 flex items-center justify-between gap-3">
+                              <div className="font-orbitron text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: theme.accent }}>
+                                {projectsLabel}
+                              </div>
+                              <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
+                            </div>
+
+                            <div className="grid gap-3.5">
+                              {heroProjectHighlights.map((project: any, index: number) => (
+                                <div
+                                  key={index}
+                                  className="rounded-[18px] px-4 py-4 text-left sm:px-5 sm:py-5"
+                                  style={{ background: theme.nestedCardBg, border: theme.nestedCardBorder }}
+                                >
+                                  <div className="mb-4">
+                                    <h4 className="font-orbitron text-[12px] font-bold leading-snug sm:text-[13px] md:text-[14px]" style={{ color: theme.textPrimary }}>
+                                      {project.name}
+                                    </h4>
+                                    {project.period && (
+                                      <p className="mt-1 text-[11px] leading-[1.7] sm:text-[12px]" style={{ color: theme.accent }}>
+                                        {project.period}
+                                      </p>
+                                    )}
+                                  </div>
+
+                                  <div className="mb-3 flex flex-wrap gap-2">
+                                    {project.externalLink && (
+                                      <a
+                                        href={project.externalLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
+                                        style={{ background: theme.accent, color: theme.accentOnSolid }}
+                                      >
+                                        <span>LINK</span>
+                                        <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                      </a>
+                                    )}
+                                    {project.hasDemo && (
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          setSelectedProject(project)
+                                          setSelectedProjectMedia(null)
+                                        }}
+                                        className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
+                                        style={{ background: theme.accent, color: theme.accentOnSolid }}
+                                      >
+                                        <span>{viewDemoLabel}</span>
+                                      </button>
+                                    )}
+                                    {project.link && (
+                                      <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
+                                        style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
+                                      >
+                                        <span>{viewProjectLabel}</span>
+                                        <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                      </a>
+                                    )}
+                                  </div>
+
+                                  {Array.isArray(project.description) && (
+                                    <div className="space-y-3">
+                                      {project.description.map((item: string, itemIndex: number) => (
+                                        <div key={itemIndex} className="flex items-start gap-2">
+                                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
+                                          <p className="text-[11px] leading-[1.8] sm:text-[12.5px] md:text-[13.5px]" style={{ color: theme.textSecondary }}>
+                                            {item}
+                                          </p>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  )}
+
+                                  {project.insight && (
+                                    <div className="mt-4 rounded-[16px] px-4 py-3" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder }}>
+                                      <p className="text-[11px] leading-[1.8] sm:text-[12.5px] md:text-[13.5px]" style={{ color: theme.textSecondary }}>
+                                        <strong style={{ color: theme.textPrimary }}>{keyInsightLabel}</strong> {project.insight}
+                                      </p>
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
-
-                 {/* Right Column - Professional Content */}
-                  <div className="order-1 lg:order-2 text-center lg:text-left">
-                   <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12">
-                     {/* Greeting */}
-                     <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-7">
-                       
-                       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 tracking-tight leading-tight vietnamese-text">
-                         {t?.hero?.greeting || "HI, I AM"}
-                        </h1>
-                       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-transparent bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 tracking-tight leading-tight vietnamese-text gradient-text">
-                         {t?.hero?.name || "LE NAM TUYEN"}
-                       </h2>
-                       <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 font-medium leading-relaxed mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
-                         {t?.hero?.title || "ASPIRING PRODUCT MANAGER & DATA ANALYST IN FINTECH"}
-                        </p>
-                      </div>
-
-
-                      {/* Enhanced CTA Buttons */}
-                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mt-4 sm:mt-6 md:mt-8 lg:mt-10">
-                       <button 
-                         onClick={() => {
-                           const link = document.createElement('a');
-                           link.href = '/CV_Data.pdf';
-                           link.download = 'CV_Data.pdf';
-                           document.body.appendChild(link);
-                           link.click();
-                           document.body.removeChild(link);
-                         }}
-                         className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00ff88]/25 text-xs sm:text-sm md:text-base touch-target group relative overflow-hidden active:scale-95">
-                         <span className="relative z-10">{t?.buttons?.downloadResume || "Download Resume"}</span>
-                         <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff] to-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </button>
-                        <button 
-                         onClick={scrollToProjects}
-                         className="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 border border-white/20 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/5 transition-all duration-300 text-xs sm:text-sm md:text-base touch-target group relative overflow-hidden active:scale-95"
-                       >
-                         <span className="relative z-10">{t?.buttons?.viewProjects || "View Projects"}</span>
-                         <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </button>
-                      </div>
-                  </div>
                 </div>
-              </div>
-            </section>
-
-            {/* Scroll Indicator */}
-            <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
-              <div className="flex flex-col items-center space-y-2 animate-bounce">
-                <span className="text-gray-400 text-xs sm:text-sm font-medium">{t?.scrollIndicator?.text || "Scroll to explore"}</span>
-                <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                  <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-                </div>
-                <svg className="w-4 h-4 text-gray-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
               </div>
             </div>
 
-            {/* 1. ABOUT ME Section */}
-            <section id="about" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                <div className="mb-4 sm:mb-6">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.about || "ABOUT ME"}</h3>
-                </div>
-                <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
-                </div>
-                
-                <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-2xl">
-                    <div className="text-left">
-                      <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#00ff88] font-bold italic mb-6 sm:mb-8 md:mb-10 lg:mb-12 leading-tight max-w-4xl text-center mx-auto">
-                        {t?.about?.quote?.split('\n').map((line, index) => (
-                          <div key={index} className="block">{line}</div>
-                        ))}
-                      </blockquote>
-                        <div className="max-w-4xl mx-auto px-2 sm:px-4">
-                          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed sm:leading-loose text-justify tracking-wide sm:tracking-wider break-words hyphens-auto">
-                            {t?.about?.description || "Final-year Financial Technology student at the University of Economics and Law with a focus on product development, analytics, and evidence-based decision making. I design and deliver practical workshops on product discovery, user research, SQL, Python, dashboards, experiment evaluation, and product analytics. In cross-functional settings, I convert insights into clear product requirements, define success metrics, and run lean experiments that elevate user experience and business outcomes. Proficient in Python, SQL, and modern BI platforms, I build scalable templates and reporting systems that improve execution quality and velocity. I'm seeking a Data Analyst or Associate PM role in FinTech where I can translate data and customer insight into measurable product impact."}
-                  </p>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+          </section>
 
-            {/* 2. EDUCATION Section */}
-            <section id="education" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.education || "EDUCATION"}</h3>
-                   </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
-                </div>
-                
-                <div className="max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
-                    {/* Responsive Education Card Layout */}
-                    <div className="space-y-4 sm:space-y-6">
-                      {/* Degree Information - Centered */}
-                      <div className="text-center space-y-3 sm:space-y-4">
-                        <div>
-                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 leading-tight">
-                            <div className="block text-sm sm:text-base lg:text-lg text-gray-400 font-medium mb-2 sm:mb-3">{t?.labels?.bachelorOf || "Bachelor of"}</div>
-                            <div className="block bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent font-black text-xl sm:text-2xl lg:text-3xl">{t?.labels?.financialTechnology || "Financial Technology"}</div>
-                          </h4>
-                          <p className="text-white/80 font-medium text-sm sm:text-base lg:text-lg mb-1">
-                            {t?.education?.university || "University of Economics and Law (VNU-HCM)"}
-                          </p>
-                          <p className="text-gray-400 text-xs sm:text-sm">2022 - 2026</p>
-                        </div>
-                      </div>
-
-                      {/* Academic Stats - Centered Grid */}
-                      <div className="flex justify-center">
-                        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
-                    <div className="text-center">
-                            <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#7c3aed] mb-1">{t?.education?.ielts || "6.0"}</div>
-                            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">{t?.labels?.ielts || "IELTS"}</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Learn More Link - Centered */}
-                      <div className="flex justify-center">
-                        <a 
-                          href="https://www.uel.edu.vn/ArticleId/098e3942-d9c0-4d71-9e45-1436ad2a6538/lich-su-hinh-thanh-va-phat-trien"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group text-xs sm:text-sm"
-                        >
-                          <span>{t?.buttons?.moreInformation || "More information"}</span>
-                          <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* 3. SKILL Section */}
-            <section id="skills" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.skills || "SKILLS"}</h3>
-                   </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
-                 </div>
-
-                <div className="max-w-6xl mx-auto">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
-                    {t?.skills?.categories?.map((category: any, index: number) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 hover:border-[#7c3aed]/40 transition-all duration-500 shadow-2xl group">
-                        <div className="mb-4 sm:mb-6">
-                          <h4 className="text-lg sm:text-xl font-bold text-white">{category.name}</h4>
-                        </div>
-                        <div className="space-y-2 sm:space-y-3">
-                          {category.items?.map((item: string, itemIndex: number) => (
-                            <div key={itemIndex} className="flex items-center space-x-2 sm:space-x-3 group-hover:translate-x-2 transition-transform duration-300">
-                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#7c3aed] rounded-full"></div>
-                              <span className="text-gray-300 font-medium text-sm sm:text-base">{item}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* 4. CERTIFICATIONS & AWARDS Section */}
-            <section id="certifications" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00d4ff]/5 rounded-2xl sm:rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                  <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.certifications || "CERTIFICATIONS & AWARDS"}</h3>
-                  </div>
-                  <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto"></div>
-                </div>
-                
-                <div className="max-w-5xl mx-auto">
-                  <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                  {/* Google Certificate */}
-                  <div 
-                    onClick={() => setSelectedCertificate('google')}
-                        className="cursor-pointer p-4 sm:p-6 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-xl sm:rounded-2xl border border-[#00ff88]/20 hover:border-[#00ff88]/40 hover:from-[#00ff88]/20 hover:to-[#00d4ff]/20 transition-all duration-300 group"
-                      >
-                        <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
-                          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00ff88] rounded-full animate-pulse"></div>
-                          <h4 className="text-base sm:text-lg font-bold text-white">Google Certificate</h4>
-                    </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
-                           Ask Questions to Make Data-Driven Decisions
-                         </p>
-                         <div className="mt-2 sm:mt-3 text-xs text-[#00ff88] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
-                           Click to view certificate
-                    </div>
-                  </div>
-
-                  {/* NVIDIA Certificate */}
-                  <div 
-                    onClick={() => setSelectedCertificate('nvidia')}
-                        className="cursor-pointer p-4 sm:p-6 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-xl sm:rounded-2xl border border-[#00d4ff]/20 hover:border-[#00d4ff]/40 hover:from-[#00d4ff]/20 hover:to-[#7c3aed]/20 transition-all duration-300 group"
-                      >
-                        <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
-                          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#00d4ff] rounded-full animate-pulse"></div>
-                          <h4 className="text-base sm:text-lg font-bold text-white">NVIDIA Certificate</h4>
-                    </div>
-                         <p className="text-gray-300 font-medium text-xs sm:text-sm leading-relaxed text-left">
-                           Accelerating End-to-End Data Science Workflows
-                         </p>
-                         <div className="mt-2 sm:mt-3 text-xs text-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
-                           Click to view certificate
-                    </div>
-                  </div>
-
-                    </div>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            {/* 5. WORKING EXPERIENCE Section */}
-            <section id="experience" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/5 to-[#7c3aed]/5 rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.experience || "WORKING EXPERIENCE"}</h3>
-                   </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto"></div>
-                </div>
-                
-                <div className="max-w-6xl mx-auto">
-                  <div className="space-y-8">
-                    {/* AGRIBANK Experience */}
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:border-[#00ff88]/40 transition-all duration-500 shadow-2xl group">
-                      {/* Header with Logo */}
-                      <div className="mb-6 sm:mb-8">
-                      <div className="flex items-center space-x-3 sm:space-x-4 mb-4">
-                          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-lg sm:rounded-xl p-1.5 sm:p-2 shadow-lg flex-shrink-0">
-                            <img 
-                              src="/agribank logo.jpg" 
-                              alt="AGRIBANK Logo" 
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        <div className="min-w-0 flex-1">
-                            <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 leading-tight">{t?.experience?.agribank?.position || "Credit Analyst Intern"}</h4>
-                            <p className="text-[#00ff88] font-semibold text-sm sm:text-base md:text-lg lg:text-xl">{t?.experience?.agribank?.company || "AGRIBANK"}</p>
-                          </div>
-                        </div>
-                        
-                        {/* Modern Info Cards */}
-                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
-                          <div className="bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">
-                            <div className="flex items-center space-x-1.5 sm:space-x-2">
-                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                              <span className="text-white font-medium text-xs sm:text-sm">{t?.experience?.agribank?.period || "Mar 2025 – Jun 2025"}</span>
-                            </div>
-                          </div>
-                          
-                          <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">
-                            <div className="flex items-center space-x-1.5 sm:space-x-2">
-                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                              </svg>
-                              <span className="text-white font-medium text-xs sm:text-sm">{t?.experience?.agribank?.department || "Binh Trieu Branch (On-site)"}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                         {/* Learn More Button */}
-                         <div className="flex justify-start">
-                           <a
-                             href="https://www.agribank.com.vn/"
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             className="inline-flex items-center space-x-1.5 sm:space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00ff88]/20 to-[#00d4ff]/20 border border-[#00ff88]/30 text-[#00ff88] font-semibold rounded-lg sm:rounded-xl hover:from-[#00ff88]/30 hover:to-[#00d4ff]/30 hover:border-[#00ff88]/50 transition-all duration-300 group text-xs sm:text-sm"
-                           >
-                             <span>{t?.buttons?.moreInformation || "More information"}</span>
-                             <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                             </svg>
-                           </a>
-                        </div>
-                      </div>
-
-                      {/* Job Description - Responsive */}
-                      <div className="mb-6 sm:mb-8">
-                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{t?.buttons?.jobDescription || "Job Description"}</h5>
-                        <div className="space-y-3 sm:space-y-4">
-                        {t?.experience?.agribank?.achievements?.map((achievement: string, index: number) => (
-                            <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-300 leading-relaxed text-justify text-xs sm:text-sm lg:text-base">
-                                {achievement}
-                              </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                    {/* Maybank Experience */}
-                    <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:border-[#00d4ff]/40 transition-all duration-500 shadow-2xl group">
-                      {/* Header with Logo */}
-                      <div className="mb-6 sm:mb-8">
-                      <div className="flex items-center space-x-3 sm:space-x-4 mb-4">
-                          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-lg sm:rounded-xl p-1.5 sm:p-2 shadow-lg flex-shrink-0">
-                            <img 
-                              src="/Maybank logo.png" 
-                              alt="Maybank Logo" 
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        <div className="min-w-0 flex-1">
-                            <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 leading-tight">{t?.experience?.maybank?.position || "Broker Intern"}</h4>
-                            <p className="text-[#00d4ff] font-semibold text-sm sm:text-base md:text-lg lg:text-xl">{t?.experience?.maybank?.company || "Maybank Investment Bank Vietnam"}</p>
-                          </div>
-                        </div>
-                        
-                        {/* Modern Info Cards */}
-                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
-                          <div className="bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">
-                            <div className="flex items-center space-x-1.5 sm:space-x-2">
-                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                              <span className="text-white font-medium text-xs sm:text-sm">{t?.experience?.maybank?.period || "Jun 2024 – Dec 2024"}</span>
-                            </div>
-                          </div>
-                          
-                          <div className="bg-gradient-to-r from-[#7c3aed]/20 to-[#00ff88]/20 border border-[#7c3aed]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl">
-                            <div className="flex items-center space-x-1.5 sm:space-x-2">
-                              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                              </svg>
-                              <span className="text-white font-medium text-xs sm:text-sm">{t?.experience?.maybank?.department || "Phu Nhuan Branch (On-site)"}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                         {/* Learn More Button */}
-                         <div className="flex justify-start">
-                           <a
-                             href="https://www.linkedin.com/company/mibv/"
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             className="inline-flex items-center space-x-1.5 sm:space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 border border-[#00d4ff]/30 text-[#00d4ff] font-semibold rounded-lg sm:rounded-xl hover:from-[#00d4ff]/30 hover:to-[#7c3aed]/30 hover:border-[#00d4ff]/50 transition-all duration-300 group text-xs sm:text-sm"
-                           >
-                             <span>{t?.buttons?.moreInformation || "More information"}</span>
-                             <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                             </svg>
-                           </a>
-                        </div>
-                      </div>
-
-                      {/* Job Description - Responsive */}
-                      <div className="mb-6 sm:mb-8">
-                        <h5 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">{t?.buttons?.jobDescription || "Job Description"}</h5>
-                        <div className="space-y-3 sm:space-y-4">
-                        {t?.experience?.maybank?.achievements?.map((achievement: string, index: number) => (
-                            <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-300 leading-relaxed text-justify text-xs sm:text-sm lg:text-base">
-                                {achievement}
-                              </span>
-                            </div>
-                        ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* 6. PROJECT Section */}
-            <section id="projects" className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed]/5 to-[#00ff88]/5 rounded-3xl blur-3xl"></div>
-              <div className="relative">
-                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-                   <div className="mb-4 sm:mb-6">
-                     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">{t?.sections?.projects || "PROJECTS"}</h3>
-                   </div>
-                   <div className="w-16 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto"></div>
-                </div>
-                
-                <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                  <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  {t?.projects?.items?.map((project: any, index: number) => (
-                      <div key={index} className="group">
-                        {/* Header */}
-                        <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <span className="text-base sm:text-lg md:text-xl lg:text-2xl">🚀</span>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
-                              {project.name}
-                            </h3>
-                            {project.period && (
-                              <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                                {project.period}
-                              </p>
-                            )}
-                            
-                            {/* Project Links */}
-                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                              {/* Show VIEW DEMO button only for projects that are not Airbnb or Workforce Insight Hub */}
-                              {project.name !== "Airbnb Rental Price Prediction" && project.name !== "Workforce Insight Hub Retention and Compensation" && (
-                                <button
-                                  onClick={() => setSelectedProject(project)}
-                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                                >
-                                  <span>🎬</span>
-                                  {t?.buttons?.viewDemo || "VIEW DEMO"}
-                                </button>
-                              )}
-                              {project.link && (
-                                <a 
-                                  href={project.link} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
-                                >
-                                  <span>🔗</span>
-                                  {t?.buttons?.viewProject || "VIEW PROJECT"}
-                                </a>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
-                          {/* Description */}
-                          <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-                            {Array.isArray(project.description) ? (
-                              <ul className="space-y-2 sm:space-y-3">
-                                {project.description.map((item: string, descIndex: number) => (
-                                  <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
-                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                    <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
-                                {project.description}
-                              </p>
-                            )}
-                          </div>
-                          
-                          {/* Show 3 images directly for Airbnb project */}
-                          {project.name === "Airbnb Rental Price Prediction" && (
-                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                <div className="relative group">
-                                  <img 
-                                    src="/AirBnB.PNG" 
-                                    alt="Airbnb Analysis 1"
-                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                                <div className="relative group">
-                                  <img 
-                                    src="/AirBB2.png" 
-                                    alt="Airbnb Analysis 2"
-                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                                <div className="relative group">
-                                  <img 
-                                    src="/airBNBPrice.png" 
-                                    alt="Airbnb Analysis 3"
-                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Show 3 images directly for Workforce Insight Hub project */}
-                          {project.name === "Workforce Insight Hub Retention and Compensation" && (
-                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                <div className="relative group">
-                                  <img 
-                                    src="/HR2.png" 
-                                    alt="HR Analysis 1"
-                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                                <div className="relative group">
-                                  <img 
-                                    src="/HR3.png" 
-                                    alt="HR Analysis 2"
-                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                                <div className="relative group">
-                                  <img 
-                                    src="/HRanalytic.png" 
-                                    alt="HR Analysis 3"
-                                    className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Show Insight section for Workforce Insight Hub project */}
-                          {project.name === "Workforce Insight Hub Retention and Compensation" && project.insight && (
-                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
-                              <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
-                                {t?.sections?.insight || "INSIGHT"}
-                              </h4>
-                              <ul className="space-y-2 sm:space-y-3">
-                                {project.insight.map((item: string, insightIndex: number) => (
-                                  <li key={insightIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
-                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                    <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-
-          </div>
+          </div>{/* end sections wrapper */}
         </div>
-      </div>
+
+        {/* CONTACT / CTA */}
+        <section id="contact" className="px-5 md:px-[52px] py-[80px] md:py-[100px] anim" style={{ borderTop: `1px solid ${theme.sectionBorder}` }}>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="text-xs font-semibold uppercase tracking-[2px] mb-6" style={{ color: theme.accent }}>
+              {language === "vi" ? "Liên hệ với tôi" : "Get in Touch"}
+            </div>
+            <h2 className="font-orbitron text-3xl sm:text-4xl md:text-5xl font-black mb-8 leading-tight" style={{ color: theme.textPrimary }}>
+              {language === "vi"
+                ? "Xây dựng các giải pháp fintech thực tiễn"
+                : "Building practical fintech solutions"}
+            </h2>
+            <p className="text-base md:text-lg mb-10" style={{ color: theme.textMuted }}>
+              {language === "vi"
+                ? "Hãy liên hệ với tôi nếu bạn muốn kết nối, hợp tác hoặc trao đổi về cơ hội công việc"
+                : "Feel free to reach out for collaboration, projects or career opportunities"}
+            </p>
+            <div className="flex justify-center">
+              <button
+                onClick={handleDownloadResume}
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
+                style={{ background: theme.accent, color: theme.accentOnSolid }}
+              >
+                {downloadResumeLabel}
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer style={{ background: isDarkMode ? "#9dff3b" : "#c7e782" }}>
+          <div className="px-5 md:px-[52px] py-12 md:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10">
+              <div>
+                <div className="font-orbitron font-black text-lg mb-3" style={{ color: "#000" }}>
+                  {language === "vi" ? "LÊ NAM TUYÊN" : "TUYEN LE NAM"}
+                </div>
+                <p className="mb-1 text-[13px] leading-[1.55]" style={{ color: "#000" }}>
+                  {language === "vi" ? "ĐỊNH HƯỚNG PRODUCT MANAGER TRONG FINTECH" : "ASPIRING PRODUCT MANAGER IN FINTECH"}
+                </p>
+              </div>
+              <div>
+                <div className="font-bold text-xs uppercase tracking-widest mb-3" style={{ color: "#333" }}>
+                  {language === "vi" ? "Điều hướng" : "Navigation"}
+                </div>
+                <ul className="space-y-2">
+                  {[
+                    { id: "home", label: language === "vi" ? "Trang chủ" : "Home" },
+                    { id: "about-me", label: language === "vi" ? "Về tôi" : "About me" },
+                  ].map((item) => (
+                    <li key={item.id}>
+                      <button onClick={() => { const el = document.getElementById(item.id); el?.scrollIntoView({ behavior: "smooth" }) }}
+                        className="text-sm font-medium hover:underline" style={{ color: "#111", background: "none", border: "none", cursor: "pointer" }}>
+                        {item.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <div className="font-bold text-xs uppercase tracking-widest mb-3" style={{ color: "#333" }}>
+                  {language === "vi" ? "Liên hệ" : "Contact"}
+                </div>
+                <ul className="space-y-2 text-sm" style={{ color: "#111" }}>
+                  <li className="inline-flex items-center gap-2">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none">
+                      <path d="M3 6.75 12 13.5l9-6.75" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4.5 7.5V18h15V7.5" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4.5 18 9.75 12.75" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M19.5 18 14.25 12.75" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>Namtuyenle.CV@gmail.com</span>
+                  </li>
+                  <li>
+                    <a href={footerContact.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+                        <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.28 4.97c0 1.08.88 1.97 1.97 1.97a1.97 1.97 0 1 0 0-3ZM20.44 12.56c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.38c.04.55 0 11.5 0 11.5h3.36v-6.42c0-.34.02-.68.13-.92.27-.68.89-1.39 1.92-1.39 1.36 0 1.9 1.05 1.9 2.58V20H20v-6.86c0-.2.01-.39.01-.58h.43Z" />
+                      </svg>
+                      <span>LinkedIn</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href={footerContact.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+                        <path d="M12 .5C5.65.5.5 5.7.5 12.1c0 5.12 3.3 9.46 7.88 10.99.58.11.79-.25.79-.56v-2.17c-3.2.71-3.88-1.38-3.88-1.38-.52-1.35-1.28-1.71-1.28-1.71-1.05-.73.08-.72.08-.72 1.16.08 1.78 1.21 1.78 1.21 1.03 1.79 2.71 1.27 3.37.97.1-.76.4-1.27.72-1.56-2.55-.29-5.24-1.29-5.24-5.74 0-1.27.45-2.31 1.18-3.13-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.2a10.9 10.9 0 0 1 5.8 0c2.22-1.52 3.19-1.2 3.19-1.2.62 1.59.23 2.77.11 3.06.73.82 1.18 1.86 1.18 3.13 0 4.46-2.69 5.44-5.25 5.73.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.63 11.63 0 0 0 23.5 12.1C23.5 5.7 18.35.5 12 .5Z" />
+                      </svg>
+                      <span>GitHub</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="pt-6 flex items-center justify-center" style={{ borderTop: "1px solid rgba(0,0,0,.15)" }}>
+              <p className="text-center text-xs" style={{ color: "#333" }}>
+                © {new Date().getFullYear()} {language === "vi" ? "Lê Nam Tuyên" : "Tuyen Le Nam"}.{" "}
+                {language === "vi" ? "Đã đăng ký bản quyền." : "All rights reserved."}
+              </p>
+            </div>
+          </div>
+        </footer>
 
       {/* Certificate Modal */}
-      {selectedCertificate && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="relative max-w-4xl max-h-[90vh] w-full">
-            {/* Close Button */}
+      {selectedCertificate && selectedCertificatePreview && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,.88)" }} onClick={() => setSelectedCertificate(null)}>
+          <div className="relative max-w-4xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelectedCertificate(null)}
-              className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
+              className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black"
+              style={{ background: theme.accent, color: theme.accentOnSolid }}
             >
-              <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              x
             </button>
-
-            {/* Certificate Image */}
-            <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-[22px] overflow-hidden" style={{ border: "1px solid #222" }}>
               <img
-                src={selectedCertificate === 'google' ? '/ask-question-to-make-data-driven.PNG' : '/Certificate NVIDIA.PNG'}
-                alt={selectedCertificate === 'google' ? 'Google Certificate' : 'NVIDIA Certificate'}
-                className="w-full h-auto max-h-[85vh] object-contain"
+                src={selectedCertificatePreview.src}
+                alt={selectedCertificatePreview.alt}
+                className="w-full h-auto max-h-[85vh] object-contain bg-white"
               />
             </div>
           </div>
         </div>
-        )}
+      )}
 
-        {/* Project Demo Modal */}
-        {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-            <div className="relative max-w-6xl max-h-[90vh] w-full">
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
-              >
-                <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              {/* Project Modal Content */}
-              <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl max-h-[85vh] overflow-y-auto">
-                {/* Header */}
-                <div className="p-4 sm:p-6 border-b border-white/10">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl sm:text-3xl">🚀</span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
-                        {selectedProject.name}
-                      </h3>
-                      {selectedProject.period && (
-                        <p className="text-[#7c3aed] font-medium text-sm sm:text-base">
-                          {selectedProject.period}
-                        </p>
-                      )}
-                    </div>
+      {/* Project Demo Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,.88)" }} onClick={() => { setSelectedProject(null); setSelectedProjectMedia(null) }}>
+          <div className="relative max-w-5xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => { setSelectedProject(null); setSelectedProjectMedia(null) }}
+              className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black"
+              style={{ background: theme.accent, color: theme.accentOnSolid }}
+            >
+              x
+            </button>
+            <div className="rounded-[22px] overflow-hidden overflow-y-auto max-h-[85vh] transition-colors duration-300" style={{ background: theme.modalBg, border: `1px solid ${theme.sectionBorder}` }}>
+              <div className="p-5 text-center sm:p-7" style={{ borderBottom: `1px solid ${theme.sectionBorder}` }}>
+                <h3 className="font-orbitron text-base font-bold sm:text-lg" style={{ color: theme.textPrimary }}>
+                  {selectedProject.id === "automated-financial-report-export" || selectedProject.id === "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam"
+                    ? demoPromptLabel
+                    : selectedProject.name}
+                </h3>
+              </div>
+              <div className="p-5 sm:p-7">
+                {selectedProject.image && (
+                  <div className="mb-6">
+                    {selectedProject.image?.endsWith('.mp4') ? (
+                      <video className="w-full h-64 sm:h-80 object-cover rounded-xl" controls preload="metadata" style={{ border: "1px solid #2d2d2d" }}>
+                        <source src={selectedProject.image} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-64 sm:h-80 object-cover rounded-xl" style={{ border: "1px solid #2d2d2d" }} />
+                    )}
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-4 sm:p-6">
-                  {/* Project Media */}
-                  {selectedProject.image && (
-                    <div className="mb-6">
-                      {/* Multiple Images for Airbnb Project */}
-                      {selectedProject.name === "Airbnb Rental Price Prediction" ? (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                          <div className="relative group">
-                            <img 
-                              src="/AirBnB.PNG" 
-                              alt="Airbnb Analysis 1"
-                              className="w-full h-48 sm:h-56 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                          <div className="relative group">
-                            <img 
-                              src="/AirBB2.png" 
-                              alt="Airbnb Analysis 2"
-                              className="w-full h-48 sm:h-56 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                          <div className="relative group">
-                            <img 
-                              src="/airBNBPrice.png" 
-                              alt="Airbnb Analysis 3"
-                              className="w-full h-48 sm:h-56 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        /* Single Media for Other Projects */
-                        <div className="relative group">
-                          {selectedProject.image?.endsWith('.mp4') ? (
-                            <video 
-                              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10"
-                              controls
-                              preload="metadata"
-                            >
-                              <source src={selectedProject.image} type="video/mp4" />
-                              Your browser does not support the video tag.
-                            </video>
-                          ) : (
-                            <img 
-                              src={selectedProject.image} 
-                              alt={selectedProject.name}
-                              className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl sm:rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
-                            />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Sample Report Button - Only for Automated Financial Report Export */}
-                  {selectedProject.name === "Automated Financial Report Export" && (
-                    <div className="flex justify-center mb-6">
-                      <a 
-                        href="/Report_demo.pdf" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                      >
-                        <span>📄</span>
-                        {t?.buttons?.readSampleReport || "READ SAMPLE REPORT"}
-                      </a>
-                    </div>
-                  )}
-
-                </div>
+                )}
+                {!selectedProjectMedia && selectedProject.id === "automated-financial-report-export" && (
+                  <div className="mb-2 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProjectMedia({ type: "pdf", src: "/Report_demo.pdf" })}
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
+                      style={{ background: theme.accent, color: theme.accentOnSolid }}
+                    >
+                      {sampleReportLabel}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProjectMedia({ type: "video", src: "/Demo.mp4" })}
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
+                      style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                    >
+                      {demoVideoLabel}
+                    </button>
+                  </div>
+                )}
+                {!selectedProjectMedia && selectedProject.id === "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam" && (
+                  <div className="mb-2 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProjectMedia({ type: "video", src: "/Demo video(Mobile Phone).mp4" })}
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
+                      style={{ background: theme.accent, color: theme.accentOnSolid }}
+                    >
+                      {mobileDemoLabel}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProjectMedia({ type: "video", src: "/Demo video(PC).mp4" })}
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
+                      style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                    >
+                      {desktopDemoLabel}
+                    </button>
+                  </div>
+                )}
+                {selectedProjectMedia && (
+                  <div className="mt-5 overflow-hidden rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#0b0b0b" }}>
+                    {selectedProjectMedia.type === "pdf" ? (
+                      <iframe
+                        src={`${selectedProjectMedia.src}#toolbar=0&navpanes=0&scrollbar=1`}
+                        title="Sample report"
+                        className="h-[70vh] w-full"
+                      />
+                    ) : (
+                      <video className="h-auto max-h-[70vh] w-full bg-black" controls preload="metadata">
+                        <source src={selectedProjectMedia.src} type="video/mp4" />
+                      </video>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-        )}
+      )}
 
-        <ScrollToTopButton />
-      </div>
+      <ScrollToTopButton isDark={isDarkMode} />
+    </div>
     )
   }
+
+

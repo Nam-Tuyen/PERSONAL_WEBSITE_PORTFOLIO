@@ -1,787 +1,1029 @@
-"use client"
+﻿"use client"
 
-import { useState, useEffect } from "react"
-import { translations } from "../data/translations"
-import UniverseBackground from "../components/UniverseBackground"
-import Sidebar from "../components/Sidebar"
-import PageSwitcher from "../components/PageSwitcher"
+import { useEffect, useState } from "react"
+import Navbar from "../components/Navbar"
 import ScrollToTopButton from "../components/ScrollToTopButton"
 
-export default function PersonalPage() {
-  const [language, setLanguage] = useState("en")
-  const [activeSection, setActiveSection] = useState("hobbies")
-  const [mounted, setMounted] = useState(false)
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
-  const [selectedAchievement, setSelectedAchievement] = useState<string | null>(null)
-  const [currentHobbyIndex, setCurrentHobbyIndex] = useState(0)
-  const [touchStart, setTouchStart] = useState<number | null>(null)
-  const [touchEnd, setTouchEnd] = useState<number | null>(null)
+const getInitialLanguage = (): Language => {
+  if (typeof window === "undefined") return "en"
+  const storedLanguage = window.localStorage.getItem("portfolio-language")
+  return storedLanguage === "vi" || storedLanguage === "en" ? storedLanguage : "en"
+}
 
-  const t = translations[language as keyof typeof translations]
+const getInitialTheme = () => {
+  if (typeof window === "undefined") return true
+  const storedTheme = window.localStorage.getItem("portfolio-theme")
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme === "dark"
+  }
+  return document.documentElement.classList.contains("dark")
+}
+
+type Language = "en" | "vi"
+
+type LinkItem = { title: string; url: string }
+type RoleItem = { title: string; period: string; bullets: string[]; achievements?: string[] }
+type SectionItem = {
+  id?: string
+  title: string
+  organization: string
+  period?: string
+  icon?: string
+  logo?: string
+  bullets?: string[]
+  description?: string
+  roles?: RoleItem[]
+  images?: string[]
+  links?: LinkItem[]
+  website?: string
+  linkedin?: string
+  certificate?: string
+  publication?: string
+  date?: string
+  link?: string
+  document?: string
+  demoOptions?: { label: string; src: string }[]
+}
+
+const content: Record<
+  Language,
+  {
+    intro: string
+    labels: {
+      news: string
+      achievements: string
+      viewCertificate: string
+      viewPublication: string
+      viewDemo: string
+      viewDocument: string
+      chooseDemo: string
+      mobileDemo: string
+      desktopDemo: string
+      navigation: string
+      contact: string
+      home: string
+      aboutMe: string
+      copyright: string
+      tagline: string
+    }
+    sections: {
+      extracurriculars: { title: string; items: SectionItem[] }
+      socialActivities: { title: string; items: SectionItem[] }
+      achievements: { title: string; items: SectionItem[] }
+      research: { title: string; items: SectionItem[] }
+    }
+  }
+> = {
+  en: {
+    intro:
+      "This section offers a closer look at who I am beyond my academic and professional work. It reflects my interests, personal journey, and the experiences that have shaped the way I think, learn, and grow. Through this, I hope to share not only what I do, but also what motivates me and how I continue to develop both personally and professionally.",
+    labels: {
+      news: "News & Media",
+      achievements: "Key Achievements",
+      viewCertificate: "VIEW CERTIFICATE",
+      viewPublication: "VIEW PUBLICATION",
+      viewDemo: "VIEW DEMO",
+      viewDocument: "VIEW DOCUMENT",
+      chooseDemo: "Please select the type of demo you would like to view:",
+      mobileDemo: "VIEW MOBILE DEMO",
+      desktopDemo: "VIEW DESKTOP DEMO",
+      navigation: "Navigation",
+      contact: "Contact",
+      home: "Home",
+      aboutMe: "About me",
+      copyright: "All rights reserved.",
+      tagline: "ASPIRING PRODUCT MANAGER IN FINTECH",
+    },
+    sections: {
+      extracurriculars: {
+        title: "EXTRACURRICULARS",
+        items: [
+          {
+            title: "FINANCIAL TECHNOLOGY CLUB",
+            organization: "University of Economics and Law",
+            period: "2022 - Present",
+            logo: "/FTC_logo.png",
+            website: "https://ftc-websites.vercel.app/",
+            linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
+            roles: [
+              {
+                title: "Vice Club President",
+                period: "08/2024 - Present",
+                bullets: [
+                  "Directed strategic planning, cross-functional coordination, and partner relations across flagship club programs and career events.",
+                  "Mentored team leads and standardized templates and operating processes to improve execution quality and accountability.",
+                ],
+                achievements: [
+                  "Co-organized ATTACKER with more than 1,000 registered contestants and helped strengthen connections with Ho Chi Minh City's fintech innovation ecosystem.",
+                  "Contributed to the club being recognized in the Top 10 of the I-Star awards.",
+                  "Received a Certificate of Merit from the VNU-HCM Youth Union for the 2024 - 2025 period.",
+                ],
+              },
+              {
+                title: "Academic Department Head",
+                period: "08/2023 - 08/2024",
+                bullets: [
+                  "Led content design for workshops, talk shows, and the ATTACKER competition, including question banks, scoring rubrics, and evaluation frameworks.",
+                  "Built learning tracks in product analytics, SQL, Python, and dashboarding while setting up KPI dashboards and post-event reports.",
+                  "Coordinated lecturers and industry speakers to deliver practical and high-quality learning outcomes.",
+                ],
+              },
+            ],
+            images: ["/FTCclb.JPG", "/FTC2.jpg", "/FTC1.jpg"],
+          },
+          {
+            title: "BASKETBALL TEAM CAPTAIN",
+            organization: "University of Economics and Law",
+            bullets: [
+              "Served as captain of the UEL basketball team and led the team in national student tournaments such as VUG 3x3 and the NUC National Student Basketball Championship.",
+              "Helped the team win the championship at Basketball STU Open 2024, a tournament involving many universities in Ho Chi Minh City.",
+              "Strengthened leadership, discipline, teamwork, and strategic thinking through training and competition.",
+            ],
+            images: ["/basketballteam.jpg", "/baskteballteamchampion.jpg", "/vug.jpg"],
+          },
+        ],
+      },
+      socialActivities: {
+        title: "SOCIAL ACTIVITIES",
+        items: [
+          {
+            title: "ATTACKER 2025 - NATIONAL FINTECH ACADEMIC COMPETITION",
+            organization: "Rex Hotel",
+            bullets: [
+              "Supported the coordination of a national FinTech academic competition with more than 2,000 student registrations and nearly 250 projects.",
+              "Helped build the timeline, assign tasks, and standardize competition rules, scoring criteria, and submission guidelines.",
+              "Contributed to a well-organized competition that connected students with mentors, scholarships, and funding opportunities.",
+            ],
+            images: ["/attacker.jpg", "/attacker2.jpg", "/attacker3.jpg"],
+            links: [
+              {
+                title: "Tuổi Trẻ - Seeking bold FinTech ideas from students nationwide",
+                url: "https://tuoitre.vn/tim-kiem-y-tuong-fintech-tao-bao-cua-sinh-vien-ca-nuoc-20250522142808196.htm",
+              },
+              {
+                title: "UEL - ATTACKER 2025 competition: Opportunity for students to develop in FinTech",
+                url: "https://www.uel.edu.vn/tin-tuc/cuoc-thi-attacker-2025-co-hoi-cho-sinh-vien-phat-trien-linh-vuc-fintech",
+              },
+            ],
+          },
+          {
+            title: "WEB3 CAREER INNOVATION JOB FAIR",
+            organization: "University of Economics and Law",
+            bullets: [
+              "Participated in organizing the WEB3 CAREER INNOVATION Job Fair, which welcomed more than 3,000 students and 15 companies in FinTech, Blockchain, and Web3.",
+              "Coordinated the job fair area, experience booths, quick interview zone, and CV review activities to ensure a smooth participant experience.",
+              "Supported the successful delivery of an event that offered over 300 internship and collaborator opportunities, along with career-oriented talk shows.",
+            ],
+            images: ["/jobfare.jpg", "/jobfare2.jpg", "/jobfare3.jpg"],
+            links: [
+              {
+                title: "UEL Library - Web3 Career Innovation",
+                url: "https://lib.uel.edu.vn/tin-tuc-hoat-dong-13/web3-career-innovation-trai-nghiem-tuyet-voi-cho-sinh-vien-dam-me-fintech-2",
+              },
+            ],
+          },
+          {
+            title: "TALK SHOW 'INVESTING IN THE AGE OF TECHNOLOGY: A PRACTICAL MINDSET'",
+            organization: "University of Economics and Law",
+            bullets: [
+              "Coordinated a talk show in partnership with Maybank Investment Bank Vietnam for more than 100 students interested in finance, technology, and investing.",
+              "Worked on the event timeline, speaker coordination, communication materials, and post-event feedback collection.",
+              "Helped deliver a well-run program that gave students practical insights into investment strategy, risk management, and financial trends.",
+            ],
+            images: ["/maybank.jpg", "/maybank2.jpg", "/maybank3.jpg"],
+            links: [
+              {
+                title: "Facebook - Maybank Investment Talk Show",
+                url: "https://www.facebook.com/share/p/1GzVP9BCum/",
+              },
+            ],
+          },
+          {
+            title: "MID-AUTUMN FESTIVAL CHARITY PROGRAM",
+            organization: "Lam Dong, Vietnam",
+            bullets: [
+              "Participated in a Mid-Autumn charity program and helped organize a fair booth for underprivileged children in the local community.",
+              "Contributed to theme planning, fundraising, material preparation, game design, and on-site task coordination.",
+              "Developed stronger teamwork, communication, budgeting, and problem-solving skills through community service activities.",
+            ],
+            images: ["/sa.jpg", "/sa1.jpg", "/sa2.jpg"],
+          },
+        ],
+      },
+      achievements: {
+        title: "ACHIEVEMENTS",
+        items: [
+          {
+            title: "OUTSTANDING INDIVIDUAL IN YOUTH UNION AND STUDENT MOVEMENT",
+            organization: "",
+            period: "2024 - 2025",
+            icon: "🏅",
+            bullets: [
+              "Led and supported impactful Youth Union and student initiatives that encouraged initiative, creativity, and student engagement at UEL.",
+              "Contributed to building an active and cohesive environment that supported student growth and community service.",
+            ],
+            images: ["/IMG_5063.JPG", "/IMG_5064.JPG", "/IMG_5065.JPG"],
+            certificate: "/IMG_5081.jpg",
+          },
+          {
+            title: "TOP 5: BANKER'S GOT TALENT 2025 COMPETITION",
+            organization: "",
+            period: "2025",
+            icon: "🏅",
+            bullets: [
+              "Achieved Top 5 in BANKER'S GOT TALENT 2025, an academic competition focused on finance, banking, quantitative thinking, and equity analysis.",
+              "Worked with the team to prepare an equity research report and investment pitch based on financial analysis, valuation, and risk assessment.",
+              "Strengthened research, analytical thinking, presentation skills, and professional exposure in finance and banking.",
+            ],
+            images: ["/FBG1.jpg", "/FBG2.jpg", "/FBG3.jpg"],
+            document: "/ReportBanker.pdf",
+          },
+          {
+            id: "finnovative-hackathon-2025",
+            title: "TOP 6: THE FINNOVATIVE HACKATHON 2025 - INNOVATORS' TRACK",
+            organization: "",
+            period: "2025",
+            bullets: [
+              "Achieved Top 6 in The Finnovative Hackathon 2025, a national competition focused on building practical fintech and digital innovation solutions for the Vietnamese market.",
+              "Worked with the team to build MACROINSIGHT.ME, an AI finance and legal assistant for Vietnam, designed to help beginner investors understand macroeconomic news through cited AI chat, swipe-based news discovery, and portfolio tracking.",
+              "Strengthened product thinking, user-centered design, and teamwork through the process of turning a problem in financial information overload into a more practical and scalable product solution.",
+            ],
+            images: ["/Hackathon.jpg", "/Hackathon2.JPG", "/Hackathon3.JPG"],
+            document: "/MacroInsight.pdf",
+            demoOptions: [
+              { label: "VIEW MOBILE DEMO", src: "/Demo video(Mobile Phone).mp4" },
+              { label: "VIEW DESKTOP DEMO", src: "/Demo video(PC).mp4" },
+            ],
+          },
+        ],
+      },
+      research: {
+        title: "RESEARCH ACHIEVEMENTS",
+        items: [
+          {
+            title: "PUBLIC DEBT AND ECONOMIC STABILITY: THE MODERATING EFFECT OF GOVERNANCE: EVIDENCE FROM SOUTHEAST ASIAN COUNTRIES",
+            organization: "",
+            publication: "Journal of Southeast Asian Economies",
+            date: "2025",
+            icon: "🏆",
+            description:
+              "Research on the relationship between public debt and economic stability in Southeast Asian countries, with a focus on the moderating role of governance quality.",
+            link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858",
+          },
+          {
+            title: "TREE ENSEMBLES LEAD THE WAY: BENCHMARKING MACHINE-LEARNING MODELS FOR CORPORATE FAILURE IN VIETNAM",
+            organization: "",
+            publication: "Global Conference on Sustainability in Economics, Business and Law",
+            date: "2025",
+            icon: "🏆",
+            bullets: [
+              "Presented a research paper on machine learning models for corporate failure prediction in Vietnam at the SEBL 2025 international conference.",
+              "Focused on benchmarking machine learning methods, especially tree ensemble models, using preprocessing, experimental design, and performance evaluation on imbalanced data.",
+              "Improved quantitative research, academic writing, English presentation, and networking skills through participation in an international academic event.",
+            ],
+            images: ["/SEBL1.jpg", "/SEBL2.jpg", "/SEBL3.jpg"],
+            certificate: "/SEBL4.jpg",
+          },
+          {
+            title: "KOREA - VIETNAM: ECONOMIC & FINANCIAL INSIGHTS",
+            organization: "",
+            publication: "University of Economics and Law",
+            date: "2026",
+            bullets: [
+              "Represented the Faculty of Finance and Banking and the University of Economics and Law, VNU-HCM in an academic exchange with Chungnam National University, Korea.",
+              "Participated in discussions on economic, financial, e-commerce, and fintech topics in the context of Vietnam and Korea through the academic seminar Korea - Vietnam: Economic & Financial Insights.",
+              "Strengthened academic communication, cross-cultural exchange, and international presentation skills through direct interaction with Korean students and professors.",
+            ],
+            images: ["/Korea2.jpg", "/Korean.jpg", "/Korea3.jpg"],
+          },
+        ],
+      },
+    },
+  },
+  vi: {
+    intro:
+      "Phần này giúp bạn hiểu rõ hơn về tôi ngoài học tập và công việc. Đây là nơi tôi chia sẻ về sở thích, hành trình cá nhân và những trải nghiệm đã góp phần định hình cách tôi suy nghĩ, học hỏi và phát triển. Qua đó, tôi mong muốn thể hiện không chỉ những gì mình đang làm mà còn cả động lực, giá trị và định hướng phát triển của bản thân.",
+    labels: {
+      news: "Tin tức & truyền thông",
+      achievements: "Thành tựu nổi bật",
+      viewCertificate: "XEM CHỨNG NHẬN",
+      viewPublication: "XEM CÔNG BỐ",
+      viewDemo: "XEM DEMO",
+      viewDocument: "XEM TÀI LIỆU",
+      chooseDemo: "Bạn hãy lựa chọn loại demo muốn xem:",
+      mobileDemo: "XEM BẢN DEMO ĐIỆN THOẠI",
+      desktopDemo: "XEM BẢN DEMO MÁY TÍNH",
+      navigation: "Điều hướng",
+      contact: "Liên hệ",
+      home: "Trang chủ",
+      aboutMe: "Về tôi",
+      copyright: "Đã đăng ký bản quyền.",
+      tagline: "ĐỊNH HƯỚNG QUẢN LÝ SẢN PHẨM TRONG FINTECH",
+    },
+    sections: {
+      extracurriculars: {
+        title: "HOẠT ĐỘNG NGOẠI KHÓA",
+        items: [
+          {
+            title: "CÂU LẠC BỘ CÔNG NGHỆ TÀI CHÍNH",
+            organization: "Trường Đại học Kinh tế - Luật",
+            period: "2022 - Nay",
+            logo: "/FTC_logo.png",
+            website: "https://ftc-websites.vercel.app/",
+            linkedin: "https://www.linkedin.com/company/ftc-financial-technology-club/posts/?feedView=all",
+            roles: [
+              {
+                title: "Phó Chủ nhiệm Câu lạc bộ",
+                period: "08/2024 - Nay",
+                bullets: [
+                  "Phụ trách định hướng chiến lược, phối hợp liên ban và kết nối đối tác cho các chương trình trọng điểm và sự kiện nghề nghiệp của câu lạc bộ.",
+                  "Hỗ trợ trưởng nhóm và chuẩn hóa biểu mẫu, quy trình vận hành nhằm nâng cao chất lượng triển khai và trách nhiệm thực thi.",
+                ],
+                achievements: [
+                  "Đồng tổ chức ATTACKER với hơn 1.000 thí sinh đăng ký và góp phần mở rộng kết nối với hệ sinh thái đổi mới sáng tạo fintech tại TP.HCM.",
+                  "Góp phần đưa câu lạc bộ vào Top 10 giải thưởng I-Star.",
+                ],
+              },
+              {
+                title: "Trưởng ban Học thuật",
+                period: "08/2023 - 08/2024",
+                bullets: [
+                  "Phụ trách xây dựng nội dung học thuật cho workshop, talkshow và cuộc thi ATTACKER, bao gồm ngân hàng câu hỏi, rubric chấm điểm và khung đánh giá.",
+                  "Phát triển các lộ trình đào tạo về product analytics, SQL, Python và dashboard, đồng thời thiết lập KPI và báo cáo sau sự kiện.",
+                ],
+              },
+            ],
+            images: ["/FTCclb.JPG", "/FTC2.jpg", "/FTC1.jpg"],
+          },
+          {
+            title: "ĐỘI TRƯỞNG ĐỘI BÓNG RỔ",
+            organization: "Trường Đại học Kinh tế - Luật",
+            bullets: [
+              "Đảm nhiệm vai trò đội trưởng đội bóng rổ UEL và dẫn dắt đội tham gia các giải sinh viên toàn quốc như VUG 3x3 và NUC National Student Basketball Championship.",
+              "Cùng đội giành chức vô địch tại Basketball STU Open 2024, giải đấu quy tụ nhiều trường đại học tại TP.HCM.",
+              "Rèn luyện kỹ năng lãnh đạo, kỷ luật, làm việc nhóm và tư duy chiến lược thông qua quá trình tập luyện và thi đấu.",
+            ],
+            images: ["/basketballteam.jpg", "/baskteballteamchampion.jpg", "/vug.jpg"],
+          },
+        ],
+      },
+      socialActivities: {
+        title: "HOẠT ĐỘNG XÃ HỘI",
+        items: [
+          {
+            title: "ATTACKER 2025 - CUỘC THI HỌC THUẬT FINTECH TOÀN QUỐC",
+            organization: "Rex Hotel",
+            bullets: [
+              "Tham gia hỗ trợ điều phối cuộc thi học thuật FinTech toàn quốc với hơn 2.000 sinh viên đăng ký và gần 250 dự án tham gia.",
+              "Phối hợp xây dựng timeline, phân công nhiệm vụ và chuẩn hóa thể lệ, tiêu chí chấm điểm, cũng như hướng dẫn nộp bài.",
+              "Góp phần giúp cuộc thi được triển khai hiệu quả, đồng thời tạo cơ hội kết nối sinh viên với mentor, học bổng và nguồn tài trợ.",
+            ],
+            images: ["/attacker.jpg", "/attacker2.jpg", "/attacker3.jpg"],
+          },
+          {
+            title: "NGÀY HỘI VIỆC LÀM WEB3 CAREER INNOVATION",
+            organization: "Trường Đại học Kinh tế - Luật",
+            bullets: [
+              "Tham gia tổ chức ngày hội việc làm WEB3 CAREER INNOVATION với hơn 3.000 sinh viên và 15 doanh nghiệp trong lĩnh vực FinTech, Blockchain và Web3.",
+              "Phối hợp vận hành khu vực job fair, booth trải nghiệm, khu phỏng vấn nhanh và hoạt động góp ý CV để đảm bảo trải nghiệm xuyên suốt cho người tham dự.",
+              "Góp phần mang đến một sự kiện hiệu quả với hơn 300 cơ hội thực tập, cộng tác viên và các hoạt động định hướng nghề nghiệp thiết thực.",
+            ],
+            images: ["/jobfare.jpg", "/jobfare2.jpg", "/jobfare3.jpg"],
+          },
+          {
+            title: "TALK SHOW \"ĐẦU TƯ TRONG KỶ NGUYÊN CÔNG NGHỆ: TƯ DUY THỰC TIỄN\"",
+            organization: "Trường Đại học Kinh tế - Luật",
+            bullets: [
+              "Tham gia điều phối talk show phối hợp cùng Maybank Investment Bank Vietnam với hơn 100 sinh viên quan tâm đến tài chính, công nghệ và đầu tư.",
+              "Hỗ trợ xây dựng timeline chương trình, làm việc với diễn giả, chuẩn bị nội dung truyền thông và tổng hợp phản hồi sau sự kiện.",
+              "Góp phần giúp chương trình diễn ra suôn sẻ và mang đến cho sinh viên những góc nhìn thực tiễn về chiến lược đầu tư, quản trị rủi ro và xu hướng tài chính.",
+            ],
+            images: ["/maybank.jpg", "/maybank2.jpg", "/maybank3.jpg"],
+          },
+          {
+            title: "CHƯƠNG TRÌNH THIỆN NGUYỆN TRUNG THU",
+            organization: "Lâm Đồng, Việt Nam",
+            bullets: [
+              "Tham gia chương trình thiện nguyện Trung thu và hỗ trợ tổ chức gian hàng hội chợ dành cho trẻ em có hoàn cảnh khó khăn tại địa phương.",
+              "Phối hợp thực hiện các công việc như lên ý tưởng, kêu gọi đóng góp, chuẩn bị vật dụng, thiết kế trò chơi và phân công công việc tại sự kiện.",
+              "Phát triển thêm kỹ năng làm việc nhóm, giao tiếp, quản lý nguồn lực nhỏ và xử lý tình huống linh hoạt trong hoạt động cộng đồng.",
+            ],
+            images: ["/sa.jpg", "/sa1.jpg", "/sa2.jpg"],
+          },
+        ],
+      },
+      achievements: {
+        title: "THÀNH TÍCH",
+        items: [
+          {
+            title: "CÁ NHÂN TIÊU BIỂU TRONG CÔNG TÁC ĐOÀN VÀ PHONG TRÀO SINH VIÊN",
+            organization: "",
+            period: "2024 - 2025",
+            icon: "🏅",
+            bullets: [
+              "Dẫn dắt và hỗ trợ nhiều hoạt động Đoàn - Hội có tác động tích cực, khuyến khích tinh thần chủ động, sáng tạo và gắn kết trong sinh viên UEL.",
+              "Góp phần xây dựng môi trường năng động, hỗ trợ sinh viên phát triển bản thân và đóng góp cho cộng đồng.",
+            ],
+            images: ["/IMG_5063.JPG", "/IMG_5064.JPG", "/IMG_5065.JPG"],
+            certificate: "/IMG_5081.jpg",
+          },
+          {
+            title: "TOP 5: CUỘC THI BANKER'S GOT TALENT 2025",
+            organization: "",
+            period: "2025",
+            icon: "🏅",
+            bullets: [
+              "Đạt Top 5 tại BANKER'S GOT TALENT 2025, cuộc thi học thuật về Tài chính - Ngân hàng tập trung vào tư duy định lượng và phân tích cổ phiếu.",
+              "Cùng nhóm xây dựng báo cáo phân tích doanh nghiệp niêm yết và bài thuyết trình đầu tư dựa trên phân tích tài chính, định giá và đánh giá rủi ro.",
+              "Nâng cao kỹ năng nghiên cứu, tư duy phân tích, thuyết trình và mở rộng hiểu biết thực tế về lĩnh vực tài chính - ngân hàng.",
+            ],
+            images: ["/FBG1.jpg", "/FBG2.jpg", "/FBG3.jpg"],
+            document: "/ReportBanker.pdf",
+          },
+          {
+            id: "finnovative-hackathon-2025",
+            title: "TOP 6: THE FINNOVATIVE HACKATHON 2025 - BẢNG NHÀ SÁNG TẠO",
+            organization: "",
+            period: "2025",
+            bullets: [
+              "Đạt Top 6 tại The Finnovative Hackathon 2025, cuộc thi toàn quốc tập trung vào phát triển các giải pháp công nghệ tài chính và đổi mới số có tính ứng dụng thực tiễn tại Việt Nam.",
+              "Cùng đội xây dựng MACROINSIGHT.ME, trợ lý AI về tài chính và pháp lý tại Việt Nam, hướng đến hỗ trợ nhà đầu tư F0 tiếp cận tin tức vĩ mô dễ hơn thông qua chat AI có dẫn nguồn, khám phá tin tức dạng vuốt và theo dõi danh mục đầu tư.",
+              "Nâng cao tư duy sản phẩm, khả năng thiết kế theo nhu cầu người dùng và kỹ năng làm việc nhóm thông qua quá trình biến bài toán quá tải thông tin tài chính thành một giải pháp thực tế và có khả năng phát triển hơn.",
+            ],
+            images: ["/Hackathon.jpg", "/Hackathon2.JPG", "/Hackathon3.JPG"],
+            document: "/MacroInsight.pdf",
+            demoOptions: [
+              { label: "XEM BẢN DEMO ĐIỆN THOẠI", src: "/Demo video(Mobile Phone).mp4" },
+              { label: "XEM BẢN DEMO MÁY TÍNH", src: "/Demo video(PC).mp4" },
+            ],
+          },
+        ],
+      },
+      research: {
+        title: "THÀNH TỰU NGHIÊN CỨU",
+        items: [
+          {
+            title: "NỢ CÔNG VÀ ỔN ĐỊNH KINH TẾ: VAI TRÒ ĐIỀU TIẾT CỦA QUẢN TRỊ - BẰNG CHỨNG TỪ CÁC NƯỚC ĐÔNG NAM Á",
+            organization: "",
+            publication: "Tạp chí Kinh tế Đông Nam Á",
+            date: "2025",
+            icon: "🏆",
+            description:
+              "Nghiên cứu mối quan hệ giữa nợ công và ổn định kinh tế tại các quốc gia Đông Nam Á, đồng thời xem xét vai trò điều tiết của chất lượng quản trị.",
+            link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858",
+          },
+          {
+            title: "PHƯƠNG PHÁP TỔ HỢP CÂY VƯỢT TRỘI: ĐỐI SÁNH CÁC MÔ HÌNH HỌC MÁY TRONG DỰ BÁO RỦI RO THẤT BẠI DOANH NGHIỆP TẠI VIỆT NAM",
+            organization: "",
+            publication: "Hội thảo quốc tế về Phát triển bền vững trong Kinh tế, Kinh doanh và Pháp luật",
+            date: "2025",
+            icon: "🏆",
+            bullets: [
+              "Nghiên cứu về mô hình machine learning dự báo rủi ro thất bại doanh nghiệp tại Việt Nam được chọn trình bày tại hội thảo quốc tế SEBL 2025.",
+              "Nội dung nghiên cứu tập trung vào việc so sánh các mô hình học máy, đặc biệt là tree ensemble, thông qua tiền xử lý dữ liệu, thiết kế thực nghiệm và đánh giá hiệu quả trên dữ liệu mất cân bằng.",
+              "Củng cố kỹ năng nghiên cứu định lượng, viết học thuật, trình bày tiếng Anh và mở rộng kết nối với giảng viên, nhà nghiên cứu trong lĩnh vực tài chính và mô hình rủi ro.",
+            ],
+            images: ["/SEBL1.jpg", "/SEBL2.jpg", "/SEBL3.jpg"],
+            certificate: "/SEBL4.jpg",
+          },
+          {
+            title: "HÀN QUỐC - VIỆT NAM: GÓC NHÌN KINH TẾ VÀ TÀI CHÍNH",
+            organization: "",
+            publication: "Trường Đại học Kinh tế - Luật",
+            date: "2026",
+            bullets: [
+              "Đại diện Khoa Tài chính - Ngân hàng và Trường Đại học Kinh tế - Luật, ĐHQG-HCM tham gia chương trình giao lưu, trao đổi học thuật với Đại học Chungnam, Hàn Quốc.",
+              "Tham gia thảo luận các chủ đề về kinh tế, tài chính, thương mại điện tử và công nghệ tài chính trong bối cảnh Việt Nam và Hàn Quốc tại hội thảo Hàn Quốc - Việt Nam: Góc nhìn Kinh tế và Tài chính.",
+              "Nâng cao kỹ năng giao tiếp học thuật, trao đổi liên văn hóa và trình bày trong môi trường quốc tế thông qua quá trình làm việc cùng sinh viên và giáo sư Hàn Quốc.",
+            ],
+            images: ["/Korea2.jpg", "/Korean.jpg", "/Korea3.jpg"],
+          },
+        ],
+      },
+    },
+  },
+}
+
+export default function PersonalPage() {
+  const [language, setLanguage] = useState<Language>(getInitialLanguage)
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme)
+  const [selectedAchievement, setSelectedAchievement] = useState<
+    | {
+        type: "image" | "pdf" | "video" | "choice"
+        src?: string
+        title?: string
+        options?: { label: string; src: string }[]
+      }
+    | null
+  >(null)
+
+  const languageStorageKey = "portfolio-language"
+  const themeStorageKey = "portfolio-theme"
+  const pageContent = content[language]
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-
-  if (!mounted) {
-    return null
-  }
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    const handleScroll = () => {
+      document.querySelectorAll(".anim").forEach((element) => {
+        const rect = element.getBoundingClientRect()
+        if (rect.top < window.innerHeight * 0.92) element.classList.add("visible")
+      })
     }
-  }
 
-  const minSwipeDistance = 50
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-
-    if (isLeftSwipe) {
-      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-      setCurrentHobbyIndex((prev) => (prev + 1) % totalHobbies)
+    const syncTheme = () => setIsDarkMode(document.documentElement.classList.contains("dark"))
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "portfolio-theme" && (event.newValue === "dark" || event.newValue === "light")) {
+        setIsDarkMode(event.newValue === "dark")
+      }
+      if (event.key === languageStorageKey && (event.newValue === "en" || event.newValue === "vi")) {
+        setLanguage(event.newValue)
+      }
     }
-    if (isRightSwipe) {
-      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-      setCurrentHobbyIndex((prev) => (prev - 1 + totalHobbies) % totalHobbies)
+
+    syncTheme()
+    handleScroll()
+
+    const observer = new MutationObserver(syncTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("storage", handleStorage)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("storage", handleStorage)
     }
+  }, [languageStorageKey])
+
+  useEffect(() => {
+    window.localStorage.setItem(languageStorageKey, language)
+  }, [language, languageStorageKey])
+
+  const theme = isDarkMode
+    ? {
+        pageBg: "#090909",
+        cardBg: "#141414",
+        cardBorder: "1px solid rgba(255,255,255,0.06)",
+        nestedCardBg: "rgba(8,8,8,0.28)",
+        nestedCardBorder: "1px solid rgba(255,255,255,0.05)",
+        textPrimary: "#f2f2ed",
+        textSecondary: "#a8a8a8",
+        textMuted: "#767676",
+        accent: "#9dff3b",
+        accentOnSolid: "#000000",
+        accentSoftBg: "rgba(157,255,59,0.08)",
+        accentSoftBorder: "1px solid rgba(157,255,59,0.16)",
+        sectionBorder: "#222222",
+        footerBg: "#9dff3b",
+      }
+    : {
+        pageBg: "#f3f7ef",
+        cardBg: "rgba(255,255,255,0.92)",
+        cardBorder: "1px solid rgba(94,143,31,0.28)",
+        nestedCardBg: "rgba(255,255,255,0.96)",
+        nestedCardBorder: "1px solid rgba(94,143,31,0.24)",
+        textPrimary: "#121712",
+        textSecondary: "#3f4d3d",
+        textMuted: "#667264",
+        accent: "#5e8f1f",
+        accentOnSolid: "#f7fbf2",
+        accentSoftBg: "rgba(94,143,31,0.1)",
+        accentSoftBorder: "1px solid rgba(94,143,31,0.34)",
+        sectionBorder: "rgba(94,143,31,0.2)",
+        footerBg: "#c7e782",
+      }
+
+  const footerContact = {
+    email: "Namtuyenle.CV@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tuyen-le-nam-7614a1269/",
+    github: "https://github.com/Nam-Tuyen",
   }
 
+  const renderSectionHeading = (title: string) => (
+    <div className="mb-10 flex flex-col items-center px-2 text-center md:mb-14">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
+        <h2
+          className="w-full text-center font-orbitron text-[26px] font-black leading-[1.18] tracking-[0.04em] sm:text-[34px] md:text-[42px] lg:text-[48px]"
+          style={{ color: theme.textPrimary }}
+        >
+          {title}
+        </h2>
+        <div className="mx-auto mt-4 h-[3px] w-[56px] rounded-[2px] sm:w-[64px] md:w-[72px]" style={{ background: theme.accent }} />
+      </div>
+    </div>
+  )
+
+  const renderBullets = (items: string[]) => (
+    <div className="space-y-3">
+      {items.map((item, index) => (
+        <div key={index} className="flex items-start gap-3">
+          <span className="mt-2 h-2 w-2 shrink-0 rounded-full" style={{ background: theme.accent }} />
+          <p className="text-left text-sm leading-relaxed sm:text-base" style={{ color: theme.textSecondary }}>
+            {item}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+
+  const renderGallery = (images?: string[], title?: string) =>
+    images?.length ? (
+      <div className="mt-6 grid grid-cols-1 gap-3 border-t pt-6 sm:grid-cols-2 lg:grid-cols-3" style={{ borderColor: theme.sectionBorder }}>
+        {images.map((image, index) => (
+          <img key={`${title}-${index}`} src={image} alt={`${title} - ${index + 1}`} className="h-48 w-full rounded-2xl object-cover sm:h-56 md:h-64" style={{ border: theme.nestedCardBorder }} />
+        ))}
+      </div>
+    ) : null
+
+  const renderLinks = (links?: LinkItem[]) =>
+    links?.length ? (
+      <div className="mt-6 space-y-3 border-t pt-6" style={{ borderColor: theme.sectionBorder }}>
+        <h4 className="text-base font-semibold sm:text-lg" style={{ color: theme.textPrimary }}>
+          {pageContent.labels.news}
+        </h4>
+        {links.map((link, index) => (
+          <a key={`${link.url}-${index}`} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-2xl px-4 py-3 transition-all duration-300 hover:-translate-y-0.5" style={{ background: theme.nestedCardBg, border: theme.nestedCardBorder }}>
+            <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: theme.accent }} />
+            <span className="min-w-0 flex-1 text-sm leading-relaxed sm:text-base" style={{ color: theme.textSecondary }}>{link.title}</span>
+            <svg className="h-4 w-4 shrink-0" style={{ color: theme.accent }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    ) : null
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden" suppressHydrationWarning>
-      <UniverseBackground />
+    <div
+      className="page-theme-smooth portfolio-font min-h-screen overflow-x-hidden"
+      style={{ background: theme.pageBg, color: theme.textPrimary }}
+      suppressHydrationWarning
+    >
+      <Navbar language={language} onLanguageChange={(lang) => setLanguage(lang as Language)} />
 
-      <PageSwitcher translations={t} language={language} isSidebarCollapsed={isSidebarCollapsed} />
-
-      <Sidebar
-        translations={t}
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-        language={language}
-        onLanguageChange={setLanguage}
-        isCollapsed={isSidebarCollapsed}
-        onToggleCollapse={setIsSidebarCollapsed}
-        isPersonalPage={true}
-      />
-
-      <div className="relative z-10 transition-all duration-500">
-        <div className={`min-h-screen transition-all duration-500 ${
-          isSidebarCollapsed ? 'ml-0' : 'ml-0 lg:ml-64'
-        }`}>
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-4 sm:py-6 md:py-8 lg:py-12">
-            
-            {/* Hero Section - Personal */}
-            <section id="personal-hero" className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] flex items-center justify-center mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-              <div className="text-center relative z-10">
-                {/* Animated Background Elements */}
-                <div className="absolute inset-0 -z-10">
-                  <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-[#00ff88]/10 to-[#00d4ff]/10 rounded-full blur-3xl animate-pulse"></div>
-                  <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-r from-[#7c3aed]/10 to-[#00ff88]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-[#00d4ff]/10 to-[#7c3aed]/10 rounded-full blur-2xl animate-pulse delay-500"></div>
-                </div>
-
-                <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                  {/* Main Title with Gradient Text */}
-                  <div className="relative">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight vietnamese-text">
-                      <span className="bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#7c3aed] bg-clip-text text-transparent animate-gradient-x">
-                        {t?.personal?.hero?.title || "PERSONAL"}
-                      </span>
-                    </h1>
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/20 via-[#00d4ff]/20 to-[#7c3aed]/20 blur-3xl -z-10"></div>
-                  </div>
-
-                  {/* Subtitle with Typewriter Effect */}
-                  <div className="relative">
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium leading-relaxed max-w-4xl mx-auto vietnamese-text">
-                      <span className="inline-block opacity-0 animate-fade-in-up delay-500">
-                        {t?.personal?.hero?.subtitle || "Discover my passions, interests, and personal journey"}
-                      </span>
-                    </p>
-                  </div>
-
-                  {/* Decorative Line */}
-                  <div className="flex justify-center items-center space-x-4 mt-8">
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-[#00ff88]"></div>
-                    <div className="w-2 h-2 bg-[#00ff88] rounded-full animate-pulse"></div>
-                    <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-[#00ff88]"></div>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Floating Particles */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ff88]/30 rounded-full animate-float delay-0"></div>
-                <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#00d4ff]/40 rounded-full animate-float delay-1000"></div>
-                <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-[#7c3aed]/30 rounded-full animate-float delay-2000"></div>
-                <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-[#00ff88]/40 rounded-full animate-float delay-3000"></div>
-                <div className="absolute bottom-1/4 right-1/2 w-2 h-2 bg-[#00d4ff]/30 rounded-full animate-float delay-4000"></div>
-              </div>
-            </section>
-
-            {/* Scroll Indicator */}
-            <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
-              <div className="flex flex-col items-center space-y-2 animate-bounce">
-                <span className="text-gray-400 text-xs sm:text-sm font-medium">Scroll to explore</span>
-                <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                  <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-                </div>
+      <main className="px-5 pb-16 pt-24 md:px-[52px] md:pt-28">
+        <div className="mx-auto max-w-6xl">
+          <section id="personal-hero" className="mb-20 pt-8 md:mb-28">
+            <div className="mb-10 flex flex-col items-center px-2 text-center md:mb-14">
+              <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
+                <h2
+                  className="w-full text-center font-orbitron text-[26px] font-black uppercase leading-[1.18] tracking-[0.04em] sm:text-[34px] md:text-[42px] lg:text-[48px]"
+                  style={{ color: theme.textPrimary }}
+                >
+                  {language === "vi" ? "ĐÔI LỜI CHIA SẺ" : "PERSONAL NOTE"}
+                </h2>
+                <div className="mx-auto mt-4 h-[3px] w-[56px] rounded-[2px] sm:w-[64px] md:w-[72px]" style={{ background: theme.accent }} />
               </div>
             </div>
+            <div className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+              <p className="text-justify text-sm leading-[1.9] sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                {pageContent.intro}
+              </p>
+            </div>
+          </section>
 
-            {/* Hobbies Section */}
-            <section id="hobbies" className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
-              <div className="text-center mb-6 sm:mb-8 md:mb-10">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-5 vietnamese-text">
-                  {t?.personal?.hobbies?.title || "HOBBIES"}
-                </h2>
-                <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
-              </div>
-
-              {/* Compact 3D Carousel */}
-              <div className="max-w-4xl mx-auto relative">
-                {/* 3D Carousel Container */}
-                <div 
-                  className="relative h-96 perspective-2000"
-                  onTouchStart={onTouchStart}
-                  onTouchMove={onTouchMove}
-                  onTouchEnd={onTouchEnd}
-                >
-                  <div className="relative w-full h-full transform-style-preserve-3d">
-                    {t?.personal?.hobbies?.items?.map((hobby: any, index: number) => {
-                      const diff = index - currentHobbyIndex
-                      const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-                      
-                      let translateX = 0
-                      let translateZ = 0
-                      let rotateY = 0
-                      let scale = 1
-                      let opacity = 1
-                      let zIndex = 0
-
-                      if (diff === 0) {
-                        // Center card
-                        translateX = 0
-                        translateZ = 0
-                        rotateY = 0
-                        scale = 1
-                        opacity = 1
-                        zIndex = 3
-                      } else if (diff === 1 || diff === -(totalHobbies - 1)) {
-                        // Right card
-                        translateX = 280
-                        translateZ = -80
-                        rotateY = -12
-                        scale = 0.9
-                        opacity = 0.8
-                        zIndex = 2
-                      } else if (diff === -1 || diff === totalHobbies - 1) {
-                        // Left card
-                        translateX = -280
-                        translateZ = -80
-                        rotateY = 12
-                        scale = 0.9
-                        opacity = 0.8
-                        zIndex = 2
-                      } else if (diff === 2 || diff === -(totalHobbies - 2)) {
-                        // Far right card
-                        translateX = 500
-                        translateZ = -150
-                        rotateY = -20
-                        scale = 0.8
-                        opacity = 0.6
-                        zIndex = 1
-                      } else if (diff === 3 || diff === -(totalHobbies - 3)) {
-                        // Very far right card
-                        translateX = 700
-                        translateZ = -200
-                        rotateY = -25
-                        scale = 0.7
-                        opacity = 0.4
-                        zIndex = 0
-                      } else {
-                        // Very far left card
-                        translateX = -700
-                        translateZ = -200
-                        rotateY = 25
-                        scale = 0.7
-                        opacity = 0.4
-                        zIndex = 0
-                      }
-
-                      return (
-                        <div
-                          key={index}
-                          className="absolute w-72 h-80 left-1/2 top-1/2 cursor-pointer transition-all duration-700 ease-out"
-                          style={{
-                            transform: `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
-                            opacity,
-                            zIndex
-                          }}
-                          onClick={() => setCurrentHobbyIndex(index)}
-                        >
-                          {/* Hobby Card */}
-                          <div className="relative w-full h-full bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-[#00ff88]/30 rounded-2xl p-6 shadow-2xl shadow-[#00ff88]/20">
-                            {/* Shimmer Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl"></div>
-                            
-                            {/* Content */}
-                            <div className="relative z-10 text-center h-full flex flex-col items-center justify-center">
-                              {/* Icon */}
-                              <div className="flex justify-center mb-4">
-                                <div className="w-16 h-16 bg-gradient-to-br from-[#00ff88] to-[#00d4ff] rounded-xl flex items-center justify-center shadow-lg shadow-[#00ff88]/40 relative">
-                                  <span className="text-3xl">{hobby.icon}</span>
-                                  <div className="absolute inset-0 bg-white/20 rounded-xl"></div>
-                                </div>
-                              </div>
-                              
-                              {/* Title */}
-                              <h3 className="text-xl font-bold text-[#00ff88] mb-3 vietnamese-text tracking-wide uppercase">
-                                {hobby.name}
-                              </h3>
-                              
-                              {/* Description */}
-                              <p className="text-gray-300 text-sm vietnamese-text leading-relaxed max-w-xs mx-auto text-center">
-                                {hobby.description}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-
-                {/* Navigation Arrows - Desktop Only */}
-                <button 
-                  onClick={() => {
-                    const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-                    setCurrentHobbyIndex((prev) => (prev - 1 + totalHobbies) % totalHobbies)
-                  }}
-                  className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-900/80 backdrop-blur-xl border border-[#00ff88]/40 rounded-full items-center justify-center hover:bg-[#00ff88]/20 hover:border-[#00ff88] transition-all duration-300 z-10"
-                >
-                  <svg className="w-6 h-6 text-[#00ff88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                
-                <button 
-                  onClick={() => {
-                    const totalHobbies = t?.personal?.hobbies?.items?.length || 1
-                    setCurrentHobbyIndex((prev) => (prev + 1) % totalHobbies)
-                  }}
-                  className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-900/80 backdrop-blur-xl border border-[#00ff88]/40 rounded-full items-center justify-center hover:bg-[#00ff88]/20 hover:border-[#00ff88] transition-all duration-300 z-10"
-                >
-                  <svg className="w-6 h-6 text-[#00ff88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-
-                {/* Dots Indicator */}
-                <div className="flex justify-center mt-8 gap-3">
-                  {t?.personal?.hobbies?.items?.map((_: any, index: number) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentHobbyIndex(index)}
-                      className={`transition-all duration-300 border-2 ${
-                        index === currentHobbyIndex
-                          ? 'w-8 h-3 bg-[#00ff88] border-[#00ff88]/30 rounded-full shadow-lg shadow-[#00ff88]/50'
-                          : 'w-3 h-3 bg-white/20 border-transparent rounded-full hover:bg-white/40'
-                      }`}
-                      aria-label={`Go to hobby ${index + 1}`}
-                    />
-                  ))}
-                </div>
-
-                {/* Counter */}
-                <div className="text-center mt-4">
-                  <div className="inline-block bg-gray-900/60 backdrop-blur-xl px-4 py-2 rounded-full border border-[#00ff88]/20">
-                    <span className="text-sm text-[#00ff88] font-semibold">
-                      {currentHobbyIndex + 1} / {t?.personal?.hobbies?.items?.length || 1}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Swipe Hint - Mobile Only */}
-                <div className="text-center mt-4 md:hidden">
-                  <p className="text-[#00ff88]/60 text-sm animate-pulse">← Vuốt để xem thêm →</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Extracurriculars Section */}
-            <section id="extracurriculars" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
-                  {t?.personal?.extracurriculars?.title || "EXTRACURRICULARS"}
-                </h2>
-                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] mx-auto rounded-full"></div>
-              </div>
-
-              <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                {t?.personal?.extracurriculars?.items?.map((activity: any, index: number) => (
-                  <div key={index} className="group">
-                    {/* Header */}
-                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#00d4ff]/20 to-[#7c3aed]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{activity.icon}</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
-                          {activity.name}
-                        </h3>
-                        <p className="text-[#00d4ff] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                          {activity.name === "BASKETBALL TEAM CAPTAIN" || activity.name === "ĐỘI TRƯỞNG ĐỘI BÓNG RỔ" 
-                            ? activity.organization 
-                            : `${activity.organization} • ${activity.period}`}
-                        </p>
-                        
-                        {/* Links */}
-                        {(activity.website || activity.linkedin) && (
-                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                            {activity.website && (
-                              <a 
-                                href={activity.website} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-lg sm:rounded-xl text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-all duration-300 text-sm sm:text-base"
-                              >
-                                <span>🌐</span>
-                                Website
-                              </a>
-                            )}
-                            {activity.linkedin && (
-                              <a 
-                                href={activity.linkedin} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
-                              >
-                                <span>💼</span>
-                                LinkedIn
-                              </a>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#00d4ff]/30 transition-all duration-500">
-                      {/* Roles */}
-                      {activity.roles && activity.roles.length > 0 ? (
-                        <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                          {activity.roles.map((role: any, roleIndex: number) => (
-                            <div key={roleIndex} className="border-l-4 border-[#00d4ff]/40 pl-3 sm:pl-4 md:pl-6">
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-3 md:mb-4">
-                                <h4 className="text-lg sm:text-xl font-bold text-white vietnamese-text">
-                                  {role.title}
-                                </h4>
-                                <span className="text-[#00d4ff] font-medium text-xs sm:text-sm">
-                                  {role.period}
-                                </span>
-                              </div>
-                              
-                              {/* Role Description */}
-                              {role.description && role.description.length > 0 && (
-                                <div className="mb-3 sm:mb-4 md:mb-6">
-                                  <ul className="space-y-2 sm:space-y-3">
-                                    {role.description.map((desc: string, descIndex: number) => (
-                                      <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
-                                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                        <span className="group-hover:text-white transition-colors duration-300 text-justify">{desc}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                              
-                              {/* Achievements */}
-                              {role.achievements && role.achievements.length > 0 && (
-                                <div>
-                                  <h5 className="text-[#00ff88] font-semibold mb-2 sm:mb-3 vietnamese-text text-sm sm:text-base">
-                                    {language === 'vi' ? 'Thành tựu nổi bật:' : 'Key Achievements:'}
-                                  </h5>
-                                  <ul className="space-y-2 sm:space-y-3">
-                                    {role.achievements.map((achievement: string, achIndex: number) => (
-                                      <li key={achIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
-                                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                        <span className="group-hover:text-white transition-colors duration-300 text-justify">{achievement}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
-                          {activity.description}
-                        </p>
-                      )}
-                      
-                      {/* Images Gallery */}
-                      {activity.images && activity.images.length > 0 && (
-                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                            {activity.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex}>
-                                <img 
-                                  src={image} 
-                                  alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Social Activities Section */}
-            <section id="social-activities" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
-                  {t?.personal?.socialActivities?.title || "SOCIAL ACTIVITIES"}
-                </h2>
-                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
-              </div>
-
-              <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                {t?.personal?.socialActivities?.items?.map((activity: any, index: number) => (
-                  <div key={index} className="group">
-                    {/* Header */}
-                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{activity.icon}</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
-                          {activity.name}
-                        </h3>
-                        {activity.organization && (
-                          <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                            {activity.organization}
-                          </p>
-                        )}
-                        
-                        {/* Links */}
-                        {(activity.website || activity.linkedin) && (
-                          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
-                            {activity.website && (
-                              <a 
-                                href={activity.website} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#7c3aed]/10 border border-[#7c3aed]/30 rounded-lg sm:rounded-xl text-[#7c3aed] hover:bg-[#7c3aed]/20 transition-all duration-300 text-sm sm:text-base"
-                              >
-                                <span>🌐</span>
-                                Website
-                              </a>
-                            )}
-                            {activity.linkedin && (
-                              <a 
-                                href={activity.linkedin} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-lg sm:rounded-xl text-[#0077b5] hover:bg-[#0077b5]/20 transition-all duration-300 text-sm sm:text-base"
-                              >
-                                <span>💼</span>
-                                LinkedIn
-                              </a>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
-                      {/* Description */}
-                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
-                          {activity.description}
-                        </p>
-                      </div>
-                      
-                      {/* Images Gallery */}
-                      {activity.images && activity.images.length > 0 && (
-                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                            {activity.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex}>
-                                <img 
-                                  src={image} 
-                                  alt={`${activity.name} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* External Links */}
-                      {activity.links && activity.links.length > 0 && (
-                        <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 vietnamese-text">
-                            {t?.labels?.newsAndMedia || "News & Media"}
-                          </h4>
-                          <div className="space-y-2 sm:space-y-3">
-                            {activity.links.map((link: any, linkIndex: number) => (
-                              <a 
-                                key={linkIndex}
-                                href={link.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-white/10 hover:border-[#7c3aed]/40 hover:bg-gray-800/50 transition-all duration-300 group"
-                              >
-                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#7c3aed] rounded-full flex-shrink-0"></div>
-                                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 vietnamese-text text-xs sm:text-sm leading-relaxed">
-                                  {link.title}
-                                </span>
-                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-[#7c3aed] transition-colors duration-300 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Achievements Section */}
-            <section id="achievements" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
-                  {t?.personal?.achievements?.title || "ACHIEVEMENTS"}
-                </h2>
-                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] mx-auto rounded-full"></div>
-              </div>
-
-              <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                {t?.personal?.achievements?.items?.map((achievement: any, index: number) => (
-                  <div key={index} className="group">
-                    {/* Header */}
-                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#7c3aed]/20 to-[#00ff88]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">🏅</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
-                          {achievement.title}
-                        </h3>
-                        {achievement.period && (
-                          <p className="text-[#7c3aed] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                            {achievement.period}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#7c3aed]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
-                      {/* Description */}
-                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-                        {Array.isArray(achievement.description) ? (
-                          <ul className="space-y-2 sm:space-y-3">
-                            {achievement.description.map((item: string, descIndex: number) => (
-                              <li key={descIndex} className="text-gray-300 leading-relaxed vietnamese-text flex items-start gap-2 sm:gap-3 group text-sm sm:text-base">
-                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                <span className="group-hover:text-white transition-colors duration-300 text-justify">{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
-                            {achievement.description}
-                          </p>
-                        )}
-                      </div>
-                      
-                      {/* Images Gallery */}
-                      {achievement.images && achievement.images.length > 0 && (
-                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                            {achievement.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex}>
-                                <img 
-                                  src={image} 
-                                  alt={`Achievement - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Certificate Button */}
-                      {achievement.certificate && (
-                        <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <div className="flex justify-center">
-                            <button
-                              onClick={() => setSelectedAchievement(achievement.certificate)}
-                              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                            >
-                              <span>🏆</span>
-                              {t?.buttons?.viewCertificate || "VIEW CERTIFICATE OF MERIT"}
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Research Achievement Section */}
-            <section id="research-achievement" className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-              <div className="text-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-2 sm:mb-3 md:mb-4 vietnamese-text">
-                  {t?.personal?.researchAchievement?.title || "RESEARCH ACHIEVEMENTS"}
-                </h2>
-                <div className="w-10 sm:w-12 md:w-16 lg:w-20 xl:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#00ff88] to-[#00d4ff] mx-auto rounded-full"></div>
-              </div>
-
-              <div className="space-y-4 sm:space-y-6 md:space-y-8">
-                {t?.personal?.researchAchievement?.items?.map((achievement: any, index: number) => (
-                  <div key={index} className="group">
-                    {/* Header */}
-                    <div className="flex items-start gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem]">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#00ff88]/20 to-[#00d4ff]/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl">🏆</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 vietnamese-text leading-tight">
-                          {achievement.title}
-                        </h3>
-                        <p className="text-[#00ff88] font-medium mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-xs sm:text-sm md:text-base">
-                          {achievement.publication} • {achievement.date}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 hover:border-[#00ff88]/30 transition-all duration-500 min-h-[8rem] sm:min-h-[10rem] md:min-h-[12rem] lg:min-h-[14rem]">
-                      {/* Description */}
-                      <div className="mb-3 sm:mb-4 md:mb-6 min-h-[3rem] sm:min-h-[4rem] md:min-h-[5rem] lg:min-h-[6rem]">
-                        <p className="text-gray-300 leading-relaxed vietnamese-text text-sm sm:text-base md:text-lg text-justify">
-                          {achievement.description}
-                        </p>
-                      </div>
-
-                      {/* Images Gallery */}
-                      {achievement.images && achievement.images.length > 0 && (
-                        <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                            {achievement.images.map((image: string, imgIndex: number) => (
-                              <div key={imgIndex}>
-                                <img 
-                                  src={image} 
-                                  alt={`${achievement.title} - Image ${imgIndex + 1}`}
-                                  className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl border border-white/10"
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      
-                      {/* Certificate Button */}
-                      {achievement.certificate && (
-                        <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-white/10">
-                          <div className="flex justify-center">
-                            <button
-                              onClick={() => setSelectedAchievement(achievement.certificate)}
-                              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#7c3aed] to-[#00ff88] text-black font-bold rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl"
-                            >
-                              <span>🏆</span>
-                              {language === "vi" ? "XEM GIẤY CHỨNG NHẬN" : "VIEW CERTIFICATE OF PRESENTATION"}
-                            </button>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Links */}
-                      {achievement.link && (
-                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-4 md:mt-6">
-                          <a 
-                            href={achievement.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-[#00ff88]/10 border border-[#00ff88]/30 rounded-lg sm:rounded-xl text-[#00ff88] hover:bg-[#00ff88]/20 transition-all duration-300 text-sm sm:text-base"
-                          >
-                            <span>📄</span>
-                            {language === "vi" ? "Xem tài liệu" : "View Publication"}
+          <section id="extracurriculars" className="mb-20 anim md:mb-28">
+            {renderSectionHeading(pageContent.sections.extracurriculars.title)}
+            <div className="space-y-6">
+              {pageContent.sections.extracurriculars.items.map((item, index) => (
+                <div key={index} className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                  <div className="mb-5">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="mb-1 font-orbitron text-base font-bold leading-tight sm:text-lg md:text-xl" style={{ color: theme.textPrimary }}>
+                        {item.title}
+                      </h3>
+                      <p className="text-sm font-medium sm:text-base" style={{ color: theme.accent }}>
+                      {item.period ? `${item.organization} • ${item.period}` : item.organization}
+                      </p>
+                      {item.website && item.linkedin ? (
+                        <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                          <a href={item.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
+                            {language === "vi" ? "Trang web" : "Website"}
+                          </a>
+                          <a href={item.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5" style={{ background: theme.nestedCardBg, border: theme.nestedCardBorder, color: theme.textPrimary }}>
+                            LinkedIn
                           </a>
                         </div>
-                      )}
+                      ) : null}
                     </div>
                   </div>
-                ))}
+
+                  {item.roles ? (
+                    <div className="space-y-6">
+                      {item.roles.map((role, roleIndex) => (
+                        <div key={roleIndex} className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                          <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                            <h4 className="text-base font-bold sm:text-lg" style={{ color: theme.textPrimary }}>
+                              {role.title}
+                            </h4>
+                            <span className="text-sm font-medium" style={{ color: theme.accent }}>
+                              {role.period}
+                            </span>
+                          </div>
+                          <div className="mb-5">{renderBullets(role.bullets)}</div>
+                          {role.achievements ? (
+                            <div>
+                              <h5 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] sm:text-base" style={{ color: theme.accent }}>
+                                {pageContent.labels.achievements}
+                              </h5>
+                              {renderBullets(role.achievements)}
+                            </div>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  ) : item.bullets ? (
+                    <div className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                      {renderBullets(item.bullets)}
+                    </div>
+                  ) : null}
+
+                  {renderGallery(item.images, item.title)}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="social-activities" className="mb-20 anim md:mb-28">
+            {renderSectionHeading(pageContent.sections.socialActivities.title)}
+            <div className="space-y-6">
+              {pageContent.sections.socialActivities.items.map((item, index) => (
+                <div key={index} className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                  <div className="mb-5">
+                    <h3 className="mb-1 font-orbitron text-base font-bold leading-tight sm:text-lg md:text-xl" style={{ color: theme.textPrimary }}>
+                      {item.title}
+                    </h3>
+                    <p className="text-sm font-medium sm:text-base" style={{ color: theme.accent }}>
+                      {item.organization}
+                    </p>
+                  </div>
+                  <div className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                    {item.bullets ? renderBullets(item.bullets) : item.description ? (
+                      <p className="text-justify text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                        {item.description}
+                      </p>
+                    ) : null}
+                  </div>
+                  {renderGallery(item.images, item.title)}
+                  {renderLinks(item.links)}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="achievements" className="mb-20 anim md:mb-28">
+            {renderSectionHeading(pageContent.sections.achievements.title)}
+            <div className="space-y-6">
+              {pageContent.sections.achievements.items.map((item, index) => (
+                <div key={index} className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                  <div className="mb-5">
+                    <h3 className="mb-1 font-orbitron text-base font-bold leading-tight sm:text-lg md:text-xl" style={{ color: theme.textPrimary }}>
+                      {item.title}
+                    </h3>
+                    <p className="text-sm font-medium sm:text-base" style={{ color: theme.accent }}>
+                      {item.period}
+                    </p>
+                  </div>
+                  <div className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                    {item.bullets ? renderBullets(item.bullets) : item.description ? (
+                      <p className="text-justify text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                        {item.description}
+                      </p>
+                    ) : null}
+                  </div>
+                  {renderGallery(item.images, item.title)}
+                  {item.certificate || item.document || item.demoOptions ? (
+                    <div className="mt-6 border-t pt-6" style={{ borderColor: theme.sectionBorder }}>
+                      <div className="flex flex-wrap items-center justify-center gap-3">
+                        {item.demoOptions ? (
+                          <button
+                            onClick={() =>
+                              setSelectedAchievement({
+                                type: "choice",
+                                title: pageContent.labels.chooseDemo,
+                                options: item.demoOptions,
+                              })
+                            }
+                            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5"
+                            style={{ background: theme.accent, color: theme.accentOnSolid }}
+                          >
+                            {pageContent.labels.viewDemo}
+                          </button>
+                        ) : null}
+                        {item.document ? (
+                          <button
+                            onClick={() =>
+                              setSelectedAchievement({
+                                type: "pdf",
+                                src: item.document,
+                                title: item.title,
+                              })
+                            }
+                            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 hover:-translate-y-0.5 sm:text-sm"
+                            style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                          >
+                            {pageContent.labels.viewDocument}
+                          </button>
+                        ) : null}
+                        {item.certificate ? (
+                          <button
+                            onClick={() =>
+                              setSelectedAchievement({
+                                type: "image",
+                                src: item.certificate,
+                                title: item.title,
+                              })
+                            }
+                            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5"
+                            style={{ background: theme.accent, color: theme.accentOnSolid }}
+                          >
+                            {pageContent.labels.viewCertificate}
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="research-achievement" className="mb-20 anim md:mb-28">
+            {renderSectionHeading(pageContent.sections.research.title)}
+            <div className="space-y-6">
+              {pageContent.sections.research.items.map((item, index) => (
+                <div key={index} className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                  <div className="mb-5">
+                    <h3 className="mb-1 font-orbitron text-base font-bold leading-tight sm:text-lg md:text-xl" style={{ color: theme.textPrimary }}>
+                      {item.title}
+                    </h3>
+                    <p className="text-sm font-medium sm:text-base" style={{ color: theme.accent }}>
+                      {item.publication} • {item.date}
+                    </p>
+                  </div>
+                  <div className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                    {item.bullets ? renderBullets(item.bullets) : item.description ? (
+                      <p className="text-justify text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                        {item.description}
+                      </p>
+                    ) : null}
+                  </div>
+                  {renderGallery(item.images, item.title)}
+                  <div className="mt-6 flex flex-wrap justify-center gap-3 border-t pt-6" style={{ borderColor: theme.sectionBorder }}>
+                    {item.link ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5" style={{ background: theme.accent, color: theme.accentOnSolid }}>
+                        {pageContent.labels.viewPublication}
+                      </a>
+                    ) : null}
+                    {item.certificate ? (
+                      <button
+                        onClick={() =>
+                          setSelectedAchievement({
+                            type: "image",
+                            src: item.certificate,
+                            title: item.title,
+                          })
+                        }
+                        className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                        style={{ background: theme.accent, color: theme.accentOnSolid }}
+                      >
+                        {pageContent.labels.viewCertificate}
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer style={{ background: theme.footerBg }}>
+        <div className="px-5 py-12 md:px-[52px] md:py-16">
+          <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
+            <div>
+              <div className="mb-3 font-orbitron text-lg font-black" style={{ color: "#000" }}>
+                {language === "vi" ? "LÊ NAM TUYÊN" : "TUYEN LE NAM"}
               </div>
-            </section>
+              <p className="mb-1 text-[13px] leading-[1.55]" style={{ color: "#000" }}>
+                {pageContent.labels.tagline}
+              </p>
+            </div>
+            <div>
+              <div className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "#333" }}>
+                {pageContent.labels.navigation}
+              </div>
+              <ul className="space-y-2">
+                {[
+                  { id: "personal-hero", label: pageContent.labels.home },
+                  { id: "extracurriculars", label: pageContent.labels.aboutMe },
+                ].map((item) => (
+                  <li key={item.id}>
+                    <button onClick={() => document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" })} className="text-sm font-medium hover:underline" style={{ color: "#111", background: "none", border: "none", cursor: "pointer" }}>
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "#333" }}>
+                {pageContent.labels.contact}
+              </div>
+              <ul className="space-y-2 text-sm" style={{ color: "#111" }}>
+                <li className="inline-flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none">
+                    <path d="M3 6.75 12 13.5l9-6.75" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4.5 7.5V18h15V7.5" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4.5 18 9.75 12.75" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M19.5 18 14.25 12.75" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>{footerContact.email}</span>
+                </li>
+                <li>
+                  <a href={footerContact.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+                      <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.28 4.97c0 1.08.88 1.97 1.97 1.97a1.97 1.97 0 1 0 0-3ZM20.44 12.56c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.38c.04.55 0 11.5 0 11.5h3.36v-6.42c0-.34.02-.68.13-.92.27-.68.89-1.39 1.92-1.39 1.36 0 1.9 1.05 1.9 2.58V20H20v-6.86c0-.2.01-.39.01-.58h.43Z" />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a href={footerContact.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="currentColor">
+                      <path d="M12 .5C5.65.5.5 5.7.5 12.1c0 5.12 3.3 9.46 7.88 10.99.58.11.79-.25.79-.56v-2.17c-3.2.71-3.88-1.38-3.88-1.38-.52-1.35-1.28-1.71-1.28-1.71-1.05-.73.08-.72.08-.72 1.16.08 1.78 1.21 1.78 1.21 1.03 1.79 2.71 1.27 3.37.97.1-.76.4-1.27.72-1.56-2.55-.29-5.24-1.29-5.24-5.74 0-1.27.45-2.31 1.18-3.13-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.19 1.2a10.9 10.9 0 0 1 5.8 0c2.22-1.52 3.19-1.2 3.19-1.2.62 1.59.23 2.77.11 3.06.73.82 1.18 1.86 1.18 3.13 0 4.46-2.69 5.44-5.25 5.73.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.63 11.63 0 0 0 23.5 12.1C23.5 5.7 18.35.5 12 .5Z" />
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex items-center justify-center pt-6" style={{ borderTop: "1px solid rgba(0,0,0,.15)" }}>
+            <p className="text-center text-xs" style={{ color: "#333" }}>
+              © {new Date().getFullYear()} {language === "vi" ? "Lê Nam Tuyên" : "Tuyen Le Nam"}. {pageContent.labels.copyright}
+            </p>
+          </div>
+        </div>
+      </footer>
 
-           </div>
-         </div>
-       </div>
+      {selectedAchievement && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,.88)" }} onClick={() => setSelectedAchievement(null)}>
+          <div className="relative max-h-[90vh] w-full max-w-4xl" onClick={(event) => event.stopPropagation()}>
+            <button onClick={() => setSelectedAchievement(null)} className="absolute -right-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full font-bold" style={{ background: theme.accent, color: theme.accentOnSolid }}>
+              x
+            </button>
+            <div className="overflow-hidden rounded-[22px]" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+              {selectedAchievement.type === "choice" ? (
+                <div className="overflow-y-auto max-h-[85vh] transition-colors duration-300">
+                  <div className="p-5 text-center sm:p-7" style={{ borderBottom: `1px solid ${theme.sectionBorder}` }}>
+                    <h3 className="font-orbitron text-base font-bold sm:text-lg" style={{ color: theme.textPrimary }}>
+                      {selectedAchievement.title}
+                    </h3>
+                  </div>
+                  <div className="p-5 sm:p-7">
+                    <div className="mb-2 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                      {selectedAchievement.options?.map((option) => (
+                        <button
+                          key={option.src}
+                          type="button"
+                          onClick={() =>
+                            setSelectedAchievement({
+                              type: "video",
+                              src: option.src,
+                              title: selectedAchievement.title,
+                            })
+                          }
+                          className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
+                          style={option.src.includes("(Mobile Phone)")
+                            ? { background: theme.accent, color: theme.accentOnSolid }
+                            : { border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : selectedAchievement.type === "pdf" ? (
+                <iframe
+                  src={`${selectedAchievement.src}#toolbar=0&navpanes=0&scrollbar=1`}
+                  title={selectedAchievement.title || "Document"}
+                  className="h-[85vh] w-full bg-white"
+                />
+              ) : selectedAchievement.type === "video" ? (
+                <video className="h-auto max-h-[85vh] w-full bg-black" controls preload="metadata">
+                  <source src={selectedAchievement.src} type="video/mp4" />
+                </video>
+              ) : (
+                <img src={selectedAchievement.src} alt={selectedAchievement.title || "Certificate"} className="max-h-[85vh] w-full bg-white object-contain" />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
-       {/* Achievement Certificate Modal */}
-       {selectedAchievement && (
-         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-           <div className="relative max-w-4xl max-h-[90vh] w-full">
-             {/* Close Button */}
-             <button
-               onClick={() => setSelectedAchievement(null)}
-               className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg"
-             >
-               <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-               </svg>
-             </button>
-
-             {/* Certificate Image */}
-             <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-               <img
-                 src={selectedAchievement}
-                 alt="Certificate of Merit"
-                 className="w-full h-auto max-h-[85vh] object-contain"
-               />
-             </div>
-           </div>
-         </div>
-       )}
-
-       <ScrollToTopButton />
-     </div>
-   )
- }
+      <ScrollToTopButton isDark={isDarkMode} />
+    </div>
+  )
+}
