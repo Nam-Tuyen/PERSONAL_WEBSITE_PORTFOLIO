@@ -26,7 +26,6 @@ const orbitron = localFont({
 
 export const metadata: Metadata = {
   title: "Tuyen Le Nam's Portfolio",
-  description: "Personal portfolio of Le Nam Tuyen - Product Manager, Data Analyst and FinTech Enthusiast",
   icons: {
     icon: "/tabimage.svg",
     shortcut: "/tabimage.svg",
@@ -78,7 +77,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <title>Tuyen Le Nam&apos;s Portfolio</title>
-        <meta name="description" content="Personal portfolio of Le Nam Tuyen - Product Manager, Data Analyst and FinTech Enthusiast" />
         <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
       </head>
       <body

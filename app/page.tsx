@@ -91,6 +91,7 @@ export default function Portfolio() {
   const demoPromptLabel = isVietnamese ? "Bạn hãy lựa chọn loại demo muốn xem:" : "Please select the type of demo you would like to view:"
   const sampleReportLabel = isVietnamese ? "XEM BÁO CÁO MẪU" : "READ SAMPLE REPORT"
   const demoVideoLabel = isVietnamese ? "XEM VIDEO DEMO" : "WATCH DEMO VIDEO"
+  const viewDocumentLabel = isVietnamese ? "XEM TÀI LIỆU" : "VIEW DOCUMENT"
   const mobileDemoLabel = isVietnamese ? "XEM BẢN DEMO ĐIỆN THOẠI" : "VIEW MOBILE DEMO"
   const desktopDemoLabel = isVietnamese ? "XEM BẢN DEMO MÁY TÍNH" : "VIEW DESKTOP DEMO"
   const introLabel = isVietnamese ? "GIỚI THIỆU" : "INTRO"
@@ -106,6 +107,7 @@ export default function Portfolio() {
   const externalLinkLabel = isVietnamese ? "LIÊN KẾT" : "LINK"
   const keyInsightLabel = isVietnamese ? "Điểm nhấn:" : "Key insight:"
   const downloadResumeLabel = isVietnamese ? "TẢI CV" : "DOWNLOAD RESUME"
+  const openPdfLabel = isVietnamese ? "MỞ PDF" : "OPEN PDF"
   const theme = isDarkMode
       ? {
         pageBg: "#090909",
@@ -167,6 +169,96 @@ export default function Portfolio() {
         ctaGradientHover: "linear-gradient(135deg,#7aa93a 0%,#5e8f1f 50%,#4f93a4 100%)",
         ctaShadow: "0 16px 28px rgba(94,143,31,0.18)",
       }
+
+  const getDemoOptionStyles = (variant: "document" | "mobile" | "desktop") => {
+    if (isDarkMode) {
+      if (variant === "document") {
+        return {
+          card: {
+            background: "linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(8,8,8,0.34) 100%)",
+            border: `1.5px solid ${theme.accent}`,
+            color: theme.accent,
+            boxShadow: "inset 0 0 0 1px rgba(157,255,59,0.08), 0 14px 30px rgba(0,0,0,0.22)",
+          },
+          glow: { background: "linear-gradient(180deg, rgba(157,255,59,0.12) 0%, rgba(157,255,59,0) 100%)" },
+          badge: { background: theme.accentSoftBg, color: theme.accent },
+          icon: { background: "rgba(157,255,59,0.1)", color: theme.accent },
+          meta: { color: theme.textSecondary },
+        }
+      }
+
+      if (variant === "mobile") {
+        return {
+          card: {
+            background: "linear-gradient(135deg, #9dff3b 0%, #c6ff8a 100%)",
+            border: `1.5px solid ${theme.accent}`,
+            color: theme.accentOnSolid,
+            boxShadow: "0 18px 34px rgba(157,255,59,0.2)",
+          },
+          glow: { background: "linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 100%)" },
+          badge: { background: "rgba(0,0,0,0.12)", color: theme.accentOnSolid },
+          icon: { background: "rgba(0,0,0,0.12)", color: theme.accentOnSolid },
+          meta: { color: "rgba(0,0,0,0.62)" },
+        }
+      }
+
+      return {
+        card: {
+          background: "linear-gradient(180deg, rgba(22,22,22,0.96) 0%, rgba(14,14,14,0.92) 100%)",
+          border: `1.5px solid ${theme.accent}`,
+          color: theme.textPrimary,
+          boxShadow: "0 14px 30px rgba(0,0,0,0.24)",
+        },
+        glow: { background: "linear-gradient(180deg, rgba(157,255,59,0.12) 0%, rgba(157,255,59,0) 100%)" },
+        badge: { background: theme.accentSoftBg, color: theme.accent },
+        icon: { background: "rgba(157,255,59,0.1)", color: theme.accent },
+        meta: { color: theme.accent },
+      }
+    }
+
+    if (variant === "document") {
+      return {
+        card: {
+          background: "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(241,247,235,0.96) 100%)",
+          border: `1.5px solid ${theme.accent}`,
+          color: theme.accent,
+          boxShadow: "inset 0 0 0 1px rgba(94,143,31,0.08), 0 12px 28px rgba(52,84,24,0.08)",
+        },
+        glow: { background: "linear-gradient(180deg, rgba(94,143,31,0.1) 0%, rgba(94,143,31,0) 100%)" },
+        badge: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+        icon: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+        meta: { color: theme.textSecondary },
+      }
+    }
+
+    if (variant === "mobile") {
+      return {
+        card: {
+          background: "linear-gradient(135deg, #5e8f1f 0%, #7faa39 100%)",
+          border: `1.5px solid ${theme.accent}`,
+          color: "#f7fbf2",
+          boxShadow: "0 16px 32px rgba(94,143,31,0.22)",
+        },
+        glow: { background: "linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 100%)" },
+        badge: { background: "rgba(255,255,255,0.14)", color: "#f7fbf2" },
+        icon: { background: "rgba(255,255,255,0.14)", color: "#f7fbf2" },
+        meta: { color: "rgba(247,251,242,0.8)" },
+      }
+    }
+
+    return {
+      card: {
+        background: "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(245,249,240,0.96) 100%)",
+        border: `1.5px solid rgba(94,143,31,0.34)`,
+        color: theme.textPrimary,
+        boxShadow: "0 12px 28px rgba(52,84,24,0.08)",
+      },
+      glow: { background: "linear-gradient(180deg, rgba(94,143,31,0.08) 0%, rgba(94,143,31,0) 100%)" },
+      badge: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+      icon: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+      meta: { color: theme.accent },
+    }
+  }
   const heroSkillSnapshot = isVietnamese
     ? [
         { name: "Ngôn ngữ lập trình", items: ["Python", "SQL", "R"] },
@@ -299,6 +391,48 @@ export default function Portfolio() {
     ert: { src: "/Data professional ERT.png", alt: "Data Analytics for Professionals" },
   }
   const selectedCertificatePreview = selectedCertificate ? certificatePreviewMap[selectedCertificate] : null
+  const selectedProjectDemoOptions = selectedProject?.id === "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam"
+    ? [
+        {
+          label: viewDocumentLabel,
+          src: "/MacroInsight.pdf",
+          type: "pdf" as const,
+          variant: "document" as const,
+          helper: isVietnamese ? "Báo cáo chi tiết" : "Detailed report",
+        },
+        {
+          label: mobileDemoLabel,
+          src: "/Demo video(Mobile Phone).mp4",
+          type: "video" as const,
+          variant: "mobile" as const,
+          helper: isVietnamese ? "Trải nghiệm điện thoại" : "Phone experience",
+        },
+        {
+          label: desktopDemoLabel,
+          src: "/Demo video(PC).mp4",
+          type: "video" as const,
+          variant: "desktop" as const,
+          helper: isVietnamese ? "Trải nghiệm máy tính" : "Desktop experience",
+        },
+      ]
+    : selectedProject?.id === "automated-financial-report-export"
+      ? [
+          {
+            label: sampleReportLabel,
+            src: "/Report_demo.pdf",
+            type: "pdf" as const,
+            variant: "document" as const,
+            helper: isVietnamese ? "Báo cáo mẫu" : "Sample report",
+          },
+          {
+            label: demoVideoLabel,
+            src: "/Demo.mp4",
+            type: "video" as const,
+            variant: "desktop" as const,
+            helper: isVietnamese ? "Video minh họa" : "Demo video",
+          },
+        ]
+      : []
   const heroProjectHighlights = isVietnamese
     ? [
         {
@@ -857,7 +991,7 @@ export default function Portfolio() {
                                           setSelectedProjectMedia(null)
                                         }}
                                         className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
-                                        style={{ background: theme.accent, color: theme.accentOnSolid }}
+                                        style={{ background: theme.accent, color: theme.accentOnSolid, boxShadow: "0 10px 22px rgba(157,255,59,0.16)" }}
                                       >
                                         <span>{viewDemoLabel}</span>
                                       </button>
@@ -867,7 +1001,7 @@ export default function Portfolio() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
+                                        className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
                                         style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
                                       >
                                         <span>{viewProjectLabel}</span>
@@ -1057,7 +1191,7 @@ export default function Portfolio() {
                     : selectedProject.name}
                 </h3>
               </div>
-              <div className="p-5 sm:p-7">
+              <div className={selectedProjectDemoOptions.length && !selectedProjectMedia ? "p-4 sm:p-5" : "p-5 sm:p-7"}>
                 {selectedProject.image && (
                   <div className="mb-6">
                     {selectedProject.image?.endsWith('.mp4') ? (
@@ -1069,44 +1203,52 @@ export default function Portfolio() {
                     )}
                   </div>
                 )}
-                {!selectedProjectMedia && selectedProject.id === "automated-financial-report-export" && (
-                  <div className="mb-2 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProjectMedia({ type: "pdf", src: "/Report_demo.pdf" })}
-                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
-                      style={{ background: theme.accent, color: theme.accentOnSolid }}
-                    >
-                      {sampleReportLabel}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProjectMedia({ type: "video", src: "/Demo.mp4" })}
-                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
-                      style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
-                    >
-                      {demoVideoLabel}
-                    </button>
-                  </div>
-                )}
-                {!selectedProjectMedia && selectedProject.id === "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam" && (
-                  <div className="mb-2 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProjectMedia({ type: "video", src: "/Demo video(Mobile Phone).mp4" })}
-                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
-                      style={{ background: theme.accent, color: theme.accentOnSolid }}
-                    >
-                      {mobileDemoLabel}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProjectMedia({ type: "video", src: "/Demo video(PC).mp4" })}
-                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
-                      style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
-                    >
-                      {desktopDemoLabel}
-                    </button>
+                {!selectedProjectMedia && selectedProjectDemoOptions.length > 0 && (
+                  <div
+                    className={selectedProjectDemoOptions.length === 2
+                      ? "mx-auto grid max-w-[720px] gap-3 sm:grid-cols-2"
+                      : "mx-auto grid max-w-[980px] gap-3 sm:grid-cols-2 lg:grid-cols-3"}
+                  >
+                    {selectedProjectDemoOptions.map((option) => (
+                      <button
+                        key={`${selectedProject.id}-${option.label}`}
+                        type="button"
+                        onClick={() => setSelectedProjectMedia({ type: option.type, src: option.src })}
+                        className="group relative flex min-h-[98px] flex-col justify-between overflow-hidden rounded-[22px] px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-1"
+                        style={getDemoOptionStyles(option.variant).card}
+                      >
+                        <div
+                          className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-80"
+                          style={getDemoOptionStyles(option.variant).glow}
+                        />
+                        <div className="relative z-[1] flex items-start justify-between gap-3">
+                          <span
+                            className="inline-flex rounded-full px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]"
+                            style={getDemoOptionStyles(option.variant).badge}
+                          >
+                            {option.variant === "document" ? "PDF" : option.variant === "mobile" ? "Mobile" : "Desktop"}
+                          </span>
+                          <span
+                            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-transform duration-300 group-hover:translate-x-0.5"
+                            aria-hidden="true"
+                            style={getDemoOptionStyles(option.variant).icon}
+                          >
+                            ↗
+                          </span>
+                        </div>
+                        <div className="relative z-[1] mt-4">
+                          <span className="block text-[12px] font-bold leading-snug sm:text-[13px]">
+                            {option.label}
+                          </span>
+                          <span
+                            className="mt-1 block text-[9px] font-medium uppercase tracking-[0.12em]"
+                            style={getDemoOptionStyles(option.variant).meta}
+                          >
+                            {option.helper}
+                          </span>
+                        </div>
+                      </button>
+                    ))}
                   </div>
                 )}
                 {selectedProjectMedia && (
@@ -1114,11 +1256,13 @@ export default function Portfolio() {
                     {selectedProjectMedia.type === "pdf" ? (
                       <PdfViewer
                         src={selectedProjectMedia.src}
-                        title="Sample report"
+                        title={selectedProject.name}
                         heightClassName="h-[68vh] sm:h-[74vh]"
                         borderColor="1px solid #2d2d2d"
                         loadingLabel={isVietnamese ? "Đang tải tài liệu..." : "Loading document..."}
                         errorLabel={isVietnamese ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
+                        helperLabel={isVietnamese ? "Phóng to hoặc vuốt ngang để đọc dễ hơn" : "Zoom or drag sideways for easier reading"}
+                        openLabel={openPdfLabel}
                       />
                     ) : (
                       <div className="overflow-hidden rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#0b0b0b" }}>

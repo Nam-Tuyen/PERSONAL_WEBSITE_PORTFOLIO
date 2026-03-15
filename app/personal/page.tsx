@@ -64,6 +64,7 @@ const content: Record<
       viewPublication: string
       viewDemo: string
       viewDocument: string
+      openPdf: string
       chooseDemo: string
       mobileDemo: string
       desktopDemo: string
@@ -92,6 +93,7 @@ const content: Record<
       viewPublication: "VIEW PUBLICATION",
       viewDemo: "VIEW DEMO",
       viewDocument: "VIEW DOCUMENT",
+      openPdf: "OPEN PDF",
       chooseDemo: "Please select the type of demo you would like to view:",
       mobileDemo: "VIEW MOBILE DEMO",
       desktopDemo: "VIEW DESKTOP DEMO",
@@ -318,6 +320,7 @@ const content: Record<
       viewPublication: "XEM CÔNG BỐ",
       viewDemo: "XEM DEMO",
       viewDocument: "XEM TÀI LIỆU",
+      openPdf: "MỞ PDF",
       chooseDemo: "Bạn hãy lựa chọn loại demo muốn xem:",
       mobileDemo: "XEM BẢN DEMO ĐIỆN THOẠI",
       desktopDemo: "XEM BẢN DEMO MÁY TÍNH",
@@ -607,6 +610,96 @@ export default function PersonalPage() {
     github: "https://github.com/Nam-Tuyen",
   }
 
+  const getDemoOptionStyles = (variant: "document" | "mobile" | "desktop") => {
+    if (isDarkMode) {
+      if (variant === "document") {
+        return {
+          card: {
+            background: "linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(8,8,8,0.34) 100%)",
+            border: `1.5px solid ${theme.accent}`,
+            color: theme.accent,
+            boxShadow: "inset 0 0 0 1px rgba(157,255,59,0.08), 0 14px 30px rgba(0,0,0,0.22)",
+          },
+          glow: { background: "linear-gradient(180deg, rgba(157,255,59,0.12) 0%, rgba(157,255,59,0) 100%)" },
+          badge: { background: theme.accentSoftBg, color: theme.accent },
+          icon: { background: "rgba(157,255,59,0.1)", color: theme.accent },
+          meta: { color: theme.textSecondary },
+        }
+      }
+
+      if (variant === "mobile") {
+        return {
+          card: {
+            background: "linear-gradient(135deg, #9dff3b 0%, #c6ff8a 100%)",
+            border: `1.5px solid ${theme.accent}`,
+            color: theme.accentOnSolid,
+            boxShadow: "0 18px 34px rgba(157,255,59,0.2)",
+          },
+          glow: { background: "linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 100%)" },
+          badge: { background: "rgba(0,0,0,0.12)", color: theme.accentOnSolid },
+          icon: { background: "rgba(0,0,0,0.12)", color: theme.accentOnSolid },
+          meta: { color: "rgba(0,0,0,0.62)" },
+        }
+      }
+
+      return {
+        card: {
+          background: "linear-gradient(180deg, rgba(22,22,22,0.96) 0%, rgba(14,14,14,0.92) 100%)",
+          border: `1.5px solid ${theme.accent}`,
+          color: theme.textPrimary,
+          boxShadow: "0 14px 30px rgba(0,0,0,0.24)",
+        },
+        glow: { background: "linear-gradient(180deg, rgba(157,255,59,0.12) 0%, rgba(157,255,59,0) 100%)" },
+        badge: { background: theme.accentSoftBg, color: theme.accent },
+        icon: { background: "rgba(157,255,59,0.1)", color: theme.accent },
+        meta: { color: theme.accent },
+      }
+    }
+
+    if (variant === "document") {
+      return {
+        card: {
+          background: "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(241,247,235,0.96) 100%)",
+          border: `1.5px solid ${theme.accent}`,
+          color: theme.accent,
+          boxShadow: "inset 0 0 0 1px rgba(94,143,31,0.08), 0 12px 28px rgba(52,84,24,0.08)",
+        },
+        glow: { background: "linear-gradient(180deg, rgba(94,143,31,0.1) 0%, rgba(94,143,31,0) 100%)" },
+        badge: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+        icon: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+        meta: { color: theme.textSecondary },
+      }
+    }
+
+    if (variant === "mobile") {
+      return {
+        card: {
+          background: "linear-gradient(135deg, #5e8f1f 0%, #7faa39 100%)",
+          border: `1.5px solid ${theme.accent}`,
+          color: "#f7fbf2",
+          boxShadow: "0 16px 32px rgba(94,143,31,0.22)",
+        },
+        glow: { background: "linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 100%)" },
+        badge: { background: "rgba(255,255,255,0.14)", color: "#f7fbf2" },
+        icon: { background: "rgba(255,255,255,0.14)", color: "#f7fbf2" },
+        meta: { color: "rgba(247,251,242,0.8)" },
+      }
+    }
+
+    return {
+      card: {
+        background: "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(245,249,240,0.96) 100%)",
+        border: `1.5px solid rgba(94,143,31,0.34)`,
+        color: theme.textPrimary,
+        boxShadow: "0 12px 28px rgba(52,84,24,0.08)",
+      },
+      glow: { background: "linear-gradient(180deg, rgba(94,143,31,0.08) 0%, rgba(94,143,31,0) 100%)" },
+      badge: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+      icon: { background: "rgba(94,143,31,0.12)", color: theme.accent },
+      meta: { color: theme.accent },
+    }
+  }
+
   const renderSectionHeading = (title: string) => (
     <div className="mb-10 flex flex-col items-center px-2 text-center md:mb-14">
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
@@ -830,8 +923,8 @@ export default function PersonalPage() {
                                 ],
                               })
                             }
-                            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
-                            style={{ background: theme.accent, color: theme.accentOnSolid }}
+                            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 hover:-translate-y-0.5 sm:text-sm"
+                            style={{ background: theme.accent, color: theme.accentOnSolid, boxShadow: isDarkMode ? "0 10px 22px rgba(157,255,59,0.16)" : "0 10px 22px rgba(94,143,31,0.14)" }}
                           >
                             <span>{pageContent.labels.viewDemo}</span>
                           </button>
@@ -897,7 +990,7 @@ export default function PersonalPage() {
                   {renderGallery(item.images, item.title)}
                   <div className="mt-6 flex flex-wrap justify-center gap-3 border-t pt-6" style={{ borderColor: theme.sectionBorder }}>
                     {item.link ? (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5" style={{ background: theme.accent, color: theme.accentOnSolid }}>
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5" style={{ background: theme.accent, color: theme.accentOnSolid }}>
                         {pageContent.labels.viewPublication}
                       </a>
                     ) : null}
@@ -1007,7 +1100,7 @@ export default function PersonalPage() {
                       {selectedAchievement.title}
                     </h3>
                   </div>
-                  <div className="p-5 sm:p-7">
+                  <div className="p-4 sm:p-5">
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                       {selectedAchievement.options?.map((option) => (
                         <button
@@ -1020,62 +1113,53 @@ export default function PersonalPage() {
                               title: option.title || selectedAchievement.title,
                             })
                           }
-                            className="group flex min-h-[88px] flex-col items-start justify-between rounded-[20px] px-5 py-4 text-left transition-all duration-300 hover:-translate-y-1"
-                          style={option.variant === "document"
-                            ? {
-                                background: theme.nestedCardBg,
-                                border: `1.5px dashed ${theme.accent}`,
-                                color: theme.accent,
-                                boxShadow: "inset 0 0 0 1px rgba(157,255,59,0.08)",
-                              }
-                            : option.variant === "mobile"
-                              ? {
-                                  background: theme.accent,
-                                  border: `1.5px solid ${theme.accent}`,
-                                  color: theme.accentOnSolid,
-                                  boxShadow: "0 14px 28px rgba(157,255,59,0.18)",
-                                }
-                              : {
-                                  background: theme.cardBg,
-                                  border: `1.5px solid ${theme.accent}`,
-                                  color: theme.textPrimary,
-                                }}
+                          className="group relative flex min-h-[98px] flex-col justify-between overflow-hidden rounded-[22px] px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-1"
+                          style={getDemoOptionStyles(option.variant || "desktop").card}
                         >
-                          <span
-                            className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]"
-                            style={option.variant === "document"
-                              ? { background: theme.accentSoftBg, color: theme.accent }
-                              : option.variant === "mobile"
-                                ? { background: "rgba(0,0,0,0.12)", color: theme.accentOnSolid }
-                                : { background: theme.accentSoftBg, color: theme.accent }}
-                          >
-                            {option.variant === "document"
-                              ? "PDF"
-                              : option.variant === "mobile"
-                                ? "Mobile"
-                                : "Desktop"}
-                          </span>
-                          <span className="mt-3 text-sm font-bold leading-snug sm:text-[15px]">
-                            {option.label}
-                          </span>
-                          <span
-                            className="mt-3 text-[11px] font-medium uppercase tracking-[0.16em]"
-                            style={option.variant === "mobile"
-                              ? { color: "rgba(0,0,0,0.62)" }
-                              : { color: option.variant === "document" ? theme.textSecondary : theme.accent }}
-                          >
-                            {option.variant === "document"
-                              ? language === "vi"
-                                ? "Báo cáo chi tiết"
-                                : "Detailed report"
-                              : option.variant === "mobile"
+                          <div
+                            className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-80"
+                            style={getDemoOptionStyles(option.variant || "desktop").glow}
+                          />
+                          <div className="relative z-[1] flex items-start justify-between gap-3">
+                            <span
+                              className="inline-flex rounded-full px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]"
+                              style={getDemoOptionStyles(option.variant || "desktop").badge}
+                            >
+                              {option.variant === "document"
+                                ? "PDF"
+                                : option.variant === "mobile"
+                                  ? "Mobile"
+                                  : "Desktop"}
+                            </span>
+                            <span
+                              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-transform duration-300 group-hover:translate-x-0.5"
+                              style={getDemoOptionStyles(option.variant || "desktop").icon}
+                              aria-hidden="true"
+                            >
+                              ↗
+                            </span>
+                          </div>
+                          <div className="relative z-[1] mt-4">
+                            <span className="block text-[12px] font-bold leading-snug sm:text-[13px]">
+                              {option.label}
+                            </span>
+                            <span
+                              className="mt-1 block text-[9px] font-medium uppercase tracking-[0.12em]"
+                              style={getDemoOptionStyles(option.variant || "desktop").meta}
+                            >
+                              {option.variant === "document"
                                 ? language === "vi"
-                                  ? "Trải nghiệm điện thoại"
-                                  : "Phone experience"
-                                : language === "vi"
-                                  ? "Trải nghiệm máy tính"
-                                  : "Desktop experience"}
-                          </span>
+                                  ? "Báo cáo chi tiết"
+                                  : "Detailed report"
+                                : option.variant === "mobile"
+                                  ? language === "vi"
+                                    ? "Trải nghiệm điện thoại"
+                                    : "Phone experience"
+                                  : language === "vi"
+                                    ? "Trải nghiệm máy tính"
+                                    : "Desktop experience"}
+                            </span>
+                          </div>
                         </button>
                       ))}
                     </div>
@@ -1090,7 +1174,9 @@ export default function PersonalPage() {
                     borderColor={theme.cardBorder}
                     loadingLabel={language === "vi" ? "Đang tải tài liệu..." : "Loading document..."}
                     errorLabel={language === "vi" ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
-                    helperLabel={language === "vi" ? "Vuốt để xem toàn bộ tài liệu" : "Scroll to read the full document"}
+                    helperLabel={language === "vi" ? "Phóng to hoặc vuốt ngang để đọc dễ hơn" : "Zoom or drag sideways for easier reading"}
+                    openLabel={pageContent.labels.openPdf}
+                    showOpenButton={false}
                   />
                 </div>
               ) : selectedAchievement.type === "video" ? (
