@@ -72,10 +72,6 @@ export default function Portfolio() {
     )
   }
 
-  const handleOpenDocument = (src: string) => {
-    window.open(src, "_blank", "noopener,noreferrer")
-  }
-
   const isVietnamese = language === "vi"
   const footerContact = {
     email: "Namtuyenle.CV@gmail.com",
@@ -109,7 +105,6 @@ export default function Portfolio() {
   const externalLinkLabel = isVietnamese ? "LIÊN KẾT" : "LINK"
   const keyInsightLabel = isVietnamese ? "Điểm nhấn:" : "Key insight:"
   const downloadResumeLabel = isVietnamese ? "TẢI CV" : "DOWNLOAD RESUME"
-  const openDocumentLabel = isVietnamese ? "MỞ TÀI LIỆU" : "OPEN DOCUMENT"
   const theme = isDarkMode
       ? {
         pageBg: "#090909",
@@ -1116,24 +1111,12 @@ export default function Portfolio() {
                 {selectedProjectMedia && (
                   <div className="mt-5">
                     {selectedProjectMedia.type === "pdf" ? (
-                      <div className="space-y-3">
-                        <div className="flex justify-end">
-                          <button
-                            type="button"
-                            onClick={() => handleOpenDocument(selectedProjectMedia.src)}
-                            className="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold sm:text-sm"
-                            style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
-                          >
-                            {openDocumentLabel}
-                          </button>
-                        </div>
-                        <div className="document-preview-shell overflow-auto rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#ffffff" }}>
-                          <iframe
-                            src={`${selectedProjectMedia.src}#toolbar=0&navpanes=0&scrollbar=1`}
-                            title="Sample report"
-                            className="document-preview-frame h-[70vh] w-full"
-                          />
-                        </div>
+                      <div className="document-preview-shell overflow-auto rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#ffffff" }}>
+                        <iframe
+                          src={`${selectedProjectMedia.src}#toolbar=0&navpanes=0&scrollbar=1`}
+                          title="Sample report"
+                          className="document-preview-frame h-[70vh] w-full"
+                        />
                       </div>
                     ) : (
                       <div className="overflow-hidden rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#0b0b0b" }}>
