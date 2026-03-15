@@ -9,6 +9,7 @@ type PdfViewerProps = {
   borderColor?: string
   loadingLabel?: string
   errorLabel?: string
+  helperLabel?: string
 }
 
 let pdfModulePromise: Promise<any> | null = null
@@ -31,6 +32,7 @@ export default function PdfViewer({
   borderColor = "1px solid rgba(255,255,255,0.06)",
   loadingLabel = "Loading document...",
   errorLabel = "Unable to load this PDF right now.",
+  helperLabel = "Scroll to read all pages",
 }: PdfViewerProps) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRefs = useRef<(HTMLCanvasElement | null)[]>([])
@@ -63,6 +65,9 @@ export default function PdfViewer({
     setPageCount(0)
     setPdfDocument(null)
     canvasRefs.current = []
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0
+    }
 
     ;(async () => {
       try {
@@ -114,8 +119,10 @@ export default function PdfViewer({
 
           const page = await pdfDocument.getPage(pageNumber)
           const baseViewport = page.getViewport({ scale: 1 })
-          const availableWidth = Math.min(Math.max(containerWidth - 24, 240), 960)
-          const scale = Math.min(availableWidth / baseViewport.width, 1.35)
+          const pagePadding = containerWidth < 640 ? 36 : 56
+          const scaleTarget = containerWidth < 640 ? 0.9 : 0.82
+          const availableWidth = Math.min(Math.max((containerWidth - pagePadding) * scaleTarget, 220), 720)
+          const scale = Math.min(availableWidth / baseViewport.width, 1)
           const outputScale = window.devicePixelRatio || 1
           const renderViewport = page.getViewport({ scale: scale * outputScale })
           const cssViewport = page.getViewport({ scale })
@@ -148,8 +155,8 @@ export default function PdfViewer({
   return (
     <div
       ref={containerRef}
-      className={`overflow-y-auto overscroll-contain rounded-[18px] bg-white px-3 py-3 sm:px-4 sm:py-4 ${heightClassName}`}
-      style={{ border: borderColor, WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
+      className={`overflow-y-auto overscroll-contain rounded-[18px] bg-[#f4f4f1] px-3 py-3 sm:px-4 sm:py-4 ${heightClassName}`}
+      style={{ border: borderColor, WebkitOverflowScrolling: "touch", touchAction: "pan-y", overscrollBehavior: "contain" }}
       aria-label={title}
     >
       {isLoading ? (
@@ -162,8 +169,13 @@ export default function PdfViewer({
         </div>
       ) : (
         <div className="mx-auto flex w-full max-w-[960px] flex-col gap-4">
+          <div className="sticky top-0 z-[1] flex justify-center pb-1">
+            <div className="inline-flex rounded-full border border-black/10 bg-white/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#4f4f4f] shadow-[0_8px_24px_rgba(0,0,0,0.08)] backdrop-blur">
+              {helperLabel}
+            </div>
+          </div>
           {Array.from({ length: pageCount }, (_, index) => (
-            <div key={`${src}-page-${index + 1}`} className="overflow-hidden rounded-[16px]" style={{ border: "1px solid rgba(0,0,0,0.08)" }}>
+            <div key={`${src}-page-${index + 1}`} className="overflow-hidden rounded-[16px] bg-white shadow-[0_14px_32px_rgba(0,0,0,0.08)]" style={{ border: "1px solid rgba(0,0,0,0.08)" }}>
               <canvas
                 ref={(element) => {
                   canvasRefs.current[index] = element

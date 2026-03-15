@@ -830,10 +830,10 @@ export default function PersonalPage() {
                                 ],
                               })
                             }
-                            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5"
+                            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[11px]"
                             style={{ background: theme.accent, color: theme.accentOnSolid }}
                           >
-                            {pageContent.labels.viewDemo}
+                            <span>{pageContent.labels.viewDemo}</span>
                           </button>
                         ) : null}
                         {item.document && !item.demoOptions ? (
@@ -1090,6 +1090,7 @@ export default function PersonalPage() {
                     borderColor={theme.cardBorder}
                     loadingLabel={language === "vi" ? "Đang tải tài liệu..." : "Loading document..."}
                     errorLabel={language === "vi" ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
+                    helperLabel={language === "vi" ? "Vuốt để xem toàn bộ tài liệu" : "Scroll to read the full document"}
                   />
                 </div>
               ) : selectedAchievement.type === "video" ? (
