@@ -1288,6 +1288,26 @@ button, a, [role="button"] {
   text-rendering: optimizeLegibility;
 }
 
+.document-preview-shell {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+.document-preview-frame {
+  display: block;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .document-preview-frame {
+    width: 138% !important;
+    height: 108vh !important;
+    max-width: none;
+    transform: scale(0.72);
+    transform-origin: top left;
+  }
+}
+
 /* Scroll-reveal */
 .anim {
   opacity: 0;

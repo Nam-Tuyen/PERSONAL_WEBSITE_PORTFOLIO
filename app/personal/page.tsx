@@ -520,6 +520,7 @@ export default function PersonalPage() {
   const languageStorageKey = "portfolio-language"
   const themeStorageKey = "portfolio-theme"
   const pageContent = content[language]
+  const openDocumentLabel = language === "vi" ? "MỞ TÀI LIỆU" : "OPEN DOCUMENT"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -558,6 +559,10 @@ export default function PersonalPage() {
   useEffect(() => {
     window.localStorage.setItem(languageStorageKey, language)
   }, [language, languageStorageKey])
+
+  const handleOpenDocument = (src: string) => {
+    window.open(src, "_blank", "noopener,noreferrer")
+  }
 
   const theme = isDarkMode
     ? {
@@ -676,7 +681,7 @@ export default function PersonalPage() {
               </div>
             </div>
             <div className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
-              <p className="text-justify text-sm leading-[1.9] sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+              <p className="text-left text-sm leading-[1.9] sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
                 {pageContent.intro}
               </p>
             </div>
@@ -1006,11 +1011,25 @@ export default function PersonalPage() {
                   </div>
                 </div>
               ) : selectedAchievement.type === "pdf" ? (
-                <iframe
-                  src={`${selectedAchievement.src}#toolbar=0&navpanes=0&scrollbar=1`}
-                  title={selectedAchievement.title || "Document"}
-                  className="h-[85vh] w-full bg-white"
-                />
+                <div className="space-y-3 p-4 sm:p-5">
+                  <div className="flex justify-end">
+                    <button
+                      type="button"
+                      onClick={() => selectedAchievement.src && handleOpenDocument(selectedAchievement.src)}
+                      className="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold sm:text-sm"
+                      style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                    >
+                      {openDocumentLabel}
+                    </button>
+                  </div>
+                  <div className="document-preview-shell overflow-auto rounded-[18px]" style={{ border: theme.cardBorder, background: "#ffffff" }}>
+                    <iframe
+                      src={`${selectedAchievement.src}#toolbar=0&navpanes=0&scrollbar=1`}
+                      title={selectedAchievement.title || "Document"}
+                      className="document-preview-frame h-[85vh] w-full bg-white"
+                    />
+                  </div>
+                </div>
               ) : selectedAchievement.type === "video" ? (
                 <video className="h-auto max-h-[85vh] w-full bg-black" controls preload="metadata">
                   <source src={selectedAchievement.src} type="video/mp4" />
