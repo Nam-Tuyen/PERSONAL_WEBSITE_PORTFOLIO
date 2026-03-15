@@ -1175,7 +1175,7 @@ export default function Portfolio() {
       {/* Project Demo Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,.88)" }} onClick={() => { setSelectedProject(null); setSelectedProjectMedia(null) }}>
-          <div className="relative max-w-5xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+          <div className={`relative max-h-[90vh] w-full ${selectedProjectMedia?.type === "pdf" ? "max-w-4xl" : "max-w-5xl"}`} onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => { setSelectedProject(null); setSelectedProjectMedia(null) }}
               className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black"
@@ -1183,98 +1183,103 @@ export default function Portfolio() {
             >
               x
             </button>
-            <div className="rounded-[22px] overflow-hidden overflow-y-auto max-h-[85vh] transition-colors duration-300" style={{ background: theme.modalBg, border: `1px solid ${theme.sectionBorder}` }}>
-              <div className="p-5 text-center sm:p-7" style={{ borderBottom: `1px solid ${theme.sectionBorder}` }}>
-                <h3 className="font-orbitron text-base font-bold sm:text-lg" style={{ color: theme.textPrimary }}>
-                  {selectedProject.id === "automated-financial-report-export" || selectedProject.id === "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam"
-                    ? demoPromptLabel
-                    : selectedProject.name}
-                </h3>
+            {selectedProjectMedia?.type === "pdf" ? (
+              <div className="overflow-hidden rounded-[22px]" style={{ background: theme.modalBg, border: theme.cardBorder }}>
+                <div className="m-4 sm:m-5">
+                  <PdfViewer
+                    src={selectedProjectMedia.src}
+                    title={selectedProject.name}
+                    heightClassName="h-[76vh] sm:h-[82vh]"
+                    borderColor={theme.cardBorder}
+                    loadingLabel={isVietnamese ? "Đang tải tài liệu..." : "Loading document..."}
+                    errorLabel={isVietnamese ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
+                    helperLabel={isVietnamese ? "Phóng to hoặc vuốt ngang để đọc dễ hơn" : "Zoom or drag sideways for easier reading"}
+                    openLabel={openPdfLabel}
+                    showOpenButton={false}
+                  />
+                </div>
               </div>
-              <div className={selectedProjectDemoOptions.length && !selectedProjectMedia ? "p-4 sm:p-5" : "p-5 sm:p-7"}>
-                {selectedProject.image && (
-                  <div className="mb-6">
-                    {selectedProject.image?.endsWith('.mp4') ? (
-                      <video className="w-full h-64 sm:h-80 object-cover rounded-xl" controls preload="metadata" style={{ border: "1px solid #2d2d2d" }}>
-                        <source src={selectedProject.image} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-64 sm:h-80 object-cover rounded-xl" style={{ border: "1px solid #2d2d2d" }} />
-                    )}
-                  </div>
-                )}
-                {!selectedProjectMedia && selectedProjectDemoOptions.length > 0 && (
-                  <div
-                    className={selectedProjectDemoOptions.length === 2
-                      ? "mx-auto grid max-w-[720px] gap-3 sm:grid-cols-2"
-                      : "mx-auto grid max-w-[980px] gap-3 sm:grid-cols-2 lg:grid-cols-3"}
-                  >
-                    {selectedProjectDemoOptions.map((option) => (
-                      <button
-                        key={`${selectedProject.id}-${option.label}`}
-                        type="button"
-                        onClick={() => setSelectedProjectMedia({ type: option.type, src: option.src })}
-                        className="group relative flex min-h-[98px] flex-col justify-between overflow-hidden rounded-[22px] px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-1"
-                        style={getDemoOptionStyles(option.variant).card}
-                      >
-                        <div
-                          className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-80"
-                          style={getDemoOptionStyles(option.variant).glow}
-                        />
-                        <div className="relative z-[1] flex items-start justify-between gap-3">
-                          <span
-                            className="inline-flex rounded-full px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]"
-                            style={getDemoOptionStyles(option.variant).badge}
-                          >
-                            {option.variant === "document" ? "PDF" : option.variant === "mobile" ? "Mobile" : "Desktop"}
-                          </span>
-                          <span
-                            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-transform duration-300 group-hover:translate-x-0.5"
-                            aria-hidden="true"
-                            style={getDemoOptionStyles(option.variant).icon}
-                          >
-                            ↗
-                          </span>
-                        </div>
-                        <div className="relative z-[1] mt-4">
-                          <span className="block text-[12px] font-bold leading-snug sm:text-[13px]">
-                            {option.label}
-                          </span>
-                          <span
-                            className="mt-1 block text-[9px] font-medium uppercase tracking-[0.12em]"
-                            style={getDemoOptionStyles(option.variant).meta}
-                          >
-                            {option.helper}
-                          </span>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                )}
-                {selectedProjectMedia && (
-                  <div className="mt-5">
-                    {selectedProjectMedia.type === "pdf" ? (
-                      <PdfViewer
-                        src={selectedProjectMedia.src}
-                        title={selectedProject.name}
-                        heightClassName="h-[68vh] sm:h-[74vh]"
-                        borderColor="1px solid #2d2d2d"
-                        loadingLabel={isVietnamese ? "Đang tải tài liệu..." : "Loading document..."}
-                        errorLabel={isVietnamese ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
-                        helperLabel={isVietnamese ? "Phóng to hoặc vuốt ngang để đọc dễ hơn" : "Zoom or drag sideways for easier reading"}
-                        openLabel={openPdfLabel}
-                      />
-                    ) : (
+            ) : (
+              <div className="rounded-[22px] overflow-hidden overflow-y-auto max-h-[85vh] transition-colors duration-300" style={{ background: theme.modalBg, border: `1px solid ${theme.sectionBorder}` }}>
+                <div className="p-5 text-center sm:p-7" style={{ borderBottom: `1px solid ${theme.sectionBorder}` }}>
+                  <h3 className="font-orbitron text-base font-bold sm:text-lg" style={{ color: theme.textPrimary }}>
+                    {selectedProject.id === "automated-financial-report-export" || selectedProject.id === "macroinsight-me-ai-finance-and-legal-assistant-for-vietnam"
+                      ? demoPromptLabel
+                      : selectedProject.name}
+                  </h3>
+                </div>
+                <div className={selectedProjectDemoOptions.length && !selectedProjectMedia ? "p-4 sm:p-5" : "p-5 sm:p-7"}>
+                  {selectedProject.image && (
+                    <div className="mb-6">
+                      {selectedProject.image?.endsWith('.mp4') ? (
+                        <video className="w-full h-64 sm:h-80 object-cover rounded-xl" controls preload="metadata" style={{ border: "1px solid #2d2d2d" }}>
+                          <source src={selectedProject.image} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-64 sm:h-80 object-cover rounded-xl" style={{ border: "1px solid #2d2d2d" }} />
+                      )}
+                    </div>
+                  )}
+                  {!selectedProjectMedia && selectedProjectDemoOptions.length > 0 && (
+                    <div
+                      className={selectedProjectDemoOptions.length === 2
+                        ? "mx-auto grid max-w-[720px] gap-3 sm:grid-cols-2"
+                        : "mx-auto grid max-w-[980px] gap-3 sm:grid-cols-2 lg:grid-cols-3"}
+                    >
+                      {selectedProjectDemoOptions.map((option) => (
+                        <button
+                          key={`${selectedProject.id}-${option.label}`}
+                          type="button"
+                          onClick={() => setSelectedProjectMedia({ type: option.type, src: option.src })}
+                          className="group relative flex min-h-[98px] flex-col justify-between overflow-hidden rounded-[22px] px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-1"
+                          style={getDemoOptionStyles(option.variant).card}
+                        >
+                          <div
+                            className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-80"
+                            style={getDemoOptionStyles(option.variant).glow}
+                          />
+                          <div className="relative z-[1] flex items-start justify-between gap-3">
+                            <span
+                              className="inline-flex rounded-full px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]"
+                              style={getDemoOptionStyles(option.variant).badge}
+                            >
+                              {option.variant === "document" ? "PDF" : option.variant === "mobile" ? "Mobile" : "Desktop"}
+                            </span>
+                            <span
+                              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-transform duration-300 group-hover:translate-x-0.5"
+                              aria-hidden="true"
+                              style={getDemoOptionStyles(option.variant).icon}
+                            >
+                              ↗
+                            </span>
+                          </div>
+                          <div className="relative z-[1] mt-4">
+                            <span className="block text-[12px] font-bold leading-snug sm:text-[13px]">
+                              {option.label}
+                            </span>
+                            <span
+                              className="mt-1 block text-[9px] font-medium uppercase tracking-[0.12em]"
+                              style={getDemoOptionStyles(option.variant).meta}
+                            >
+                              {option.helper}
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {selectedProjectMedia?.type === "video" && (
+                    <div className="mt-5">
                       <div className="overflow-hidden rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#0b0b0b" }}>
                         <video className="h-auto max-h-[70vh] w-full bg-black" controls preload="metadata">
                           <source src={selectedProjectMedia.src} type="video/mp4" />
                         </video>
                       </div>
-                    )}
-                  </div>
-                )}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
