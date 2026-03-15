@@ -24,6 +24,13 @@ type Language = "en" | "vi"
 
 type LinkItem = { title: string; url: string }
 type RoleItem = { title: string; period: string; bullets: string[]; achievements?: string[] }
+type AchievementAction = {
+  label: string
+  src: string
+  type: "pdf" | "video"
+  title?: string
+  variant?: "document" | "mobile" | "desktop"
+}
 type SectionItem = {
   id?: string
   title: string
@@ -513,7 +520,7 @@ export default function PersonalPage() {
         type: "image" | "pdf" | "video" | "choice"
         src?: string
         title?: string
-        options?: { label: string; src: string }[]
+        options?: AchievementAction[]
       }
     | null
   >(null)
@@ -802,7 +809,25 @@ export default function PersonalPage() {
                               setSelectedAchievement({
                                 type: "choice",
                                 title: pageContent.labels.chooseDemo,
-                                options: item.demoOptions,
+                                options: [
+                                  ...(item.document
+                                    ? [
+                                        {
+                                          label: pageContent.labels.viewDocument,
+                                          src: item.document,
+                                          type: "pdf" as const,
+                                          title: item.title,
+                                          variant: "document" as const,
+                                        },
+                                      ]
+                                    : []),
+                                  ...item.demoOptions.map((option) => ({
+                                    ...option,
+                                    type: "video" as const,
+                                    title: item.title,
+                                    variant: option.src.includes("(Mobile Phone)") ? ("mobile" as const) : ("desktop" as const),
+                                  })),
+                                ],
                               })
                             }
                             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5"
@@ -811,7 +836,7 @@ export default function PersonalPage() {
                             {pageContent.labels.viewDemo}
                           </button>
                         ) : null}
-                        {item.document ? (
+                        {item.document && !item.demoOptions ? (
                           <button
                             onClick={() =>
                               setSelectedAchievement({
@@ -983,24 +1008,74 @@ export default function PersonalPage() {
                     </h3>
                   </div>
                   <div className="p-5 sm:p-7">
-                    <div className="mb-2 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                       {selectedAchievement.options?.map((option) => (
                         <button
                           key={option.src}
                           type="button"
                           onClick={() =>
                             setSelectedAchievement({
-                              type: "video",
+                              type: option.type,
                               src: option.src,
-                              title: selectedAchievement.title,
+                              title: option.title || selectedAchievement.title,
                             })
                           }
-                          className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-bold"
-                          style={option.src.includes("(Mobile Phone)")
-                            ? { background: theme.accent, color: theme.accentOnSolid }
-                            : { border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                            className="group flex min-h-[88px] flex-col items-start justify-between rounded-[20px] px-5 py-4 text-left transition-all duration-300 hover:-translate-y-1"
+                          style={option.variant === "document"
+                            ? {
+                                background: theme.nestedCardBg,
+                                border: `1.5px dashed ${theme.accent}`,
+                                color: theme.accent,
+                                boxShadow: "inset 0 0 0 1px rgba(157,255,59,0.08)",
+                              }
+                            : option.variant === "mobile"
+                              ? {
+                                  background: theme.accent,
+                                  border: `1.5px solid ${theme.accent}`,
+                                  color: theme.accentOnSolid,
+                                  boxShadow: "0 14px 28px rgba(157,255,59,0.18)",
+                                }
+                              : {
+                                  background: theme.cardBg,
+                                  border: `1.5px solid ${theme.accent}`,
+                                  color: theme.textPrimary,
+                                }}
                         >
-                          {option.label}
+                          <span
+                            className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]"
+                            style={option.variant === "document"
+                              ? { background: theme.accentSoftBg, color: theme.accent }
+                              : option.variant === "mobile"
+                                ? { background: "rgba(0,0,0,0.12)", color: theme.accentOnSolid }
+                                : { background: theme.accentSoftBg, color: theme.accent }}
+                          >
+                            {option.variant === "document"
+                              ? "PDF"
+                              : option.variant === "mobile"
+                                ? "Mobile"
+                                : "Desktop"}
+                          </span>
+                          <span className="mt-3 text-sm font-bold leading-snug sm:text-[15px]">
+                            {option.label}
+                          </span>
+                          <span
+                            className="mt-3 text-[11px] font-medium uppercase tracking-[0.16em]"
+                            style={option.variant === "mobile"
+                              ? { color: "rgba(0,0,0,0.62)" }
+                              : { color: option.variant === "document" ? theme.textSecondary : theme.accent }}
+                          >
+                            {option.variant === "document"
+                              ? language === "vi"
+                                ? "Báo cáo chi tiết"
+                                : "Detailed report"
+                              : option.variant === "mobile"
+                                ? language === "vi"
+                                  ? "Trải nghiệm điện thoại"
+                                  : "Phone experience"
+                                : language === "vi"
+                                  ? "Trải nghiệm máy tính"
+                                  : "Desktop experience"}
+                          </span>
                         </button>
                       ))}
                     </div>
