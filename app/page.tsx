@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Navbar from "./components/Navbar"
+import PdfViewer from "./components/PdfViewer"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 
 const getInitialLanguage = (): "en" | "vi" => {
@@ -1111,13 +1112,14 @@ export default function Portfolio() {
                 {selectedProjectMedia && (
                   <div className="mt-5">
                     {selectedProjectMedia.type === "pdf" ? (
-                      <div className="document-preview-shell overflow-auto rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#ffffff" }}>
-                        <iframe
-                          src={`${selectedProjectMedia.src}#toolbar=0&navpanes=0&scrollbar=1`}
-                          title="Sample report"
-                          className="document-preview-frame h-[70vh] w-full"
-                        />
-                      </div>
+                      <PdfViewer
+                        src={selectedProjectMedia.src}
+                        title="Sample report"
+                        heightClassName="h-[68vh] sm:h-[74vh]"
+                        borderColor="1px solid #2d2d2d"
+                        loadingLabel={isVietnamese ? "Đang tải tài liệu..." : "Loading document..."}
+                        errorLabel={isVietnamese ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
+                      />
                     ) : (
                       <div className="overflow-hidden rounded-[18px]" style={{ border: "1px solid #2d2d2d", background: "#0b0b0b" }}>
                         <video className="h-auto max-h-[70vh] w-full bg-black" controls preload="metadata">

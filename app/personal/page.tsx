@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
+import PdfViewer from "../components/PdfViewer"
 import ScrollToTopButton from "../components/ScrollToTopButton"
 
 const getInitialLanguage = (): Language => {
@@ -1006,11 +1007,14 @@ export default function PersonalPage() {
                   </div>
                 </div>
               ) : selectedAchievement.type === "pdf" ? (
-                <div className="document-preview-shell overflow-auto rounded-[18px] m-4 sm:m-5" style={{ border: theme.cardBorder, background: "#ffffff" }}>
-                  <iframe
-                    src={`${selectedAchievement.src}#toolbar=0&navpanes=0&scrollbar=1`}
+                <div className="m-4 sm:m-5">
+                  <PdfViewer
+                    src={selectedAchievement.src || ""}
                     title={selectedAchievement.title || "Document"}
-                    className="document-preview-frame h-[85vh] w-full bg-white"
+                    heightClassName="h-[76vh] sm:h-[82vh]"
+                    borderColor={theme.cardBorder}
+                    loadingLabel={language === "vi" ? "Đang tải tài liệu..." : "Loading document..."}
+                    errorLabel={language === "vi" ? "Không thể mở tài liệu lúc này." : "Unable to load this PDF right now."}
                   />
                 </div>
               ) : selectedAchievement.type === "video" ? (
