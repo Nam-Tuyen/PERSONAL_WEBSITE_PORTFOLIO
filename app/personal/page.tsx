@@ -858,9 +858,9 @@ export default function PersonalPage() {
                       {item.organization}
                     </p>
                   </div>
-                  <div className="pl-3 sm:pl-4" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                  <div className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
                     {item.bullets ? renderBullets(item.bullets) : item.description ? (
-                      <p className="text-left text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                      <p className="text-justify text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
                         {item.description}
                       </p>
                     ) : null}
@@ -980,9 +980,9 @@ export default function PersonalPage() {
                       {item.publication} • {item.date}
                     </p>
                   </div>
-                  <div className="pl-4 sm:pl-5" style={{ borderLeft: `3px solid ${theme.accent}` }}>
+                  <div className="pl-3 sm:pl-4" style={{ borderLeft: `3px solid ${theme.accent}` }}>
                     {item.bullets ? renderBullets(item.bullets) : item.description ? (
-                      <p className="text-justify text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
+                      <p className="text-left text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: theme.textSecondary }}>
                         {item.description}
                       </p>
                     ) : null}
