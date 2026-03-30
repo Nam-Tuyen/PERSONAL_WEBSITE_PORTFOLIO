@@ -719,12 +719,16 @@ export default function Portfolio() {
                             </div>
                           </div>
 
-                          <div
-                            className="min-w-0 rounded-[20px] px-5 py-5"
-                            style={{ background: theme.cardBg, border: theme.cardBorder }}
-                          >
-                          <div className="min-w-0 space-y-1.5 text-left sm:space-y-2">
-                            <div className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[8px] font-medium uppercase tracking-[0.2em] sm:px-3 sm:text-[9px]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
+                        <a
+                          href="https://www.uel.edu.vn/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="card-action-btn min-w-0 rounded-[20px] px-5 py-5"
+                          style={{ background: theme.cardBg, border: theme.cardBorder, textDecoration: "none" }}
+                        >
+                          <div className="min-w-0 space-y-4 text-left">
+                            <div className="min-w-0 space-y-1.5 sm:space-y-2">
+                              <div className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[8px] font-medium uppercase tracking-[0.2em] sm:px-3 sm:text-[9px]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
                                 {bachelorLabel}
                               </div>
                               <div
@@ -734,35 +738,36 @@ export default function Portfolio() {
                                 {degreeLabel}
                               </div>
                             </div>
-                          </div>
-                        </div>
 
-                        <a
-                          href="https://www.uel.edu.vn/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="card-action-btn flex items-start gap-3 rounded-2xl px-5 py-4"
-                          style={{ background: theme.cardBg, border: theme.cardBorder, textDecoration: "none" }}
-                        >
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/95 p-0.5">
-                            <img
-                              src="/Logo.png"
-                              alt="UEL logo"
-                              className="h-full w-full object-contain"
-                            />
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <div className="text-sm font-medium leading-[1.55] sm:text-[15px]" style={{ color: theme.textSecondary }}>
-                              {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
-                            </div>
                             <div
-                              className="mt-3 inline-flex items-center space-x-1.5 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:px-4 sm:text-[11px]"
-                              style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                              className="h-px w-full"
+                              style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }}
                             >
-                              <span>{moreInformationLabel}</span>
-                              <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                              </svg>
+                            </div>
+
+                            <div className="flex items-start gap-3">
+                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/95 p-0.5">
+                                <img
+                                  src="/Logo.png"
+                                  alt="UEL logo"
+                                  className="h-full w-full object-contain"
+                                />
+                              </div>
+
+                              <div className="min-w-0 flex-1">
+                                <div className="text-[13px] font-medium leading-[1.5] sm:text-sm md:text-[15px]" style={{ color: theme.textSecondary }}>
+                                  {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
+                                </div>
+                                <div
+                                  className="mt-3 inline-flex items-center space-x-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4 sm:text-[10px]"
+                                  style={{ border: `1.5px solid ${theme.accent}`, color: theme.accent, background: "transparent" }}
+                                >
+                                  <span>{moreInformationLabel}</span>
+                                  <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                  </svg>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </a>
@@ -822,6 +827,7 @@ export default function Portfolio() {
                               </div>
                             ))}
                           </div>
+                        </div>
                         </div>
                       </div>
 
