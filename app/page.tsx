@@ -644,7 +644,7 @@ export default function Portfolio() {
 
                   <div className="relative px-5 pb-5 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:px-10 lg:pb-10">
                     <div className="relative mt-[-52px] grid grid-cols-1 gap-6 lg:mt-[-62px] lg:grid-cols-[340px_minmax(0,1fr)] lg:items-start lg:gap-9">
-                      <div className="space-y-5">
+                      <div className="min-w-0 space-y-5">
                         <div className="flex justify-center lg:justify-start">
                           <div className="avatar-ring-wrap relative h-[108px] w-[108px] shrink-0 sm:h-[124px] sm:w-[124px]">
                             <div
@@ -720,15 +720,15 @@ export default function Portfolio() {
                           </div>
 
                           <div
-                            className="rounded-[20px] px-5 py-5"
+                            className="min-w-0 rounded-[20px] px-5 py-5"
                             style={{ background: theme.cardBg, border: theme.cardBorder }}
                           >
-                          <div className="text-left">
+                          <div className="min-w-0 text-left">
                             <div className="mb-3 inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
                                 {bachelorLabel}
                               </div>
                               <div
-                                className="font-orbitron whitespace-nowrap text-[clamp(0.72rem,3.9vw,1.375rem)] font-black uppercase leading-none tracking-[-0.05em] sm:tracking-[-0.03em]"
+                                className="max-w-full font-orbitron whitespace-nowrap text-[clamp(0.62rem,3.1vw+0.08rem,1.375rem)] font-black uppercase leading-none tracking-[-0.06em] sm:tracking-[-0.03em]"
                                 style={{ color: theme.textPrimary }}
                               >
                                 {degreeLabel}
