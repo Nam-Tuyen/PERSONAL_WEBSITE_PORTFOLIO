@@ -723,12 +723,12 @@ export default function Portfolio() {
                             className="min-w-0 rounded-[20px] px-5 py-5"
                             style={{ background: theme.cardBg, border: theme.cardBorder }}
                           >
-                          <div className="min-w-0 space-y-2 text-left">
-                            <div className="inline-flex w-fit rounded-full px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] sm:text-[10px]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
+                          <div className="min-w-0 space-y-1.5 text-left sm:space-y-2">
+                            <div className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[8px] font-medium uppercase tracking-[0.2em] sm:px-3 sm:text-[9px]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
                                 {bachelorLabel}
                               </div>
                               <div
-                                className="max-w-full font-orbitron whitespace-nowrap text-[10px] font-black uppercase leading-[1.05] tracking-[-0.03em] min-[360px]:text-[11px] sm:text-[12px] md:text-[13px]"
+                                className="max-w-full font-orbitron whitespace-nowrap text-[10px] font-black uppercase leading-[1.08] tracking-[-0.015em] min-[360px]:text-[11px] sm:text-[12px] md:text-[13px]"
                                 style={{ color: theme.textPrimary }}
                               >
                                 {degreeLabel}
