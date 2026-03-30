@@ -727,7 +727,10 @@ export default function Portfolio() {
                             <div className="mb-3 inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
                                 {bachelorLabel}
                               </div>
-                              <div className="font-orbitron text-[18px] font-black uppercase leading-tight tracking-[-0.03em] sm:text-[20px] md:text-[22px]" style={{ color: theme.textPrimary }}>
+                              <div
+                                className="font-orbitron whitespace-nowrap text-[clamp(0.72rem,3.9vw,1.375rem)] font-black uppercase leading-none tracking-[-0.05em] sm:tracking-[-0.03em]"
+                                style={{ color: theme.textPrimary }}
+                              >
                                 {degreeLabel}
                               </div>
                             </div>
