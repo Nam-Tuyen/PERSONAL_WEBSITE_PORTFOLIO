@@ -720,15 +720,15 @@ export default function Portfolio() {
                           </div>
 
                           <div
-                            className="min-w-0 rounded-[20px] px-5 py-5"
-                            style={{ background: theme.cardBg, border: theme.cardBorder }}
+                            className="min-w-0 overflow-hidden rounded-[20px] px-5 py-5"
+                            style={{ background: theme.cardBg, border: theme.cardBorder, containerType: "inline-size" }}
                           >
                           <div className="min-w-0 text-left">
                             <div className="mb-3 inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder, color: theme.accent }}>
                                 {bachelorLabel}
                               </div>
                               <div
-                                className="max-w-full font-orbitron whitespace-nowrap text-[clamp(0.62rem,3.1vw+0.08rem,1.375rem)] font-black uppercase leading-none tracking-[-0.06em] sm:tracking-[-0.03em]"
+                                className="max-w-full font-orbitron whitespace-nowrap text-[clamp(0.5rem,8.4cqw,1.375rem)] font-black uppercase leading-none tracking-[-0.08em] sm:tracking-[-0.03em]"
                                 style={{ color: theme.textPrimary }}
                               >
                                 {degreeLabel}
