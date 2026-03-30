@@ -746,40 +746,29 @@ export default function Portfolio() {
                             <div className="flex items-start gap-2">
                               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
                               <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
-                                <strong style={{ color: theme.textPrimary }}>
-                                  {isVietnamese ? "Trường:" : "Institution:"}
-                                </strong>{" "}
                                 {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
                               </p>
                             </div>
                           </div>
 
-                          <div className="mt-4 rounded-[16px] px-4 py-3" style={{ background: theme.accentSoftBg, border: theme.accentSoftBorder }}>
-                            <div className="flex items-start gap-3">
-                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/95 p-0.5">
-                                <img
-                                  src="/Logo.png"
-                                  alt="UEL logo"
-                                  className="h-full w-full object-contain"
-                                />
-                              </div>
+                          <div className="mt-4 flex items-center gap-3 text-left">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/95 p-0.5">
+                              <img
+                                src="/Logo.png"
+                                alt="UEL logo"
+                                className="h-full w-full object-contain"
+                              />
+                            </div>
 
-                              <div className="min-w-0 flex-1">
-                                <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
-                                  <strong style={{ color: theme.textPrimary }}>
-                                    {isVietnamese ? "Khám phá thêm:" : "Learn more:"}
-                                  </strong>{" "}
-                                  {isVietnamese ? "Thông tin chính thức của trường và chương trình học." : "Official university information and program details."}
-                                </p>
-                                <div
-                                  className="mt-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:text-[10px]"
-                                  style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.cardBg }}
-                                >
-                                  <span>{moreInformationLabel}</span>
-                                  <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                  </svg>
-                                </div>
+                            <div className="min-w-0 flex-1">
+                              <div
+                                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:text-[10px]"
+                                style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
+                              >
+                                <span>{moreInformationLabel}</span>
+                                <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
                               </div>
                             </div>
                           </div>
