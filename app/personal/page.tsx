@@ -236,6 +236,7 @@ const content: Record<
             certificate: "/IMG_5081.jpg",
           },
           {
+            id: "bankers-got-talent-2025",
             title: "TOP 5: BANKER'S GOT TALENT 2025 COMPETITION",
             organization: "",
             period: "2025",
@@ -271,6 +272,7 @@ const content: Record<
         title: "RESEARCH ACHIEVEMENTS",
         items: [
           {
+            id: "public-debt-economic-stability-2025",
             title: "PUBLIC DEBT AND ECONOMIC STABILITY: THE MODERATING EFFECT OF GOVERNANCE: EVIDENCE FROM SOUTHEAST ASIAN COUNTRIES",
             organization: "",
             publication: "Journal of Southeast Asian Economies",
@@ -281,6 +283,7 @@ const content: Record<
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858",
           },
           {
+            id: "tree-ensembles-corporate-failure-vietnam",
             title: "TREE ENSEMBLES LEAD THE WAY: BENCHMARKING MACHINE-LEARNING MODELS FOR CORPORATE FAILURE IN VIETNAM",
             organization: "",
             publication: "Global Conference on Sustainability in Economics, Business and Law",
@@ -439,6 +442,7 @@ const content: Record<
             certificate: "/IMG_5081.jpg",
           },
           {
+            id: "bankers-got-talent-2025",
             title: "TOP 5: CUỘC THI BANKER'S GOT TALENT 2025",
             organization: "",
             period: "2025",
@@ -474,6 +478,7 @@ const content: Record<
         title: "THÀNH TỰU NGHIÊN CỨU",
         items: [
           {
+            id: "public-debt-economic-stability-2025",
             title: "NỢ CÔNG VÀ ỔN ĐỊNH KINH TẾ: VAI TRÒ ĐIỀU TIẾT CỦA QUẢN TRỊ - BẰNG CHỨNG TỪ CÁC NƯỚC ĐÔNG NAM Á",
             organization: "",
             publication: "Tạp chí Kinh tế Đông Nam Á",
@@ -484,6 +489,7 @@ const content: Record<
             link: "https://ojs.omniscient.sg/index.php/gep/article/view/62858",
           },
           {
+            id: "tree-ensembles-corporate-failure-vietnam",
             title: "PHƯƠNG PHÁP TỔ HỢP CÂY VƯỢT TRỘI: ĐỐI SÁNH CÁC MÔ HÌNH HỌC MÁY TRONG DỰ BÁO RỦI RO THẤT BẠI DOANH NGHIỆP TẠI VIỆT NAM",
             organization: "",
             publication: "Hội thảo quốc tế về Phát triển bền vững trong Kinh tế, Kinh doanh và Pháp luật",
@@ -876,7 +882,12 @@ export default function PersonalPage() {
             {renderSectionHeading(pageContent.sections.achievements.title)}
             <div className="space-y-6">
               {pageContent.sections.achievements.items.map((item, index) => (
-                <div key={index} className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                <div
+                  key={index}
+                  id={item.id}
+                  className="scroll-mt-24 rounded-[24px] p-4 sm:p-6 md:p-8"
+                  style={{ background: theme.cardBg, border: theme.cardBorder }}
+                >
                   <div className="mb-5">
                     <h3 className="mb-1 font-orbitron text-base font-bold leading-tight sm:text-lg md:text-xl" style={{ color: theme.textPrimary }}>
                       {item.title}
@@ -971,7 +982,12 @@ export default function PersonalPage() {
             {renderSectionHeading(pageContent.sections.research.title)}
             <div className="space-y-6">
               {pageContent.sections.research.items.map((item, index) => (
-                <div key={index} className="rounded-[24px] p-4 sm:p-6 md:p-8" style={{ background: theme.cardBg, border: theme.cardBorder }}>
+                <div
+                  key={index}
+                  id={item.id}
+                  className="scroll-mt-24 rounded-[24px] p-4 sm:p-6 md:p-8"
+                  style={{ background: theme.cardBg, border: theme.cardBorder }}
+                >
                   <div className="mb-5">
                     <h3 className="mb-1 font-orbitron text-base font-bold leading-tight sm:text-lg md:text-xl" style={{ color: theme.textPrimary }}>
                       {item.title}

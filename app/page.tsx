@@ -386,6 +386,19 @@ export default function Portfolio() {
           description: "Data Analytics for Professionals",
         },
       ]
+  const achievementMoreInfoLinks: Record<string, string> = isVietnamese
+    ? {
+        "Top 6 cuộc thi đổi mới sáng tạo Finnovation Hackathon": "/personal#finnovative-hackathon-2025",
+        "Top 5 cuộc thi học thuật Banker's Got Talent 2025": "/personal#bankers-got-talent-2025",
+        "Trình bày tại hội thảo quốc tế về phát triển bền vững trong kinh tế, kinh doanh và pháp luật:": "/personal#tree-ensembles-corporate-failure-vietnam",
+        "Công bố trên Tạp chí Kinh tế Đông Nam Á:": "/personal#public-debt-economic-stability-2025",
+      }
+    : {
+        "Top 6 Finnovation Hackathon": "/personal#finnovative-hackathon-2025",
+        "Top 5 Banker's Got Talent 2025": "/personal#bankers-got-talent-2025",
+        "Presented at the Global Conference on Sustainability in Economics, Business and Law:": "/personal#tree-ensembles-corporate-failure-vietnam",
+        "Published in the Journal of Southeast Asian Economies:": "/personal#public-debt-economic-stability-2025",
+      }
   const certificatePreviewMap: Record<string, { src: string; alt: string }> = {
     google: { src: "/ask-question-to-make-data-driven.PNG", alt: "Google Certificate" },
     nvidia: { src: "/Certificate NVIDIA.PNG", alt: "NVIDIA Certificate" },
@@ -734,41 +747,27 @@ export default function Portfolio() {
                             <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
                           </div>
 
-                          <div className="space-y-2.5 text-left">
-                            <div className="flex items-start gap-2">
-                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
-                              <p
-                                className="font-orbitron text-[12px] font-bold uppercase leading-snug sm:text-[13px] md:text-[14px]"
-                                style={{ color: theme.textPrimary }}
-                              >
-                                <strong>{bachelorLabel}:</strong>{" "}
-                                <span>{degreeLabel}</span>
-                              </p>
-                            </div>
+                          <div className="min-w-0 space-y-3 text-left">
+                            <p
+                              className="font-orbitron text-[12px] font-bold uppercase leading-snug sm:text-[13px] md:text-[14px]"
+                              style={{ color: theme.textPrimary }}
+                            >
+                              <strong>{bachelorLabel}:</strong>{" "}
+                              <span>{degreeLabel}</span>
+                            </p>
 
-                            <div className="flex items-start gap-3">
-                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/95 p-0.5">
-                                <img
-                                  src="/Logo.png"
-                                  alt="UEL logo"
-                                  className="h-full w-full object-contain"
-                                />
-                              </div>
+                            <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
+                              {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
+                            </p>
 
-                              <div className="min-w-0 flex-1">
-                                <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
-                                  {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
-                                </p>
-                                <div
-                                  className="mt-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:text-[10px]"
-                                  style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
-                                >
-                                  <span>{moreInformationLabel}</span>
-                                  <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                  </svg>
-                                </div>
-                              </div>
+                            <div
+                              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:text-[10px]"
+                              style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
+                            >
+                              <span>{moreInformationLabel}</span>
+                              <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
                             </div>
                           </div>
                         </a>
@@ -788,10 +787,24 @@ export default function Portfolio() {
                             {heroAchievements.map((item, index) => (
                               <div key={index} className="flex items-start gap-2">
                                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: theme.accent }} />
-                                <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
-                                  <strong style={{ color: theme.textPrimary }}>{item.strong}</strong>
-                                  {item.rest ? ` ${item.rest}` : ""}
-                                </p>
+                                <div className="min-w-0">
+                                  <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
+                                    <strong style={{ color: theme.textPrimary }}>{item.strong}</strong>
+                                    {item.rest ? ` ${item.rest}` : ""}
+                                  </p>
+                                  {achievementMoreInfoLinks[item.strong] ? (
+                                    <a
+                                      href={achievementMoreInfoLinks[item.strong]}
+                                      className="mt-2 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[10px]"
+                                      style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg, textDecoration: "none" }}
+                                    >
+                                      <span>{moreInformationLabel}</span>
+                                      <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                      </svg>
+                                    </a>
+                                  ) : null}
+                                </div>
                               </div>
                             ))}
                           </div>
