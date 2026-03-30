@@ -747,7 +747,7 @@ export default function Portfolio() {
                             <div className="h-px flex-1" style={{ background: `linear-gradient(90deg,${theme.accentLine},transparent)` }} />
                           </div>
 
-                          <div className="min-w-0 space-y-3 text-left">
+                          <div className="min-w-0 space-y-2.5 text-left">
                             <p
                               className="font-orbitron text-[12px] font-bold uppercase leading-snug sm:text-[13px] md:text-[14px]"
                               style={{ color: theme.textPrimary }}
@@ -756,16 +756,16 @@ export default function Portfolio() {
                               <span>{degreeLabel}</span>
                             </p>
 
-                            <p className="text-xs leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
+                            <p className="text-xs italic leading-[1.75] sm:text-[13px] md:text-sm" style={{ color: theme.textSecondary }}>
                               {isVietnamese ? "Trường Đại học Kinh tế - Luật" : "University of Economics and Law"}
                             </p>
 
                             <div
-                              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 sm:text-[10px]"
+                              className="inline-flex items-center gap-1.5 self-start rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 hover:-translate-y-0.5 sm:text-[10px]"
                               style={{ border: theme.accentSoftBorder, color: theme.accent, background: theme.accentSoftBg }}
                             >
                               <span>{moreInformationLabel}</span>
-                              <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                               </svg>
                             </div>
