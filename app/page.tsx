@@ -728,7 +728,7 @@ export default function Portfolio() {
                                 {bachelorLabel}
                               </div>
                               <div
-                                className="max-w-full font-orbitron whitespace-nowrap text-[clamp(0.5rem,8.4cqw,1.375rem)] font-black uppercase leading-none tracking-[-0.08em] sm:tracking-[-0.03em]"
+                                className="max-w-full font-orbitron whitespace-nowrap text-[clamp(0.56rem,4.3cqw,1.1rem)] font-black uppercase leading-none tracking-[-0.08em] sm:tracking-[-0.05em]"
                                 style={{ color: theme.textPrimary }}
                               >
                                 {degreeLabel}
